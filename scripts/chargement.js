@@ -1,5 +1,7 @@
 function chargement() {
-	document.getElementById("load").style.display = "none";
-	document.getElementById("loader").style.display = "none";
-	document.getElementById("bloc_page").style.display = "block";
+  document.getElementById("load").style.display = "none";
+  document.getElementById("loader").style.display = "none";
+  document.querySelector("main").style.display = "block";
 }
+
+window.addEventListener("load", chargement);
