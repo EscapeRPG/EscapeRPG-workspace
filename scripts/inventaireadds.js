@@ -1,0 +1,1 @@
+alert('Les éléments ont bien été ajoutés à votre inventaire.')
