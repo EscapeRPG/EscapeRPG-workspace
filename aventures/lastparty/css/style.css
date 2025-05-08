@@ -1,0 +1,158 @@
+html {
+	scroll-behavior: smooth;
+	height: 100%;
+}
+
+body {
+	background: #2A5689 url("/escaperpg/images/bg.png");
+	background-repeat: repeat;
+	font-family: arial, "arial black", "comic sans ms", "courier new", georgia, impact, "times new roman", "trebuchet ms", verdana, serif;
+	height: 100%;
+	padding: 0;
+}
+
+header {
+	width: 100%;
+	text-align: center;
+	margin: 0;
+	padding: 10px 0px;
+	background-color: rgb(255, 255, 255);
+	box-shadow: 0px 3px 10px black;
+}
+
+#banniere {
+	width: 100%;
+
+	img {
+		width: 100%;
+	}
+}
+
+main {
+	width: 100%;
+	padding: 10px 0 300px 0;
+	text-align: center;
+	display: none;
+}
+
+nav {
+	width: 20%;
+	display: inline-block;
+	vertical-align: top;
+	background-color: rgba(0, 0, 0, 0.6);
+	border-radius: 20px 0px 10px 20px;
+	color: white;
+	text-align: center;
+	padding: 10px;
+
+	img {
+		width: 60%;
+	}
+
+	a {
+		color: orange;
+		font-weight: normal;
+
+		&:hover {
+			color: brown;
+		}
+	}
+
+	li {
+		text-align: justify;
+	}
+}
+
+h1 {
+	color: orange;
+	text-transform: uppercase;
+	font-size: small;
+}
+
+a {
+	color: red;
+	font-weight: bold;
+	text-decoration: none;
+
+	&:hover {
+		color: orange;
+	}
+}
+
+#txt {
+	width: 70%;
+	background-color: rgba(0, 0, 0, 0.6);
+	vertical-align: top;
+	padding: 10px;
+	text-align: center;
+	border-radius: 0px 20px 20px 20px;
+	color: white;
+	word-wrap: break-word;
+	display: inline-block;
+
+	p {
+		text-align: justify;
+	}
+}
+
+.dialoguenarrateur {
+	text-align: center;
+	margin: 10px 0px;
+}
+
+.portrait {
+	width: 20%;
+	display: inline-block;
+	vertical-align: top;
+
+	img {
+		width: 100%;
+	}
+}
+
+#enigmelieu {
+	width: 60%;
+	background-color: none;
+	position: relative;
+	margin: auto;
+	margin-bottom: 20px;
+
+	a {
+		cursor: default;
+	}
+
+	img {
+		width: 100%;
+	}
+}
+
+#enigme {
+	text-align: center;
+	margin-bottom: 20px;
+
+	img {
+		display: inline-block;
+		vertical-align: middle;
+		max-width: 400px;
+	}
+
+	a {
+		cursor: zoom-in;
+	}
+}
+
+#phone {
+	position: absolute;
+	bottom: 18%;
+	left: 7.67%;
+	width: 5.83%;
+	height: 6.25%;
+}
+
+#sms {
+	position: absolute;
+	bottom: 14.5%;
+	left: 40.5%;
+	width: 5.67%;
+	height: 8%;
+}

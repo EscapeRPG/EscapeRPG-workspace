@@ -1,0 +1,270 @@
+#couverture {
+    width: 100%;
+    text-align: center;
+    font-size: x-large;
+    margin: auto;
+    color: black;
+    background-image: url("/escaperpg/images/lastparty/juliettefond.png");
+    background-size: 100% 100%;
+
+    img {
+        width: 60%;
+    }
+
+    p {
+        text-align: center;
+        width: 100%;
+        padding: 0;
+        margin: 5px 0;
+    }
+}
+
+#faceeebookconnexion {
+    background-color: #c1d4e5;
+    position: relative;
+    width: 80%;
+    margin: auto;
+    text-align: center;
+    margin-bottom: 20px;
+    padding: 50px;
+
+    h1 {
+        color: rgb(23, 103, 196);
+        font-size: x-large;
+    }
+
+    img {
+        max-width: 60px;
+    }
+
+    p {
+        color: #70ade3;
+    }
+}
+
+#connexion {
+    width: 60%;
+    background-color: white;
+    box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.5);
+    border-radius: 20px;
+    margin: auto;
+    padding: 100px 50px;
+    margin-bottom: 50px;
+    color: black;
+
+    input[type=text],
+    input[type=password] {
+        width: 50%;
+    }
+
+    input[type=submit] {
+        background-image: none;
+        background-color: rgb(23, 103, 196);
+        color: white;
+    }
+}
+
+#faceeebookheader {
+    background-color: #edf2f7;
+    margin-top: 0;
+    box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.5);
+    width: 100%;
+    text-align: center;
+    color: black;
+
+    ul {
+        margin: 0;
+        padding: 0;
+    }
+
+    li {
+        padding: 0;
+    }
+
+    img {
+        max-width: 30px;
+        display: inline-block;
+        vertical-align: middle;
+    }
+}
+
+.topleft {
+    display: inline-block;
+    vertical-align: bottom;
+    min-width: 30%;
+    padding: 10px 0px;
+}
+
+#faceeebook {
+    background-color: #c1d4e5;
+    width: 80%;
+    margin: auto;
+    margin-bottom: 20px;
+    padding: 0px 0px 50px 0px;
+    overflow: auto;
+    height: 500px;
+    position: relative;
+    text-align: justify;
+
+    form {
+        display: inline-block;
+        vertical-align: middle;
+        margin: 0;
+    }
+}
+
+input[type=search] {
+    border-radius: 20px;
+    border: none;
+    background-color: #c1d4e5;
+    padding: 5px;
+}
+
+.logoscentre {
+    display: inline-block;
+    vertical-align: bottom;
+    min-width: 20%;
+    margin: 10px 7% 0px 7%;
+
+    img {
+        display: inline-block;
+        vertical-align: middle;
+        margin: 0px 3%;
+    }
+}
+
+.topright {
+    display: inline-block;
+    vertical-align: bottom;
+    min-width: 30%;
+    padding: 10px 0px;
+}
+
+.actus {
+    width: 60%;
+    background-color: white;
+    box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.5);
+    border-radius: 20px;
+    margin: auto;
+    padding: 10px;
+    color: black;
+    margin-top: 20px;
+    margin-bottom: 20px;
+
+    p {
+        text-align: justify;
+        font-size: large;
+        padding: 10px 0px;
+        margin: 3px 10px;
+
+        img {
+            width: 20px;
+        }
+    }
+
+    img {
+        width: 10%;
+        display: inline-block;
+        vertical-align: top;
+    }
+}
+
+.name {
+    width: 84%;
+    margin-left: 0;
+    display: inline-block;
+    vertical-align: top;
+    font-size: small;
+    font-weight: bold;
+}
+
+.light {
+    color: rgba(0, 0, 0, 0.5);
+}
+
+.quoineuf {
+    width: 70%;
+    background-color: #c1d4e5;
+    border-radius: 20px;
+    border: none;
+    display: inline-block;
+    vertical-align: top;
+    padding: 10px;
+    color: rgba(0, 0, 0, 0.5);
+}
+
+.likes {
+    p {
+        color: #70ade3;
+        display: inline-block;
+        vertical-align: middle;
+        font-size: small;
+        padding: 0;
+    }
+
+    img {
+        width: 20px;
+        display: inline-block;
+        vertical-align: middle;
+    }
+}
+
+.comment {
+    margin: 10px auto;
+    text-align: center;
+
+    img {
+        max-width: 30px;
+        display: inline-block;
+        vertical-align: middle;
+    }
+}
+
+.commentaire {
+    width: 80%;
+    background-color: #c1d4e5;
+    border-radius: 20px;
+    border: none;
+    display: inline-block;
+    vertical-align: top;
+    padding: 10px;
+    color: black;
+    margin-bottom: 10px;
+    text-align: left;
+
+    p {
+        text-align: left !important;
+        font-size: 14px;
+        margin: 0;
+        padding: 0 5px;
+    }
+}
+
+#chgt {
+    width: 10%;
+    background-color: rgba(0, 0, 0, 0.2);
+    box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.5);
+    border-radius: 40px;
+    margin: auto;
+    padding: 0px;
+    font-size: x-large;
+    font-weight: bold;
+    color: rgba(0, 0, 0, 0.5);
+    margin-top: 20px;
+    margin-bottom: 20px;
+    
+    p {
+        text-align: center;
+    }
+}
+
+#discussions {
+    float: right;
+    margin: -30px 20px 20px auto;
+    background-color: rgba(0, 0, 0, 0.2);
+    box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.5);
+    border-radius: 20px;
+    border: none;
+    padding: 2px 10px;
+    color: rgba(0, 0, 0, 0.5);
+}

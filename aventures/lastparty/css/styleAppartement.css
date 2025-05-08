@@ -1,0 +1,23 @@
+#tiroir {
+    position: absolute;
+    top: 45.5%;
+    left: 43.33%;
+    width: 10%;
+    height: 8.5%;
+}
+
+#ordi {
+    position: absolute;
+    top: 22%;
+    left: 5.5%;
+    width: 15%;
+    height: 16%;
+}
+
+#appareil {
+    position: absolute;
+    top: 20.75%;
+    right: 13.5%;
+    width: 4.67%;
+    height: 5.75%;
+}
