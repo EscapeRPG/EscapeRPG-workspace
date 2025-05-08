@@ -1,5 +1,8 @@
 # Escape RPG
 
+<sub>Working on cleaning the code</sub>
+<sub>French only, might add an english version later</sub>
+
 ## Navigator game, live adventures by incarnating their main protagonists
 
 What is EscapeRPG ?
