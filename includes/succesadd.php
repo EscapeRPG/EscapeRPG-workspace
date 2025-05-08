@@ -10,19 +10,26 @@ $verifsucces = $conn->prepare("SELECT * FROM 0succes WHERE pseudo = ? AND scenar
 $verifsucces->execute([$nomcompte, $scenario, $description]);
 $succesexiste = $verifsucces->rowCount();
 
-if (!$succesexiste) {
-    if ($_SESSION['loggedin']) {
+if (!$succesexiste): ?>
+    <?php if ($_SESSION['loggedin']): ?>
+        <?php
         $insertsucces = $conn->prepare("INSERT INTO 0succes (pseudo, badge, scenario, description, cache, rarete) VALUES (?, ?, ?, ?, ?, ?)");
         $insertsucces->execute([$nomcompte, $nouveausucces, $scenario, $description, $cache, $rarete]);
-
-        echo '
-                <div class="succesapercu"><div class="' . $rarete . '"></div><a href="/escaperpg/members/m?id=' . $nomcompte . '" target="_blank" rel="noreferrer">' . $nouveausucces . '</a></div>
-                <script src="/escaperpg/scripts/succescount.js"></script>
-            ';
-    } else {
-        echo '
-                <div class="succesapercu"><div class="' . $rarete . '"></div><a href="/escaperpg/members/connexion" target="_blank" rel="noreferrer">' . $nouveausucces . '</a></div>
-                <script src="/escaperpg/scripts/succescountoffline.js"></script>
-            ';
-    }
-}
+        ?>
+        <div class="succesapercu">
+            <div class="<?= $rarete ?>"></div>
+            <a href="/escaperpg/members/m?id=<?= $nomcompte ?>" target="_blank" rel="noreferrer">
+                <?= $nouveausucces ?>
+            </a>
+        </div>
+        <script src="/escaperpg/scripts/succescount.js"></script>
+    <?php else: ?>
+        <div class="succesapercu">
+            <div class="<?= $rarete ?>"></div>
+            <a href="/escaperpg/members/connexion" target="_blank" rel="noreferrer">
+                <?= $nouveausucces ?>
+            </a>
+        </div>
+        <script src="/escaperpg/scripts/succescountoffline.js"></script>
+    <?php endif; ?>
+<?php endif; ?>
