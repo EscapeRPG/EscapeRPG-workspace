@@ -11,6 +11,7 @@ $succesObtenu = "/escaperpg/includes/succesadd.php";
     <script type="text/javascript" src="/escaperpg/lightbox/js/lightbox.js"></script>
     <link rel="stylesheet" href="/escaperpg/lightbox/css/lightbox.css" type="text/css" media="screen">
     <link rel="stylesheet" href="/escaperpg/css/style.css">
+    <link rel="stylesheet" href="/escaperpg/css/styleCompteBouton.css">
     <link rel="stylesheet" href="/escaperpg/css/styleMembres.css">
     <link rel="stylesheet" href="/escaperpg/css/styleFormulaires.css">
     <link rel="stylesheet" href="/escaperpg/css/styleSucces.css">
@@ -19,8 +20,8 @@ $succesObtenu = "/escaperpg/includes/succesadd.php";
     <title>EscapeRPG - <?php echo ucwords($_GET['id'], " -_<>()[]'\".,!?;/§$+=*|{}&"); ?></title>
 </head>
 
-<body onload="chargement()">
-    <div id="bloc_page">
+<body>
+    <main>
         <?php include_once $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/header.php";
 
         if (isset($_GET['id'])): ?>
