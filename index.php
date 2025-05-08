@@ -8,7 +8,7 @@ ini_set("safe_mode", "off"); ?>
     <script type="text/javascript" src="/escaperpg/lightbox/js/scriptaculous.js?load=effects,builder"></script>
     <script type="text/javascript" src="/escaperpg/lightbox/js/lightbox.js"></script>
     <link rel="stylesheet" href="/escaperpg/lightbox/css/lightbox.css" type="text/css" media="screen">
-    <link rel="stylesheet" href="/escaperpg/style.css">
+    <link rel="stylesheet" href="/escaperpg/css/style.css">
     <link href="https://escaperpg.com/images/partage.png" rel="image_src">
     <meta charset="utf-8">
     <meta name="keywords" CONTENT="syrphin, emilien, francois, françois, escape, game, room, jdr, rpg, jeu, énigme, enigme, réflexion, reflexion, jeu, rôle, role" />
