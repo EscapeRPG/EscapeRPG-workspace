@@ -3,7 +3,7 @@
     position: fixed;
     top: 180px;
     right: -230px;
-    background-color: rgba(0, 0, 0, 0.2);
+    background-color: rgba(0, 0, 0, 0.9);
     border: 7px double black;
     color: orange;
     border-right: none;
@@ -23,6 +23,14 @@
 
         &:hover {
             color: orange;
+        }
+    }
+
+    p {
+        text-align: center !important;
+        
+        a {
+            display: inline;
         }
     }
 }

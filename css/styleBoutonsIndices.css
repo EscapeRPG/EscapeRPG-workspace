@@ -1,0 +1,17 @@
+.boutonindice {
+    background: url("/escaperpg/images/indice.png");
+    border: none;
+    width: 30px;
+    height: 30px;
+    cursor: help;
+    margin: 20px;
+}
+
+.boutonreponse {
+    background: url("/escaperpg/images/reponse.png");
+    border: none;
+    width: 30px;
+    height: 30px;
+    cursor: help;
+    margin: 20px;
+}

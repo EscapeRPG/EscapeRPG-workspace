@@ -1,0 +1,26 @@
+#connexioncompte {
+    position: fixed;
+    top: 50px;
+    right: 0;
+    padding: 10px;
+    overflow: hidden;
+    background-color: rgba(0, 0, 0, 0.2);
+    border: 7px double black;
+    border-right: none;
+    border-radius: 20px 0px 0px 20px;
+    text-align: center;
+    font-size: x-small;
+    z-index: 100;
+
+    &:hover {
+        border: 7px double orange;
+        border-right: none;
+        border-radius: 20px 0px 0px 20px;
+    }
+
+    img {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+    }
+}

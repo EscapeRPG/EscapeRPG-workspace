@@ -1,0 +1,43 @@
+footer {
+    width: 100%;
+    color: white;
+    text-align: center;
+    padding: 0;
+    clear: both;
+    font-size: small;
+    bottom: 0;
+    position: fixed;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.3) 80%, transparent);
+}
+
+#inventaire {
+    text-align: center;
+    display: inline-block;
+    vertical-align: middle;
+
+    img {
+        width: 150px;
+    }
+}
+
+#inventairefooter {
+    width: 100%;
+    margin: auto;
+    cursor: pointer;
+}
+
+#motsdepasse {
+    width: 100%;
+    margin: auto;
+    cursor: pointer;
+}
+
+.footerhidden {
+    display: none;
+}
+
+.footeraffichage {
+    display: block;
+    width: 100%;
+    padding: 10px 0px;
+}
