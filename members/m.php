@@ -11,6 +11,10 @@ $succesObtenu = "/escaperpg/includes/succesadd.php";
     <script type="text/javascript" src="/escaperpg/lightbox/js/lightbox.js"></script>
     <link rel="stylesheet" href="/escaperpg/lightbox/css/lightbox.css" type="text/css" media="screen">
     <link rel="stylesheet" href="/escaperpg/css/style.css">
+    <link rel="stylesheet" href="/escaperpg/css/styleMembres.css">
+    <link rel="stylesheet" href="/escaperpg/css/styleFormulaires.css">
+    <link rel="stylesheet" href="/escaperpg/css/styleSucces.css">
+    <link rel="stylesheet" href="/escaperpg/css/styleLoader.css">
     <meta charset="utf-8">
     <title>EscapeRPG - <?php echo ucwords($_GET['id'], " -_<>()[]'\".,!?;/§$+=*|{}&"); ?></title>
 </head>
@@ -18,7 +22,7 @@ $succesObtenu = "/escaperpg/includes/succesadd.php";
 <body onload="chargement()">
     <div id="bloc_page">
         <?php include_once $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/header.php";
-        
+
         if (isset($_GET['id'])): ?>
             <?php
             $getid = htmlspecialchars($_GET['id']);
@@ -37,7 +41,7 @@ $succesObtenu = "/escaperpg/includes/succesadd.php";
                     <?php if ($userinfo['id'] == $nomcompte): ?>
                         <form action="edit" method="post"><input type="submit" name="edit" value="Éditer mon profil"></form>
                         <form action="connexion" method="post"><input type="submit" name="disconnect" value="Déconnexion"></form>
-                            
+
                         <?php $_SESSION['avatarcompte'] = $userinfo['avatar']; ?>
                     <?php endif; ?>
                 </div>
@@ -120,10 +124,10 @@ $succesObtenu = "/escaperpg/includes/succesadd.php";
                         $friends = $conn->prepare('SELECT * FROM 0amis WHERE idjoueur = ? && idami = ?');
                         $friends->execute([$nomcompte, $getid]);
                         $amisajoutes = $friends->rowCount();
-                        
+
                         if (!$amisajoutes): ?>
                             <form action="m?id=<?= $getid ?>" method="post"><input type="submit" name="addfriend" value="devenir partenaires d'aventure"></form>
-                        <?php endif;
+                    <?php endif;
                     endif; ?>
                     <form action="m" method="get"><input type="text" name="id"><input type="submit" class="connecting" value="rechercher un membre"></form>
 
@@ -131,7 +135,7 @@ $succesObtenu = "/escaperpg/includes/succesadd.php";
                 <?php else: ?>
                     <h1>félicitations d'être arrivé·e ici ! vous méritez bien un succès spécial !</h1>
                 <?php endif;
-                
+
                 include_once $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/members/includes/compteurs.php";
                 include_once $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/members/includes/general.php";
                 include_once $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/members/includes/lastparty.php";
@@ -144,7 +148,7 @@ $succesObtenu = "/escaperpg/includes/succesadd.php";
                 <form action="m" method="get">
                     <input type="text" name="id"><input type="submit" class="connecting" value="rechercher un membre">
                 </form>
-            <?php endif;
+        <?php endif;
         endif; ?>
     </div>
 

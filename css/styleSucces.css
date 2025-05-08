@@ -1,0 +1,340 @@
+#succespopup {
+    width: 150px;
+    position: fixed;
+    top: 180px;
+    right: -230px;
+    background-color: rgba(0, 0, 0, 0.2);
+    border: 7px double black;
+    color: orange;
+    border-right: none;
+    border-radius: 20px 0px 0px 20px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    z-index: 20;
+
+    a {
+        color: red;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        &:hover {
+            color: orange;
+        }
+    }
+}
+
+.succesapercu {
+    color: orange;
+    border-radius: 50%;
+    width: 50px;
+    height: 65px;
+    margin: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    span {
+        position: absolute;
+        top: 40px;
+        right: 0;
+        background-color: black;
+        color: orange;
+        border-radius: 10px;
+        opacity: 0;
+        font-weight: normal;
+        font-size: 12px;
+        width: 200px;
+        padding: 20px;
+        text-align: justify;
+        pointer-events: none;
+        z-index: 3;
+    }
+
+    .succesplatine:before {
+        width: 80px;
+        height: 80px;
+    }
+
+    div {
+        width: 50px;
+        height: 65px;
+        border-radius: 50%;
+
+        &:after {
+            left: 4px;
+            top: 4px;
+            width: calc(100% - 8px);
+            height: calc(100% - 8px);
+        }
+    }
+
+    img {
+        width: 80%;
+        height: 84.6%;
+        border-radius: 50%;
+        z-index: 2;
+    }
+}
+
+#bannieresucces {
+    width: 15%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+
+    img {
+        width: 100%;
+        outline: 1px solid orange;
+        border-radius: 10px;
+        overflow: hidden;
+        position: relative;
+    }
+}
+
+#containersucces {
+    display: flex;
+    width: 85%;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.succesbox {
+    position: relative;
+    width: 100px;
+    height: 130px;
+    border-radius: 50%;
+    margin: 10px;
+}
+
+.succesobtenu {
+    color: #606060;
+    text-align: center;
+    width: 100px;
+    height: 130px;
+    border-radius: 50%;
+    font-weight: bold;
+    font-size: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: auto;
+
+    span {
+        position: absolute;
+        margin-top: 150px;
+        background-color: black;
+        color: orange;
+        border-radius: 10px;
+        opacity: 0;
+        font-weight: normal;
+        font-size: 12px;
+        width: 200px;
+        padding: 20px;
+        text-align: justify;
+        pointer-events: none;
+        z-index: 2;
+    }
+
+    img {
+        width: 80%;
+        height: 84.6%;
+        border-radius: 50%;
+    }
+}
+
+.succesobtenu:hover span,
+.succesapercu:hover span {
+    opacity: 2;
+}
+
+.succesbloque {
+    width: 100px;
+    height: 130px;
+    position: absolute;
+    overflow: hidden;
+    z-index: auto;
+    border-radius: 50%;
+    background: linear-gradient(315deg, black, 10%, #101010, 90%, #303030);
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+
+    &::after {
+        content: "";
+        position: absolute;
+        z-index: auto;
+        left: 8px;
+        top: 8px;
+        width: calc(100% - 16px);
+        height: calc(100% - 16px);
+        border-radius: 50%;
+        background: linear-gradient(135deg, black, 10%, #101010, 90%, #303030);
+    }
+}
+
+.succesnormal {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    position: absolute;
+    overflow: hidden;
+    z-index: auto;
+    background: linear-gradient(315deg, #151515, 10%, #404040, 90%, #606060);
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+
+    &::after {
+        content: "";
+        position: absolute;
+        z-index: auto;
+        left: 8px;
+        top: 8px;
+        width: calc(100% - 16px);
+        height: calc(100% - 16px);
+        border-radius: 50%;
+        background: linear-gradient(135deg, #151515, 10%, #404040, 90%, #606060);
+    }
+}
+
+.succesbronze {
+    --couleurshine: #dd8546;
+    background: linear-gradient(315deg, #1e110c, 10%, #974c20, 90%, #dd8546);
+
+    &::after {
+        background: linear-gradient(135deg, #1e110c, 10%, #974c20, 90%, #dd8546);
+    }
+}
+
+.succesargent {
+    --couleurshine: white;
+    background: linear-gradient(315deg, grey, 10%, #bebebe, 90%, #dcdcdc);
+
+    &::after {
+        background: linear-gradient(135deg, grey, 10%, #bebebe, 90%, #dcdcdc);
+    }
+}
+
+.succesgold {
+    --couleurshine: white;
+    background: linear-gradient(315deg, #671908, 10%, orange, 90%, #fdf4c2);
+
+    &::after {
+        background: linear-gradient(135deg, #671908, 10%, orange, 90%, #fdf4c2);
+    }
+}
+
+.succesdiamant {
+    --couleurshine: white;
+    background: linear-gradient(315deg, #0089ab, 10%, #71cee6, 90%, #dcf1f7);
+    box-shadow: 0 0 20px #71cee6;
+    animation: glow 1s alternate infinite;
+    --couleur: #71cee6;
+
+    &::after {
+        background: linear-gradient(135deg, #0089ab, 10%, #71cee6, 90%, #dcf1f7);
+    }
+}
+
+.succesplatine {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    position: absolute;
+    z-index: -1;
+    background-color: #ffffe6;
+    box-shadow: 0 0 10px #ffffe6;
+    --couleur: white;
+    animation: glow 1s alternate infinite;
+
+    &::before {
+        content: "";
+        z-index: auto;
+        text-align: center;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) rotate(0deg);
+        position: absolute;
+        width: 130px;
+        height: 130px;
+        background-repeat: no-repeat;
+        background-position: 0 0;
+        background-image: conic-gradient(rgba(255, 255, 230, 0.5) 0deg 30deg,
+                transparent 30deg 60deg,
+                rgba(255, 255, 230, 0.5) 60deg 90deg,
+                transparent 90deg 120deg,
+                rgba(255, 255, 230, 0.5) 120deg 150deg,
+                transparent 150deg 180deg,
+                rgba(255, 255, 230, 0.5) 180deg 210deg,
+                transparent 210deg 240deg,
+                rgba(255, 255, 230, 0.5) 240deg 270deg,
+                transparent 270deg 300deg,
+                rgba(255, 255, 230, 0.5) 300deg 330deg,
+                transparent 330deg 360deg);
+        animation: succesrotate 6s linear infinite;
+        border-radius: 100%;
+        filter: blur(10px);
+    }
+}
+
+@keyframes glow {
+    0% {
+        box-shadow: 0 0 10px var(--couleur);
+    }
+
+    100% {
+        box-shadow: 0 0 20px var(--couleur);
+    }
+}
+
+.succesbronze,
+.succesargent,
+.succesgold,
+.succesdiamant {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    position: absolute;
+    overflow: hidden;
+    z-index: auto;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+
+    &::before {
+        content: "";
+        z-index: auto;
+        text-align: center;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) rotate(0deg);
+        position: absolute;
+        width: 150px;
+        height: 150px;
+        background-repeat: no-repeat;
+        background-position: 0 0;
+        background-image: conic-gradient(rgba(0, 0, 0, 0),
+                var(--couleurshine),
+                rgba(0, 0, 0, 0) 10%);
+        animation: succesrotate 5s linear infinite;
+        filter: blur(5px);
+    }
+
+    &::after {
+        content: "";
+        position: absolute;
+        z-index: auto;
+        left: 8px;
+        top: 8px;
+        width: calc(100% - 16px);
+        height: calc(100% - 16px);
+        border-radius: 50%;
+    }
+}
+
+@keyframes succesrotate {
+    100% {
+        transform: translate(-50%, -50%) rotate(1turn);
+    }
+}

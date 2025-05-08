@@ -1,0 +1,118 @@
+#liste {
+    width: 90%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin: auto;
+}
+
+.dropbtn {
+    display: inline-block;
+    margin-top: 0;
+    background-color: black;
+    color: white;
+    text-align: center;
+    padding: 10px 0px;
+    font-size: 20px;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    width: 20%;
+    min-width: 100px;
+    border-radius: 10px;
+
+    &:hover {
+        background-color: darkorange;
+        color: black;
+    }
+}
+
+.dropbtnfocus {
+    background-color: orange;
+    color: black;
+}
+
+#liensaffichage {
+    color: white;
+    text-align: center;
+
+    div {
+        width: 90%;
+        border-top: 1px solid black;
+        border-bottom: 1px solid black;
+        margin: auto;
+        margin-bottom: 10px;
+        padding: 10px;
+    }
+
+    p {
+        display: inline-block;
+        vertical-align: middle;
+        width: 75%;
+        text-align: justify;
+    }
+
+    img {
+        width: 20%;
+        min-width: 200px;
+        display: inline-block;
+        vertical-align: middle;
+    }
+}
+
+.dropdown {
+    display: none;
+}
+
+.dropdown-affichage {
+    display: block;
+    background-color: none;
+    width: 90%;
+    padding: 10px;
+    margin: auto;
+    margin-bottom: 150px;
+
+    p {
+        color: orange;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+    }
+}
+
+.dropquestion {
+    color: orange;
+    padding: 10px;
+    margin: 0;
+    font-size: 24px;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+    border-bottom: 1px solid black;
+}
+
+.dropquestionfocus {
+    text-decoration: underline;
+    color: white;
+}
+
+.reponse {
+    display: none;
+}
+
+.reponse-affichage {
+    display: block;
+    overflow: auto;
+    width: 100%;
+    border-bottom: 1px solid black;
+
+    p {
+        color: orange;
+        margin: 0;
+        padding: 10px;
+        text-decoration: none;
+        display: block;
+        text-align: justify;
+    }
+}

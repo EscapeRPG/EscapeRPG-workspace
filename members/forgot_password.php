@@ -8,6 +8,9 @@
     <script type="text/javascript" src="/escaperpg/lightbox/js/lightbox.js"></script>
     <link rel="stylesheet" href="/escaperpg/lightbox/css/lightbox.css" type="text/css" media="screen">
     <link rel="stylesheet" href="/escaperpg/css/style.css">
+    <link rel="stylesheet" href="/escaperpg/css/styleMembres.css">
+    <link rel="stylesheet" href="/escaperpg/css/styleFormulaires.css">
+    <link rel="stylesheet" href="/escaperpg/css/styleLoader.css">
     <meta charset="utf-8">
     <title>EscapeRPG - Mot de passe oublié</title>
 </head>

@@ -19,6 +19,9 @@ isset($_COOKIE['LOGGED_USER']) ? $_SESSION['loggedin'] = true : null;
     <script type="text/javascript" src="/escaperpg/lightbox/js/lightbox.js"></script>
     <link rel="stylesheet" href="/escaperpg/lightbox/css/lightbox.css" type="text/css" media="screen">
     <link rel="stylesheet" href="/escaperpg/css/style.css">
+    <link rel="stylesheet" href="/escaperpg/css/styleMembres.css">
+    <link rel="stylesheet" href="/escaperpg/css/styleFormulaires.css">
+    <link rel="stylesheet" href="/escaperpg/css/styleLoader.css">
     <meta charset="utf-8">
     <title>EscapeRPG - Connexion</title>
 </head>
@@ -121,14 +124,14 @@ isset($_COOKIE['LOGGED_USER']) ? $_SESSION['loggedin'] = true : null;
                         <input type="submit" name="connexion" id="connexion" value="Se connecter">
                     </form>
                 </div>
-            <?php elseif ($_POST['pass1'] == $_POST['pass2'] && !$stoperr):
+                <?php elseif ($_POST['pass1'] == $_POST['pass2'] && !$stoperr):
                 $nomcompte = htmlspecialchars(strtolower($_POST['pseudocompte']));
                 $email = $_POST['email'];
                 $pass = md5($_POST['pass1']);
                 $requser = $conn->prepare("SELECT * FROM 0membres WHERE id = ?");
                 $requser->execute(array($nomcompte));
                 $userexist = $requser->rowCount();
-                
+
                 if ($userexist == 0):
                     $insertmbr = $conn->prepare("INSERT INTO 0membres (id, email, pass, avatar) VALUES (?, ?, ?, ?)");
                     $insertmbr->execute(array($nomcompte, $email, $pass, $file)); ?>
