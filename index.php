@@ -12,6 +12,7 @@ ini_set("safe_mode", "off"); ?>
     <link rel="stylesheet" href="/escaperpg/css/styleDialogues.css">
     <link rel="stylesheet" href="/escaperpg/css/styleCartes.css">
     <link rel="stylesheet" href="/escaperpg/css/styleLiens.css">
+    <link rel="stylesheet" href="/escaperpg/css/styleCompteBouton.css">
     <link rel="stylesheet" href="/escaperpg/css/styleMembres.css">
     <link rel="stylesheet" href="/escaperpg/css/styleSucces.css">
     <link rel="stylesheet" href="/escaperpg/css/styleLoader.css">
@@ -21,8 +22,8 @@ ini_set("safe_mode", "off"); ?>
     <title>EscapeRPG</title>
 </head>
 
-<body onload="chargement()">
-    <div id="bloc_page">
+<body>
+    <main>
         <?php include_once $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/incmembers.php"; ?>
         <nav>
             <div class="accueil"><a href="#bloc1"><img src="/escaperpg/images/home.png" id="accueilLink" alt="accueil"></a></div><br>
