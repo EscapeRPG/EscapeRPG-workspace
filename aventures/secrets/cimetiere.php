@@ -11,7 +11,7 @@
 		<script src="http://html5shiv.googlecode.code/svn/trunk/html5.js"></scipt>
 		<![endif]-->
 	   
-		<link rel="stylesheet" href="/escaperpg/aventures/secrets/stylesecrets.css">
+		<link rel="stylesheet" href="/escaperpg/aventures/secrets/css/style.css">
 		<meta charset="utf-8">
 		<title>Cimetière - Secrets Familiaux</title>
 	</head>

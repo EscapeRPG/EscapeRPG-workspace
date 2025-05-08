@@ -11,7 +11,7 @@
 		<script src="http://html5shiv.googlecode.code/svn/trunk/html5.js"></scipt>
 		<![endif]-->
 	   
-		<link rel="stylesheet" href="/escaperpg/aventures/ambria/styleambria.css">
+		<link rel="stylesheet" href="/escaperpg/aventures/ambria/css/style.css">
 		<meta charset="utf-8">
 		<title>Fin - Le Trésor d'Ambria</title>
 	</head>
