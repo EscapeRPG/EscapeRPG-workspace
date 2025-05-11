@@ -1,10 +1,9 @@
 <?php
-
 $loggedin = $_SESSION['loggedin'] ?? null;
 
 if (isset($_COOKIE['LOGGED_USER'])) {
     $idcompte = $_COOKIE['LOGGED_USER'];
-} elseif (isset($_SESSION['loggedin'])) {
+} elseif (isset($_SESSION['loggedin']) && $_SESSION['loggedin']) {
     $idcompte = htmlspecialchars($_SESSION['idcompte']);
 } else {
     $idcompte = null;

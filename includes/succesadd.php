@@ -22,7 +22,6 @@ if (!$succesexiste): ?>
                 <?= $nouveausucces ?>
             </a>
         </div>
-        <script src="/escaperpg/scripts/succescount.js"></script>
     <?php else: ?>
         <div class="succesapercu">
             <div class="<?= $rarete ?>"></div>
@@ -30,6 +29,5 @@ if (!$succesexiste): ?>
                 <?= $nouveausucces ?>
             </a>
         </div>
-        <script src="/escaperpg/scripts/succescountoffline.js"></script>
     <?php endif; ?>
 <?php endif; ?>

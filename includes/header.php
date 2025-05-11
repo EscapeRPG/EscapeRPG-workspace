@@ -6,7 +6,7 @@
 </header>
 
 <?php
-include_once $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/incmembers.php";
+include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/incmembers.php";
 
 if (isset($_POST['indice'])) {
     echo '<div id="succespopup">';
@@ -15,7 +15,7 @@ if (isset($_POST['indice'])) {
     $description = 'indice';
     $cache = 'non';
     $rarete = 'succesnormal';
-    include_once $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/succesadd.php";
+    include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/succesadd.php";
     echo '</div>';
 }
 
@@ -26,6 +26,6 @@ if (isset($_POST['reponse'])) {
     $description = 'réponse';
     $cache = 'non';
     $rarete = 'succesnormal';
-    include_once $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/succesadd.php";
+    include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/succesadd.php";
     echo '</div>';
 }

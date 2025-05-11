@@ -19,8 +19,10 @@
         'oe', 'r', 'r', 'r', 'r', 'r', 'r', 's', 's', 's', 's', 's', 's', 's', 's', 't', 't', 't', 't', 't', 't', 'u', 'u', 'u', 'u', 'u', 'u', 'u', 'u', 'u', 'u', 'u', 'u', 'w', 'w', 'y',
         'y', 'y', 'z', 'z', 'z', 'z', 'z', 'z', 's', 'f', 'o', 'o', 'u', 'u', 'a', 'a', 'i', 'i', 'o', 'o', 'u', 'u', 'u', 'u', 'u', 'u', 'u', 'u', 'u', 'u', 'a', 'a', 'ae', 'ae', 'o', 'o', ''];
 
-    $_SESSION['page'] = $_SERVER['PHP_SELF'];
+    $_SESSION['page'] = htmlspecialchars($_SERVER['PHP_SELF'], ENT_QUOTES, 'UTF-8');
     
     try { $conn = new PDO('mysql:host=localhost;dbname=escapedrpg2534','root',''); $conn->query("SET NAMES 'utf8'"); } catch(Exception $e) { die('Erreur : '.$e->getMessage()); }
     
-    isset($_COOKIE['LOGGED_USER']) ? $nomcompte = $_COOKIE['LOGGED_USER'] : $nomcompte = htmlspecialchars($_SESSION['idcompte']);
+    if (isset ($_SESSION['loggedin']) && $_SESSION['loggedin']) {
+        $nomcompte = isset($_COOKIE['LOGGED_USER']) ?  $_COOKIE['LOGGED_USER'] : htmlspecialchars($_SESSION['idcompte']);
+    }

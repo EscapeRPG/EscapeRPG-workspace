@@ -1,0 +1,9 @@
+<link rel="stylesheet" href="/escaperpg/css/styleDialogues.css">
+<link rel="stylesheet" href="/escaperpg/css/styleCartes.css">
+<link rel="stylesheet" href="/escaperpg/css/styleAventuresInputs.css">
+<link rel="stylesheet" href="/escaperpg/css/styleBoutonsIndices.css">
+<link rel="stylesheet" href="/escaperpg/css/styleSpanTexts.css">
+<link rel="stylesheet" href="/escaperpg/css/styleCompteBouton.css">
+<link rel="stylesheet" href="/escaperpg/css/styleFooterAventures.css">
+<link rel="stylesheet" href="/escaperpg/css/styleLoader.css">
+<link rel="stylesheet" href="/escaperpg/css/styleSucces.css">

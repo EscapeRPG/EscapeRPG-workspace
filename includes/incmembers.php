@@ -5,7 +5,9 @@ try {
 } catch (Exception $e) {
     die('Erreur : ' . $e->getMessage());
 }
+
 isset($_COOKIE['LOGGED_USER']) ? $_SESSION['loggedin'] = true : null;
+
 if (isset($_SESSION['loggedin'])) {
     if ($_SESSION['loggedin']) {
         isset($_COOKIE['LOGGED_USER']) ? $nomcompte = $_COOKIE['LOGGED_USER'] : $nomcompte = htmlspecialchars($_SESSION['idcompte']);
