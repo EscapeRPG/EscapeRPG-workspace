@@ -115,12 +115,12 @@ while ($useravatar = $requser->fetch()) {
             </form>
             <form action="m?id=<?= $nomcompte ?>" method="post"><input type="submit" name="retour" value="Retour"></form>
         </div>
-        </div>
-        <div id="load">
-            <div id="loader"></div>
-        </div>
-        <script src="/escaperpg/scripts/aventures-chargement.js"></script>
-        <?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/footer.php"; ?>
+    </main>
+    <div id="load">
+        <div id="loader"></div>
+    </div>
+    <script src="/escaperpg/scripts/aventures-chargement.js"></script>
+    <?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/footer.php"; ?>
 </body>
 
 </html>
