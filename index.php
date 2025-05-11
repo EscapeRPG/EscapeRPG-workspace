@@ -8,14 +8,7 @@ ini_set("safe_mode", "off"); ?>
     <script type="text/javascript" src="/escaperpg/lightbox/js/scriptaculous.js?load=effects,builder"></script>
     <script type="text/javascript" src="/escaperpg/lightbox/js/lightbox.js"></script>
     <link rel="stylesheet" href="/escaperpg/lightbox/css/lightbox.css" type="text/css" media="screen">
-    <link rel="stylesheet" href="/escaperpg/css/style.css">
-    <link rel="stylesheet" href="/escaperpg/css/styleDialogues.css">
-    <link rel="stylesheet" href="/escaperpg/css/styleCartes.css">
-    <link rel="stylesheet" href="/escaperpg/css/styleLiens.css">
-    <link rel="stylesheet" href="/escaperpg/css/styleCompteBouton.css">
-    <link rel="stylesheet" href="/escaperpg/css/styleMembres.css">
-    <link rel="stylesheet" href="/escaperpg/css/styleSucces.css">
-    <link rel="stylesheet" href="/escaperpg/css/styleLoader.css">
+    <?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/styleGeneral.php"; ?>
     <link href="https://escaperpg.com/images/partage.png" rel="image_src">
     <meta charset="utf-8">
     <meta name="keywords" CONTENT="syrphin, emilien, francois, françois, escape, game, room, jdr, rpg, jeu, énigme, enigme, réflexion, reflexion, jeu, rôle, role" />
@@ -24,7 +17,7 @@ ini_set("safe_mode", "off"); ?>
 
 <body>
     <main>
-        <?php include_once $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/incmembers.php"; ?>
+        <?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/incmembers.php"; ?>
         <nav>
             <div class="accueil"><a href="#bloc1"><img src="/escaperpg/images/home.png" id="accueilLink" alt="accueil"></a></div><br>
             <div class="accueil"><a href="#bloc2"><img src="/escaperpg/images/aventuresnav.png" id="aventuresLink" alt="lien aventures"></a></div><br>
@@ -104,16 +97,16 @@ ini_set("safe_mode", "off"); ?>
                 </div>
             </div>
         </div>
-        <div id="bloc2"><?php include_once $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/aventures.php"; ?></div>
-        <div id="bloc3"><?php include_once $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/regles.php"; ?></div>
-        <div id="bloc4"><?php include_once $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/liens.php"; ?></div>
+        <div id="bloc2"><?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/aventures.php"; ?></div>
+        <div id="bloc3"><?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/regles.php"; ?></div>
+        <div id="bloc4"><?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/liens.php"; ?></div>
     </div>
     <div id="load">
         <div id="loader"></div>
     </div>
     <script src="/escaperpg/scripts/animations.js"></script>
     <script src="/escaperpg/scripts/chargement.js"></script>
-    <?php include_once $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/footer.php"; ?>
+    <?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/footer.php"; ?>
 </body>
 
 </html>
