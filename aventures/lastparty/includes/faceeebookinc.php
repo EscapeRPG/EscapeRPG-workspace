@@ -131,7 +131,7 @@
         </div>
         <div class="comment">
             <img src="/escaperpg/images/lastparty/edouard.png" alt="edouard">
-            <div class="commentaire">>
+            <div class="commentaire">
                 <div class="name">
                     Edouard Le Tellier
                 </div>
@@ -141,7 +141,7 @@
             </div>
             <br>
             <img src="/escaperpg/images/lastparty/antoine.png" alt="antoine">
-            <div class="commentaire">>
+            <div class="commentaire">
                 <div class="name">
                     Antoine Ballet
                 </div>
@@ -151,7 +151,7 @@
             </div>
             <br>
             <img src="/escaperpg/images/lastparty/marine.png" alt="marine">
-            <div class="commentaire">>
+            <div class="commentaire">
                 <div class="name">
                     Marine Després
                 </div>
@@ -211,7 +211,7 @@
         </div>
         <div class="comment">
             <img src="/escaperpg/images/lastparty/francois.png" alt="françois">
-            <div class="commentaire">>
+            <div class="commentaire">
                 <div class="name">
                     François Duquesne
                 </div>
@@ -221,7 +221,7 @@
             </div>
             <br>
             <img src="/escaperpg/images/lastparty/maxou.png" alt="maxou">
-            <div class="commentaire">>
+            <div class="commentaire">
                 <div class="name">
                     Maxou Robinaud
                 </div>
@@ -231,7 +231,7 @@
             </div>
             <br>
             <img src="/escaperpg/images/lastparty/francois.png" alt="françois">
-            <div class="commentaire">>
+            <div class="commentaire">
                 <div class="name">
                     François Duquesne
                 </div>

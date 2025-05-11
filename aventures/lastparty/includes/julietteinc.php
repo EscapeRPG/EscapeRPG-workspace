@@ -48,7 +48,7 @@
             <img src="/escaperpg/images/lastparty/biere.png" alt="emoji bière">
             <img src="/escaperpg/images/lastparty/biere.png" alt="emoji bière">
         </p>
-        <div id="comment">
+        <div class="comment">
             <img src="/escaperpg/images/lastparty/oscar.png" alt="oscar">
             <div class="commentaire">
                 <div class="name">
@@ -174,7 +174,7 @@
                 21
             </p>
         </div>
-        <div id="comment">
+        <div class="comment">
             <img src="/escaperpg/images/lastparty/oscar.png" alt="oscar">
             <div class="commentaire">
                 <div class="name">

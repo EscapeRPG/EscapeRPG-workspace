@@ -1,4 +1,4 @@
-<?php include_once $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/entete.php"; ?>
+<?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/entete.php"; ?>
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -7,47 +7,23 @@
     <script type="text/javascript" src="/escaperpg/lightbox/js/scriptaculous.js?load=effects,builder"></script>
     <script type="text/javascript" src="/escaperpg/lightbox/js/lightbox.js"></script>
     <link rel="stylesheet" href="/escaperpg/lightbox/css/lightbox.css" type="text/css" media="screen">
-    <link rel="stylesheet" href="/escaperpg/aventures/lastparty/css/style.css">
-    <link rel="stylesheet" href="/escaperpg/css/styleSucces.css">
-    <link rel="stylesheet" href="/escaperpg/css/styleAventuresInputs.css">
-    <link rel="stylesheet" href="/escaperpg/css/styleCompteBouton.css">
-    <link rel="stylesheet" href="/escaperpg/css/styleDialogues.css">
-    <link rel="stylesheet" href="/escaperpg/css/styleFooterAventures.css">
-    <link rel="stylesheet" href="/escaperpg/css/styleLoader.css">
+    <?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/styleAventures.php"; ?>
+    <?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/aventures/lastparty/includes/styleLastParty.php"; ?>
     <meta charset="utf-8">
     <title>La fin de l'histoire - Last Party</title>
 </head>
 
 <body>
-    <?php include_once $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/header.php"; ?>
+    <?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/header.php"; ?>
     <div id="banniere"><img src="/escaperpg/images/lastparty/lpmini.png" alt="last party bannière"></div>
     <main>
         <nav><img src="/escaperpg/images/lastparty/jonathan.png" alt="jonathan"></nav>
         <div id="txt">
-            <?php if (isset($_POST['envoyermessage'])): ?>
-                <div id="succespopup">
-                    <?php
-                    $nouveausucces = '<img src="/escaperpg/images/succes/general/commentaire.png"><span><u><b>Crieur public</b></u><br>Laisser un commentaire en fin d\'aventure</span>';
-                    $scenario = 'general';
-                    $description = 'commentaire';
-                    $cache = 'non';
-                    $rarete = 'succesbronze';
-                    include_once $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/succesadd.php";
-                    ?>
-                </div>
-                <?php
-                if ($_SESSION['loggedin']) {
-                    $nom = htmlspecialchars($_SESSION['idcompte']);
-                } else {
-                    $nom = $_POST['nom'];
-                }
-                $message = $_POST['message'];
-                $stmt = $conn->prepare("INSERT INTO lastpartycoms (pseudo, message) VALUES (?, ?)");
-                $stmt->execute([$nom, $message]);
-                ?>
-                Merci d'avoir enregistré votre commentaire !
-            <?php endif; ?>
-            <?php if (isset($_POST['fin']) || isset($_SESSION['fin'])): ?>
+            <?php if (isset($_POST['envoyermessage'])):
+                $comScenarioEnCours = 'lastpartycoms';
+                include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/succesComment.php";
+            endif;
+            if (isset($_POST['fin']) || isset($_SESSION['fin'])): ?>
                 <div id="succespopup">
                     <?php
                     $nouveausucces = '<img src="/escaperpg/images/succes/general/fin.png"><span><u><b>Une page qui se tourne...</b></u><br>Terminer sa première aventure</span>';
@@ -55,13 +31,18 @@
                     $description = 'fin';
                     $cache = 'non';
                     $rarete = 'succesbronze';
-                    include_once $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/succesadd.php";
+                    include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/succesadd.php";
                     $nouveausucces = '<img src="/escaperpg/images/succes/lastparty/fin.png"><span><u><b>Recouvrer la mémoire</b></u><br>Terminer l\'aventure</span>';
                     $scenario = 'lastparty';
                     $description = 'fin';
                     $cache = 'non';
                     $rarete = 'succesbronze';
-                    include_once $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/succesadd.php";
+                    include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/succesadd.php";
+                    if (!$succesexiste) {
+                        echo $_SESSION['loggedin'] ?
+                            '<script src="/escaperpg/scripts/succescount.js"></script>' :
+                            '<script src="/escaperpg/scripts/succescountoffline.js"></script>';
+                    }
                     ?>
                 </div>
                 <img src="/escaperpg/images/etoilefinpleine.png" alt="étoile fin">
@@ -81,71 +62,9 @@
                     <br>
                     Vous pouvez également laisser un commentaire directement ci-dessous pour faire savoir que vous avez terminé ce scénario !
                 </p>
-                <?php try {
-                    $conn = new PDO('mysql:host=localhost;dbname=escapedrpg2534', 'root', '');
-                    $conn->query("SET NAMES 'utf8'");
-                } catch (Exception $e) {
-                    die('Erreur : ' . $e->getMessage());
-                }
-                $nombreDeComsParPage = 5;
-                $stmt = $conn->query("SELECT COUNT(*) AS nb_coms FROM lastpartycoms");
-                $donnees = $stmt->fetch();
-                $stmt->closeCursor();
-                $totalDesComs = $donnees['nb_coms'];
-                $nombreDePages  = ceil($totalDesComs / $nombreDeComsParPage);
-                if ($nombreDePages > 10) {
-                    $nombreDePages = 10;
-                }
-                if (isset($_GET['page'])) {
-                    $page = $_GET['page'];
-                } else {
-                    $page = 1;
-                }
-                $premierComAafficher = ($page - 1) * $nombreDeComsParPage;
-                $reponse = $conn->query("SELECT * FROM lastpartycoms ORDER BY id DESC LIMIT " . $premierComAafficher . ", " . $nombreDeComsParPage);
-                ?>
-                <?php if ($totalDesComs == 0): ?>
-                    <p>Apparemment, personne n'a laissé de commentaire avant vous !</p>
-                <?php else: ?>
-                    <?php while ($donnees = $reponse->fetch()): ?>
-                        <div class="dialogue">
-                            <div class="portrait"><i><?= $donnees['pseudo'] ?> : </i></div>
-                            <div class="bulleperso">
-                                <p><?= $donnees['message'] ?></p>
-                            </div>
-                        </div>
-                    <?php endwhile; ?>
-                <?php endif; ?>
-                <?php $reponse->closeCursor(); ?>
-                <br>
-                <div class="dialogue">
-                    <?php for ($i = 1; $i <= $nombreDePages; $i++): ?>
-                        <?php if ($i == $nombreDePages): ?>
-                            <a href="fin.php?page=<?= $i ?>">Page <?= $i ?></a>
-                        <?php else: ?>
-                            <a href="fin.php?page=<?= $i ?>">Page <?= $i ?></a> -
-                        <?php endif; ?>
-                    <?php endfor; ?>
-                </div>
-                <br>
-                <form action="fin" method="post">
-                    <fieldset>
-                        <label for="nom">Votre nom (20 caractères max) :</label>
-                        <input type="text" name="nom" id="nom" placeholder="Votre pseudo" value="<?= $_SESSION['loggedin'] ? ucwords($_SESSION['idcompte']) : null ?>" required><br>
-                        <br>
-                        <label for=" message">Votre message :</label>
-                        <textarea name="message" id="message" rows="7" cols="50">J'ai terminé ce scénario !</textarea><br>
-                        <br>
-                        <input type="submit" name="envoyermessage" value="Laisser un commentaire.">
-                    </fieldset>
-                </form>
-                <p>À bientôt pour de nouvelles aventures !</p>
-                <form action="/index.php#bloc2" method="post">
-                    <input type="submit" name="retour" value="Retour à l'accueil.">
-                </form>
-                <?php $_SESSION['fin'] = true; ?>
+                <?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/commentairesAventures.php"; ?>
             <?php else: ?>
-                <?php include_once $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/sessioninc.php"; ?>
+                <?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/sessioninc.php"; ?>
                 <p>
                     Vous parcourez à nouveau les lignes de cet email, n'en croyant pas vos yeux.<br>
                     Mais oui ! Ce que dit ce Darren Braun est vrai ! Vous vous souvenez de l'intégralité de votre soirée d'hier à présent !<br>
@@ -170,7 +89,7 @@
         <div id="loader"></div>
     </div>
     <script src="/escaperpg/scripts/aventures-chargement.js"></script>
-    <?php include_once $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/aventures/lastparty/includes/footer.php"; ?>
+    <?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/aventures/lastparty/includes/footer.php"; ?>
 </body>
 
 </html>

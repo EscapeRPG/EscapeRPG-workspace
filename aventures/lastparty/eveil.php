@@ -1,4 +1,4 @@
-<?php include_once $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/entete.php"; ?>
+<?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/entete.php"; ?>
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -7,24 +7,17 @@
     <script type="text/javascript" src="/escaperpg/lightbox/js/scriptaculous.js?load=effects,builder"></script>
     <script type="text/javascript" src="/escaperpg/lightbox/js/lightbox.js"></script>
     <link rel="stylesheet" href="/escaperpg/lightbox/css/lightbox.css" type="text/css" media="screen">
-    <link rel="stylesheet" href="/escaperpg/aventures/lastparty/css/style.css">
-    <link rel="stylesheet" href="/escaperpg/css/styleAventuresInputs.css">
-    <link rel="stylesheet" href="/escaperpg/css/styleBoutonsIndices.css">
-    <link rel="stylesheet" href="/escaperpg/css/styleSpanTexts.css">
-    <link rel="stylesheet" href="/escaperpg/css/styleCompteBouton.css">
-    <link rel="stylesheet" href="/escaperpg/css/styleDialogues.css">
-    <link rel="stylesheet" href="/escaperpg/css/styleFooterAventures.css">
-    <link rel="stylesheet" href="/escaperpg/css/styleLoader.css">
-    <link rel="stylesheet" href="/escaperpg/css/styleSucces.css">
+    <?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/styleAventures.php"; ?>
+    <?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/aventures/lastparty/includes/styleLastParty.php"; ?>
     <meta charset="utf-8">
     <title>Éveil - Last Party</title>
 </head>
 
 <body>
-    <?php include_once $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/header.php"; ?>
+    <?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/header.php"; ?>
     <div id="banniere"><img src="/escaperpg/images/lastparty/lpmini.png" alt="last party bannière"></div>
     <main>
-        <?php include_once $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/aventures/lastparty/includes/nav.php"; ?>
+        <?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/aventures/lastparty/includes/nav.php"; ?>
         <div id="txt">
             <?php if (isset($_POST['suivant']) || isset($_SESSION['eveil'])): ?>
                 <?php $_SESSION['eveil'] = true; ?>
@@ -49,7 +42,7 @@
                 $indice1 = "Peut-être devriez-vous essayer de trouver le moyen de contacter l'un de vos proches ?";
                 $indice2 = "Il semble d'ailleurs que quelqu'un ait récemment tenté de vous joindre.";
                 $indice3 = "Votre téléphone doit bien être quelque part.";
-                include_once $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/indices.php";
+                include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/indices.php";
                 ?>
             <?php else: ?>
                 <audio src="/escaperpg/sons/lastparty/reveil.mp3" autoplay></audio>
@@ -69,7 +62,7 @@
         <div id="loader"></div>
     </div>
     <script src="/escaperpg/scripts/aventures-chargement.js"></script>
-    <?php include_once $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/aventures/lastparty/includes/footer.php"; ?>
+    <?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/aventures/lastparty/includes/footer.php"; ?>
 </body>
 
 </html>

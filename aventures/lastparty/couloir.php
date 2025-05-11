@@ -1,4 +1,4 @@
-<?php include_once $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/entete.php"; ?>
+<?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/entete.php"; ?>
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -7,24 +7,17 @@
     <script type="text/javascript" src="/escaperpg/lightbox/js/scriptaculous.js?load=effects,builder"></script>
     <script type="text/javascript" src="/escaperpg/lightbox/js/lightbox.js"></script>
     <link rel="stylesheet" href="/escaperpg/lightbox/css/lightbox.css" type="text/css" media="screen">
-    <link rel="stylesheet" href="/escaperpg/aventures/lastparty/css/style.css">
-    <link rel="stylesheet" href="/escaperpg/css/styleAventuresInputs.css">
-    <link rel="stylesheet" href="/escaperpg/css/styleBoutonsIndices.css">
-    <link rel="stylesheet" href="/escaperpg/css/styleSpanTexts.css">
-    <link rel="stylesheet" href="/escaperpg/css/styleCompteBouton.css">
-    <link rel="stylesheet" href="/escaperpg/css/styleDialogues.css">
-    <link rel="stylesheet" href="/escaperpg/css/styleFooterAventures.css">
-    <link rel="stylesheet" href="/escaperpg/css/styleLoader.css">
-    <link rel="stylesheet" href="/escaperpg/css/styleSucces.css">
+    <?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/styleAventures.php"; ?>
+    <?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/aventures/lastparty/includes/styleLastParty.php"; ?>
     <meta charset="utf-8">
     <title>Couloir d'entrée - Last Party</title>
 </head>
 
 <body>
-    <?php include_once $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/header.php"; ?>
+    <?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/header.php"; ?>
     <div id="banniere"><img src="/escaperpg/images/lastparty/lpmini.png" alt="last party bannière"></div>
     <main>
-        <?php include_once $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/aventures/lastparty/includes/nav.php"; ?>
+        <?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/aventures/lastparty/includes/nav.php"; ?>
         <div id="txt">
             <?php if (isset($_POST['add'])): ?>
                 <div id="succespopup">
@@ -34,7 +27,12 @@
                     $description = 'carte';
                     $cache = 'oui';
                     $rarete = 'succesnormal';
-                    include_once $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/succesadd.php";
+                    include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/succesadd.php";
+                    if (!$succesexiste) {
+                        echo $_SESSION['loggedin'] ?
+                            '<script src="/escaperpg/scripts/succescount.js"></script>' :
+                            '<script src="/escaperpg/scripts/succescountoffline.js"></script>';
+                    }
                     ?>
                 </div>
                 <script src="/escaperpg/scripts/inventaireadd.js"></script>
@@ -56,7 +54,7 @@
                 $indice1 = "Essayez de contacter ce mystérieux Darren Braun.";
                 $indice2 = "L'une des informations présente sur la carte devrait vous aider à avancer.";
                 $indice3 = "Peut-être vous faudra-t-il utiliser un outil externe à EscapeRPG.";
-                include_once $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/indices.php";
+                include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/indices.php";
                 ?>
             <?php else: ?>
                 <div id="enigme">
@@ -68,7 +66,7 @@
                 <form action="couloir" method="post">
                     <input type="submit" name="add" value="Prendre.">
                 </form>
-                <?php include_once $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/resetIndices.php"; ?>
+                <?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/resetIndices.php"; ?>
             <?php endif; ?>
         </div>
         </div>
@@ -76,7 +74,7 @@
             <div id="loader"></div>
         </div>
         <script src="/escaperpg/scripts/aventures-chargement.js"></script>
-        <?php include_once $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/aventures/lastparty/includes/footer.php"; ?>
+        <?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/aventures/lastparty/includes/footer.php"; ?>
 </body>
 
 </html>

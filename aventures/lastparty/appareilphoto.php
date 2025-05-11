@@ -1,4 +1,4 @@
-<?php include_once $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/entete.php"; ?>
+<?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/entete.php"; ?>
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -7,23 +7,17 @@
     <script type="text/javascript" src="/escaperpg/lightbox/js/scriptaculous.js?load=effects,builder"></script>
     <script type="text/javascript" src="/escaperpg/lightbox/js/lightbox.js"></script>
     <link rel="stylesheet" href="/escaperpg/lightbox/css/lightbox.css" type="text/css" media="screen">
-    <link rel="stylesheet" href="/escaperpg/aventures/lastparty/css/style.css">
-    <link rel="stylesheet" href="/escaperpg/css/styleAventuresInputs.css">
-    <link rel="stylesheet" href="/escaperpg/css/styleBoutonsIndices.css">
-    <link rel="stylesheet" href="/escaperpg/css/styleCompteBouton.css">
-    <link rel="stylesheet" href="/escaperpg/css/styleSpanTexts.css">
-    <link rel="stylesheet" href="/escaperpg/css/styleFooterAventures.css">
-    <link rel="stylesheet" href="/escaperpg/css/styleLoader.css">
-    <link rel="stylesheet" href="/escaperpg/css/styleSucces.css">
+    <?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/styleAventures.php"; ?>
+    <?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/aventures/lastparty/includes/styleLastParty.php"; ?>
     <meta charset="utf-8">
     <title>Photos - Last Party</title>
 </head>
 
 <body>
-    <?php include_once $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/header.php"; ?>
+    <?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/header.php"; ?>
     <div id="banniere"><img src="/escaperpg/images/lastparty/lpmini.png" alt="last party bannière"></div>
     <main>
-        <?php include_once $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/aventures/lastparty/includes/nav.php"; ?>
+        <?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/aventures/lastparty/includes/nav.php"; ?>
         <div id="txt">
             <?php if (isset($_POST['suivant']) || isset($_SESSION['appareilphoto'])): ?>
                 <?php $_SESSION['appareilphoto'] = true ?>
@@ -44,7 +38,7 @@
                 $indice1 = "Vous êtes actuellement en train d'examiner votre appareil photo et cherchez à vous rendre dans le couloir.";
                 $indice2 = "Le couloir est un lieu, comme une adresse. À quel endroit pourriez-vous en entrer une ?";
                 $indice3 = "N'hésitez pas à consulter les <a href='/escaperpg/index.php#bloc2' target='_blank' rel='noreferrer'>règles</a> pour voir comment vous en sortir.";
-                include_once $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/indices.php";
+                include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/indices.php";
                 ?>
             <?php else: ?>
                 <p>
@@ -59,7 +53,7 @@
                 <form action="appareilphoto" method="post">
                     <input type="submit" name="suivant" value="Suivant.">
                 </form>
-                <?php include_once $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/resetIndices.php"; ?>
+                <?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/resetIndices.php"; ?>
             <?php endif; ?>
         </div>
     </main>
@@ -67,7 +61,7 @@
         <div id="loader"></div>
     </div>
     <script src="/escaperpg/scripts/aventures-chargement.js"></script>
-    <?php include_once $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/aventures/lastparty/includes/footer.php"; ?>
+    <?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/aventures/lastparty/includes/footer.php"; ?>
 </body>
 
 </html>

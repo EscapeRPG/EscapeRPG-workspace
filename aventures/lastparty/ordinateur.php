@@ -1,4 +1,4 @@
-<?php include_once $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/entete.php"; ?>
+<?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/entete.php"; ?>
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -7,24 +7,17 @@
     <script type="text/javascript" src="/escaperpg/lightbox/js/scriptaculous.js?load=effects,builder"></script>
     <script type="text/javascript" src="/escaperpg/lightbox/js/lightbox.js"></script>
     <link rel="stylesheet" href="/escaperpg/lightbox/css/lightbox.css" type="text/css" media="screen">
-    <link rel="stylesheet" href="/escaperpg/aventures/lastparty/css/style.css">
-    <link rel="stylesheet" href="/escaperpg/css/styleAventuresInputs.css">
-    <link rel="stylesheet" href="/escaperpg/css/styleBoutonsIndices.css">
-    <link rel="stylesheet" href="/escaperpg/css/styleSpanTexts.css">
-    <link rel="stylesheet" href="/escaperpg/css/styleCompteBouton.css">
-    <link rel="stylesheet" href="/escaperpg/css/styleFooterAventures.css">
-    <link rel="stylesheet" href="/escaperpg/css/styleLoader.css">
-    <link rel="stylesheet" href="/escaperpg/aventures/lastparty/css/styleFaceeebook.css">
-    <link rel="stylesheet" href="/escaperpg/css/styleSucces.css">
+    <?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/styleAventures.php"; ?>
+    <?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/aventures/lastparty/includes/styleLastParty.php"; ?>
     <meta charset="utf-8">
     <title>Faceeebook - Last Party</title>
 </head>
 
 <body>
-    <?php include_once $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/header.php"; ?>
+    <?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/header.php"; ?>
     <div id="banniere"><img src="/escaperpg/images/lastparty/lpmini.png" alt="last party bannière"></div>
     <main>
-        <?php include_once $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/aventures/lastparty/includes/nav.php"; ?>
+        <?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/aventures/lastparty/includes/nav.php"; ?>
         <div id="txt">
             <?php if (isset($_POST['rechercher']) && str_replace($search, $replace, stripslashes($_POST['rechercher'])) == "juliette" || isset($_SESSION['juliette'])): ?>
                 <?php $_SESSION['juliette'] = true; ?>
@@ -35,21 +28,24 @@
                     $description = 'juliette';
                     $cache = 'oui';
                     $rarete = 'succesnormal';
-                    include_once $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/succesadd.php";
+                    include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/succesadd.php";
+                    echo $_SESSION['loggedin'] ?
+                        '<script src="/escaperpg/scripts/succescount.js"></script>' :
+                        '<script src="/escaperpg/scripts/succescountoffline.js"></script>';
                     ?>
                 </div>
-                <?php include_once $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/aventures/lastparty/includes/julietteinc.php"; ?>
+                <?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/aventures/lastparty/includes/julietteinc.php"; ?>
                 <p>Apparemment, vous n'êtes pas le seul à avoir des trous de mémoire. Mais que signifie tout cela ?</p>
                 <form action="telephone" method="post">
                     <input type="submit" name="retour" value="DING !">
                 </form>
                 <?php
                 $_SESSION['faceeebook'] = true;
-                include_once $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/resetIndices.php";
+                include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/resetIndices.php";
                 ?>
             <?php elseif (isset($_POST['connexion']) || isset($_SESSION['connecte'])): ?>
                 <?php if (isset($_SESSION['connecte'])): ?>
-                    <?php include_once $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/aventures/lastparty/includes/faceeebookinc.php"; ?>
+                    <?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/aventures/lastparty/includes/faceeebookinc.php"; ?>
                     <p>
                         Bien ! Vous êtes maintenant connecté, mais votre fil d'actualités est bien rempli et il serait long et fastidieux de le parcourir jusqu'à trouver le dernier post de votre amie.<br>
                         <br>
@@ -60,7 +56,7 @@
                     $indice1 = "Il faudrait trouver comment accéder facilement au profil de Juliette.";
                     $indice2 = "Il y a sans doute un endroit sur la page destiné à effectuer des recherches.";
                     $indice3 = "Consulter le haut de l'écran de Jonathan.";
-                    include_once $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/indices.php";
+                    include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/indices.php";
                     if (!in_array('juliette', $_SESSION['mdp'])) {
                         $_SESSION['mdp'][] = 'juliette';
                     }
@@ -77,7 +73,12 @@
                             $description = 'connexion';
                             $cache = 'oui';
                             $rarete = 'succesnormal';
-                            include_once $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/succesadd.php";
+                            include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/succesadd.php";
+                            if (!$succesexiste) {
+                                echo $_SESSION['loggedin'] ?
+                                    '<script src="/escaperpg/scripts/succescount.js"></script>' :
+                                    '<script src="/escaperpg/scripts/succescountoffline.js"></script>';
+                            }
                             ?>
                         </div>
                         <p>
@@ -94,7 +95,7 @@
                             $_SESSION['inventaire'] = array_values($_SESSION['inventaire']);
                         }
                         $_SESSION['connecte'] = true;
-                        include_once $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/resetIndices.php";
+                        include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/resetIndices.php";
                         ?>
                     <?php else: ?>
                         <p>
@@ -141,7 +142,7 @@
                 $indice1 = "Votre mot de passe doit être inscrit dans votre carnet, pour accéder à Faceeebook.";
                 $indice2 = "Ouvrez votre inventaire pour consulter votre carnet";
                 $indice3 = "Il y a beaucoup de mots de passe, cherchez celui de Faceeebook";
-                include_once $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/indices.php";
+                include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/indices.php";
                 if (!in_array('jonathan-lt', $_SESSION['mdp'])) {
                     $_SESSION['mdp'][] = 'jonathan-lt';
                 }
@@ -165,7 +166,7 @@
                     $_SESSION['mdp'][] = 'jonathan-lt';
                 }
                 ?>
-                <?php include_once $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/resetIndices.php"; ?>
+                <?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/resetIndices.php"; ?>
             <?php endif; ?>
         </div>
     </main>
@@ -173,7 +174,7 @@
         <div id="loader"></div>
     </div>
     <script src="/escaperpg/scripts/aventures-chargement.js"></script>
-    <?php include_once $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/aventures/lastparty/includes/footer.php"; ?>
+    <?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/aventures/lastparty/includes/footer.php"; ?>
 </body>
 
 </html>
