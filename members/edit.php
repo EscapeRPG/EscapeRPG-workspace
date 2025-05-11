@@ -23,18 +23,14 @@ while ($useravatar = $requser->fetch()) {
     <script type="text/javascript" src="/escaperpg/lightbox/js/scriptaculous.js?load=effects,builder"></script>
     <script type="text/javascript" src="/escaperpg/lightbox/js/lightbox.js"></script>
     <link rel="stylesheet" href="/escaperpg/lightbox/css/lightbox.css" type="text/css" media="screen">
-    <link rel="stylesheet" href="/escaperpg/css/style.css">
-    <link rel="stylesheet" href="/escaperpg/css/styleCompteBouton.css">
-    <link rel="stylesheet" href="/escaperpg/css/styleMembres.css">
-    <link rel="stylesheet" href="/escaperpg/css/styleFormulaires.css">
-    <link rel="stylesheet" href="/escaperpg/css/styleLoader.css">
+    <?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/styleGeneral.php"; ?>
     <meta charset="utf-8">
     <title>EscapeRPG - Édition de profil</title>
 </head>
 
 <body>
     <main>
-        <?php include_once $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/header.php"; ?>
+        <?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/header.php"; ?>
         <div id="formconnexion">
             <?php
             if (isset($_POST['maj'])) {
@@ -119,12 +115,12 @@ while ($useravatar = $requser->fetch()) {
             </form>
             <form action="m?id=<?= $nomcompte ?>" method="post"><input type="submit" name="retour" value="Retour"></form>
         </div>
-    </div>
-    <div id="load">
-        <div id="loader"></div>
-    </div>
-    <script src="/escaperpg/scripts/aventures-chargement.js"></script>
-    <?php include_once $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/footer.php"; ?>
+        </div>
+        <div id="load">
+            <div id="loader"></div>
+        </div>
+        <script src="/escaperpg/scripts/aventures-chargement.js"></script>
+        <?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/footer.php"; ?>
 </body>
 
 </html>

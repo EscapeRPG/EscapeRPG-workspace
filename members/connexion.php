@@ -18,11 +18,7 @@ isset($_COOKIE['LOGGED_USER']) ? $_SESSION['loggedin'] = true : null;
     <script type="text/javascript" src="/escaperpg/lightbox/js/scriptaculous.js?load=effects,builder"></script>
     <script type="text/javascript" src="/escaperpg/lightbox/js/lightbox.js"></script>
     <link rel="stylesheet" href="/escaperpg/lightbox/css/lightbox.css" type="text/css" media="screen">
-    <link rel="stylesheet" href="/escaperpg/css/style.css">
-    <link rel="stylesheet" href="/escaperpg/css/styleCompteBouton.css">
-    <link rel="stylesheet" href="/escaperpg/css/styleMembres.css">
-    <link rel="stylesheet" href="/escaperpg/css/styleFormulaires.css">
-    <link rel="stylesheet" href="/escaperpg/css/styleLoader.css">
+    <?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/styleGeneral.php"; ?>
     <meta charset="utf-8">
     <title>EscapeRPG - Connexion</title>
 </head>
@@ -30,7 +26,7 @@ isset($_COOKIE['LOGGED_USER']) ? $_SESSION['loggedin'] = true : null;
 <body>
     <main>
         <?php
-        include_once $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/header.php";
+        include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/header.php";
         try {
             $conn = new PDO('mysql:host=localhost;dbname=escapedrpg2534', 'root', '');
             $conn->query("SET NAMES 'utf8'");
@@ -235,12 +231,12 @@ isset($_COOKIE['LOGGED_USER']) ? $_SESSION['loggedin'] = true : null;
                 <a href="forgot_password">Mot de passe oublié ?</a>
             </div>
         <?php endif; ?>
-    </div>
-    <div id="load">
-        <div id="loader"></div>
-    </div>
-    <script src="/escaperpg/scripts/aventures-chargement.js"></script>
-    <?php include_once $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/footer.php"; ?>
+        </div>
+        <div id="load">
+            <div id="loader"></div>
+        </div>
+        <script src="/escaperpg/scripts/aventures-chargement.js"></script>
+        <?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/footer.php"; ?>
 </body>
 
 </html>
