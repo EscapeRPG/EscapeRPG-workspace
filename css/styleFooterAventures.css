@@ -39,5 +39,8 @@ footer {
 .footeraffichage {
     display: block;
     width: 100%;
-    padding: 10px 0px;
+  padding: 10px;
+  max-height: 250px;
+  overflow: auto;
+  margin: auto;
 }
