@@ -6,6 +6,8 @@ try {
     die('Erreur : ' . $e->getMessage());
 }
 
+$nomcompte = isset($_SESSION['loggedin']) && $_SESSION['loggedin'] ? htmlspecialchars($_SESSION['idcompte']) : null;
+
 $verifsucces = $conn->prepare("SELECT * FROM 0succes WHERE pseudo = ? AND scenario = ? AND description = ?");
 $verifsucces->execute([$nomcompte, $scenario, $description]);
 $succesexiste = $verifsucces->rowCount();
