@@ -19,20 +19,49 @@ $reponse = $conn->query("SELECT * FROM lastpartycoms ORDER BY id DESC LIMIT $pre
 if ($totalDesComs == 0): ?>
     <p>Apparemment, personne n'a laissé de commentaire avant vous !</p>
     <?php else:
+    function pseudoToHSL($pseudo)
+    {
+        $hash = crc32($pseudo);
+
+        // Hue : entre 0 et 360 degrés
+        $hue = $hash % 360;
+
+        // Saturation : entre 60 et 90 %
+        $saturation = 60 + ($hash % 30);
+
+        // Lightness de base : entre 40 et 60 %
+        $lightness = 100;
+
+        return [$hue, $saturation, $lightness];
+    }
+
     while ($donnees = $reponse->fetch()): ?>
+        <?php
+        list($h, $s, $l) = pseudoToHSL($donnees['pseudo']);
+        $l2 = max(0, $l - 40); // Plus sombre pour le dégradé
+        $l3 = max(0, $l - 60); // Plus sombre pour le dégradé
+        $l4 = max(0, $l - 70); // Plus sombre pour le dégradé
+        $l5 = max(0, $l - 90); // Plus sombre pour le dégradé
+        ?>
         <div class="dialogueCommentaire">
-            <div class="portraitCommentaire" style="background: linear-gradient(135deg, rgb(<?= rand(150, 255) ?>, <?= rand(150, 255) ?>, <?= rand(150, 255) ?>), rgb(<?= rand(50, 155) ?>, <?= rand(50, 155) ?>, <?= rand(50, 155) ?>)">
-                <p class="nomCommentaire"><?= $donnees['pseudo'] ?> :</p>
+            <div class="portraitCommentaire"
+                style="background: linear-gradient(150deg,
+                    hsl(<?= $h ?>, <?= $s ?>%, <?= $l ?>%) 2%,
+                    hsl(<?= $h ?>, <?= $s ?>%, <?= $l2 ?>%) 50%,
+                    hsl(<?= $h ?>, <?= $s ?>%, <?= $l3 ?>%) 75%,
+                    hsl(<?= $h ?>, <?= $s ?>%, <?= $l4 ?>%) 95%,
+                    hsl(<?= $h ?>, <?= $s ?>%, <?= $l5 ?>%))">
+                <p class="nomCommentaire"><?= htmlspecialchars($donnees['pseudo']) ?> :</p>
             </div>
             <div class="bulleCommentaire">
-                <p><?= $donnees['message'] ?></p>
+                <p><?= nl2br(htmlspecialchars($donnees['message'])) ?></p>
             </div>
         </div>
 <?php endwhile;
 endif;
 $reponse->closeCursor(); ?>
 <br>
-<div class="dialogue">
+<div class="dialogueCommentaire">
     <?php for ($i = 1; $i <= $nombreDePages; $i++): ?>
         <?php if ($i == $nombreDePages): ?>
             <a href="fin.php?page=<?= $i ?>">Page <?= $i ?></a>
