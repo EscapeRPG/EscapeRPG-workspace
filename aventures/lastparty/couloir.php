@@ -69,12 +69,12 @@
                 <?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/resetIndices.php"; ?>
             <?php endif; ?>
         </div>
-        </div>
-        <div id="load">
-            <div id="loader"></div>
-        </div>
-        <script src="/escaperpg/scripts/aventures-chargement.js"></script>
-        <?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/aventures/lastparty/includes/footer.php"; ?>
+    </main>
+    <div id="load">
+        <div id="loader"></div>
+    </div>
+    <script src="/escaperpg/scripts/aventures-chargement.js"></script>
+    <?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/aventures/lastparty/includes/footer.php"; ?>
 </body>
 
 </html>
