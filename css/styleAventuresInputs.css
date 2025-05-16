@@ -11,6 +11,13 @@ button {
     }
 }
 
+input[type="text"],
+input[type="password"] {
+    width: 100%;
+    max-width: 200px;
+    max-height: 20px;
+}
+
 input[type=submit] {
     width: 100%;
     max-width: 300px;
@@ -32,10 +39,4 @@ input[type=submit] {
     &:hover {
         background-color: rgb(220, 120, 0);
     }
-}
-
-input[type="text"] {
-  width: 100%;
-  max-width: 200px;
-  max-height: 20px;
 }
