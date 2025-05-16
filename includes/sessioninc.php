@@ -1,13 +1,17 @@
 <?php
-$loggedin = $_SESSION['loggedin'] ?? null;
 
-if (isset($_COOKIE['LOGGED_USER'])) {
-    $idcompte = $_COOKIE['LOGGED_USER'];
-} elseif (isset($_SESSION['loggedin']) && $_SESSION['loggedin']) {
-    $idcompte = htmlspecialchars($_SESSION['idcompte']);
-} else {
-    $idcompte = null;
-}
+if (isset($_COOKIE['session_token'])):
+    $stmt = $conn->prepare("SELECT user_id FROM user_session WHERE token = ? AND expires > NOW()");
+    $stmt->execute([$_COOKIE['session_token']]);
+    $user = $stmt->fetch();
+    if ($user):
+        $_SESSION['loggedin'] = true;
+        $_SESSION['idcompte'] = $user['user_id'];
+    endif;
+endif;
+
+$loggedin = $_SESSION['loggedin'] ?? null;
+$idcompte = $_SESSION['idcompte'] ?? null;
 
 session_unset();
 session_destroy();
