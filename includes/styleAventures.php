@@ -1,4 +1,5 @@
 <link rel="stylesheet" href="/escaperpg/css/styleDialogues.css">
+<link rel="stylesheet" href="/escaperpg/css/styleAventuresNav.css">
 <link rel="stylesheet" href="/escaperpg/css/styleCartes.css">
 <link rel="stylesheet" href="/escaperpg/css/styleAventuresInputs.css">
 <link rel="stylesheet" href="/escaperpg/css/styleBoutonsIndices.css">
