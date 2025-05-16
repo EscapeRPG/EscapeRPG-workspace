@@ -37,7 +37,7 @@
 	$_SESSION['intrusion'] = false; // L'intrusion n'a pas encore eu lieu et les chiens ne sont pas encore empoisonnés
 	$_SESSION['scof'] = false; // Le coffre-fort n'a pas été découvert
 	$_SESSION['tab'] = false; // Le joueur n'a pas cherché le tableau dans le salon
-	$_SESSION['note'] = false; // Le joueur n'a pas encore récupéré les aveux de Pellington
+	$_SESSION['aveux'] = false; // Le joueur n'a pas encore récupéré les aveux de Pellington
 	$_SESSION['magna'] = false; // Le Magna Mater n'a pas encore été trouvé
 	$_SESSION['restab'] = false; // Le joueur n'a pas encore trouvé les restes du tableau dans la cave
 	$_SESSION['coffrenigme'] = false; // Le joueur n'a pas trouvé toutes les pièces ou ne les a pas encore utilisées
