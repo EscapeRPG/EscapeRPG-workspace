@@ -1,4 +1,4 @@
-<?php include_once $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/entete.php"; ?>
+<?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/entete.php"; ?>
 <!DOCTYPE html>
 <html lang="fr">
 	<head>
@@ -16,10 +16,10 @@
 		<title>Devant la Maison - Le Grenier d'Arthur</title>
 	</head>
 	
-	<body onload="chargement()">
-		<?php include_once $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/header.php"; ?>
+	<body>
+		<?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/header.php"; ?>
 		<div id="banniere"><img src="/escaperpg/images/avent/aventmini.png"></div>
-		<div id="bloc_page">
+		<main>
 			<nav>
 				<img src="/escaperpg/images/avent/sarah.png">
 				<form action="/escaperpg/aventures/avent/cartes.php" target="_blank" rel="noreferrer" method="post"><input type="submit" name="cartes" value="Cartes"></form>
@@ -41,7 +41,7 @@
 									</center>
 								</p>
 								<center>
-									<form action="maison.php" method="post">
+									<form action="maison" method="post">
 										<input type="submit" name="suivant2" value="suivant.">
 									</form>
 								</center>
@@ -67,35 +67,35 @@
 									<div id="enigmelieu">
 										<img src="/escaperpg/images/avent/jeucles.png">
 										<div id="cle1">
-											<form action="maison.php" method="post">
+											<form action="maison" method="post">
 												<button type="submit" name="1cle">
 													<img src="/escaperpg/images/avent/cle1.png" onmouseover="this.src=\'/escaperpg/images/avent/cle1hover.png\'" onmouseout="this.src=\'/escaperpg/images/avent/cle1.png\'">
 												</button>
 											</form>
 										</div>
 										<div id="cle2">
-											<form action="maison.php" method="post">
+											<form action="maison" method="post">
 												<button type="submit" name="2cle">
 													<img src="/escaperpg/images/avent/cle2.png" onmouseover="this.src=\'/escaperpg/images/avent/cle2hover.png\'" onmouseout="this.src=\'/escaperpg/images/avent/cle2.png\'">
 												</button>
 											</form>
 										</div>
 										<div id="cle3">
-											<form action="maison.php" method="post">
+											<form action="maison" method="post">
 												<button type="submit" name="3cle">
 													<img src="/escaperpg/images/avent/cle3.png" onmouseover="this.src=\'/escaperpg/images/avent/cle3hover.png\'" onmouseout="this.src=\'/escaperpg/images/avent/cle3.png\'">
 												</button>
 											</form>
 										</div>
 										<div id="cle4">
-											<form action="maison.php" method="post">
+											<form action="maison" method="post">
 												<button type="submit" name="4cle">
 													<img src="/escaperpg/images/avent/cle4.png" onmouseover="this.src=\'/escaperpg/images/avent/cle4hover.png\'" onmouseout="this.src=\'/escaperpg/images/avent/cle4.png\'">
 												</button>
 											</form>
 										</div>
 										<div id="cle5">
-											<form action="maison.php" method="post">
+											<form action="maison" method="post">
 												<button type="submit" name="5cle">
 													<img src="/escaperpg/images/avent/cle5.png" onmouseover="this.src=\'/escaperpg/images/avent/cle5hover.png\'" onmouseout="this.src=\'/escaperpg/images/avent/cle5.png\'">
 												</button>
@@ -104,7 +104,7 @@
 									</div>
 								</p>
 								<center>
-									<form action="maison.php" method="post">
+									<form action="maison" method="post">
 										<button type="submit" name="indice" class="boutonindice"></button>
 									</form>
 								</center>
@@ -121,7 +121,7 @@
 									Inquiète, vous commencez à faire le tour de la maison à sa recherche.
 								</p>
 								<center>
-									<form action="maison.php" method="post">
+									<form action="maison" method="post">
 										<input type="submit" name="tour" value="FAIRE LE TOUR.">
 									</form>
 								</center>
@@ -144,35 +144,35 @@
 									<div id="enigmelieu">
 										<img src="/escaperpg/images/avent/jeucles.png">
 										<div id="cle1">
-											<form action="maison.php" method="post">
+											<form action="maison" method="post">
 												<button type="submit" name="1cle">
 													<img src="/escaperpg/images/avent/cle1.png" onmouseover="this.src=\'/escaperpg/images/avent/cle1hover.png\'" onmouseout="this.src=\'/escaperpg/images/avent/cle1.png\'">
 												</button>
 											</form>
 										</div>
 										<div id="cle2">
-											<form action="maison.php" method="post">
+											<form action="maison" method="post">
 												<button type="submit" name="2cle">
 													<img src="/escaperpg/images/avent/cle2.png" onmouseover="this.src=\'/escaperpg/images/avent/cle2hover.png\'" onmouseout="this.src=\'/escaperpg/images/avent/cle2.png\'">
 												</button>
 											</form>
 										</div>
 										<div id="cle3">
-											<form action="maison.php" method="post">
+											<form action="maison" method="post">
 												<button type="submit" name="3cle">
 													<img src="/escaperpg/images/avent/cle3.png" onmouseover="this.src=\'/escaperpg/images/avent/cle3hover.png\'" onmouseout="this.src=\'/escaperpg/images/avent/cle3.png\'">
 												</button>
 											</form>
 										</div>
 										<div id="cle4">
-											<form action="maison.php" method="post">
+											<form action="maison" method="post">
 												<button type="submit" name="4cle">
 													<img src="/escaperpg/images/avent/cle4.png" onmouseover="this.src=\'/escaperpg/images/avent/cle4hover.png\'" onmouseout="this.src=\'/escaperpg/images/avent/cle4.png\'">
 												</button>
 											</form>
 										</div>
 										<div id="cle5">
-											<form action="maison.php" method="post">
+											<form action="maison" method="post">
 												<button type="submit" name="5cle">
 													<img src="/escaperpg/images/avent/cle5.png" onmouseover="this.src=\'/escaperpg/images/avent/cle5hover.png\'" onmouseout="this.src=\'/escaperpg/images/avent/cle5.png\'">
 												</button>
@@ -181,7 +181,7 @@
 									</div>
 								</p>
 								<center>
-									<form action="maison.php" method="post">
+									<form action="maison" method="post">
 										<button type="submit" name="indicemaison1" class="boutonindice"></button>
 									</form>
 								</center>
@@ -199,7 +199,7 @@
 									Vous montez les marches menant au grenier.
 								</p>
 								<center>
-									<form action="grenier.php" method="post">
+									<form action="grenier" method="post">
 										<input type="submit" name="monter" value="MONTER.">
 									</form>
 								</center>
@@ -226,35 +226,35 @@
 									<div id="enigmelieu">
 										<img src="/escaperpg/images/avent/jeucles.png">
 										<div id="cle1">
-											<form action="maison.php" method="post">
+											<form action="maison" method="post">
 												<button type="submit" name="1cle">
 													<img src="/escaperpg/images/avent/cle1.png" onmouseover="this.src=\'/escaperpg/images/avent/cle1hover.png\'" onmouseout="this.src=\'/escaperpg/images/avent/cle1.png\'">
 												</button>
 											</form>
 										</div>
 										<div id="cle2">
-											<form action="maison.php" method="post">
+											<form action="maison" method="post">
 												<button type="submit" name="2cle">
 													<img src="/escaperpg/images/avent/cle2.png" onmouseover="this.src=\'/escaperpg/images/avent/cle2hover.png\'" onmouseout="this.src=\'/escaperpg/images/avent/cle2.png\'">
 												</button>
 											</form>
 										</div>
 										<div id="cle3">
-											<form action="maison.php" method="post">
+											<form action="maison" method="post">
 												<button type="submit" name="3cle">
 													<img src="/escaperpg/images/avent/cle3.png" onmouseover="this.src=\'/escaperpg/images/avent/cle3hover.png\'" onmouseout="this.src=\'/escaperpg/images/avent/cle3.png\'">
 												</button>
 											</form>
 										</div>
 										<div id="cle4">
-											<form action="maison.php" method="post">
+											<form action="maison" method="post">
 												<button type="submit" name="4cle">
 													<img src="/escaperpg/images/avent/cle4.png" onmouseover="this.src=\'/escaperpg/images/avent/cle4hover.png\'" onmouseout="this.src=\'/escaperpg/images/avent/cle4.png\'">
 												</button>
 											</form>
 										</div>
 										<div id="cle5">
-											<form action="maison.php" method="post">
+											<form action="maison" method="post">
 												<button type="submit" name="5cle">
 													<img src="/escaperpg/images/avent/cle5.png" onmouseover="this.src=\'/escaperpg/images/avent/cle5hover.png\'" onmouseout="this.src=\'/escaperpg/images/avent/cle5.png\'">
 												</button>
@@ -265,7 +265,7 @@
 								<center>
 									<span class="indice">Prenez et observez bien la carte 1, il y a sans doute un indice dessus.</span><br>
 									<br>
-									<form action="maison.php" method="post">
+									<form action="maison" method="post">
 										<button type="submit" name="indicemaison2" class="boutonindice"></button>
 									</form>
 								</center>
@@ -292,35 +292,35 @@
 									<div id="enigmelieu">
 										<img src="/escaperpg/images/avent/jeucles.png">
 										<div id="cle1">
-											<form action="maison.php" method="post">
+											<form action="maison" method="post">
 												<button type="submit" name="1cle">
 													<img src="/escaperpg/images/avent/cle1.png" onmouseover="this.src=\'/escaperpg/images/avent/cle1hover.png\'" onmouseout="this.src=\'/escaperpg/images/avent/cle1.png\'">
 												</button>
 											</form>
 										</div>
 										<div id="cle2">
-											<form action="maison.php" method="post">
+											<form action="maison" method="post">
 												<button type="submit" name="2cle">
 													<img src="/escaperpg/images/avent/cle2.png" onmouseover="this.src=\'/escaperpg/images/avent/cle2hover.png\'" onmouseout="this.src=\'/escaperpg/images/avent/cle2.png\'">
 												</button>
 											</form>
 										</div>
 										<div id="cle3">
-											<form action="maison.php" method="post">
+											<form action="maison" method="post">
 												<button type="submit" name="3cle">
 													<img src="/escaperpg/images/avent/cle3.png" onmouseover="this.src=\'/escaperpg/images/avent/cle3hover.png\'" onmouseout="this.src=\'/escaperpg/images/avent/cle3.png\'">
 												</button>
 											</form>
 										</div>
 										<div id="cle4">
-											<form action="maison.php" method="post">
+											<form action="maison" method="post">
 												<button type="submit" name="4cle">
 													<img src="/escaperpg/images/avent/cle4.png" onmouseover="this.src=\'/escaperpg/images/avent/cle4hover.png\'" onmouseout="this.src=\'/escaperpg/images/avent/cle4.png\'">
 												</button>
 											</form>
 										</div>
 										<div id="cle5">
-											<form action="maison.php" method="post">
+											<form action="maison" method="post">
 												<button type="submit" name="5cle">
 													<img src="/escaperpg/images/avent/cle5.png" onmouseover="this.src=\'/escaperpg/images/avent/cle5hover.png\'" onmouseout="this.src=\'/escaperpg/images/avent/cle5.png\'">
 												</button>
@@ -332,7 +332,7 @@
 									<span class="indice">Prenez et observez bien la carte 1, il y a sans doute un indice dessus.<br>
 									Essayez de suivre le chemin effectué par Sarah, une forme devrait se dessiner.</span><br>
 									<br>
-									<form action="maison.php" method="post">
+									<form action="maison" method="post">
 										<button type="submit" name="reponse" class="boutonreponse"></button>
 									</form>
 								</center>
@@ -359,35 +359,35 @@
 									<div id="enigmelieu">
 										<img src="/escaperpg/images/avent/jeucles.png">
 										<div id="cle1">
-											<form action="maison.php" method="post">
+											<form action="maison" method="post">
 												<button type="submit" name="1cle">
 													<img src="/escaperpg/images/avent/cle1.png" onmouseover="this.src=\'/escaperpg/images/avent/cle1hover.png\'" onmouseout="this.src=\'/escaperpg/images/avent/cle1.png\'">
 												</button>
 											</form>
 										</div>
 										<div id="cle2">
-											<form action="maison.php" method="post">
+											<form action="maison" method="post">
 												<button type="submit" name="2cle">
 													<img src="/escaperpg/images/avent/cle2.png" onmouseover="this.src=\'/escaperpg/images/avent/cle2hover.png\'" onmouseout="this.src=\'/escaperpg/images/avent/cle2.png\'">
 												</button>
 											</form>
 										</div>
 										<div id="cle3">
-											<form action="maison.php" method="post">
+											<form action="maison" method="post">
 												<button type="submit" name="3cle">
 													<img src="/escaperpg/images/avent/cle3.png" onmouseover="this.src=\'/escaperpg/images/avent/cle3hover.png\'" onmouseout="this.src=\'/escaperpg/images/avent/cle3.png\'">
 												</button>
 											</form>
 										</div>
 										<div id="cle4">
-											<form action="maison.php" method="post">
+											<form action="maison" method="post">
 												<button type="submit" name="4cle">
 													<img src="/escaperpg/images/avent/cle4.png" onmouseover="this.src=\'/escaperpg/images/avent/cle4hover.png\'" onmouseout="this.src=\'/escaperpg/images/avent/cle4.png\'">
 												</button>
 											</form>
 										</div>
 										<div id="cle5">
-											<form action="maison.php" method="post">
+											<form action="maison" method="post">
 												<button type="submit" name="5cle">
 													<img src="/escaperpg/images/avent/cle5.png" onmouseover="this.src=\'/escaperpg/images/avent/cle5hover.png\'" onmouseout="this.src=\'/escaperpg/images/avent/cle5.png\'">
 												</button>
@@ -420,7 +420,7 @@
 									</div>
 								</p>
 								<center>
-									<form action="maison.php" method="post">
+									<form action="maison" method="post">
 										<input type="submit" name="bisous" value="BISOUS PAPA !">
 									</form>
 								</center>

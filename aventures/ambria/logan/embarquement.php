@@ -1,4 +1,4 @@
-<?php include_once $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/entete.php"; ?>
+<?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/entete.php"; ?>
 <!DOCTYPE html>
 <html lang="fr">
 	<head>
@@ -16,10 +16,10 @@
 		<title>Embarquement - Le Trésor d'Ambria</title>
 	</head>
 	
-	<body onload="chargement()">
-		<?php include_once $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/header.php"; ?>
+	<body>
+		<?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/header.php"; ?>
 		<div id="banniere"><img src="/escaperpg/images/ambria/tresorambriamini.png"></div>
-		<div id="bloc_page">
+		<main>
 			<nav>
 				<a href="/escaperpg/images/ambria/loganbarthelemymini.png" rel="lightbox[logan]" title="Logan Barthélémy"><img src="/escaperpg/images/ambria/loganbarthelemymini.png"></a>
 				<div id="inventairefooter"><input type="submit" onclick="inventaireshow()" value="INVENTAIRE"></div>
@@ -46,7 +46,7 @@
 									Pendant ce temps, vous apercevez du coin de l\'œil des silhouettes s\'agiter sur le pont du Surgisseur des Tempêtes.
 								</p>
 								<center>
-									<form action="embarquement.php" method="post">
+									<form action="embarquement" method="post">
 										<input type="submit" name="suivant2" value="Suivant.">
 									</form>
 								</center>
@@ -97,7 +97,7 @@
 									</div>
 								</div>
 								<center>
-									<form action="embarquement.php" method="post">
+									<form action="embarquement" method="post">
 										<input type="submit" name="suivant3" value="Suivant.">
 									</form>
 								</center>
@@ -205,7 +205,7 @@
 									}
 							echo'
 								<center>
-									<form action="embarquement.php" method="post">
+									<form action="embarquement" method="post">
 										<input type="submit" name="suivant4" value="Suivant.">
 									</form>
 								</center>
@@ -235,7 +235,7 @@
 									Il pose la corde sur un tonneau et commence un nœud.
 								</p>
 								<center>
-									<form action="embarquement.php" method="post">
+									<form action="embarquement" method="post">
 										<input type="submit" name="suivant5" value="L\'écouter.">
 									</form>
 								</center>
@@ -299,7 +299,7 @@
 									</div>
 									<br>
 									<br>
-									<form action="embarquement.php" method="post">
+									<form action="embarquement" method="post">
 										<input type="submit" name="reset" value="Réinitialiser.">
 									</form>
 									<br>
@@ -332,7 +332,7 @@
 									</div>
 								</div>
 								<center>
-									<form action="embarquement.php" method="post">
+									<form action="embarquement" method="post">
 										<input type="submit" name="suivant" value="Suivant.">
 									</form>
 								</center>
@@ -343,6 +343,6 @@
 		</div>
 		<div id="load"><div id="loader"></div></div>
 		<script src="/escaperpg/scripts/aventures-chargement.js"></script>
-		<?php include_once $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/aventures/ambria/logan/includes/footer.php"; ?>
+		<?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/aventures/ambria/logan/includes/footer.php"; ?>
 	</body>
 </html>

@@ -82,7 +82,7 @@
 			if ($_SESSION['jour'])
 				{
 					echo '
-						<form action="nuit.php" method="post">
+						<form action="nuit" method="post">
 							<input type="submit" name="entrer" value="ALLER DORMIR">
 						</form>
 					';
@@ -91,7 +91,7 @@
 				{
 					echo '
 						<center>
-							<form action="jour2.php" method="post">
+							<form action="jour2" method="post">
 								<input type="submit" name="entrer" value="ALLER DORMIR">
 							</form>
 						</center>

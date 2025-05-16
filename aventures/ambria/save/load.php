@@ -16,10 +16,10 @@
 		<title>Charger - Le Trésor d'Ambria</title>
 	</head>
 	
-	<body onload="chargement()">
-		<?php include_once $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/header.php"; ?>
+	<body>
+		<?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/header.php"; ?>
 		<div id="banniere"><img src="/escaperpg/images/ambria/tresorambriamini.png"></div>
-		<div id="bloc_page">
+		<main>
 			<nav><img src="/escaperpg/images/ambria/ambriamedaillon.png"></nav>
 			<div id="txt">
 				<?php
@@ -30,7 +30,7 @@
 						$description = 'charger';
 						$cache = 'non';
 						$rarete = 'succesnormal';
-						include_once $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/succesadd.php";
+						include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/succesadd.php";
 						echo'</div>';
 						isset($_COOKIE['LOGGED_USER']) ? $nom = $_COOKIE['LOGGED_USER'] : $nom = htmlspecialchars($_SESSION['idcompte']);
 						$query = $conn->prepare("SELECT * FROM ambria WHERE id=? ORDER BY id DESC LIMIT 1");
@@ -50,7 +50,7 @@
 						$scenario = 'general';
 						$description = 'charger';
 						$cache = 'non';
-						include_once $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/succesadd.php";
+						include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/succesadd.php";
 						echo'</div>';
 						$nom = $_POST['nom'];
 						$code = $_POST['code'];
@@ -67,7 +67,7 @@
 							echo'
 								<p>Il y a eu une erreur quelque part, veuillez réessayer.</p>
 								<center>
-									<form action="load.php" method="post">
+									<form action="load" method="post">
 										<input type="text" name="nom" id="nom" placeholder="Nom" required>
 										<input type="text" name="code" id="code" placeholder="Code" required>
 										<input type="submit" name="continuer" value="Charger.">
@@ -80,7 +80,7 @@
 						echo '
 							<p>Veuillez entrer le nom et le code utilisés lors de votre dernière sauvegarde.</p>
 							<center>
-								<form action="load.php" method="post">
+								<form action="load" method="post">
 									<input type="text" name="nom" id="nom" placeholder="Nom" required>
 									<input type="text" name="code" id="code" placeholder="Code" required>
 									<input type="submit" name="continuer" value="Charger.">
@@ -93,6 +93,6 @@
 		</div>
 		<div id="load"><div id="loader"></div></div>
 		<script src="/escaperpg/scripts/aventures-chargement.js"></script>
-		<?php include_once $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/footer.php"; ?>
+		<?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/footer.php"; ?>
 	</body>
 </html>

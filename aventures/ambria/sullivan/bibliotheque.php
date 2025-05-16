@@ -1,4 +1,4 @@
-<?php include_once $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/entete.php"; ?>
+<?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/entete.php"; ?>
 <!DOCTYPE html>
 <html lang="fr">
 	<head>
@@ -16,10 +16,10 @@
 		<title>La Bibliothèque - Le Trésor d'Ambria</title>
 	</head>
 	
-	<body onload="chargement()">
-		<?php include_once $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/header.php"; ?>
+	<body>
+		<?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/header.php"; ?>
 		<div id="banniere"><img src="/escaperpg/images/ambria/tresorambriamini.png"></div>
-		<div id="bloc_page">
+		<main>
 			<nav>
 				<a href="/escaperpg/images/ambria/sullivanmasonmini.png" rel="lightbox[sullivan]" title="Sullivan Mason"><img src="/escaperpg/images/ambria/sullivanmasonmini.png"></a>
 				<div id="inventairefooter"><input type="submit" onclick="inventaireshow()" value="INVENTAIRE"></div>
@@ -34,7 +34,7 @@
 					$description = 'carte';
 					$cache = 'non';
 					$rarete = 'succesnormal';
-					include_once $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/succesadd.php";
+					include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/succesadd.php";
 					echo'</div>';
 					
 					if (isset ($_POST['suivant']))
@@ -73,7 +73,7 @@
 									Votre sourire s\'élargit.
 								</p>
 								<center>
-									<form action="bibliotheque.php" method="post">
+									<form action="bibliotheque" method="post">
 										<input type="submit" name="suivant2" value="Suivant.">
 									</form>
 								</center>
@@ -120,7 +120,7 @@
 									Vous laissez retomber le corps au sol et avisez la porte ouverte menant dans la cour arrière. Quelqu\'un s\'est enfui par là au moment de votre arrivée.
 								</p>
 								<center>
-									<form action="bibliotheque.php" method="post">
+									<form action="bibliotheque" method="post">
 										<input type="submit" name="suivant3" value="Suivant.">
 									</form>
 								</center>
@@ -140,7 +140,7 @@
 												La personne qui l\'a laissée tomber va sans doute rencontrer des difficultés si elle désire partir de l\'île sans cet argent.
 											</p>
 											<center>
-												<form action="bibliotheque.php" method="post">
+												<form action="bibliotheque" method="post">
 													<input type="submit" name="prendre" value="La prendre.">
 												</form>
 											</center>
@@ -156,10 +156,10 @@
 												De quoi peut-il bien s\'agir ?
 											</p>
 											<center>
-												<form action="bibliotheque.php" method="post">
+												<form action="bibliotheque" method="post">
 													<input type="text" name="look"><input type="submit" name="inspecter" value="Inspecter.">
 												</form>
-												<form action="bibliotheque.php" method="post">
+												<form action="bibliotheque" method="post">
 													<button type="submit" name="indice1" class="boutonindice"></button>
 												</form>
 											</center>
@@ -186,7 +186,7 @@
 									Vous poussez la porte du bâtiment de Don et entrez.
 								</p>
 								<center>
-									<form action="taverne.php" method="post">
+									<form action="taverne" method="post">
 										<input type="submit" name="retour" value="Entrer.">
 									</form>
 								</center>
@@ -205,7 +205,7 @@
 									De quoi peut-il bien s\'agir ?
 								</p>
 								<center>
-									<form action="bibliotheque.php" method="post">
+									<form action="bibliotheque" method="post">
 										<input type="text" name="look"><input type="submit" name="inspecter" value="Inspecter.">
 									</form>
 								</center>
@@ -218,7 +218,7 @@
 											Il doit bien y avoir un moyen de savoir ce qui se trouve sur le sol.
 										</div>
 										<center>
-											<form action="bibliotheque.php" method="post">
+											<form action="bibliotheque" method="post">
 												<button type="submit" name="indice2" class="boutonindice"></button>
 											</form>
 										</center>
@@ -232,7 +232,7 @@
 											Peut-être que ce n\'est pas vous qui avez la réponse ?
 										</div>
 										<center>
-											<form action="bibliotheque.php" method="post">
+											<form action="bibliotheque" method="post">
 												<button type="submit" name="reponse" class="boutonreponse"></button>
 											</form>
 										</center>
@@ -241,7 +241,7 @@
 							elseif (isset ($_POST['reponse']))
 								{
 									echo'
-										<div id="reponse">
+										<div class="reponse">
 											Demandez au joueur qui incarne Logan quel est le mot de passe de l\'objet qu\'il a laissé tomber en s\'enfuyant.
 										</div>
 									';
@@ -250,7 +250,7 @@
 								{
 									echo'
 										<center>
-											<form action="bibliotheque.php" method="post">
+											<form action="bibliotheque" method="post">
 												<button type="submit" name="indice" class="boutonindice"></button>
 											</form>
 										</center>
@@ -276,7 +276,7 @@
 									Juste avant que vous n\'entriez, vous avez le temps d\'entendre quelqu\'un crier à une autre personne de prendre la fuite en passant par derrière, puis le bruit de pas précipités s\'éloignant.									
 								</p>
 								<center>
-									<form action="bibliotheque.php" method="post">
+									<form action="bibliotheque" method="post">
 										<input type="submit" name="suivant" value="Suivant.">
 									</form>
 								</center>
@@ -287,6 +287,6 @@
 		</div>
 		<div id="load"><div id="loader"></div></div>
 		<script src="/escaperpg/scripts/aventures-chargement.js"></script>
-		<?php include_once $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/aventures/ambria/sullivan/includes/footer.php"; ?>
+		<?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/aventures/ambria/sullivan/includes/footer.php"; ?>
 	</body>
 </html>

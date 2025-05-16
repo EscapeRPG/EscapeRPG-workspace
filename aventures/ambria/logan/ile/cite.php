@@ -1,4 +1,4 @@
-<?php include_once $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/entete.php"; ?>
+<?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/entete.php"; ?>
 <!DOCTYPE html>
 <html lang="fr">
 	<head>
@@ -16,10 +16,10 @@
 		<title>La Cité Perdue - Le Trésor d'Ambria</title>
 	</head>
 	
-	<body onload="chargement()">
-		<?php include_once $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/header.php"; ?>
+	<body>
+		<?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/header.php"; ?>
 		<div id="banniere"><img src="/escaperpg/images/ambria/tresorambriamini.png"></div>
-		<div id="bloc_page">
+		<main>
 			<nav>
 				<a href="/escaperpg/images/ambria/loganbarthelemymini.png" rel="lightbox[logan]" title="Logan Barthélémy"><img src="/escaperpg/images/ambria/loganbarthelemymini.png"></a>
 				<div id="inventairefooter"><input type="submit" onclick="inventaireshow()" value="INVENTAIRE"></div>
@@ -62,7 +62,7 @@
 												Partant rejoindre les hommes qui se sont précipités vers la ville, vous avancez sur le chemin pavé.
 											</p>
 											<center>
-												<form action="cite.php" method="post">
+												<form action="cite" method="post">
 													<input type="submit" name="suite" value="Suivant.">
 												</form>
 											</center>
@@ -75,7 +75,7 @@
 												Êtes-vous sûr d\'avoir bien compris la réponse de votre compagnon ?
 											</p>
 											<center>
-												<form action="cite.php" method="post">
+												<form action="cite" method="post">
 													<input type="text" name="enavant"><input type="submit" name="ecouter" value="L\'écouter.">
 												</form>
 											</center>
@@ -122,7 +122,7 @@
 									Vous vous dirigez vers elle.
 								</p>
 								<center>
-									<form action="gardien.php" method="post">
+									<form action="gardien" method="post">
 										<input type="submit" name="palais" value="Observer.">
 									</form>
 								</center>
@@ -136,7 +136,7 @@
 							$description = 'ambria';
 							$cache = 'non';
 							$rarete = 'succesnormal';
-							include_once $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/succesadd.php";
+							include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/succesadd.php";
 							echo'</div>';
 							
 							echo'
@@ -171,7 +171,7 @@
 									Sullivan vous regarde.
 								</p>
 								<center>
-									<form action="cite.php" method="post">
+									<form action="cite" method="post">
 										<input type="text" name="enavant"><input type="submit" name="ecouter" value="L\'écouter.">
 									</form>
 								</center>
@@ -182,6 +182,6 @@
 		</div>
 		<div id="load"><div id="loader"></div></div>
 		<script src="/escaperpg/scripts/aventures-chargement.js"></script>
-		<?php include_once $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/aventures/ambria/logan/includes/footer.php"; ?>
+		<?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/aventures/ambria/logan/includes/footer.php"; ?>
 	</body>
 </html>

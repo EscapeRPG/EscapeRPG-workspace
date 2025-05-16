@@ -1,4 +1,4 @@
-<?php include_once $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/entete.php"; ?>
+<?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/entete.php"; ?>
 <!DOCTYPE html>
 <html lang="fr">
 	<head>
@@ -16,15 +16,15 @@
 		<title>Vestibule - Secrets Familiaux</title>
 	</head>
 	
-	<body onload="chargement()">
-		<?php include_once $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/header.php"; ?>
+	<body>
+		<?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/header.php"; ?>
 		<div id="banniere"><img src="/escaperpg/images/secrets/secretsfamiliauxmini.png"></div>
-		<div id="bloc_page">
+		<main>
 			<nav>
 				<a href="/escaperpg/images/secrets/inspecteurdeckard.png" rel="lightbox[bastian]" title="inspecteurdeckard"><img src="/escaperpg/images/secrets/inspecteurdeckardmini.png"></a>
 				<div id="inventairefooter"><input type="submit" onclick="inventaireshow()" value="INVENTAIRE"></div>
 				<div id="motsdepasse"><input type="submit" onclick="mdpshow()" value="NOTES"></div>
-				<?php include_once $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/aventures/secrets/includes/navigationpellington.php"; ?>
+				<?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/aventures/secrets/includes/navigationpellington.php"; ?>
 				<a href="/escaperpg/aventures/secrets/save/save.php" target="_blank" rel="noreferrer"><input type="submit" name="save" value="SAUVEGARDER"></a>
 			</nav>
 			<div id="txt">
@@ -64,7 +64,7 @@
 											Vous ne semblez pas trouver quoi que ce soit d\'utile en rapport avec ceci.
 										</p>
 										<center>
-											<form action="vestibule.php" method="post">
+											<form action="vestibule" method="post">
 												<input type="text" name="fouille"> <input type="submit" name="entree" value="Fouiller.">
 											</form>
 										</center>
@@ -80,7 +80,7 @@
 											L\'entrée de la maison du docteur Pellington se compose d\'un vestibule assez grand où l\'homme et ses patients peuvent déposer leurs affaires en arrivant.
 										</p>
 										<center>
-											<form action="vestibule.php" method="post">
+											<form action="vestibule" method="post">
 												<input type="text" name="fouille"> <input type="submit" name="entree" value="Fouiller.">
 											</form>
 										</center>
@@ -102,7 +102,7 @@
 											La bouteille est vide, ce qui indique que le docteur a dû en utiliser récemment.
 										</p>
 										<center>
-											<form action="vestibule.php" method="post">
+											<form action="vestibule" method="post">
 												<input type="submit" name="flaconadd" value="Ajouter à l\'inventaire.">
 											</form>
 										</center>
@@ -120,7 +120,7 @@
 											Il semblerait que vous ayez trouvé tout ce qu\'il y avait d\'utile dans la veste du docteur.
 										</p>
 										<center>
-											<form action="vestibule.php" method="post">
+											<form action="vestibule" method="post">
 												<input type="text" name="fouille"> <input type="submit" name="entree" value="Fouiller.">
 											</form>
 										</center>
@@ -134,7 +134,7 @@
 											<div id="enigmelieu">
 												<img src="/escaperpg/images/secrets/vestibule.png">
 												<div id="vest">
-													<form action="vestibule.php" method="post">
+													<form action="vestibule" method="post">
 														<button type="submit" name="veste">
 															<img src="/escaperpg/images/secrets/veste.png">
 														</button>
@@ -152,7 +152,7 @@
 											<div id="enigmelieu">
 												<img src="/escaperpg/images/secrets/vestibule.png">
 												<div id="vest">
-													<form action="vestibule.php" method="post">
+													<form action="vestibule" method="post">
 														<button type="submit" name="veste">
 															<img src="/escaperpg/images/secrets/veste.png">
 														</button>
@@ -162,7 +162,7 @@
 											Vous ne semblez pas trouver quoi que ce soit d\'utile en rapport avec ceci.
 										</p>
 										<center>
-											<form action="vestibule.php" method="post">
+											<form action="vestibule" method="post">
 												<input type="text" name="fouille"> <input type="submit" name="entree" value="Fouiller.">
 											</form>
 										</center>
@@ -175,7 +175,7 @@
 											<div id="enigmelieu">
 												<img src="/escaperpg/images/secrets/vestibule.png">
 												<div id="vest">
-													<form action="vestibule.php" method="post">
+													<form action="vestibule" method="post">
 														<button type="submit" name="veste">
 															<img src="/escaperpg/images/secrets/veste.png">
 														</button>
@@ -185,7 +185,7 @@
 											L\'entrée de la maison du docteur Pellington se compose d\'un vestibule assez grand où l\'homme et ses patients peuvent déposer leurs affaires en arrivant.
 										</p>
 										<center>
-											<form action="vestibule.php" method="post">
+											<form action="vestibule" method="post">
 												<input type="text" name="fouille"> <input type="submit" name="entree" value="Fouiller.">
 											</form>
 										</center>
@@ -197,6 +197,6 @@
 		</div>
 		<div id="load"><div id="loader"></div></div>
 		<script src="/escaperpg/scripts/aventures-chargement.js"></script>
-		<?php include_once $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/aventures/secrets/includes/footer.php"; ?>
+		<?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/aventures/secrets/includes/footer.php"; ?>
 	</body>
 </html>

@@ -1,4 +1,4 @@
-<?php include_once $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/entete.php"; $_SESSION['plancurrent'] = "e"; ?>
+<?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/entete.php"; $_SESSION['plancurrent'] = "e"; ?>
 <!DOCTYPE html>
 <html lang="fr">
     <head>
@@ -11,13 +11,13 @@
         <title><?php if ($_SESSION['evisited']) { echo 'Pont de Commandement'; } else { echo 'Komunodek'; } ?> - Station GAEA-1</title>
     </head>
 
-    <body onload="chargement()">
-        <?php include_once $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/header.php"; ?>
+    <body>
+        <?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/header.php"; ?>
 
         <div id="banniere"><img src="/escaperpg/images/gaea1/gaea1mini.png" alt="gaea 1 bannière"></div>
 
-        <div id="bloc_page">
-            <?php include_once $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/aventures/gaea1/includes/nav.php"; ?>
+        <main>
+            <?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/aventures/gaea1/includes/nav.php"; ?>
 
             <div id="txt">
                 <?php if ($_SESSION['poweron']): ?>
@@ -87,7 +87,7 @@
                                 $description = 'traducteur';
                                 $cache = 'non';
                                 $rarete = 'succesargent';
-                                include_once $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/succesadd.php";
+                                include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/succesadd.php";
                             ?>
                         </div>
 
@@ -177,7 +177,7 @@
                         $indice2 = "Avez-vous remarqué que chaque symbole est constitué de 10 points ?";
                         $indice3 = "Si un langage est composé à 80% d'une première langue et 20% d'une seconde, il faut reproduire les 8 premiers points de la première et les deux derniers de la seconde.";
 
-                        include_once $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/aventures/gaea1/includes/indices.php";
+                        include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/aventures/gaea1/includes/indices.php";
                     ?>
 
                 <?php elseif (isset($_POST['connexion'])): ?>
@@ -189,7 +189,7 @@
                             $description = 'hacking';
                             $cache = 'non';
                             $rarete = 'succesnormal';
-                            include_once $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/succesadd.php";
+                            include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/succesadd.php";
                             ?>
                         </div>
 
@@ -244,7 +244,7 @@
                             $description = 'offiser';
                             $cache = 'oui';
                             $rarete = 'succesbronze';
-                            include_once $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/succesadd.php";
+                            include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/succesadd.php";
                             if ($_SESSION['loggedin']) {
                                 echo '<script src="/escaperpg/scripts/succescount.js"></script>';
                             } else {
@@ -340,7 +340,7 @@
                     $indice2 = "N'oubliez pas qu'il peut y avoir des dossiers et fichiers cachés ! Finir une commande par \"-a\" vous les affichera.";
                     $indice3 = "Avez-vous consulté le dossier caché dans \"/dok\" et le fichier caché dans \"/usr\" ?";
 
-                    include_once $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/aventures/gaea1/includes/indices.php";
+                    include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/aventures/gaea1/includes/indices.php";
                     ?>
 
                 <?php elseif ($_SESSION['deckopen']): ?>
@@ -379,7 +379,7 @@
                         $_SESSION['deckopen'] = true;
                         $_SESSION['oxygene'] -= 10;
                         $key = array_search('energyCells', $_SESSION['inventaire']);
-                        if ($key) {
+                        if ($key !== false) {
                             unset($_SESSION['inventaire'][$key]);
                             $_SESSION['inventaire'] = array_values($_SESSION['inventaire']);
                         }
@@ -428,7 +428,7 @@
                                 $_SESSION['deckopen'] = true;
                                 $_SESSION['oxygene'] -= 10;
                                 $key = array_search('energyCells', $_SESSION['inventaire']);
-                                if ($key) {
+                                if ($key !== false) {
                                     unset($_SESSION['inventaire'][$key]);
                                     $_SESSION['inventaire'] = array_values($_SESSION['inventaire']);
                                 }
@@ -448,7 +448,7 @@
                                 $_SESSION['etested'] = true;
                                 $_SESSION['plancurrent'] = null;
                                 $key = array_search('energyCells', $_SESSION['inventaire']);
-                                if ($key) {
+                                if ($key !== false) {
                                     unset($_SESSION['inventaire'][$key]);
                                     $_SESSION['inventaire'] = array_values($_SESSION['inventaire']);
                                 }
@@ -497,6 +497,6 @@
 
         <script src="/escaperpg/scripts/aventures-chargement.js"></script>
 
-        <?php include_once $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/aventures/gaea1/includes/footer.php"; ?>
+        <?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/aventures/gaea1/includes/footer.php"; ?>
     </body>
 </html>

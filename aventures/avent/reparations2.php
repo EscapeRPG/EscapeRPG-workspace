@@ -1,4 +1,4 @@
-<?php include_once $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/entete.php"; ?>
+<?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/entete.php"; ?>
 <!DOCTYPE html>
 <html lang="fr">
 	<head>
@@ -16,10 +16,10 @@
 		<title>Réparations - Le Grenier d'Arthur</title>
 	</head>
 	
-	<body onload="chargement()">
-		<?php include_once $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/header.php"; ?>
+	<body>
+		<?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/header.php"; ?>
 		<div id="banniere"><img src="/escaperpg/images/avent/aventmini.png"></div>
-		<div id="bloc_page">
+		<main>
 			<nav>
 				<img src="/escaperpg/images/avent/sarah.png">
 				<form action="/escaperpg/aventures/avent/cartes.php" target="_blank" rel="noreferrer" method="post"><input type="submit" name="cartes" value="Cartes"></form>
@@ -47,7 +47,7 @@
 											</div>
 											<input type="text" name="reservoir" id="reservoir">
 											<div id="boutonmachineoff">
-												<form action="reparations2.php" method="post">
+												<form action="reparations2" method="post">
 													<button type="submit" name="boutonmachine">
 														<img src="/escaperpg/images/avent/boutonoff.png">
 													</button>
@@ -60,7 +60,7 @@
 								<center>
 									<span class="indice">Déplacez le petit curseur en bas à gauche pour le positionner sur la bonne valeur.</span><br>
 									<br>
-									<form action="reparations2.php" method="post">
+									<form action="reparations2" method="post">
 										<button type="submit" name="indicereparations2" class="boutonindice"></button>
 									</form>
 								</center>
@@ -86,7 +86,7 @@
 											</div>
 											<input type="text" name="reservoir" id="reservoir">
 											<div id="boutonmachineoff">
-												<form action="reparations2.php" method="post">
+												<form action="reparations2" method="post">
 													<button type="submit" name="boutonmachine">
 														<img src="/escaperpg/images/avent/boutonoff.png">
 													</button>
@@ -100,7 +100,7 @@
 									<span class="indice">Déplacez le petit curseur en bas à gauche pour le positionner sur la bonne valeur.<br>
 									N\'oubliez pas de cliquer sur le levier juste à droite pour l\'enclencher.</span><br>
 									<br>
-									<form action="reparations2.php" method="post">
+									<form action="reparations2" method="post">
 										<button type="submit" name="reponse" class="boutonreponse"></button>
 									</form>
 								</center>
@@ -126,7 +126,7 @@
 											</div>
 											<input type="text" name="reservoir" id="reservoir">
 											<div id="boutonmachineoff">
-												<form action="reparations2.php" method="post">
+												<form action="reparations2" method="post">
 													<button type="submit" name="boutonmachine">
 														<img src="/escaperpg/images/avent/boutonoff.png">
 													</button>
@@ -163,7 +163,7 @@
 											</div>
 											<input type="text" name="reservoir" id="reservoir">
 											<div id="boutonmachineoff">
-												<form action="reparations2.php" method="post">
+												<form action="reparations2" method="post">
 													<button type="submit" name="boutonmachine">
 														<img src="/escaperpg/images/avent/boutonoff.png">
 													</button>
@@ -174,7 +174,7 @@
 									<script src="/escaperpg/aventures/scripts/rangecheck.js"></script>
 								</p>
 								<center>
-									<form action="reparations2.php" method="post">
+									<form action="reparations2" method="post">
 										<button type="submit" name="indice" class="boutonindice"></button>
 									</form>
 								</center>
@@ -201,7 +201,7 @@
 											</div>
 											<input type="text" name="reservoir" id="reservoir">
 											<div id="boutonmachineoff">
-												<form action="reparations2.php" method="post">
+												<form action="reparations2" method="post">
 													<button type="submit" name="boutonmachine">
 														<img src="/escaperpg/images/avent/boutonoff.png">
 													</button>
@@ -212,7 +212,7 @@
 									<script src="/escaperpg/aventures/scripts/rangecheck.js"></script>
 								</p>
 								<center>
-									<form action="reparations2.php" method="post">
+									<form action="reparations2" method="post">
 										<button type="submit" name="indice" class="boutonindice"></button>
 									</form>
 								</center>

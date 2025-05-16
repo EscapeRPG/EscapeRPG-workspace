@@ -1,4 +1,4 @@
-<?php include_once $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/entete.php"; ?>
+<?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/entete.php"; ?>
 <!DOCTYPE html>
 <html lang="fr">
 	<head>
@@ -16,10 +16,10 @@
 		<title>Réparations - Le Grenier d'Arthur</title>
 	</head>
 	
-	<body onload="chargement()">
-		<?php include_once $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/header.php"; ?>
+	<body>
+		<?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/header.php"; ?>
 		<div id="banniere"><img src="/escaperpg/images/avent/aventmini.png"></div>
-		<div id="bloc_page">
+		<main>
 			<nav>
 				<img src="/escaperpg/images/avent/sarah.png">
 				<form action="/escaperpg/aventures/avent/cartes.php" target="_blank" rel="noreferrer" method="post"><input type="submit" name="cartes" value="Cartes"></form>
@@ -35,7 +35,7 @@
 										<img src="/escaperpg/images/avent/machineperenoel3.png">
 										<div id="machineperenoel">
 											<input type="range" name="range" min="1" max="9" value="4">
-											<form action="repairs.php" method="post">
+											<form action="repairs" method="post">
 												<div id="boutonmachineoff">
 													<button type="submit" name="boutonmachine">
 														<img src="/escaperpg/images/avent/boutonoff.png">
@@ -53,7 +53,7 @@
 								<center>
 									<span class="indice">Avez-vous remarqué les valeurs inscrites sur le réservoir ?</span><br>
 									<br>
-									<form action="repairs.php" method="post">
+									<form action="repairs" method="post">
 										<button type="submit" name="indicereparations2" class="boutonindice"></button>
 									</form>
 								</center>
@@ -67,7 +67,7 @@
 										<img src="/escaperpg/images/avent/machineperenoel3.png">
 										<div id="machineperenoel">
 											<input type="range" name="range" min="1" max="9" value="4">
-											<form action="repairs.php" method="post">
+											<form action="repairs" method="post">
 												<input type="text" name="reservoir" id="reservoir">
 												<div id="boutonmachineoff">
 													<button type="submit" name="boutonmachine">
@@ -87,7 +87,7 @@
 									<span class="indice">Avez-vous remarqué les valeurs inscrites sur le réservoir ?<br>
 									Déterminez la valeur actuelle dans le réservoir ainsi que la valeur à atteindre pour savoir combien vous devez ajouter.</span><br>
 									<br>
-									<form action="repairs.php" method="post">
+									<form action="repairs" method="post">
 										<button type="submit" name="indicereparations3" class="boutonindice"></button>
 									</form>
 								</center>
@@ -106,7 +106,7 @@
 										<img src="/escaperpg/images/avent/machineperenoel3.png">
 										<div id="machineperenoel">
 											<input type="range" name="range" min="1" max="9" value="4">
-											<form action="repairs.php" method="post">
+											<form action="repairs" method="post">
 												<input type="text" name="reservoir" id="reservoir">
 												<div id="boutonmachineoff">
 													<button type="submit" name="boutonmachine">
@@ -122,7 +122,7 @@
 									Déterminez la valeur actuelle dans le réservoir ainsi que la valeur à atteindre pour savoir combien vous devez ajouter.<br>
 									Il y a actuellement 22cL de carburant dans le réservoir.</span><br>
 									<br>
-									<form action="repairs.php" method="post">
+									<form action="repairs" method="post">
 										<button type="submit" name="reponse" class="boutonreponse"></button>
 									</form>
 								</center>
@@ -141,7 +141,7 @@
 										<img src="/escaperpg/images/avent/machineperenoel3.png">
 										<div id="machineperenoel">
 											<input type="range" name="range" min="1" max="9" value="4">
-											<form action="repairs.php" method="post">
+											<form action="repairs" method="post">
 												<input type="text" name="reservoir" id="reservoir">
 												<div id="boutonmachineoff">
 													<button type="submit" name="boutonmachine">
@@ -168,7 +168,7 @@
 										$description = 'cadeaux';
 										$cache = 'oui';
 										$rarete = 'succesbronze';
-										include_once $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/succesadd.php";
+										include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/succesadd.php";
 										echo'</div>';
 										
 										echo'
@@ -219,7 +219,7 @@
 												</div>
 											</p>
 											<center>
-												<form action="retour.php" method="post">
+												<form action="retour" method="post">
 													<input type="submit" name="ouvrir" value="ouvrir le cadeau.">
 												</form>
 											</center>
@@ -240,7 +240,7 @@
 													<img src="/escaperpg/images/avent/machineperenoel3.png">
 													<div id="machineperenoel">
 														<input type="range" name="range" min="1" max="9" value="4">
-														<form action="repairs.php" method="post">
+														<form action="repairs" method="post">
 														<input type="text" name="reservoir" id="reservoir">
 															<div id="boutonmachineoff">
 																<button type="submit" name="boutonmachine">
@@ -252,7 +252,7 @@
 												</div>
 											</p>
 											<center>
-												<form action="repairs.php" method="post">
+												<form action="repairs" method="post">
 													<button type="submit" name="indice" class="boutonindice"></button>
 												</form>
 											</center>
@@ -273,7 +273,7 @@
 													<img src="/escaperpg/images/avent/machineperenoel3.png">
 													<div id="machineperenoel">
 														<input type="range" name="range" min="1" max="9" value="4">
-														<form action="repairs.php" method="post">
+														<form action="repairs" method="post">
 														<input type="text" name="reservoir" id="reservoir">
 															<div id="boutonmachineoff">
 																<button type="submit" name="boutonmachine">
@@ -285,7 +285,7 @@
 												</div>
 											</p>
 											<center>
-												<form action="repairs.php" method="post">
+												<form action="repairs" method="post">
 													<button type="submit" name="indice class="boutonindice"></button>
 												</form>
 											</center>
@@ -306,7 +306,7 @@
 										<img src="/escaperpg/images/avent/machineperenoel3.png">
 										<div id="machineperenoel">
 											<input type="range" name="range" min="1" max="9" value="4">
-											<form action="repairs.php" method="post">
+											<form action="repairs" method="post">
 												<input type="text" name="reservoir" id="reservoir">
 												<div id="boutonmachineoff">
 													<button type="submit" name="boutonmachine">
@@ -318,7 +318,7 @@
 									</div>
 								</p>
 								<center>
-									<form action="repairs.php" method="post">
+									<form action="repairs" method="post">
 										<button type="submit" name="indice" class="boutonindice"></button>
 									</form>
 								</center>

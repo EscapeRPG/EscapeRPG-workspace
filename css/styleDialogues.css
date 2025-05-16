@@ -46,3 +46,53 @@
         color: black;
     }
 }
+
+.dialogueCommentaire {
+    display: flex;
+    width: 60%;
+    margin: 20px auto;
+
+    .portraitCommentaire {
+        width: 20%;
+        aspect-ratio: 1 / 1;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 2px solid black;
+        padding: 15px;
+
+        .nomCommentaire {
+            font-style: italic;
+            width: 100%;
+            text-align: center !important;
+            text-shadow: 1px 1px 5px black;
+        }
+    }
+
+    .bulleCommentaire {
+        background: rgba(255, 255, 255, 0.8);
+        width: 100%;
+        margin-left: 30px;
+        position: relative;
+        border-radius: 10px;
+        padding: 14px 30px;
+
+        &::before {
+            content: "";
+            position: absolute;
+            right: 100%;
+            top: 50px;
+            width: 0;
+            height: 0;
+            border-top: 13px solid transparent;
+            border-right: 20px solid rgba(255, 255, 255, 0.8);
+            border-bottom: 13px solid transparent;
+        }
+
+        p {
+            text-align: justify;
+            color: black;
+        }
+    }
+}

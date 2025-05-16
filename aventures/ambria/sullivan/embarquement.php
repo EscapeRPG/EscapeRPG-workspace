@@ -1,4 +1,4 @@
-<?php include_once $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/entete.php"; ?>
+<?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/entete.php"; ?>
 <!DOCTYPE html>
 <html lang="fr">
 	<head>
@@ -16,10 +16,10 @@
 		<title>Embarquement - Le Trésor d'Ambria</title>
 	</head>
 	
-	<body onload="chargement()">
-		<?php include_once $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/header.php"; ?>
+	<body>
+		<?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/header.php"; ?>
 		<div id="banniere"><img src="/escaperpg/images/ambria/tresorambriamini.png"></div>
-		<div id="bloc_page">
+		<main>
 			<nav>
 				<a href="/escaperpg/images/ambria/sullivanmasonmini.png" rel="lightbox[sullivan]" title="Sullivan Mason"><img src="/escaperpg/images/ambria/sullivanmasonmini.png"></a>
 				<div id="inventairefooter"><input type="submit" onclick="inventaireshow()" value="INVENTAIRE"></div>
@@ -45,7 +45,7 @@
 									Alors que vous vous apprêtiez à vous lancer sur eux, vous apercevez des silhouettes s\'agiter sur le pont de votre navire.
 								</p>
 								<center>
-									<form action="embarquement.php" method="post">
+									<form action="embarquement" method="post">
 										<input type="submit" name="suivant2" value="Suivant.">
 									</form>
 								</center>
@@ -98,7 +98,7 @@
 									</div>
 								</div>
 								<center>
-									<form action="embarquement.php" method="post">
+									<form action="embarquement" method="post">
 										<input type="submit" name="suivant3" value="Suivant.">
 									</form>
 								</center>
@@ -160,7 +160,7 @@
 									Laissant les choses se faire, vous vous dirigez vers votre cabine.
 								</p>
 								<center>
-									<form action="embarquement.php" method="post">
+									<form action="embarquement" method="post">
 										<input type="submit" name="suivant4" value="Suivant.">
 									</form>
 								</center>
@@ -222,7 +222,7 @@
 								</p>
 								<script src="/escaperpg/aventures/ambria/sullivan/scripts/dragdropetagere.js"></script>
 								<center>
-									<form action="embarquement.php" method="post">
+									<form action="embarquement" method="post">
 										<input type="submit" name="reset" value="Réinitialiser.">
 									</form>
 								</center>
@@ -235,7 +235,7 @@
 											Vu le nombre d\'objets à ranger, l\'une des étagères se trouvera complètement vide.
 										</div>
 										<center>
-											<form action="embarquement.php" method="post">
+											<form action="embarquement" method="post">
 												<button type="submit" name="indice2" class="boutonindice"></button>
 											</form>
 										</center>
@@ -249,7 +249,7 @@
 											Faites bien attention de placer la bouteille de rhum le plus loin possible des bougies et de la lampe, tout en respectant les autres conditions.
 										</div>
 										<center>
-											<form action="embarquement.php" method="post">
+											<form action="embarquement" method="post">
 												<button type="submit" name="reponse" class="boutonreponse"></button>
 											</form>
 										</center>
@@ -258,7 +258,7 @@
 							elseif (isset ($_POST['reponse']))
 								{
 									echo'
-										<div id="reponse">
+										<div class="reponse">
 											La caisse étant trop lourde, placez-la dans l\'emplacement tout en bas.<br>
 											Comme le pistolet doit être vers le centre et que l\'une des étagères sera vide au final, il faut le placer juste à côté des livres sur la deuxième étagère en partant du haut.<br>
 											La longue-vue va donc être dans la case juste à droite du pistolet.<br>
@@ -272,7 +272,7 @@
 								{
 									echo'
 										<center>
-											<form action="embarquement.php" method="post">
+											<form action="embarquement" method="post">
 												<button type="submit" name="indice" class="boutonindice"></button>
 											</form>
 										</center>
@@ -318,7 +318,7 @@
 									</div>
 								</div>
 								<center>
-									<form action="embarquement.php" method="post">
+									<form action="embarquement" method="post">
 										<input type="submit" name="suivant" value="Suivant.">
 									</form>
 								</center>
@@ -329,6 +329,6 @@
 		</div>
 		<div id="load"><div id="loader"></div></div>
 		<script src="/escaperpg/scripts/aventures-chargement.js"></script>
-		<?php include_once $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/aventures/ambria/sullivan/includes/footer.php"; ?>
+		<?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/aventures/ambria/sullivan/includes/footer.php"; ?>
 	</body>
 </html>

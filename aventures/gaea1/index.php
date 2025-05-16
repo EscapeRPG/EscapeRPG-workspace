@@ -1,4 +1,4 @@
-<?php include_once $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/entete.php"; ?>
+<?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/entete.php"; ?>
 <!DOCTYPE html>
 <html lang="fr">
 	<head>
@@ -11,12 +11,12 @@
 		<title>Station GAEA-1</title>
 	</head>
 
-	<body onload="chargement()">
-		<?php include_once $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/header.php"; ?>
+	<body>
+		<?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/header.php"; ?>
 
 		<div id="banniere"><img src="/escaperpg/images/gaea1/gaea1mini.png" alt="gaea 1 bannière"></div>
 
-		<div id="bloc_page">
+		<main>
 			<?php if (isset($_POST['new'])): ?>
 				<div id="succespopup">
 					<?php
@@ -25,13 +25,13 @@
 						$description = 'début';
 						$cache = 'non';
 						$rarete = 'succesnormal';
-						include_once $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/succesadd.php";
+						include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/succesadd.php";
 						$nouveausucces = '<img src="/escaperpg/images/succes/gaea1/debut.png"><span><u><b>Dérive spatiale</b></u><br>Lancer l\'aventure pour la première fois</span>';
 						$scenario = 'gaea1';
 						$description = 'début';
 						$cache = 'non';
 						$rarete = 'succesnormal';
-						include_once $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/succesadd.php";
+						include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/succesadd.php";
 					?>
 				</div>
 
@@ -242,7 +242,7 @@
 					$accessoire = $_SESSION['accessoire'] = '<img src="/escaperpg/images/gaea1/avatar/accessoire'.$_POST['accessoire'].'.png">';
 					$_SESSION['avatar'] = "$cheveuxbackend$visage$bouche$yeux$nez$cheveuxback$pilosite$oreilles$sourcils$accessoire$cheveux";
 					$_SESSION['avatarimg'] = true;
-					include_once $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/aventures/gaea1/includes/nav.php";
+					include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/aventures/gaea1/includes/nav.php";
 				?>
 
 				<div id="txt">
@@ -283,7 +283,7 @@
 					$prenom = substr($prenom,0,-1);
 					$_SESSION['pjnom'] = $_POST['pjnom'];
 					$_SESSION['pjprenom'] = $prenom;
-					include_once $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/aventures/gaea1/includes/nav.php";
+					include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/aventures/gaea1/includes/nav.php";
 				?>
 
 				<div id="txt">
@@ -312,14 +312,14 @@
 						$description = 'personnage';
 						$cache = 'non';
 						$rarete = 'succesnormal';
-						include_once $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/succesadd.php";
+						include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/succesadd.php";
 					?>
 				</div>
 
 				<?php
 					$_SESSION['genre'] = true;
 					$_SESSION['feminin'] = true;
-					include_once $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/aventures/gaea1/includes/nav.php";
+					include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/aventures/gaea1/includes/nav.php";
 				?>
 
 				<div id="txt">
@@ -348,13 +348,13 @@
 						$description = 'personnage';
 						$cache = 'non';
 						$rarete = 'succesnormal';
-						include_once $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/succesadd.php";
+						include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/succesadd.php";
 					?>
 				</div>
 
 				<?php
 					$_SESSION['genre'] = true;
-					include_once $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/aventures/gaea1/includes/nav.php";
+					include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/aventures/gaea1/includes/nav.php";
 				?>
 
 				<div id="txt">
@@ -411,7 +411,7 @@
 				<?php endif; ?>
 				
 			<?php else: ?>
-				<?php include_once $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/aventures/gaea1/includes/sessioninc.php"; ?>
+				<?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/aventures/gaea1/includes/sessioninc.php"; ?>
 
 				<div id="txt">
 					<div class="dialogue">
@@ -437,6 +437,6 @@
 
 		<script src="/escaperpg/scripts/aventures-chargement.js"></script>
 
-		<?php include_once $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/aventures/gaea1/includes/footer.php"; ?>
+		<?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/aventures/gaea1/includes/footer.php"; ?>
 	</body>
 </html>

@@ -1,4 +1,4 @@
-<?php include_once $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/entete.php";
+<?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/entete.php";
 	$_SESSION['bureauprive'] = true;
 	$_SESSION['templar'] = false;
 	$_SESSION['papier'] = false;
@@ -20,15 +20,15 @@
 		<title>Bureau privé - Secrets Familiaux</title>
 	</head>
 	
-	<body onload="chargement()">
-		<?php include_once $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/header.php"; ?>
+	<body>
+		<?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/header.php"; ?>
 		<div id="banniere"><img src="/escaperpg/images/secrets/secretsfamiliauxmini.png"></div>
-		<div id="bloc_page">
+		<main>
 			<nav>
 				<a href="/escaperpg/images/secrets/inspecteurdeckard.png" rel="lightbox[bastian]" title="inspecteurdeckard"><img src="/escaperpg/images/secrets/inspecteurdeckardmini.png"></a>
 				<div id="inventairefooter"><input type="submit" onclick="inventaireshow()" value="INVENTAIRE"></div>
 				<div id="motsdepasse"><input type="submit" onclick="mdpshow()" value="NOTES"></div>
-				<?php include_once $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/aventures/secrets/includes/navigationmanoir.php"; ?>
+				<?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/aventures/secrets/includes/navigationmanoir.php"; ?>
 				<a href="/escaperpg/aventures/secrets/save/save.php" target="_blank" rel="noreferrer"><input type="submit" name="save" value="SAUVEGARDER"></a>
 			</nav>
 			<div id="txt">
@@ -45,7 +45,7 @@
 											Il semble que vous avez trouvé tout ce qu\'il restait de ce côté.
 										</p>
 										<center>
-											<form action="bureauprive2.php" method="post">
+											<form action="bureauprive2" method="post">
 												<input type="submit" name="fond" value="Passer de l\'autre côté.">
 											</form>
 										</center>
@@ -77,7 +77,7 @@
 													Vous gardez ces éléments de côté.
 												</p>
 												<center>
-													<form action="bureauprive.php" method="post">
+													<form action="bureauprive" method="post">
 														<input type="submit" name="pnako" value="Ajouter à l\'inventaire.">
 													</form>
 												</center>
@@ -93,7 +93,7 @@
 													Vous ne trouvez pas ce que vous cherchez.
 												</p>
 												<center>
-													<form action="bureauprive.php" method="post">
+													<form action="bureauprive" method="post">
 														<input type="text" name="fouiller"> <input type="submit" name="bibliotheque" value="Fouiller la bibliothèque.">
 													</form>
 												</center>
@@ -110,7 +110,7 @@
 													Il semble que vous avez trouvé tout ce qu\'il restait de ce côté.
 												</p>
 												<center>
-													<form action="bureauprive2.php" method="post">
+													<form action="bureauprive2" method="post">
 														<input type="submit" name="fond" value="Passer de l\'autre côté.">
 													</form>
 												</center>
@@ -129,7 +129,7 @@
 													Vous devriez l\'observer de plus près.
 												</p>
 												<center>
-													<form action="bureauprive.php" method="post">
+													<form action="bureauprive" method="post">
 														<input type="text" name="fouiller"> <input type="submit" name="bibliotheque" value="Fouiller la bibliothèque.">
 													</form>
 												</center>
@@ -145,7 +145,7 @@
 														<div id="enigmelieu">
 															<img src="/escaperpg/images/secrets/bureausecret1.png">
 															<div id="tiroir">
-																<form action="bureauprive.php" method="post">
+																<form action="bureauprive" method="post">
 																	<button type="submit" name="tiroir">
 																		<img src="/escaperpg/images/secrets/buttontiroir.png">
 																	</button>
@@ -155,11 +155,11 @@
 														Le tiroir est fermé à clé, mais vous avez avec vous la petite clé trouvée dans le coffret.
 													</p>
 													<center>
-														<form action="bureauprive.php" method="post">
+														<form action="bureauprive" method="post">
 															<input type="text" name="petitecle"><input type="submit" name="utiliser" value="Utiliser la clé.">
 														</form>
 														<br>
-														<form action="bureauprive2.php" method="post">
+														<form action="bureauprive2" method="post">
 															<input type="submit" name="fond" value="Passer de l\'autre côté.">
 														</form>
 													</center>
@@ -189,7 +189,7 @@
 														Vous les prenez délicatement, sans toutefois pouvoir vous empêcher de trembler à l\'idée de ce que vous pourriez y découvrir.
 													</p>
 													<center>
-														<form action="bureauprive.php" method="post">
+														<form action="bureauprive" method="post">
 															<input type="submit" name="journaladd" value="Ajouter à l\'inventaire.">
 														</form>
 													</center>
@@ -203,7 +203,7 @@
 														<div id="enigmelieu">
 															<img src="/escaperpg/images/secrets/bureausecret1.png">
 															<div id="tiroir">
-																<form action="bureauprive.php" method="post">
+																<form action="bureauprive" method="post">
 																	<button type="submit" name="tiroir">
 																		<img src="/escaperpg/images/secrets/buttontiroir.png">
 																	</button>
@@ -214,11 +214,11 @@
 														Êtes-vous sûr d\'avoir fait comme il fallait ?
 													</p>
 													<center>
-														<form action="bureauprive.php" method="post">
+														<form action="bureauprive" method="post">
 															<input type="text" name="petitecle"><input type="submit" name="utiliser" value="Utiliser la clé.">
 														</form>
 														<br>
-														<form action="bureauprive2.php" method="post">
+														<form action="bureauprive2" method="post">
 															<input type="submit" name="fond" value="Passer de l\'autre côté.">
 														</form>
 													</center>
@@ -238,7 +238,7 @@
 														Vous pensez avoir trouvé tout ce qu\'il y avait dans cette pièce.
 													</p>
 													<center>
-														<form action="bureauprive2.php" method="post">
+														<form action="bureauprive2" method="post">
 															<input type="submit" name="fond" value="Passer de l\'autre côté.">
 														</form>
 													</center>
@@ -255,7 +255,7 @@
 														<div id="enigmelieu">
 															<img src="/escaperpg/images/secrets/bureausecret1.png">
 															<div id="tiroir">
-																<form action="bureauprive.php" method="post">
+																<form action="bureauprive" method="post">
 																	<button type="submit" name="tiroir">
 																		<img src="/escaperpg/images/secrets/buttontiroir.png">
 																	</button>
@@ -271,7 +271,7 @@
 														Manifestement, le docteur Pellington a retourné la salle pour trouver les preuves qu\'il désirait détruire, mais peut-être reste-t-il quelque chose ici ou là ?
 													</p>
 													<center>
-														<form action="bureauprive2.php" method="post">
+														<form action="bureauprive2" method="post">
 															<input type="submit" name="fond" value="Passer de l\'autre côté.">
 														</form>
 													</center>
@@ -287,7 +287,7 @@
 													<div id="enigmelieu">
 														<img src="/escaperpg/images/secrets/bureausecret1.png">
 														<div id="tiroir">
-															<form action="bureauprive.php" method="post">
+															<form action="bureauprive" method="post">
 																	<button type="submit" name="tiroir">
 																		<img src="/escaperpg/images/secrets/buttontiroir.png">
 																	</button>
@@ -311,7 +311,7 @@
 													Vous gardez ces éléments de côté.
 												</p>
 												<center>
-													<form action="bureauprive.php" method="post">
+													<form action="bureauprive" method="post">
 														<input type="submit" name="pnako" value="Ajouter à l\'inventaire.">
 													</form>
 												</center>
@@ -324,7 +324,7 @@
 													<div id="enigmelieu">
 														<img src="/escaperpg/images/secrets/bureausecret1.png">
 														<div id="tiroir">
-															<form action="bureauprive.php" method="post">
+															<form action="bureauprive" method="post">
 																	<button type="submit" name="tiroir">
 																		<img src="/escaperpg/images/secrets/buttontiroir.png">
 																	</button>
@@ -334,7 +334,7 @@
 													Vous ne trouvez pas ce que vous cherchez.
 												</p>
 												<center>
-													<form action="bureauprive.php" method="post">
+													<form action="bureauprive" method="post">
 														<input type="text" name="fouiller"> <input type="submit" name="bibliotheque" value="Fouiller la bibliothèque.">
 													</form>
 												</center>
@@ -348,7 +348,7 @@
 													<div id="enigmelieu">
 														<img src="/escaperpg/images/secrets/bureausecret1.png">
 														<div id="tiroir">
-															<form action="bureauprive.php" method="post">
+															<form action="bureauprive" method="post">
 																	<button type="submit" name="tiroir">
 																		<img src="/escaperpg/images/secrets/buttontiroir.png">
 																	</button>
@@ -358,7 +358,7 @@
 													Vous avez trouvé tout ce qu\'il y avait d\'intéressant dans la bibliothèque, mais peut-être reste-t-il autre chose dans la pièce ?
 												</p>
 												<center>
-													<form action="bureauprive2.php" method="post">
+													<form action="bureauprive2" method="post">
 														<input type="submit" name="fond" value="Passer de l\'autre côté.">
 													</form>
 												</center>
@@ -373,7 +373,7 @@
 													<div id="enigmelieu">
 														<img src="/escaperpg/images/secrets/bureausecret1.png">
 														<div id="tiroir">
-															<form action="bureauprive.php" method="post">
+															<form action="bureauprive" method="post">
 																	<button type="submit" name="tiroir">
 																		<img src="/escaperpg/images/secrets/buttontiroir.png">
 																	</button>
@@ -383,15 +383,15 @@
 													Le tiroir est fermé à clé, mais vous avez avec vous la petite clé trouvée dans le coffret.
 												</p>
 												<center>
-													<form action="bureauprive.php" method="post">
+													<form action="bureauprive" method="post">
 														<input type="text" name="petitecle"><input type="submit" name="utiliser" value="Utiliser la clé.">
 													</form>
 													<br>
-													<form action="bureauprive.php" method="post">
+													<form action="bureauprive" method="post">
 														<input type="text" name="fouiller"> <input type="submit" name="bibliotheque" value="Fouiller la bibliothèque.">
 													</form>
 													<br>
-													<form action="bureauprive2.php" method="post">
+													<form action="bureauprive2" method="post">
 														<input type="submit" name="fond" value="Passer de l\'autre côté.">
 													</form>
 												</center>
@@ -419,7 +419,7 @@
 													Vous les prenez délicatement, sans toutefois pouvoir vous empêcher de trembler à l\'idée de ce que vous pourriez y découvrir.
 												</p>
 												<center>
-													<form action="bureauprive.php" method="post">
+													<form action="bureauprive" method="post">
 														<input type="submit" name="journaladd" value="Ajouter à l\'inventaire.">
 													</form>
 												</center>
@@ -433,7 +433,7 @@
 													<div id="enigmelieu">
 														<img src="/escaperpg/images/secrets/bureausecret1.png">
 														<div id="tiroir">
-															<form action="bureauprive.php" method="post">
+															<form action="bureauprive" method="post">
 																	<button type="submit" name="tiroir">
 																		<img src="/escaperpg/images/secrets/buttontiroir.png">
 																	</button>
@@ -444,15 +444,15 @@
 													Êtes-vous sûr d\'avoir fait comme il fallait ?
 												</p>
 												<center>
-													<form action="bureauprive.php" method="post">
+													<form action="bureauprive" method="post">
 														<input type="text" name="petitecle"><input type="submit" name="utiliser" value="Utiliser la clé.">
 													</form>
 													<br>
-													<form action="bureauprive.php" method="post">
+													<form action="bureauprive" method="post">
 														<input type="text" name="fouiller"> <input type="submit" name="bibliotheque" value="Fouiller la bibliothèque.">
 													</form>
 													<br>
-													<form action="bureauprive2.php" method="post">
+													<form action="bureauprive2" method="post">
 														<input type="submit" name="fond" value="Passer de l\'autre côté.">
 													</form>
 												</center>
@@ -472,11 +472,11 @@
 													Votre médaillon vibre toujours lorsque vous êtes proche de la bibliothèque.
 												</p>
 												<center>
-													<form action="bureauprive.php" method="post">
+													<form action="bureauprive" method="post">
 														<input type="text" name="fouiller"> <input type="submit" name="bibliotheque" value="Fouiller la bibliothèque.">
 													</form>
 													<br>
-													<form action="bureauprive2.php" method="post">
+													<form action="bureauprive2" method="post">
 														<input type="submit" name="fond" value="Passer de l\'autre côté.">
 													</form>
 												</center>
@@ -494,7 +494,7 @@
 											$description = 'bureau';
 											$cache = 'oui';
 											$rarete = 'succesbronze';
-											include_once $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/succesadd.php";
+											include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/succesadd.php";
 											echo'</div>';
 											
 											echo '
@@ -502,7 +502,7 @@
 													<div id="enigmelieu">
 														<img src="/escaperpg/images/secrets/bureausecret1.png">
 														<div id="tiroir">
-															<form action="bureauprive.php" method="post">
+															<form action="bureauprive" method="post">
 																	<button type="submit" name="tiroir">
 																		<img src="/escaperpg/images/secrets/buttontiroir.png">
 																	</button>
@@ -521,11 +521,11 @@
 													Vous devriez l\'observer de plus près.
 												</p>
 												<center>
-													<form action="bureauprive.php" method="post">
+													<form action="bureauprive" method="post">
 														<input type="text" name="fouiller"> <input type="submit" name="bibliotheque" value="Fouiller la bibliothèque.">
 													</form>
 													<br>
-													<form action="bureauprive2.php" method="post">
+													<form action="bureauprive2" method="post">
 														<input type="submit" name="fond" value="Passer de l\'autre côté.">
 													</form>
 												</center>
@@ -551,7 +551,7 @@
 											Manifestement, le docteur Pellington a retourné la salle pour trouver les preuves qu\'il désirait détruire et vous avez trouvé tout ce qu\'il restait d\'intéressant.
 										</p>
 										<center>
-											<form action="bureauprive2.php" method="post">
+											<form action="bureauprive2" method="post">
 												<input type="submit" name="fond" value="Passer de l\'autre côté.">
 											</form>
 										</center>
@@ -564,7 +564,7 @@
 											<div id="enigmelieu">
 												<img src="/escaperpg/images/secrets/bureausecret1.png">
 												<div id="tiroir">
-													<form action="bureauprive.php" method="post">
+													<form action="bureauprive" method="post">
 														<button type="submit" name="tiroir">
 															<img src="/escaperpg/images/secrets/buttontiroir.png">
 														</button>
@@ -574,11 +574,11 @@
 											Le tiroir est fermé à clé, mais vous avez avec vous la petite clé trouvée dans le coffret.
 										</p>
 										<center>
-											<form action="bureauprive.php" method="post">
+											<form action="bureauprive" method="post">
 												<input type="text" name="petitecle"><input type="submit" name="utiliser" value="Utiliser la clé.">
 											</form>
 											<br>
-											<form action="bureauprive2.php" method="post">
+											<form action="bureauprive2" method="post">
 												<input type="submit" name="fond" value="Passer de l\'autre côté.">
 											</form>
 										</center>
@@ -606,7 +606,7 @@
 											Vous les prenez délicatement, sans toutefois pouvoir vous empêcher de trembler à l\'idée de ce que vous pourriez y découvrir.
 										</p>
 										<center>
-											<form action="bureauprive.php" method="post">
+											<form action="bureauprive" method="post">
 												<input type="submit" name="journaladd" value="Ajouter à l\'inventaire.">
 											</form>
 										</center>
@@ -620,7 +620,7 @@
 											<div id="enigmelieu">
 												<img src="/escaperpg/images/secrets/bureausecret1.png">
 												<div id="tiroir">
-													<form action="bureauprive.php" method="post">
+													<form action="bureauprive" method="post">
 														<button type="submit" name="tiroir">
 															<img src="/escaperpg/images/secrets/buttontiroir.png">
 														</button>
@@ -631,11 +631,11 @@
 											Êtes-vous sûr d\'avoir fait comme il fallait ?
 										</p>
 										<center>
-											<form action="bureauprive.php" method="post">
+											<form action="bureauprive" method="post">
 												<input type="text" name="petitecle"><input type="submit" name="utiliser" value="Utiliser la clé.">
 											</form>
 											<br>
-											<form action="bureauprive2.php" method="post">
+											<form action="bureauprive2" method="post">
 												<input type="submit" name="fond" value="Passer de l\'autre côté.">
 											</form>
 										</center>
@@ -653,7 +653,7 @@
 											mais qu\'une pièce secrète est cachée quelque part dans le manoir !
 										</p>
 										<center>
-											<form action="bureauprive2.php" method="post">
+											<form action="bureauprive2" method="post">
 												<input type="submit" name="fond" value="Passer de l\'autre côté.">
 											</form>
 										</center>
@@ -671,7 +671,7 @@
 									$description = 'bureau';
 									$cache = 'oui';
 									$rarete = 'succesbronze';
-									include_once $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/succesadd.php";
+									include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/succesadd.php";
 									echo'</div>';
 									
 									echo '
@@ -679,7 +679,7 @@
 											<div id="enigmelieu">
 												<img src="/escaperpg/images/secrets/bureausecret1.png">
 												<div id="tiroir">
-													<form action="bureauprive.php" method="post">
+													<form action="bureauprive" method="post">
 														<button type="submit" name="tiroir">
 															<img src="/escaperpg/images/secrets/buttontiroir.png">
 														</button>
@@ -695,7 +695,7 @@
 											Manifestement, le docteur Pellington a retourné la salle pour trouver les preuves qu\'il désirait détruire, mais peut-être reste-t-il quelque chose ici ou là ?
 										</p>
 										<center>
-											<form action="bureauprive2.php" method="post">
+											<form action="bureauprive2" method="post">
 												<input type="submit" name="fond" value="Passer de l\'autre côté.">
 											</form>
 										</center>
@@ -707,6 +707,6 @@
 		</div>
 		<div id="load"><div id="loader"></div></div>
 		<script src="/escaperpg/scripts/aventures-chargement.js"></script>
-		<?php include_once $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/aventures/secrets/includes/footer.php"; ?>
+		<?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/aventures/secrets/includes/footer.php"; ?>
 	</body>
 </html>

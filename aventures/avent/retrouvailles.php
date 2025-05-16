@@ -1,4 +1,4 @@
-<?php include_once $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/entete.php"; ?>
+<?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/entete.php"; ?>
 <!DOCTYPE html>
 <html lang="fr">
 	<head>
@@ -16,10 +16,10 @@
 		<title>Retrouvailles - Le Grenier d'Arthur</title>
 	</head>
 	
-	<body onload="chargement()">
-		<?php include_once $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/header.php"; ?>
+	<body>
+		<?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/header.php"; ?>
 		<div id="banniere"><img src="/escaperpg/images/avent/aventmini.png"></div>
-		<div id="bloc_page">
+		<main>
 			<nav>
 				<img src="/escaperpg/images/avent/sarah.png">
 				<form action="/escaperpg/aventures/avent/cartes.php" target="_blank" rel="noreferrer" method="post"><input type="submit" name="cartes" value="Cartes"></form>
@@ -35,7 +35,7 @@
 							$description = 'grandpère';
 							$cache = 'oui';
 							$rarete = 'succesnormal';
-							include_once $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/succesadd.php";
+							include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/succesadd.php";
 							echo'</div>';
 							
 							echo'
@@ -58,7 +58,7 @@
 									</div>
 								</p>
 								<center>
-									<form action="retrouvailles.php" method="post">
+									<form action="retrouvailles" method="post">
 										<input type="submit" name="suivant2" value="SUIVANT.">
 									</form>
 								</center>
@@ -102,7 +102,7 @@
 									</div>
 								</p>
 								<center>
-									<form action="retrouvailles.php" method="post">
+									<form action="retrouvailles" method="post">
 										<input type="submit" name="mecano" value="LE MÉCANICIEN ?">
 									</form>
 								</center>
@@ -149,7 +149,7 @@
 									Mais pourquoi n\'en avez-vous jamais entendu parler avant ?
 								</p>
 								<center>
-									<form action="retrouvailles.php" method="post">
+									<form action="retrouvailles" method="post">
 										<input type="submit" name="suivant3" value="SUIVANT.">
 									</form>
 								</center>
@@ -180,7 +180,7 @@
 									Vous comprenez maintenant la raison de la dispute entre votre père et lui.
 								</p>
 								<center>
-									<form action="retrouvailles.php" method="post">
+									<form action="retrouvailles" method="post">
 										<input type="submit" name="aider" value="PROPOSER de l\'aider.">
 									</form>
 								</center>
@@ -208,7 +208,7 @@
 									Vous le sortez de votre poche et le tendez à votre grand-père.
 								</p>
 								<center>
-									<form action="retrouvailles.php" method="post">
+									<form action="retrouvailles" method="post">
 										<input type="submit" name="montrer" value="LUI MONTRER.">
 									</form>
 								</center>
@@ -238,7 +238,7 @@
 									Vous gravissez l\'escalier et jetez un coup d\'œil au Livre.
 								</p>
 								<center>
-									<form action="retrouvailles.php" method="post">
+									<form action="retrouvailles" method="post">
 										<input type="submit" name="suivant4" value="SUIVANT.">
 									</form>
 								</center>
@@ -258,11 +258,11 @@
 									Les instructions semblent indiquer qu\'il faut vous munir de quelque chose en particulier, mais de quoi s\'agit-il ?
 								</p>
 								<center>
-									<form action="retrouvailles.php" method="post">
+									<form action="retrouvailles" method="post">
 										<input type="text" name="traduire"> <input type="submit" name="translate" value="TRADUIRE.">
 									</form>
 									<br>
-									<form action="retrouvailles.php" method="post">
+									<form action="retrouvailles" method="post">
 										<button type="submit" name="indice" class="boutonindice"></button>
 									</form>
 								</center>
@@ -285,11 +285,11 @@
 									<span class="indice">Utilisez le dialecte des lutins trouvés chez votre grand-père pour traduire l\'instruction.
 									Avez-vous remarqué le nombre de cases ?</span><br>
 									<br>
-									<form action="retrouvailles.php" method="post">
+									<form action="retrouvailles" method="post">
 										<input type="text" name="traduire"> <input type="submit" name="translate" value="TRADUIRE.">
 									</form>
 									<br>
-									<form action="retrouvailles.php" method="post">
+									<form action="retrouvailles" method="post">
 										<button type="submit" name="indiceretrouvailles2" class="boutonindice"></button>
 									</form>
 								</center>
@@ -313,11 +313,11 @@
 									Avez-vous remarqué le nombre de cases ?<br>
 									Chaque case correspond à une lettre de notre alphabet. La première ligne vous donne les lettres A, B, C, D, E, F et G et ainsi de suite.</span><br>
 									<br>
-									<form action="retrouvailles.php" method="post">
+									<form action="retrouvailles" method="post">
 										<input type="text" name="traduire"> <input type="submit" name="translate" value="TRADUIRE.">
 									</form>
 									<br>
-									<form action="retrouvailles.php" method="post">
+									<form action="retrouvailles" method="post">
 										<button type="submit" name="reponse" class="boutonindice"></button>
 									</form>
 								</center>
@@ -339,7 +339,7 @@
 								<center>
 									<span class="reponse">L\'objet dont vous avez besoin est un sapence.</span><br>
 									<br>
-									<form action="retrouvailles.php" method="post">
+									<form action="retrouvailles" method="post">
 										<input type="text" name="traduire"> <input type="submit" name="translate" value="TRADUIRE.">
 									</form>
 								</center>
@@ -357,7 +357,7 @@
 												Il sourit et fouille dans une pile d\'objets avant d\'en sortir une sorte de bocal transparent à l\'intérieur duquel vous distinguez un liquide violet.
 											</p>
 											<center>
-												<form action="reparations.php" method="post">
+												<form action="reparations" method="post">
 													<input type="submit" name="suivant5" value="SUIVANT.">
 												</form>
 											</center>
@@ -371,7 +371,7 @@
 												Il sourit et fouille dans une pile d\'objets avant d\'en sortir une sorte de bocal transparent à l\'intérieur duquel vous distinguez un liquide violet.
 											</p>
 											<center>
-												<form action="reparations.php" method="post">
+												<form action="reparations" method="post">
 													<input type="submit" name="suivant5" value="SUIVANT.">
 												</form>
 											</center>
@@ -385,7 +385,7 @@
 												Il sourit et fouille dans une pile d\'objets avant d\'en sortir une sorte de bocal transparent à l\'intérieur duquel vous distinguez un liquide violet.
 											</p>
 											<center>
-												<form action="reparations.php" method="post">
+												<form action="reparations" method="post">
 													<input type="submit" name="suivant5" value="SUIVANT.">
 												</form>
 											</center>
@@ -399,7 +399,7 @@
 												Il sourit et fouille dans une pile d\'objets avant d\'en sortir une sorte de bocal transparent à l\'intérieur duquel vous distinguez un liquide violet.
 											</p>
 											<center>
-												<form action="reparations.php" method="post">
+												<form action="reparations" method="post">
 													<input type="submit" name="suivant5" value="SUIVANT.">
 												</form>
 											</center>
@@ -413,7 +413,7 @@
 												Il sourit et fouille dans une pile d\'objets avant d\'en sortir une sorte de bocal transparent à l\'intérieur duquel vous distinguez un liquide violet.
 											</p>
 											<center>
-												<form action="reparations.php" method="post">
+												<form action="reparations" method="post">
 													<input type="submit" name="suivant5" value="SUIVANT.">
 												</form>
 											</center>
@@ -427,7 +427,7 @@
 												Il sourit et fouille dans une pile d\'objets avant d\'en sortir une sorte de bocal transparent à l\'intérieur duquel vous distinguez un liquide violet.
 											</p>
 											<center>
-												<form action="reparations.php" method="post">
+												<form action="reparations" method="post">
 													<input type="submit" name="suivant5" value="SUIVANT.">
 												</form>
 											</center>
@@ -441,7 +441,7 @@
 												Il sourit et fouille dans une pile d\'objets avant d\'en sortir une sorte de bocal transparent à l\'intérieur duquel vous distinguez un liquide violet.
 											</p>
 											<center>
-												<form action="reparations.php" method="post">
+												<form action="reparations" method="post">
 													<input type="submit" name="suivant5" value="SUIVANT.">
 												</form>
 											</center>
@@ -455,7 +455,7 @@
 												Il sourit et fouille dans une pile d\'objets avant d\'en sortir une sorte de bocal transparent à l\'intérieur duquel vous distinguez un liquide violet.
 											</p>
 											<center>
-												<form action="reparations.php" method="post">
+												<form action="reparations" method="post">
 													<input type="submit" name="suivant5" value="SUIVANT.">
 												</form>
 											</center>
@@ -474,11 +474,11 @@
 												Les instructions semblent indiquer qu\'il faut vous munir de quelque chose en particulier, mais de quoi s\'agit-il ?
 											</p>
 											<center>
-												<form action="retrouvailles.php" method="post">
+												<form action="retrouvailles" method="post">
 													<input type="text" name="traduire"> <input type="submit" name="translate" value="TRADUIRE.">
 												</form>
 												<br>
-												<form action="retrouvailles.php" method="post">
+												<form action="retrouvailles" method="post">
 													<button type="submit" name="indiceretrouvailles1" class="boutonindice"></button>
 												</form>
 											</center>
@@ -500,7 +500,7 @@
 									Ne croisant personne dans les rues, vous continuez votre chemin vers un grand bâtiment très éclairé, au loin.
 								</p>
 								<center>
-									<form action="retrouvailles.php" method="post">
+									<form action="retrouvailles" method="post">
 										<input type="submit" name="suivant" value="SUIVANT.">
 									</form>
 								</center>

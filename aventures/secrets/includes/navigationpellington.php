@@ -48,7 +48,7 @@
 	if ($_SESSION['visitepellington'])
 		{
 			echo '
-				<form action="../manoir/rdc.php" method="post">
+				<form action="../manoir/rdc" method="post">
 					<input type="submit" name="entrer" value="RENTRER">
 				</form>
 			';

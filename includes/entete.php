@@ -1,5 +1,5 @@
 <?php
-    session_start(); ini_set ("safe_mode" , "off");
+    session_start();
 
     $search = [' ', "'", '"', '.', ',', ';', '?', ':', '*', '/', '`', '(', ')', '+', '=', '-', '$', '€', '%', '£', '§', '<', '>', '&', '~', '{', '}', '[', ']', '|', '_', '@', 'µ',
         'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z',
@@ -24,5 +24,5 @@
     try { $conn = new PDO('mysql:host=localhost;dbname=escapedrpg2534','root',''); $conn->query("SET NAMES 'utf8'"); } catch(Exception $e) { die('Erreur : '.$e->getMessage()); }
     
     if (isset ($_SESSION['loggedin']) && $_SESSION['loggedin']) {
-        $nomcompte = isset($_COOKIE['LOGGED_USER']) ?  $_COOKIE['LOGGED_USER'] : htmlspecialchars($_SESSION['idcompte']);
+        $nomcompte = htmlspecialchars($_SESSION['idcompte']);
     }

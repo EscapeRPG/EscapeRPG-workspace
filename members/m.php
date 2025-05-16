@@ -1,5 +1,4 @@
 <?php session_start();
-ini_set("safe_mode", "off");
 $succesObtenu = "/escaperpg/includes/succesadd.php";
 ?>
 <!DOCTYPE html>
@@ -37,7 +36,6 @@ $succesObtenu = "/escaperpg/includes/succesadd.php";
                     <?php if ($userinfo['id'] == $nomcompte): ?>
                         <form action="edit" method="post"><input type="submit" name="edit" value="Éditer mon profil"></form>
                         <form action="connexion" method="post"><input type="submit" name="disconnect" value="Déconnexion"></form>
-
                         <?php $_SESSION['avatarcompte'] = $userinfo['avatar']; ?>
                     <?php endif; ?>
                 </div>

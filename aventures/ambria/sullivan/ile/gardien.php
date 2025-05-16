@@ -1,4 +1,4 @@
-<?php include_once $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/entete.php"; ?>
+<?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/entete.php"; ?>
 <!DOCTYPE html>
 <html lang="fr">
 	<head>
@@ -16,10 +16,10 @@
 		<title>Le Gardien - Le Trésor d'Ambria</title>
 	</head>
 	
-	<body onload="chargement()">
-		<?php include_once $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/header.php"; ?>
+	<body>
+		<?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/header.php"; ?>
 		<div id="banniere"><img src="/escaperpg/images/ambria/tresorambriamini.png"></div>
-		<div id="bloc_page">
+		<main>
 			<nav>
 				<a href="/escaperpg/images/ambria/sullivanmasonmini.png" rel="lightbox[sullivan]" title="Sullivan Mason"><img src="/escaperpg/images/ambria/sullivanmasonmini.png"></a>
 				<div id="inventairefooter"><input type="submit" onclick="inventaireshow()" value="INVENTAIRE"></div>
@@ -58,7 +58,7 @@
 												Vous devez agir. Et vite.
 											</p>
 											<center>
-												<form action="gardien.php" method="post">
+												<form action="gardien" method="post">
 													<input type="submit" name="combat" value="Combattre.">
 												</form>
 											</center>
@@ -70,7 +70,7 @@
 												Êtes-vous sûr d\'avoir bien compris la réponse de votre compagnon ?
 											</p>
 											<center>
-												<form action="gardien.php" method="post">
+												<form action="gardien" method="post">
 													<input type="text" name="attention"><input type="submit" name="logan" value="Prêter attention.">
 												</form>
 											</center>
@@ -119,7 +119,7 @@
 									Sans plus attendre, votre équipe s\'engage dans l\'entrée de la pyramide.
 								</p>
 								<center>
-									<form action="pyramide.php" method="post">
+									<form action="pyramide" method="post">
 										<input type="submit" name="suite" value="Entrer.">
 									</form>
 								</center>
@@ -149,7 +149,7 @@
 									Sans plus attendre, votre équipe s\'engage dans l\'entrée de la pyramide.
 								</p>
 								<center>
-									<form action="pyramide.php" method="post">
+									<form action="pyramide" method="post">
 										<input type="submit" name="suite" value="Entrer.">
 									</form>
 								</center>
@@ -163,7 +163,7 @@
 							$description = 'gardien';
 							$cache = 'oui';
 							$rarete = 'succesnormal';
-							include_once $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/succesadd.php";
+							include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/succesadd.php";
 							echo'</div>';
 							
 							if (isset ($_POST['4golem3']))
@@ -192,7 +192,7 @@
 											</div>
 										</div>
 										<center>
-											<form action="gardien.php" method="post">
+											<form action="gardien" method="post">
 												<input type="submit" name="souffler" value="Suivant.">
 											</form>
 										</center>
@@ -231,7 +231,7 @@
 											</div>
 										</div>
 										<center>
-											<form action="gardien.php" method="post">
+											<form action="gardien" method="post">
 												<input type="submit" name="souffler2" value="Suivant.">
 											</form>
 										</center>
@@ -247,35 +247,35 @@
 							<div id="enigmelieu">
 								<img src="/escaperpg/images/ambria/golem3sullivan.png">
 								<div id="golem3gemme1">
-									<form action="gardien.php" method="post">
+									<form action="gardien" method="post">
 										<button type="submit" name="1golem3">
 											<img src="/escaperpg/images/ambria/golem3gemme.png" onmouseover="this.src=\'/escaperpg/images/ambria/mire.png\'" onmouseout="this.src=\'/escaperpg/images/ambria/golem3gemme.png\'">
 										</button>
 									</form>
 								</div>
 								<div id="golem3gemme2">
-									<form action="gardien.php" method="post">
+									<form action="gardien" method="post">
 										<button type="submit" name="2golem3">
 											<img src="/escaperpg/images/ambria/golem3gemme.png" onmouseover="this.src=\'/escaperpg/images/ambria/mire.png\'" onmouseout="this.src=\'/escaperpg/images/ambria/golem3gemme.png\'">
 										</button>
 									</form>
 								</div>
 								<div id="golem3gemme3">
-									<form action="gardien.php" method="post">
+									<form action="gardien" method="post">
 										<button type="submit" name="3golem3">
 											<img src="/escaperpg/images/ambria/golem3gemme.png" onmouseover="this.src=\'/escaperpg/images/ambria/mire.png\'" onmouseout="this.src=\'/escaperpg/images/ambria/golem3gemme.png\'">
 										</button>
 									</form>
 								</div>
 								<div id="golem3gemme4">
-									<form action="gardien.php" method="post">
+									<form action="gardien" method="post">
 										<button type="submit" name="4golem3">
 											<img src="/escaperpg/images/ambria/golem3gemme.png" onmouseover="this.src=\'/escaperpg/images/ambria/mire.png\'" onmouseout="this.src=\'/escaperpg/images/ambria/golem3gemme.png\'">
 										</button>
 									</form>
 								</div>
 								<div id="golem3gemme5">
-									<form action="gardien.php" method="post">
+									<form action="gardien" method="post">
 										<button type="submit" name="5golem3">
 											<img src="/escaperpg/images/ambria/golem3gemme.png" onmouseover="this.src=\'/escaperpg/images/ambria/mire.png\'" onmouseout="this.src=\'/escaperpg/images/ambria/golem3gemme.png\'">
 										</button>
@@ -297,7 +297,7 @@
 										Il vous faut tirer sur l\'une de ces gemmes, mais comment savoir laquelle ?
 									</div>
 									<center>
-										<form action="gardien.php" method="post">
+										<form action="gardien" method="post">
 											<button type="submit" name="indice2" class="boutonindice"></button>
 										</form>
 									</center>
@@ -311,7 +311,7 @@
 										Logan doit pouvoir vous aider.
 									</div>
 									<center>
-										<form action="gardien.php" method="post">
+										<form action="gardien" method="post">
 											<button type="submit" name="reponse" class="boutonindice"></button>
 										</form>
 									</center>
@@ -320,7 +320,7 @@
 						elseif (isset ($_POST['reponse']))
 							{
 								echo'
-									<div id="reponse">
+									<div class="reponse">
 										Tirer sur la quatrième pierre précieuse.
 									</div>
 								';
@@ -329,7 +329,7 @@
 							{
 								echo'
 									<center>
-										<form action="gardien.php" method="post">
+										<form action="gardien" method="post">
 											<button type="submit" name="indice" class="boutonindice"></button>
 										</form>
 									</center>
@@ -372,7 +372,7 @@
 												</div>
 											</div>
 											<center>
-												<form action="gardien.php" method="post">
+												<form action="gardien" method="post">
 													<input type="submit" name="combat3" value="Achever la créature.">
 												</form>
 											</center>
@@ -384,7 +384,7 @@
 												Êtes-vous sûr d\'avoir bien entendu ce que votre compagnon vous a dit ou de lui avoir fourni la bonne information ?
 											</p>
 											<center>
-												<form action="gardien.php" method="post">
+												<form action="gardien" method="post">
 													<input type="text" name="ecouter"><input type="submit" name="surveiller" value="Suivant.">
 												</form>
 											</center>
@@ -404,7 +404,7 @@
 									Le jeune homme finit par l\'atteindre et commence l\'ascension.
 								</p>
 								<center>
-									<form action="gardien.php" method="post">
+									<form action="gardien" method="post">
 										<input type="text" name="ecouter"><input type="submit" name="surveiller" value="Suivant.">
 									</form>
 								</center>
@@ -416,7 +416,7 @@
 											Peut-être pouvez-vous trouver quelque chose autour de vous pour aider Logan à escalader le géant ?
 										</div>
 										<center>
-											<form action="gardien.php" method="post">
+											<form action="gardien" method="post">
 												<button type="submit" name="indice2" class="boutonindice"></button>
 											</form>
 										</center>
@@ -430,7 +430,7 @@
 											Quelles sont les particularités que Logan voit de son côté qui pourraient correspondre aux informations dont vous disposez ?
 										</div>
 										<center>
-											<form action="gardien.php" method="post">
+											<form action="gardien" method="post">
 												<button type="submit" name="indice3" class="boutonindice"></button>
 											</form>
 										</center>
@@ -445,7 +445,7 @@
 											Avez-vous remarqué la frise sur les colonnes ?
 										</div>
 										<center>
-											<form action="gardien.php" method="post">
+											<form action="gardien" method="post">
 												<button type="submit" name="indice4" class="boutonindice"></button>
 											</form>
 										</center>
@@ -461,7 +461,7 @@
 											Logan est en train de grimper, du bas vers le haut.
 										</div>
 										<center>
-											<form action="gardien.php" method="post">
+											<form action="gardien" method="post">
 												<button type="submit" name="reponse" class="boutonindice"></button>
 											</form>
 										</center>
@@ -470,7 +470,7 @@
 							elseif (isset ($_POST['reponse']))
 								{
 									echo'
-										<div id="reponse">
+										<div class="reponse">
 											La bonne séquence de couleurs est rouge bleu jaune rouge jaune vert bleu vert.
 										</div>
 									';
@@ -479,7 +479,7 @@
 								{
 									echo'
 										<center>
-											<form action="gardien.php" method="post">
+											<form action="gardien" method="post">
 												<button type="submit" name="indice" class="boutonindice"></button>
 											</form>
 										</center>
@@ -514,7 +514,7 @@
 											</div>
 										</div>
 										<center>
-											<form action="gardien.php" method="post">
+											<form action="gardien" method="post">
 												<input type="submit" name="combat2" value="Suivant.">
 											</form>
 										</center>
@@ -548,7 +548,7 @@
 											</div>
 										</div>
 										<center>
-											<form action="gardien.php" method="post">
+											<form action="gardien" method="post">
 												<input type="submit" name="combat2" value="Suivant.">
 											</form>
 										</center>
@@ -564,21 +564,21 @@
 								<div id="enigmelieu">
 									<img src="/escaperpg/images/ambria/golem1sullivan.png">
 									<div id="golem1gemme1">
-										<form action="gardien.php" method="post">
+										<form action="gardien" method="post">
 											<button type="submit" name="1golem">
 												<img src="/escaperpg/images/ambria/golemgemme.png" onmouseover="this.src=\'/escaperpg/images/ambria/mire.png\'" onmouseout="this.src=\'/escaperpg/images/ambria/golemgemme.png\'">
 											</button>
 										</form>
 									</div>
 									<div id="golem1gemme2">
-										<form action="gardien.php" method="post">
+										<form action="gardien" method="post">
 											<button type="submit" name="2golem">
 												<img src="/escaperpg/images/ambria/golemgemme.png" onmouseover="this.src=\'/escaperpg/images/ambria/mire.png\'" onmouseout="this.src=\'/escaperpg/images/ambria/golemgemme.png\'">
 											</button>
 										</form>
 									</div>
 									<div id="golem1gemme3">
-										<form action="gardien.php" method="post">
+										<form action="gardien" method="post">
 											<button type="submit" name="3golem">
 												<img src="/escaperpg/images/ambria/golemgemme.png" onmouseover="this.src=\'/escaperpg/images/ambria/mire.png\'" onmouseout="this.src=\'/escaperpg/images/ambria/golemgemme.png\'">
 											</button>
@@ -596,7 +596,7 @@
 											Avez-vous remarqué les motifs sur le corps du golem ?
 										</div>
 										<center>
-											<form action="gardien.php" method="post">
+											<form action="gardien" method="post">
 												<button type="submit" name="indice2" class="boutonindice"></button>
 											</form>
 										</center>
@@ -610,7 +610,7 @@
 											Essayez de suivre le chemin partant du motif en forme de triangle, il vous mènera jusqu\'au point faible du monstre.
 										</div>
 										<center>
-											<form action="gardien.php" method="post">
+											<form action="gardien" method="post">
 												<button type="submit" name="indice3" class="boutonindice"></button>
 											</form>
 										</center>
@@ -625,7 +625,7 @@
 											Logan voit l\'autre côté du colosse et vous aidera à suivre le chemin.
 										</div>
 										<center>
-											<form action="gardien.php" method="post">
+											<form action="gardien" method="post">
 												<button type="submit" name="reponse" class="boutonindice"></button>
 											</form>
 										</center>
@@ -634,7 +634,7 @@
 							elseif (isset ($_POST['reponse']))
 								{
 									echo'
-										<div id="reponse">
+										<div class="reponse">
 											Cliquez sur la gemme bleue.
 										</div>
 									';
@@ -643,7 +643,7 @@
 								{
 									echo'
 										<center>
-											<form action="gardien.php" method="post">
+											<form action="gardien" method="post">
 												<button type="submit" name="indice" class="boutonindice"></button>
 											</form>
 										</center>
@@ -679,7 +679,7 @@
 									</div>
 								</div>
 								<center>
-									<form action="gardien.php" method="post">
+									<form action="gardien" method="post">
 										<input type="text" name="attention"><input type="submit" name="logan" value="Prêter attention.">
 									</form>
 								</center>
@@ -690,6 +690,6 @@
 		</div>
 		<div id="load"><div id="loader"></div></div>
 		<script src="/escaperpg/scripts/aventures-chargement.js"></script>
-		<?php include_once $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/aventures/ambria/sullivan/includes/footer.php"; ?>
+		<?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/aventures/ambria/sullivan/includes/footer.php"; ?>
 	</body>
 </html>

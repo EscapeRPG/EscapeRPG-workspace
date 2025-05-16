@@ -1,4 +1,4 @@
-<?php include_once $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/entete.php"; ?>
+<?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/entete.php"; ?>
 <!DOCTYPE html>
 <html lang="fr">
 	<head>
@@ -16,10 +16,10 @@
 		<title>La Taverne - Le Trésor d'Ambria</title>
 	</head>
 	
-	<body onload="chargement()">
-		<?php include_once $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/header.php"; ?>
+	<body>
+		<?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/header.php"; ?>
 		<div id="banniere"><img src="/escaperpg/images/ambria/tresorambriamini.png"></div>
-		<div id="bloc_page">
+		<main>
 			<nav>
 				<a href="/escaperpg/images/ambria/loganbarthelemymini.png" rel="lightbox[logan]" title="Logan Barthélémy"><img src="/escaperpg/images/ambria/loganbarthelemymini.png"></a>
 				<div id="inventairefooter"><input type="submit" onclick="inventaireshow()" value="INVENTAIRE"></div>
@@ -65,7 +65,7 @@
 												Sans prendre le temps de vérifier s\'il vous a entendu, vous reportez toute votre attention sur le grand type au couteau qui se rapproche de vous.
 											</p>
 											<center>
-												<form action="embrouilles.php" method="post">
+												<form action="embrouilles" method="post">
 													<input type="text" name="baston"><input type="submit" name="react" value="Réagir.">
 												</form>
 											</center>
@@ -102,7 +102,7 @@
 												Sans prendre le temps de vérifier s\'il vous a entendu, vous reportez toute votre attention sur le grand type qui vous a donné un coup et qui se rapproche de vous, un couteau à la main.
 											</p>
 											<center>
-												<form action="embrouilles.php" method="post">
+												<form action="embrouilles" method="post">
 													<input type="text" name="baston"><input type="submit" name="react" value="Réagir.">
 												</form>
 											</center>
@@ -142,7 +142,7 @@
 												Sullivan arrive alors et vous attrape par l\'arrière du gilet pour vous attirer plus loin du tumulte.
 											</p>
 											<center>
-												<form action="embrouilles.php" method="post">
+												<form action="embrouilles" method="post">
 													<input type="submit" name="suivant" value="Suivant.">
 												</form>
 											</center>
@@ -179,7 +179,7 @@
 												Sullivan arrive alors et vous attrape par l\'arrière du gilet pour vous attirer plus loin du tumulte.
 											</p>
 											<center>
-												<form action="embrouilles.php" method="post">
+												<form action="embrouilles" method="post">
 													<input type="submit" name="suivant" value="Suivant.">
 												</form>
 											</center>
@@ -195,7 +195,7 @@
 							$description = 'bagarre';
 							$cache = 'oui';
 							$rarete = 'succesnormal';
-							include_once $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/succesadd.php";
+							include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/succesadd.php";
 							echo'</div>';
 							
 							echo'
@@ -215,7 +215,7 @@
 									</div>
 								</div>
 								<center>
-									<form action="embrouilles.php" method="post">
+									<form action="embrouilles" method="post">
 										<input type="submit" name="suivant2" value="Suivant.">
 									</form>
 								</center>
@@ -303,7 +303,7 @@
 									Par moments, vous avez l\'impression d\'entendre l\'écho de pas dans les rues calmes de la ville.
 								</p>
 								<center>
-									<form action="embarquement.php" method="post">
+									<form action="embarquement" method="post">
 										<input type="submit" name="embarquer" value="Suivant.">
 									</form>
 								</center>
@@ -362,7 +362,7 @@
 									</div>
 								</div>
 								<center>
-									<form action="embrouilles.php" method="post">
+									<form action="embrouilles" method="post">
 										<input type="text" name="bagarre"><input type="submit" name="battre" value="Réagir.">
 									</form>
 								</center>
@@ -374,6 +374,6 @@
 		</div>
 		<div id="load"><div id="loader"></div></div>
 		<script src="/escaperpg/scripts/aventures-chargement.js"></script>
-		<?php include_once $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/aventures/ambria/logan/includes/footer.php"; ?>
+		<?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/aventures/ambria/logan/includes/footer.php"; ?>
 	</body>
 </html>

@@ -1,4 +1,4 @@
-<?php include_once $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/entete.php"; ?>
+<?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/entete.php"; ?>
 <!DOCTYPE html>
 <html lang="fr">
 	<head>
@@ -16,15 +16,15 @@
 		<title>Salle de bain - Secrets Familiaux</title>
 	</head>
 	
-	<body onload="chargement()">
-		<?php include_once $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/header.php"; ?>
+	<body>
+		<?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/header.php"; ?>
 		<div id="banniere"><img src="/escaperpg/images/secrets/secretsfamiliauxmini.png"></div>
-		<div id="bloc_page">
+		<main>
 			<nav>
 				<a href="/escaperpg/images/secrets/inspecteurdeckard.png" rel="lightbox[bastian]" title="inspecteurdeckard"><img src="/escaperpg/images/secrets/inspecteurdeckardmini.png"></a>
 				<div id="inventairefooter"><input type="submit" onclick="inventaireshow()" value="INVENTAIRE"></div>
 				<div id="motsdepasse"><input type="submit" onclick="mdpshow()" value="NOTES"></div>
-				<?php include_once $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/aventures/secrets/includes/navigationpellington.php"; ?>
+				<?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/aventures/secrets/includes/navigationpellington.php"; ?>
 				<a href="/escaperpg/aventures/secrets/save/save.php" target="_blank" rel="noreferrer"><input type="submit" name="save" value="SAUVEGARDER"></a>
 			</nav>
 			<div id="txt">
@@ -49,7 +49,7 @@
 									<div id="enigmelieu">
 										<img src="/escaperpg/images/secrets/sdb.png">
 										<div id="armoireopened">
-											<form action="armoireapharmacie.php" method="post">
+											<form action="armoireapharmacie" method="post">
 												<button type="submit" name="armoireopened">
 													<img src="/escaperpg/images/secrets/armoirepharmopened.png">
 												<button>
@@ -69,7 +69,7 @@
 									<div id="enigmelieu">
 										<img src="/escaperpg/images/secrets/sdb.png">
 										<div id="armoire">
-											<form action="armoireapharmacie.php" method="post">
+											<form action="armoireapharmacie" method="post">
 												<button type="submit" name="armoire">
 													<img src="/escaperpg/images/secrets/armoirepharm.png">
 												<button>
@@ -87,6 +87,6 @@
 		</div>
 		<div id="load"><div id="loader"></div></div>
 		<script src="/escaperpg/scripts/aventures-chargement.js"></script>
-		<?php include_once $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/aventures/secrets/includes/footer.php"; ?>
+		<?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/aventures/secrets/includes/footer.php"; ?>
 	</body>
 </html>

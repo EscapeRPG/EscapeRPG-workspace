@@ -1,4 +1,4 @@
-<?php include_once $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/entete.php"; ?>
+<?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/entete.php"; ?>
 <!DOCTYPE html>
 <html lang="fr">
 	<head>
@@ -16,16 +16,16 @@
 		<title>Introduction - Le Trésor d'Ambria</title>
 	</head>
 	
-	<body onload="chargement()">
-		<?php include_once $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/header.php"; ?>
+	<body>
+		<?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/header.php"; ?>
 		<div id="banniere"><img src="/escaperpg/images/ambria/tresorambria.png"></div>
-		<div id="bloc_page">
+		<main>
 			<nav><img src="/escaperpg/images/ambria/ambriamedaillon.png"></nav>
 			<div id="txt">
 				<?php
 					if (isset($_POST['new']))
 						{
-							include_once $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/aventures/ambria/includes/sessioninc.php";
+							include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/aventures/ambria/includes/sessioninc.php";
 							echo '
 								<div class="dialogue">
 									<div class="portrait">
@@ -101,11 +101,11 @@
 									</div>
 								</div>
 								<center>
-									<form action="index.php" method="post">
+									<form action="index" method="post">
 										<input type="submit" name="new" value="NOUVELLE PARTIE.">
 									</form>
 									<br>
-									<form action="save/load.php" method="post">
+									<form action="save/load" method="post">
 										<input type="submit" name="load" value="CHARGER UNE PARTIE.">
 									</form>
 								</center>

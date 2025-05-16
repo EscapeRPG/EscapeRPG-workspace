@@ -1,4 +1,4 @@
-<?php include_once $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/entete.php"; ?>
+<?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/entete.php"; ?>
 <!DOCTYPE html>
 <html lang="fr">
 	<head>
@@ -16,10 +16,10 @@
 		<title>Retour au manoir - Secrets Familiaux</title>
 	</head>
 	
-	<body onload="chargement()">
-		<?php include_once $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/header.php"; ?>
+	<body>
+		<?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/header.php"; ?>
 		<div id="banniere"><img src="/escaperpg/images/secrets/secretsfamiliauxmini.png"></div>
-		<div id="bloc_page">
+		<main>
 			<nav>
 				<a href="/escaperpg/images/secrets/inspecteurdeckard.png" rel="lightbox[bastian]" title="inspecteurdeckard"><img src="/escaperpg/images/secrets/inspecteurdeckardmini.png"></a>
 				<div id="inventairefooter"><input type="submit" onclick="inventaireshow()" value="INVENTAIRE"></div>
@@ -72,7 +72,7 @@
 												<br>
 												<script src="/escaperpg/aventures/scripts/dragdropcerclegoodending.js"></script>
 												<center>
-													<form action="shoggoth.php" method="post">
+													<form action="shoggoth" method="post">
 														<input type="submit" name="reset" value="Réinitialiser.">
 													</form>
 												</center>
@@ -99,7 +99,7 @@
 															</span>
 														</p>
 														<center>
-															<form action="shoggoth.php" method="post">
+															<form action="shoggoth" method="post">
 																<button type="submit" name="reponse" class="boutonreponse"></button>
 															</form>
 														</center>
@@ -118,7 +118,7 @@
 															</span>
 														</p>
 														<center>
-															<form action="shoggoth.php" method="post">
+															<form action="shoggoth" method="post">
 																<button type="submit" name="indice3" class="boutonindice"></button>
 															</form>
 														</center>
@@ -137,7 +137,7 @@
 															</span>
 														</p>
 														<center>
-															<form action="shoggoth.php" method="post">
+															<form action="shoggoth" method="post">
 																<button type="submit" name="indice2" class="boutonindice"></button>
 															</form>
 														</center>
@@ -147,7 +147,7 @@
 												{
 													echo '
 														<center>
-															<form action="shoggoth.php" method="post">
+															<form action="shoggoth" method="post">
 																<button type="submit" name="indice" class="boutonindice"></button>
 															</form>
 														</center>
@@ -177,7 +177,7 @@
 													Jurant entre vos dents, vous réussissez à trouver un morceau suffisamment grand pour ce que vous allez entreprendre.
 												</p>
 												<center>
-													<form action="shoggoth.php" method="post">
+													<form action="shoggoth" method="post">
 														<input type="submit" name="rituel" value="Commencer le rituel.">
 													</form>
 												</center>
@@ -199,7 +199,7 @@
 											N\'ayant aucune idée de comment vaincre le shoggoth qui semble occupé, vous décidez de battre en retraite.
 										</p>
 										<center>
-											<form action="../ends/3cvh15.php" method="post">
+											<form action="../ends/3cvh15" method="post">
 												<input type="submit" name="fuir" value="Fuir.">
 											</form>
 										</center>
@@ -274,7 +274,7 @@
 															</span>
 														</p>
 														<center>
-															<form action="shoggoth.php" method="post">
+															<form action="shoggoth" method="post">
 																<button type="submit" name="reponse" class="boutonreponse"></button>
 															</form>
 														</center>
@@ -293,7 +293,7 @@
 															</span>
 														</p>
 														<center>
-															<form action="shoggoth.php" method="post">
+															<form action="shoggoth" method="post">
 																<button type="submit" name="indice3" class="boutonindice"></button>
 															</form>
 														</center>
@@ -312,7 +312,7 @@
 															</span>
 														</p>
 														<center>
-															<form action="shoggoth.php" method="post">
+															<form action="shoggoth" method="post">
 																<button type="submit" name="indice2" class="boutonindice"></button>
 															</form>
 														</center>
@@ -322,7 +322,7 @@
 												{
 													echo '
 														<center>
-															<form action="shoggoth.php" method="post">
+															<form action="shoggoth" method="post">
 																<button type="submit" name="indice" class="boutonindice"></button>
 															</form>
 														</center>
@@ -353,7 +353,7 @@
 													Le shoggoth est en train de se frayer un chemin pour venir jusqu\'à vous et vous risquez de ne pas avoir beaucoup de temps pour accomplir le rituel avant qu\'il ne vous tombe dessus.
 												</p>
 												<center>
-													<form action="shoggoth.php" method="post">
+													<form action="shoggoth" method="post">
 														<input type="submit" name="rituelnb" value="Commencer le rituel.">
 													</form>
 												</center>
@@ -373,7 +373,7 @@
 											Paniqué, vous tentez de rebrousser chemin pour vous échapper, mais vous trébuchez à nouveau sur le corps de Gaspard.
 										</p>
 										<center>
-											<form action="../ends/1fgre2.php" method="post">
+											<form action="../ends/1fgre2" method="post">
 												<input type="submit" name="fuite" value="Tenter de fuir.">
 											</form>
 										</center>
@@ -397,7 +397,7 @@
 											Vous reconnaissez la voix de Gaspard et décidez d\'entrer pour l\'aider.
 										</p>
 										<center>
-											<form action="shoggoth.php" method="post">
+											<form action="shoggoth" method="post">
 												<input type="submit" name="aider" value="Aider Gaspard.">
 											</form>
 										</center>
@@ -417,7 +417,7 @@
 											Le monstre a dû récupérer ses “morceaux” pour redevenir entier.
 										</p>
 										<center>
-											<form action="shoggoth.php" method="post">
+											<form action="shoggoth" method="post">
 												<input type="submit" name="agir" value="Faire quelque chose.">
 											</form>
 										</center>
@@ -435,7 +435,7 @@
 											Le carré d\'obscurité formé par le trou béant est terriblement angoissant mais vous continuez d\'avancer malgré tout.
 										</p>
 										<center>
-											<form action="shoggoth.php" method="post">
+											<form action="shoggoth" method="post">
 												<input type="submit" name="suivant" value="Suivant.">
 											</form>
 										</center>
@@ -447,6 +447,6 @@
 		</div>
 		<div id="load"><div id="loader"></div></div>
 		<script src="/escaperpg/scripts/aventures-chargement.js"></script>
-		<?php include_once $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/aventures/secrets/includes/footer.php"; ?>
+		<?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/aventures/secrets/includes/footer.php"; ?>
 	</body>
 </html>

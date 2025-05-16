@@ -1,4 +1,4 @@
-<?php include_once $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/entete.php"; ?>
+<?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/entete.php"; ?>
 <!DOCTYPE html>
 <html lang="fr">
 	<head>
@@ -16,10 +16,10 @@
 		<title>Introduction - Le Grenier d'Arthur</title>
 	</head>
 	
-	<body onload="chargement()">
-		<?php include_once $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/header.php"; ?>
+	<body>
+		<?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/header.php"; ?>
 		<div id="banniere"><img src="/escaperpg/images/avent/aventmini.png"></div>
-		<div id="bloc_page">
+		<main>
 			<nav>
 				<img src="/escaperpg/images/avent/sarah.png">
 				<form action="/escaperpg/aventures/avent/cartes.php" target="_blank" rel="noreferrer" method="post"><input type="submit" name="cartes" value="Cartes"></form>
@@ -35,16 +35,16 @@
 							$description = 'début';
 							$cache = 'non';
 							$rarete = 'succesnormal';
-							include_once $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/succesadd.php";
+							include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/succesadd.php";
 							$nouveausucces = '<img src="/escaperpg/images/succes/avent/debut.png"><span><u><b>Il était une fois...</b></u><br>Lancer l\'aventure pour la première fois</span>';
 							$scenario = 'avent';
 							$description = 'début';
 							$cache = 'non';
 							$rarete = 'succesnormal';
-							include_once $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/succesadd.php";
+							include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/succesadd.php";
 							echo'</div>';
 							
-							include_once $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/aventures/avent/includes/sessioninc.php";
+							include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/aventures/avent/includes/sessioninc.php";
 							echo '
 								<p>
 									Samedi 17 décembre 2022.<br>
@@ -91,7 +91,7 @@
 									Vous n\'avez jamais compris les raisons de la dispute entre votre père et votre aïeul ni pourquoi il vous répète chaque année ces conseils, mais au moins vous permet-il de passer quelques jours chez ce gentil vieillard.
 								</p>
 								<center>
-									<form action="maison.php" method="post">
+									<form action="maison" method="post">
 										<input type="submit" name="suivant" value="SUIVANT.">
 									</form>
 								</center>
@@ -135,11 +135,11 @@
 								</p>
 								<center>
 									<br>
-									<form action="index.php" method="post">
+									<form action="index" method="post">
 										<input type="submit" name="new" value="NOUVELLE PARTIE.">
 									</form>
 									<br>
-									<form action="save/load.php" method="post">
+									<form action="save/load" method="post">
 										<input type="submit" name="load" value="CHARGER UNE PARTIE.">
 									</form>
 									<br>

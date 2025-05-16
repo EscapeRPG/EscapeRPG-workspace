@@ -1,4 +1,4 @@
-<?php include_once $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/entete.php"; ?>
+<?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/entete.php"; ?>
 <!DOCTYPE html>
 <html lang="fr">
 	<head>
@@ -16,16 +16,16 @@
 		<title>La Taverne - Le Trésor d'Ambria</title>
 	</head>
 	
-	<body onload="chargement()">
-		<?php include_once $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/header.php"; ?>
+	<body>
+		<?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/header.php"; ?>
 		<div id="banniere"><img src="/escaperpg/images/ambria/tresorambriamini.png"></div>
-		<div id="bloc_page">
+		<main>
 			<nav>
 				<a href="/escaperpg/images/ambria/sullivanmasonmini.png" rel="lightbox[sullivan]" title="Sullivan Mason"><img src="/escaperpg/images/ambria/sullivanmasonmini.png"></a>
 				<div id="inventairefooter"><input type="submit" onclick="inventaireshow()" value="INVENTAIRE"></div>
 				<div id="motsdepasse"><input type="submit" onclick="mdpshow()" value="NOTES"></div>
 				<a href="/escaperpg/aventures/ambria/save/save.php" target="_blank" rel="noreferrer"><input type="submit" name="save" value="SAUVEGARDER"></a>
-				<?php include_once $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/aventures/ambria/sullivan/includes/navigationtortuga.php"; ?>
+				<?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/aventures/ambria/sullivan/includes/navigationtortuga.php"; ?>
 			</nav>
 			<div id="txt">
 				<?php
@@ -82,7 +82,7 @@
 														</div>
 													</div>
 													<center>
-														<form action="embrouilles.php" method="post">
+														<form action="embrouilles" method="post">
 															<input type="submit" name="suite" value="Suivant.">
 														</form>
 													</center>
@@ -112,10 +112,10 @@
 														Vous attendez de voir sa réaction, tout en affichant votre célèbre sourire de prédateur.
 													</p>
 													<center>
-														<form action="taverne.php" method="post">
+														<form action="taverne" method="post">
 															<input type="text" name="loganreponse"><input type="submit" name="discuter" value="Discuter.">
 														</form>
-														<form action="taverne.php" method="post">
+														<form action="taverne" method="post">
 															<button type="submit" name="indice3" class="boutonindice"></button>
 														</form>
 													</center>
@@ -146,7 +146,7 @@
 											Vous attendez de voir sa réaction, tout en affichant votre célèbre sourire de prédateur.
 										</p>
 										<center>
-											<form action="taverne.php" method="post">
+											<form action="taverne" method="post">
 												<input type="text" name="loganreponse"><input type="submit" name="discuter" value="Discuter.">
 											</form>
 										</center>
@@ -159,7 +159,7 @@
 													Qu\'est-ce que le jeune homme vous a répondu ?
 												</div>
 												<center>
-													<form action="taverne.php" method="post">
+													<form action="taverne" method="post">
 														<button type="submit" name="indice4" class="boutonindice"></button>
 													</form>
 												</center>
@@ -173,7 +173,7 @@
 													C\'est à l\'autre joueur de vous donner le bon mot de passe.
 												</div>
 												<center>
-													<form action="taverne.php" method="post">
+													<form action="taverne" method="post">
 														<button type="submit" name="reponse2" class="boutonreponse"></button>
 													</form>
 												</center>
@@ -182,7 +182,7 @@
 									elseif (isset ($_POST['reponse2']))
 										{
 											echo'
-												<div id="reponse">
+												<div class="reponse">
 													Entrez le mot de passe "qui êtes-vous".
 												</div>
 											';
@@ -191,7 +191,7 @@
 										{
 											echo'
 												<center>
-													<form action="taverne.php" method="post">
+													<form action="taverne" method="post">
 														<button type="submit" name="indice" class="boutonindice"></button>
 													</form>
 												</center>
@@ -205,7 +205,7 @@
 										<div id="enigmelieu">
 											<img src="/escaperpg/images/ambria/taverne.png">
 											<div id="tavlogan">
-												<form action="taverne.php" method="post">
+												<form action="taverne" method="post">
 													<button type="submit" name="tavernlogan">
 														<img src="/escaperpg/images/ambria/tavernelogan.png">
 													</button>
@@ -221,7 +221,7 @@
 													Essayez de repérer la personne que recherche Sullivan et de cliquer dessus.
 												</div>
 												<center>
-													<form action="taverne.php" method="post">
+													<form action="taverne" method="post">
 														<button type="submit" name="indice2" class="boutonindice"></button>
 													</form>
 												</center>
@@ -235,7 +235,7 @@
 													Cherchez quelqu\'un qui dénote dans le décor, et qui n\'a pas pu prendre de verre vu que c\'est vous qui avez sa bourse.
 												</div>
 												<center>
-													<form action="taverne.php" method="post">
+													<form action="taverne" method="post">
 														<button type="submit" name="reponse" class="boutonreponse"></button>
 													</form>
 												</center>
@@ -244,7 +244,7 @@
 									elseif (isset ($_POST['reponse']))
 										{
 											echo'
-												<div id="reponse">
+												<div class="reponse">
 													Cliquez sur le jeune homme qui est assis à la table au fond à gauche, avec la chemise bleue.
 												</div>
 											';
@@ -253,7 +253,7 @@
 										{
 											echo'
 												<center>
-													<form action="taverne.php" method="post">
+													<form action="taverne" method="post">
 														<button type="submit" name="indice" class="boutonindice"></button>
 													</form>
 												</center>
@@ -279,7 +279,7 @@
 											</div>
 										</div>
 										<center>
-											<form action="taverne.php" method="post">
+											<form action="taverne" method="post">
 												<input type="text" name="don"> <input type="submit" name="demander" value="Demander.">
 											</form>
 										</center>
@@ -304,7 +304,7 @@
 														</div>
 													</div>
 													<center>
-														<form action="taverne.php" method="post">
+														<form action="taverne" method="post">
 															<input type="text" name="don"> <input type="submit" name="demander" value="Demander.">
 														</form>
 													</center>
@@ -323,7 +323,7 @@
 														</div>
 													</div>
 													<center>
-														<form action="taverne.php" method="post">
+														<form action="taverne" method="post">
 															<input type="text" name="don"> <input type="submit" name="demander" value="Demander.">
 														</form>
 													</center>
@@ -351,7 +351,7 @@
 														<a href="/escaperpg/images/ambria/fonddewhisky.png" rel="lightbox[invent]"><img src="/escaperpg/images/ambria/fonddewhisky.png"></a>
 													</div>
 													<center>
-														<form action="taverne.php" method="post">
+														<form action="taverne" method="post">
 															<input type="submit" name="add" value="Prendre.">
 														</form>
 													</center>
@@ -373,7 +373,7 @@
 														</div>
 													</div>
 													<center>
-														<form action="taverne.php" method="post">
+														<form action="taverne" method="post">
 															<input type="text" name="don"> <input type="submit" name="demander" value="Demander.">
 														</form>
 													</center>
@@ -398,7 +398,7 @@
 											</div>
 										</div>
 										<center>
-											<form action="taverne.php" method="post">
+											<form action="taverne" method="post">
 												<input type="text" name="don"> <input type="submit" name="demander" value="Demander.">
 											</form>
 										</center>
@@ -427,7 +427,7 @@
 											</div>
 										</div>
 										<center>
-											<form action="taverne.php" method="post">
+											<form action="taverne" method="post">
 												<input type="text" name="don"> <input type="submit" name="demander" value="Demander.">
 											</form>
 										</center>
@@ -439,6 +439,6 @@
 		</div>
 		<div id="load"><div id="loader"></div></div>
 		<script src="/escaperpg/scripts/aventures-chargement.js"></script>
-		<?php include_once $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/aventures/ambria/sullivan/includes/footer.php"; ?>
+		<?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/aventures/ambria/sullivan/includes/footer.php"; ?>
 	</body>
 </html>

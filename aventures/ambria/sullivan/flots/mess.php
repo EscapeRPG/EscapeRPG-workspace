@@ -1,4 +1,4 @@
-<?php include_once $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/entete.php"; ?>
+<?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/entete.php"; ?>
 <!DOCTYPE html>
 <html lang="fr">
 	<head>
@@ -16,16 +16,16 @@
 		<title>Mess - Le Trésor d'Ambria</title>
 	</head>
 	
-	<body onload="chargement()">
-		<?php include_once $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/header.php"; ?>
+	<body>
+		<?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/header.php"; ?>
 		<div id="banniere"><img src="/escaperpg/images/ambria/tresorambriamini.png"></div>
-		<div id="bloc_page">
+		<main>
 			<nav>
 				<a href="/escaperpg/images/ambria/sullivanmasonmini.png" rel="lightbox[sullivan]" title="Sullivan Mason"><img src="/escaperpg/images/ambria/sullivanmasonmini.png"></a>
 				<div id="inventairefooter"><input type="submit" onclick="inventaireshow()" value="INVENTAIRE"></div>
 				<div id="motsdepasse"><input type="submit" onclick="mdpshow()" value="NOTES"></div>
 				<a href="/escaperpg/aventures/ambria/save/save.php" target="_blank" rel="noreferrer"><input type="submit" name="save" value="SAUVEGARDER"></a>
-				<?php include_once $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/aventures/ambria/sullivan/includes/navigationbateau.php"; ?>
+				<?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/aventures/ambria/sullivan/includes/navigationbateau.php"; ?>
 			</nav>
 			<div id="txt">
 				<?php
@@ -40,7 +40,7 @@
 												Certains pensent l\'avoir vu se diriger vers la <span class="lieu">cale</span> tandis que d\'autres affirment qu\'ils l\'ont vu s\'arrêter au <span class="lieu">quartier des équipages</span>.
 											</p>
 											<center>
-												<form action="mess.php" method="post">
+												<form action="mess" method="post">
 													<input type="text" name="ask"><input type="submit" name="demander" value="Demander.">
 												</form>
 											</center>
@@ -54,7 +54,7 @@
 												à part le coq, personne ne s\'y trouvait à ce moment et ce dernier était en train de préparer un ragoût pour le repas de ce soir et n\'a pas vu où il est parti.
 											</p>
 											<center>
-												<form action="mess.php" method="post">
+												<form action="mess" method="post">
 													<input type="text" name="ask"><input type="submit" name="demander" value="Demander.">
 												</form>
 											</center>
@@ -66,7 +66,7 @@
 												Les hommes d\'équipage présents ici ne semblent pas comprendre où vous voulez en venir.
 											</p>
 											<center>
-												<form action="mess.php" method="post">
+												<form action="mess" method="post">
 													<input type="text" name="ask"><input type="submit" name="demander" value="Demander.">
 												</form>
 											</center>
@@ -91,7 +91,7 @@
 									Vous vous raclez la gorge pour leur faire remarquer votre présence. Ils s\'arrêtent instantanément, attendant de savoir ce que vous avez à leur dire.
 								</p>
 								<center>
-									<form action="mess.php" method="post">
+									<form action="mess" method="post">
 										<input type="text" name="ask"><input type="submit" name="demander" value="Demander.">
 									</form>
 								</center>
@@ -102,6 +102,6 @@
 		</div>
 		<div id="load"><div id="loader"></div></div>
 		<script src="/escaperpg/scripts/aventures-chargement.js"></script>
-		<?php include_once $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/aventures/ambria/sullivan/includes/footer.php"; ?>
+		<?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/aventures/ambria/sullivan/includes/footer.php"; ?>
 	</body>
 </html>

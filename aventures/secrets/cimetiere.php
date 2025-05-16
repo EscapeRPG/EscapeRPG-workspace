@@ -1,4 +1,4 @@
-<?php include_once $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/entete.php"; ?>
+<?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/entete.php"; ?>
 <!DOCTYPE html>
 <html lang="fr">
 	<head>
@@ -16,10 +16,10 @@
 		<title>Cimetière - Secrets Familiaux</title>
 	</head>
 	
-	<body onload="chargement()">
-		<?php include_once $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/header.php"; ?>
+	<body>
+		<?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/header.php"; ?>
 		<div id="banniere"><img src="/escaperpg/images/secrets/secretsfamiliauxmini.png"></div>
-		<div id="bloc_page">
+		<main>
 			<nav>
 				<a href="/escaperpg/images/secrets/inspecteurdeckard.png" rel="lightbox[bastian]" title="inspecteurdeckard"><img src="/escaperpg/images/secrets/inspecteurdeckardmini.png"></a>
 				<div id="inventairefooter"><input type="submit" onclick="inventaireshow()" value="INVENTAIRE"></div>
@@ -52,7 +52,7 @@
 											</div>
 										</p>
 										<center>
-											<form action="cimetiere.php" method="post">
+											<form action="cimetiere" method="post">
 												<input type="submit" name="repondre" value="Lui dire qui vous êtes.">
 											</form>
 										</center>
@@ -88,7 +88,7 @@
 											</div>
 										</p>
 										<center>
-											<form action="cimetiere.php" method="post">
+											<form action="cimetiere" method="post">
 												<input type="submit" name="demander" value="Lui demander d\'entrer.">
 											</form>
 										</center>
@@ -112,7 +112,7 @@
 											</div>
 										</p>
 										<center>
-											<form action="cimetiere.php" method="post">
+											<form action="cimetiere" method="post">
 												<input type="submit" name="badge" value="Lui montrer votre badge.">
 											</form>
 										</center>
@@ -139,7 +139,7 @@
 											Vous l\'assurez pouvoir continuer seul et foncez vers le caveau familial.
 										</p>
 										<center>
-											<form action="cimetiere.php" method="post">
+											<form action="cimetiere" method="post">
 												<input type="submit" name="suivant2" value="Suivant.">
 											</form>
 										</center>
@@ -158,7 +158,7 @@
 											Tremblant, vous pointez votre lampe dans sa direction…
 										</p>
 										<center>
-											<form action="cimetiere.php" method="post">
+											<form action="cimetiere" method="post">
 												<input type="submit" name="suivant3" value="Suivant.">
 											</form>
 										</center>
@@ -174,7 +174,7 @@
 											Vous décidez de retourner au manoir pour récupérer quelques affaires et essayer de savoir ce que vous allez faire pour protéger l\'humanité du danger qui la menace.
 										</p>
 										<center>
-											<form action="manoir/shoggoth.php" method="post">
+											<form action="manoir/shoggoth" method="post">
 												<input type="submit" name="retour" value="Retourner au manoir.">
 											</form>
 										</center>
@@ -192,7 +192,7 @@
 											Sans doute le gardien.
 										</p>
 										<center>
-											<form action="cimetiere.php" method="post">
+											<form action="cimetiere" method="post">
 												<input type="submit" name="heler" value="Le héler.">
 											</form>
 										</center>
@@ -223,7 +223,7 @@
 											</div>
 										</p>
 										<center>
-											<form action="cimetiere.php" method="post">
+											<form action="cimetiere" method="post">
 												<input type="submit" name="qui" value="Qui était-ce ?">
 											</form>
 										</center>
@@ -254,10 +254,10 @@
 											Vous avez peut-être encore le temps de lui poser une question, à moins que vous ne préfériez retourner vous installer ?
 										</p>
 										<center>
-											<form action="cimetiere.php" method="post">
+											<form action="cimetiere" method="post">
 												<input type="text" name="question"> <input type="submit" name="medecin" value="Interroger.">
 											</form>
-											<form action="cimetiere.php" method="post">
+											<form action="cimetiere" method="post">
 												<input type="submit" name="retour" value="Retourner à la cérémonie.">
 											</form>
 										</center>
@@ -281,7 +281,7 @@
 												</div>
 											</div>
 										<center>
-											<form action="cimetiere.php" method="post">
+											<form action="cimetiere" method="post">
 												<input type="submit" name="retour" value="Retourner à la cérémonie.">
 											</form>
 										</center>
@@ -302,10 +302,10 @@
 												</div>
 											</div>
 										<center>
-											<form action="cimetiere.php" method="post">
+											<form action="cimetiere" method="post">
 												<input type="text" name="question"> <input type="submit" name="medecin" value="Interroger.">
 											</form>
-											<form action="cimetiere.php" method="post">
+											<form action="cimetiere" method="post">
 												<input type="submit" name="retour" value="Retourner à la cérémonie.">
 											</form>
 										</center>
@@ -345,7 +345,7 @@
 													</span>
 												</p>
 												<center>
-													<form action="cimetiere.php" method="post">
+													<form action="cimetiere" method="post">
 														<button type="submit" name="indice2" class="boutonindice"></button>
 													</form>
 												</center>
@@ -361,7 +361,7 @@
 													</span>
 												</p>
 												<center>
-													<form action="cimetiere.php" method="post">
+													<form action="cimetiere" method="post">
 														<button type="submit" name="indice3" class="boutonindice"></button>
 													</form>
 												</center>
@@ -378,7 +378,7 @@
 													</span>
 												</p>
 												<center>
-													<form action="cimetiere.php" method="post">
+													<form action="cimetiere" method="post">
 														<button type="submit" name="reponse" class="boutonreponse">
 													</form>
 												</center>
@@ -398,7 +398,7 @@
 										{
 											echo'
 												<center>
-													<form action="cimetiere.php" method="post">
+													<form action="cimetiere" method="post">
 														<button type="submit" name="indice" class="boutonindice"></button>
 													</form>
 												</center>
@@ -418,7 +418,7 @@
 											Certains vous présentent leurs condoléances.
 										</p>
 										<center>
-											<form action="cimetiere.php" method="post">
+											<form action="cimetiere" method="post">
 												<input type="submit" name="suivant" value="Suivant.">
 											</form>
 										</center>
@@ -430,6 +430,6 @@
 		</div>
 		<div id="load"><div id="loader"></div></div>
 		<script src="/escaperpg/scripts/aventures-chargement.js"></script>
-		<?php include_once $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/aventures/secrets/includes/footer.php"; ?>
+		<?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/aventures/secrets/includes/footer.php"; ?>
 	</body>
 </html>

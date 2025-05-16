@@ -1,4 +1,4 @@
-<?php include_once $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/entete.php"; ?>
+<?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/entete.php"; ?>
 <!DOCTYPE html>
 <html lang="fr">
 	<head>
@@ -16,16 +16,16 @@
 		<title>Les Portes de la Cité - Le Trésor d'Ambria</title>
 	</head>
 	
-	<body onload="chargement()">
-		<?php include_once $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/header.php"; ?>
+	<body>
+		<?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/header.php"; ?>
 		<div id="banniere"><img src="/escaperpg/images/ambria/tresorambriamini.png"></div>
-		<div id="bloc_page">
+		<main>
 			<nav>
 				<a href="/escaperpg/images/ambria/sullivanmasonmini.png" rel="lightbox[sullivan]" title="Sullivan Mason"><img src="/escaperpg/images/ambria/sullivanmasonmini.png"></a>
 				<div id="inventairefooter"><input type="submit" onclick="inventaireshow()" value="INVENTAIRE"></div>
 				<div id="motsdepasse"><input type="submit" onclick="mdpshow()" value="NOTES"></div>
 				<a href="/escaperpg/aventures/ambria/save/save.php" target="_blank" rel="noreferrer"><input type="submit" name="save" value="SAUVEGARDER"></a>
-				<?php include_once $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/aventures/ambria/sullivan/includes/navigationile.php"; ?>
+				<?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/aventures/ambria/sullivan/includes/navigationile.php"; ?>
 			</nav>
 			<div id="txt">
 				<?php
@@ -65,7 +65,7 @@
 											Il existe forcément un endroit sur cette île où vous pourriez trouver un traducteur pour ce dialecte.
 										</div>
 										<center>
-											<form action="portescite.php" method="post">
+											<form action="portescite" method="post">
 												<button type="submit" name="indice2" class="boutonindice"></button>
 											</form>
 										</center>
@@ -79,7 +79,7 @@
 											Vous êtes certain d\'avoir remarqué une partie des symboles lorsque vous avez traversé l\'antichambre avec la mousse phosphorescente.
 										</div>
 										<center>
-											<form action="portescite.php" method="post">
+											<form action="portescite" method="post">
 												<button type="submit" name="indice3" class="boutonindice"></button>
 											</form>
 										</center>
@@ -94,7 +94,7 @@
 											Revenez dans les grottes et essayez de trouver le moyen d\'observer correctement la mousse.
 										</div>
 										<center>
-											<form action="portescite.php" method="post">
+											<form action="portescite" method="post">
 												<button type="submit" name="reponse" class="boutonreponse"></button>
 											</form>
 										</center>
@@ -103,7 +103,7 @@
 							elseif (isset ($_POST['reponse']))
 								{
 									echo'
-										<div id="reponse">
+										<div class="reponse">
 											Une fois le traducteur obtenu <i>- et avec l\'aide de Logan -</i> le message indique :<br>
 											"L\'oiseau vole au plus haut. Le serpent se repose à l\'ombre. Le dragon veille sur la cité."
 										</div>
@@ -113,7 +113,7 @@
 								{
 									echo'
 										<center>
-											<form action="portescite.php" method="post">
+											<form action="portescite" method="post">
 												<button type="submit" name="indice" class="boutonindice"></button>
 											</form>
 										</center>
@@ -134,7 +134,7 @@
 									À côté de celle-ci, une plaque en or est gravée de curieux pictogrammes semblant vouloir signifier quelque chose.
 								</p>
 								<center>
-									<form action="portescite.php" method="post">
+									<form action="portescite" method="post">
 										<input type="submit" name="prendre" value="Prendre la plaque.">
 									</form>
 								</center>
@@ -150,7 +150,7 @@
 									il va donc vous falloir trouver le moyen d\'en comprendre son sens si vous espérez pouvoir continuer.									
 								</p>
 								<center>
-									<form action="portescite.php" method="post">
+									<form action="portescite" method="post">
 										<input type="submit" name="porteenigme" value="Observer la porte.">
 									</form>
 								</center>
@@ -176,7 +176,7 @@
 									Vous prenez alors un peu de recul pour essayer de voir si quoi que ce soit pourrait vous aider à franchir ce dernier obstacle.
 								</p>
 								<center>
-									<form action="portescite.php" method="post">
+									<form action="portescite" method="post">
 										<input type="submit" name="porte" value="Chercher.">
 									</form>
 								</center>
@@ -188,6 +188,6 @@
 		</div>
 		<div id="load"><div id="loader"></div></div>
 		<script src="/escaperpg/scripts/aventures-chargement.js"></script>
-		<?php include_once $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/aventures/ambria/sullivan/includes/footer.php"; ?>
+		<?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/aventures/ambria/sullivan/includes/footer.php"; ?>
 	</body>
 </html>

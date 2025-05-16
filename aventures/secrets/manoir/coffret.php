@@ -1,4 +1,4 @@
-<?php include_once $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/entete.php"; ?>
+<?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/entete.php"; ?>
 <!DOCTYPE html>
 <html lang="fr">
 	<head>
@@ -16,15 +16,15 @@
 		<title>Coffret - Secrets Familiaux</title>
 	</head>
 	
-	<body onload="chargement()">
-		<?php include_once $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/header.php"; ?>
+	<body>
+		<?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/header.php"; ?>
 		<div id="banniere"><img src="/escaperpg/images/secrets/secretsfamiliauxmini.png"></div>
-		<div id="bloc_page">
+		<main>
 			<nav>
 				<a href="/escaperpg/images/secrets/inspecteurdeckard.png" rel="lightbox[bastian]" title="inspecteurdeckard"><img src="/escaperpg/images/secrets/inspecteurdeckardmini.png"></a>
 				<div id="inventairefooter"><input type="submit" onclick="inventaireshow()" value="INVENTAIRE"></div>
 				<div id="motsdepasse"><input type="submit" onclick="mdpshow()" value="NOTES"></div>
-				<?php include_once $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/aventures/secrets/includes/navigationmanoir.php"; ?>
+				<?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/aventures/secrets/includes/navigationmanoir.php"; ?>
 				<a href="/escaperpg/aventures/secrets/save/save.php" target="_blank" rel="noreferrer"><input type="submit" name="save" value="SAUVEGARDER"></a>
 			</nav>
 			<div id="txt">
@@ -81,7 +81,7 @@
 								{
 									echo '
 										<center>
-											<form action="coffret.php" method="post">
+											<form action="coffret" method="post">
 												<button type="submit" name="reponse" class="boutonreponse"></button>
 											</form>
 										</center>
@@ -103,7 +103,7 @@
 								{
 									echo '
 										<center>
-											<form action="coffret.php" method="post">
+											<form action="coffret" method="post">
 												<button type="submit" name="indice3" class="boutonindice"></button>
 											</form>
 										</center>
@@ -123,7 +123,7 @@
 								{
 									echo '
 										<center>
-											<form action="coffret.php" method="post">
+											<form action="coffret" method="post">
 												<button type="submit" name="indice2" class="boutonindice"></button>
 											</form>
 										</center>
@@ -139,7 +139,7 @@
 								{
 									echo '
 										<center>
-											<form action="coffret.php" method="post">
+											<form action="coffret" method="post">
 												<button type="submit" name="indice" class="boutonindice"></button>
 											</form>
 										</center>
@@ -155,11 +155,11 @@
 									Avez-vous bien trouvé les 5 éléments à insérer ici ?
 								</p>
 								<center>
-									<form action="coffret.php" method="post">
+									<form action="coffret" method="post">
 										<input type="text" name="coffret"> <input type="submit" name="cavite" value="Regarder de plus près.">
 									</form>
 									<br>
-									<form action="coffret.php" method="post">
+									<form action="coffret" method="post">
 										<button type="submit" name="indice" class="boutonindice"></button>
 									</form>
 								</center>
@@ -173,7 +173,7 @@
 									Sur la façade, vous apercevez 5 cavités circulaires.
 								</p>
 								<center>
-									<form action="coffret.php" method="post">
+									<form action="coffret" method="post">
 										<input type="text" name="coffret"> <input type="submit" name="cavite" value="Regarder de plus près.">
 									</form>
 								</center>
@@ -199,7 +199,7 @@
 											</span>
 										</p>
 										<center>
-											<form action="coffret.php" method="post">
+											<form action="coffret" method="post">
 												<button type="submit" name="reponse" class="boutonreponse"></button>
 											</form>
 										</center>
@@ -215,7 +215,7 @@
 											</span>
 										</p>
 										<center>
-											<form action="coffret.php" method="post">
+											<form action="coffret" method="post">
 												<button type="submit" name="indice2" class="boutonindice"></button>
 											</form>
 										</center>
@@ -225,7 +225,7 @@
 								{
 									echo'
 										<center>
-											<form action="coffret.php" method="post">
+											<form action="coffret" method="post">
 												<button type="submit" name="indice" class="boutonindice"></button>
 											</form>
 										</center>
@@ -242,6 +242,6 @@
 		</div>
 		<div id="load"><div id="loader"></div></div>
 		<script src="/escaperpg/scripts/aventures-chargement.js"></script>
-		<?php include_once $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/aventures/secrets/includes/footer.php"; ?>
+		<?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/aventures/secrets/includes/footer.php"; ?>
 	</body>
 </html>

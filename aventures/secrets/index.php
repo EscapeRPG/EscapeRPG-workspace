@@ -1,4 +1,4 @@
-<?php include_once $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/entete.php"; ?>
+<?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/entete.php"; ?>
 <!DOCTYPE html>
 <html lang="fr">
 	<head>
@@ -16,10 +16,10 @@
 		<title>Introduction - Secrets Familiaux</title>
 	</head>
 	
-	<body onload="chargement()">
-		<?php include_once $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/header.php"; ?>
+	<body>
+		<?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/header.php"; ?>
 		<div id="banniere"><img src="/escaperpg/images/secrets/secretsfamiliauxmini.png"></div>
-		<div id="bloc_page">
+		<main>
 			<nav>
 				<a href="/escaperpg/images/secrets/inspecteurdeckard.png" rel="lightbox[bastian]" title="inspecteurdeckard"><img src="/escaperpg/images/secrets/inspecteurdeckardmini.png"></a>
 				<div id="inventairefooter"><input type="submit" onclick="inventaireshow()" value="INVENTAIRE"></div>
@@ -36,16 +36,16 @@
 							$description = 'début';
 							$cache = 'non';
 							$rarete = 'succesnormal';
-							include_once $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/succesadd.php";
+							include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/succesadd.php";
 							$nouveausucces = '<img src="/escaperpg/images/succes/secrets/debut.png"><span><u><b>Cadeau empoisonné ?</b></u><br>Lancer l\'aventure pour la première fois</span>';
 							$scenario = 'secrets';
 							$description = 'début';
 							$cache = 'non';
 							$rarete = 'succesnormal';
-							include_once $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/succesadd.php";
+							include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/succesadd.php";
 							echo'</div>';
 							
-							include_once $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/aventures/secrets/includes/sessioninc.php";
+							include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/aventures/secrets/includes/sessioninc.php";
 							echo '
 								<p>
 									Arkham, Massachusetts. Octobre 1940.<br>
@@ -58,7 +58,7 @@
 									Vous êtes devant l\'entrée du cimetière.<br>
 								</p>
 								<center>
-									<form action="cimetiere.php" method="post">
+									<form action="cimetiere" method="post">
 										<input type="submit" name="entrer" value="Entrer.">
 									</form>
 								</center>
@@ -82,11 +82,11 @@
 										</div>
 									</div>
 									<br>
-									<form action="index.php" method="post">
+									<form action="index" method="post">
 										<input type="submit" name="new" value="NOUVELLE PARTIE.">
 									</form>
 									<br>
-									<form action="save/load.php" method="post">
+									<form action="save/load" method="post">
 										<input type="submit" name="load" value="CHARGER UNE PARTIE.">
 									</form>
 								</center>
@@ -97,6 +97,6 @@
 		</div>
 		<div id="load"><div id="loader"></div></div>
 		<script src="/escaperpg/scripts/aventures-chargement.js"></script>
-		<?php include_once $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/aventures/secrets/includes/footer.php"; ?>
+		<?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/aventures/secrets/includes/footer.php"; ?>
 	</body>
 </html>

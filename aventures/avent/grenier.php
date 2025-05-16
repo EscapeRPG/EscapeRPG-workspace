@@ -1,4 +1,4 @@
-<?php include_once $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/entete.php"; ?>
+<?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/entete.php"; ?>
 <!DOCTYPE html>
 <html lang="fr">
 	<head>
@@ -16,10 +16,10 @@
 		<title>Une Étrange Machine - Le Grenier d'Arthur</title>
 	</head>
 	
-	<body onload="chargement()">
-		<?php include_once $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/header.php"; ?>
+	<body>
+		<?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/header.php"; ?>
 		<div id="banniere"><img src="/escaperpg/images/avent/aventmini.png"></div>
-		<div id="bloc_page">
+		<main>
 			<nav>
 				<img src="/escaperpg/images/avent/sarah.png">
 				<form action="/escaperpg/aventures/avent/cartes.php" target="_blank" rel="noreferrer" method="post"><input type="submit" name="cartes" value="Cartes"></form>
@@ -38,7 +38,7 @@
 										$description = 'machine';
 										$cache = 'oui';
 										$rarete = 'succesnormal';
-										include_once $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/succesadd.php";
+										include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/succesadd.php";
 											echo'</div>';
 											
 										echo'
@@ -57,7 +57,7 @@
 											<center>
 												<span class="important">Retournez la carte 9.</span><br>
 												<br>
-												<form action="enroute.php" method="post">
+												<form action="enroute" method="post">
 													<input type="submit" name="suivant3" value="SUIVANT.">
 												</form>
 											</center>
@@ -91,11 +91,11 @@
 											</p>
 											<script src="/escaperpg/aventures/scripts/rotation.js"></script>
 											<center>
-												<form action="grenier.php" method="post">
+												<form action="grenier" method="post">
 													<input type="text" name="activate"> <input type="submit" name="activer" value="ACTIVER.">
 												</form>
 												<br>
-												<form action="grenier.php" method="post">
+												<form action="grenier" method="post">
 													<button type="submit" name="indicegrenier6" class="boutonindice"></button>
 												</form>
 											</center>
@@ -138,11 +138,11 @@
 									<center>
 										<span class="indice">Certaines des pièces semblent ne pas être installées correctement. Essayez de les faire bouger.</span><br>
 										<br>
-										<form action="grenier.php" method="post">
+										<form action="grenier" method="post">
 											<input type="text" name="activate"> <input type="submit" name="activer" value="ACTIVER.">
 										</form>
 										<br>
-										<form action="grenier.php" method="post">
+										<form action="grenier" method="post">
 											<button type="submit" name="indicegrenier7" class="boutonindice"></button>
 										</form>
 									</center>
@@ -184,11 +184,11 @@
 										Cliquez sur les pièces de machine qui ne sont pas dans le bon sens, cela les fera pivoter.
 										Associez bien les embouts de couleur entre eux et vous devriez voir un mot se dessiner.</span><br>
 										<br>
-										<form action="grenier.php" method="post">
+										<form action="grenier" method="post">
 											<input type="text" name="activate"> <input type="submit" name="activer" value="ACTIVER.">
 										</form>
 										<br>
-										<form action="grenier.php" method="post">
+										<form action="grenier" method="post">
 											<button type="submit" name="reponse" class="boutonreponse"></button>
 										</form>
 									</center>
@@ -228,7 +228,7 @@
 									<center>
 										<span class="reponse">Le mot de passe à rentrer est Départ.</span><br>
 										<br>
-										<form action="grenier.php" method="post">
+										<form action="grenier" method="post">
 											<input type="text" name="activate"> <input type="submit" name="activer" value="ACTIVER.">
 										</form>
 									</center>
@@ -271,11 +271,11 @@
 											</p>
 											<script src="/escaperpg/aventures/scripts/rotation.js"></script>
 											<center>
-												<form action="grenier.php" method="post">
+												<form action="grenier" method="post">
 													<input type="text" name="activate"> <input type="submit" name="activer" value="ACTIVER.">
 												</form>
 												<br>
-												<form action="grenier.php" method="post">
+												<form action="grenier" method="post">
 													<button type="submit" name="indice" class="boutonindice"></button>
 												</form>
 											</center>
@@ -294,11 +294,11 @@
 												Peut-être y a-t-il un moyen de savoir dans quel ordre les positionner ?
 											</p>
 											<center>
-												<form action="grenier.php" method="post">
+												<form action="grenier" method="post">
 													<input type="text" name="ref"> <input type="submit" name="reference" value="valider.">
 												</form>
 												<br>
-												<form action="grenier.php" method="post">
+												<form action="grenier" method="post">
 													<button type="submit" name="indice" class="boutonindice"></button>
 												</form>
 											</center>
@@ -317,7 +317,7 @@
 								<center>
 									<span class="important">Retournez la carte numéro 3.<br>
 									<br>
-									<form action="grenier.php" method="post">
+									<form action="grenier" method="post">
 										<input type="submit" name="suivant2" value="RETOUR.">
 									</form>
 								</center>
@@ -336,11 +336,11 @@
 									Peut-être y a-t-il un moyen de savoir dans quel ordre les positionner ?
 								</p>
 								<center>
-									<form action="grenier.php" method="post">
+									<form action="grenier" method="post">
 										<input type="text" name="ref"> <input type="submit" name="reference" value="valider.">
 									</form>
 									<br>
-									<form action="grenier.php" method="post">
+									<form action="grenier" method="post">
 										<button type="submit" name="indice" class="boutonindice"></button>
 									</form>
 								</center>
@@ -358,11 +358,11 @@
 									<center>
 										<span class="indice">Observez bien les deux pièces que vous avez récupérées. Il y a sans doute un indice dessus.</span><br>
 										<br>
-										<form action="grenier.php" method="post">
+										<form action="grenier" method="post">
 											<input type="text" name="ref"> <input type="submit" name="reference" value="valider.">
 										</form>
 										<br>
-										<form action="grenier.php" method="post">
+										<form action="grenier" method="post">
 											<button type="submit" name="indicegrenier4" class="boutonindice"></button>
 										</form>
 									</center>
@@ -381,11 +381,11 @@
 										<span class="indice">Observez bien les deux pièces que vous avez récupérées. Il y a sans doute un indice dessus.<br>
 										Avez-vous remarqué les références qui sont gravées sur les plaques ?</span><br>
 										<br>
-										<form action="grenier.php" method="post">
+										<form action="grenier" method="post">
 											<input type="text" name="ref"> <input type="submit" name="reference" value="valider.">
 										</form>
 										<br>
-										<form action="grenier.php" method="post">
+										<form action="grenier" method="post">
 											<button type="submit" name="indicegrenier5" class="boutonindice"></button>
 										</form>
 									</center>
@@ -405,11 +405,11 @@
 										Avez-vous remarqué les références qui sont gravées sur les plaques ?<br>
 										Pour trouver l\'ordre, fiez-vous à la forme des pièces. Ne vous rappellent-elles pas quelque chose ?</span><br>
 										<br>
-										<form action="grenier.php" method="post">
+										<form action="grenier" method="post">
 											<input type="text" name="ref"> <input type="submit" name="reference" value="valider.">
 										</form>
 										<br>
-										<form action="grenier.php" method="post">
+										<form action="grenier" method="post">
 											<button type="submit" name="reponse" class="boutonreponse"></button>
 										</form>
 									</center>
@@ -428,7 +428,7 @@
 										<span class="reponse">Les pièces de machine forment les chiffres 1 et 2 pour donner l\'ordre.
 										La référence à entrer est 7ff-8357.</span><br>
 										<br>
-										<form action="grenier.php" method="post">
+										<form action="grenier" method="post">
 											<input type="text" name="ref"> <input type="submit" name="reference" value="valider.">
 										</form>
 									</center>
@@ -444,28 +444,28 @@
 									<div id="enigmelieu">
 										<img src="/escaperpg/images/avent/grenier.png">
 										<div id="machine">
-											<form action="grenier.php" method="post">
+											<form action="grenier" method="post">
 												<button type="submit" name="machineetrange">
 													<img src="/escaperpg/images/avent/machine.png">
 												</button>
 											</form>
 										</div>
 										<div id="piecedemachine1">
-											<form action="grenier.php" method="post">
+											<form action="grenier" method="post">
 												<button type="submit" name="piecemachine1">
 													<img src="/escaperpg/images/avent/piece1.png">
 												</button>
 											</form>
 										</div>
 										<div id="piecedemachine2">
-											<form action="grenier.php" method="post">
+											<form action="grenier" method="post">
 												<button type="submit" name="piecemachine2">
 													<img src="/escaperpg/images/avent/piece2.png">
 												</button>
 											</form>
 										</div>
 										<div id="carteciel">
-											<form action="grenier.php" method="post">
+											<form action="grenier" method="post">
 												<button type="submit" name="carteduciel">
 													<img src="/escaperpg/images/avent/carteciel.png">
 												</button>
@@ -483,7 +483,7 @@
 									Il manque des pièces à cette machine. Si vous voulez la démarrer, il va falloir trouver de quoi la réparer.
 								</p>
 								<center>
-									<form action="grenier.php" method="post">
+									<form action="grenier" method="post">
 										<input type="submit" name="suivant2" value="RETOUR.">
 									</form>
 								</center>
@@ -497,7 +497,7 @@
 									Il manque sans doute encore quelque chose, vous devriez retourner fouiller le grenier.
 								</p>
 								<center>
-									<form action="grenier.php" method="post">
+									<form action="grenier" method="post">
 										<input type="submit" name="suivant2" value="RETOUR.">
 									</form>
 								</center>
@@ -513,7 +513,7 @@
 								<center>
 									<span class="important">Retournez la carte numéro 5.<br>
 									<br>
-									<form action="grenier.php" method="post">
+									<form action="grenier" method="post">
 										<input type="submit" name="suivant2" value="RETOUR.">
 									</form>
 								</center>
@@ -530,7 +530,7 @@
 								<center>
 									<span class="important">Retournez la carte numéro 12.<br>
 									<br>
-									<form action="grenier.php" method="post">
+									<form action="grenier" method="post">
 										<input type="submit" name="suivant2" value="RETOUR.">
 									</form>
 								</center>
@@ -547,28 +547,28 @@
 									<div id="enigmelieu">
 										<img src="/escaperpg/images/avent/grenier.png">
 										<div id="machine">
-											<form action="grenier.php" method="post">
+											<form action="grenier" method="post">
 												<button type="submit" name="machineetrange">
 													<img src="/escaperpg/images/avent/machine.png">
 												</button>
 											</form>
 										</div>
 										<div id="piecedemachine1">
-											<form action="grenier.php" method="post">
+											<form action="grenier" method="post">
 												<button type="submit" name="piecemachine1">
 													<img src="/escaperpg/images/avent/piece1.png">
 												</button>
 											</form>
 										</div>
 										<div id="piecedemachine2">
-											<form action="grenier.php" method="post">
+											<form action="grenier" method="post">
 												<button type="submit" name="piecemachine2">
 													<img src="/escaperpg/images/avent/piece2.png">
 												</button>
 											</form>
 										</div>
 										<div id="carteciel">
-											<form action="grenier.php" method="post">
+											<form action="grenier" method="post">
 												<button type="submit" name="carteduciel">
 													<img src="/escaperpg/images/avent/carteciel.png">
 												</button>
@@ -593,28 +593,28 @@
 									<div id="enigmelieu">
 										<img src="/escaperpg/images/avent/grenier.png">
 										<div id="machine">
-											<form action="grenier.php" method="post">
+											<form action="grenier" method="post">
 												<button type="submit" name="machineetrange">
 													<img src="/escaperpg/images/avent/machine.png">
 												</button>
 											</form>
 										</div>
 										<div id="piecedemachine1">
-											<form action="grenier.php" method="post">
+											<form action="grenier" method="post">
 												<button type="submit" name="piecemachine1">
 													<img src="/escaperpg/images/avent/piece1.png">
 												</button>
 											</form>
 										</div>
 										<div id="piecedemachine2">
-											<form action="grenier.php" method="post">
+											<form action="grenier" method="post">
 												<button type="submit" name="piecemachine2">
 													<img src="/escaperpg/images/avent/piece2.png">
 												</button>
 											</form>
 										</div>
 										<div id="carteciel">
-											<form action="grenier.php" method="post">
+											<form action="grenier" method="post">
 												<button type="submit" name="carteduciel">
 													<img src="/escaperpg/images/avent/carteciel.png">
 												</button>
@@ -626,7 +626,7 @@
 									<span class="indice">Fouillez bien l\'image, il y a sans doute des choses sur lesquelles cliquer.<br>
 									Vous pouvez trouver deux pièces de machines cachées dans le décor, ainsi qu\'un autre objet.</span><br>
 									<br>
-									<form action="grenier.php" method="post">
+									<form action="grenier" method="post">
 										<button type="submit" name="reponse" class="boutonreponse"></button>
 									</form>
 								</center>
@@ -643,28 +643,28 @@
 									<div id="enigmelieu">
 										<img src="/escaperpg/images/avent/grenier.png">
 										<div id="machine">
-											<form action="grenier.php" method="post">
+											<form action="grenier" method="post">
 												<button type="submit" name="machineetrange">
 													<img src="/escaperpg/images/avent/machine.png">
 												</button>
 											</form>
 										</div>
 										<div id="piecedemachine1">
-											<form action="grenier.php" method="post">
+											<form action="grenier" method="post">
 												<button type="submit" name="piecemachine1">
 													<img src="/escaperpg/images/avent/piece1.png">
 												</button>
 											</form>
 										</div>
 										<div id="piecedemachine2">
-											<form action="grenier.php" method="post">
+											<form action="grenier" method="post">
 												<button type="submit" name="piecemachine2">
 													<img src="/escaperpg/images/avent/piece2.png">
 												</button>
 											</form>
 										</div>
 										<div id="carteciel">
-											<form action="grenier.php" method="post">
+											<form action="grenier" method="post">
 												<button type="submit" name="carteduciel">
 													<img src="/escaperpg/images/avent/carteciel.png">
 												</button>
@@ -675,7 +675,7 @@
 								<center>
 									<span class="indice">Fouillez bien l\'image, il y a sans doute des choses sur lesquelles cliquer.</span><br>
 									<br>
-									<form action="grenier.php" method="post">
+									<form action="grenier" method="post">
 										<button type="submit" name="indicegrenier2" class="boutonindice"></button>
 									</form>
 								</center>
@@ -692,28 +692,28 @@
 									<div id="enigmelieu">
 										<img src="/escaperpg/images/avent/grenier.png">
 										<div id="machine">
-											<form action="grenier.php" method="post">
+											<form action="grenier" method="post">
 												<button type="submit" name="machineetrange">
 													<img src="/escaperpg/images/avent/machine.png">
 												</button>
 											</form>
 										</div>
 										<div id="piecedemachine1">
-											<form action="grenier.php" method="post">
+											<form action="grenier" method="post">
 												<button type="submit" name="piecemachine1">
 													<img src="/escaperpg/images/avent/piece1.png">
 												</button>
 											</form>
 										</div>
 										<div id="piecedemachine2">
-											<form action="grenier.php" method="post">
+											<form action="grenier" method="post">
 												<button type="submit" name="piecemachine2">
 													<img src="/escaperpg/images/avent/piece2.png">
 												</button>
 											</form>
 										</div>
 										<div id="carteciel">
-											<form action="grenier.php" method="post">
+											<form action="grenier" method="post">
 												<button type="submit" name="carteduciel">
 													<img src="/escaperpg/images/avent/carteciel.png">
 												</button>
@@ -722,7 +722,7 @@
 									</div>
 								</p>
 								<center>
-									<form action="grenier.php" method="post">
+									<form action="grenier" method="post">
 										<button type="submit" name="indice" class="boutonindice"></button>
 									</form>
 								</center>
@@ -741,7 +741,7 @@
 									En tout cas, vous espérez qu\'il ne s\'est pas blessé, ou pire : qu\'il ait fini à l\'hôpital !
 								</p>
 								<center>
-									<form action="grenier.php" method="post">
+									<form action="grenier" method="post">
 										<input type="submit" name="suivant2" value="SUIVANT.">
 									</form>
 								</center>
@@ -762,7 +762,7 @@
 									Fascinée, vous vous en approchez.
 								</p>
 								<center>
-									<form action="grenier.php" method="post">
+									<form action="grenier" method="post">
 										<input type="submit" name="suivant" value="SUIVANT.">
 									</form>
 								</center>

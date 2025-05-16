@@ -1,4 +1,4 @@
-<?php include_once $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/entete.php"; ?>
+<?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/entete.php"; ?>
 <!DOCTYPE html>
 <html lang="fr">
 	<head>
@@ -16,15 +16,15 @@
 		<title>Maison de Gaspard - Secrets Familiaux</title>
 	</head>
 	
-	<body onload="chargement()">
-		<?php include_once $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/header.php"; ?>
+	<body>
+		<?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/header.php"; ?>
 		<div id="banniere"><img src="/escaperpg/images/secrets/secretsfamiliauxmini.png"></div>
-		<div id="bloc_page">
+		<main>
 			<nav>
 				<a href="/escaperpg/images/secrets/inspecteurdeckard.png" rel="lightbox[bastian]" title="inspecteurdeckard"><img src="/escaperpg/images/secrets/inspecteurdeckardmini.png"></a>
 				<div id="inventairefooter"><input type="submit" onclick="inventaireshow()" value="INVENTAIRE"></div>
 				<div id="motsdepasse"><input type="submit" onclick="mdpshow()" value="NOTES"></div>
-				<?php include_once $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/aventures/secrets/includes/navigationmanoir.php"; ?>
+				<?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/aventures/secrets/includes/navigationmanoir.php"; ?>
 				<a href="/escaperpg/aventures/secrets/save/save.php" target="_blank" rel="noreferrer"><input type="submit" name="save" value="SAUVEGARDER"></a>
 			</nav>
 			<div id="txt">
@@ -49,7 +49,7 @@
 												</div>
 											</p>
 											<center>
-												<form action="maisongaspard.php" method="post">
+												<form action="maisongaspard" method="post">
 													<input type="text" name="gaspard"> <input type="submit" name="interroger" value="Interroger.">
 												</form>
 											</center>
@@ -71,7 +71,7 @@
 												</div>
 											</p>
 											<center>
-												<form action="maisongaspard.php" method="post">
+												<form action="maisongaspard" method="post">
 													<input type="text" name="gaspard"> <input type="submit" name="interroger" value="Interroger.">
 												</form>
 											</center>
@@ -94,7 +94,7 @@
 												</div>
 											</p>
 											<center>
-												<form action="maisongaspard.php" method="post">
+												<form action="maisongaspard" method="post">
 													<input type="text" name="gaspard"> <input type="submit" name="interroger" value="Interroger.">
 												</form>
 											</center>
@@ -116,7 +116,7 @@
 												</div>
 											</p>
 											<center>
-												<form action="maisongaspard.php" method="post">
+												<form action="maisongaspard" method="post">
 													<input type="text" name="gaspard"> <input type="submit" name="interroger" value="Interroger.">
 												</form>
 											</center>
@@ -139,7 +139,7 @@
 												</div>
 											</p>
 											<center>
-												<form action="maisongaspard.php" method="post">
+												<form action="maisongaspard" method="post">
 													<input type="text" name="gaspard"> <input type="submit" name="interroger" value="Interroger.">
 												</form>
 											</center>
@@ -160,7 +160,7 @@
 												</div>
 											</p>
 											<center>
-												<form action="maisongaspard.php" method="post">
+												<form action="maisongaspard" method="post">
 													<input type="text" name="gaspard"> <input type="submit" name="interroger" value="Interroger.">
 												</form>
 											</center>
@@ -181,7 +181,7 @@
 												</div>
 											</p>
 											<center>
-												<form action="maisongaspard.php" method="post">
+												<form action="maisongaspard" method="post">
 													<input type="text" name="gaspard"> <input type="submit" name="interroger" value="Interroger.">
 												</form>
 											</center>
@@ -202,7 +202,7 @@
 												</div>
 											</p>
 											<center>
-												<form action="maisongaspard.php" method="post">
+												<form action="maisongaspard" method="post">
 													<input type="text" name="gaspard"> <input type="submit" name="interroger" value="Interroger.">
 												</form>
 											</center>
@@ -226,7 +226,7 @@
 												Soudain, Gaspard blêmit et se rue hors de sa maison pour aller voir les chiens.
 											</p>
 											<center>
-												<form action="chenil.php" method="post">
+												<form action="chenil" method="post">
 													<input type="submit" name="suivre" value="Le suivre.">
 												</form>
 											</center>
@@ -250,7 +250,7 @@
 												</div>
 											</p>
 											<center>
-												<form action="maisongaspard.php" method="post">
+												<form action="maisongaspard" method="post">
 													<input type="text" name="gaspard"> <input type="submit" name="interroger" value="Interroger.">
 												</form>
 											</center>
@@ -273,7 +273,7 @@
 												</div>
 											</p>
 											<center>
-												<form action="maisongaspard.php" method="post">
+												<form action="maisongaspard" method="post">
 													<input type="text" name="gaspard"> <input type="submit" name="interroger" value="Interroger.">
 												</form>
 											</center>
@@ -295,7 +295,7 @@
 												</div>
 											</p>
 											<center>
-												<form action="maisongaspard.php" method="post">
+												<form action="maisongaspard" method="post">
 													<input type="text" name="gaspard"> <input type="submit" name="interroger" value="Interroger.">
 												</form>
 											</center>
@@ -316,7 +316,7 @@
 												</div>
 											</p>
 											<center>
-												<form action="maisongaspard.php" method="post">
+												<form action="maisongaspard" method="post">
 													<input type="text" name="gaspard"> <input type="submit" name="interroger" value="Interroger.">
 												</form>
 											</center>
@@ -341,7 +341,7 @@
 									</div>
 								</p>
 								<center>
-									<form action="maisongaspard.php" method="post">
+									<form action="maisongaspard" method="post">
 										<input type="text" name="gaspard"> <input type="submit" name="interroger" value="Interroger.">
 									</form>
 								</center>
@@ -383,7 +383,7 @@
 									Vous ne savez pas vraiment si vous croyez à ce que vous a raconté l\'homme, mais la joie qui se lit sur son visage vous réchauffe sincèrement le cœur.
 								</p>
 								<center>
-									<form action="maisongaspard.php" method="post">
+									<form action="maisongaspard" method="post">
 										<input type="text" name="gaspard"> <input type="submit" name="interroger" value="Interroger.">
 									</form>
 								</center>
@@ -418,7 +418,7 @@
 									Vous tendez la main pour l\'attraper et sentez une sorte d\'aura étrange en émanant.
 								</p>
 								<center>
-									<form action="maisongaspard.php" method="post">
+									<form action="maisongaspard" method="post">
 										<input type="submit" name="talis" value="Ajouter à l\'inventaire.">
 									</form>
 								</center>
@@ -441,7 +441,7 @@
 									</div>
 								</p>
 								<center>
-									<form action="maisongaspard.php" method="post">
+									<form action="maisongaspard" method="post">
 										<input type="text" name="gaspard"> <input type="submit" name="interroger" value="Interroger.">
 									</form>
 								</center>
@@ -454,7 +454,7 @@
 									Gaspard vit dans une petite maison de pierre, juste à côté de la grille d\'entrée. Juste derrière elle se trouve le <span class="lieu">chenil</span>.
 								</p>
 								<center>
-									<form action="maisongaspard.php" method="post">
+									<form action="maisongaspard" method="post">
 										<input type="text" name="gaspard"> <input type="submit" name="interroger" value="Interroger.">
 									</form>
 								</center>
@@ -465,6 +465,6 @@
 		</div>
 		<div id="load"><div id="loader"></div></div>
 		<script src="/escaperpg/scripts/aventures-chargement.js"></script>
-		<?php include_once $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/aventures/secrets/includes/footer.php"; ?>
+		<?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/aventures/secrets/includes/footer.php"; ?>
 	</body>
 </html>

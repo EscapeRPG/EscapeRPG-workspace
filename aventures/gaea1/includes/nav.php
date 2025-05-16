@@ -82,7 +82,7 @@
 		$description = 'touriste';
 		$cache = 'non';
 		$rarete = 'succesargent';
-		include_once $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/succesadd.php";
+		include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/succesadd.php";
 		?>
 	</div>
 <?php endif; ?>

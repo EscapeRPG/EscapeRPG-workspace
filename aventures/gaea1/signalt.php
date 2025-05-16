@@ -1,4 +1,4 @@
-<?php include_once $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/entete.php"; ?>
+<?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/entete.php"; ?>
 <!DOCTYPE html>
 <html lang="fr">
 	<head>
@@ -11,13 +11,13 @@
 		<title>Le Signal - Station GAEA-1</title>
 	</head>
 
-	<body onload="chargement()">
-		<?php include_once $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/header.php"; ?>
+	<body>
+		<?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/header.php"; ?>
 
 		<div id="banniere"><img src="/escaperpg/images/gaea1/gaea1mini.png" alt="gaea 1 bannière"></div>
 
-		<div id="bloc_page">
-			<?php include_once $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/aventures/gaea1/includes/nav.php"; ?>
+		<main>
+			<?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/aventures/gaea1/includes/nav.php"; ?>
 
 			<div id="txt">
 				<?php if (isset ($_POST['valider'])): ?>
@@ -29,7 +29,7 @@
 								$description = 'signal';
 								$cache = 'non';
 								$rarete = 'succesbronze';
-								include_once $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/succesadd.php";
+								include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/succesadd.php";
 							?>
 						</div>
 
@@ -180,7 +180,7 @@
 						$indice2 = "Réglez d'abord l'amplitude, ce sera plus simple pour trouver la bonne longueur d'onde par la suite.";
 						$indice3 = "Il faut augmenter l'amplitude et de réduire la longueur d'onde.";
 
-						include_once $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/aventures/gaea1/includes/indices.php";
+						include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/aventures/gaea1/includes/indices.php";
 					?>
 
 				<?php else: ?>
@@ -207,6 +207,6 @@
 
 		<script src="/escaperpg/scripts/aventures-chargement.js"></script>
 
-		<?php include_once $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/aventures/gaea1/includes/footer.php"; ?>
+		<?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/aventures/gaea1/includes/footer.php"; ?>
 	</body>
 </html>

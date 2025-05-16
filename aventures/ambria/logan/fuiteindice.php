@@ -1,4 +1,4 @@
-<?php include_once $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/entete.php"; ?>
+<?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/entete.php"; ?>
 <!DOCTYPE html>
 <html lang="fr">
 	<head>
@@ -16,10 +16,10 @@
 		<title>La Bibliothèque - Le Trésor d'Ambria</title>
 	</head>
 	
-	<body onload="chargement()">
-		<?php include_once $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/header.php"; ?>
+	<body>
+		<?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/header.php"; ?>
 		<div id="banniere"><img src="/escaperpg/images/ambria/tresorambriamini.png"></div>
-		<div id="bloc_page">
+		<main>
 			<nav>
 				<a href="/escaperpg/images/ambria/loganbarthelemymini.png" rel="lightbox[logan]" title="Logan Barthélémy"><img src="/escaperpg/images/ambria/loganbarthelemymini.png"></a>
 				<div id="inventairefooter"><input type="submit" onclick="inventaireshow()" value="INVENTAIRE"></div>
@@ -37,7 +37,7 @@
 									Vous allez devoir réaliser plusieurs actions pour pouvoir sortir d\'ici, essayez de fouiller partout pour voir ce qui est possible.
 								</div>
 								<center>
-									<form action="fuiteindice.php" method="post">
+									<form action="fuiteindice" method="post">
 										<button type="submit" name="indice3" class="boutonindice"></button>
 									</form>
 								</center>
@@ -54,7 +54,7 @@
 									avant de revenir voir le type dans sa ruelle qui vous permettra d\'ouvrir la porte de sortie, vers le Nord.
 								</div>
 								<center>
-									<form action="fuiteindice.php" method="post">
+									<form action="fuiteindice" method="post">
 										<button type="submit" name="reponse" class="boutonreponse"></button>
 									</form>
 								</center>
@@ -66,7 +66,7 @@
 								<div id="enigmelieu">
 									<img src="/escaperpg/images/ambria/labyrinthefuitereponse.png">
 								</div>
-								<div id="reponse">
+								<div class="reponse">
 									La case en G5 correspond à l\'emplacement du type que vous devez rencontrer.<br>
 									En D5, vous pouvez trouver la clé qu\'il a perdue.<br>
 									Rendez-vous ensuite en F3 puis au Nord pour ouvrir la barrière qui vous bloquait la voie, puis en G2 pour y récupérer des biscuits.<br>
@@ -84,7 +84,7 @@
 									N\'hésitez pas à dessiner un plan, chaque direction que vous prenez correspond à une case et vous indique ce qui se trouve autour.
 								</div>
 								<center>
-									<form action="fuiteindice.php" method="post">
+									<form action="fuiteindice" method="post">
 										<button type="submit" name="indice2" class="boutonindice"></button>
 									</form>
 								</center>
@@ -92,7 +92,7 @@
 						}
 					echo'
 						<center>
-							<form action="fuiteindice.php" method="post">
+							<form action="fuiteindice" method="post">
 								<input type="submit" name="close" value="retour." onclick="window.close()">
 							</form>
 						</center>
@@ -102,6 +102,6 @@
 		</div>
 		<div id="load"><div id="loader"></div></div>
 		<script src="/escaperpg/scripts/aventures-chargement.js"></script>
-		<?php include_once $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/aventures/ambria/logan/includes/footer.php"; ?>
+		<?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/aventures/ambria/logan/includes/footer.php"; ?>
 	</body>
 </html>

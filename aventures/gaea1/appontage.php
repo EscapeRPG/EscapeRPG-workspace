@@ -1,4 +1,4 @@
-<?php include_once $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/entete.php"; ?>
+<?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/entete.php"; ?>
 <!DOCTYPE html>
 <html lang="fr">
 	<head>
@@ -11,13 +11,13 @@
 		<title>La Station - Station GAEA-1</title>
 	</head>
 
-	<body onload="chargement()">
-		<?php include_once $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/header.php"; ?>
+	<body>
+		<?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/header.php"; ?>
 
 		<div id="banniere"><img src="/escaperpg/images/gaea1/gaea1mini.png" alt="gaea 1 bannière"></div>
 
-		<div id="bloc_page">
-			<?php include_once $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/aventures/gaea1/includes/nav.php"; ?>
+		<main>
+			<?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/aventures/gaea1/includes/nav.php"; ?>
 
 			<div id="txt">
 				<?php if (isset($_POST['apponter']) OR $_SESSION['appontage']): ?>
@@ -75,14 +75,14 @@
 					</div>
 					<script src="/escaperpg/aventures/gaea1/scripts/appontage.js"></script>
 					
-					<?php 
+					<?php
 						$reponse = "Vous n'arrivez pas à vous poser ? Dans ce cas, cliquez <a href=\"station/hangar\" style=\"color: lightskyblue\">ici</a> pour passer à la suite.";
 						$indice1 = "Essayez de faire descendre le Seeker à 0 mètre pour vous poser.";
 						$indice2 = "Restez bien " . ($_SESSION['feminin'] ? 'appuyée' : 'appuyé') . " sur la manette jaune pour descendre automatiquement.
 							En cas de souci, <i>M.A.R-V</i> interrompra automatiquement la descente.";
 						$indice3 = "Si vous êtes " . ($_SESSION['feminin'] ? 'perdue' : 'perdu') . ", vérifiez les indications de votre ordinateur de bord, au-dessus. Elles vous seront utiles.";
 
-						include_once $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/aventures/gaea1/includes/indices.php";
+						include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/aventures/gaea1/includes/indices.php";
 					?>
 
 				<?php else: ?>
@@ -117,6 +117,6 @@
 
 		<script src="/escaperpg/scripts/aventures-chargement.js"></script>
 
-		<?php include_once $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/aventures/gaea1/includes/footer.php"; ?>
+		<?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/aventures/gaea1/includes/footer.php"; ?>
 	</body>
 </html>

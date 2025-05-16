@@ -1,4 +1,4 @@
-<?php include_once $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/entete.php"; $_SESSION['plancurrent'] = "b"; ?>
+<?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/entete.php"; $_SESSION['plancurrent'] = "b"; ?>
 <!DOCTYPE html>
 <html lang="fr">
 	<head>
@@ -11,13 +11,13 @@
 		<title><?php if ($_SESSION['avisited'] OR $_SESSION['cvisited'] OR $_SESSION['gvisited']) { echo'Laboratoire A'; } else { echo'Labratrum A'; } ?> - Station GAEA-1</title>
 	</head>
 
-	<body onload="chargement()">
-		<?php include_once $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/header.php"; ?>
+	<body>
+		<?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/header.php"; ?>
 
 		<div id="banniere"><img src="/escaperpg/images/gaea1/gaea1mini.png" alt="gaea 1 bannière"></div>
 
-		<div id="bloc_page">
-			<?php include_once $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/aventures/gaea1/includes/nav.php"; ?>
+		<main>
+			<?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/aventures/gaea1/includes/nav.php"; ?>
 
 			<div id="txt">
 				<?php if ($_SESSION['avisited'] OR $_SESSION['cvisited'] OR $_SESSION['gvisited']): ?>
@@ -42,6 +42,6 @@
 
 		<script src="/escaperpg/scripts/aventures-chargement.js"></script>
 		
-		<?php include_once $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/aventures/gaea1/includes/footer.php"; ?>
+		<?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/aventures/gaea1/includes/footer.php"; ?>
 	</body>
 </html>

@@ -1,4 +1,4 @@
-<?php include_once $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/entete.php"; ?>
+<?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/entete.php"; ?>
 <!DOCTYPE html>
 <html lang="fr">
 	<head>
@@ -16,10 +16,10 @@
 		<title>Voyage de retour - Le Trésor d'Ambria</title>
 	</head>
 	
-	<body onload="chargement()">
-		<?php include_once $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/header.php"; ?>
+	<body>
+		<?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/header.php"; ?>
 		<div id="banniere"><img src="/escaperpg/images/ambria/tresorambriamini.png"></div>
-		<div id="bloc_page">
+		<main>
 			<nav>
 				<a href="/escaperpg/images/ambria/loganbarthelemymini.png" rel="lightbox[logan]" title="Logan Barthélémy"><img src="/escaperpg/images/ambria/loganbarthelemymini.png"></a>
 				<div id="inventairefooter"><input type="submit" onclick="inventaireshow()" value="INVENTAIRE"></div>
@@ -49,7 +49,7 @@
 									Peu importe, vous sentez que ce soir sera le moment idéal pour prendre la fuite dans la nuit, un beau butin dans la poche.
 								</p>
 								<center>
-									<form action="mutinerie.php" method="post">
+									<form action="mutinerie" method="post">
 										<input type="submit" name="nuit" value="Attendre la nuit.">
 									</form>
 								</center>
@@ -68,7 +68,7 @@
 									Vous n\'aurez droit qu\'à un seul essai.
 								</p>
 								<center>
-									<form action="mutinerie.php" method="post">
+									<form action="mutinerie" method="post">
 										<input type="submit" name="agir" value="Agir.">
 									</form>
 								</center>
@@ -155,7 +155,7 @@
 									Vous esquissez un sourire que vous espérez sincère et, alors que l\'équipage apprête le navire pour repartir vers l\'horizon, vous commencez à échafauder un plan pour vous échapper à la première occasion.
 								</p>
 								<center>
-									<form action="mutinerie.php" method="post">
+									<form action="mutinerie" method="post">
 										<input type="submit" name="suivant" value="Suivant.">
 									</form>
 								</center>
@@ -166,6 +166,6 @@
 		</div>
 		<div id="load"><div id="loader"></div></div>
 		<script src="/escaperpg/scripts/aventures-chargement.js"></script>
-		<?php include_once $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/aventures/ambria/logan/includes/footer.php"; ?>
+		<?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/aventures/ambria/logan/includes/footer.php"; ?>
 	</body>
 </html>

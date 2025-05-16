@@ -1,4 +1,4 @@
-<?php include_once $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/entete.php"; ?>
+<?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/entete.php"; ?>
 <!DOCTYPE html>
 <html lang="fr">
 	<head>
@@ -16,10 +16,10 @@
 		<title>En Route - Le Grenier d'Arthur</title>
 	</head>
 	
-	<body onload="chargement()">
-		<?php include_once $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/header.php"; ?>
+	<body>
+		<?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/header.php"; ?>
 		<div id="banniere"><img src="/escaperpg/images/avent/aventmini.png"></div>
-		<div id="bloc_page">
+		<main>
 			<nav>
 				<img src="/escaperpg/images/avent/sarah.png">
 				<form action="/escaperpg/aventures/avent/cartes.php" target="_blank" rel="noreferrer" method="post"><input type="submit" name="cartes" value="Cartes"></form>
@@ -40,7 +40,7 @@
 											$description = 'pôlenord';
 											$cache = 'oui';
 											$rarete = 'succesnormal';
-											include_once $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/succesadd.php";
+											include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/succesadd.php";
 											echo'</div>';
 											
 											echo'
@@ -55,7 +55,7 @@
 													Vous entendez la machine émettre une série de bips.
 												</p>
 												<center>
-													<form action="retrouvailles.php" method="post">
+													<form action="retrouvailles" method="post">
 														<input type="submit" name="bips" value="BIP BOUP !">
 													</form>
 												</center>
@@ -70,15 +70,15 @@
 													<div class="container">
 														<iframe class="drawframe" src="/escaperpg/aventures/avent/draw.php"></iframe>
 													</div>
-													<form action="enroute.php" method="post">
+													<form action="enroute" method="post">
 														<input type="submit" name="clear" value="RÉINITIALISER.">
 													</form>
 													<br>
-													<form action="enroute.php" method="post">
+													<form action="enroute" method="post">
 														<input type="text" name="aller"> <input type="submit" name="validate" value="VALIDER.">
 													</form>
 													<br>
-													<form action="enroute.php" method="post">
+													<form action="enroute" method="post">
 														<button type="submit" name="indiceenroute4" class="boutonindice"></button>
 													</form>
 												</center>
@@ -92,7 +92,7 @@
 										<div class="container">
 											<iframe class="drawframe" src="/escaperpg/aventures/avent/draw.php"></iframe>
 										</div>
-										<form action="enroute.php" method="post">
+										<form action="enroute" method="post">
 											<input type="submit" name="clear" value="RÉINITIALISER.">
 										</form>
 									</center>
@@ -105,11 +105,11 @@
 									<center>
 										<span class="indice">Essayez de comparer le drap et la carte avec les étoiles que vous avez trouvée. Peut-être se complètent-ils l\'un et l\'autre ?</span><br>
 										<br>
-										<form action="enroute.php" method="post">
+										<form action="enroute" method="post">
 											<input type="text" name="aller"> <input type="submit" name="validate" value="VALIDER.">
 										</form>
 										<br>
-										<form action="enroute.php" method="post">
+										<form action="enroute" method="post">
 											<button type="submit" name="indiceenroute4" class="boutonindice"></button>
 										</form>
 									</center>
@@ -122,7 +122,7 @@
 										<div class="container">
 											<iframe class="drawframe" src="/escaperpg/aventures/avent/draw.php"></iframe>
 										</div>
-										<form action="enroute.php" method="post">
+										<form action="enroute" method="post">
 											<input type="submit" name="clear" value="RÉINITIALISER.">
 										</form>
 									</center>
@@ -136,11 +136,11 @@
 										<span class="indice">Essayez de comparer le drap et la carte avec les étoiles que vous avez trouvée. Peut-être se complètent-ils l\'un et l\'autre ?<br>
 										Vous pouvez dessiner directement sur le drap. Reproduisez le dessin que vous avez sur votre carte.</span><br>
 										<br>
-										<form action="enroute.php" method="post">
+										<form action="enroute" method="post">
 											<input type="text" name="aller"> <input type="submit" name="validate" value="VALIDER.">
 										</form>
 										<br>
-										<form action="enroute.php" method="post">
+										<form action="enroute" method="post">
 											<button type="submit" name="reponse" class="boutonreponse"></button>
 										</form>
 									</center>
@@ -153,7 +153,7 @@
 										<div class="container">
 											<iframe class="drawframe" src="/escaperpg/aventures/avent/draw.php"></iframe>
 										</div>
-										<form action="enroute.php" method="post">
+										<form action="enroute" method="post">
 											<input type="submit" name="clear" value="RÉINITIALISER.">
 										</form>
 									</center>
@@ -166,7 +166,7 @@
 									<center>
 										<span class="reponse">Le mot de passe est Pôle Nord.</span><br>
 										<br>
-										<form action="enroute.php" method="post">
+										<form action="enroute" method="post">
 											<input type="text" name="aller"> <input type="submit" name="validate" value="VALIDER.">
 										</form>
 									</center>
@@ -179,7 +179,7 @@
 										<div class="container">
 											<iframe class="drawframe" src="/escaperpg/aventures/avent/draw.php"></iframe>
 										</div>
-										<form action="enroute.php" method="post">
+										<form action="enroute" method="post">
 											<input type="submit" name="clear" value="RÉINITIALISER.">
 										</form>
 									</center>
@@ -190,11 +190,11 @@
 										Sur le côté de la machine, un petit clavier vous permet d\'entrer une information, mais laquelle ?
 									</p>
 									<center>
-										<form action="enroute.php" method="post">
+										<form action="enroute" method="post">
 											<input type="text" name="aller"> <input type="submit" name="validate" value="VALIDER.">
 										</form>
 										<br>
-										<form action="enroute.php" method="post">
+										<form action="enroute" method="post">
 											<button type="submit" name="indice" class="boutonindice"></button>
 										</form>
 									</center>
@@ -208,7 +208,7 @@
 									<div id="enigmelieu">
 										<img src="/escaperpg/images/avent/grenier.png">
 										<div id="carteciel">
-											<form action="enroute.php" method="post">
+											<form action="enroute" method="post">
 												<button type="submit" name="carteduciel">
 													<img src="/escaperpg/images/avent/carteciel.png">
 												</button>
@@ -217,7 +217,7 @@
 									</div>
 								</p>
 								<center>
-									<form action="enroute.php" method="post">
+									<form action="enroute" method="post">
 										<button type="submit" name="indice" class="boutonindice"></button>
 									</form>
 								</center>
@@ -230,7 +230,7 @@
 									<div id="enigmelieu">
 										<img src="/escaperpg/images/avent/grenier.png">
 										<div id="carteciel">
-											<form action="enroute.php" method="post">
+											<form action="enroute" method="post">
 												<button type="submit" name="carteduciel">
 													<img src="/escaperpg/images/avent/carteciel.png">
 												</button>
@@ -241,7 +241,7 @@
 								<center>
 									<span class="indice">Fouillez bien la pièce.</span><br>
 									<br>
-									<form action="enroute.php" method="post">
+									<form action="enroute" method="post">
 										<button type="submit" name="indiceenroute2" class="boutonindice"></button>
 									</form>
 								</center>
@@ -254,7 +254,7 @@
 									<div id="enigmelieu">
 										<img src="/escaperpg/images/avent/grenier.png">
 										<div id="carteciel">
-											<form action="enroute.php" method="post">
+											<form action="enroute" method="post">
 												<button type="submit" name="carteduciel">
 													<img src="/escaperpg/images/avent/carteciel.png">
 												</button>
@@ -266,7 +266,7 @@
 									<span class="indice">Fouillez bien la pièce.<br>
 									Il y a une carte cachée quelque part qui vous aidera à comprendre.</span><br>
 									<br>
-									<form action="enroute.php" method="post">
+									<form action="enroute" method="post">
 										<button type="submit" name="reponse" class="boutonreponse"></button>
 									</form>
 								</center>
@@ -279,7 +279,7 @@
 									<div id="enigmelieu">
 										<img src="/escaperpg/images/avent/grenier.png">
 										<div id="carteciel">
-											<form action="enroute.php" method="post">
+											<form action="enroute" method="post">
 												<button type="submit" name="carteduciel">
 													<img src="/escaperpg/images/avent/carteciel.png">
 												</button>
@@ -301,7 +301,7 @@
 								<center>
 									<span class="important">Prenez la carte numéro 3.<br>
 									<br>
-									<form action="enroute.php" method="post">
+									<form action="enroute" method="post">
 										<input type="submit" name="suivant2" value="RETOUR.">
 									</form>
 								</center>
@@ -315,7 +315,7 @@
 									<div class="container">
 										<iframe class="drawframe" src="/escaperpg/aventures/avent/draw.php"></iframe>
 									</div>
-									<form action="enroute.php" method="post">
+									<form action="enroute" method="post">
 										<input type="submit" name="clear" value="RÉINITIALISER.">
 									</form>
 								</center>
@@ -324,7 +324,7 @@
 									Peut-être que quelque chose dans la pièce pourrait vous aider ?
 								</p>
 								<center>
-									<form action="enroute.php" method="post">
+									<form action="enroute" method="post">
 										<input type="submit" name="retour" value="RETOUR.">
 									</form>
 								</center>

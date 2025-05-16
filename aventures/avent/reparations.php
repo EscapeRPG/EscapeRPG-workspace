@@ -1,4 +1,4 @@
-<?php include_once $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/entete.php"; ?>
+<?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/entete.php"; ?>
 <!DOCTYPE html>
 <html lang="fr">
 	<head>
@@ -16,10 +16,10 @@
 		<title>Réparations - Le Grenier d'Arthur</title>
 	</head>
 	
-	<body onload="chargement()">
-		<?php include_once $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/header.php"; ?>
+	<body>
+		<?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/header.php"; ?>
 		<div id="banniere"><img src="/escaperpg/images/avent/aventmini.png"></div>
-		<div id="bloc_page">
+		<main>
 			<nav>
 				<img src="/escaperpg/images/avent/sarah.png">
 				<form action="/escaperpg/aventures/avent/cartes.php" target="_blank" rel="noreferrer" method="post"><input type="submit" name="cartes" value="Cartes"></form>
@@ -46,7 +46,7 @@
 											<input type="range" name="range" min="1" max="9" value="1">
 											<input type="text" name="reservoir" id="reservoir">
 											<div id="boutonmachineoff">
-												<form action="reparations.php" method="post">
+												<form action="reparations" method="post">
 													<button type="submit" name="boutonmachine">
 														<img src="/escaperpg/images/avent/boutonoff.png">
 													</button>
@@ -63,7 +63,7 @@
 									<script src="/escaperpg/aventures/scripts/dragdrop.js"></script>
 								</p>
 								<center>
-									<form action="reparations.php" method="post">
+									<form action="reparations" method="post">
 										<button type="submit" name="indice" class="boutonindice"></button>
 									</form>
 								</center>
@@ -88,7 +88,7 @@
 											<input type="range" name="range" min="0" max="9" value="0">
 											<input type="text" name="reservoir" id="reservoir">
 											<div id="boutonmachineoff">
-												<form action="reparations.php" method="post">
+												<form action="reparations" method="post">
 													<button type="submit" name="boutonmachine">
 														<img src="/escaperpg/images/avent/boutonoff.png">
 													</button>
@@ -108,7 +108,7 @@
 									<span class="indice">Placez le sapence à l\'endroit indiqué par les instructions.<br>
 									Attention, chaque étape doit être réalisée dans l\'ordre !</span><br>
 									<br>
-									<form action="reparations.php" method="post">
+									<form action="reparations" method="post">
 										<button type="submit" name="indicereparations2" class="boutonindice"></button>
 									</form>
 								</center>
@@ -133,7 +133,7 @@
 											<input type="range" name="range" min="0" max="9" value="0">
 											<input type="text" name="reservoir" id="reservoir">
 											<div id="boutonmachineoff">
-												<form action="reparations.php" method="post">
+												<form action="reparations" method="post">
 													<button type="submit" name="boutonmachine">
 														<img src="/escaperpg/images/avent/boutonoff.png">
 													</button>
@@ -154,7 +154,7 @@
 									Attention, chaque étape doit être réalisée dans l\'ordre !<br>
 									Essayez de traduire les mots en haut, l\'un d\'eux vous dira où placer le sapence.</span><br>
 									<br>
-									<form action="reparations.php" method="post">
+									<form action="reparations" method="post">
 										<button type="submit" name="reponse" class="boutonreponse"></button>
 									</form>
 								</center>
@@ -179,7 +179,7 @@
 											<input type="range" name="range" min="0" max="9" value="0">
 											<input type="text" name="reservoir" id="reservoir">
 											<div id="boutonmachineoff">
-												<form action="reparations.php" method="post">
+												<form action="reparations" method="post">
 													<button type="submit" name="boutonmachine">
 														<img src="/escaperpg/images/avent/boutonoff.png">
 													</button>
@@ -221,7 +221,7 @@
 											<input type="range" name="range" min="0" max="9" value="0">
 											<input type="text" name="reservoir" id="reservoir">
 											<div id="boutonmachineoff">
-												<form action="reparations.php" method="post">
+												<form action="reparations" method="post">
 													<button type="submit" name="boutonmachine">
 														<img src="/escaperpg/images/avent/boutonoff.png">
 													</button>
@@ -238,7 +238,7 @@
 									<script src="/escaperpg/aventures/scripts/dragdrop.js"></script>
 								</p>
 								<center>
-									<form action="reparations.php" method="post">
+									<form action="reparations" method="post">
 										<button type="submit" name="indice" class="boutonindice"></button>
 									</form>
 								</center>
@@ -265,7 +265,7 @@
 									Bientôt, vous arrivez à lire les instructions sans besoin d\'utiliser le traducteur !
 								</p>
 								<center>
-									<form action="reparations.php" method="post">
+									<form action="reparations" method="post">
 										<input type="submit" name="suivant" value="SUIVANT.">
 									</form>
 								</center>

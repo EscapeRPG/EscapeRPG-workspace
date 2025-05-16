@@ -1,4 +1,4 @@
-<?php include_once $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/entete.php"; ?>
+<?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/entete.php"; ?>
 <!DOCTYPE html>
 <html lang="fr">
 	<head>
@@ -16,15 +16,15 @@
 		<title>Grenier - Secrets Familiaux</title>
 	</head>
 	
-	<body onload="chargement()">
-		<?php include_once $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/header.php"; ?>
+	<body>
+		<?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/header.php"; ?>
 		<div id="banniere"><img src="/escaperpg/images/secrets/secretsfamiliauxmini.png"></div>
-		<div id="bloc_page">
+		<main>
 			<nav>
 				<a href="/escaperpg/images/secrets/inspecteurdeckard.png" rel="lightbox[bastian]" title="inspecteurdeckard"><img src="/escaperpg/images/secrets/inspecteurdeckardmini.png"></a>
 				<div id="inventairefooter"><input type="submit" onclick="inventaireshow()" value="INVENTAIRE"></div>
 				<div id="motsdepasse"><input type="submit" onclick="mdpshow()" value="NOTES"></div>
-				<?php include_once $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/aventures/secrets/includes/navigationmanoir.php"; ?>
+				<?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/aventures/secrets/includes/navigationmanoir.php"; ?>
 				<a href="/escaperpg/aventures/secrets/save/save.php" target="_blank" rel="noreferrer"><input type="submit" name="save" value="SAUVEGARDER"></a>
 			</nav>
 			<div id="txt">
@@ -51,7 +51,7 @@
 											Il semblerait que vous n\'ayez plus rien à trouver par ici.
 										</p>
 										<center>
-											<form action="grenier.php" method="post">
+											<form action="grenier" method="post">
 												<input type="submit" name="retour" value="Retour.">
 											</form>
 										</center>
@@ -84,7 +84,7 @@
 											En attendant d\'en savoir plus, vous la mettez dans votre poche.
 										</p>
 										<center>
-											<form action="grenier.php" method="post">
+											<form action="grenier" method="post">
 												<input type="submit" name="sev" value="Ajouter à l\'inventaire.">
 											</form>
 										</center>
@@ -97,7 +97,7 @@
 											<div id="enigmelieu">
 												<img src="/escaperpg/images/secrets/vuegrenier.png">
 												<div id="grenierpiece">
-													<form action="grenier.php" method="post">
+													<form action="grenier" method="post">
 														<button type="submit" name="grenierpiece">
 															<img src="/escaperpg/images/secrets/grenierpiece.png">
 														</button>
@@ -119,7 +119,7 @@
 											<div id="enigmelieu">
 												<img src="/escaperpg/images/secrets/vuegrenier.png">
 												<div id="piano">
-													<form action="grenier.php" method="post">
+													<form action="grenier" method="post">
 														<button type="submit" name="piano">
 															<img src="/escaperpg/images/secrets/pianoclosed.png">
 														</button>
@@ -151,6 +151,6 @@
 		</div>
 		<div id="load"><div id="loader"></div></div>
 		<script src="/escaperpg/scripts/aventures-chargement.js"></script>
-		<?php include_once $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/aventures/secrets/includes/footer.php"; ?>
+		<?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/aventures/secrets/includes/footer.php"; ?>
 	</body>
 </html>

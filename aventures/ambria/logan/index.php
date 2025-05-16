@@ -19,10 +19,10 @@
 		<title>Le Trésor d'Ambria</title>
 	</head>
 	
-	<body onload="chargement()">
-		<?php include_once $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/header.php"; ?>
+	<body>
+		<?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/header.php"; ?>
 		<div id="banniere"><img src="/escaperpg/images/ambria/tresorambria.png"></div>
-		<div id="bloc_page">
+		<main>
 			<nav><img src="/escaperpg/images/ambria/ambriamedaillon.png"></nav>
 			<div id="txt"><?php echo'<p>Oups, il semblerait que vous ayez entré une mauvaise adresse !<br><br>Cliquez <a href='.$_SESSION['page'].'>ici</a> pour revenir à l\'étape précédente.</p>'; ?></div>
 		</div>

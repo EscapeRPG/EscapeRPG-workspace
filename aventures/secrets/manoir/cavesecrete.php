@@ -1,4 +1,4 @@
-<?php include_once $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/entete.php"; ?>
+<?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/entete.php"; ?>
 <!DOCTYPE html>
 <html lang="fr">
 	<head>
@@ -16,10 +16,10 @@
 		<title>Bureau - Secrets Familiaux</title>
 	</head>
 	
-	<body onload="chargement()">
-		<?php include_once $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/header.php"; ?>
+	<body>
+		<?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/header.php"; ?>
 		<div id="banniere"><img src="/escaperpg/images/secrets/secretsfamiliauxmini.png"></div>
-		<div id="bloc_page">
+		<main>
 			<nav>
 				<a href="/escaperpg/images/secrets/inspecteurdeckard.png" rel="lightbox[bastian]" title="inspecteurdeckard"><img src="/escaperpg/images/secrets/inspecteurdeckardmini.png"></a>
 				<div id="inventairefooter"><input type="submit" onclick="inventaireshow()" value="INVENTAIRE"></div>
@@ -42,7 +42,7 @@
 									Vous atteignez la cuve et jetez un coup d\'œil à son contenu.
 								</p>
 								<center>
-									<form action="cavesecrete.php" method="post">
+									<form action="cavesecrete" method="post">
 										<input type="submit" name="suivant2" value="Suivant.">
 									</form>
 								</center>
@@ -57,7 +57,7 @@
 							$description = 'vérité';
 							$cache = 'non';
 							$rarete = 'succesargent';
-							include_once $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/succesadd.php";
+							include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/succesadd.php";
 							echo'</div>';
 							
 							echo'
@@ -78,7 +78,7 @@
 								</div>
 								<br>
 								<center>
-									<form action="cavesecrete.php" method="post">
+									<form action="cavesecrete" method="post">
 										<input type="submit" name="prendre" value="Les prendre.">
 									</form>
 								</center>
@@ -94,7 +94,7 @@
 								$description = 'journal';
 								$cache = 'non';
 								$rarete = 'succesbronze';
-								include_once $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/succesadd.php";
+								include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/succesadd.php";
 							echo'</div>';
 							
 							}
@@ -105,7 +105,7 @@
 									Ce qu\'elles contiennent vous donneront sans doute des cauchemars pour le restant de vos jours, si la folie ne vous emporte pas avant, mais vous ne pouvez vous empêcher de continuer à les lire.
 								</p>
 								<center>
-									<form action="cavesecrete.php" method="post">
+									<form action="cavesecrete" method="post">
 										<input type="submit" name="suivant3" value="Suivant.">
 									</form>
 								</center>
@@ -129,7 +129,7 @@
 									Vous jetez un nouveau regard sur la pièce autour de vous.
 								</p>
 								<center>
-									<form action="cavesecrete.php" method="post">
+									<form action="cavesecrete" method="post">
 										<input type="text" name="cave"> <input type="submit" name="chercher" value="Inspecter.">
 									</form>
 								</center>
@@ -146,7 +146,7 @@
 												Votre oncle espérait ainsi pouvoir maintenir l\'état de votre père le temps de parfaire sa technique et de le réanimer.
 											</p>
 											<center>
-												<form action="cavesecrete.php" method="post">
+												<form action="cavesecrete" method="post">
 													<input type="text" name="cave"> <input type="submit" name="chercher" value="Inspecter.">
 												</form>
 											</center>
@@ -162,7 +162,7 @@
 												Quelque chose semble cependant vous hanter et vous pressentez que cela revêt d\'une importance capitale.
 											</p>
 											<center>
-												<form action="pensees.php" method="post">
+												<form action="pensees" method="post">
 													<input type="submit" name="pensees" value="Réfléchir calmement.">
 												</form>
 											</center>
@@ -174,7 +174,7 @@
 												Êtes-vous sûr de savoir ce que vous cherchez ici ?
 											</p>
 											<center>
-												<form action="cavesecrete.php" method="post">
+												<form action="cavesecrete" method="post">
 													<input type="text" name="cave"> <input type="submit" name="chercher" value="Inspecter.">
 												</form>
 											</center>
@@ -193,7 +193,7 @@
 									Vous avancez un peu pour arriver dans une petite salle carrée et c\'est là que l\'horreur vous frappe
 								</p>
 								<center>
-									<form action="cavesecrete.php" method="post">
+									<form action="cavesecrete" method="post">
 										<input type="submit" name="suivant" value="Suivant.">
 									</form>
 								</center>
@@ -204,6 +204,6 @@
 		</div>
 		<div id="load"><div id="loader"></div></div>
 		<script src="/escaperpg/scripts/aventures-chargement.js"></script>
-		<?php include_once $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/aventures/secrets/includes/footer.php"; ?>
+		<?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/aventures/secrets/includes/footer.php"; ?>
 	</body>
 </html>
