@@ -33,3 +33,9 @@ input[type=submit] {
         background-color: rgb(220, 120, 0);
     }
 }
+
+input[type="text"] {
+  width: 100%;
+  max-width: 200px;
+  max-height: 20px;
+}

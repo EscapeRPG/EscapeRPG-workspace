@@ -35,34 +35,6 @@ main {
 	display: none;
 }
 
-nav {
-	width: 20%;
-	display: inline-block;
-	vertical-align: top;
-	background-color: rgba(0, 0, 0, 0.6);
-	border-radius: 20px 0px 10px 20px;
-	color: white;
-	text-align: center;
-	padding: 10px;
-
-	img {
-		width: 60%;
-	}
-
-	a {
-		color: orange;
-		font-weight: normal;
-
-		&:hover {
-			color: brown;
-		}
-	}
-
-	li {
-		text-align: justify;
-	}
-}
-
 h1 {
 	color: orange;
 	text-transform: uppercase;
