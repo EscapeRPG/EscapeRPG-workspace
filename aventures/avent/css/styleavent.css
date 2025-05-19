@@ -302,7 +302,7 @@ header
 
 @keyframes glow
 {
-	0% { box-shadow: 0 0 10px var(--couleur); } 100% { box-shadow: 0 0 20px var(--couleur); }
+	0% { box-shadow: 0 0 10px let(--couleur); } 100% { box-shadow: 0 0 20px let(--couleur); }
 }
 
 .succesbronze, .succesargent, .succesgold, .succesdiamant

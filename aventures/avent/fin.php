@@ -1,4 +1,4 @@
-<?php include_once $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/entete.php"; ?>
+<?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/entete.php"; ?>
 <!DOCTYPE html>
 <html lang="fr">
 	<head>
@@ -17,9 +17,9 @@
 	</head>
 	
 	<body onload="chargement()">
-		<?php include_once $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/header.php"; ?>
+		<?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/header.php"; ?>
 		<div id="banniere"><img src="/escaperpg/images/avent/aventmini.png"></div>
-		<div id="bloc_page">
+		<main>
 			<nav>
 				<img src="/escaperpg/images/avent/sarah.png">
 				<form action="/escaperpg/aventures/avent/cartes.php" target="_blank" rel="noreferrer" method="post"><input type="submit" name="cartes" value="Cartes"></form>
@@ -34,7 +34,7 @@
 							$description = 'commentaire';
 							$cache = 'non';
 							$rarete = 'succesbronze';
-							include_once $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/succesadd.php";
+							include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/succesadd.php";
 							echo'</div>';
 							
 							if ($_SESSION['loggedin']) { $nom = $_SESSION['idcompte']; } else { $nom = $_POST['nom']; }
@@ -51,13 +51,13 @@
 							$description = 'fin';
 							$cache = 'non';
 							$rarete = 'succesbronze';
-							include_once $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/succesadd.php";
+							include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/succesadd.php";
 							$nouveausucces = '<img src="/escaperpg/images/succes/avent/fin.png"><span><u><b>... et ils vécurent heureux</b></u><br>Terminer l\'aventure</span>';
 							$scenario = 'avent';
 							$description = 'fin';
 							$cache = 'non';
 							$rarete = 'succesbronze';
-							include_once $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/succesadd.php";
+							include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/succesadd.php";
 							echo'</div>';
 							
 							echo '
@@ -107,7 +107,7 @@
 							echo'
 								</div>
 								<center>
-									<form action="neutralending.php" method="post">
+									<form action="neutralending" method="post">
 										<fieldset>
 											<label for="nom">Votre nom (20 caractères max) :</label>
 											<input type="text" name="nom" id="nom" required><br>
@@ -135,7 +135,7 @@
 									Malgré tout, vous vous endormez le sourire aux lèvres, en repensant à tout ce qu\'il s\'est passé depuis la semaine dernière.
 								</p>
 								<center>
-									<form action="fin.php" method="post">
+									<form action="fin" method="post">
 										<input type="submit" name="knock" value="toc toc toc.">
 									<form>
 								</center>
@@ -221,7 +221,7 @@
 									Vous percevez alors un mouvement provenant de la cuisine.
 								</p>
 								<center>
-									<form action="fin.php" method="post">
+									<form action="fin" method="post">
 										<input type="submit" name="suivant2" value="suivant.">
 									<form>
 								</center>
@@ -293,7 +293,7 @@
 									Cette année, Noël aura vraiment été magique.
 								</p>
 								<center>
-									<form action="fin.php" method="post">
+									<form action="fin" method="post">
 										<input type="submit" name="fin" value="fin.">
 									<form>
 								</center>
@@ -307,10 +307,10 @@
 							$description = 'maison';
 							$cache = 'oui';
 							$rarete = 'succesargent';
-							include_once $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/succesadd.php";
+							include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/succesadd.php";
 							echo'</div>';
 							
-							include_once $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/aventures/avent/includes/sessioninc.php";
+							include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/aventures/avent/includes/sessioninc.php";
 							echo '
 								<audio src="/escaperpg/sons/avent/bipssifflement.mp3" autoplay></audio>
 								<p>
@@ -340,7 +340,7 @@
 									Vous avez même l\'impression que, pour une raison inconnue, Arthur et votre père se parlent comme si leur querelle était oubliée... incroyable !
 								</p>
 								<center>
-									<form action="fin.php" method="post">
+									<form action="fin" method="post">
 										<input type="submit" name="suivant" value="suivant.">
 									<form>
 								</center>

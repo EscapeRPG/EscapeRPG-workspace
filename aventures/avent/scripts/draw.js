@@ -8,7 +8,7 @@ function resizeCanvas()
 	const width = canvas.width = window.innerWidth;
 	const height = canvas.height = window.innerHeight-10;
 
-	var fond = new Image();
+	let fond = new Image();
 	fond.src = '/escaperpg/images/avent/carteduciel.png';
 	ctx.drawImage(fond, 0, 0, width, height);
 

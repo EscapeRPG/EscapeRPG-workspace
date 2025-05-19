@@ -1,4 +1,4 @@
-<?php include_once $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/entete.php"; ?>
+<?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/entete.php"; ?>
 <!DOCTYPE html>
 <html lang="fr">
 	<head>
@@ -17,9 +17,9 @@
 	</head>
 	
 	<body onload="chargement()">
-		<?php include_once $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/header.php"; ?>
+		<?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/header.php"; ?>
 		<div id="banniere"><img src="/escaperpg/images/avent/aventmini.png"></div>
-		<div id="bloc_page">
+		<main>
 			<nav><img src="/escaperpg/images/avent/sarah.png"></nav>
 			<div id="txt">
 				<div id="cartes">
@@ -47,7 +47,7 @@
 							{
 								echo '
 									<div id="inventaire">
-										<form action="cartes.php" method="post">
+										<form action="cartes" method="post">
 											<button type="submit" name="1carte">
 												<img src="/escaperpg/images/avent/cartes/1verso.png">
 											</button>
@@ -68,7 +68,7 @@
 							{
 								echo '
 									<div id="inventaire">
-										<form action="cartes.php" method="post">
+										<form action="cartes" method="post">
 											<button type="submit" name="2carte">
 												<img src="/escaperpg/images/avent/cartes/2verso.png">
 											</button>
@@ -89,7 +89,7 @@
 							{
 								echo '
 									<div id="inventaire">
-										<form action="cartes.php" method="post">
+										<form action="cartes" method="post">
 											<button type="submit" name="3carte">
 												<img src="/escaperpg/images/avent/cartes/3verso.png">
 											</button>
@@ -110,7 +110,7 @@
 							{
 								echo '
 									<div id="inventaire">
-										<form action="cartes.php" method="post">
+										<form action="cartes" method="post">
 											<button type="submit" name="4carte">
 												<img src="/escaperpg/images/avent/cartes/4verso.png">
 											</button>
@@ -131,7 +131,7 @@
 							{
 								echo '
 									<div id="inventaire">
-										<form action="cartes.php" method="post">
+										<form action="cartes" method="post">
 											<button type="submit" name="5carte">
 												<img src="/escaperpg/images/avent/cartes/5verso.png">
 											</button>
@@ -152,7 +152,7 @@
 							{
 								echo '
 									<div id="inventaire">
-										<form action="cartes.php" method="post">
+										<form action="cartes" method="post">
 											<button type="submit" name="6carte">
 												<img src="/escaperpg/images/avent/cartes/6verso.png">
 											</button>
@@ -173,7 +173,7 @@
 							{
 								echo '
 									<div id="inventaire">
-										<form action="cartes.php" method="post">
+										<form action="cartes" method="post">
 											<button type="submit" name="7carte">
 												<img src="/escaperpg/images/avent/cartes/7verso.png">
 											</button>
@@ -194,7 +194,7 @@
 							{
 								echo '
 									<div id="inventaire">
-										<form action="cartes.php" method="post">
+										<form action="cartes" method="post">
 											<button type="submit" name="8carte">
 												<img src="/escaperpg/images/avent/cartes/8verso.png">
 											</button>
@@ -215,7 +215,7 @@
 							{
 								echo '
 									<div id="inventaire">
-										<form action="cartes.php" method="post">
+										<form action="cartes" method="post">
 											<button type="submit" name="9carte">
 												<img src="/escaperpg/images/avent/cartes/9verso.png">
 											</button>
@@ -236,7 +236,7 @@
 							{
 								echo '
 									<div id="inventaire">
-										<form action="cartes.php" method="post">
+										<form action="cartes" method="post">
 											<button type="submit" name="10carte">
 												<img src="/escaperpg/images/avent/cartes/10verso.png">
 											</button>
@@ -257,7 +257,7 @@
 							{
 								echo '
 									<div id="inventaire">
-										<form action="cartes.php" method="post">
+										<form action="cartes" method="post">
 											<button type="submit" name="11carte">
 												<img src="/escaperpg/images/avent/cartes/11verso.png">
 											</button>
@@ -278,7 +278,7 @@
 							{
 								echo '
 									<div id="inventaire">
-										<form action="cartes.php" method="post">
+										<form action="cartes" method="post">
 											<button type="submit" name="12carte">
 												<img src="/escaperpg/images/avent/cartes/12verso.png">
 											</button>
@@ -299,7 +299,7 @@
 							{
 								echo '
 									<div id="inventaire">
-										<form action="cartes.php" method="post">
+										<form action="cartes" method="post">
 											<button type="submit" name="13carte">
 												<img src="/escaperpg/images/avent/cartes/13verso.png">
 											</button>
@@ -320,7 +320,7 @@
 							{
 								echo '
 									<div id="inventaire">
-										<form action="cartes.php" method="post">
+										<form action="cartes" method="post">
 											<button type="submit" name="14carte">
 												<img src="/escaperpg/images/avent/cartes/14verso.png">
 											</button>
@@ -341,7 +341,7 @@
 							{
 								echo '
 									<div id="inventaire">
-										<form action="cartes.php" method="post">
+										<form action="cartes" method="post">
 											<button type="submit" name="15carte">
 												<img src="/escaperpg/images/avent/cartes/15verso.png">
 											</button>
@@ -362,7 +362,7 @@
 							{
 								echo '
 									<div id="inventaire">
-										<form action="cartes.php" method="post">
+										<form action="cartes" method="post">
 											<button type="submit" name="16carte">
 												<img src="/escaperpg/images/avent/cartes/16verso.png">
 											</button>
@@ -375,7 +375,7 @@
 				<br>
 				<br>
 				<center>
-					<form action="cartes.php" method="post">
+					<form action="cartes" method="post">
 						<input type="submit" name="close" value="Fermer." onclick="window.close()"/>
 					</form>
 				</center>

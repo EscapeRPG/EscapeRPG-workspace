@@ -1,4 +1,4 @@
-<?php include_once $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/entete.php"; ?>
+<?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/entete.php"; ?>
 <!DOCTYPE html>
 <html lang="fr">
 	<head>
@@ -17,9 +17,9 @@
 	</head>
 	
 	<body onload="chargement()">
-		<?php include_once $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/header.php"; ?>
+		<?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/header.php"; ?>
 		<div id="banniere"><img src="/escaperpg/images/avent/aventmini.png"></div>
-		<div id="bloc_page">
+		<main>
 			<nav>
 				<img src="/escaperpg/images/avent/sarah.png">
 				<form action="/escaperpg/aventures/avent/cartes.php" target="_blank" rel="noreferrer" method="post"><input type="submit" name="cartes" value="Cartes"></form>
@@ -99,7 +99,7 @@
 									Il appuie dessus, mais rien ne se passe.
 								</p>
 								<center>
-									<form action="retour.php" method="post">
+									<form action="retour" method="post">
 										<input type="submit" name="suivant" value="suivant.">
 									</form>
 								</center>
@@ -142,7 +142,7 @@
 									Il vous pointe du doigt un meuble rempli de bocaux. Vous vous y dirigez.
 								</p>
 								<center>
-									<form action="retour.php" method="post">
+									<form action="retour" method="post">
 										<input type="submit" name="suivant2" value="suivant.">
 									</form>
 								</center>
@@ -169,11 +169,11 @@
 									Le contenu de tous les bocaux est de différentes couleurs.
 								</p>
 								<center>
-									<form action="retour.php" method="post">
+									<form action="retour" method="post">
 										<input type="text" name="prendre"> <input type="submit" name="take" value="prendre.">
 									</form>
 									<br>
-									<form action="retour.php" method="post">
+									<form action="retour" method="post">
 										<button type="submit" name="indice" class="boutonindice"></button>
 									</form>
 								</center>
@@ -202,11 +202,11 @@
 								<center>
 									<span class="indice">Essayez de repérer tous les produits dont vous avez besoin. Ils ont tous une couleur particulière.</span><br>
 									<br>
-									<form action="retour.php" method="post">
+									<form action="retour" method="post">
 										<input type="text" name="prendre"> <input type="submit" name="take" value="prendre.">
 									</form>
 									<br>
-									<form action="retour.php" method="post">
+									<form action="retour" method="post">
 										<button type="submit" name="indiceretour2" class="boutonindice"></button>
 									</form>
 								</center>
@@ -236,11 +236,11 @@
 									<span class="indice">Essayez de repérer tous les produits dont vous avez besoin. Ils ont tous une couleur particulière.<br>
 									Regardez bien les cartes que vous avez, certaines ont des dos de couleur.</span><br>
 									<br>
-									<form action="retour.php" method="post">
+									<form action="retour" method="post">
 										<input type="text" name="prendre"> <input type="submit" name="take" value="prendre.">
 									</form>
 									<br>
-									<form action="retour.php" method="post">
+									<form action="retour" method="post">
 										<button type="submit" name="indiceretour3" class="boutonindice"></button>
 									</form>
 								</center>
@@ -271,11 +271,11 @@
 									Regardez bien les cartes que vous avez, certaines ont des dos de couleur.<br>
 									Prenez dans l\'ordre, les cartes de couleur bleu, vert, orange, blanc et rose.</span><br>
 									<br>
-									<form action="retour.php" method="post">
+									<form action="retour" method="post">
 										<input type="text" name="prendre"> <input type="submit" name="take" value="prendre.">
 									</form>
 									<br>
-									<form action="retour.php" method="post">
+									<form action="retour" method="post">
 										<button type="submit" name="reponse" class="boutonreponse"></button>
 									</form>
 								</center>
@@ -304,7 +304,7 @@
 								<center>
 									<span class="reponse">Le code à rentrer est "Paré au décollage".</span><br>
 									<br>
-									<form action="retour.php" method="post">
+									<form action="retour" method="post">
 										<input type="text" name="prendre"> <input type="submit" name="take" value="prendre.">
 									</form>
 								</center>
@@ -334,7 +334,7 @@
 												</div>
 											</p>
 											<center>
-												<form action="fin.php" method="post">
+												<form action="fin" method="post">
 													<input type="submit" name="oui" value="oui.">
 												</form>
 											</center>
@@ -362,11 +362,11 @@
 												Les bocaux ont tous des couleurs différentes.
 											</p>
 											<center>
-												<form action="retour.php" method="post">
+												<form action="retour" method="post">
 													<input type="text" name="prendre"> <input type="submit" name="take" value="prendre.">
 												</form>
 												<br>
-												<form action="retour.php" method="post">
+												<form action="retour" method="post">
 													<button type="submit" name="indice" class="boutonindice"></button>
 												</form>
 											</center>
@@ -404,7 +404,7 @@
 									Vous aimeriez tellement le rencontrer !
 								</p>
 								<center>
-									<form action="retour.php" method="post">
+									<form action="retour" method="post">
 										<input type="submit" name="ask" value="demander.">
 									</form>
 								</center>

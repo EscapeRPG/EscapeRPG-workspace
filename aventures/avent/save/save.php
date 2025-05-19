@@ -17,9 +17,9 @@
 	</head>
 	
 	<body onload="chargement()">
-		<?php include_once $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/header.php"; ?>
+		<?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/header.php"; ?>
 		<div id="banniere"><img src="/escaperpg/images/avent/aventmini.png"></div>
-		<div id="bloc_page">
+		<main>
 			<nav><img src="/escaperpg/images/avent/sarah.png"></nav>
 			<div id="txt">
 				<?php
@@ -30,7 +30,7 @@
 						$description = 'sauvegarder';
 						$cache = 'non';
 						$rarete = 'succesnormal';
-						include_once $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/succesadd.php";
+						include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/succesadd.php";
 						echo'<script src="/scripts/succescount.js"></script></div>';
 						isset($_COOKIE['LOGGED_USER']) ? $nom = $_COOKIE['LOGGED_USER'] : $nom = htmlspecialchars($_SESSION['idcompte']);
 						$code = $random;
@@ -49,7 +49,7 @@
 						$scenario = 'general';
 						$description = 'sauvegarder';
 						$cache = 'non';
-						include_once $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/succesadd.php";
+						include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/succesadd.php";
 						echo'</div>';
 						$nom = $_POST['nom'];
 						$code = $_POST['code'];
@@ -71,7 +71,7 @@
 									<span class="important">20 caractères maximum, sans accents ni caractères spéciaux !<br>
 									Gardez bien le code à retaper en mémoire, il vous sera demandé pour charger votre partie !</span>
 								</p>
-								<form action="save.php" method ="post">
+								<form action="save" method ="post">
 									<input type="text" name="nom" id="nom" placeholder="Nom" required>
 									<br>
 									<br>
