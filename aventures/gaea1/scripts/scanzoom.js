@@ -1,4 +1,4 @@
-var canvas = document.getElementById('canvasfond'),
+let canvas = document.getElementById('canvasfond'),
 	canvasol = document.getElementById('canvasoverlay'),
 	fond = document.getElementById('fond'),
 	overlay = document.getElementById('ol'),
@@ -79,7 +79,7 @@ class Events
 
 	setMousePosition(event)
 	{
-		var rect = canvas.getBoundingClientRect();
+		let rect = canvas.getBoundingClientRect();
 		const mouseX = (event.clientX - rect.left) / (rect.right - rect.left) * width;
 		const mouseY = (event.clientY - rect.top) / (rect.bottom - rect.top) * height;
 		this.mousePos = { x: mouseX, y: mouseY };
@@ -116,29 +116,29 @@ class Events
 
 function trackTransforms(ctx)
 {
-	var svg = document.createElementNS("http://www.w3.org/2000/svg",'svg');
-	var xform = svg.createSVGMatrix();
+	let svg = document.createElementNS("http://www.w3.org/2000/svg",'svg');
+	let xform = svg.createSVGMatrix();
 	ctx.getTransform = function() { return xform; };
-	var savedTransforms = [];
-	var save = ctx.save;
+	let savedTransforms = [];
+	let save = ctx.save;
 	ctx.save = function() { savedTransforms.push(xform.translate(0,0)); return save.call(ctx); };
-	var restore = ctx.restore;
+	let restore = ctx.restore;
 	ctx.restore = function() { xform = savedTransforms.pop(); return restore.call(ctx); };
-	var scale = ctx.scale;
+	let scale = ctx.scale;
 	ctx.scale = function(sx,sy) { xform = xform.scaleNonUniform(sx,sy); return scale.call(ctx,sx,sy); };
-	var rotate = ctx.rotate;
+	let rotate = ctx.rotate;
 	ctx.rotate = function(radians) { xform = xform.rotate(radians*180/Math.PI); return rotate.call(ctx,radians); };
-	var translate = ctx.translate;
+	let translate = ctx.translate;
 	ctx.translate = function(dx,dy) { xform = xform.translate(dx,dy); return translate.call(ctx,dx,dy); };
-	var transform = ctx.transform;
+	let transform = ctx.transform;
 	ctx.transform = function(a,b,c,d,e,f)
 	{
-		var m2 = svg.createSVGMatrix();
+		let m2 = svg.createSVGMatrix();
 		m2.a=a; m2.b=b; m2.c=c; m2.d=d; m2.e=e; m2.f=f;
 		xform = xform.multiply(m2);
 		return transform.call(ctx,a,b,c,d,e,f);
 	};
-	var setTransform = ctx.setTransform;
+	let setTransform = ctx.setTransform;
 	ctx.setTransform = function(a,b,c,d,e,f)
 	{
 		xform.a = a;
@@ -149,17 +149,17 @@ function trackTransforms(ctx)
 		xform.f = f;
 		return setTransform.call(ctx,a,b,c,d,e,f);
 	};
-	var pt  = svg.createSVGPoint();
+	let pt  = svg.createSVGPoint();
 	ctx.transformedPoint = function(x,y) { pt.x=x; pt.y=y; return pt.matrixTransform(xform.inverse()); }
 }
 
 function scanzoom()
 {
-	var ctx = canvas.getContext('2d');
+	let ctx = canvas.getContext('2d');
 		ctxol = canvasol.getContext('2d');
 	trackTransforms(ctx);
 	
-	var audiocercle1 = new Audio('/escaperpg/sons/gaea1/signal1.mp3'),
+	let audiocercle1 = new Audio('/escaperpg/sons/gaea1/signal1.mp3'),
 		audiocercle2 = new Audio('/escaperpg/sons/gaea1/signal2.mp3'),
 		audiocercle3 = new Audio('/escaperpg/sons/gaea1/signal3.mp3'),
 		audiocercle4 = new Audio('/escaperpg/sons/gaea1/signal4.mp3'),
@@ -172,9 +172,9 @@ function scanzoom()
 
 	canvas.addEventListener('mousemove', function(event)
 	{
-		var rect = canvasol.getBoundingClientRect();
-		var x = (event.clientX - rect.left) / (rect.right - rect.left) * olwidth;
-		var y = (event.clientY - rect.top) / (rect.bottom - rect.top) * olheight;
+		let rect = canvasol.getBoundingClientRect();
+		let x = (event.clientX - rect.left) / (rect.right - rect.left) * olwidth;
+		let y = (event.clientY - rect.top) / (rect.bottom - rect.top) * olheight;
 		ctxol.clearRect(0, 0, olwidth, olheight);
 		drawoverlay();
 		ctxol.beginPath();
@@ -187,11 +187,11 @@ function scanzoom()
 		ctxol.stroke();
 		ctxol.closePath();
 		
-		var p1 = ctx.transformedPoint(0,0);
-		var p2 = ctx.transformedPoint(canvas.width,canvas.height);
-		var rectfond = canvas.getBoundingClientRect();
-		var transx = (event.clientX - rectfond.left) / (rectfond.right - rectfond.left) * width;
-		var transy = (event.clientY - rectfond.top) / (rectfond.bottom - rectfond.top) * height;
+		let p1 = ctx.transformedPoint(0,0);
+		let p2 = ctx.transformedPoint(canvas.width,canvas.height);
+		let rectfond = canvas.getBoundingClientRect();
+		let transx = (event.clientX - rectfond.left) / (rectfond.right - rectfond.left) * width;
+		let transy = (event.clientY - rectfond.top) / (rectfond.bottom - rectfond.top) * height;
 		const transform = ctx.getTransform();
 			xX = transx * (1 / transform.a);
 			yY = transy * (1 / transform.d);
@@ -209,13 +209,13 @@ function scanzoom()
 	
 	function redraw()
 	{
-		var p1 = ctx.transformedPoint(0,0);
-		var p2 = ctx.transformedPoint(canvas.width,canvas.height);
+		let p1 = ctx.transformedPoint(0,0);
+		let p2 = ctx.transformedPoint(canvas.width,canvas.height);
 		ctx.clearRect(p1.x,p1.y,p2.x-p1.x,p2.y-p1.y);
 
-		var events = new Events("canvasfond");
-		var canvasevt = events.getCanvas();
-		var context = events.getContext();
+		let events = new Events("canvasfond");
+		let canvasevt = events.getCanvas();
+		let context = events.getContext();
 
 		ctx.drawImage(fond, -600, -800, 2000, 2000);
 		
@@ -362,13 +362,13 @@ function scanzoom()
 	function drawoverlay() { ctxol.drawImage(overlay, 0, 0, olwidth, olheight); }
 	drawoverlay();
 	
-	var lastX=canvas.width/2, lastY=canvas.height/2;
-	var dragStart,dragged;
+	let lastX=canvas.width/2, lastY=canvas.height/2;
+	let dragStart,dragged;
 	
 	canvas.addEventListener('mousedown',function(event)
 	{
 		document.body.style.mozUserSelect = document.body.style.webkitUserSelect = document.body.style.userSelect = 'none';
-		var rect = canvas.getBoundingClientRect();
+		let rect = canvas.getBoundingClientRect();
 		lastX = (event.clientX - rect.left) / (rect.right - rect.left) * width;
 		lastY = (event.clientY - rect.top) / (rect.bottom - rect.top) * height;
 		dragStart = ctx.transformedPoint(lastX,lastY);
@@ -377,30 +377,30 @@ function scanzoom()
 		
 	canvas.addEventListener('mousemove',function(event)
 	{
-		var rect = canvas.getBoundingClientRect();
+		let rect = canvas.getBoundingClientRect();
 		lastX = (event.clientX - rect.left) / (rect.right - rect.left) * width;
 		lastY = (event.clientY - rect.top) / (rect.bottom - rect.top) * height;
 		dragged = true;
-		if (dragStart) { var pt = ctx.transformedPoint(lastX,lastY); ctx.translate(pt.x-dragStart.x,pt.y-dragStart.y); }
+		if (dragStart) { let pt = ctx.transformedPoint(lastX,lastY); ctx.translate(pt.x-dragStart.x,pt.y-dragStart.y); }
 		redraw(); 
 	},false);
 		
 	canvas.addEventListener('mouseup',function(evt) { dragStart = null; if (!dragged); },false);
 
-	var scaleFactor = 1.05;
-	var zoom = function(clicks)
+	let scaleFactor = 1.05;
+	let zoom = function(clicks)
 	{
-		var pt = ctx.transformedPoint(lastX,lastY);
+		let pt = ctx.transformedPoint(lastX,lastY);
 		ctx.translate(pt.x,pt.y);
-		var factor = Math.pow(scaleFactor,clicks);
+		let factor = Math.pow(scaleFactor,clicks);
 		ctx.scale(factor,factor);
 		ctx.translate(-pt.x,-pt.y);
 		redraw();
 	}
 
-	var handleScroll = function(evt)
+	let handleScroll = function(evt)
 	{
-		var delta = evt.wheelDelta ? evt.wheelDelta/40 : evt.detail ? -evt.detail : 0;
+		let delta = evt.wheelDelta ? evt.wheelDelta/40 : evt.detail ? -evt.detail : 0;
 		if (delta) zoom(delta);
 		return evt.preventDefault() && false;
 	};

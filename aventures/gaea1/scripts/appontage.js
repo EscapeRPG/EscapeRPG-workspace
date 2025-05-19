@@ -1,4 +1,4 @@
-var hangar = document.getElementById("hangar"),
+let hangar = document.getElementById("hangar"),
 	vuecockpit = document.getElementById('cockpit'),
 	message = document.getElementById('bulleappontage'),
 	compteur = document.getElementById('compteur'),
@@ -49,7 +49,7 @@ var hangar = document.getElementById("hangar"),
 	
 function ambiance()
 {
-	var hangarambiance = new Audio('/escaperpg/sons/gaea1/hangar.mp3');
+	let hangarambiance = new Audio('/escaperpg/sons/gaea1/hangar.mp3');
 	hangarambiance.play();
 	hangarambiance.loop = true;
 }
@@ -57,7 +57,7 @@ ambiance();
 	
 function propulseurs()
 {
-	var audiopropulseurs = new Audio('/escaperpg/sons/gaea1/propulseurs.mp3');
+	let audiopropulseurs = new Audio('/escaperpg/sons/gaea1/propulseurs.mp3');
 	audiopropulseurs.play();
 	valpropulseurs = false;
 	imgpropul.src = "/escaperpg/images/gaea1/appontage/propulseursoff.png";
@@ -66,7 +66,7 @@ function propulseurs()
 
 function reglerassietteg()
 {
-	var audiostab = new Audio('/escaperpg/sons/gaea1/stabs.mp3');
+	let audiostab = new Audio('/escaperpg/sons/gaea1/stabs.mp3');
 	audiostab.play();
 	angle = angle - 5;
 	angleinv = angleinv + 5;
@@ -82,7 +82,7 @@ function reglerassietteg()
 
 function reglerassietted()
 {
-	var audiostab = new Audio('/escaperpg/sons/gaea1/stabs.mp3');
+	let audiostab = new Audio('/escaperpg/sons/gaea1/stabs.mp3');
 	audiostab.play();
 	angle = angle + 5;
 	angleinv = angleinv - 5;
@@ -98,7 +98,7 @@ function reglerassietted()
 	
 function trainsatt()
 {
-	var audiotrains = new Audio('/escaperpg/sons/gaea1/trains.mp3');
+	let audiotrains = new Audio('/escaperpg/sons/gaea1/trains.mp3');
 	audiotrains.play();
 	beeps.pause();
 	beeps.currentTime = 0;
@@ -115,7 +115,7 @@ function checkcoll1()
 
 function collhaut()
 {
-	var audiostab = new Audio('/escaperpg/sons/gaea1/stabs.mp3');
+	let audiostab = new Audio('/escaperpg/sons/gaea1/stabs.mp3');
 	audiostab.play();
 	haut.src = "/escaperpg/images/gaea1/appontage/hautclick.png";
 	vecteurY += 8;
@@ -129,7 +129,7 @@ function collhaut()
 
 function collgauche()
 {
-	var audiostab = new Audio('/escaperpg/sons/gaea1/stabs.mp3');
+	let audiostab = new Audio('/escaperpg/sons/gaea1/stabs.mp3');
 	audiostab.play();
 	gauche.src = "/escaperpg/images/gaea1/appontage/gaucheclick.png";
 	vecteurX += 2;
@@ -142,7 +142,7 @@ function collgauche()
 
 function collbas()
 {
-	var audiostab = new Audio('/escaperpg/sons/gaea1/stabs.mp3');
+	let audiostab = new Audio('/escaperpg/sons/gaea1/stabs.mp3');
 	audiostab.play();
 	bas.src = "/escaperpg/images/gaea1/appontage/basclick.png";
 	vecteurY -= 8;
@@ -156,7 +156,7 @@ function collbas()
 
 function colldroite()
 {
-	var audiostab = new Audio('/escaperpg/sons/gaea1/stabs.mp3');
+	let audiostab = new Audio('/escaperpg/sons/gaea1/stabs.mp3');
 	audiostab.play();
 	droite.src = "/escaperpg/images/gaea1/appontage/droiteclick.png";
 	vecteurX -= 2;
@@ -169,7 +169,7 @@ function colldroite()
 
 function checkcoll2()
 {
-	var audiostab = new Audio('/escaperpg/sons/gaea1/stabs.mp3');
+	let audiostab = new Audio('/escaperpg/sons/gaea1/stabs.mp3');
 	audiostab.play();
 	if (vecteur3X == -20 && vecteur3Y == -10) { croixverte.classList.remove('hidden'); message.innerHTML = "Collision évitée, beau travail ! Vous pouvez reprendre la descente."; }
 	else { croixverte.classList.add('hidden'); message.innerHTML = "Surface au sol irrégulière, risque de collision. Impossible de poursuivre."; }
@@ -177,7 +177,7 @@ function checkcoll2()
 
 function collhaut2()
 {
-	var audiostab = new Audio('/escaperpg/sons/gaea1/stabs.mp3');
+	let audiostab = new Audio('/escaperpg/sons/gaea1/stabs.mp3');
 	audiostab.play();
 	haut2.src = "/escaperpg/images/gaea1/appontage/hautclick.png";
 	vecteurY += 8;
@@ -191,7 +191,7 @@ function collhaut2()
 
 function collgauche2()
 {
-	var audiostab = new Audio('/escaperpg/sons/gaea1/stabs.mp3');
+	let audiostab = new Audio('/escaperpg/sons/gaea1/stabs.mp3');
 	audiostab.play();
 	gauche2.src = "/escaperpg/images/gaea1/appontage/gaucheclick.png";
 	vecteurX += 2;
@@ -204,7 +204,7 @@ function collgauche2()
 
 function collbas2()
 {
-	var audiostab = new Audio('/escaperpg/sons/gaea1/stabs.mp3');
+	let audiostab = new Audio('/escaperpg/sons/gaea1/stabs.mp3');
 	audiostab.play();
 	bas2.src = "/escaperpg/images/gaea1/appontage/basclick.png";
 	vecteurY -= 8;
@@ -218,7 +218,7 @@ function collbas2()
 
 function colldroite2()
 {
-	var audiostab = new Audio('/escaperpg/sons/gaea1/stabs.mp3');
+	let audiostab = new Audio('/escaperpg/sons/gaea1/stabs.mp3');
 	audiostab.play();
 	droite2.src = "/escaperpg/images/gaea1/appontage/droiteclick.png";
 	vecteurX -= 2;
@@ -240,7 +240,7 @@ function decompte()
 function moteursstop()
 {
 	setInterval(decompte, 1000);
-	var audiostop = new Audio('/escaperpg/sons/gaea1/moteursstop.mp3');
+	let audiostop = new Audio('/escaperpg/sons/gaea1/moteursstop.mp3');
 	audiostop.play();
 	beeps.pause();
 	beeps.currentTime = 0;

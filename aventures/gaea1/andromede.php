@@ -1,4 +1,4 @@
-<?php include_once $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/entete.php"; ?>
+<?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/entete.php"; ?>
 <!DOCTYPE html>
 <html lang="fr">
 	<head>
@@ -14,14 +14,14 @@
 	<body onload="chargement()">
 		<?php if (isset ($_POST['commencer']) || $_SESSION['cineintro']): ?>
 			<?php
-				include_once $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/header.php";
+				include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/header.php";
 				$_SESSION['cineintro'] = true;
 			?>
 
 			<div id="banniere"><img src="/escaperpg/images/gaea1/gaea1mini.png" alt="gaea 1 bannière"></div>
 
-			<div id="bloc_page">
-				<?php include_once $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/aventures/gaea1/includes/nav.php"; ?>
+			<main>
+				<?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/aventures/gaea1/includes/nav.php"; ?>
 
 				<div id="txt">
 					<?php if (isset($_POST['suivant'])): ?>
@@ -59,7 +59,7 @@
 
 			<script src="/escaperpg/scripts/aventures-chargement.js"></script>
 
-			<?php include_once $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/aventures/gaea1/includes/footer.php"; ?>
+			<?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/aventures/gaea1/includes/footer.php"; ?>
 
 		<?php else: ?>
 			<div id="intro-wrap">

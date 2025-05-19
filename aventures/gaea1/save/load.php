@@ -12,11 +12,11 @@
 	</head>
 
 	<body onload="chargement()">
-		<?php include_once $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/header.php"; ?>
+		<?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/header.php"; ?>
 
 		<div id="banniere"><img src="/escaperpg/images/gaea1/gaea1mini.png" alt="gaea 1 bannière"></div>
 
-		<div id="bloc_page">
+		<main>
 			<div id="txt">
 				<?php if ($_SESSION['loggedin']): ?>
 					<div id="succespopup">
@@ -26,7 +26,7 @@
 							$description = 'charger';
 							$cache = 'non';
 							$rarete = 'succesnormal';
-							include_once $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/succesadd.php";
+							include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/succesadd.php";
 						?>
 					</div>
 					
@@ -57,7 +57,7 @@
 							$scenario = 'general';
 							$description = 'charger';
 							$cache = 'non';
-							include_once $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/succesadd.php";
+							include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/succesadd.php";
 						?>
 					</div>
 
@@ -81,7 +81,7 @@
 					<?php else: ?>
 						<p>Il y a eu une erreur quelque part, veuillez réessayer.</p>
 						
-						<form action="load.php" method="post">
+						<form action="load" method="post">
 							<input type="text" name="nom" id="nom" placeholder="Nom" required>
 							<input type="text" name="code" id="code" placeholder="Code" required>
 							<input type="submit" name="continuer" value="Charger.">
@@ -93,7 +93,7 @@
 						Veuillez entrer le nom et le code utilisés lors de votre dernière sauvegarde.
 					</p>
 
-					<form action="load.php" method="post">
+					<form action="load" method="post">
 						<input type="text" name="nom" id="nom" placeholder="Nom" required>
 						<input type="text" name="code" id="code" placeholder="Code" required>
 						<input type="submit" name="continuer" value="Charger.">
@@ -106,6 +106,6 @@
 
 		<script src="/escaperpg/scripts/aventures-chargement.js"></script>
 
-		<?php include_once $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/footer.php"; ?>
+		<?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/footer.php"; ?>
 	</body>
 </html>

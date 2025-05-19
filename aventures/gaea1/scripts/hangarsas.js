@@ -1,10 +1,10 @@
-var canvas = document.getElementById('canvashangarsas');
-var canvasol = document.getElementById('canvasoverlay');
+let canvas = document.getElementById('canvashangarsas');
+let canvasol = document.getElementById('canvasoverlay');
 const width = canvas.width = 1000;
 const height = canvas.height = 750;
 const olwidth = canvasol.width = 1000;
 const olheight = canvasol.height = 750;
-var vecteur = 0,
+let vecteur = 0,
 	portehangarsasgauche = document.getElementById('portehangarsasgauche'),
 	portehangarsasdroite = document.getElementById('portehangarsasdroite'),
 	overlay = document.getElementById('hangarsasoverlay'),
@@ -19,9 +19,9 @@ var vecteur = 0,
 	
 function crosshair()
 {
-	var rect = canvas.getBoundingClientRect();
-	var x = (event.clientX - rect.left) / (rect.right - rect.left) * width;
-	var y = (event.clientY - rect.top) / (rect.bottom - rect.top) * height;
+	let rect = canvas.getBoundingClientRect();
+	let x = (event.clientX - rect.left) / (rect.right - rect.left) * width;
+	let y = (event.clientY - rect.top) / (rect.bottom - rect.top) * height;
 	ctxol.clearRect(0, 0, width, height);
 	ctxol.beginPath();
 	ctxol.moveTo(0,y);
@@ -36,9 +36,9 @@ function crosshair()
 	
 function crosshairgreen()
 {
-	var rect = canvas.getBoundingClientRect();
-	var x = (event.clientX - rect.left) / (rect.right - rect.left) * width;
-	var y = (event.clientY - rect.top) / (rect.bottom - rect.top) * height;
+	let rect = canvas.getBoundingClientRect();
+	let x = (event.clientX - rect.left) / (rect.right - rect.left) * width;
+	let y = (event.clientY - rect.top) / (rect.bottom - rect.top) * height;
 	ctxol.clearRect(0, 0, width, height);
 	ctxol.beginPath();
 	ctxol.moveTo(0,y);
@@ -51,12 +51,12 @@ function crosshairgreen()
 	ctxol.closePath();
 }
 	
-var mousedownID = -1;
-var deploiement = -1;
-var repli = -1;
-var vecteurX = 0;
-var vecteurX2 = 0;
-var scalefactor = 1;
+let mousedownID = -1;
+let deploiement = -1;
+let repli = -1;
+let vecteurX = 0;
+let vecteurX2 = 0;
+let scalefactor = 1;
 
 function deplierbras()
 {

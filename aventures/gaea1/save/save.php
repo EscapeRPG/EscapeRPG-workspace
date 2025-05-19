@@ -12,11 +12,11 @@
 	</head>
 
 	<body onload="chargement()">
-		<?php include_once $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/header.php"; ?>
+		<?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/header.php"; ?>
 
 		<div id="banniere"><img src="/escaperpg/images/gaea1/gaea1mini.png" alt="gaea 1 bannière"></div>
 
-		<div id="bloc_page">
+		<main>
 			<nav>
 				<?php if (isset($_SESSION['pjnom'])): ?>
 					<div id="namenav">
@@ -54,7 +54,7 @@
 							$description = 'sauvegarder';
 							$cache = 'non';
 							$rarete = 'succesnormal';
-							include_once $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/succesadd.php";
+							include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/succesadd.php";
 						?>
 					</div>
 
@@ -85,7 +85,7 @@
 							$scenario = 'general';
 							$description = 'sauvegarder';
 							$cache = 'non';
-							include_once $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/succesadd.php";
+							include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/succesadd.php";
 						?>
 					</div>
 
@@ -119,7 +119,7 @@
 						</span>
 					</p>
 
-					<form action="save.php" method ="post">
+					<form action="save" method ="post">
 						<input type="text" name="nom" id="nom" placeholder="Nom" required><br>
 						<br>
 						<b><?= $random ?></b> 
@@ -138,6 +138,6 @@
 
 		<script src="/escaperpg/scripts/aventures-chargement.js"></script>
 
-		<?php include_once $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/footer.php"; ?>
+		<?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/footer.php"; ?>
 	</body>
 </html>

@@ -1,4 +1,4 @@
-var audiosignal1 = new Audio('/escaperpg/sons/gaea1/signalbon1.mp3'),
+let audiosignal1 = new Audio('/escaperpg/sons/gaea1/signalbon1.mp3'),
 	audiosignal2 = new Audio('/escaperpg/sons/gaea1/signalbon2.mp3'),
 	audiosignal3 = new Audio('/escaperpg/sons/gaea1/signalbon3.mp3'),
 	audiosignal4 = new Audio('/escaperpg/sons/gaea1/signalbon4.mp3'),

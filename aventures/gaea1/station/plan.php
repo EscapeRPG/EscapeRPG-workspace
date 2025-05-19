@@ -1,4 +1,4 @@
-<?php include_once $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/entete.php"; $_SESSION['visitestation'] = true; $_SESSION['detruire'] = false; $_SESSION['fuir'] = false; ?>
+<?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/entete.php"; $_SESSION['visitestation'] = true; $_SESSION['detruire'] = false; $_SESSION['fuir'] = false; ?>
 <!DOCTYPE html>
 <html lang="fr">
 	<head>
@@ -12,11 +12,11 @@
 	</head>
 
 	<body onload="chargement()">
-		<?php include_once $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/header.php"; ?>
+		<?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/header.php"; ?>
 
 		<div id="banniere"><img src="/escaperpg/images/gaea1/gaea1mini.png" alt="gaea 1 bannière"></div>
 
-		<div id="bloc_page">
+		<main>
 			<nav>
 				<h1>Navigation</h1>
 				
@@ -146,9 +146,9 @@
 					</a>
 				</ul>
 						
-				<div id="inventairefooter"><input type="submit" onclick="inventaireshow()" value="INVENTAIRE"></div>
+				<div id="inventairefooter"><input type="submit" value="INVENTAIRE"></div>
 
-				<div id="motsdepasse"><input type="submit" onclick="mdpshow()" value="NOTES"></div>
+				<div id="motsdepasse"><input type="submit" value="NOTES"></div>
 
 				<a href="/escaperpg/aventures/gaea1/save/save" target="_blank" rel="noreferrer"><input type="submit" name="save" value="SAUVEGARDER"></a>
 			</nav>
@@ -243,6 +243,6 @@
 
 		<script src="/escaperpg/scripts/aventures-chargement.js"></script>
 
-		<?php include_once $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/aventures/gaea1/includes/footer.php"; ?>
+		<?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/aventures/gaea1/includes/footer.php"; ?>
 	</body>
 </html>

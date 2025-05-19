@@ -1,4 +1,4 @@
-var imgcheveuxbackend = document.getElementById('cheveuxbackendimg'),
+let imgcheveuxbackend = document.getElementById('cheveuxbackendimg'),
 	imgcheveuxback = document.getElementById('cheveuxbackimg'),
 	imgvisage = document.getElementById('visageimg'),
 	imgcheveux = document.getElementById('cheveuximg'),
