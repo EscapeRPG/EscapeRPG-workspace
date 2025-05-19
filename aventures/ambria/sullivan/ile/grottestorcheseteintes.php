@@ -1,4 +1,4 @@
-<?php include_once $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/entete.php"; ?>
+<?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/entete.php"; ?>
 <!DOCTYPE html>
 <html lang="fr">
 	<head>
@@ -17,15 +17,15 @@
 	</head>
 	
 	<body onload="chargement()">
-		<?php include_once $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/header.php"; ?>
+		<?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/header.php"; ?>
 		<div id="banniere"><img src="/escaperpg/images/ambria/tresorambriamini.png"></div>
-		<div id="bloc_page">
+		<main>
 			<nav>
 				<a href="/escaperpg/images/ambria/sullivanmasonmini.png" rel="lightbox[sullivan]" title="Sullivan Mason"><img src="/escaperpg/images/ambria/sullivanmasonmini.png"></a>
-				<div id="inventairefooter"><input type="submit" onclick="inventaireshow()" value="INVENTAIRE"></div>
-				<div id="motsdepasse"><input type="submit" onclick="mdpshow()" value="NOTES"></div>
+				<div id="inventairefooter"><input type="submit" value="INVENTAIRE"></div>
+				<div id="motsdepasse"><input type="submit" value="NOTES"></div>
 				<a href="/escaperpg/aventures/ambria/save/save.php" target="_blank" rel="noreferrer"><input type="submit" name="save" value="SAUVEGARDER"></a>
-				<?php include_once $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/aventures/ambria/sullivan/includes/navigationile.php"; ?>
+				<?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/aventures/ambria/sullivan/includes/navigationile.php"; ?>
 			</nav>
 			<div id="txt">
 				<?php
@@ -48,7 +48,7 @@
 									Observez bien les motifs tracés par la mousse. Ne vous rappellent-ils par quelque chose ?
 								</div>
 								<center>
-									<form action="grottestorcheseteintes.php" method="post">
+									<form action="grottestorcheseteintes" method="post">
 										<button type="submit" name="indice2" class="boutonindice"></button>
 									</form>
 								</center>
@@ -62,7 +62,7 @@
 									Il s\'agit d\'une partie de la traduction du langage ambrien.
 								</div>
 								<center>
-									<form action="grottestorcheseteintes.php" method="post">
+									<form action="grottestorcheseteintes" method="post">
 										<button type="submit" name="indice3" class="boutonindice"></button>
 									</form>
 								</center>
@@ -77,7 +77,7 @@
 									Logan aura peut-être accès à la seconde partie ?
 								</div>
 								<center>
-									<form action="grottestorcheseteintes.php" method="post">
+									<form action="grottestorcheseteintes" method="post">
 										<button type="submit" name="reponse" class="boutonreponse"></button>
 									</form>
 								</center>
@@ -95,7 +95,7 @@
 						{
 							echo'
 								<center>
-									<form action="grottestorcheseteintes.php" method="post">
+									<form action="grottestorcheseteintes" method="post">
 										<button type="submit" name="indice" class="boutonindice"></button>
 									</form>
 								</center>
@@ -107,6 +107,6 @@
 		</div>
 		<div id="load"><div id="loader"></div></div>
 		<script src="/escaperpg/scripts/aventures-chargement.js"></script>
-		<?php include_once $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/aventures/ambria/sullivan/includes/footer.php"; ?>
+		<?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/aventures/ambria/sullivan/includes/footer.php"; ?>
 	</body>
 </html>

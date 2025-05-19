@@ -1,4 +1,4 @@
-<?php include_once $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/entete.php"; ?>
+<?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/entete.php"; ?>
 <!DOCTYPE html>
 <html lang="fr">
 	<head>
@@ -17,13 +17,13 @@
 	</head>
 	
 	<body onload="chargement()">
-		<?php include_once $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/header.php"; ?>
+		<?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/header.php"; ?>
 		<div id="banniere"><img src="/escaperpg/images/ambria/tresorambriamini.png"></div>
-		<div id="bloc_page">
+		<main>
 			<nav>
 				<a href="/escaperpg/images/ambria/loganbarthelemymini.png" rel="lightbox[logan]" title="Logan Barthélémy"><img src="/escaperpg/images/ambria/loganbarthelemymini.png"></a>
-				<div id="inventairefooter"><input type="submit" onclick="inventaireshow()" value="INVENTAIRE"></div>
-				<div id="motsdepasse"><input type="submit" onclick="mdpshow()" value="NOTES"></div>
+				<div id="inventairefooter"><input type="submit" value="INVENTAIRE"></div>
+				<div id="motsdepasse"><input type="submit" value="NOTES"></div>
 				<a href="/escaperpg/aventures/ambria/save/save.php" target="_blank" rel="noreferrer"><input type="submit" name="save" value="SAUVEGARDER"></a>
 			</nav>
 			<div id="txt">
@@ -56,7 +56,7 @@
 												</div>
 											</div>
 											<center>
-												<form action="taverne.php" method="post">
+												<form action="taverne" method="post">
 													<input type="submit" name="suivant2" value="Suivant.">
 												</form>
 											</center>
@@ -69,10 +69,10 @@
 												Ça ne semble pas être ça. Peut-être devez-vous attendre une information de la part de cet inconnu, incarné par l\'autre joueur ?
 											</p>
 											<center>
-												<form action="taverne.php" method="post">
+												<form action="taverne" method="post">
 													<input type="text" name="objet"><input type="submit" name="suivant" value="Suivant.">
 												</form>
-												<form action="taverne.php" method="post">
+												<form action="taverne" method="post">
 													<button type="submit" name="indice1" class="boutonindice"></button>
 												</form>
 											</center>
@@ -125,7 +125,7 @@
 									</div>
 								</div>
 								<center>
-									<form action="taverne.php" method="post">
+									<form action="taverne" method="post">
 										<input type="submit" name="suivant3" value="Suivant.">
 									</form>
 								</center>
@@ -189,7 +189,7 @@
 									</div>
 								</div>
 								<center>
-									<form action="embrouilles.php" method="post">
+									<form action="embrouilles" method="post">
 										<input type="submit" name="suivant4" value="Suivant.">
 									</form>
 								</center>
@@ -227,7 +227,7 @@
 									L\'inconnu jette quelque chose qui retombe lourdement sur la table.
 								</p>
 								<center>
-									<form action="taverne.php" method="post">
+									<form action="taverne" method="post">
 										<input type="text" name="objet"><input type="submit" name="suivant" value="Suivant.">
 									</form>
 								</center>
@@ -239,7 +239,7 @@
 											Qu\'est-ce que l\'individu vous a dit ?
 										</div>
 										<center>
-											<form action="taverne.php" method="post">
+											<form action="taverne" method="post">
 												<button type="submit" name="indice2" class="boutonindice"></button>
 											</form>
 										</center>
@@ -253,7 +253,7 @@
 											C\'est à l\'autre joueur de vous donner le bon mot de passe.
 										</div>
 										<center>
-											<form action="taverne.php" method="post">
+											<form action="taverne" method="post">
 												<button type="submit" name="reponse" class="boutonreponse"></button>
 											</form>
 										</center>
@@ -271,7 +271,7 @@
 								{
 									echo'
 										<center>
-											<form action="taverne.php" method="post">
+											<form action="taverne" method="post">
 												<button type="submit" name="indice" class="boutonindice"></button>
 											</form>
 										</center>
@@ -313,7 +313,7 @@
 									Tâchant de ne pas céder à la panique, vous cherchez quelque chose à lui répondre pour vous débarrasser d\'elle et pouvoir réfléchir à ce que vous allez faire.
 								</p>
 								<center>
-									<form action="taverne.php" method="post">
+									<form action="taverne" method="post">
 										<input type="submit" name="suite" value="Suivant.">
 									</form>
 								</center>
@@ -325,6 +325,6 @@
 		</div>
 		<div id="load"><div id="loader"></div></div>
 		<script src="/escaperpg/scripts/aventures-chargement.js"></script>
-		<?php include_once $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/aventures/ambria/logan/includes/footer.php"; ?>
+		<?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/aventures/ambria/logan/includes/footer.php"; ?>
 	</body>
 </html>

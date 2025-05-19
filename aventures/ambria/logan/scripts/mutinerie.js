@@ -56,9 +56,9 @@ Game.prototype.populateMap = function()
 	{
 		this.el.className = 'game-container ' + this.theme;
 		let tiles = document.getElementById('tiles');
-		for (var y = 0; y < this.map.length; ++y)
+		for (let y = 0; y < this.map.length; ++y)
 			{
-				for (var x = 0; x < this.map[y].length; ++x)
+				for (let x = 0; x < this.map[y].length; ++x)
 					{
 						let tileCode = this.map[y][x];
 						let tileType = this.tileTypes[tileCode];
@@ -121,7 +121,7 @@ Game.prototype.movePlayer = function(event)
 			}
 	}
 	
-var tresor = false,
+let tresor = false,
 	cracking1 = false,
 	cracking2 = false,
 	cracking3 = false,

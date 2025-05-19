@@ -1,4 +1,4 @@
-<?php include_once $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/entete.php"; ?>
+<?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/entete.php"; ?>
 <!DOCTYPE html>
 <html lang="fr">
 	<head>
@@ -17,13 +17,13 @@
 	</head>
 	
 	<body onload="chargement()">
-		<?php include_once $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/header.php"; ?>
+		<?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/header.php"; ?>
 		<div id="banniere"><img src="/escaperpg/images/ambria/tresorambriamini.png"></div>
-		<div id="bloc_page">
+		<main>
 			<nav>
 				<a href="/escaperpg/images/ambria/sullivanmasonmini.png" rel="lightbox[sullivan]" title="Sullivan Mason"><img src="/escaperpg/images/ambria/sullivanmasonmini.png"></a>
-				<div id="inventairefooter"><input type="submit" onclick="inventaireshow()" value="INVENTAIRE"></div>
-				<div id="motsdepasse"><input type="submit" onclick="mdpshow()" value="NOTES"></div>
+				<div id="inventairefooter"><input type="submit" value="INVENTAIRE"></div>
+				<div id="motsdepasse"><input type="submit" value="NOTES"></div>
 				<a href="/escaperpg/aventures/ambria/save/save.php" target="_blank" rel="noreferrer"><input type="submit" name="save" value="SAUVEGARDER"></a>
 			</nav>
 			<div id="txt">
@@ -56,7 +56,7 @@
 									Quels ordres voulez-vous donner ?
 								</p>
 								<center>
-									<form action="tempete.php" method="post">
+									<form action="tempete" method="post">
 										<input type="submit" name="detour" value="Faire un détour.">
 										<input type="submit" name="enavant" value="Continuer.">
 									</form>
@@ -83,7 +83,7 @@
 									Cependant, celle-ci demande du temps et la tempête se rapproche à vive allure.
 								</p>
 								<center>
-									<form action="tempete.php" method="post">
+									<form action="tempete" method="post">
 										<input type="submit" name="suivant" value="Suivant.">
 									</form>
 								</center>
@@ -128,7 +128,7 @@
 									L\'effervescence bat son plein, certains des hommes ne peuvent s\'empêcher de regarder les nuages avec angoisse.
 								</p>
 								<center>
-									<form action="tempete.php" method="post">
+									<form action="tempete" method="post">
 										<input type="submit" name="suivant" value="Suivant.">
 									</form>
 								</center>
@@ -154,7 +154,7 @@
 									Il va falloir faire quelque chose pour la voile.
 								</p>
 								<center>
-									<form action="tempete.php" method="post">
+									<form action="tempete" method="post">
 										<input type="submit" name="affaler" value="Affale la voile !">
 										<input type="submit" name="ferler" value="Ferle la voile !">
 									</form>
@@ -184,7 +184,7 @@
 									Le mât craque de plus en plus.
 								</p>
 								<center>
-									<form action="tempete.php" method="post">
+									<form action="tempete" method="post">
 										<input type="text" name="vigie"><input type="submit" name="vague" value="L\'écouter.">
 									</form>
 								</center>
@@ -213,7 +213,7 @@
 									Surveillant l\'évolution de la tempête, vous voyez du coin de l\'œil que Logan s\'est installé dans la vigie et qu\'il vous crie quelque chose.
 								</p>
 								<center>
-									<form action="tempete.php" method="post">
+									<form action="tempete" method="post">
 										<input type="text" name="vigie"><input type="submit" name="vague" value="L\'écouter.">
 									</form>
 								</center>
@@ -250,7 +250,7 @@
 												</div>
 											</div>
 											<center>
-												<form action="tempete.php" method="post">
+												<form action="tempete" method="post">
 													<input type="submit" name="poursuivre" value="Suivant.">
 												</form>
 											</center>
@@ -281,7 +281,7 @@
 												</div>
 											</div>
 											<center>
-												<form action="tempete.php" method="post">
+												<form action="tempete" method="post">
 													<input type="submit" name="poursuivre" value="Suivant.">
 												</form>
 											</center>
@@ -312,7 +312,7 @@
 												</div>
 											</div>
 											<center>
-												<form action="tempete.php" method="post">
+												<form action="tempete" method="post">
 													<input type="submit" name="poursuivre" value="Suivant.">
 												</form>
 											</center>
@@ -341,7 +341,7 @@
 									Des récifs !
 								</p>
 								<center>
-									<form action="tempete.php" method="post">
+									<form action="tempete" method="post">
 										<input type="submit" name="recifs" value="Suivant.">
 									</form>
 								</center>
@@ -367,7 +367,7 @@
 															Tenant fermement la barre, vous scrutez l\'eau pour trouver le passage et parvenez à faire traverser le dernier obstacle sans encombre.
 														</p>
 														<center>
-															<form action="tempete.php" method="post">
+															<form action="tempete" method="post">
 																<input type="submit" name="tempetefin" value="Suivant.">
 															</form>
 														</center>
@@ -387,7 +387,7 @@
 															Reprenant votre position, vous manœuvrez la barre pour mener le bateau en dehors de la zone de danger.
 														</p>
 														<center>
-															<form action="tempete.php" method="post">
+															<form action="tempete" method="post">
 																<input type="submit" name="tempetefin" value="Suivant.">
 															</form>
 														</center>
@@ -504,35 +504,35 @@
 										<div id="enigmelieu">
 											<img src="/escaperpg/images/ambria/barrebateau.png">
 											<div id="barre1">
-												<form action="tempete.php" method="post">
+												<form action="tempete" method="post">
 													<button type="submit" name="1barre">
 														<img src="/escaperpg/images/ambria/barre1.png" onmouseover="this.src=\'/escaperpg/images/ambria/barre1hover.png\'" onmouseout="this.src=\'/escaperpg/images/ambria/barre1.png\'">
 													</button>
 												</form>
 											</div>
 											<div id="barre2">
-												<form action="tempete.php" method="post">
+												<form action="tempete" method="post">
 													<button type="submit" name="2barre">
 														<img src="/escaperpg/images/ambria/barre2.png" onmouseover="this.src=\'/escaperpg/images/ambria/barre2hover.png\'" onmouseout="this.src=\'/escaperpg/images/ambria/barre2.png\'">
 													</button>
 												</form>
 											</div>
 											<div id="barre3">
-												<form action="tempete.php" method="post">
+												<form action="tempete" method="post">
 													<button type="submit" name="3barre">
 														<img src="/escaperpg/images/ambria/barre3.png" onmouseover="this.src=\'/escaperpg/images/ambria/barre3hover.png\'" onmouseout="this.src=\'/escaperpg/images/ambria/barre3.png\'">
 													</button>
 												</form>
 											</div>
 											<div id="barre4">
-												<form action="tempete.php" method="post">
+												<form action="tempete" method="post">
 													<button type="submit" name="4barre">
 														<img src="/escaperpg/images/ambria/barre4.png" onmouseover="this.src=\'/escaperpg/images/ambria/barre4hover.png\'" onmouseout="this.src=\'/escaperpg/images/ambria/barre4.png\'">
 													</button>
 												</form>
 											</div>
 											<div id="barre5">
-												<form action="tempete.php" method="post">
+												<form action="tempete" method="post">
 													<button type="submit" name="5barre">
 														<img src="/escaperpg/images/ambria/barre5.png" onmouseover="this.src=\'/escaperpg/images/ambria/barre5hover.png\'" onmouseout="this.src=\'/escaperpg/images/ambria/barre5.png\'">
 													</button>
@@ -549,7 +549,7 @@
 													Vous devriez regarder dans votre inventaire.
 												</div>
 												<center>
-													<form action="tempete.php" method="post">
+													<form action="tempete" method="post">
 														<button type="submit" name="indice2" class="boutonindice"></button>
 													</form>
 												</center>
@@ -566,7 +566,7 @@
 													Essayez tous les deux de vous représenter la scène en 5 cases, correspondant à chacune des poignées de la barre.
 												</div>
 												<center>
-													<form action="tempete.php" method="post">
+													<form action="tempete" method="post">
 														<button type="submit" name="indice3" class="boutonindice"></button>
 													</form>
 												</center>
@@ -586,7 +586,7 @@
 													Le dernier récif correspond à la figure 2, il faut donc passer deux cases plus loin.
 												</div>
 												<center>
-													<form action="tempete.php" method="post">
+													<form action="tempete" method="post">
 														<button type="submit" name="reponse" class="boutonreponse"></button>
 													</form>
 												</center>
@@ -607,7 +607,7 @@
 										{
 											echo'
 												<center>
-													<form action="tempete.php" method="post">
+													<form action="tempete" method="post">
 														<button type="submit" name="indice" class="boutonindice"></button>
 													</form>
 												</center>
@@ -623,7 +623,7 @@
 							$description = 'tempête';
 							$cache = 'oui';
 							$rarete = 'succesargent';
-							include_once $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/succesadd.php";
+							include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/succesadd.php";
 							echo'</div>';
 							
 							if ($_SESSION['matcasse'] AND $_SESSION['quillecassee'])
@@ -657,7 +657,7 @@
 											</div>
 										</div>
 										<center>
-											<form action="../ile/plage.php" method="post">
+											<form action="../ile/plage" method="post">
 												<input type="submit" name="accoster" value="Suivant.">
 											</form>
 										</center>
@@ -693,7 +693,7 @@
 											</div>
 										</div>
 										<center>
-											<form action="../ile/plage.php" method="post">
+											<form action="../ile/plage" method="post">
 												<input type="submit" name="accoster" value="Suivant.">
 											</form>
 										</center>
@@ -728,7 +728,7 @@
 											</div>
 										</div>
 										<center>
-											<form action="../ile/plage.php" method="post">
+											<form action="../ile/plage" method="post">
 												<input type="submit" name="accoster" value="Suivant.">
 											</form>
 										</center>
@@ -743,7 +743,7 @@
 									$description = 'tempêteparfaite';
 									$cache = 'oui';
 									$rarete = 'succesgold';
-									include_once $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/succesadd.php";
+									include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/succesadd.php";
 									echo'</div>';
 									
 									echo'
@@ -769,7 +769,7 @@
 											</div>
 										</div>
 										<center>
-											<form action="../ile/plage.php" method="post">
+											<form action="../ile/plage" method="post">
 												<input type="submit" name="accoster" value="Suivant.">
 											</form>
 										</center>
@@ -785,7 +785,7 @@
 							$description = 'cap';
 							$cache = 'non';
 							$rarete = 'succesbronze';
-							include_once $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/succesadd.php";
+							include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/succesadd.php";
 							echo'</div>';
 							
 							echo'
@@ -874,7 +874,7 @@
 									L\'aventure reprend, enfin.
 								</p>
 								<center>
-									<form action="tempete.php" method="post">
+									<form action="tempete" method="post">
 										<input type="submit" name="cap" value="Suivant.">
 									</form>
 								</center>
@@ -886,6 +886,6 @@
 		</div>
 		<div id="load"><div id="loader"></div></div>
 		<script src="/escaperpg/scripts/aventures-chargement.js"></script>
-		<?php include_once $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/aventures/ambria/sullivan/includes/footer.php"; ?>
+		<?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/aventures/ambria/sullivan/includes/footer.php"; ?>
 	</body>
 </html>

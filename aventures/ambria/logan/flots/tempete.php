@@ -1,4 +1,4 @@
-<?php include_once $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/entete.php"; ?>
+<?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/entete.php"; ?>
 <!DOCTYPE html>
 <html lang="fr">
 	<head>
@@ -17,13 +17,13 @@
 	</head>
 	
 	<body onload="chargement()">
-		<?php include_once $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/header.php"; ?>
+		<?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/header.php"; ?>
 		<div id="banniere"><img src="/escaperpg/images/ambria/tresorambriamini.png"></div>
-		<div id="bloc_page">
+		<main>
 			<nav>
 				<a href="/escaperpg/images/ambria/loganbarthelemymini.png" rel="lightbox[logan]" title="Logan Barthélémy"><img src="/escaperpg/images/ambria/loganbarthelemymini.png"></a>
-				<div id="inventairefooter"><input type="submit" onclick="inventaireshow()" value="INVENTAIRE"></div>
-				<div id="motsdepasse"><input type="submit" onclick="mdpshow()" value="NOTES"></div>
+				<div id="inventairefooter"><input type="submit" value="INVENTAIRE"></div>
+				<div id="motsdepasse"><input type="submit" value="NOTES"></div>
 				<a href="/escaperpg/aventures/ambria/save/save.php" target="_blank" rel="noreferrer"><input type="submit" name="save" value="SAUVEGARDER"></a>
 			</nav>
 			<div id="txt">
@@ -51,7 +51,7 @@
 												Cependant, celle-ci demande du temps et la tempête se rapproche à vive allure.
 											</p>
 											<center>
-												<form action="tempete.php" method="post">
+												<form action="tempete" method="post">
 													<input type="submit" name="suivant" value="Suivant.">
 												</form>
 											</center>
@@ -78,7 +78,7 @@
 												L\'effervescence bat son plein, certains des hommes ne peuvent s\'empêcher de regarder les nuages avec angoisse.
 											</p>
 											<center>
-												<form action="tempete.php" method="post">
+												<form action="tempete" method="post">
 													<input type="submit" name="suivant" value="Suivant.">
 												</form>
 											</center>
@@ -90,7 +90,7 @@
 												Avez-vous bien compris les ordres que le capitaine a donnés ?
 											</p>
 											<center>
-												<form action="tempete.php" method="post">
+												<form action="tempete" method="post">
 													<input type="text" name="ordres"><input type="submit" name="attendre" value="Attendre les ordres.">
 												</form>
 											</center>
@@ -108,7 +108,7 @@
 									C\'est alors que vous voyez une énorme vague arriver par la droite. Vous vous retournez aussitôt vers la poupe du navire où se trouve le capitaine et hurlez à pleins poumons.
 								</p>
 								<center>
-									<form action="tempete.php" method="post">
+									<form action="tempete" method="post">
 										<input type="submit" name="babord" value="Scélérate à bâbord."><input type="submit" name="tribord" value="Scélérate à tribord.">
 									</form>
 								</center>
@@ -135,7 +135,7 @@
 									Le capitaine hurle quelque chose alors que vous voyez marins et matériel manquer d\'être éjectés
 								</p>
 								<center>
-									<form action="tempete.php" method="post">
+									<form action="tempete" method="post">
 										<input type="text" name="tonneaux"><input type="submit" name="attendre3" value="Réagir.">
 									</form>
 								</center>
@@ -164,7 +164,7 @@
 									Le capitaine hurle quelque chose alors que vous voyez marins et matériel manquer d\'être éjectés.
 								</p>
 								<center>
-									<form action="tempete.php" method="post">
+									<form action="tempete" method="post">
 										<input type="text" name="tonneaux"><input type="submit" name="attendre3" value="Réagir.">
 									</form>
 								</center>
@@ -197,7 +197,7 @@
 												Vous n\'aurez le temps d\'empêcher un seul des deux de sombrer
 											</p>
 											<center>
-												<form action="tempete.php" method="post">
+												<form action="tempete" method="post">
 													<input type="submit" name="rhum" value="Sauver le rhum."><input type="submit" name="riz" value="Sauver le riz.">
 												</form>
 											</center>
@@ -209,7 +209,7 @@
 												Avez-vous bien compris ce que le capitaine a dit ?
 											</p>
 											<center>
-												<form action="tempete.php" method="post">
+												<form action="tempete" method="post">
 													<input type="text" name="tonneaux"><input type="submit" name="attendre3" value="Réagir.">
 												</form>
 											</center>
@@ -231,7 +231,7 @@
 									Des récifs !
 								</p>
 								<center>
-									<form action="tempete.php" method="post">
+									<form action="tempete" method="post">
 										<input type="submit" name="suite2" value="Suivant.">
 									</form>
 								</center>
@@ -253,7 +253,7 @@
 									Des récifs !
 								</p>
 								<center>
-									<form action="tempete.php" method="post">
+									<form action="tempete" method="post">
 										<input type="submit" name="suite2" value="Suivant.">
 									</form>
 								</center>
@@ -272,7 +272,7 @@
 										$description = 'tempête';
 										$cache = 'oui';
 										$rarete = 'succesargent';
-										include_once $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/succesadd.php";
+										include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/succesadd.php";
 										echo'</div>';
 										
 										echo'
@@ -295,7 +295,7 @@
 												Le capitaine ordonne aux matelots de sortir les rames pour amener le navire dans la baie, la voile principale étant dorénavant hors d\'usage.
 											</p>
 											<center>
-												<form action="../ile/plage.php" method="post">
+												<form action="../ile/plage" method="post">
 													<input type="submit" name="suivant2" value="Suivant.">
 												</form>
 											</center>
@@ -309,7 +309,7 @@
 										$description = 'tempête';
 										$cache = 'oui';
 										$rarete = 'succesargent';
-										include_once $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/succesadd.php";
+										include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/succesadd.php";
 										echo'</div>';
 										
 										echo'
@@ -333,7 +333,7 @@
 												Le capitaine ordonne aux matelots de sortir les rames pour amener le navire dans la baie, la quille ne permettant plus de naviguer à présent.
 											</p>
 											<center>
-												<form action="../ile/plage.php" method="post">
+												<form action="../ile/plage" method="post">
 													<input type="submit" name="suivant2" value="Suivant.">
 												</form>
 											</center>
@@ -347,7 +347,7 @@
 										$description = 'tempête';
 										$cache = 'oui';
 										$rarete = 'succesargent';
-										include_once $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/succesadd.php";
+										include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/succesadd.php";
 										echo'</div>';
 										
 										echo'
@@ -375,7 +375,7 @@
 												Le capitaine ordonne aux matelots de sortir les rames pour amener le navire dans la baie, la quille et la voile principale ne permettant plus de naviguer à présent.
 											</p>
 											<center>
-												<form action="../ile/plage.php" method="post">
+												<form action="../ile/plage" method="post">
 													<input type="submit" name="suivant2" value="Suivant.">
 												</form>
 											</center>
@@ -388,13 +388,13 @@
 										$description = 'tempête';
 										$cache = 'oui';
 										$rarete = 'succesargent';
-										include_once $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/succesadd.php";
+										include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/succesadd.php";
 										$nouveausucces = '<img src="/escaperpg/images/succes/ambria/tempeteparfaite.png"><span><u><b>Duo de choc !</b></u><br>Se sortir de la tempête sans subir de dégât !</span>';
 										$scenario = 'ambria';
 										$description = 'tempêteparfaite';
 										$cache = 'oui';
 										$rarete = 'succesgold';
-										include_once $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/succesadd.php";
+										include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/succesadd.php";
 										echo'</div>';
 										
 										echo'
@@ -412,7 +412,7 @@
 												Le capitaine donne l\'ordre aux matelots d\'amener le Surgisseur des Tempêtes dans la baie puis de sortir les chaloupes pour accoster sans risquer de vous échouer.
 											</p>
 											<center>
-												<form action="../ile/plage.php" method="post">
+												<form action="../ile/plage" method="post">
 													<input type="submit" name="suivant2" value="Suivant.">
 												</form>
 											</center>
@@ -432,7 +432,7 @@
 												Les récifs ne pourront pas être évités à temps, mais vous devriez pouvoir guider le capitaine pour qu\'il sache où passer et éviter le maximum de dégâts.
 											</p>
 											<center>
-												<form action="tempete.php" method="post">
+												<form action="tempete" method="post">
 													<input type="text" name="recifs"><input type="submit" name="finrecifs" value="Attendre les ordres.">
 												</form>
 											</center>
@@ -450,7 +450,7 @@
 									Les récifs ne pourront pas être évités à temps, mais vous devriez pouvoir guider le capitaine pour qu\'il sache où passer et éviter le maximum de dégâts.
 								</p>
 								<center>
-									<form action="tempete.php" method="post">
+									<form action="tempete" method="post">
 										<input type="text" name="recifs"><input type="submit" name="finrecifs" value="Attendre les ordres.">
 									</form>
 								</center>
@@ -463,7 +463,7 @@
 											Attention, si le capitaine a déjà commencé à manœuvrer, il faut passer au récif suivant.
 										</div>
 										<center>
-											<form action="tempete.php" method="post">
+											<form action="tempete" method="post">
 												<button type="submit" name="indice5" class="boutonindice"></button>
 											</form>
 										</center>
@@ -479,7 +479,7 @@
 											Imaginez que les récifs sont disposés sur 5 colonnes, cela peut vous aider.
 										</div>
 										<center>
-											<form action="tempete.php" method="post">
+											<form action="tempete" method="post">
 												<button type="submit" name="indice6" class="boutonindice"></button>
 											</form>
 										</center>
@@ -498,7 +498,7 @@
 											Décrivez aussi leur position.
 										</div>
 										<center>
-											<form action="tempete.php" method="post">
+											<form action="tempete" method="post">
 												<button type="submit" name="reponse2" class="boutonreponse"></button>
 											</form>
 										</center>
@@ -521,7 +521,7 @@
 								{
 									echo'
 										<center>
-											<form action="tempete.php" method="post">
+											<form action="tempete" method="post">
 												<button type="submit" name="indice" class="boutonindice"></button>
 											</form>
 										</center>
@@ -544,7 +544,7 @@
 									Le capitaine hurle à nouveau et vous comprenez que c\'est votre nom qu\'il scande, vous vous tournez vers lui pour savoir ce qu\'il attend de vous.
 								</p>
 								<center>
-									<form action="tempete.php" method="post">
+									<form action="tempete" method="post">
 										<input type="text" name="ordres2"><input type="submit" name="attendre2" value="Suivre les ordres.">
 									</form>
 								</center>
@@ -561,7 +561,7 @@
 												Vous comprenez aussitôt ce qu\'il attend de vous et vous vous dirigez vers les haubans pour grimper au mât.
 											</p>
 											<center>
-												<form action="tempete.php" method="post">
+												<form action="tempete" method="post">
 													<input type="submit" name="haubans" value="Grimper.">
 												</form>
 											</center>
@@ -575,7 +575,7 @@
 												Vous comprenez aussitôt ce qu\'il attend de vous et vous vous dirigez vers les haubans pour grimper au mât.
 											</p>
 											<center>
-												<form action="tempete.php" method="post">
+												<form action="tempete" method="post">
 													<input type="submit" name="haubans" value="Grimper.">
 												</form>
 											</center>
@@ -587,7 +587,7 @@
 												Avez-vous bien compris les ordres que le capitaine a donnés ?
 											</p>
 											<center>
-												<form action="tempete.php" method="post">
+												<form action="tempete" method="post">
 													<input type="text" name="ordres2"><input type="submit" name="attendre2" value="Suivre les ordres.">
 												</form>
 											</center>
@@ -627,7 +627,7 @@
 											Faites attention au chemin que vous empruntez, la moindre erreur pourrait vous faire perdre du temps et se révéler dramatique pour le navire.
 										</div>
 										<center>
-											<form action="tempete.php" method="post">
+											<form action="tempete" method="post">
 												<button type="submit" name="indice2" class="boutonindice"></button>
 											</form>
 										</center>
@@ -641,7 +641,7 @@
 											Tâchez de trouver le chemin qui mène tout en haut au milieu en évitant chaque case qui vous amènerait à franchir un obstacle (mousse, calcaire, cordage cassé).
 										</div>
 										<center>
-											<form action="tempete.php" method="post">
+											<form action="tempete" method="post">
 												<button type="submit" name="indice3" class="boutonindice"></button>
 											</form>
 										</center>
@@ -656,7 +656,7 @@
 											La partie droite des haubans n\'est pas sûre, privilégiez de passer entre la gauche et le milieu.
 										</div>
 										<center>
-											<form action="tempete.php" method="post">
+											<form action="tempete" method="post">
 												<button type="submit" name="reponse" class="boutonreponse"></button>
 											</form>
 										</center>
@@ -674,7 +674,7 @@
 								{
 									echo'
 										<center>
-											<form action="tempete.php" method="post">
+											<form action="tempete" method="post">
 												<button type="submit" name="indice" class="boutonindice"></button>
 											</form>
 										</center>
@@ -698,7 +698,7 @@
 									Le capitaine semble réfléchir un instant.
 								</p>
 								<center>
-									<form action="tempete.php" method="post">
+									<form action="tempete" method="post">
 										<input type="text" name="ordres"><input type="submit" name="attendre" value="Attendre les ordres.">
 									</form>
 								</center>
@@ -709,6 +709,6 @@
 		</div>
 		<div id="load"><div id="loader"></div></div>
 		<script src="/escaperpg/scripts/aventures-chargement.js"></script>
-		<?php include_once $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/aventures/ambria/logan/includes/footer.php"; ?>
+		<?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/aventures/ambria/logan/includes/footer.php"; ?>
 	</body>
 </html>

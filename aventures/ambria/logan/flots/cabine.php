@@ -1,4 +1,4 @@
-<?php include_once $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/entete.php"; ?>
+<?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/entete.php"; ?>
 <!DOCTYPE html>
 <html lang="fr">
 	<head>
@@ -17,15 +17,15 @@
 	</head>
 	
 	<body onload="chargement()">
-		<?php include_once $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/header.php"; ?>
+		<?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/header.php"; ?>
 		<div id="banniere"><img src="/escaperpg/images/ambria/tresorambriamini.png"></div>
-		<div id="bloc_page">
+		<main>
 			<nav>
 				<a href="/escaperpg/images/ambria/loganbarthelemymini.png" rel="lightbox[logan]" title="Logan Barthélémy"><img src="/escaperpg/images/ambria/loganbarthelemymini.png"></a>
-				<div id="inventairefooter"><input type="submit" onclick="inventaireshow()" value="INVENTAIRE"></div>
-				<div id="motsdepasse"><input type="submit" onclick="mdpshow()" value="NOTES"></div>
+				<div id="inventairefooter"><input type="submit" value="INVENTAIRE"></div>
+				<div id="motsdepasse"><input type="submit" value="NOTES"></div>
 				<a href="/escaperpg/aventures/ambria/save/save.php" target="_blank" rel="noreferrer"><input type="submit" name="save" value="SAUVEGARDER"></a>
-				<?php include_once $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/aventures/ambria/logan/includes/navigationbateau.php"; ?>
+				<?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/aventures/ambria/logan/includes/navigationbateau.php"; ?>
 			</nav>
 			<div id="txt">
 				<?php
@@ -40,7 +40,7 @@
 									Vous dépliez le parchemin et lisez les instructions tandis que Sullivan calcule l\'itinéraire sur sa carte.
 								</p>
 								<center>
-									<form action="cabine.php" method="post">
+									<form action="cabine" method="post">
 										<input type="text" name="cap"><input type="submit" name="carte" value="Déchiffrer le parchemin.">
 									</form>
 								</center>
@@ -56,7 +56,7 @@
 										$description = 'cap';
 										$cache = 'non';
 										$rarete = 'succesbronze';
-										include_once $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/succesadd.php";
+										include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/succesadd.php";
 										echo '
 											<audio src="/escaperpg/sons/ambria/cap.mp3" autoplay></audio>
 											<p>
@@ -98,7 +98,7 @@
 												Aucun nuage ne semble percer l\'horizon.
 											</p>
 											<center>
-												<form action="tempete.php" method="post">
+												<form action="tempete" method="post">
 													<input type="submit" name="suite" value="Suivant.">
 												</form>
 											</center>
@@ -115,7 +115,7 @@
 												Vous dépliez le parchemin et lisez les instructions tandis que Sullivan calcule l\'itinéraire sur sa carte.
 											</p>
 											<center>
-												<form action="cabine.php" method="post">
+												<form action="cabine" method="post">
 													<input type="text" name="cap"><input type="submit" name="carte" value="Déchiffrer le parchemin.">
 												</form>
 											</center>
@@ -173,7 +173,7 @@
 									</div>
 								</div>
 								<center>
-									<form action="cabine.php" method="post">
+									<form action="cabine" method="post">
 										<input type="submit" name="suivant" value="Suivant.">
 									</form>
 								</center>
@@ -207,6 +207,6 @@
 		</div>
 		<div id="load"><div id="loader"></div></div>
 		<script src="/escaperpg/scripts/aventures-chargement.js"></script>
-		<?php include_once $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/aventures/ambria/logan/includes/footer.php"; ?>
+		<?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/aventures/ambria/logan/includes/footer.php"; ?>
 	</body>
 </html>

@@ -1,4 +1,4 @@
-<?php include_once $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/entete.php"; ?>
+<?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/entete.php"; ?>
 <!DOCTYPE html>
 <html lang="fr">
 	<head>
@@ -17,13 +17,13 @@
 	</head>
 	
 	<body onload="chargement()">
-		<?php include_once $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/header.php"; ?>
+		<?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/header.php"; ?>
 		<div id="banniere"><img src="/escaperpg/images/ambria/tresorambriamini.png"></div>
-		<div id="bloc_page">
+		<main>
 			<nav>
 				<a href="/escaperpg/images/ambria/loganbarthelemymini.png" rel="lightbox[logan]" title="Logan Barthélémy"><img src="/escaperpg/images/ambria/loganbarthelemymini.png"></a>
-				<div id="inventairefooter"><input type="submit" onclick="inventaireshow()" value="INVENTAIRE"></div>
-				<div id="motsdepasse"><input type="submit" onclick="mdpshow()" value="NOTES"></div>
+				<div id="inventairefooter"><input type="submit" value="INVENTAIRE"></div>
+				<div id="motsdepasse"><input type="submit" value="NOTES"></div>
 			</nav>
 			<div id="txt">
 				<?php
@@ -35,7 +35,7 @@
 							$description = 'commentaire';
 							$cache = 'non';
 							$rarete = 'succesbronze';
-							include_once $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/succesadd.php";
+							include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/succesadd.php";
 							echo'</div>';
 							
 							if ($_SESSION['loggedin']) { $nom = $_SESSION['idcompte']; } else { $nom = $_POST['nom']; }
@@ -52,55 +52,55 @@
 							$description = 'fin';
 							$cache = 'non';
 							$rarete = 'succesbronze';
-							include_once $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/succesadd.php";
+							include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/succesadd.php";
 							$nouveausucces = '<img src="/escaperpg/images/succes/general/meilleurefin.png"><span><u><b>Explorateur·rice sans faille</b></u><br>Terminer une aventure en obtenant la meilleure fin possible</span>';
 							$scenario = 'general';
 							$description = 'meilleurefin';
 							$cache = 'non';
 							$rarete = 'succesdiamant';
-							include_once $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/succesadd.php";
+							include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/succesadd.php";
 							$nouveausucces = '<img src="/escaperpg/images/succes/general/legende.png"><span><u><b>Légende vivante</b></u><br>Terminer une aventure avec un score de 5 étoiles ou plus</span>';
 							$scenario = 'general';
 							$description = 'légende';
 							$cache = 'non';
 							$rarete = 'succesplatine';
-							include_once $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/succesadd.php";
+							include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/succesadd.php";
 							$nouveausucces = '<img src="/escaperpg/images/succes/ambria/fin.png"><span><u><b>La vie de pirate</b></u><br>Terminer l\'aventure</span>';
 							$scenario = 'ambria';
 							$description = 'fin';
 							$cache = 'non';
 							$rarete = 'succesbronze';
-							include_once $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/succesadd.php";
+							include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/succesadd.php";
 							$nouveausucces = '<img src="/escaperpg/images/succes/ambria/fin1logan.png"><span><u><b>Une vie en cage</b></u><br>En incarnant Logan, terminer l\'aventure et obtenir 1 étoile</span>';
 							$scenario = 'ambria';
 							$description = 'étoile1logan';
 							$cache = 'oui';
 							$rarete = 'succesbronze';
-							include_once $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/succesadd.php";
+							include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/succesadd.php";
 							$nouveausucces = '<img src="/escaperpg/images/succes/ambria/fin2logan.png"><span><u><b>Traître parmi les traîtres</b></u><br>En incarnant Logan, terminer l\'aventure et obtenir 2 étoiles</span>';
 							$scenario = 'ambria';
 							$description = 'étoile2logan';
 							$cache = 'oui';
 							$rarete = 'succesargent';
-							include_once $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/succesadd.php";
+							include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/succesadd.php";
 							$nouveausucces = '<img src="/escaperpg/images/succes/ambria/fin3logan.png"><span><u><b>Fidèle envers le capitaine</b></u><br>En incarnant Logan, terminer l\'aventure et obtenir 3 étoiles</span>';
 							$scenario = 'ambria';
 							$description = 'étoile3logan';
 							$cache = 'oui';
 							$rarete = 'succesgold';
-							include_once $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/succesadd.php";
+							include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/succesadd.php";
 							$nouveausucces = '<img src="/escaperpg/images/succes/ambria/fin4logan.png"><span><u><b>Du chemin à parcourir...</b></u><br>En incarnant Logan, terminer l\'aventure et obtenir 4 étoiles</span>';
 							$scenario = 'ambria';
 							$description = 'étoile4logan';
 							$cache = 'oui';
 							$rarete = 'succesdiamant';
-							include_once $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/succesadd.php";
+							include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/succesadd.php";
 							$nouveausucces = '<img src="/escaperpg/images/succes/ambria/fin5logan.png"><span><u><b>Comme un vrai pirate !</b></u><br>En incarnant Logan, terminer l\'aventure et obtenir 5 étoiles</span>';
 							$scenario = 'ambria';
 							$description = 'étoile5logan';
 							$cache = 'oui';
 							$rarete = 'succesplatine';
-							include_once $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/succesadd.php";
+							include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/succesadd.php";
 							echo'</div>';
 							
 							echo '
@@ -152,7 +152,7 @@
 							echo'
 								</div>
 								<center>
-									<form action="5cvq17.php" method="post">
+									<form action="5cvq17" method="post">
 										<fieldset>
 											<label for="nom">Votre nom (20 caractères max) :</label>
 											<input type="text" name="nom" id="nom" required><br>
@@ -171,7 +171,7 @@
 						}
 					else
 						{
-							include_once $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/aventures/ambria/includes/sessioninc.php";
+							include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/aventures/ambria/includes/sessioninc.php";
 							echo '
 								<audio src="/escaperpg/sons/ambria/recuptresor.mp3" autoplay></audio>
 								<p>
@@ -197,7 +197,7 @@
 									La répartition terminée, le Surgisseur des Tempêtes lève l\'ancre et repart vers l\'horizon.
 								</p>
 								<center>
-									<form action="5cvq17.php" method="post">
+									<form action="5cvq17" method="post">
 										<input type="submit" name="fin" value="Fin.">
 									<form>
 								</center>
@@ -208,6 +208,6 @@
 		</div>
 		<div id="load"><div id="loader"></div></div>
 		<script src="/escaperpg/scripts/aventures-chargement.js"></script>
-		<?php include_once $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/aventures/ambria/logan/includes/footer.php"; ?>
+		<?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/aventures/ambria/logan/includes/footer.php"; ?>
 	</body>
 </html>

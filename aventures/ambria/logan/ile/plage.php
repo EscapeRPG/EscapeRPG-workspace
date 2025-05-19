@@ -1,4 +1,4 @@
-<?php include_once $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/entete.php"; ?>
+<?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/entete.php"; ?>
 <!DOCTYPE html>
 <html lang="fr">
 	<head>
@@ -17,15 +17,15 @@
 	</head>
 	
 	<body onload="chargement()">
-		<?php include_once $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/header.php"; ?>
+		<?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/header.php"; ?>
 		<div id="banniere"><img src="/escaperpg/images/ambria/tresorambriamini.png"></div>
-		<div id="bloc_page">
+		<main>
 			<nav>
 				<a href="/escaperpg/images/ambria/loganbarthelemymini.png" rel="lightbox[logan]" title="Logan Barthélémy"><img src="/escaperpg/images/ambria/loganbarthelemymini.png"></a>
-				<div id="inventairefooter"><input type="submit" onclick="inventaireshow()" value="INVENTAIRE"></div>
-				<div id="motsdepasse"><input type="submit" onclick="mdpshow()" value="NOTES"></div>
+				<div id="inventairefooter"><input type="submit" value="INVENTAIRE"></div>
+				<div id="motsdepasse"><input type="submit" value="NOTES"></div>
 				<a href="/escaperpg/aventures/ambria/save/save.php" target="_blank" rel="noreferrer"><input type="submit" name="save" value="SAUVEGARDER"></a>
-				<?php include_once $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/aventures/ambria/logan/includes/navigationile.php"; ?>
+				<?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/aventures/ambria/logan/includes/navigationile.php"; ?>
 			</nav>
 			<div id="txt">
 				<?php
@@ -90,7 +90,7 @@
 									Vous suivez l\'homme au milieu des arbres et débouchez dans une sorte de clairière.
 								</p>
 								<center>
-									<form action="plage.php" method="post">
+									<form action="plage" method="post">
 										<input type="submit" name="grottes" value="Suivant.">
 									</form>
 								</center>
@@ -203,7 +203,7 @@
 									</div>
 								</div>
 								<center>
-									<form action="plage.php" method="post">
+									<form action="plage" method="post">
 										<input type="submit" name="grottesenigme" value="Suivant.">
 									</form>
 								</center>
@@ -256,7 +256,7 @@
 									Tous hochent la tête et vous vous enfoncez dans le couloir de droite tandis que le capitaine et les autres partent vers la gauche.
 								</p>
 								<center>
-									<form action="grottestorchesallumees.php" method="post">
+									<form action="grottestorchesallumees" method="post">
 										<input type="submit" name="suivant" value="Suivant.">
 									</form>
 								</center>
@@ -293,7 +293,7 @@
 											Il va falloir mieux étudier le message pour savoir quelle entrée emprunter.
 										</p>
 										<center>
-											<form action="plage.php" method="post">
+											<form action="plage" method="post">
 												<input type="submit" name="grottesenigme" value="Réessayer.">
 											</form>
 										</center>
@@ -334,7 +334,7 @@
 											Il semblerait que vous n\'ayez pas choisi judicieusement le chemin à emprunter.
 										</p>
 										<center>
-											<form action="plage.php" method="post">
+											<form action="plage" method="post">
 												<input type="submit" name="grottesenigme" value="Réessayer.">
 											</form>
 										</center>
@@ -367,7 +367,7 @@
 											Rebroussant chemin, vous revenez au milieu de la clairière et étudiez de nouveau l\'inscription au-dessus des grottes pour espérer trouver la bonne entrée sans qu\'une autre catastrophe n\'advienne.
 										</p>
 										<center>
-											<form action="plage.php" method="post">
+											<form action="plage" method="post">
 												<input type="submit" name="grottesenigme" value="Réessayer.">
 											</form>
 										</center>
@@ -414,7 +414,7 @@
 											Il va falloir être plus prudents si vous ne voulez pas finir votre aventure ici.
 										</p>
 										<center>
-											<form action="plage.php" method="post">
+											<form action="plage" method="post">
 												<input type="submit" name="grottesenigme" value="Réessayer.">
 											</form>
 										</center>
@@ -475,7 +475,7 @@
 											Votre choix ne semblait pas judicieux, il va falloir revoir votre jugement.
 										</p>
 										<center>
-											<form action="plage.php" method="post">
+											<form action="plage" method="post">
 												<input type="submit" name="grottesenigme" value="Réessayer.">
 											</form>
 										</center>
@@ -490,42 +490,42 @@
 								<div id="enigmelieu">
 									<img src="/escaperpg/images/ambria/grottesentree.png">
 									<div id="grotte1">
-										<form action="plage.php" method="post">
+										<form action="plage" method="post">
 											<button type="submit" name="1grotte">
 												<img src="/escaperpg/images/ambria/grotte1.png">
 											</button>
 										</form>
 									</div>
 									<div id="grotte2">
-										<form action="plage.php" method="post">
+										<form action="plage" method="post">
 											<button type="submit" name="2grotte">
 												<img src="/escaperpg/images/ambria/grotte2.png">
 											</button>
 										</form>
 									</div>
 									<div id="grotte3">
-										<form action="plage.php" method="post">
+										<form action="plage" method="post">
 											<button type="submit" name="3grotte">
 												<img src="/escaperpg/images/ambria/grotte3.png">
 											</button>
 										</form>
 									</div>
 									<div id="grotte4">
-										<form action="plage.php" method="post">
+										<form action="plage" method="post">
 											<button type="submit" name="4grotte">
 												<img src="/escaperpg/images/ambria/grotte4.png">
 											</button>
 										</form>
 									</div>
 									<div id="grotte5">
-										<form action="plage.php" method="post">
+										<form action="plage" method="post">
 											<button type="submit" name="5grotte">
 												<img src="/escaperpg/images/ambria/grotte5.png">
 											</button>
 										</form>
 									</div>
 									<div id="grotte6">
-										<form action="plage.php" method="post">
+										<form action="plage" method="post">
 											<button type="submit" name="6grotte">
 												<img src="/escaperpg/images/ambria/grotte6.png">
 											</button>
@@ -553,7 +553,7 @@
 											Suivez bien les consignes énoncées par Jake et étudiez les statues pour savoir quelle entrée choisir.
 										</div>
 										<center>
-											<form action="plage.php" method="post">
+											<form action="plage" method="post">
 												<button type="submit" name="indice2" class="boutonindice"></button>
 											</form>
 										</center>
@@ -567,7 +567,7 @@
 											Procédez par élimination. Essayez de trouver les statues qui indiquent un passage mortel et celles auxquelles vous pouvez vous fier.
 										</div>
 										<center>
-											<form action="plage.php" method="post">
+											<form action="plage" method="post">
 												<button type="submit" name="indice3" class="boutonindice"></button>
 											</form>
 										</center>
@@ -582,7 +582,7 @@
 											Il vous faut trouver deux statues sûres entourant un passage. Vous pourrez alors y entrer. Plusieurs statues correspondent à cette description mais seul un passage est gardé par deux d\'entre elles.
 										</div>
 										<center>
-											<form action="plage.php" method="post">
+											<form action="plage" method="post">
 												<button type="submit" name="reponse" class="boutonreponse"></button>
 											</form>
 										</center>
@@ -600,7 +600,7 @@
 								{
 									echo'
 										<center>
-											<form action="plage.php" method="post">
+											<form action="plage" method="post">
 												<button type="submit" name="indice" class="boutonindice"></button>
 											</form>
 										</center>
@@ -727,7 +727,7 @@
 								}
 							echo'
 								<center>
-									<form action="plage.php" method="post">
+									<form action="plage" method="post">
 										<input type="submit" name="suivant" value="Suivant.">
 									</form>
 								</center>
@@ -738,6 +738,6 @@
 		</div>
 		<div id="load"><div id="loader"></div></div>
 		<script src="/escaperpg/scripts/aventures-chargement.js"></script>
-		<?php include_once $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/aventures/ambria/logan/includes/footer.php"; ?>
+		<?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/aventures/ambria/logan/includes/footer.php"; ?>
 	</body>
 </html>

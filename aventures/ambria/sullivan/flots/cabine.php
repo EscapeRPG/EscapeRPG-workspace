@@ -1,4 +1,4 @@
-<?php include_once $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/entete.php"; ?>
+<?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/entete.php"; ?>
 <!DOCTYPE html>
 <html lang="fr">
 	<head>
@@ -17,15 +17,15 @@
 	</head>
 	
 	<body onload="chargement()">
-		<?php include_once $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/header.php"; ?>
+		<?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/header.php"; ?>
 		<div id="banniere"><img src="/escaperpg/images/ambria/tresorambriamini.png"></div>
-		<div id="bloc_page">
+		<main>
 			<nav>
 				<a href="/escaperpg/images/ambria/sullivanmasonmini.png" rel="lightbox[sullivan]" title="Sullivan Mason"><img src="/escaperpg/images/ambria/sullivanmasonmini.png"></a>
-				<div id="inventairefooter"><input type="submit" onclick="inventaireshow()" value="INVENTAIRE"></div>
-				<div id="motsdepasse"><input type="submit" onclick="mdpshow()" value="NOTES"></div>
+				<div id="inventairefooter"><input type="submit" value="INVENTAIRE"></div>
+				<div id="motsdepasse"><input type="submit" value="NOTES"></div>
 				<a href="/escaperpg/aventures/ambria/save/save.php" target="_blank" rel="noreferrer"><input type="submit" name="save" value="SAUVEGARDER"></a>
-				<?php include_once $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/aventures/ambria/sullivan/includes/navigationbateau.php"; ?>
+				<?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/aventures/ambria/sullivan/includes/navigationbateau.php"; ?>
 			</nav>
 			<div id="txt">
 				<?php
@@ -97,7 +97,7 @@
 													Essayez de suivre les instructions données par Logan.
 												</div>
 												<center>
-													<form action="cabine.php" method="post">
+													<form action="cabine" method="post">
 														<button type="submit" name="indice2" class="boutonindice"></button>
 													</form>
 												</center>
@@ -111,7 +111,7 @@
 													Comme le disait Robert Louis Stevenson : "L\'important ce n\'est pas la destination, c\'est le voyage".
 												</div>
 												<center>
-													<form action="cabine.php" method="post">
+													<form action="cabine" method="post">
 														<button type="submit" name="indice3" class="boutonindice"></button>
 													</form>
 												</center>
@@ -128,7 +128,7 @@
 													N\'hésitez pas à tracer le chemin sur un papier en reliant les points cités, vous pourrez ainsi lire des chiffres et des lettres.
 												</div>
 												<center>
-													<form action="cabine.php" method="post">
+													<form action="cabine" method="post">
 														<button type="submit" name="indice4" class="boutonindice"></button>
 													</form>
 												</center>
@@ -145,7 +145,7 @@
 													N\'hésitez pas à tracer le chemin sur un papier en reliant les points cités, vous pourrez ainsi lire des chiffres et des lettres.
 												</div>
 												<center>
-													<form action="cabine.php" method="post">
+													<form action="cabine" method="post">
 														<button type="submit" name="reponse" class="boutonreponse"></button>
 													</form>
 												</center>
@@ -163,7 +163,7 @@
 										{
 											echo'
 												<center>
-													<form action="cabine.php" method="post">
+													<form action="cabine" method="post">
 														<button type="submit" name="indice" class="boutonindice"></button>
 													</form>
 												</center>
@@ -221,7 +221,7 @@
 											</div>
 										</div>
 										<center>
-											<form action="cabine.php" method="post">
+											<form action="cabine" method="post">
 												<input type="submit" name="suivant" value="Suivant.">
 											</form>
 										</center>
@@ -266,7 +266,7 @@
 									<a href="/escaperpg/images/ambria/journalsullivan.png" rel="lightbox[invent]"><img src="/escaperpg/images/ambria/journalsullivan.png"></a>
 								</div>
 								<center>
-									<form action="cabine.php" method="post">
+									<form action="cabine" method="post">
 										<input type="submit" name="add" value="Prendre.">
 									</form>
 								</center>
@@ -277,6 +277,6 @@
 		</div>
 		<div id="load"><div id="loader"></div></div>
 		<script src="/escaperpg/scripts/aventures-chargement.js"></script>
-		<?php include_once $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/aventures/ambria/sullivan/includes/footer.php"; ?>
+		<?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/aventures/ambria/sullivan/includes/footer.php"; ?>
 	</body>
 </html>

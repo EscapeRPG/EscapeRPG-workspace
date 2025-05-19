@@ -1,4 +1,4 @@
-<?php include_once $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/entete.php"; ?>
+<?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/entete.php"; ?>
 <!DOCTYPE html>
 <html lang="fr">
 	<head>
@@ -17,15 +17,15 @@
 	</head>
 	
 	<body onload="chargement()">
-		<?php include_once $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/header.php"; ?>
+		<?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/header.php"; ?>
 		<div id="banniere"><img src="/escaperpg/images/ambria/tresorambriamini.png"></div>
-		<div id="bloc_page">
+		<main>
 			<nav>
 				<a href="/escaperpg/images/ambria/sullivanmasonmini.png" rel="lightbox[sullivan]" title="Sullivan Mason"><img src="/escaperpg/images/ambria/sullivanmasonmini.png"></a>
-				<div id="inventairefooter"><input type="submit" onclick="inventaireshow()" value="INVENTAIRE"></div>
-				<div id="motsdepasse"><input type="submit" onclick="mdpshow()" value="NOTES"></div>
+				<div id="inventairefooter"><input type="submit" value="INVENTAIRE"></div>
+				<div id="motsdepasse"><input type="submit" value="NOTES"></div>
 				<a href="/escaperpg/aventures/ambria/save/save.php" target="_blank" rel="noreferrer"><input type="submit" name="save" value="SAUVEGARDER"></a>
-				<?php include_once $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/aventures/ambria/sullivan/includes/navigationtortuga.php"; ?>
+				<?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/aventures/ambria/sullivan/includes/navigationtortuga.php"; ?>
 			</nav>
 			<div id="txt">
 				<?php
@@ -38,7 +38,7 @@
 											Vous savez maintenant où vous rendre et ne traînez pas une seconde de plus, prenant la direction de la <span class="lieu">bibliothèque</span>.
 										</p>
 										<center>
-											<form action="bibliotheque.php" method="post">
+											<form action="bibliotheque" method="post">
 												<input type="submit" name="aller" value="S\'y rendre.">
 											</form>
 										</center>
@@ -51,7 +51,7 @@
 											Cela ne semble pas être ça.
 										</p>
 										<center>
-											<form action="docks.php" method="post">
+											<form action="docks" method="post">
 												<input type="submit" name="retour" value="Retour.">
 											</form>
 										</center>
@@ -113,7 +113,7 @@
 									Vous ne savez pas trop quoi en penser... Peut-être que ce que vous a dit le vieil homme peut vous aider ?
 								</p>
 								<center>
-									<form action="docks.php" method="post">
+									<form action="docks" method="post">
 										<label for="qui">Qui possède la carte ?</label>
 										<input type="text" name="qui" id="qui"><br><br>
 										<label for="ou">Où se trouve cette personne ?</label>
@@ -130,7 +130,7 @@
 											Le vieil homme vous a dit qu\'il y a toujours du vrai et du faux dans les rumeurs. C\'est sans doute le cas ici.
 										</div>
 										<center>
-											<form action="docks.php" method="post">
+											<form action="docks" method="post">
 												<button type="submit" name="indice2" class="boutonindice"></button>
 											</form>
 										</center>
@@ -144,7 +144,7 @@
 											Analysez chaque phrase des types et essayez de trouver quelle partie est vraie et laquelle est fausse, vous saurez ainsi qui a la carte.
 										</div>
 										<center>
-											<form action="docks.php" method="post">
+											<form action="docks" method="post">
 												<button type="submit" name="reponse" class="boutonreponse"></button>
 											</form>
 										</center>
@@ -161,7 +161,7 @@
 											Le quatrième type vous dit que Bernard vend des poissons au marché, ce qui est vrai, donc le reste est faux. Bernard n\'a pas la carte.
 										</div>
 										<center>
-											<form action="docks.php" method="post">
+											<form action="docks" method="post">
 												<button type="submit" name="reponse2" class="boutonreponse"></button>
 											</form>
 										</center>
@@ -179,7 +179,7 @@
 								{
 									echo'
 										<center>
-											<form action="docks.php" method="post">
+											<form action="docks" method="post">
 												<button type="submit" name="indice" class="boutonindice"></button>
 											</form>
 										</center>
@@ -248,6 +248,6 @@
 		</div>
 		<div id="load"><div id="loader"></div></div>
 		<script src="/escaperpg/scripts/aventures-chargement.js"></script>
-		<?php include_once $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/aventures/ambria/sullivan/includes/footer.php"; ?>
+		<?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/aventures/ambria/sullivan/includes/footer.php"; ?>
 	</body>
 </html>

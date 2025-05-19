@@ -1,4 +1,4 @@
-<?php include_once $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/entete.php"; ?>
+<?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/entete.php"; ?>
 <!DOCTYPE html>
 <html lang="fr">
 	<head>
@@ -17,13 +17,13 @@
 	</head>
 	
 	<body onload="chargement()">
-		<?php include_once $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/header.php"; ?>
+		<?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/header.php"; ?>
 		<div id="banniere"><img src="/escaperpg/images/ambria/tresorambriamini.png"></div>
-		<div id="bloc_page">
+		<main>
 			<nav>
 				<a href="/escaperpg/images/ambria/sullivanmasonmini.png" rel="lightbox[sullivan]" title="Sullivan Mason"><img src="/escaperpg/images/ambria/sullivanmasonmini.png"></a>
-				<div id="inventairefooter"><input type="submit" onclick="inventaireshow()" value="INVENTAIRE"></div>
-				<div id="motsdepasse"><input type="submit" onclick="mdpshow()" value="NOTES"></div>
+				<div id="inventairefooter"><input type="submit" value="INVENTAIRE"></div>
+				<div id="motsdepasse"><input type="submit" value="NOTES"></div>
 				<a href="/escaperpg/aventures/ambria/save/save.php" target="_blank" rel="noreferrer"><input type="submit" name="save" value="SAUVEGARDER"></a>
 			</nav>
 			<div id="txt">
@@ -42,7 +42,7 @@
 												Vous partez à la suite de vos hommes sur le chemin pavé, en direction de la cité perdue d\'Ambria.
 											</p>
 											<center>
-												<form action="cite.php" method="post">
+												<form action="cite" method="post">
 													<input type="submit" name="suite" value="Suivant.">
 												</form>
 											</center>
@@ -54,7 +54,7 @@
 												Êtes-vous sûr d\'avoir bien compris la réponse de votre compagnon ?
 											</p>
 											<center>
-												<form action="cite.php" method="post">
+												<form action="cite" method="post">
 													<input type="text" name="enavant"><input type="submit" name="avancer" value="Avancer.">
 												</form>
 											</center>
@@ -98,7 +98,7 @@
 									Il semble cependant en rester une, parfaitement préservée, juste à côté de l\'ouverture menant au cœur du monument.
 								</p>
 								<center>
-									<form action="gardien.php" method="post">
+									<form action="gardien" method="post">
 										<input type="submit" name="palais" value="Avancer.">
 									</form>
 								</center>
@@ -112,7 +112,7 @@
 							$description = 'ambria';
 							$cache = 'non';
 							$rarete = 'succesnormal';
-							include_once $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/succesadd.php";
+							include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/succesadd.php";
 							echo'</div>';
 							
 							echo'
@@ -157,7 +157,7 @@
 									</div>
 								</div>
 								<center>
-									<form action="cite.php" method="post">
+									<form action="cite" method="post">
 										<input type="text" name="enavant"><input type="submit" name="avancer" value="Avancer.">
 									</form>
 								</center>
@@ -168,6 +168,6 @@
 		</div>
 		<div id="load"><div id="loader"></div></div>
 		<script src="/escaperpg/scripts/aventures-chargement.js"></script>
-		<?php include_once $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/aventures/ambria/sullivan/includes/footer.php"; ?>
+		<?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/aventures/ambria/sullivan/includes/footer.php"; ?>
 	</body>
 </html>

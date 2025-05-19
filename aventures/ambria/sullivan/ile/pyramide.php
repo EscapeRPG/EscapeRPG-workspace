@@ -1,4 +1,4 @@
-<?php include_once $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/entete.php"; ?>
+<?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/entete.php"; ?>
 <!DOCTYPE html>
 <html lang="fr">
 	<head>
@@ -17,13 +17,13 @@
 	</head>
 	
 	<body onload="chargement()">
-		<?php include_once $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/header.php"; ?>
+		<?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/header.php"; ?>
 		<div id="banniere"><img src="/escaperpg/images/ambria/tresorambriamini.png"></div>
-		<div id="bloc_page">
+		<main>
 			<nav>
 				<a href="/escaperpg/images/ambria/sullivanmasonmini.png" rel="lightbox[sullivan]" title="Sullivan Mason"><img src="/escaperpg/images/ambria/sullivanmasonmini.png"></a>
-				<div id="inventairefooter"><input type="submit" onclick="inventaireshow()" value="INVENTAIRE"></div>
-				<div id="motsdepasse"><input type="submit" onclick="mdpshow()" value="NOTES"></div>
+				<div id="inventairefooter"><input type="submit" value="INVENTAIRE"></div>
+				<div id="motsdepasse"><input type="submit" value="NOTES"></div>
 				<a href="/escaperpg/aventures/ambria/save/save.php" target="_blank" rel="noreferrer"><input type="submit" name="save" value="SAUVEGARDER"></a>
 			</nav>
 			<div id="txt">
@@ -101,7 +101,7 @@
 											Vous en approchant, vous arrivez sur une sorte de balcon surplombant l\'ensemble de la ville. La beauté du panorama est à couper le souffle.
 										</p>
 										<center>
-											<form action="pyramide.php" method="post">
+											<form action="pyramide" method="post">
 												<input type="submit" name="suite2" value="Suivant.">
 											</form>
 										</center>
@@ -179,7 +179,7 @@
 											Vous en approchant, vous arrivez sur une sorte de balcon surplombant l\'ensemble de la ville. La beauté du panorama est à couper le souffle.
 										</p>
 										<center>
-											<form action="pyramide.php" method="post">
+											<form action="pyramide" method="post">
 												<input type="submit" name="suite2" value="Suivant.">
 											</form>
 										</center>
@@ -195,7 +195,7 @@
 							$description = 'trésor';
 							$cache = 'oui';
 							$rarete = 'succesbronze';
-							include_once $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/succesadd.php";
+							include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/succesadd.php";
 							echo'</div>';
 							
 							echo'
@@ -225,7 +225,7 @@
 									Un cri de joie explose soudain, poussé par les gorges de toutes les personnes présentes et brisant le silence qui régnait jusqu\'alors.
 								</p>
 								<center>
-									<form action="pyramide.php" method="post">
+									<form action="pyramide" method="post">
 										<input type="text" name="logan"><input type="submit" name="avancer" value="Avancer.">
 									</form>
 								</center>
@@ -279,7 +279,7 @@
 												</div>
 											</div>
 											<center>
-												<form action="../ends/1gth24.php" method="post">
+												<form action="../ends/1gth24" method="post">
 													<input type="submit" name="suivant2" value="Suivant.">
 												</form>
 											</center>
@@ -347,7 +347,7 @@
 												</div>
 											</div>
 											<center>
-												<form action="pyramide.php" method="post">
+												<form action="pyramide" method="post">
 													<input type="text" name="mutinerie"><input type="submit" name="attendre" value="Attendre sa réponse.">
 												</form>
 											</center>
@@ -400,7 +400,7 @@
 												</div>
 											</div>
 											<center>
-												<form action="pyramide.php" method="post">
+												<form action="pyramide" method="post">
 													<input type="submit" name="leviers" value="Suivant.">
 												</form>
 											</center>
@@ -453,7 +453,7 @@
 												</div>
 											</div>
 											<center>
-												<form action="pyramide.php" method="post">
+												<form action="pyramide" method="post">
 													<input type="submit" name="leviers" value="Suivant.">
 												</form>
 											</center>
@@ -463,7 +463,7 @@
 										echo'
 											<p>Êtes-vous sûr d\'avoir bien compris ce que Logan vous a dit ?</p>
 											<center>
-												<form action="pyramide.php" method="post">
+												<form action="pyramide" method="post">
 													<input type="text" name="logan"><input type="submit" name="avancer" value="Avancer.">
 												</form>
 											</center>
@@ -543,7 +543,7 @@
 												Il reste encore de nombreuses richesses, mais vous êtes toujours bloqués et, de toute façon, sans sacs et sans navire pour repartir, vous ne pourrez pas aller bien loin.
 											</p>
 											<center>
-												<form action="pyramide.php" method="post">
+												<form action="pyramide" method="post">
 													<input type="submit" name="leviers2" value="Suivant.">
 												</form>
 											</center>
@@ -619,7 +619,7 @@
 												Vous comprenez alors qu\'il est toujours de votre côté et que vous avez une chance de renverser la situation, mais il va falloir agir avec prudence.
 											</p>
 											<center>
-												<form action="pyramide.php" method="post">
+												<form action="pyramide" method="post">
 													<input type="submit" name="leviers" value="Suivant.">
 												</form>
 											</center>
@@ -629,7 +629,7 @@
 										echo'
 											<p>Êtes-vous sûr d\'avoir bien compris ce que Logan a répondu ?</p>
 											<center>
-												<form action="pyramide.php" method="post">
+												<form action="pyramide" method="post">
 													<input type="text" name="mutinerie"><input type="submit" name="attendre" value="Attendre sa réponse.">
 												</form>
 											</center>
@@ -647,7 +647,7 @@
 										$description = 'fidèle';
 										$cache = 'oui';
 										$rarete = 'succesargent';
-										include_once $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/succesadd.php";
+										include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/succesadd.php";
 										echo'</div>';
 										
 										echo'
@@ -669,7 +669,7 @@
 												</div>
 											</div>
 											<center>
-												<form action="../ends/3f1249.php" method="post">
+												<form action="../ends/3f1249" method="post">
 													<input type="submit" name="lasuite" value="Suivant.">
 												</form>
 											</center>
@@ -694,7 +694,7 @@
 												</div>
 											</div>
 											<center>
-												<form action="../ends/4hgc82.php" method="post">
+												<form action="../ends/4hgc82" method="post">
 													<input type="submit" name="lasuite" value="Suivant.">
 												</form>
 											</center>
@@ -719,7 +719,7 @@
 												</div>
 											</div>
 											<center>
-												<form action="../ends/5fcdr1.php" method="post">
+												<form action="../ends/5fcdr1" method="post">
 													<input type="submit" name="lasuite" value="Suivant.">
 												</form>
 											</center>
@@ -729,7 +729,7 @@
 										echo'
 											<p>Êtes-vous sûr d\'avoir bien compris ce que Logan a dit ?</p>
 											<center>
-												<form action="pyramide.php" method="post">
+												<form action="pyramide" method="post">
 													<input type="text" name="levers"><input type="submit" name="reagir" value="Suivant.">
 												</form>
 											</center>
@@ -743,21 +743,21 @@
 								<div id="enigmelieu">
 									<img src="/escaperpg/images/ambria/cagesolo.png">
 									<div id="leviersolo1">
-										<form action="../ends/2q315j.php" method="post">
+										<form action="../ends/2q315j" method="post">
 											<button type="submit" name="1levier">
 												<img src="/escaperpg/images/ambria/levier.png" onmouseover="this.src=\'/escaperpg/images/ambria/mire.png\'" onmouseout="this.src=\'/escaperpg/images/ambria/levier.png\'">
 											</button>
 										</form>
 									</div>
 									<div id="leviersolo2">
-										<form action="../ends/2q315j.php" method="post">
+										<form action="../ends/2q315j" method="post">
 											<button type="submit" name="2levier">
 												<img src="/escaperpg/images/ambria/levier.png" onmouseover="this.src=\'/escaperpg/images/ambria/mire.png\'" onmouseout="this.src=\'/escaperpg/images/ambria/levier.png\'">
 											</button>
 										</form>
 									</div>
 									<div id="leviersolo3">
-										<form action="../ends/2q315j.php" method="post">
+										<form action="../ends/2q315j" method="post">
 											<button type="submit" name="3levier">
 												<img src="/escaperpg/images/ambria/levier.png" onmouseover="this.src=\'/escaperpg/images/ambria/mire.png\'" onmouseout="this.src=\'/escaperpg/images/ambria/levier.png\'">
 											</button>
@@ -791,7 +791,7 @@
 									Comment l\'aider pour lui indiquer comment faire ?
 								</p>
 								<center>
-									<form action="pyramide.php" method="post">
+									<form action="pyramide" method="post">
 										<input type="text" name="levers"><input type="submit" name="reagir" value="Suivant.">
 									</form>
 								</center>
@@ -803,7 +803,7 @@
 											Vous avez moyen d\'aider Logan en lui donnant les directions à prendre pour actionner son levier.
 										</div>
 										<center>
-											<form action="pyramide.php" method="post">
+											<form action="pyramide" method="post">
 												<button type="submit" name="indice2" class="boutonindice"></button>
 											</form>
 										</center>
@@ -817,7 +817,7 @@
 											Observez bien autour de vous, quelque chose ne vous saute-t-il pas aux yeux ?
 										</div>
 										<center>
-											<form action="pyramide.php" method="post">
+											<form action="pyramide" method="post">
 												<button type="submit" name="indice3" class="boutonindice"></button>
 											</form>
 										</center>
@@ -832,7 +832,7 @@
 											Regardez bien les motifs des fenêtres et essayez de rejoindre la case au milieu à droite en partant du bas tout en reconstituant les deux parties du labyrinthe.
 										</div>
 										<center>
-											<form action="pyramide.php" method="post">
+											<form action="pyramide" method="post">
 												<button type="submit" name="reponse" class="boutonreponse"></button>
 											</form>
 										</center>
@@ -851,7 +851,7 @@
 								{
 									echo'
 										<center>
-											<form action="pyramide.php" method="post">
+											<form action="pyramide" method="post">
 												<button type="submit" name="indice" class="boutonindice"></button>
 											</form>
 										</center>
@@ -875,7 +875,7 @@
 									Après un rapide tour des différentes salles - plusieurs pièces de vie, une cuisine gigantesque, une armurerie - vous finissez par conclure que vous ne trouverez rien d\'intéressant ici non plus.
 								</p>
 								<center>
-									<form action="pyramide.php" method="post">
+									<form action="pyramide" method="post">
 										<input type="submit" name="suivant" value="Suivant.">
 									</form>
 								</center>
@@ -886,6 +886,6 @@
 		</div>
 		<div id="load"><div id="loader"></div></div>
 		<script src="/escaperpg/scripts/aventures-chargement.js"></script>
-		<?php include_once $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/aventures/ambria/sullivan/includes/footer.php"; ?>
+		<?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/aventures/ambria/sullivan/includes/footer.php"; ?>
 	</body>
 </html>

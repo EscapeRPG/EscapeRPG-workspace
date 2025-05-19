@@ -1,4 +1,4 @@
-<?php include_once $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/entete.php"; ?>
+<?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/entete.php"; ?>
 <!DOCTYPE html>
 <html lang="fr">
 	<head>
@@ -17,15 +17,15 @@
 	</head>
 	
 	<body onload="chargement()">
-		<?php include_once $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/header.php"; ?>
+		<?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/header.php"; ?>
 		<div id="banniere"><img src="/escaperpg/images/ambria/tresorambriamini.png"></div>
-		<div id="bloc_page">
+		<main>
 			<nav>
 				<a href="/escaperpg/images/ambria/sullivanmasonmini.png" rel="lightbox[sullivan]" title="Sullivan Mason"><img src="/escaperpg/images/ambria/sullivanmasonmini.png"></a>
-				<div id="inventairefooter"><input type="submit" onclick="inventaireshow()" value="INVENTAIRE"></div>
-				<div id="motsdepasse"><input type="submit" onclick="mdpshow()" value="NOTES"></div>
+				<div id="inventairefooter"><input type="submit" value="INVENTAIRE"></div>
+				<div id="motsdepasse"><input type="submit" value="NOTES"></div>
 				<a href="/escaperpg/aventures/ambria/save/save.php" target="_blank" rel="noreferrer"><input type="submit" name="save" value="SAUVEGARDER"></a>
-				<?php include_once $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/aventures/ambria/sullivan/includes/navigationile.php"; ?>
+				<?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/aventures/ambria/sullivan/includes/navigationile.php"; ?>
 			</nav>
 			<div id="txt">
 				<?php
@@ -51,7 +51,7 @@
 											Cette mousse n\'est réellement bioluminescente que si la pièce est plongée dans le noir.
 										</div>
 										<center>
-											<form action="grottestorchesallumees.php" method="post">
+											<form action="grottestorchesallumees" method="post">
 												<button type="submit" name="indice2" class="boutonindice"></button>
 											</form>
 										</center>
@@ -65,7 +65,7 @@
 											Essayez de trouver un moyen pour éteindre vos torches.
 										</div>
 										<center>
-											<form action="grottestorchesallumees.php" method="post">
+											<form action="grottestorchesallumees" method="post">
 												<button type="submit" name="indice3" class="boutonindice"></button>
 											</form>
 										</center>
@@ -80,7 +80,7 @@
 											N\'oubliez pas qu\'il faut bien observer tous les éléments de cette page pour trouver la solution.
 										</div>
 										<center>
-											<form action="grottestorchesallumees.php" method="post">
+											<form action="grottestorchesallumees" method="post">
 												<button type="submit" name="reponse" class="boutonreponse"></button>
 											</form>
 										</center>
@@ -98,7 +98,7 @@
 								{
 									echo'
 										<center>
-											<form action="grottestorchesallumees.php" method="post">
+											<form action="grottestorchesallumees" method="post">
 												<button type="submit" name="indice" class="boutonindice"></button>
 											</form>
 										</center>
@@ -120,7 +120,7 @@
 									N\'étant cependant pas venu pour contempler le paysage, vous reprenez rapidement la route.
 								</p>
 								<center>
-									<form action="portescite.php" method="post">
+									<form action="portescite" method="post">
 										<input type="submit" name="sortiegrottes" value="Chercher la sortie.">
 									</form>
 								</center>
@@ -138,7 +138,7 @@
 									Alors que vous marchez ainsi depuis un long moment, vous remarquez une sorte de lueur, droit devant vous.
 								</p>
 								<center>
-									<form action="grottestorchesallumees.php" method="post">
+									<form action="grottestorchesallumees" method="post">
 										<input type="submit" name="lueur" value="Suivant.">
 									</form>
 								</center>
@@ -149,6 +149,6 @@
 		</div>
 		<div id="load"><div id="loader"></div></div>
 		<script src="/escaperpg/scripts/aventures-chargement.js"></script>
-		<?php include_once $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/aventures/ambria/sullivan/includes/footer.php"; ?>
+		<?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/aventures/ambria/sullivan/includes/footer.php"; ?>
 	</body>
 </html>

@@ -1,4 +1,4 @@
-<?php include_once $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/entete.php"; ?>
+<?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/entete.php"; ?>
 <!DOCTYPE html>
 <html lang="fr">
 	<head>
@@ -17,13 +17,13 @@
 	</head>
 	
 	<body onload="chargement()">
-		<?php include_once $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/header.php"; ?>
+		<?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/header.php"; ?>
 		<div id="banniere"><img src="/escaperpg/images/ambria/tresorambriamini.png"></div>
-		<div id="bloc_page">
+		<main>
 			<nav>
 				<a href="/escaperpg/images/ambria/loganbarthelemymini.png" rel="lightbox[logan]" title="Logan Barthélémy"><img src="/escaperpg/images/ambria/loganbarthelemymini.png"></a>
-				<div id="inventairefooter"><input type="submit" onclick="inventaireshow()" value="INVENTAIRE"></div>
-				<div id="motsdepasse"><input type="submit" onclick="mdpshow()" value="NOTES"></div>
+				<div id="inventairefooter"><input type="submit" value="INVENTAIRE"></div>
+				<div id="motsdepasse"><input type="submit" value="NOTES"></div>
 				<a href="/escaperpg/aventures/ambria/save/save.php" target="_blank" rel="noreferrer"><input type="submit" name="save" value="SAUVEGARDER"></a>
 			</nav>
 			<div id="txt">
@@ -43,7 +43,7 @@
 											Vous pouvez maintenant le ramener à son propriétaire.
 										</p>
 										<center>
-											<form action="fuite.php" method="post">
+											<form action="fuite" method="post">
 												<input type="submit" name="a1" value="ALLER AU NORD." class="noway"><br>
 												<input type="submit" name="a1" value="ALLER À L\'OUEST." class="noway"><input type="submit" name="a1" value="ALLER À L\'EST." class="noway"><br>
 												<input type="submit" name="a2" value="Aller au Sud.">
@@ -63,7 +63,7 @@
 											Vous trouvez cela un peu curieux, mais le volatile est de toute manière hors de votre portée et le chemin finit en cul-de-sac, vous décidez donc de rebrousser chemin.
 										</p>
 										<center>
-											<form action="fuite.php" method="post">
+											<form action="fuite" method="post">
 												<input type="submit" name="a1" value="ALLER AU NORD." class="noway"><br>
 												<input type="submit" name="a1" value="ALLER À L\'OUEST." class="noway"><input type="submit" name="a1" value="ALLER À L\'EST." class="noway"><br>
 												<input type="submit" name="a2" value="Aller au Sud.">
@@ -83,7 +83,7 @@
 											La ruelle traverse du Nord au Sud en longeant des bâtiments à l\'Est et un mur d\'enceinte à l\'Ouest.
 										</p>
 										<center>
-											<form action="fuite.php" method="post">
+											<form action="fuite" method="post">
 												<input type="submit" name="a1" value="Aller au Nord."><br>
 												<input type="submit" name="a2" value="ALLER À L\'OUEST." class="noway"><input type="submit" name="a2" value="ALLER À L\'EST." class="noway"><br>
 												<input type="submit" name="a3" value="Aller au Sud.">
@@ -98,7 +98,7 @@
 											La ruelle traverse du Nord au Sud en longeant des bâtiments à l\'Est et un mur d\'enceinte à l\'Ouest.
 										</p>
 										<center>
-											<form action="fuite.php" method="post">
+											<form action="fuite" method="post">
 												<input type="submit" name="a1" value="Aller au Nord."><br>
 												<input type="submit" name="a2" value="ALLER À L\'OUEST." class="noway"><input type="submit" name="a2" value="ALLER À L\'EST." class="noway"><br>
 												<input type="submit" name="a3" value="Aller au Sud.">
@@ -114,7 +114,7 @@
 									La ruelle tourne pour relier le Nord à l\'Est. Vous ne trouvez rien d\'intéressant par ici.
 								</p>
 								<center>
-									<form action="fuite.php" method="post">
+									<form action="fuite" method="post">
 										<input type="submit" name="a2" value="Aller au Nord."><br>
 										<input type="submit" name="a3" value="ALLER À L\'OUEST." class="noway"><input type="submit" name="b3" value="Aller à l\'Est."><br>
 										<input type="submit" name="a3" value="ALLER AU SUD." class="noway">
@@ -129,7 +129,7 @@
 									La ruelle se termine en cul-de-sac, dans une cour arrière d\'une grande maison. Manifestement, il n\'y a rien d\'intéressant par ici.
 								</p>
 								<center>
-									<form action="fuite.php" method="post">
+									<form action="fuite" method="post">
 										<input type="submit" name="a5" value="ALLER AU NORD." class="noway"><br>
 										<input type="submit" name="a5" value="ALLER À L\'OUEST." class="noway"><input type="submit" name="a5" value="ALLER À L\'EST." class="noway"><br>
 										<input type="submit" name="a6" value="Aller au Sud.">
@@ -145,7 +145,7 @@
 									Elle tourne vers le Nord et redonne sur la bibliothèque un peu plus loin à l\'Est.
 								</p>
 								<center>
-									<form action="fuite.php" method="post">
+									<form action="fuite" method="post">
 										<input type="submit" name="a5" value="Aller au Nord."><br>
 										<input type="submit" name="a6" value="ALLER À L\'OUEST." class="noway"><input type="submit" name="b6" value="Aller à l\'Est."><br>
 										<input type="submit" name="a6" value="ALLER AU SUD." class="noway">
@@ -160,7 +160,7 @@
 									La ruelle se prolonge d\'Ouest en Est en longeant les bâtiments.
 								</p>
 								<center>
-									<form action="fuite.php" method="post">
+									<form action="fuite" method="post">
 										<input type="submit" name="b3" value="Aller au Nord." class="noway"><br>
 										<input type="submit" name="a3" value="Aller à l\'Ouest."><input type="submit" name="c3" value="Aller à l\'Est."><br>
 										<input type="submit" name="b3" value="ALLER AU SUD." class="noway">
@@ -176,7 +176,7 @@
 									Au Nord, la façade nue d\'une demeure vous empêche de passer.
 								</p>
 								<center>
-									<form action="fuite.php" method="post">
+									<form action="fuite" method="post">
 										<input type="submit" name="b6" value="Aller au Nord." class="noway"><br>
 										<input type="submit" name="a6" value="Aller à l\'Ouest."><input type="submit" name="c6" value="Aller à l\'Est."><br>
 										<input type="submit" name="b6" value="ALLER AU SUD." class="noway">
@@ -194,7 +194,7 @@
 									$description = 'fuir';
 									$cache = 'non';
 									$rarete = 'succesnormal';
-									include_once $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/succesadd.php";
+									include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/succesadd.php";
 									echo'</div>';
 									
 									echo'
@@ -218,7 +218,7 @@
 											Bredouillez-vous rapidement à l\'intention du type avant de lui rendre sa clé et de franchir la porte vers la liberté.
 										</p>
 										<center>
-											<form action="taverne.php" method="post">
+											<form action="taverne" method="post">
 												<input type="submit" name="sortir" value="Sortir d\'ici.">
 											</form>
 										</center>
@@ -251,7 +251,7 @@
 											Quelqu\'un par ici possède peut-être une clé ?
 										</p>
 										<center>
-											<form action="fuite.php" method="post">
+											<form action="fuite" method="post">
 												<input type="submit" name="c1" value="Aller au Nord." class="noway"><br>
 												<input type="submit" name="c1" value="ALLER À L\'OUEST." class="noway"><input type="submit" name="d1" value="Aller à l\'Est."><br>
 												<input type="submit" name="" value="ALLER AU SUD." class="noway">
@@ -267,7 +267,7 @@
 									Vous arrivez dans un embranchement en patte d\'oie. Vous pouvez vous diriger à l\'Est, au Sud ou à l\'Ouest.
 								</p>
 								<center>
-									<form action="fuite.php" method="post">
+									<form action="fuite" method="post">
 										<input type="submit" name="c3" value="Aller au Nord." class="noway"><br>
 										<input type="submit" name="b3" value="Aller à l\'Ouest."><input type="submit" name="d3" value="Aller à l\'Est."><br>
 										<input type="submit" name="c4" value="Aller au Sud.">
@@ -282,7 +282,7 @@
 									La ruelle longe une haute tour au milieu d\'une sorte de petite place. Vous pouvez seulement aller au Nord ou au Sud.
 								</p>
 								<center>
-									<form action="fuite.php" method="post">
+									<form action="fuite" method="post">
 										<input type="submit" name="c3" value="Aller au Nord."><br>
 										<input type="submit" name="c4" value="ALLER À L\'OUEST." class="noway"><input type="submit" name="c4" value="ALLER À L\'EST." class="noway"><br>
 										<input type="submit" name="c5" value="Aller au Sud.">
@@ -297,7 +297,7 @@
 									La ruelle ne permet d\'aller qu\'au Nord ou au Sud, une palissade en bois de trois mètres de haut vous barrant la route à l\'Ouest
 								</p>
 								<center>
-									<form action="fuite.php" method="post">
+									<form action="fuite" method="post">
 										<input type="submit" name="c4" value="Aller au Nord."><br>
 										<input type="submit" name="c5" value="ALLER À L\'OUEST." class="noway"><input type="submit" name="c5" value="ALLER À L\'EST." class="noway"><br>
 										<input type="submit" name="c6" value="Aller au Sud.">
@@ -316,7 +316,7 @@
 									Vous n\'avez clairement pas beaucoup de temps devant vous et la personne qui en a après le parchemin semble prête à tout pour mettre la main dessus.
 								</p>
 								<center>
-									<form action="fuite.php" method="post">
+									<form action="fuite" method="post">
 										<input type="submit" name="c5" value="Aller au Nord."><br>
 										<input type="submit" name="b6" value="Aller à l\'Ouest."><input type="submit" name="c6" value="ALLER À L\'EST." class="noway"><br>
 										<input type="submit" name="c6" value="ALLER AU SUD." class="noway">
@@ -332,7 +332,7 @@
 									Vous voyez qu\'elle continue cependant à l\'Ouest où vous apercevez une porte en bois. Vous pouvez également retourner au Sud.
 								</p>
 								<center>
-									<form action="fuite.php" method="post">
+									<form action="fuite" method="post">
 										<input type="submit" name="d1" value="Aller au Nord." class="noway"><br>
 										<input type="submit" name="c1" value="Aller à l\'Ouest."><input type="submit" name="d1" value="ALLER À L\'EST." class="noway"><br>
 										<input type="submit" name="d2" value="Aller au Sud.">
@@ -348,7 +348,7 @@
 									Le chemin du Sud ramène sur la petite place avec la tour.
 								</p>
 								<center>
-									<form action="fuite.php" method="post">
+									<form action="fuite" method="post">
 										<input type="submit" name="d1" value="Aller au Nord."><br>
 										<input type="submit" name="d2" value="ALLER À L\'OUEST." class="noway"><input type="submit" name="d2" value="ALLER À L\'EST." class="noway"><br>
 										<input type="submit" name="d3" value="Aller au Sud.">
@@ -363,7 +363,7 @@
 									Vous continuez sur la petite place, la tour se trouvant maintenant vers le Sud. Vous pouvez prendre n\'importe laquelle des trois autres directions.
 								</p>
 								<center>
-									<form action="fuite.php" method="post">
+									<form action="fuite" method="post">
 										<input type="submit" name="d2" value="Aller au Nord."><br>
 										<input type="submit" name="c3" value="Aller à l\'Ouest."><input type="submit" name="e3" value="Aller à l\'Est."><br>
 										<input type="submit" name="d3" value="ALLER AU SUD." class="noway">
@@ -380,7 +380,7 @@
 											Vous revenez dans le petit cul-de-sac sentant l\'urine où vous avez trouvé la clé de l\'arrière-cour de la taverne. Il n\'y a rien de plus à y trouver.
 										</p>
 										<center>
-											<form action="fuite.php" method="post">
+											<form action="fuite" method="post">
 												<input type="submit" name="d5" value="Aller au Nord." class="noway"><br>
 												<input type="submit" name="d5" value="ALLER À L\'OUEST." class="noway"><input type="submit" name="e5" value="Aller à l\'Est."><br>
 												<input type="submit" name="d5" value="ALLER AU SUD." class="noway">
@@ -400,7 +400,7 @@
 											Vous l\'empochez.
 										</p>
 										<center>
-											<form action="fuite.php" method="post">
+											<form action="fuite" method="post">
 												<input type="submit" name="d5" value="Aller au Nord." class="noway"><br>
 												<input type="submit" name="d5" value="ALLER À L\'OUEST." class="noway"><input type="submit" name="e5" value="Aller à l\'Est."><br>
 												<input type="submit" name="d5" value="ALLER AU SUD." class="noway">
@@ -418,7 +418,7 @@
 									Vous pouvez aussi choisir d\'aller à l\'Est ou à l\'Ouest.
 								</p>
 								<center>
-									<form action="fuite.php" method="post">
+									<form action="fuite" method="post">
 										<input type="submit" name="e3" value="Aller au Nord." class="noway"><br>
 										<input type="submit" name="d3" value="Aller à l\'Ouest."><input type="submit" name="f3" value="Aller à l\'Est."><br>
 										<input type="submit" name="e4" value="Aller au Sud.">
@@ -433,7 +433,7 @@
 									La ruelle continue du Nord au Sud.
 								</p>
 								<center>
-									<form action="fuite.php" method="post">
+									<form action="fuite" method="post">
 										<input type="submit" name="e3" value="Aller au Nord."><br>
 										<input type="submit" name="e4" value="ALLER À L\'OUEST." class="noway"><input type="submit" name="e4" value="ALLER À L\'EST." class="noway"><br>
 										<input type="submit" name="e5" value="Aller au Sud.">
@@ -453,7 +453,7 @@
 											Vous êtes aussi libre d\'aller au Nord ou au Sud.
 										</p>
 										<center>
-											<form action="fuite.php" method="post">
+											<form action="fuite" method="post">
 												<input type="submit" name="e4" value="Aller au Nord."><br>
 												<input type="submit" name="d5" value="Aller à l\'Ouest."><input type="submit" name="f5" value="Aller à l\'Est."><br>
 												<input type="submit" name="e6" value="Aller au Sud.">
@@ -471,7 +471,7 @@
 											Vous êtes aussi libre d\'aller au Nord ou au Sud.
 										</p>
 										<center>
-											<form action="fuite.php" method="post">
+											<form action="fuite" method="post">
 												<input type="submit" name="e4" value="Aller au Nord."><br>
 												<input type="submit" name="d5" value="Aller à l\'Ouest."><input type="submit" name="f5" value="Aller à l\'Est."><br>
 												<input type="submit" name="e6" value="Aller au Sud.">
@@ -489,7 +489,7 @@
 											Vous êtes aussi libre d\'aller au Nord ou au Sud.
 										</p>
 										<center>
-											<form action="fuite.php" method="post">
+											<form action="fuite" method="post">
 												<input type="submit" name="e4" value="Aller au Nord."><br>
 												<input type="submit" name="d5" value="Aller à l\'Ouest."><input type="submit" name="f5" value="Aller à l\'Est."><br>
 												<input type="submit" name="e6" value="Aller au Sud.">
@@ -507,7 +507,7 @@
 											Vous êtes aussi libre d\'aller au Nord ou au Sud.
 										</p>
 										<center>
-											<form action="fuite.php" method="post">
+											<form action="fuite" method="post">
 												<input type="submit" name="e4" value="Aller au Nord."><br>
 												<input type="submit" name="d5" value="Aller à l\'Ouest."><input type="submit" name="f5" value="Aller à l\'Est."><br>
 												<input type="submit" name="e6" value="Aller au Sud.">
@@ -528,7 +528,7 @@
 											Vous êtes aussi libre d\'aller au Nord ou au Sud.
 										</p>
 										<center>
-											<form action="fuite.php" method="post">
+											<form action="fuite" method="post">
 												<input type="submit" name="e4" value="Aller au Nord."><br>
 												<input type="submit" name="d5" value="Aller à l\'Ouest."><input type="submit" name="f5" value="Aller à l\'Est."><br>
 												<input type="submit" name="e6" value="Aller au Sud.">
@@ -547,7 +547,7 @@
 											Vous êtes aussi libre d\'aller au Nord ou au Sud.
 										</p>
 										<center>
-											<form action="fuite.php" method="post">
+											<form action="fuite" method="post">
 												<input type="submit" name="e4" value="Aller au Nord."><br>
 												<input type="submit" name="d5" value="Aller à l\'Ouest."><input type="submit" name="f5" value="Aller à l\'Est."><br>
 												<input type="submit" name="e6" value="Aller au Sud.">
@@ -563,7 +563,7 @@
 									En empruntant cette section, vous vous pouvez continuer au Nord ou au Sud.
 								</p>
 								<center>
-									<form action="fuite.php" method="post">
+									<form action="fuite" method="post">
 										<input type="submit" name="e5" value="Aller au Nord."><br>
 										<input type="submit" name="e6" value="ALLER À L\'OUEST." class="noway"><input type="submit" name="e6" value="ALLER À L\'EST." class="noway"><br>
 										<input type="submit" name="e7" value="Aller au Sud.">
@@ -579,7 +579,7 @@
 									Vous pouvez retourner au Nord ou continuer à l\'Est.
 								</p>
 								<center>
-									<form action="fuite.php" method="post">
+									<form action="fuite" method="post">
 										<input type="submit" name="e6" value="Aller au Nord."><br>
 										<input type="submit" name="e7" value="ALLER À L\'OUEST." class="noway"><input type="submit" name="f7" value="Aller à l\'Est."><br>
 										<input type="submit" name="e7" value="ALLER AU SUD." class="noway">
@@ -597,7 +597,7 @@
 											Vous fourrez les biscuits dans votre poche et reprenez votre route.
 										</p>
 										<center>
-											<form action="fuite.php" method="post">
+											<form action="fuite" method="post">
 												<input type="submit" name="f2" value="Aller au Nord." class="noway"><br>
 												<input type="submit" name="f2" value="ALLER À L\'OUEST." class="noway"><input type="submit" name="g2" value="Aller à l\'Est."><br>
 												<input type="submit" name="f3" value="Aller au Sud.">
@@ -616,7 +616,7 @@
 											À l\'Est, vous apercevez un tas de détritus posés au sol : les restes de cuisine.
 										</p>
 										<center>
-											<form action="fuite.php" method="post">
+											<form action="fuite" method="post">
 												<input type="submit" name="f2" value="Aller au Nord." class="noway"><br>
 												<input type="submit" name="f2" value="ALLER À L\'OUEST." class="noway"><input type="submit" name="g2" value="Aller à l\'Est."><br>
 												<input type="submit" name="f3" value="Aller au Sud.">
@@ -638,7 +638,7 @@
 											Vous pouvez maintenant vous rendre au Nord, dans la cour.
 										</p>
 										<center>
-											<form action="fuite.php" method="post">
+											<form action="fuite" method="post">
 												<input type="submit" name="f2" value="Aller au Nord."><br>
 												<input type="submit" name="e3" value="Aller à l\'Ouest."><input type="submit" name="f3" value="ALLER À L\'EST." class="noway"><br>
 												<input type="submit" name="f3" value="ALLER AU SUD." class="noway">
@@ -656,7 +656,7 @@
 											Vous pourriez peut-être passer par là pour trouver un équipage avec qui embarquer ? Il vous faudra cependant d\'abord trouver la clé qui ouvre cette porte.
 										</p>
 										<center>
-											<form action="fuite.php" method="post">
+											<form action="fuite" method="post">
 												<input type="submit" name="f3" value="Aller au Nord." class="noway"><br>
 												<input type="submit" name="e3" value="Aller à l\'Ouest."><input type="submit" name="f3" value="ALLER À L\'EST." class="noway"><br>
 												<input type="submit" name="f3" value="ALLER AU SUD." class="noway">
@@ -673,7 +673,7 @@
 									Elle continue à l\'Est, où vous apercevez effectivement la silhouette de quelqu\'un, accroupi et semblant fouiller au sol parmi des caisses.
 								</p>
 								<center>
-									<form action="fuite.php" method="post">
+									<form action="fuite" method="post">
 										<input type="submit" name="f5" value="Aller au Nord." class="noway"><br>
 										<input type="submit" name="e5" value="Aller à l\'Ouest."><input type="submit" name="g5" value="Aller à l\'Est."><br>
 										<input type="submit" name="f5" value="ALLER AU SUD." class="noway">
@@ -689,7 +689,7 @@
 									Il ne vous reste plus qu\'à revenir sur vos pas.
 								</p>
 								<center>
-									<form action="fuite.php" method="post">
+									<form action="fuite" method="post">
 										<input type="submit" name="f7" value="Aller au Nord." class="noway"><br>
 										<input type="submit" name="e7" value="Aller à l\'Ouest."><input type="submit" name="f7" value="ALLER À L\'EST." class="noway"><br>
 										<input type="submit" name="f7" value="ALLER AU SUD." class="noway">
@@ -706,7 +706,7 @@
 											Vous n\'avez plus rien à faire ici.
 										</p>
 										<center>
-											<form action="fuite.php" method="post">
+											<form action="fuite" method="post">
 												<input type="submit" name="g2" value="Aller au Nord." class="noway"><br>
 												<input type="submit" name="f2" value="Aller à l\'Ouest."><input type="submit" name="g2" value="ALLER À L\'EST." class="noway"><br>
 												<input type="submit" name="g2" value="ALLER AU SUD." class="noway">
@@ -723,7 +723,7 @@
 											Ayant une idée en tête, vous entreprenez de fouiller les détritus malgré votre dégoût et en ressortez au bout de quelques secondes avec des petits morceaux de biscuits secs.
 										</p>
 										<center>
-											<form action="fuite.php" method="post">
+											<form action="fuite" method="post">
 												<input type="submit" name="g2" value="Aller au Nord." class="noway"><br>
 												<input type="submit" name="f2" value="Aller à l\'Ouest."><input type="submit" name="g2" value="ALLER À L\'EST." class="noway"><br>
 												<input type="submit" name="g2" value="ALLER AU SUD." class="noway">
@@ -739,7 +739,7 @@
 											Vous observez rapidement les détritus. Des restes de nourriture variés, pour la plupart gâtés. Vous vous retournez avec une grimace de dégoût et repartez.
 										</p>
 										<center>
-											<form action="fuite.php" method="post">
+											<form action="fuite" method="post">
 												<input type="submit" name="g2" value="Aller au Nord." class="noway"><br>
 												<input type="submit" name="f2" value="Aller à l\'Ouest."><input type="submit" name="g2" value="ALLER À L\'EST." class="noway"><br>
 												<input type="submit" name="g2" value="ALLER AU SUD." class="noway">
@@ -771,7 +771,7 @@
 											Il ne semble rien y avoir de plus par ici.
 										</p>
 										<center>
-											<form action="fuite.php" method="post">
+											<form action="fuite" method="post">
 												<input type="submit" name="g5" value="Aller au Nord." class="noway"><br>
 												<input type="submit" name="f5" value="Aller à l\'Ouest."><input type="submit" name="g5" value="ALLER À L\'EST." class="noway"><br>
 												<input type="submit" name="g5" value="ALLER AU SUD." class="noway">
@@ -810,7 +810,7 @@
 											</div>
 										</div>
 										<center>
-											<form action="fuite.php" method="post">
+											<form action="fuite" method="post">
 												<input type="submit" name="g5" value="Aller au Nord." class="noway"><br>
 												<input type="submit" name="f5" value="Aller à l\'Ouest."><input type="submit" name="g5" value="ALLER À L\'EST." class="noway"><br>
 												<input type="submit" name="g5" value="ALLER AU SUD." class="noway">
@@ -843,7 +843,7 @@
 											Résigné, vous comprenez qu\'il va vous falloir continuer la chasse si vous espérez vous sortir d\'ici.
 										</p>
 										<center>
-											<form action="fuite.php" method="post">
+											<form action="fuite" method="post">
 												<input type="submit" name="g5" value="Aller au Nord." class="noway"><br>
 												<input type="submit" name="f5" value="Aller à l\'Ouest."><input type="submit" name="g5" value="ALLER À L\'EST." class="noway"><br>
 												<input type="submit" name="g5" value="ALLER AU SUD." class="noway">
@@ -921,7 +921,7 @@
 											Vous lui dites que vous allez faire ce que vous pouvez et revenez sur vos pas.
 										</p>
 										<center>
-											<form action="fuite.php" method="post">
+											<form action="fuite" method="post">
 												<input type="submit" name="g5" value="Aller au Nord." class="noway"><br>
 												<input type="submit" name="f5" value="Aller à l\'Ouest."><input type="submit" name="g5" value="ALLER À L\'EST." class="noway"><br>
 												<input type="submit" name="g5" value="ALLER AU SUD." class="noway">
@@ -940,7 +940,7 @@
 									Par où devez-vous aller ?
 								</p>
 								<center>
-									<form action="fuite.php" method="post">
+									<form action="fuite" method="post">
 										<input type="submit" name="c5" value="Aller au Nord."><br>
 										<input type="submit" name="b6" value="Aller à l\'Ouest."><input type="submit" name="c6" value="ALLER À L\'EST." class="noway"><br>
 										<input type="submit" name="c6" value="ALLER AU SUD." class="noway">
@@ -950,7 +950,7 @@
 						}
 					echo'
 						<center>
-							<form action="fuiteindice.php" method="post" target="_blank" rel="noreferrer">
+							<form action="fuiteindice" method="post" target="_blank" rel="noreferrer">
 								<button type="submit" name="indice" class="boutonindice"></button>
 							</form>
 						</center>
@@ -960,6 +960,6 @@
 		</div>
 		<div id="load"><div id="loader"></div></div>
 		<script src="/escaperpg/scripts/aventures-chargement.js"></script>
-		<?php include_once $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/aventures/ambria/logan/includes/footer.php"; ?>
+		<?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/aventures/ambria/logan/includes/footer.php"; ?>
 	</body>
 </html>

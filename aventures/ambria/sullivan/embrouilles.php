@@ -1,4 +1,4 @@
-<?php include_once $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/entete.php"; ?>
+<?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/entete.php"; ?>
 <!DOCTYPE html>
 <html lang="fr">
 	<head>
@@ -17,13 +17,13 @@
 	</head>
 	
 	<body onload="chargement()">
-		<?php include_once $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/header.php"; ?>
+		<?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/header.php"; ?>
 		<div id="banniere"><img src="/escaperpg/images/ambria/tresorambriamini.png"></div>
-		<div id="bloc_page">
+		<main>
 			<nav>
 				<a href="/escaperpg/images/ambria/sullivanmasonmini.png" rel="lightbox[sullivan]" title="Sullivan Mason"><img src="/escaperpg/images/ambria/sullivanmasonmini.png"></a>
-				<div id="inventairefooter"><input type="submit" onclick="inventaireshow()" value="INVENTAIRE"></div>
-				<div id="motsdepasse"><input type="submit" onclick="mdpshow()" value="NOTES"></div>
+				<div id="inventairefooter"><input type="submit" value="INVENTAIRE"></div>
+				<div id="motsdepasse"><input type="submit" value="NOTES"></div>
 				<a href="/escaperpg/aventures/ambria/save/save.php" target="_blank" rel="noreferrer"><input type="submit" name="save" value="SAUVEGARDER"></a>
 			</nav>
 			<div id="txt">
@@ -68,7 +68,7 @@
 									Vous vous retournez vers lui et vous apprêtez à récupérer votre arme.
 								</p>
 								<center>
-									<form action="embrouilles.php" method="post">
+									<form action="embrouilles" method="post">
 										<input type="text" name="danger"><input type="submit" name="react" value="Réagir.">
 									</form>
 								</center>
@@ -102,7 +102,7 @@
 												Sans prendre le temps de vérifier s\'il a eu le temps de se pousser, vous vous jetez en avant pour récupérer votre arme et donnez un coup de pommeau au type qui s\'était écroulé sur vous, l\'assommant pour le coup.
 											</p>
 											<center>
-												<form action="embrouilles.php" method="post">
+												<form action="embrouilles" method="post">
 													<input type="text" name="bagarre"><input type="submit" name="battre" value="Réagir.">
 												</form>
 											</center>
@@ -137,7 +137,7 @@
 												Sans prendre le temps de vérifier s\'il a eu le temps de se pousser, vous récupérez votre sabre qui se trouvait au sol et donnez un coup de pommeau au type qui s\'était écroulé sur vous, l\'assommant pour le coup.
 											</p>
 											<center>
-												<form action="embrouilles.php" method="post">
+												<form action="embrouilles" method="post">
 													<input type="text" name="bagarre"><input type="submit" name="battre" value="Réagir.">
 												</form>
 											</center>
@@ -173,7 +173,7 @@
 												</div>
 											</div>
 											<center>
-												<form action="embrouilles.php" method="post">
+												<form action="embrouilles" method="post">
 													<input type="text" name="sortir"><input type="submit" name="partir" value="Sortir.">
 												</form>
 											</center>
@@ -207,7 +207,7 @@
 												</div>
 											</div>
 											<center>
-												<form action="embrouilles.php" method="post">
+												<form action="embrouilles" method="post">
 													<input type="text" name="sortir"><input type="submit" name="partir" value="Sortir.">
 												</form>
 											</center>
@@ -227,7 +227,7 @@
 										$description = 'bagarre';
 										$cache = 'oui';
 										$rarete = 'succesnormal';
-										include_once $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/succesadd.php";
+										include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/succesadd.php";
 										echo'</div>';
 										
 										echo'
@@ -248,7 +248,7 @@
 												</div>
 											</div>
 											<center>
-												<form action="embrouilles.php" method="post">
+												<form action="embrouilles" method="post">
 													<input type="submit" name="seloigner" value="Suivant.">
 												</form>
 											</center>
@@ -260,7 +260,7 @@
 												Ce n\'est manifestement pas la réponse attendue.
 											</p>
 											<center>
-												<form action="embrouilles.php" method="post">
+												<form action="embrouilles" method="post">
 													<input type="text" name="sortir"><input type="submit" name="partir" value="Sortir.">
 												</form>
 											</center>
@@ -302,7 +302,7 @@
 												Par moments, vous avez l\'impression d\'entendre l\'écho de pas dans les rues calmes de la ville.
 											</p>
 											<center>
-												<form action="embarquement.php" method="post">
+												<form action="embarquement" method="post">
 													<input type="submit" name="suite2" value="Suivant.">
 												</form>
 											</center>
@@ -324,10 +324,10 @@
 												</div>
 											</div>
 											<center>
-												<form action="embrouilles.php" method="post">
+												<form action="embrouilles" method="post">
 													<input type="text" name="logannom"><input type="submit" name="loganreponse" value="Suivant.">
 												</form>
-												<form action="embrouilles.php" method="post">
+												<form action="embrouilles" method="post">
 													<button type="submit" name="indice1" class="boutonindice"></button>
 												</form>
 											</center>
@@ -392,7 +392,7 @@
 									</div>
 								</div>
 								<center>
-									<form action="embrouilles.php" method="post">
+									<form action="embrouilles" method="post">
 										<input type="text" name="logannom"><input type="submit" name="loganreponse" value="Suivant.">
 									</form>
 								</center>
@@ -405,7 +405,7 @@
 											Vous avez demandé le nom de votre interlocuteur. Quel est-il ?
 										</div>
 										<center>
-											<form action="embrouilles.php" method="post">
+											<form action="embrouilles" method="post">
 												<button type="submit" name="indice2" class="boutonindice"></button>
 											</form>
 										</center>
@@ -419,7 +419,7 @@
 											Il suffit de noter le prénom de ce personnage, incarné par le second joueur.
 										</div>
 										<center>
-											<form action="embrouilles.php" method="post">
+											<form action="embrouilles" method="post">
 												<button type="submit" name="reponse" class="boutonreponse"></button>
 											</form>
 										</center>
@@ -437,7 +437,7 @@
 								{
 									echo'
 										<center>
-											<form action="embrouilles.php" method="post">
+											<form action="embrouilles" method="post">
 												<button type="submit" name="indice" class="boutonindice"></button>
 											</form>
 										</center>
@@ -501,7 +501,7 @@
 									</div>
 								</div>
 								<center>
-									<form action="embrouilles.php" method="post">
+									<form action="embrouilles" method="post">
 										<input type="submit" name="suite2" value="Suivant.">
 									</form>
 								</center>
@@ -512,6 +512,6 @@
 		</div>
 		<div id="load"><div id="loader"></div></div>
 		<script src="/escaperpg/scripts/aventures-chargement.js"></script>
-		<?php include_once $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/aventures/ambria/sullivan/includes/footer.php"; ?>
+		<?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/aventures/ambria/sullivan/includes/footer.php"; ?>
 	</body>
 </html>

@@ -1,4 +1,4 @@
-var first,
+let first,
 	second,
 	third,
 	drop1 = document.getElementById('dropporte1'),
@@ -14,7 +14,7 @@ var first,
 
 function dragdrop() {
 
-	var dndHandler = {
+	let dndHandler = {
 
 		draggedElement: null, // Propriété pointant vers l\'élément en cours de déplacement
 
@@ -22,7 +22,7 @@ function dragdrop() {
 
 			element.draggable = true;
 
-			var dndHandler = this; // Cette variable est nécessaire pour que l\'événement « dragstart » ci-dessous accède facilement au namespace « dndHandler »
+			let dndHandler = this; // Cette variable est nécessaire pour que l\'événement « dragstart » ci-dessous accède facilement au namespace « dndHandler »
 
 			element.addEventListener('dragstart', function(e) {
 				dndHandler.draggedElement = e.target; // On sauvegarde l\'élément en cours de déplacement
@@ -42,12 +42,12 @@ function dragdrop() {
 				this.className = 'dropperporte'; // On revient au style de base lorsque l\'élément quitte la zone de drop
 			});
 
-			var dndHandler = this; // Cette variable est nécessaire pour que l\'événement « drop » ci-dessous accède facilement au namespace « dndHandler »
+			let dndHandler = this; // Cette variable est nécessaire pour que l\'événement « drop » ci-dessous accède facilement au namespace « dndHandler »
 
 			dropper.addEventListener('drop', function(e) {
 				e.preventDefault(); // On autorise le drop d\'éléments
 
-				var target = e.target,
+				let target = e.target,
 					draggedElement = dndHandler.draggedElement, // Récupération de l\'élément concerné
 					clonedElement = draggedElement.cloneNode(true); // On créé immédiatement le clone de cet élément
 					
@@ -109,12 +109,12 @@ function dragdrop() {
 				this.className = 'draggerporte'; // On revient au style de base lorsque l\'élément quitte la zone de drop
 			});
 
-			var dndHandler = this; // Cette variable est nécessaire pour que l\'événement « drop » ci-dessous accède facilement au namespace « dndHandler »
+			let dndHandler = this; // Cette variable est nécessaire pour que l\'événement « drop » ci-dessous accède facilement au namespace « dndHandler »
 
 			draggable.addEventListener('drop', function(e) {
 				e.preventDefault(); // On autorise le drop d\'éléments
 
-				var target = e.target,
+				let target = e.target,
 					draggedElement = dndHandler.draggedElement, // Récupération de l\'élément concerné
 					clonedElement = draggedElement.cloneNode(true); // On créé immédiatement le clone de cet élément
 					
@@ -136,24 +136,24 @@ function dragdrop() {
 
 	};
 
-	var elements = document.querySelectorAll('.draggerporte'),
+	let elements = document.querySelectorAll('.draggerporte'),
 		elementsLen = elements.length;
 
-	for (var i = 0; i < elementsLen; i++) {
+	for (let i = 0; i < elementsLen; i++) {
 		dndHandler.applyDragEvents(elements[i]); // Application des paramètres nécessaires aux éléments déplaçables
 	}
 
-	var droppers = document.querySelectorAll('.dropperporte'),
+	let droppers = document.querySelectorAll('.dropperporte'),
 		droppersLen = droppers.length;
 
-	for (var i = 0; i < droppersLen; i++) {
+	for (let i = 0; i < droppersLen; i++) {
 		dndHandler.applyDropEvents(droppers[i]); // Application des événements nécessaires aux zones de drop
 	}
 
-	var draggables = document.querySelectorAll('.draggerporte'),
+	let draggables = document.querySelectorAll('.draggerporte'),
 		draggablesLen = draggables.length;
 
-	for (var i = 0; i < draggablesLen; i++) {
+	for (let i = 0; i < draggablesLen; i++) {
 		dndHandler.applyDropdragEvents(draggables[i]); // Application des événements nécessaires aux zones de drag et drop d\'où proviennent les draggables d\'origine
 	}
 }
