@@ -10,7 +10,7 @@
             }
         }
     
-        if (count($affichables) > 0) {
+        if (!empty($affichables)) {
             echo implode(' - ', $affichables);
         } else {
             echo 'Vous n\'avez trouvé aucun mot de passe pour le moment.';

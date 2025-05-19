@@ -16,7 +16,7 @@
 		<title>Fin - Le Trésor d'Ambria</title>
 	</head>
 	
-	<body onload="chargement()">
+	<body>
 		<?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/header.php"; ?>
 		<div id="banniere"><img src="/escaperpg/images/ambria/tresorambriamini.png"></div>
 		<main>
@@ -119,13 +119,13 @@
 					$reponse->closeCursor();
 					echo'<div class="dialogue">';
 					for ($i = 1 ; $i <= $nombreDePages ; $i++) { echo '<a href="2d5pl4.php?page=' . $i . '">' . $i . '</a>'; }
-					echo'
+					echo '
 						</div>
 						<center>
 							<form action="2d5pl4" method="post">
 								<fieldset>
 									<label for="nom">Votre nom (20 caractères max) :</label>
-									<input type="text" name="nom" id="nom" required><br>
+									<input type="text" name="nom" id="nom" maxlength="20" required><br>
 									<br>
 									<label for="message">Votre message :</label>
 									<textarea name="message" id="message" rows="7" cols="50">J\'ai terminé ce scénario et ai obtenu 2 étoiles !</textarea><br>

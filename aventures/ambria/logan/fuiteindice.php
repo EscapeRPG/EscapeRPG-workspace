@@ -16,7 +16,7 @@
 		<title>La Bibliothèque - Le Trésor d'Ambria</title>
 	</head>
 	
-	<body onload="chargement()">
+	<body>
 		<?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/header.php"; ?>
 		<div id="banniere"><img src="/escaperpg/images/ambria/tresorambriamini.png"></div>
 		<main>
@@ -66,7 +66,7 @@
 								<div id="enigmelieu">
 									<img src="/escaperpg/images/ambria/labyrinthefuitereponse.png">
 								</div>
-								<div id="reponse">
+								<div class="reponse">
 									La case en G5 correspond à l\'emplacement du type que vous devez rencontrer.<br>
 									En D5, vous pouvez trouver la clé qu\'il a perdue.<br>
 									Rendez-vous ensuite en F3 puis au Nord pour ouvrir la barrière qui vous bloquait la voie, puis en G2 pour y récupérer des biscuits.<br>

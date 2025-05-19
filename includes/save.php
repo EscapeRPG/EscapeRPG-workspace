@@ -3,7 +3,7 @@
         <?php
         include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/succesSave.php";
         if ($_SESSION['loggedin']) {
-            $nom = htmlspecialchars(isset($_COOKIE['LOGGED_USER']) ? $_COOKIE['LOGGED_USER'] : $_SESSION['idcompte']);
+            $nom = $_SESSION['idcompte'];
             $code = $random;
         } else {
             $nom = htmlspecialchars($_POST['nom']);

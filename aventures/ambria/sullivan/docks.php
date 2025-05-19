@@ -16,7 +16,7 @@
 		<title>Les Docks - Le Trésor d'Ambria</title>
 	</head>
 	
-	<body onload="chargement()">
+	<body>
 		<?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/header.php"; ?>
 		<div id="banniere"><img src="/escaperpg/images/ambria/tresorambriamini.png"></div>
 		<main>
@@ -153,7 +153,7 @@
 							elseif (isset ($_POST['reponse']))
 								{
 									echo'
-										<div id="reponse">
+										<div class="reponse">
 											Le premier type vous dit que Peter est le patron du bordel, ce qui est vrai. Donc le reste de sa phrase est fausse et ce n\'est pas Peter qui l\'a.<br>
 											Le second type vous dit que la taverne est tenue par Don, ce qui est vrai, donc le reste est faux et ce n\'est pas lui qui a la carte.<br>
 											Le troisième type vous dit que Louis travaille à la taverne, ce qui est faux, donc le reste de sa phrase est vraie ! Louis a bien la carte, mais où travaille-t-il ?
@@ -170,7 +170,7 @@
 							elseif (isset ($_POST['reponse2']))
 								{
 									echo'
-										<div id="reponse">
+										<div class="reponse">
 											Vous cherchez Louis qui travaille à la bibliothèque.
 										</div>
 									';

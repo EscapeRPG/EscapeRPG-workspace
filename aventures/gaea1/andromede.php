@@ -11,7 +11,7 @@
 		<title>Introduction - Station GAEA-1</title>
 	</head>
 
-	<body onload="chargement()">
+	<body>
 		<?php if (isset ($_POST['commencer']) || $_SESSION['cineintro']): ?>
 			<?php
 				include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/header.php";

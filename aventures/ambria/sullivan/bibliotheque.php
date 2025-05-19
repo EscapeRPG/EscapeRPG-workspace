@@ -16,7 +16,7 @@
 		<title>La Bibliothèque - Le Trésor d'Ambria</title>
 	</head>
 	
-	<body onload="chargement()">
+	<body>
 		<?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/header.php"; ?>
 		<div id="banniere"><img src="/escaperpg/images/ambria/tresorambriamini.png"></div>
 		<main>
@@ -241,7 +241,7 @@
 							elseif (isset ($_POST['reponse']))
 								{
 									echo'
-										<div id="reponse">
+										<div class="reponse">
 											Demandez au joueur qui incarne Logan quel est le mot de passe de l\'objet qu\'il a laissé tomber en s\'enfuyant.
 										</div>
 									';

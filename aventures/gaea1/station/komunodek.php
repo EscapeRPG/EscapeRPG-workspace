@@ -11,7 +11,7 @@
         <title><?php if ($_SESSION['evisited']) { echo 'Pont de Commandement'; } else { echo 'Komunodek'; } ?> - Station GAEA-1</title>
     </head>
 
-    <body onload="chargement()">
+    <body>
         <?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/header.php"; ?>
 
         <div id="banniere"><img src="/escaperpg/images/gaea1/gaea1mini.png" alt="gaea 1 bannière"></div>
@@ -379,7 +379,7 @@
                         $_SESSION['deckopen'] = true;
                         $_SESSION['oxygene'] -= 10;
                         $key = array_search('energyCells', $_SESSION['inventaire']);
-                        if ($key) {
+                        if ($key !== false) {
                             unset($_SESSION['inventaire'][$key]);
                             $_SESSION['inventaire'] = array_values($_SESSION['inventaire']);
                         }
@@ -428,7 +428,7 @@
                                 $_SESSION['deckopen'] = true;
                                 $_SESSION['oxygene'] -= 10;
                                 $key = array_search('energyCells', $_SESSION['inventaire']);
-                                if ($key) {
+                                if ($key !== false) {
                                     unset($_SESSION['inventaire'][$key]);
                                     $_SESSION['inventaire'] = array_values($_SESSION['inventaire']);
                                 }
@@ -448,7 +448,7 @@
                                 $_SESSION['etested'] = true;
                                 $_SESSION['plancurrent'] = null;
                                 $key = array_search('energyCells', $_SESSION['inventaire']);
-                                if ($key) {
+                                if ($key !== false) {
                                     unset($_SESSION['inventaire'][$key]);
                                     $_SESSION['inventaire'] = array_values($_SESSION['inventaire']);
                                 }

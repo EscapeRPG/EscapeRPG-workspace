@@ -16,7 +16,7 @@
 		<title>La Tempête - Le Trésor d'Ambria</title>
 	</head>
 	
-	<body onload="chargement()">
+	<body>
 		<?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/header.php"; ?>
 		<div id="banniere"><img src="/escaperpg/images/ambria/tresorambriamini.png"></div>
 		<main>
@@ -507,7 +507,7 @@
 							elseif (isset ($_POST['reponse2']))
 								{
 									echo'
-										<div id="reponse">
+										<div class="reponse">
 											Première phase de récifs : haut récif au sommet plat situé tout à gauche.<br>
 											Seconde phase : récif en pointe simple au centre et haut récit au sommet plat juste à sa droite (en 4e colonne).<br>
 											Troisième phase : long récif plat et bas visible au moins sur les colonnes 2 et 3, puis récif en pointe simple tout à droite. Les colonnes une et 4 sont cachées par d\'autres récifs plus proches.<br>

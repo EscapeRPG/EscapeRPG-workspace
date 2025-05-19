@@ -16,7 +16,7 @@
 		<title>La Pyramide - Le Trésor d'Ambria</title>
 	</head>
 	
-	<body onload="chargement()">
+	<body>
 		<?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/header.php"; ?>
 		<div id="banniere"><img src="/escaperpg/images/ambria/tresorambriamini.png"></div>
 		<main>
@@ -841,7 +841,7 @@
 							elseif (isset ($_POST['reponse']))
 								{
 									echo'
-										<div id="reponse">
+										<div class="reponse">
 											Indiquez à Logan d\'aller une fois en haut, deux fois à gauche, deux fois en haut, une fois à droite,
 											trois fois en haut, deux fois à droite, une fois en bas, deux fois à droite, deux fois en bas puis une fois à droite.
 										</div>

@@ -16,7 +16,7 @@
 		<title>Embarquement - Le Trésor d'Ambria</title>
 	</head>
 	
-	<body onload="chargement()">
+	<body>
 		<?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/header.php"; ?>
 		<div id="banniere"><img src="/escaperpg/images/ambria/tresorambriamini.png"></div>
 		<main>
@@ -258,7 +258,7 @@
 							elseif (isset ($_POST['reponse']))
 								{
 									echo'
-										<div id="reponse">
+										<div class="reponse">
 											La caisse étant trop lourde, placez-la dans l\'emplacement tout en bas.<br>
 											Comme le pistolet doit être vers le centre et que l\'une des étagères sera vide au final, il faut le placer juste à côté des livres sur la deuxième étagère en partant du haut.<br>
 											La longue-vue va donc être dans la case juste à droite du pistolet.<br>

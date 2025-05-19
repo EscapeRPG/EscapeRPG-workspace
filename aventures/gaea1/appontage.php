@@ -11,7 +11,7 @@
 		<title>La Station - Station GAEA-1</title>
 	</head>
 
-	<body onload="chargement()">
+	<body>
 		<?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/header.php"; ?>
 
 		<div id="banniere"><img src="/escaperpg/images/gaea1/gaea1mini.png" alt="gaea 1 bannière"></div>
@@ -75,7 +75,7 @@
 					</div>
 					<script src="/escaperpg/aventures/gaea1/scripts/appontage.js"></script>
 					
-					<?php 
+					<?php
 						$reponse = "Vous n'arrivez pas à vous poser ? Dans ce cas, cliquez <a href=\"station/hangar\" style=\"color: lightskyblue\">ici</a> pour passer à la suite.";
 						$indice1 = "Essayez de faire descendre le Seeker à 0 mètre pour vous poser.";
 						$indice2 = "Restez bien " . ($_SESSION['feminin'] ? 'appuyée' : 'appuyé') . " sur la manette jaune pour descendre automatiquement.

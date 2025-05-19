@@ -94,4 +94,4 @@
 
 	$_SESSION['inventaire'][] = 'manuel';
 	$_SESSION['mdp'][] = '';
-?>
+	

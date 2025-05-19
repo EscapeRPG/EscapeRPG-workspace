@@ -11,7 +11,7 @@
 		<title><?php if ($_SESSION['kvisited']) { echo'Legerrum'; } else { echo'Entrepôt'; } ?>- Station GAEA-1</title>
 	</head>
 
-	<body onload="chargement()">
+	<body>
 		<?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/header.php"; ?>
 
 		<div id="banniere"><img src="/escaperpg/images/gaea1/gaea1mini.png" alt="gaea 1 bannière"></div>

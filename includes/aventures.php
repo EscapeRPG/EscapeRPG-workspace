@@ -14,7 +14,7 @@
 </div>
 
 <div class="cardalign">
-    <a href="/escaperpg/aventures/lastparty/index.php" class="card">
+    <a href="/escaperpg/aventures/lastparty/index" class="card">
         <div class="cardfond">
             <h2>LAST PARTY</h2>
             <div class="cardimage"><img src="/escaperpg/images/lastpartycard.png" alt="last party"></div>
@@ -71,7 +71,7 @@
         </div>
     </a>
 
-    <a href="/escaperpg/aventures/secrets/index.php" class="card">
+    <a href="/escaperpg/aventures/secrets/index" class="card">
         <div class="cardfond">
             <h2>SECRETS FAMILIAUX</h2>
             <div class="cardimage"><img src="/escaperpg/images/secretscard.png" alt="secrets familiaux"></div>
@@ -128,7 +128,7 @@
         </div>
     </a>
 
-    <a href="/escaperpg/aventures/avent/index.php" class="card">
+    <a href="/escaperpg/aventures/avent/index" class="card">
         <div class="cardfond">
             <h2>LE GRENIER D'ARTHUR</h2>
             <div class="cardimage"><img src="/escaperpg/images/aventcard.png" alt="le grenier d'arthur"></div>
@@ -186,7 +186,7 @@
         </div>
     </a>
 
-    <a href="/escaperpg/aventures/ambria/index.php" class="card">
+    <a href="/escaperpg/aventures/ambria/index" class="card">
         <div class="cardfond">
             <h2>LE TRÉSOR D'AMBRIA</h2>
             <div class="cardimage"><img src="/escaperpg/images/tresorambriacard.png" alt="le trésor d'ambria"></div>

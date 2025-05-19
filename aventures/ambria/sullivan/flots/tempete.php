@@ -16,7 +16,7 @@
 		<title>La Tempête - Le Trésor d'Ambria</title>
 	</head>
 	
-	<body onload="chargement()">
+	<body>
 		<?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/header.php"; ?>
 		<div id="banniere"><img src="/escaperpg/images/ambria/tresorambriamini.png"></div>
 		<main>
@@ -595,7 +595,7 @@
 									elseif (isset ($_POST['reponse']))
 										{
 											echo'
-												<div id="reponse">
+												<div class="reponse">
 													Pour le premier récif, cliquez sur la 2e poignée.<br>
 													Pour le second récif, cliquez sur la 5e poignée.<br>
 													Pour le troisième récif, cliquez sur la 3e poignée.<br>

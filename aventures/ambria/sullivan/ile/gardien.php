@@ -16,7 +16,7 @@
 		<title>Le Gardien - Le Trésor d'Ambria</title>
 	</head>
 	
-	<body onload="chargement()">
+	<body>
 		<?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/header.php"; ?>
 		<div id="banniere"><img src="/escaperpg/images/ambria/tresorambriamini.png"></div>
 		<main>
@@ -320,7 +320,7 @@
 						elseif (isset ($_POST['reponse']))
 							{
 								echo'
-									<div id="reponse">
+									<div class="reponse">
 										Tirer sur la quatrième pierre précieuse.
 									</div>
 								';
@@ -470,7 +470,7 @@
 							elseif (isset ($_POST['reponse']))
 								{
 									echo'
-										<div id="reponse">
+										<div class="reponse">
 											La bonne séquence de couleurs est rouge bleu jaune rouge jaune vert bleu vert.
 										</div>
 									';
@@ -634,7 +634,7 @@
 							elseif (isset ($_POST['reponse']))
 								{
 									echo'
-										<div id="reponse">
+										<div class="reponse">
 											Cliquez sur la gemme bleue.
 										</div>
 									';

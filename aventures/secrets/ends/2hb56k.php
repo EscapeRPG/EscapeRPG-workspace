@@ -16,9 +16,9 @@
 		<title>Fin - Secrets Familiaux</title>
 	</head>
 	
-	<body onload="chargement()">
+	<body>
 		<?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/header.php"; ?>
-		<div id="banniere"><img src="/escaperpg/images/secrets/secretsfamiliauxmini.png" alt="secrets familiaux bannière"></div>
+		<div id="banniere"><img src="/escaperpg/images/secrets/secretsfamiliauxmini.png"></div>
 		<main>			
 			<div id="txt">
 				<?php
@@ -127,13 +127,13 @@
 							$reponse->closeCursor();
 							echo'<div class="dialogue">';
 							for ($i = 1 ; $i <= $nombreDePages ; $i++) { echo '<a href="2hb56k.php?page=' . $i . '">' . $i . '</a>'; }
-							echo'
+							echo '
 								</div>
 								<center>
 									<form action="2hb56k" method="post">
 										<fieldset>
 											<label for="nom">Votre nom (20 caractères max) :</label>
-											<input type="text" name="nom" id="nom" required><br>
+											<input type="text" name="nom" id="nom" maxlength="20" required><br>
 											<br>
 											<label for="message">Votre message :</label>
 											<textarea name="message" id="message" rows="7" cols="50">J\'ai terminé ce scénario et ai obtenu 2 étoiles !</textarea><br>
@@ -149,7 +149,7 @@
 						}
 					else
 						{
-							include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/sessioninc.php";
+							include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/aventures/secrets/includes/sessioninc.php";
 							echo '
 								<audio src="/escaperpg/sons/secrets/shoggothexpulse.mp3" autoplay></audio>
 								<p>

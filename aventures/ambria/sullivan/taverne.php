@@ -16,7 +16,7 @@
 		<title>La Taverne - Le Trésor d'Ambria</title>
 	</head>
 	
-	<body onload="chargement()">
+	<body>
 		<?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/header.php"; ?>
 		<div id="banniere"><img src="/escaperpg/images/ambria/tresorambriamini.png"></div>
 		<main>
@@ -182,7 +182,7 @@
 									elseif (isset ($_POST['reponse2']))
 										{
 											echo'
-												<div id="reponse">
+												<div class="reponse">
 													Entrez le mot de passe "qui êtes-vous".
 												</div>
 											';
@@ -244,7 +244,7 @@
 									elseif (isset ($_POST['reponse']))
 										{
 											echo'
-												<div id="reponse">
+												<div class="reponse">
 													Cliquez sur le jeune homme qui est assis à la table au fond à gauche, avec la chemise bleue.
 												</div>
 											';

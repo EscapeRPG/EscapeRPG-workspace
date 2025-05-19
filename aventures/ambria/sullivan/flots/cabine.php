@@ -16,7 +16,7 @@
 		<title>Cabine du Capitaine - Le Trésor d'Ambria</title>
 	</head>
 	
-	<body onload="chargement()">
+	<body>
 		<?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/header.php"; ?>
 		<div id="banniere"><img src="/escaperpg/images/ambria/tresorambriamini.png"></div>
 		<main>
@@ -154,7 +154,7 @@
 									elseif (isset ($_POST['reponse']))
 										{
 											echo'
-												<div id="reponse">
+												<div class="reponse">
 													Vous devez régler le cap sur 32 degrés Nord-Est (32NE).
 												</div>
 											';

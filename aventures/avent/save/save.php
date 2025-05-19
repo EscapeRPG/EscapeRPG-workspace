@@ -16,7 +16,7 @@
 		<title>Sauvegarder - Le Grenier d'Arthur</title>
 	</head>
 	
-	<body onload="chargement()">
+	<body>
 		<?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/header.php"; ?>
 		<div id="banniere"><img src="/escaperpg/images/avent/aventmini.png"></div>
 		<main>
@@ -72,7 +72,7 @@
 									Gardez bien le code à retaper en mémoire, il vous sera demandé pour charger votre partie !</span>
 								</p>
 								<form action="save" method ="post">
-									<input type="text" name="nom" id="nom" placeholder="Nom" required>
+									<input type="text" name="nom" id="nom" placeholder="Nom" maxlength="20" required>
 									<br>
 									<br>
 									<b>'.$random.'</b> 

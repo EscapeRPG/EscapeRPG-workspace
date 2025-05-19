@@ -16,7 +16,7 @@
 		<title>Les Portes de la Cité - Le Trésor d'Ambria</title>
 	</head>
 	
-	<body onload="chargement()">
+	<body>
 		<?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/header.php"; ?>
 		<div id="banniere"><img src="/escaperpg/images/ambria/tresorambriamini.png"></div>
 		<main>
@@ -103,7 +103,7 @@
 							elseif (isset ($_POST['reponse']))
 								{
 									echo'
-										<div id="reponse">
+										<div class="reponse">
 											Une fois le traducteur obtenu <i>- et avec l\'aide de Logan -</i> le message indique :<br>
 											"L\'oiseau vole au plus haut. Le serpent se repose à l\'ombre. Le dragon veille sur la cité."
 										</div>

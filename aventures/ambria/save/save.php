@@ -6,17 +6,12 @@
 		<script type="text/javascript" src="/escaperpg/lightbox/js/scriptaculous.js?load=effects,builder"></script>
 		<script type="text/javascript" src="/escaperpg/lightbox/js/lightbox.js"></script>
 		<link rel="stylesheet" href="/escaperpg/lightbox/css/lightbox.css" type="text/css" media="screen">
-		
-		<!-- [if lt IE 9]>
-		<script src="http://html5shiv.googlecode.code/svn/trunk/html5.js"></scipt>
-		<![endif]-->
-	   
 		<link rel="stylesheet" href="/escaperpg/aventures/ambria/css/style.css">
 		<meta charset="utf-8">
 		<title>Sauvegarder - Le Trésor d'Ambria</title>
 	</head>
 	
-	<body onload="chargement()">
+	<body>
 		<?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/header.php"; ?>
 		<div id="banniere"><img src="/escaperpg/images/ambria/tresorambriamini.png"></div>
 		<main>
@@ -72,7 +67,7 @@
 									Gardez bien le code à retaper en mémoire, il vous sera demandé pour charger votre partie !</span>
 								</p>
 								<form action="save" method ="post">
-									<input type="text" name="nom" id="nom" placeholder="Nom" required>
+									<input type="text" name="nom" id="nom" placeholder="Nom" maxlength="20" required>
 									<br>
 									<br>
 									<b>'.$random.'</b> 

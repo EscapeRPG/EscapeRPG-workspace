@@ -29,9 +29,11 @@
                     $cache = 'oui';
                     $rarete = 'succesnormal';
                     include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/succesadd.php";
-                    echo $_SESSION['loggedin'] ?
-                        '<script src="/escaperpg/scripts/succescount.js"></script>' :
-                        '<script src="/escaperpg/scripts/succescountoffline.js"></script>';
+                    if (!$succesexiste) {
+                        echo $_SESSION['loggedin'] ?
+                            '<script src="/escaperpg/scripts/succescount.js"></script>' :
+                            '<script src="/escaperpg/scripts/succescountoffline.js"></script>';
+                    }
                     ?>
                 </div>
                 <?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/aventures/lastparty/includes/julietteinc.php"; ?>
