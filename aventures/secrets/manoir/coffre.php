@@ -1,4 +1,4 @@
-<?php include_once $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/entete.php"; ?>
+<?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/entete.php"; ?>
 <!DOCTYPE html>
 <html lang="fr">
 	<head>
@@ -17,14 +17,14 @@
 	</head>
 	
 	<body onload="chargement()">
-		<?php include_once $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/header.php"; ?>
-		<div id="banniere"><img src="/escaperpg/images/secrets/secretsfamiliauxmini.png"></div>
-		<div id="bloc_page">
+		<?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/header.php"; ?>
+		<div id="banniere"><img src="/escaperpg/images/secrets/secretsfamiliauxmini.png" alt="secrets familiaux bannière"></div>
+		<main>
 			<nav>
-				<a href="/escaperpg/images/secrets/inspecteurdeckard.png" rel="lightbox[bastian]" title="inspecteurdeckard"><img src="/escaperpg/images/secrets/inspecteurdeckardmini.png"></a>
-				<div id="inventairefooter"><input type="submit" onclick="inventaireshow()" value="INVENTAIRE"></div>
-				<div id="motsdepasse"><input type="submit" onclick="mdpshow()" value="NOTES"></div>
-				<?php include_once $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/aventures/secrets/includes/navigationmanoir.php"; ?>
+				<a href="/escaperpg/images/secrets/inspecteurdeckard.png" rel="lightbox[bastian]" title="inspecteurdeckard"><img src="/escaperpg/images/secrets/inspecteurdeckardmini.png" alt="inspecteur deckard"></a>
+				<div id="inventairefooter"><input type="submit" value="INVENTAIRE"></div>
+				<div id="motsdepasse"><input type="submit" value="NOTES"></div>
+				<?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/aventures/secrets/includes/navigationmanoir.php"; ?>
 				<a href="/escaperpg/aventures/secrets/save/save.php" target="_blank" rel="noreferrer"><input type="submit" name="save" value="SAUVEGARDER"></a>
 			</nav>
 			<div id="txt">
@@ -43,11 +43,11 @@
 											Entrez maintenant le second chiffre.<br>
 											<br>
 											<center>
-												<form action="coffre.php" method="post">
+												<form action="coffre" method="post">
 													<input type="submit" name="gauche2" value="←"> <input type="text" name="combinaison2"> <input type="submit" name="droite2" value="→">
 												</form>
 												<br>
-												<form action="chambre.php" method="post">
+												<form action="chambre" method="post">
 													<input type="submit" name="retour" value="Retour.">
 												</form>
 											</center>
@@ -66,11 +66,11 @@
 											Entrez maintenant le second chiffre.<br>
 											<br>
 											<center>
-												<form action="coffre.php" method="post">
+												<form action="coffre" method="post">
 													<input type="submit" name="gauche5" value="←"> <input type="text" name="combinaison5"> <input type="submit" name="droite5" value="→">
 												</form>
 												<br>
-												<form action="chambre.php" method="post">
+												<form action="chambre" method="post">
 													<input type="submit" name="retour" value="Retour.">
 												</form>
 											</center>
@@ -89,11 +89,11 @@
 											Entrez maintenant le troisième chiffre.<br>
 											<br>
 											<center>
-												<form action="coffre.php" method="post">
+												<form action="coffre" method="post">
 													<input type="submit" name="gauche3" value="←"> <input type="text" name="combinaison3"> <input type="submit" name="droite3" value="→">
 												</form>
 												<br>
-												<form action="chambre.php" method="post">
+												<form action="chambre" method="post">
 													<input type="submit" name="retour" value="Retour.">
 												</form>
 											</center>
@@ -112,11 +112,11 @@
 											Entrez maintenant le troisième chiffre.<br>
 											<br>
 											<center>
-												<form action="coffre.php" method="post">
+												<form action="coffre" method="post">
 													<input type="submit" name="gauche6" value="←"> <input type="text" name="combinaison6"> <input type="submit" name="droite6" value="→">
 												</form>
 												<br>
-												<form action="chambre.php" method="post">
+												<form action="chambre" method="post">
 													<input type="submit" name="retour" value="Retour.">
 												</form>
 											</center>
@@ -135,11 +135,11 @@
 											Entrez maintenant le quatrième chiffre.<br>
 											<br>
 											<center>
-												<form action="coffre.php" method="post">
+												<form action="coffre" method="post">
 													<input type="submit" name="gauche4" value="←"> <input type="text" name="combinaison4"> <input type="submit" name="droite4" value="→">
 												</form>
 												<br>
-												<form action="chambre.php" method="post">
+												<form action="chambre" method="post">
 													<input type="submit" name="retour" value="Retour.">
 												</form>
 											</center>
@@ -158,11 +158,11 @@
 											Entrez maintenant le quatrième chiffre.<br>
 											<br>
 											<center>
-												<form action="coffre.php" method="post">
+												<form action="coffre" method="post">
 													<input type="submit" name="gauche7" value="←"> <input type="text" name="combinaison7"> <input type="submit" name="droite7" value="→">
 												</form>
 												<br>
-												<form action="chambre.php" method="post">
+												<form action="chambre" method="post">
 													<input type="submit" name="retour" value="Retour.">
 												</form>
 											</center>
@@ -177,7 +177,7 @@
 									$description = 'coffre';
 									$cache = 'oui';
 									$rarete = 'succesnormal';
-									include_once $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/succesadd.php";
+									include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/succesadd.php";
 									echo'</div>';
 									
 									echo '
@@ -198,7 +198,7 @@
 											Vous la mettez dans votre poche ainsi que la clé.
 										</p>
 										<center>
-											<form action="coffre.php" method="post">
+											<form action="coffre" method="post">
 												<input type="submit" name="sdi" value="Ajouter à l\'inventaire.">
 											</form>
 										</center>
@@ -221,11 +221,11 @@
 											Entrez le premier chiffre.<br>
 											<br>
 											<center>
-												<form action="coffre.php" method="post">
+												<form action="coffre" method="post">
 													<input type="submit" name="gauche" value="←"> <input type="text" name="combinaison1"> <input type="submit" name="droite" value="→">
 												</form>
 												<br>
-												<form action="chambre.php" method="post">
+												<form action="chambre" method="post">
 													<input type="submit" name="retour" value="Retour.">
 												</form>
 											</center>
@@ -244,11 +244,11 @@
 											Entrez maintenant le troisième chiffre.<br>
 											<br>
 											<center>
-												<form action="coffre.php" method="post">
+												<form action="coffre" method="post">
 													<input type="submit" name="gauche6" value="←"> <input type="text" name="combinaison6"> <input type="submit" name="droite6" value="→">
 												</form>
 												<br>
-												<form action="chambre.php" method="post">
+												<form action="chambre" method="post">
 													<input type="submit" name="retour" value="Retour.">
 												</form>
 											</center>
@@ -267,11 +267,11 @@
 											Entrez maintenant le dernier chiffre.<br>
 											<br>
 											<center>
-												<form action="coffre.php" method="post">
+												<form action="coffre" method="post">
 													<input type="submit" name="gauche7" value="←"> <input type="text" name="combinaison7"> <input type="submit" name="droite7" value="→">
 												</form>
 												<br>
-												<form action="chambre.php" method="post">
+												<form action="chambre" method="post">
 													<input type="submit" name="retour" value="Retour.">
 												</form>
 											</center>
@@ -293,11 +293,11 @@
 											Entrez le premier chiffre.<br>
 											<br>
 											<center>
-												<form action="coffre.php" method="post">
+												<form action="coffre" method="post">
 													<input type="submit" name="gauche" value="←"> <input type="text" name="combinaison1"> <input type="submit" name="droite" value="→">
 												</form>
 												<br>
-												<form action="chambre.php" method="post">
+												<form action="chambre" method="post">
 													<input type="submit" name="retour" value="Retour.">
 												</form>
 											</center>
@@ -317,11 +317,11 @@
 											Entrez le premier chiffre.<br>
 											<br>
 											<center>
-												<form action="coffre.php" method="post">
+												<form action="coffre" method="post">
 													<input type="submit" name="gauche" value="←"> <input type="text" name="combinaison1"> <input type="submit" name="droite" value="→">
 												</form>
 												<br>
-												<form action="chambre.php" method="post">
+												<form action="chambre" method="post">
 													<input type="submit" name="retour" value="Retour.">
 												</form>
 											</center>
@@ -358,7 +358,7 @@
 													</span>
 												</p>
 												<center>
-													<form action="coffre.php" method="post">
+													<form action="coffre" method="post">
 														<button type="submit" name="reponse" class="boutonreponse"></button>
 													</form>
 												</center>
@@ -375,7 +375,7 @@
 													</span>
 												</p>
 												<center>
-													<form action="coffre.php" method="post">
+													<form action="coffre" method="post">
 														<button type="submit" name="indice3" class="boutonindice"></button>
 													</form>
 												</center>
@@ -395,7 +395,7 @@
 													</span>
 												</p>
 												<center>
-													<form action="coffre.php" method="post">
+													<form action="coffre" method="post">
 														<button type="submit" name="indice2" class="boutonindice"></button>
 													</form>
 												</center>
@@ -406,7 +406,7 @@
 										{
 											echo '
 												<center>
-													<form action="coffre.php" method="post">
+													<form action="coffre" method="post">
 														<button type="submit" name="indice" class="boutonindice"></button>
 													</form>
 												</center>
@@ -429,7 +429,7 @@
 									Vous le prenez également avec vous.
 								</p>
 								<center>
-									<form action="coffre.php" method="post">
+									<form action="coffre" method="post">
 										<input type="submit" name="coffret" value="Ajouter à l\'inventaire.">
 									</form>
 								</center>
@@ -448,7 +448,7 @@
 									Vous pouvez étudier le coffret si vous le voulez.
 								</p>
 								<center>
-									<form action="coffret.php" method="post">
+									<form action="coffret" method="post">
 										<input type="submit" name="retour" value="Étudier le coffret.">
 									</form>
 								</center>
@@ -466,7 +466,7 @@
 									En retirant le tableau au-dessus du lit, vous trouvez un coffre-fort incrusté dans le mur.<br>
 									Impossible de l\'ouvrir sans la combinaison.
 									<center>
-										<form action="chambre.php" method="post">
+										<form action="chambre" method="post">
 											<input type="submit" name="retour" value="Retour.">
 										</form>
 									</center>
@@ -478,6 +478,6 @@
 		</div>
 		<div id="load"><div id="loader"></div></div>
 		<script src="/escaperpg/scripts/aventures-chargement.js"></script>
-		<?php include_once $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/aventures/secrets/includes/footer.php"; ?>
+		<?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/aventures/secrets/includes/footer.php"; ?>
 	</body>
 </html>

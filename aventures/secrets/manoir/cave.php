@@ -1,4 +1,4 @@
-<?php include_once $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/entete.php"; ?>
+<?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/entete.php"; ?>
 <!DOCTYPE html>
 <html lang="fr">
 	<head>
@@ -17,14 +17,14 @@
 	</head>
 	
 	<body onload="chargement()">
-		<?php include_once $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/header.php"; ?>
-		<div id="banniere"><img src="/escaperpg/images/secrets/secretsfamiliauxmini.png"></div>
-		<div id="bloc_page">
+		<?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/header.php"; ?>
+		<div id="banniere"><img src="/escaperpg/images/secrets/secretsfamiliauxmini.png" alt="secrets familiaux bannière"></div>
+		<main>
 			<nav>
-				<a href="/escaperpg/images/secrets/inspecteurdeckard.png" rel="lightbox[bastian]" title="inspecteurdeckard"><img src="/escaperpg/images/secrets/inspecteurdeckardmini.png"></a>
-				<div id="inventairefooter"><input type="submit" onclick="inventaireshow()" value="INVENTAIRE"></div>
-				<div id="motsdepasse"><input type="submit" onclick="mdpshow()" value="NOTES"></div>
-				<?php include_once $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/aventures/secrets/includes/navigationmanoir.php"; ?>
+				<a href="/escaperpg/images/secrets/inspecteurdeckard.png" rel="lightbox[bastian]" title="inspecteurdeckard"><img src="/escaperpg/images/secrets/inspecteurdeckardmini.png" alt="inspecteur deckard"></a>
+				<div id="inventairefooter"><input type="submit" value="INVENTAIRE"></div>
+				<div id="motsdepasse"><input type="submit" value="NOTES"></div>
+				<?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/aventures/secrets/includes/navigationmanoir.php"; ?>
 				<a href="/escaperpg/aventures/secrets/save/save.php" target="_blank" rel="noreferrer"><input type="submit" name="save" value="SAUVEGARDER"></a>
 			</nav>
 			<div id="txt">
@@ -39,7 +39,7 @@
 												Vous inspectez les murs de la cave mais vous ne remarquez aucune trace d\'humidité. La théorie apportée par les domestiques ne semble pas être la bonne...
 											</p>
 											<center>
-												<form action="cave.php" method="post">
+												<form action="cave" method="post">
 													<input type="text" name="cave"> <input type="submit" name="chercher" value="Chercher.">
 												</form>
 											</center>
@@ -61,7 +61,7 @@
 												Dans le doute, vous prenez ces quelques morceaux avec vous.
 											</p>
 											<center>
-												<form action="cave.php" method="post">
+												<form action="cave" method="post">
 													<input type="submit" name="restab" value="Ajouter à l\'inventaire.">
 												</form>
 											</center>
@@ -73,7 +73,7 @@
 												Vous avez beau chercher, vous ne trouvez rien de particulier ici.
 											</p>
 											<center>
-												<form action="cave.php" method="post">
+												<form action="cave" method="post">
 													<input type="text" name="cave"> <input type="submit" name="chercher" value="Chercher.">
 												</form>
 											</center>
@@ -89,7 +89,7 @@
 									Vous essayez de fouiller un peu plus, mais il est évident maintenant que vous ne trouverez pas d\'autres morceaux du tableau pour vous aider à avancer.
 								</p>
 								<center>
-									<form action="cave.php" method="post">
+									<form action="cave" method="post">
 										<input type="text" name="cave"> <input type="submit" name="chercher" value="Chercher.">
 									</form>
 								</center>
@@ -105,7 +105,7 @@
 									Elle semble beaucoup plus forte ici. Cependant, vous n\'arrivez pas à découvrir d\'où elle pourrait provenir précisément.
 								</p>
 								<center>
-									<form action="cave.php" method="post">
+									<form action="cave" method="post">
 										<input type="text" name="cave"> <input type="submit" name="chercher" value="Chercher.">
 									</form>
 								</center>
@@ -116,6 +116,6 @@
 		</div>
 		<div id="load"><div id="loader"></div></div>
 		<script src="/escaperpg/scripts/aventures-chargement.js"></script>
-		<?php include_once $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/aventures/secrets/includes/footer.php"; ?>
+		<?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/aventures/secrets/includes/footer.php"; ?>
 	</body>
 </html>

@@ -1,4 +1,4 @@
-<?php include_once $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/entete.php"; ?>
+<?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/entete.php"; ?>
 <!DOCTYPE html>
 <html lang="fr">
 	<head>
@@ -17,13 +17,13 @@
 	</head>
 	
 	<body onload="chargement()">
-		<?php include_once $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/header.php"; ?>
-		<div id="banniere"><img src="/escaperpg/images/secrets/secretsfamiliauxmini.png"></div>
-		<div id="bloc_page">
+		<?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/header.php"; ?>
+		<div id="banniere"><img src="/escaperpg/images/secrets/secretsfamiliauxmini.png" alt="secrets familiaux bannière"></div>
+		<main>
 			<nav>
-				<a href="/escaperpg/images/secrets/inspecteurdeckard.png" rel="lightbox[bastian]" title="inspecteurdeckard"><img src="/escaperpg/images/secrets/inspecteurdeckardmini.png"></a>
-				<div id="inventairefooter"><input type="submit" onclick="inventaireshow()" value="INVENTAIRE"></div>
-				<div id="motsdepasse"><input type="submit" onclick="mdpshow()" value="NOTES"></div>
+				<a href="/escaperpg/images/secrets/inspecteurdeckard.png" rel="lightbox[bastian]" title="inspecteurdeckard"><img src="/escaperpg/images/secrets/inspecteurdeckardmini.png" alt="inspecteur deckard"></a>
+				<div id="inventairefooter"><input type="submit" value="INVENTAIRE"></div>
+				<div id="motsdepasse"><input type="submit" value="NOTES"></div>
 				<a href="/escaperpg/aventures/secrets/save/save.php" target="_blank" rel="noreferrer"><input type="submit" name="save" value="SAUVEGARDER"></a>
 			</nav>
 			<div id="txt">
@@ -49,7 +49,7 @@
 									</div>
 								</p>
 								<center>
-									<form action="matin.php" method="post">
+									<form action="matin" method="post">
 										<input type="submit" name="non" value="Non.">
 									</form>
 								</center>
@@ -71,10 +71,10 @@
 									</div>
 								</p>
 								<center>
-									<form action="matin.php" method="post">
+									<form action="matin" method="post">
 										<input type="text" name="police"> <input type="submit" name="repondre" value="Répondre.">
 									</form>
-									<form action="matin.php" method="post">
+									<form action="matin" method="post">
 										<button type="submit" name="indice" class="boutonindice"></button>
 									</form>
 								</center>
@@ -96,7 +96,7 @@
 									</div>
 								</p>
 								<center>
-									<form action="matin.php" method="post">
+									<form action="matin" method="post">
 										<input type="text" name="police"> <input type="submit" name="repondre" value="Répondre.">
 									</form>
 								</center>
@@ -120,7 +120,7 @@
 											</span>
 										</p>
 										<center>
-											<form action="matin.php" method="post">
+											<form action="matin" method="post">
 												<button type="submit" name="reponse" class="boutonreponse"></button>
 											</form>
 										</center>
@@ -130,7 +130,7 @@
 								{
 									echo'
 										<center>
-											<form action="matin.php" method="post">
+											<form action="matin" method="post">
 												<button type="submit" name="indice" class="boutonindice"></button>
 											</form>
 										</center>
@@ -154,10 +154,10 @@
 									</div>
 								</p>
 								<center>
-									<form action="matin.php" method="post">
+									<form action="matin" method="post">
 										<input type="text" name="telephone"> <input type="submit" name="repondre" value="Répondre.">
 									</form>
-									<form action="matin.php" method="post">
+									<form action="matin" method="post">
 										<button type="submit" name="indice" class="boutonindice"></button>
 									</form>
 								</center>
@@ -182,7 +182,7 @@
 									</div>
 								</p>
 								<center>
-									<form action="matin.php" method="post">
+									<form action="matin" method="post">
 										<input type="text" name="telephone"> <input type="submit" name="repondre" value="Répondre.">
 									</form>
 								</center>
@@ -207,7 +207,7 @@
 											</span>
 										</p>
 										<center>
-											<form action="matin.php" method="post">
+											<form action="matin" method="post">
 												<button type="submit" name="reponse" class="boutonreponse"></button>
 											</form>
 										</center>
@@ -222,7 +222,7 @@
 											</span>
 										</p>
 										<center>
-											<form action="matin.php" method="post">
+											<form action="matin" method="post">
 												<button type="submit" name="indice2" class="boutonindice"></button>
 											</form>
 										</center>
@@ -232,7 +232,7 @@
 								{
 									echo'
 										<center>
-											<form action="matin.php" method="post">
+											<form action="matin" method="post">
 												<button type="submit" name="indice" class="boutonindice"></button>
 											</form>
 										</center>
@@ -244,6 +244,6 @@
 		</div>
 		<div id="load"><div id="loader"></div></div>
 		<script src="/escaperpg/scripts/aventures-chargement.js"></script>
-		<?php include_once $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/aventures/secrets/includes/footer.php"; ?>
+		<?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/aventures/secrets/includes/footer.php"; ?>
 	</body>
 </html>

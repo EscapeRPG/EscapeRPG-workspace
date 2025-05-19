@@ -1,4 +1,4 @@
-var cercle1,
+let cercle1,
 	cercle2,
 	cercle3,
 	cercle4,
@@ -43,18 +43,18 @@ var cercle1,
 
 function dragdrop() {
 
-	var dndHandler = {
+	let dndHandler = {
 
-		draggedElement: null, // Propriété pointant vers l\'élément en cours de déplacement
+		draggedElement: null, // Propriété pointant vers l'élément en cours de déplacement
 
 		applyDragEvents: function(element) {
 
 			element.draggable = true;
 
-			var dndHandler = this; // Cette variable est nécessaire pour que l\'événement « dragstart » ci-dessous accède facilement au namespace « dndHandler »
+			let dndHandler = this; // Cette variable est nécessaire pour que l'événement « dragstart » ci-dessous accède facilement au namespace « dndHandler »
 
 			element.addEventListener('dragstart', function(e) {
-				dndHandler.draggedElement = e.target; // On sauvegarde l\'élément en cours de déplacement
+				dndHandler.draggedElement = e.target; // On sauvegarde l'élément en cours de déplacement
 				e.dataTransfer.setData('text/plain', ''); // Nécessaire pour Firefox
 			});
 
@@ -63,34 +63,34 @@ function dragdrop() {
 		applyDropEvents: function(dropper) {
 
 			dropper.addEventListener('dragover', function(e) {
-				e.preventDefault(); // On autorise le drop d\'éléments
+				e.preventDefault(); // On autorise le drop d'éléments
 				this.className = 'droppercercle drop_hover'; // Et on applique le style adéquat à notre zone de drop quand un élément la survole
 			});
 
 			dropper.addEventListener('dragleave', function() {
-				this.className = 'droppercercle'; // On revient au style de base lorsque l\'élément quitte la zone de drop
+				this.className = 'droppercercle'; // On revient au style de base lorsque l'élément quitte la zone de drop
 			});
 
-			var dndHandler = this; // Cette variable est nécessaire pour que l\'événement « drop » ci-dessous accède facilement au namespace « dndHandler »
+			let dndHandler = this; // Cette variable est nécessaire pour que l'événement « drop » ci-dessous accède facilement au namespace « dndHandler »
 
 			dropper.addEventListener('drop', function(e) {
-				e.preventDefault(); // On autorise le drop d\'éléments
+				e.preventDefault(); // On autorise le drop d'éléments
 
-				var target = e.target,
-					draggedElement = dndHandler.draggedElement, // Récupération de l\'élément concerné
+				let target = e.target,
+					draggedElement = dndHandler.draggedElement, // Récupération de l'élément concerné
 					clonedElement = draggedElement.cloneNode(true); // On créé immédiatement le clone de cet élément
 					
 
-				while (target.className.indexOf('droppercercle') == -1) { // Cette boucle permet de remonter jusqu\'à la zone de drop parente
+				while (target.className.indexOf('droppercercle') == -1) { // Cette boucle permet de remonter jusqu'à la zone de drop parente
 					target = target.parentNode;
 				}
 
 				target.className = 'droppercercle'; // Application du style par défaut
 
-				clonedElement = target.appendChild(clonedElement); // Ajout de l\'élément cloné à la zone de drop actuelle
+				clonedElement = target.appendChild(clonedElement); // Ajout de l'élément cloné à la zone de drop actuelle
 				dndHandler.applyDragEvents(clonedElement); // Nouvelle application des événements qui ont été perdus lors du cloneNode()
 
-				draggedElement.parentNode.removeChild(draggedElement); // Suppression de l\'élément d\'origine
+				draggedElement.parentNode.removeChild(draggedElement); // Suppression de l'élément d'origine
 				
 				if (target == drop1 && clonedElement == mag4)
 					{
@@ -206,7 +206,7 @@ function dragdrop() {
 					}
 				if (cercle1 && cercle2 && cercle3 && cercle4 && cercle5 && cercle6 && cercle7 && cercle8 && cercle9 && cercle10 && cercle11 && cercle12 && cercle13 && cercle14)
 					{
-						alert("L\'air vibre autour de vous alors que le cercle que vous avez tracé s\'illumine.");
+						alert("L'air vibre autour de vous alors que le cercle que vous avez tracé s'illumine.");
 						document.location.href="../ends/4qp32s.php";
 					}
 			});
@@ -216,34 +216,34 @@ function dragdrop() {
 		applyDropdragEvents: function(draggable) {
 
 			draggable.addEventListener('dragover', function(e) {
-				e.preventDefault(); // On autorise le drop d\'éléments
+				e.preventDefault(); // On autorise le drop d'éléments
 				this.className = 'draggablecercle drag_hover'; // Et on applique le style adéquat à notre zone de drop quand un élément la survole
 			});
 
 			draggable.addEventListener('dragleave', function() {
-				this.className = 'draggablecercle'; // On revient au style de base lorsque l\'élément quitte la zone de drop
+				this.className = 'draggablecercle'; // On revient au style de base lorsque l'élément quitte la zone de drop
 			});
 
-			var dndHandler = this; // Cette variable est nécessaire pour que l\'événement « drop » ci-dessous accède facilement au namespace « dndHandler »
+			let dndHandler = this; // Cette variable est nécessaire pour que l'événement « drop » ci-dessous accède facilement au namespace « dndHandler »
 
 			draggable.addEventListener('drop', function(e) {
-				e.preventDefault(); // On autorise le drop d\'éléments
+				e.preventDefault(); // On autorise le drop d'éléments
 
-				var target = e.target,
-					draggedElement = dndHandler.draggedElement, // Récupération de l\'élément concerné
+				let target = e.target,
+					draggedElement = dndHandler.draggedElement, // Récupération de l'élément concerné
 					clonedElement = draggedElement.cloneNode(true); // On créé immédiatement le clone de cet élément
 					
 
-				while (target.className.indexOf('draggablecercle') == -1) { // Cette boucle permet de remonter jusqu\'à la zone de drop parente
+				while (target.className.indexOf('draggablecercle') == -1) { // Cette boucle permet de remonter jusqu'à la zone de drop parente
 					target = target.parentNode;
 				}
 
 				target.className = 'draggablecercle'; // Application du style par défaut
 
-				clonedElement = target.appendChild(clonedElement); // Ajout de l\'élément cloné à la zone de drop actuelle
+				clonedElement = target.appendChild(clonedElement); // Ajout de l'élément cloné à la zone de drop actuelle
 				dndHandler.applyDragEvents(clonedElement); // Nouvelle application des événements qui ont été perdus lors du cloneNode()
 
-				draggedElement.parentNode.removeChild(draggedElement); // Suppression de l\'élément d\'origine
+				draggedElement.parentNode.removeChild(draggedElement); // Suppression de l'élément d'origine
 				
 			});
 
@@ -251,25 +251,25 @@ function dragdrop() {
 
 	};
 
-	var elements = document.querySelectorAll('.draggablecercle'),
+	let elements = document.querySelectorAll('.draggablecercle'),
 		elementsLen = elements.length;
 
-	for (var i = 0; i < elementsLen; i++) {
+	for (let i = 0; i < elementsLen; i++) {
 		dndHandler.applyDragEvents(elements[i]); // Application des paramètres nécessaires aux éléments déplaçables
 	}
 
-	var droppers = document.querySelectorAll('.droppercercle'),
+	let droppers = document.querySelectorAll('.droppercercle'),
 		droppersLen = droppers.length;
 
-	for (var i = 0; i < droppersLen; i++) {
+	for (let i = 0; i < droppersLen; i++) {
 		dndHandler.applyDropEvents(droppers[i]); // Application des événements nécessaires aux zones de drop
 	}
 
-	var draggables = document.querySelectorAll('.draggablecercle'),
+	let draggables = document.querySelectorAll('.draggablecercle'),
 		draggablesLen = draggables.length;
 
-	for (var i = 0; i < draggablesLen; i++) {
-		dndHandler.applyDropdragEvents(draggables[i]); // Application des événements nécessaires aux zones de drag et drop d\'où proviennent les draggables d\'origine
+	for (let i = 0; i < draggablesLen; i++) {
+		dndHandler.applyDropdragEvents(draggables[i]); // Application des événements nécessaires aux zones de drag et drop d'où proviennent les draggables d'origine
 	}
 }
 

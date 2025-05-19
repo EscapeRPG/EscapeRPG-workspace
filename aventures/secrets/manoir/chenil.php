@@ -1,4 +1,4 @@
-<?php include_once $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/entete.php"; ?>
+<?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/entete.php"; ?>
 <!DOCTYPE html>
 <html lang="fr">
 	<head>
@@ -17,14 +17,14 @@
 	</head>
 	
 	<body onload="chargement()">
-		<?php include_once $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/header.php"; ?>
-		<div id="banniere"><img src="/escaperpg/images/secrets/secretsfamiliauxmini.png"></div>
-		<div id="bloc_page">
+		<?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/header.php"; ?>
+		<div id="banniere"><img src="/escaperpg/images/secrets/secretsfamiliauxmini.png" alt="secrets familiaux bannière"></div>
+		<main>
 			<nav>
-				<a href="/escaperpg/images/secrets/inspecteurdeckard.png" rel="lightbox[bastian]" title="inspecteurdeckard"><img src="/escaperpg/images/secrets/inspecteurdeckardmini.png"></a>
-				<div id="inventairefooter"><input type="submit" onclick="inventaireshow()" value="INVENTAIRE"></div>
-				<div id="motsdepasse"><input type="submit" onclick="mdpshow()" value="NOTES"></div>
-				<?php include_once $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/aventures/secrets/includes/navigationmanoir.php"; ?>
+				<a href="/escaperpg/images/secrets/inspecteurdeckard.png" rel="lightbox[bastian]" title="inspecteurdeckard"><img src="/escaperpg/images/secrets/inspecteurdeckardmini.png" alt="inspecteur deckard"></a>
+				<div id="inventairefooter"><input type="submit" value="INVENTAIRE"></div>
+				<div id="motsdepasse"><input type="submit" value="NOTES"></div>
+				<?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/aventures/secrets/includes/navigationmanoir.php"; ?>
 				<a href="/escaperpg/aventures/secrets/save/save.php" target="_blank" rel="noreferrer"><input type="submit" name="save" value="SAUVEGARDER"></a>
 			</nav>
 			<div id="txt">
@@ -53,7 +53,7 @@
 									Vous les entendez gémir.
 									<div class="dialogue">
 										<div class="portrait">
-											<img src="/escaperpg/images/secrets/gaspard.png">
+											<img src="/escaperpg/images/secrets/gaspard.png" alt="gaspard">
 										</div>
 										<div class="bulleperso">
 											<p>
@@ -83,7 +83,7 @@
 									$description = 'chiens';
 									$cache = 'oui';
 									$rarete = 'succesgold';
-									include_once $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/succesadd.php";
+									include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/succesadd.php";
 									echo'</div>';
 									
 									echo '
@@ -96,7 +96,7 @@
 											Gaspard s\'approche de vous, un sourire de gratitude sur le visage.
 											<div class="dialogue">
 												<div class="portrait">
-													<img src="/escaperpg/images/secrets/gaspard.png">
+													<img src="/escaperpg/images/secrets/gaspard.png" alt="gaspard">
 												</div>
 												<div class="bulleperso">
 													<p>
@@ -110,7 +110,7 @@
 											Gaspard ressort du chenil et se dirige vers sa <span class="lieu">maison</span>.
 										</p>
 										<center>
-											<form action="maisongaspard.php" method="post">
+											<form action="maisongaspard" method="post">
 												<input type="submit" name="suivre" value="Le suivre.">
 											</form>
 										</center>
@@ -125,7 +125,7 @@
 										<p>
 											<div class="dialogue">
 												<div class="portrait">
-													<img src="/escaperpg/images/secrets/gaspard.png">
+													<img src="/escaperpg/images/secrets/gaspard.png" alt="gaspard">
 												</div>
 												<div class="bulleperso">
 													<p>
@@ -136,7 +136,7 @@
 											Il se retourne pour reporter son attention sur les animaux et ne semble plus enclin à discuter avec vous.
 										</p>
 										<center>
-											<form action="chenil.php" method="post">
+											<form action="chenil" method="post">
 												<input type="text" name="antidote"> <input type="submit" name="parler" value="Parler.">
 											</form>
 										</center>
@@ -151,7 +151,7 @@
 											Il ne semble toujours pas enclin à discuter avec vous.
 										</p>
 										<center>
-											<form action="chenil.php" method="post">
+											<form action="chenil" method="post">
 												<input type="text" name="antidote"> <input type="submit" name="parler" value="Parler.">
 											</form>
 										</center>
@@ -172,7 +172,7 @@
 											Gaspard s\'approche de vous, un sourire de gratitude sur le visage.
 											<div class="dialogue">
 												<div class="portrait">
-													<img src="/escaperpg/images/secrets/gaspard.png">
+													<img src="/escaperpg/images/secrets/gaspard.png" alt="gaspard">
 												</div>
 												<div class="bulleperso">
 													<p>
@@ -186,7 +186,7 @@
 											Gaspard ressort du chenil et se dirige vers sa <span class="lieu">maison</span>.
 										</p>
 										<center>
-											<form action="maisongaspard.php" method="post">
+											<form action="maisongaspard" method="post">
 												<input type="submit" name="suivre" value="Le suivre.">
 											</form>
 										</center>
@@ -201,7 +201,7 @@
 										<p>
 											<div class="dialogue">
 												<div class="portrait">
-													<img src="/escaperpg/images/secrets/gaspard.png">
+													<img src="/escaperpg/images/secrets/gaspard.png" alt="gaspard">
 												</div>
 												<div class="bulleperso">
 													<p>
@@ -212,7 +212,7 @@
 											Il se retourne pour reporter son attention sur les animaux et ne semble plus enclin à discuter avec vous.
 										</p>
 										<center>
-											<form action="chenil.php" method="post">
+											<form action="chenil" method="post">
 												<input type="text" name="antidote"> <input type="submit" name="parler" value="Parler.">
 											</form>
 										</center>
@@ -225,7 +225,7 @@
 											Gaspard est en train de s\'occuper des 4 chiens qui semblent mal en point.
 											<div class="dialogue">
 												<div class="portrait">
-													<img src="/escaperpg/images/secrets/gaspard.png">
+													<img src="/escaperpg/images/secrets/gaspard.png" alt="gaspard">
 												</div>
 												<div class="bulleperso">
 													<p>
@@ -236,7 +236,7 @@
 											Il se retourne pour reporter son attention sur les animaux et ne semble plus enclin à discuter avec vous.
 										</p>
 										<center>
-											<form action="chenil.php" method="post">
+											<form action="chenil" method="post">
 												<input type="text" name="antidote"> <input type="submit" name="parler" value="Parler.">
 											</form>
 										</center>
@@ -264,6 +264,6 @@
 		</div>
 		<div id="load"><div id="loader"></div></div>
 		<script src="/escaperpg/scripts/aventures-chargement.js"></script>
-		<?php include_once $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/aventures/secrets/includes/footer.php"; ?>
+		<?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/aventures/secrets/includes/footer.php"; ?>
 	</body>
 </html>

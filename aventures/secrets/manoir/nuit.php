@@ -1,4 +1,4 @@
-<?php include_once $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/entete.php";
+<?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/entete.php";
 	$_SESSION['intrusion'] = false;
 ?>
 
@@ -20,13 +20,13 @@
 	</head>
 	
 	<body onload="chargement()">
-		<?php include_once $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/header.php"; ?>
-		<div id="banniere"><img src="/escaperpg/images/secrets/secretsfamiliauxmini.png"></div>
-		<div id="bloc_page">
+		<?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/header.php"; ?>
+		<div id="banniere"><img src="/escaperpg/images/secrets/secretsfamiliauxmini.png" alt="secrets familiaux bannière"></div>
+		<main>
 			<nav>
-				<a href="/escaperpg/images/secrets/inspecteurdeckard.png" rel="lightbox[bastian]" title="inspecteurdeckard"><img src="/escaperpg/images/secrets/inspecteurdeckardmini.png"></a>
-				<div id="inventairefooter"><input type="submit" onclick="inventaireshow()" value="INVENTAIRE"></div>
-				<div id="motsdepasse"><input type="submit" onclick="mdpshow()" value="NOTES"></div>
+				<a href="/escaperpg/images/secrets/inspecteurdeckard.png" rel="lightbox[bastian]" title="inspecteurdeckard"><img src="/escaperpg/images/secrets/inspecteurdeckardmini.png" alt="inspecteur deckard"></a>
+				<div id="inventairefooter"><input type="submit" value="INVENTAIRE"></div>
+				<div id="motsdepasse"><input type="submit" value="NOTES"></div>
 				<a href="/escaperpg/aventures/secrets/save/save.php" target="_blank" rel="noreferrer"><input type="submit" name="save" value="SAUVEGARDER"></a>
 			</nav>
 			<div id="txt">
@@ -46,7 +46,7 @@
 									Avant que vous n\'ayez eu le temps de l\'attraper, il saute dans une voiture grise dont le moteur tournait encore et démarre en trombe.
 								</p>
 								<center>
-									<form action="nuit.php" method="post">
+									<form action="nuit" method="post">
 										<input type="submit" name="suivant2" value="Suivant.">
 									</form>
 								</center>
@@ -69,7 +69,7 @@
 											Vous la mettez dans votre poche.
 										</p>
 										<center>
-											<form action="nuit.php" method="post">
+											<form action="nuit" method="post">
 												<input type="submit" name="suivant3" value="Suivant.">
 											</form>
 										</center>
@@ -91,7 +91,7 @@
 											Vous la mettez dans votre poche.
 										</p>
 										<center>
-											<form action="nuit.php" method="post">
+											<form action="nuit" method="post">
 												<input type="submit" name="suivant3" value="Suivant.">
 											</form>
 										</center>
@@ -111,7 +111,7 @@
 									Frustré, vous décidez d\'attendre le matin pour appeler le poste de police d\'Arkham et mettre fin à cette situation qui n\'a que trop duré !
 								</p>
 								<center>
-									<form action="matin.php" method="post">
+									<form action="matin" method="post">
 										<input type="submit" name="attendre" value="Attendre le matin.">
 									</form>
 								</center>
@@ -128,7 +128,7 @@
 									l\'odeur qui règne dans le manoir depuis votre arrivée est beaucoup plus forte ce soir.
 								</p>
 								<center>
-									<form action="nuit.php" method="post">
+									<form action="nuit" method="post">
 										<input type="submit" name="suivant" value="Suivant.">
 									</form>
 								</center>
@@ -139,6 +139,6 @@
 		</div>
 		<div id="load"><div id="loader"></div></div>
 		<script src="/escaperpg/scripts/aventures-chargement.js"></script>
-		<?php include_once $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/aventures/secrets/includes/footer.php"; ?>
+		<?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/aventures/secrets/includes/footer.php"; ?>
 	</body>
 </html>

@@ -1,4 +1,4 @@
-<?php include_once $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/entete.php"; ?>
+<?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/entete.php"; ?>
 <!DOCTYPE html>
 <html lang="fr">
 	<head>
@@ -17,14 +17,14 @@
 	</head>
 	
 	<body onload="chargement()">
-		<?php include_once $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/header.php"; ?>
-		<div id="banniere"><img src="/escaperpg/images/secrets/secretsfamiliauxmini.png"></div>
-		<div id="bloc_page">
+		<?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/header.php"; ?>
+		<div id="banniere"><img src="/escaperpg/images/secrets/secretsfamiliauxmini.png" alt="secrets familiaux bannière"></div>
+		<main>
 			<nav>
-				<a href="/escaperpg/images/secrets/inspecteurdeckard.png" rel="lightbox[bastian]" title="inspecteurdeckard"><img src="/escaperpg/images/secrets/inspecteurdeckardmini.png"></a>
-				<div id="inventairefooter"><input type="submit" onclick="inventaireshow()" value="INVENTAIRE"></div>
-				<div id="motsdepasse"><input type="submit" onclick="mdpshow()" value="NOTES"></div>
-				<?php include_once $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/aventures/secrets/includes/navigationmanoir.php"; ?>
+				<a href="/escaperpg/images/secrets/inspecteurdeckard.png" rel="lightbox[bastian]" title="inspecteurdeckard"><img src="/escaperpg/images/secrets/inspecteurdeckardmini.png" alt="inspecteur deckard"></a>
+				<div id="inventairefooter"><input type="submit" value="INVENTAIRE"></div>
+				<div id="motsdepasse"><input type="submit" value="NOTES"></div>
+				<?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/aventures/secrets/includes/navigationmanoir.php"; ?>
 				<a href="/escaperpg/aventures/secrets/save/save.php" target="_blank" rel="noreferrer"><input type="submit" name="save" value="SAUVEGARDER"></a>
 			</nav>
 			<div id="txt">
@@ -38,11 +38,11 @@
 											Êtes-vous prêt à descendre l\'échelle, à présent ?
 										</p>
 										<center>
-											<form action="cavesecrete.php" method="post">
+											<form action="cavesecrete" method="post">
 												<input type="submit" name="descendre" value="Descendre.">
 											</form>
 											<br>
-											<form action="bureauprive2.php" method="post">
+											<form action="bureauprive2" method="post">
 												<input type="submit" name="retour" value="Pas maintenant.">
 											</form>
 										</center>
@@ -57,7 +57,7 @@
 													<div id="enigmelieu">
 														<img src="/escaperpg/images/secrets/bureausecret2cuves.png">
 														<div id="trappeopened">
-															<form action="bureauprive2.php" method="post">
+															<form action="bureauprive2" method="post">
 																<button type="submit" name="trappeopened">
 																	<img src="/escaperpg/images/secrets/buttontrappeopened.png">
 																</button>
@@ -76,7 +76,7 @@
 													<div id="enigmelieu">
 														<img src="/escaperpg/images/secrets/bureausecret2cuves.png">
 														<div id="trappeopened">
-															<form action="bureauprive2.php" method="post">
+															<form action="bureauprive2" method="post">
 																<button type="submit" name="trappeopened">
 																	<img src="/escaperpg/images/secrets/buttontrappeopened.png">
 																</button>
@@ -97,7 +97,7 @@
 													<div id="enigmelieu">
 														<img src="/escaperpg/images/secrets/bureausecret2cuves.png">
 														<div id="trappeopened">
-															<form action="bureauprive2.php" method="post">
+															<form action="bureauprive2" method="post">
 																<button type="submit" name="trappeopened">
 																	<img src="/escaperpg/images/secrets/buttontrappeopened.png">
 																</button>
@@ -117,7 +117,7 @@
 													<div id="enigmelieu">
 														<img src="/escaperpg/images/secrets/bureausecret2cuves.png">
 														<div id="trappeopened">
-															<form action="bureauprive2.php" method="post">
+															<form action="bureauprive2" method="post">
 																<button type="submit" name="trappeopened">
 																	<img src="/escaperpg/images/secrets/buttontrappeopened.png">
 																</button>
@@ -141,7 +141,7 @@
 													<div id="enigmelieu">
 														<img src="/escaperpg/images/secrets/bureausecret2.png">
 														<div id="trappeopened">
-															<form action="bureauprive2.php" method="post">
+															<form action="bureauprive2" method="post">
 																<button type="submit" name="trappeopened">
 																	<img src="/escaperpg/images/secrets/buttontrappeopened.png">
 																</button>
@@ -161,7 +161,7 @@
 													<div id="enigmelieu">
 														<img src="/escaperpg/images/secrets/bureausecret2.png">
 														<div id="trappeopened">
-															<form action="bureauprive2.php" method="post">
+															<form action="bureauprive2" method="post">
 																<button type="submit" name="trappeopened">
 																	<img src="/escaperpg/images/secrets/buttontrappeopened.png">
 																</button>
@@ -185,7 +185,7 @@
 													<div id="enigmelieu">
 														<img src="/escaperpg/images/secrets/bureausecret2.png">
 														<div id="trappeopened">
-															<form action="bureauprive2.php" method="post">
+															<form action="bureauprive2" method="post">
 																<button type="submit" name="trappeopened">
 																	<img src="/escaperpg/images/secrets/buttontrappeopened.png">
 																</button>
@@ -203,7 +203,7 @@
 													<div id="enigmelieu">
 														<img src="/escaperpg/images/secrets/bureausecret2.png">
 														<div id="trappeopened">
-															<form action="bureauprive2.php" method="post">
+															<form action="bureauprive2" method="post">
 																<button type="submit" name="trappeopened">
 																	<img src="/escaperpg/images/secrets/buttontrappeopened.png">
 																</button>
@@ -224,7 +224,7 @@
 													<div id="enigmelieu">
 														<img src="/escaperpg/images/secrets/bureausecret2.png">
 														<div id="trappeopened">
-															<form action="bureauprive2.php" method="post">
+															<form action="bureauprive2" method="post">
 																<button type="submit" name="trappeopened">
 																	<img src="/escaperpg/images/secrets/buttontrappeopened.png">
 																</button>
@@ -240,11 +240,11 @@
 													Essayez-vous d\'en tirer un ?
 												</p>
 												<center>
-													<form action="courtcircuit.php" method="post">
+													<form action="courtcircuit" method="post">
 														<input type="submit" name="tirer" value="Tirer sur le levier.">
 													</form>
 													<br>
-													<form action="bureauprive2.php" method="post">
+													<form action="bureauprive2" method="post">
 														<input type="submit" name="non" value="Ne pas y toucher.">
 													</form>
 												</center>
@@ -257,7 +257,7 @@
 													<div id="enigmelieu">
 														<img src="/escaperpg/images/secrets/bureausecret2.png">
 														<div id="trappeopened">
-															<form action="bureauprive2.php" method="post">
+															<form action="bureauprive2" method="post">
 																<button type="submit" name="trappeopened">
 																	<img src="/escaperpg/images/secrets/buttontrappeopened.png">
 																</button>
@@ -273,11 +273,11 @@
 													Essayez-vous d\'en tirer un ?
 												</p>
 												<center>
-													<form action="courtcircuit.php" method="post">
+													<form action="courtcircuit" method="post">
 														<input type="submit" name="tirer" value="Tirer sur le levier.">
 													</form>
 													<br>
-													<form action="bureauprive2.php" method="post">
+													<form action="bureauprive2" method="post">
 														<input type="submit" name="non" value="Ne pas y toucher.">
 													</form>
 												</center>
@@ -293,7 +293,7 @@
 							$description = 'passage';
 							$cache = 'oui';
 							$rarete = 'succesnormal';
-							include_once $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/succesadd.php";
+							include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/succesadd.php";
 							echo'</div>';
 							
 							if (isset($_POST['trappe'])) // a cliqué sur la trappe
@@ -303,11 +303,11 @@
 											La trappe en bois est fermée par un vieux cadenas.
 										</p>
 										<center>
-											<form action="bureauprive2.php" method="post">
+											<form action="bureauprive2" method="post">
 												<input type="text" name="cadenas"><input type="submit" name="utiliser" value="Utiliser la clé.">
 											</form>
 											<br>
-											<form action="bureauprive2.php" method="post">
+											<form action="bureauprive2" method="post">
 												<input type="submit" name="retour" value="Retour.">
 											</form>
 										</center>
@@ -327,11 +327,11 @@
 											Prenant votre courage à deux mains, vous saisissez l\'une des lampes se trouvant sur l\'étagère à côté de vous et vous apprêtez à descendre, à moins qu\'il ne vous reste quelque chose à faire avant ?
 										</p>
 										<center>
-											<form action="cavesecrete.php" method="post">
+											<form action="cavesecrete" method="post">
 												<input type="submit" name="descendre" value="Descendre.">
 											</form>
 											<br/>
-											<form action="bureauprive2.php" method="post">
+											<form action="bureauprive2" method="post">
 												<input type="submit" name="retour" value="Pas maintenant.">
 											</form>
 										</center>
@@ -347,11 +347,11 @@
 											Ça ne semble pas être la bonne.
 										</p>
 										<center>
-											<form action="bureauprive2.php" method="post">
+											<form action="bureauprive2" method="post">
 												<input type="text" name="cadenas"><input type="submit" name="utiliser" value="Utiliser la clé.">
 											</form>
 											<br>
-											<form action="bureauprive2.php" method="post">
+											<form action="bureauprive2" method="post">
 												<input type="submit" name="retour" value="Retour.">
 											</form>
 										</center>
@@ -366,7 +366,7 @@
 													<div id="enigmelieu">
 														<img src="/escaperpg/images/secrets/bureausecret2cuves.png">
 														<div id="trappeclosed">
-															<form action="bureauprive2.php" method="post">
+															<form action="bureauprive2" method="post">
 																<button type="submit" name="trappe">
 																	<img src="/escaperpg/images/secrets/buttontrappe.png">
 																</button>
@@ -388,7 +388,7 @@
 													<div id="enigmelieu">
 														<img src="/escaperpg/images/secrets/bureausecret2cuves.png">
 														<div id="trappeclosed">
-															<form action="bureauprive2.php" method="post">
+															<form action="bureauprive2" method="post">
 																<button type="submit" name="trappe">
 																	<img src="/escaperpg/images/secrets/buttontrappe.png">
 																</button>
@@ -416,7 +416,7 @@
 															<div id="enigmelieu">
 																<img src="/escaperpg/images/secrets/bureausecret2cuves.png">
 																<div id="trappeclosed">
-																	<form action="bureauprive2.php" method="post">
+																	<form action="bureauprive2" method="post">
 																<button type="submit" name="trappe">
 																	<img src="/escaperpg/images/secrets/buttontrappe.png">
 																</button>
@@ -435,7 +435,7 @@
 															<div id="enigmelieu">
 																<img src="/escaperpg/images/secrets/bureausecret2cuves.png">
 																<div id="trappeclosed">
-																	<form action="bureauprive2.php" method="post">
+																	<form action="bureauprive2" method="post">
 																<button type="submit" name="trappe">
 																	<img src="/escaperpg/images/secrets/buttontrappe.png">
 																</button>
@@ -459,7 +459,7 @@
 															<div id="enigmelieu">
 																<img src="/escaperpg/images/secrets/bureausecret2cuves.png">
 																<div id="trappeclosed">
-																	<form action="bureauprive2.php" method="post">
+																	<form action="bureauprive2" method="post">
 																<button type="submit" name="trappe">
 																	<img src="/escaperpg/images/secrets/buttontrappe.png">
 																</button>
@@ -478,7 +478,7 @@
 															<div id="enigmelieu">
 																<img src="/escaperpg/images/secrets/bureausecret2cuves.png">
 																<div id="trappeclosed">
-																	<form action="bureauprive2.php" method="post">
+																	<form action="bureauprive2" method="post">
 																<button type="submit" name="trappe">
 																	<img src="/escaperpg/images/secrets/buttontrappe.png">
 																</button>
@@ -503,7 +503,7 @@
 													<div id="enigmelieu">
 														<img src="/escaperpg/images/secrets/bureausecret2.png">
 														<div id="trappeclosed">
-															<form action="bureauprive2.php" method="post">
+															<form action="bureauprive2" method="post">
 																<button type="submit" name="trappe">
 																	<img src="/escaperpg/images/secrets/buttontrappe.png">
 																</button>
@@ -524,7 +524,7 @@
 													<div id="enigmelieu">
 														<img src="/escaperpg/images/secrets/bureausecret2.png">
 														<div id="trappeclosed">
-															<form action="bureauprive2.php" method="post">
+															<form action="bureauprive2" method="post">
 																<button type="submit" name="trappe">
 																	<img src="/escaperpg/images/secrets/buttontrappe.png">
 																</button>
@@ -549,7 +549,7 @@
 													<div id="enigmelieu">
 														<img src="/escaperpg/images/secrets/bureausecret2.png">
 														<div id="trappeclosed">
-															<form action="bureauprive2.php" method="post">
+															<form action="bureauprive2" method="post">
 																<button type="submit" name="trappe">
 																	<img src="/escaperpg/images/secrets/buttontrappe.png">
 																</button>
@@ -568,7 +568,7 @@
 													<div id="enigmelieu">
 														<img src="/escaperpg/images/secrets/bureausecret2.png">
 														<div id="trappeclosed">
-															<form action="bureauprive2.php" method="post">
+															<form action="bureauprive2" method="post">
 																<button type="submit" name="trappe">
 																	<img src="/escaperpg/images/secrets/buttontrappe.png">
 																</button>
@@ -590,7 +590,7 @@
 													<div id="enigmelieu">
 														<img src="/escaperpg/images/secrets/bureausecret2.png">
 														<div id="trappeclosed">
-															<form action="bureauprive2.php" method="post">
+															<form action="bureauprive2" method="post">
 																<button type="submit" name="trappe">
 																	<img src="/escaperpg/images/secrets/buttontrappe.png">
 																</button>
@@ -605,11 +605,11 @@
 													Essayez-vous d\'en tirer un ?
 												</p>
 												<center>
-													<form action="courtcircuit.php" method="post">
+													<form action="courtcircuit" method="post">
 														<input type="submit" name="tirer" value="Tirer sur le levier.">
 													</form>
 													<br>
-													<form action="bureauprive2.php" method="post">
+													<form action="bureauprive2" method="post">
 														<input type="submit" name="non" value="Ne pas y toucher.">
 													</form>
 												</center>
@@ -622,7 +622,7 @@
 													<div id="enigmelieu">
 														<img src="/escaperpg/images/secrets/bureausecret2.png">
 														<div id="trappeclosed">
-															<form action="bureauprive2.php" method="post">
+															<form action="bureauprive2" method="post">
 																<button type="submit" name="trappe">
 																	<img src="/escaperpg/images/secrets/buttontrappe.png">
 																</button>
@@ -637,11 +637,11 @@
 													Essayez-vous d\'en tirer un ?
 												</p>
 												<center>
-													<form action="courtcircuit.php" method="post">
+													<form action="courtcircuit" method="post">
 														<input type="submit" name="tirer" value="Tirer sur le levier.">
 													</form>
 													<br>
-													<form action="bureauprive2.php" method="post">
+													<form action="bureauprive2" method="post">
 														<input type="submit" name="non" value="Ne pas y toucher.">
 													</form>
 												</center>
@@ -661,7 +661,7 @@
 													<div id="enigmelieu">
 														<img src="/escaperpg/images/secrets/bureausecret2cuves.png">
 														<div id="trappehidden">
-															<form action="bureauprive2.php" method="post">
+															<form action="bureauprive2" method="post">
 																<button type="submit" name="trappehidden">
 																	<img src="/escaperpg/images/secrets/buttontapis.png">
 																</button>
@@ -683,7 +683,7 @@
 													<div id="enigmelieu">
 														<img src="/escaperpg/images/secrets/bureausecret2cuves.png">
 														<div id="trappehidden">
-															<form action="bureauprive2.php" method="post">
+															<form action="bureauprive2" method="post">
 																<button type="submit" name="trappehidden">
 																	<img src="/escaperpg/images/secrets/buttontapis.png">
 																</button>
@@ -708,7 +708,7 @@
 													<div id="enigmelieu">
 														<img src="/escaperpg/images/secrets/bureausecret2cuves.png">
 														<div id="trappehidden">
-															<form action="bureauprive2.php" method="post">
+															<form action="bureauprive2" method="post">
 																<button type="submit" name="trappehidden">
 																	<img src="/escaperpg/images/secrets/buttontapis.png">
 																</button>
@@ -728,7 +728,7 @@
 													<div id="enigmelieu">
 														<img src="/escaperpg/images/secrets/bureausecret2cuves.png">
 														<div id="trappehidden">
-															<form action="bureauprive2.php" method="post">
+															<form action="bureauprive2" method="post">
 																<button type="submit" name="trappehidden">
 																	<img src="/escaperpg/images/secrets/buttontapis.png">
 																</button>
@@ -751,7 +751,7 @@
 													<div id="enigmelieu">
 														<img src="/escaperpg/images/secrets/bureausecret2.png">
 														<div id="trappehidden">
-															<form action="bureauprive2.php" method="post">
+															<form action="bureauprive2" method="post">
 																<button type="submit" name="trappehidden">
 																	<img src="/escaperpg/images/secrets/buttontapis.png">
 																</button>
@@ -771,7 +771,7 @@
 													<div id="enigmelieu">
 														<img src="/escaperpg/images/secrets/bureausecret2.png">
 														<div id="trappehidden">
-															<form action="bureauprive2.php" method="post">
+															<form action="bureauprive2" method="post">
 																<button type="submit" name="trappehidden">
 																	<img src="/escaperpg/images/secrets/buttontapis.png">
 																</button>
@@ -793,7 +793,7 @@
 											<div id="enigmelieu">
 												<img src="/escaperpg/images/secrets/bureausecret2.png">
 												<div id="trappehidden">
-													<form action="bureauprive2.php" method="post">
+													<form action="bureauprive2" method="post">
 														<button type="submit" name="trappehidden">
 															<img src="/escaperpg/images/secrets/buttontapis.png">
 														</button>
@@ -806,11 +806,11 @@
 											Essayez-vous d\'en tirer un ?
 										</p>
 										<center>
-											<form action="courtcircuit.php" method="post">
+											<form action="courtcircuit" method="post">
 												<input type="submit" name="tirer" value="Tirer sur le levier.">
 											</form>
 											<br>
-											<form action="bureauprive2.php" method="post">
+											<form action="bureauprive2" method="post">
 												<input type="submit" name="non" value="Ne pas y toucher.">
 											</form>
 										</center>
@@ -822,6 +822,6 @@
 		</div>
 		<div id="load"><div id="loader"></div></div>
 		<script src="/escaperpg/scripts/aventures-chargement.js"></script>
-		<?php include_once $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/aventures/secrets/includes/footer.php"; ?>
+		<?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/aventures/secrets/includes/footer.php"; ?>
 	</body>
 </html>

@@ -1,4 +1,4 @@
-<?php include_once $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/entete.php"; ?>
+<?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/entete.php"; ?>
 <!DOCTYPE html>
 <html lang="fr">
 	<head>
@@ -17,14 +17,14 @@
 	</head>
 	
 	<body onload="chargement()">
-		<?php include_once $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/header.php"; ?>
-		<div id="banniere"><img src="/escaperpg/images/secrets/secretsfamiliauxmini.png"></div>
-		<div id="bloc_page">
+		<?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/header.php"; ?>
+		<div id="banniere"><img src="/escaperpg/images/secrets/secretsfamiliauxmini.png" alt="secrets familiaux bannière"></div>
+		<main>
 			<nav>
-				<a href="/escaperpg/images/secrets/inspecteurdeckard.png" rel="lightbox[bastian]" title="inspecteurdeckard"><img src="/escaperpg/images/secrets/inspecteurdeckardmini.png"></a>
-				<div id="inventairefooter"><input type="submit" onclick="inventaireshow()" value="INVENTAIRE"></div>
-				<div id="motsdepasse"><input type="submit" onclick="mdpshow()" value="NOTES"></div>
-				<?php include_once $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/aventures/secrets/includes/navigationmanoir.php"; ?>
+				<a href="/escaperpg/images/secrets/inspecteurdeckard.png" rel="lightbox[bastian]" title="inspecteurdeckard"><img src="/escaperpg/images/secrets/inspecteurdeckardmini.png" alt="inspecteur deckard"></a>
+				<div id="inventairefooter"><input type="submit" value="INVENTAIRE"></div>
+				<div id="motsdepasse"><input type="submit" value="NOTES"></div>
+				<?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/aventures/secrets/includes/navigationmanoir.php"; ?>
 				<a href="/escaperpg/aventures/secrets/save/save.php" target="_blank" rel="noreferrer"><input type="submit" name="save" value="SAUVEGARDER"></a>
 			</nav>
 			<div id="txt">
@@ -53,7 +53,7 @@
 											Il ne semble pas y avoir quoi que ce soit d\'autre sous le lit.
 										</p>
 										<center>
-											<form action="chambre.php" method="post">
+											<form action="chambre" method="post">
 												<input type="submit" name="retour" value="Retour.">
 											</form>
 										</center>
@@ -70,7 +70,7 @@
 											Sous le lit, vous trouvez une pièce représentant un jeune homme. Vous la mettez dans votre poche.
 										</p>
 										<center>
-											<form action="chambre.php" method="post">
+											<form action="chambre" method="post">
 												<input type="submit" name="sad" value="Ajouter à l\'inventaire.">
 											</form>
 										</center>
@@ -83,7 +83,7 @@
 											<div id="enigmelieu">
 												<img src="/escaperpg/images/secrets/chambrewilliam.png">
 												<div id="piechbr">
-													<form action="chambre.php" method="post">
+													<form action="chambre" method="post">
 														<button type="submit" name="chbrpiece">
 															<img src="/escaperpg/images/secrets/chambrepiece.png">
 														</button>
@@ -108,7 +108,7 @@
 											Il ne semble pas y avoir quoi que ce soit d\'autre sous le lit.
 										</p>
 										<center>
-											<form action="chambre.php" method="post">
+											<form action="chambre" method="post">
 												<input type="submit" name="retour" value="Retour.">
 											</form>
 										</center>
@@ -125,7 +125,7 @@
 											Sous le lit, vous trouvez une pièce représentant un jeune homme. Vous la mettez dans votre poche.
 										</p>
 										<center>
-											<form action="chambre.php" method="post">
+											<form action="chambre" method="post">
 												<input type="submit" name="sad" value="Ajouter à l\'inventaire.">
 											</form>
 										</center>
@@ -171,7 +171,7 @@
 											<div id="enigmelieu">
 												<img src="/escaperpg/images/secrets/chambrewilliam.png">
 												<div id="tabchbr">
-													<form action="chambre.php" method="post">
+													<form action="chambre" method="post">
 														<button type="submit" name="chbrtab">
 															<img src="/escaperpg/images/secrets/tableau.png">
 														</button>
@@ -195,7 +195,7 @@
 													<a href="coffre.php"><img src="/escaperpg/images/secrets/cof.png"></a>
 												</div>
 												<div id="piechbr">
-													<form action="chambre.php" method="post">
+													<form action="chambre" method="post">
 														<button type="submit" name="chbrpiece">
 															<img src="/escaperpg/images/secrets/chambrepiece.png">
 														</button>
@@ -217,14 +217,14 @@
 											<div id="enigmelieu">
 												<img src="/escaperpg/images/secrets/chambrewilliam.png">
 												<div id="tabchbr">
-													<form action="chambre.php" method="post">
+													<form action="chambre" method="post">
 														<button type="submit" name="chbrtab">
 															<img src="/escaperpg/images/secrets/tableau.png">
 														</button>
 													</form>
 												</div>
 												<div id="piechbr">
-													<form action="chambre.php" method="post">
+													<form action="chambre" method="post">
 														<button type="submit" name="chbrpiece">
 															<img src="/escaperpg/images/secrets/chambrepiece.png">
 														</button>
@@ -249,7 +249,7 @@
 											Il ne semble pas y avoir quoi que ce soit d\'autre sous le lit.
 										</p>
 										<center>
-											<form action="chambre.php" method="post">
+											<form action="chambre" method="post">
 												<input type="submit" name="retour" value="Retour.">
 											</form>
 										</center>
@@ -266,7 +266,7 @@
 											Sous le lit, vous trouvez une pièce représentant un jeune homme. Vous la mettez dans votre poche.
 										</p>
 										<center>
-											<form action="chambre.php" method="post">
+											<form action="chambre" method="post">
 												<input type="submit" name="sad" value="Ajouter à l\'inventaire.">
 											</form>
 										</center>
@@ -297,7 +297,7 @@
 											<div id="enigmelieu">
 												<img src="/escaperpg/images/secrets/chambrewilliamnuit.png">
 												<div id="tabchbr">
-													<form action="chambre.php" method="post">
+													<form action="chambre" method="post">
 														<button type="submit" name="chbrtabnuit">
 															<img src="/escaperpg/images/secrets/tableaunuit.png">
 														</button>
@@ -321,7 +321,7 @@
 													<a href="coffre.php"><img src="/escaperpg/images/secrets/cof.png"></a>
 												</div>
 												<div id="piechbr">
-													<form action="chambre.php" method="post">
+													<form action="chambre" method="post">
 														<button type="submit" name="chbrpiece">
 															<img src="/escaperpg/images/secrets/chambrepiecenuit.png">
 														</button>
@@ -343,14 +343,14 @@
 											<div id="enigmelieu">
 												<img src="/escaperpg/images/secrets/chambrewilliamnuit.png">
 												<div id="tabchbr">
-													<form action="chambre.php" method="post">
+													<form action="chambre" method="post">
 														<button type="submit" name="chbrtabnuit">
 															<img src="/escaperpg/images/secrets/tableaunuit.png">
 														</button>
 													</form>
 												</div>
 												<div id="piechbr">
-													<form action="chambre.php" method="post">
+													<form action="chambre" method="post">
 														<button type="submit" name="chbrpiece">
 															<img src="/escaperpg/images/secrets/chambrepiecenuit.png">
 														</button>
@@ -365,7 +365,7 @@
 									';
 								}
 						}
-					if ($_SESSION['note'])
+					if ($_SESSION['aveux'])
 						{
 							if (isset($_POST['indice']))
 								{
@@ -374,7 +374,7 @@
 											Plusieurs portraits sont accrochés au mur, mais sont-ils bien tous là ?
 										</p>
 										<center>
-											<form action="chambre.php" method="post">
+											<form action="chambre" method="post">
 												<button type="submit" name="reponse" class="boutonreponse"></button>
 											</form>
 										</center>
@@ -393,7 +393,7 @@
 								{
 									echo '
 										<center>
-											<form action="chambre.php" method="post">
+											<form action="chambre" method="post">
 												<button type="submit" name="indice" class="boutonindice"></button>
 											</form>
 										</center>
@@ -405,6 +405,6 @@
 		</div>
 		<div id="load"><div id="loader"></div></div>
 		<script src="/escaperpg/scripts/aventures-chargement.js"></script>
-		<?php include_once $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/aventures/secrets/includes/footer.php"; ?>
+		<?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/aventures/secrets/includes/footer.php"; ?>
 	</body>
 </html>

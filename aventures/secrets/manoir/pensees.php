@@ -1,4 +1,4 @@
-<?php include_once $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/entete.php"; ?>
+<?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/entete.php"; ?>
 <!DOCTYPE html>
 <html lang="fr">
 	<head>
@@ -17,13 +17,13 @@
 	</head>
 	
 	<body onload="chargement()">
-		<?php include_once $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/header.php"; ?>
-		<div id="banniere"><img src="/escaperpg/images/secrets/secretsfamiliauxmini.png"></div>
-		<div id="bloc_page">
+		<?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/header.php"; ?>
+		<div id="banniere"><img src="/escaperpg/images/secrets/secretsfamiliauxmini.png" alt="secrets familiaux bannière"></div>
+		<main>
 			<nav>
-				<a href="/escaperpg/images/secrets/inspecteurdeckard.png" rel="lightbox[bastian]" title="inspecteurdeckard"><img src="/escaperpg/images/secrets/inspecteurdeckardmini.png"></a>
-				<div id="inventairefooter"><input type="submit" onclick="inventaireshow()" value="INVENTAIRE"></div>
-				<div id="motsdepasse"><input type="submit" onclick="mdpshow()" value="NOTES"></div>
+				<a href="/escaperpg/images/secrets/inspecteurdeckard.png" rel="lightbox[bastian]" title="inspecteurdeckard"><img src="/escaperpg/images/secrets/inspecteurdeckardmini.png" alt="inspecteur deckard"></a>
+				<div id="inventairefooter"><input type="submit" value="INVENTAIRE"></div>
+				<div id="motsdepasse"><input type="submit" value="NOTES"></div>
 				<a href="/escaperpg/aventures/secrets/save/save.php" target="_blank" rel="noreferrer"><input type="submit" name="save" value="SAUVEGARDER"></a>
 			</nav>
 			<div id="txt">
@@ -42,7 +42,7 @@
 									On peut y voir se dessiner le mot "oncle" !
 								</p>
 								<center>
-									<form action="pensees.php" method="post">
+									<form action="pensees" method="post">
 										<input type="text" name="thoughts"> <input type="submit" name="reflechir" value="Rassembler ses pensées">
 									</form>
 								</center>
@@ -63,10 +63,10 @@
 									</span>
 								</p>
 								<center>
-									<form action="pensees.php" method="post">
+									<form action="pensees" method="post">
 										<input type="text" name="thoughts"> <input type="submit" name="reflechir" value="Rassembler ses pensées">
 									</form>
-									<form action="pensees.php" method="post">
+									<form action="pensees" method="post">
 										<button type="submit" name="reponse" class="boutonreponse"></button>
 									</form>
 								</center>
@@ -85,10 +85,10 @@
 									</span>
 								</p>
 								<center>
-									<form action="pensees.php" method="post">
+									<form action="pensees" method="post">
 										<input type="text" name="thoughts"> <input type="submit" name="reflechir" value="Rassembler ses pensées">
 									</form>
-									<form action="pensees.php" method="post">
+									<form action="pensees" method="post">
 										<button type="submit" name="indice3" class="boutonindice"></button>
 									</form>
 								</center>
@@ -106,10 +106,10 @@
 									</span>
 								</p>
 								<center>
-									<form action="pensees.php" method="post">
+									<form action="pensees" method="post">
 										<input type="text" name="thoughts"> <input type="submit" name="reflechir" value="Rassembler ses pensées">
 									</form>
-									<form action="pensees.php" method="post">
+									<form action="pensees" method="post">
 										<button type="submit" name="indice2" class="boutonindice"></button>
 									</form>
 								</center>
@@ -141,10 +141,10 @@
 									Essayez de réfléchir encore un peu calmement, quelque chose finira sans doute par se dessiner.
 								</p>
 								<center>
-									<form action="pensees.php" method="post">
+									<form action="pensees" method="post">
 										<input type="text" name="thoughts"> <input type="submit" name="reflechir" value="Rassembler ses pensées">
 									</form>
-									<form action="pensees.php" method="post">
+									<form action="pensees" method="post">
 										<button type="submit" name="indice" class="boutonindice"></button>
 									</form>
 								</center>
@@ -160,10 +160,10 @@
 									Sans doute êtes-vous encore trop chamboulé par tous ces événements. Vous n\'arrivez manifestement pas à penser correctement.
 								</p>
 								<center>
-									<form action="pensees.php" method="post">
+									<form action="pensees" method="post">
 										<input type="text" name="thoughts"> <input type="submit" name="reflechir" value="Rassembler ses pensées">
 									</form>
-									<form action="pensees.php" method="post">
+									<form action="pensees" method="post">
 										<button type="submit" name="indice" class="boutonindice"></button>
 									</form>
 								</center>
@@ -178,10 +178,10 @@
 									</div>
 								</p>
 								<center>
-									<form action="pensees.php" method="post">
+									<form action="pensees" method="post">
 										<input type="text" name="thoughts"> <input type="submit" name="reflechir" value="Rassembler ses pensées">
 									</form>
-									<form action="pensees.php" method="post">
+									<form action="pensees" method="post">
 										<button type="submit" name="indice" class="boutonindice"></button>
 									</form>
 								</center>
@@ -192,6 +192,6 @@
 		</div>
 		<div id="load"><div id="loader"></div></div>
 		<script src="/escaperpg/scripts/aventures-chargement.js"></script>
-		<?php include_once $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/aventures/secrets/includes/footer.php"; ?>
+		<?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/aventures/secrets/includes/footer.php"; ?>
 	</body>
 </html>

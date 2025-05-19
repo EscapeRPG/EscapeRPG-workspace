@@ -1,4 +1,4 @@
-<?php include_once $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/entete.php"; ?>
+<?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/entete.php"; ?>
 <!DOCTYPE html>
 <html lang="fr">
 	<head>
@@ -17,13 +17,13 @@
 	</head>
 	
 	<body onload="chargement()">
-		<?php include_once $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/header.php"; ?>
-		<div id="banniere"><img src="/escaperpg/images/secrets/secretsfamiliauxmini.png"></div>
-		<div id="bloc_page">
+		<?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/header.php"; ?>
+		<div id="banniere"><img src="/escaperpg/images/secrets/secretsfamiliauxmini.png" alt="secrets familiaux bannière"></div>
+		<main>
 			<nav>
-				<a href="/escaperpg/images/secrets/inspecteurdeckard.png" rel="lightbox[bastian]" title="inspecteurdeckard"><img src="/escaperpg/images/secrets/inspecteurdeckardmini.png"></a>
-				<div id="inventairefooter"><input type="submit" onclick="inventaireshow()" value="INVENTAIRE"></div>
-				<div id="motsdepasse"><input type="submit" onclick="mdpshow()" value="NOTES"></div>
+				<a href="/escaperpg/images/secrets/inspecteurdeckard.png" rel="lightbox[bastian]" title="inspecteurdeckard"><img src="/escaperpg/images/secrets/inspecteurdeckardmini.png" alt="inspecteur deckard"></a>
+				<div id="inventairefooter"><input type="submit" value="INVENTAIRE"></div>
+				<div id="motsdepasse"><input type="submit" value="NOTES"></div>
 				<a href="/escaperpg/aventures/secrets/save/save.php" target="_blank" rel="noreferrer"><input type="submit" name="save" value="SAUVEGARDER"></a>
 			</nav>
 			<div id="txt">
@@ -34,7 +34,7 @@
 								<p>
 									<div class="dialogue">
 										<div class="portrait">
-											<img src="/escaperpg/images/secrets/gaspard.png">
+											<img src="/escaperpg/images/secrets/gaspard.png" alt="gaspard">
 										</div>
 										<div class="bulleperso">
 											<p>
@@ -46,10 +46,10 @@
 									</div>
 								</p>
 								<center>
-									<form action="jour2.php" method="post">
+									<form action="jour2" method="post">
 										<input type="text" name="nuit"> <input type="submit" name="interroger" value="Interroger.">
 									</form>
-									<form action="jour2.php" method="post">
+									<form action="jour2" method="post">
 										<input type="submit" name="dormir2" value="Retourner dormir.">
 									</form>
 								</center>
@@ -64,7 +64,7 @@
 											<p>
 												<div class="dialogue">
 													<div class="portrait">
-														<img src="/escaperpg/images/secrets/gaspard.png">
+														<img src="/escaperpg/images/secrets/gaspard.png" alt="gaspard">
 													</div>
 													<div class="bulleperso">
 														<p>
@@ -74,10 +74,10 @@
 												</div>
 											</p>
 											<center>
-												<form action="jour2.php" method="post">
+												<form action="jour2" method="post">
 													<input type="text" name="nuit"> <input type="submit" name="interroger" value="Interroger.">
 												</form>
-												<form action="jour2.php" method="post">
+												<form action="jour2" method="post">
 													<input type="submit" name="dormir" value="Retourner dormir.">
 												</form>
 											</center>
@@ -88,7 +88,7 @@
 											<p>
 												<div class="dialogue">
 													<div class="portrait">
-														<img src="/escaperpg/images/secrets/gaspard.png">
+														<img src="/escaperpg/images/secrets/gaspard.png" alt="gaspard">
 													</div>
 													<div class="bulleperso">
 														<p>
@@ -100,10 +100,10 @@
 												</div>
 											</p>
 											<center>
-												<form action="jour2.php" method="post">
+												<form action="jour2" method="post">
 													<input type="submit" name="enqueter" value="Enquêter.">
 												</form>
-												<form action="jour2.php" method="post">
+												<form action="jour2" method="post">
 													<input type="submit" name="dormir" value="Retourner dormir.">
 												</form>
 											</center>
@@ -114,7 +114,7 @@
 											<p>
 												<div class="dialogue">
 													<div class="portrait">
-														<img src="/escaperpg/images/secrets/gaspard.png">
+														<img src="/escaperpg/images/secrets/gaspard.png" alt="gaspard">
 													</div>
 													<div class="bulleperso">
 														<p>
@@ -124,10 +124,10 @@
 												</div>
 											</p>
 											<center>
-												<form action="jour2.php" method="post">
+												<form action="jour2" method="post">
 													<input type="text" name="nuit"> <input type="submit" name="interroger" value="Interroger.">
 												</form>
-												<form action="jour2.php" method="post">
+												<form action="jour2" method="post">
 													<input type="submit" name="dormir" value="Retourner dormir.">
 												</form>
 											</center>
@@ -145,7 +145,7 @@
 									Vous ne trouvez rien d\'autre pour le moment et décidez de remettre ça à plus tard. Gaspard veillera à ce que rien d\'autre ne se passe cette nuit.
 								</p>
 								<center>
-									<form action="jour2.php" method="post">
+									<form action="jour2" method="post">
 										<input type="submit" name="dormir2" value="Retourner dormir.">
 									</form>
 								</center>
@@ -164,7 +164,7 @@
 									Vous décidez d\'aller voir pour les calmer mais ils continuent d\'aboyer comme si... quelqu\'un essayait de s\'introduire chez vous !
 								</p>
 								<center>
-									<form action="jour2.php" method="post">
+									<form action="jour2" method="post">
 										<input type="submit" name="suivant2" value="Suivant.">
 									</form>
 								</center>
@@ -183,7 +183,7 @@
 									Manifestement, l\'intrus n\'a pas réussi à entrer dans la maison grâce à votre vigilance.
 								</p>
 								<center>
-									<form action="jour2.php" method="post">
+									<form action="jour2" method="post">
 										<input type="submit" name="suivant3" value="Suivant.">
 									</form>
 								</center>
@@ -197,7 +197,7 @@
 									<div id="enigmelieu">
 										<img src="/escaperpg/images/secrets/salleamanger.png">
 										<div id="fenetre">
-											<form action="intrusion.php" method="post">
+											<form action="intrusion" method="post">
 												<button type="submit" name="fenetreopened">
 													<img src="/escaperpg/images/secrets/buttonfenetre.png">
 												</button>
@@ -218,7 +218,7 @@
 									Vous vous dépêchez d\'enfiler une robe de chambre et de le rejoindre.
 								</p>
 								<center>
-									<form action="jour2.php" method="post">
+									<form action="jour2" method="post">
 										<input type="submit" name="suivant" value="Suivant.">
 									</form>
 								</center>
@@ -229,6 +229,6 @@
 		</div>
 		<div id="load"><div id="loader"></div></div>
 		<script src="/escaperpg/scripts/aventures-chargement.js"></script>
-		<?php include_once $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/aventures/secrets/includes/footer.php"; ?>
+		<?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/aventures/secrets/includes/footer.php"; ?>
 	</body>
 </html>

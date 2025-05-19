@@ -1,4 +1,4 @@
-<?php include_once $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/entete.php"; ?>
+<?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/entete.php"; ?>
 <!DOCTYPE html>
 <html lang="fr">
 	<head>
@@ -17,14 +17,14 @@
 	</head>
 	
 	<body onload="chargement()">
-		<?php include_once $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/header.php"; ?>
-		<div id="banniere"><img src="/escaperpg/images/secrets/secretsfamiliauxmini.png"></div>
-		<div id="bloc_page">
+		<?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/header.php"; ?>
+		<div id="banniere"><img src="/escaperpg/images/secrets/secretsfamiliauxmini.png" alt="secrets familiaux bannière"></div>
+		<main>
 			<nav>
-				<a href="/escaperpg/images/secrets/inspecteurdeckard.png" rel="lightbox[bastian]" title="inspecteurdeckard"><img src="/escaperpg/images/secrets/inspecteurdeckardmini.png"></a>
-				<div id="inventairefooter"><input type="submit" onclick="inventaireshow()" value="INVENTAIRE"></div>
-				<div id="motsdepasse"><input type="submit" onclick="mdpshow()" value="NOTES"></div>
-				<?php include_once $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/aventures/secrets/includes/navigationmanoir.php"; ?>
+				<a href="/escaperpg/images/secrets/inspecteurdeckard.png" rel="lightbox[bastian]" title="inspecteurdeckard"><img src="/escaperpg/images/secrets/inspecteurdeckardmini.png" alt="inspecteur deckard"></a>
+				<div id="inventairefooter"><input type="submit" value="INVENTAIRE"></div>
+				<div id="motsdepasse"><input type="submit" value="NOTES"></div>
+				<?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/aventures/secrets/includes/navigationmanoir.php"; ?>
 				<a href="/escaperpg/aventures/secrets/save/save.php" target="_blank" rel="noreferrer"><input type="submit" name="save" value="SAUVEGARDER"></a>
 			</nav>
 			<div id="txt">
@@ -49,7 +49,7 @@
 												</div>
 											</p>
 											<center>
-												<form action="aile.php" method="post">
+												<form action="aile" method="post">
 													<input type="text" name="domestiques"> <input type="submit" name="interroger" value="Interroger.">
 												</form>
 											</center>
@@ -75,7 +75,7 @@
 												</div>
 											</p>
 											<center>
-												<form action="aile.php" method="post">
+												<form action="aile" method="post">
 													<input type="text" name="domestiques"> <input type="submit" name="interroger" value="Interroger.">
 												</form>
 											</center>
@@ -89,7 +89,7 @@
 											<p>
 												<div class="dialogue">
 													<div class="portrait">
-														<img src="/escaperpg/images/secrets/teona.png">
+														<img src="/escaperpg/images/secrets/teona.png" alt="teona">
 													</div>
 													<div class="bulleperso">
 														<p>
@@ -102,7 +102,7 @@
 												La jeune domestique vous sourit en rougissant légèrement, comme si ce qu\'elle venait de vous dire ne convenait pas à une personne de sa condition.
 											</p>
 											<center>
-												<form action="aile.php" method="post">
+												<form action="aile" method="post">
 													<input type="text" name="domestiques"> <input type="submit" name="interroger" value="Interroger.">
 												</form>
 											</center>
@@ -113,7 +113,7 @@
 											<p>
 												<div class="dialogue">
 													<div class="portrait">
-														<img src="/escaperpg/images/secrets/monica.png">
+														<img src="/escaperpg/images/secrets/monica.png" alt="monica">
 													</div>
 													<div class="bulleperso">
 														<p>
@@ -130,7 +130,7 @@
 												Vous préférez changer de sujet.
 											</p>
 											<center>
-												<form action="aile.php" method="post">
+												<form action="aile" method="post">
 													<input type="text" name="domestiques"> <input type="submit" name="interroger" value="Interroger.">
 												</form>
 											</center>
@@ -152,7 +152,7 @@
 												La femme parle avec un fort accent français et ne semble pas particulièrement ouverte à la discussion. Vous n\'insistez pas.
 											</p>
 											<center>
-												<form action="aile.php" method="post">
+												<form action="aile" method="post">
 													<input type="text" name="domestiques"> <input type="submit" name="interroger" value="Interroger.">
 												</form>
 											</center>
@@ -163,7 +163,7 @@
 											<p>
 												<div class="dialogue">
 													<div class="portrait">
-														<img src="/escaperpg/images/secrets/teona.png">
+														<img src="/escaperpg/images/secrets/teona.png" alt="teona">
 													</div>
 													<div class="bulleperso">
 														<p>
@@ -174,7 +174,7 @@
 												</div>
 											</p>
 											<center>
-												<form action="aile.php" method="post">
+												<form action="aile" method="post">
 													<input type="text" name="domestiques"> <input type="submit" name="interroger" value="Interroger.">
 												</form>
 											</center>
@@ -198,7 +198,7 @@
 												</div>
 											</p>
 											<center>
-												<form action="aile.php" method="post">
+												<form action="aile" method="post">
 													<input type="text" name="domestiques"> <input type="submit" name="interroger" value="Interroger.">
 												</form>
 											</center>
@@ -220,7 +220,7 @@
 												</div>
 											</p>
 											<center>
-												<form action="aile.php" method="post">
+												<form action="aile" method="post">
 													<input type="text" name="domestiques"> <input type="submit" name="interroger" value="Interroger.">
 												</form>
 											</center>
@@ -232,7 +232,7 @@
 											<p>
 												<div class="dialogue">
 													<div class="portrait">
-														<img src="/escaperpg/images/secrets/teona.png">
+														<img src="/escaperpg/images/secrets/teona.png" alt="teona">
 													</div>
 													<div class="bulleperso">
 														<p>
@@ -243,7 +243,7 @@
 												</div>
 											</p>
 											<center>
-												<form action="aile.php" method="post">
+												<form action="aile" method="post">
 													<input type="text" name="domestiques"> <input type="submit" name="interroger" value="Interroger.">
 												</form>
 											</center>
@@ -267,7 +267,7 @@
 												</div>
 											</p>
 											<center>
-												<form action="aile.php" method="post">
+												<form action="aile" method="post">
 													<input type="text" name="domestiques"> <input type="submit" name="interroger" value="Interroger.">
 												</form>
 											</center>
@@ -293,7 +293,7 @@
 												</div>
 											</p>
 											<center>
-												<form action="aile.php" method="post">
+												<form action="aile" method="post">
 													<input type="text" name="domestiques"> <input type="submit" name="interroger" value="Interroger.">
 												</form>
 											</center>
@@ -315,7 +315,7 @@
 												</div>
 											</p>
 											<center>
-												<form action="aile.php" method="post">
+												<form action="aile" method="post">
 													<input type="text" name="domestiques"> <input type="submit" name="interroger" value="Interroger.">
 												</form>
 											</center>
@@ -327,7 +327,7 @@
 											<p>
 												<div class="dialogue">
 													<div class="portrait">
-														<img src="/escaperpg/images/secrets/teona.png">
+														<img src="/escaperpg/images/secrets/teona.png" alt="teona">
 													</div>
 													<div class="bulleperso">
 														<p>
@@ -339,7 +339,7 @@
 												</div>
 											</p>
 											<center>
-												<form action="aile.php" method="post">
+												<form action="aile" method="post">
 													<input type="text" name="domestiques"> <input type="submit" name="interroger" value="Interroger.">
 												</form>
 											</center>
@@ -361,7 +361,7 @@
 												</div>
 											</p>
 											<center>
-												<form action="aile.php" method="post">
+												<form action="aile" method="post">
 													<input type="text" name="domestiques"> <input type="submit" name="interroger" value="Interroger.">
 												</form>
 											</center>
@@ -378,7 +378,7 @@
 									Vous sentez qu\'ils ne vous disent pas tout.
 								</p>
 								<center>
-									<form action="aile.php" method="post">
+									<form action="aile" method="post">
 										<input type="text" name="domestiques"> <input type="submit" name="interroger" value="Interroger.">
 									</form>
 								</center>
@@ -389,6 +389,6 @@
 		</div>
 		<div id="load"><div id="loader"></div></div>
 		<script src="/escaperpg/scripts/aventures-chargement.js"></script>
-		<?php include_once $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/aventures/secrets/includes/footer.php"; ?>
+		<?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/aventures/secrets/includes/footer.php"; ?>
 	</body>
 </html>
