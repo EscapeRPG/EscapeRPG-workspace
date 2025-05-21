@@ -174,13 +174,13 @@
                         <input type="submit" name="qui" value="Qui était-ce ?">
                     </form>
                     <?php
-                    if (!in_array('sacoche', $_SESSION['mdp'])) {
+                    if (!in_array('Sacoche de médecin', $_SESSION['mdp'])) {
                         $_SESSION['mdp'][] = 'Sacoche de médecin';
                     }
-                    if (!in_array('voiture', $_SESSION['mdp'])) {
+                    if (!in_array('Voiture grise', $_SESSION['mdp'])) {
                         $_SESSION['mdp'][] = 'Voiture grise';
                     }
-                    if (!in_array('gaspard', $_SESSION['mdp'])) {
+                    if (!in_array('Gaspard', $_SESSION['mdp'])) {
                         $_SESSION['mdp'][] = 'Gaspard';
                     }
                     ?>
@@ -276,7 +276,7 @@
                     $indice2 = "À quel endroit de cette page pourriez-vous entrer une adresse ?";
                     $indice3 = "Essayez de rentrer cette nouvelle adresse dans la barre d'adresse de votre navigateur ! Pensez bien à retirer les espaces.";
                     include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/indices.php";
-                    if (!in_array('domestiques', $_SESSION['mdp'])) {
+                    if (!in_array('Domestiques', $_SESSION['mdp'])) {
                         $_SESSION['mdp'][] = 'Domestiques';
                     }
                     ?>

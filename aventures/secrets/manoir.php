@@ -74,7 +74,7 @@
                     <input type="submit" name="suivant" value="Suivant.">
                 </form>
                 <?php
-                if (!in_array('odeur', $_SESSION['mdp'])) {
+                if (!in_array('Odeur', $_SESSION['mdp'])) {
                     $_SESSION['mdp'][] = 'Odeur';
                 }
                 ?>
