@@ -29,7 +29,7 @@
                     La plupart ont vu leurs organes retirés.<br>
                     Au centre de la pièce se trouve une énorme cuve en métal dont vous ne pouvez pas encore voir le contenu.<br>
                     <br>
-                    Vous vous en approchez, chaque pas semblant vous coûter un effort surhumain.<br>
+                    Vous vous en approchez, chaque pas vous coûtant un effort surhumain.<br>
                     <br>
                     Vous atteignez la cuve et jetez un coup d'œil à son contenu.
                 </p>
