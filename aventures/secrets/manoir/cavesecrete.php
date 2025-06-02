@@ -36,7 +36,11 @@
                 <form action="cavesecrete" method="post">
                     <input type="submit" name="suivant2" value="Suivant.">
                 </form>
-                <?php $_SESSION['mdp'][] = "Cadavres"; ?>
+                <?php
+                if (!in_array('Cadavres', $_SESSION['mdp'])) {
+                    $_SESSION['mdp'][] = "Cadavres";
+                }
+                ?>
             <?php elseif (isset($_POST['suivant2'])): ?>
                 <div id="succespopup">
                     <?php
@@ -78,7 +82,11 @@
                 <form action="cavesecrete" method="post">
                     <input type="submit" name="prendre" value="Les prendre.">
                 </form>
-                <?php $_SESSION['mdp'][] = "Liquide jaunâtre"; ?>
+                <?php
+                if (!in_array('Liquide jaunâtre', $_SESSION['mdp'])) {
+                    $_SESSION['mdp'][] = "Liquide jaunâtre";
+                }
+                ?>
             <?php elseif (isset($_POST['prendre'])): ?>
                 <?php if (in_array('journal1', $_SESSION['inventaire'])): ?>
                     <div id="succespopup">
