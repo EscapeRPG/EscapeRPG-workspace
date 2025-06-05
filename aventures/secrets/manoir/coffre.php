@@ -107,7 +107,10 @@
                                 }
                                 ?>
                             <?php else: ?>
-                                <?php $_SESSION['combinaisoncoffre'] = ""; ?>
+                                <?php
+                                $_SESSION['combinaisoncoffre'] += "";
+                                $_SESSION['combinaisonactuelle'] == "";
+                                ?>
                                 <audio src="/escaperpg/sons/secrets/coffrefort4.mp3" autoplay></audio>
                                 <p>
                                     Le code que vous avez essayé ne semble pas avoir fonctionné.<br>
@@ -125,8 +128,11 @@
                                     <input type="submit" name="retour" value="Retour.">
                                 </form>
                             <?php endif; ?>
-                        <?php elseif (isset($_POST['combinaison3'])): ?>
-                            <?php $_SESSION['combinaisoncoffre'] += isset($_POST['gauche']) ? "g" : "d" + $_POST['combinaison3'] ?>
+                        <?php elseif (isset($_POST['combinaison3']) || $_SESSION['combinaisonactuelle'] == "3"): ?>
+                            <?php
+                            $_SESSION['combinaisoncoffre'] += isset($_POST['gauche']) ? "g" : "d" + $_POST['combinaison3'];
+                            $_SESSION['combinaisonactuelle'] = "3";
+                            ?>
                             <audio src="/escaperpg/sons/secrets/coffrefort3.mp3" autoplay></audio>
                             <p>
                                 Entrez le quatrième chiffre.
@@ -140,8 +146,11 @@
                             <form action="chambre" method="post">
                                 <input type="submit" name="retour" value="Retour.">
                             </form>
-                        <?php elseif (isset($_POST['combinaison2'])): ?>
-                            <?php $_SESSION['combinaisoncoffre'] += isset($_POST['gauche']) ? "g" : "d" + $_POST['combinaison2'] ?>
+                        <?php elseif (isset($_POST['combinaison2']) || $_SESSION['combinaisonactuelle'] == "2"): ?>
+                            <?php
+                            $_SESSION['combinaisoncoffre'] += isset($_POST['gauche']) ? "g" : "d" + $_POST['combinaison2'];
+                            $_SESSION['combinaisonactuelle'] = "2";
+                            ?>
                             <audio src="/escaperpg/sons/secrets/coffrefort2.mp3" autoplay></audio>
                             <p>
                                 Entrez le troisième chiffre.
@@ -155,8 +164,11 @@
                             <form action="chambre" method="post">
                                 <input type="submit" name="retour" value="Retour.">
                             </form>
-                        <?php elseif (isset($_POST['combinaison1'])): ?>
-                            <?php $_SESSION['combinaisoncoffre'] += isset($_POST['gauche']) ? "g" : "d" + $_POST['combinaison1'] ?>
+                        <?php elseif (isset($_POST['combinaison1']) || $_SESSION['combinaisonactuelle'] == "1"): ?>
+                            <?php
+                            $_SESSION['combinaisoncoffre'] += isset($_POST['gauche']) ? "g" : "d" + $_POST['combinaison1'];
+                            $_SESSION['combinaisonactuelle'] = "1";
+                            ?>
                             <audio src="/escaperpg/sons/secrets/coffrefort1.mp3" autoplay></audio>
                             <p>
                                 Entrez le second chiffre.
