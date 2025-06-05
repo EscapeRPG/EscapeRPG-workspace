@@ -50,7 +50,7 @@
             <?php else: ?>
                 <div id="enigmelieu">
                     <img src="/escaperpg/images/secrets/chambrewilliam<?= isset($_SESSION['jour']) ? '' : 'nuit' ?>.png" alt="l'ancienne chambre de votre oncle">
-                    <?php if (isset($_SESSION['scof'])): ?>
+                    <?php if (isset($_SESSION['scof']) && !isset($_SESSION['coffrefortouvert'])): ?>
                         <div id="cofchbr">
                             <a href="coffre.php">
                                 <img src="/escaperpg/images/secrets/cof.png" alt="coffre-fort">
