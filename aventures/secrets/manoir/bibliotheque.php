@@ -35,14 +35,17 @@
                 <?= isset($_SESSION['templar']) ? "<p>Manifestement, vous n'avez plus rien à trouver ici.</p>" : null; ?>
                 <?php if (!isset($_SESSION['templar'])): ?>
                     <form action="bibliotheque" method="post">
-                        <input type="text" name="bibliotheque">
+                        <input list="notesListe" name="bibliotheque">
+                        <datalist id="notesListe"></datalist>
                         <input type="submit" name="chercher" value="Chercher.">
                     </form>
+                    <script src="/escaperpg/scripts/updateDataList.js"></script>
                 <?php
                 endif;
                 $_SESSION['inventaire'][] = 'magna';
                 $_SESSION['magna'] = true;
-            elseif (isset($_POST['templar'])): ?>
+                ?>
+            <?php elseif (isset($_POST['templar'])): ?>
                 <script src="/escaperpg/scripts/inventaireadd.js"></script>
                 <p>
                     Vous prenez les morceaux de papier avec vous, au cas où.
@@ -50,15 +53,18 @@
                 <?= isset($_SESSION['magna']) ? "<p>Manifestement, vous n'avez plus rien à trouver ici.</p>" : null; ?>
                 <?php if (!isset($_SESSION['magna'])): ?>
                     <form action="bibliotheque" method="post">
-                        <input type="text" name="bibliotheque">
+                        <input list="notesListe" name="bibliotheque">
+                        <datalist id="notesListe"></datalist>
                         <input type="submit" name="chercher" value="Chercher.">
                     </form>
                 <?php
                 endif;
                 $_SESSION['inventaire'][] = 'templar';
                 $_SESSION['templar'] = true;
-            elseif (isset($_POST['bibliotheque'])):
-                switch (str_replace($search, $replace, stripslashes($_POST['bibliotheque']))):
+                ?>
+                <script src="/escaperpg/scripts/updateDataList.js"></script>
+            <?php elseif (isset($_POST['bibliotheque'])): ?>
+                <?php switch (str_replace($search, $replace, stripslashes($_POST['bibliotheque']))):
                     case "symbole": ?>
                         <p>
                             L'un des livres attire votre attention.<br>
@@ -85,9 +91,11 @@
                             Peut-être auriez-vous plus de chance en interrogeant les domestiques ?
                         </p>
                         <form action="bibliotheque" method="post">
-                            <input type="text" name="bibliotheque">
+                            <input list="notesListe" name="bibliotheque">
+                            <datalist id="notesListe"></datalist>
                             <input type="submit" name="chercher" value="Chercher.">
                         </form>
+                        <script src="/escaperpg/scripts/updateDataList.js"></script>
                     <?php break;
                     case "magnamater": ?>
                         <div id="enigme">
@@ -108,26 +116,31 @@
                         if (!in_array('Deuxième', $_SESSION['mdp'])) {
                             $_SESSION['mdp'][] = "Deuxième";
                         }
-                        break;
+                        ?>
+                    <?php break;
                     default: ?>
                         <p>
                             Vous avez beau chercher, vous ne trouvez rien de particulier ici.<br>
                             Ou bien peut-être est-ce parce que vous ne cherchez pas la bonne chose ?
                         </p>
                         <form action="bibliotheque" method="post">
-                            <input type="text" name="bibliotheque">
+                            <input list="notesListe" name="bibliotheque">
+                            <datalist id="notesListe"></datalist>
                             <input type="submit" name="chercher" value="Chercher.">
                         </form>
+                        <script src="/escaperpg/scripts/updateDataList.js"></script>
                 <?php break;
-                endswitch;
-            else: ?>
+                endswitch; ?>
+            <?php else: ?>
                 <p>
                     La pièce est immense et chaque mur est occupé par des étagères remplies de livres de toutes sortes.
                 </p>
                 <form action="bibliotheque" method="post">
-                    <input type="text" name="bibliotheque">
+                    <input list="notesListe" name="bibliotheque">
+                    <datalist id="notesListe"></datalist>
                     <input type="submit" name="chercher" value="Chercher.">
                 </form>
+                <script src="/escaperpg/scripts/updateDataList.js"></script>
             <?php endif; ?>
         </div>
     </main>

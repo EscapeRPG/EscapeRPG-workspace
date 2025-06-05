@@ -65,7 +65,7 @@
 										</p>
 										<center>
 											<form action="vestibule" method="post">
-												<input type="text" name="fouille"> <input type="submit" name="entree" value="Fouiller.">
+												<input list="notesListe" name="fouille"> <input type="submit" name="entree" value="Fouiller.">
 											</form>
 										</center>
 									';
@@ -81,7 +81,7 @@
 										</p>
 										<center>
 											<form action="vestibule" method="post">
-												<input type="text" name="fouille"> <input type="submit" name="entree" value="Fouiller.">
+												<input list="notesListe" name="fouille"> <input type="submit" name="entree" value="Fouiller.">
 											</form>
 										</center>
 									';
@@ -121,7 +121,7 @@
 										</p>
 										<center>
 											<form action="vestibule" method="post">
-												<input type="text" name="fouille"> <input type="submit" name="entree" value="Fouiller.">
+												<input list="notesListe" name="fouille"> <input type="submit" name="entree" value="Fouiller.">
 											</form>
 										</center>
 									';
@@ -163,7 +163,7 @@
 										</p>
 										<center>
 											<form action="vestibule" method="post">
-												<input type="text" name="fouille"> <input type="submit" name="entree" value="Fouiller.">
+												<input list="notesListe" name="fouille"> <input type="submit" name="entree" value="Fouiller.">
 											</form>
 										</center>
 									';
@@ -186,7 +186,7 @@
 										</p>
 										<center>
 											<form action="vestibule" method="post">
-												<input type="text" name="fouille"> <input type="submit" name="entree" value="Fouiller.">
+												<input list="notesListe" name="fouille"> <input type="submit" name="entree" value="Fouiller.">
 											</form>
 										</center>
 									';

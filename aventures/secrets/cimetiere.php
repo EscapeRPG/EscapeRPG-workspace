@@ -13,7 +13,7 @@
     <title>Cimetière - Secrets Familiaux</title>
 </head>
 
-<body onload="chargement()">
+<body>
     <?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/header.php"; ?>
     <div id="banniere"><img src="/escaperpg/images/secrets/secretsfamiliauxmini.png" alt="secrets familiaux bannière"></div>
     <main>
@@ -185,7 +185,6 @@
                     }
                     ?>
                 <?php elseif (isset($_POST['qui'])): ?>
-                    <p>
                     <div class="dialogue">
                         <div class="portrait">
                             <img src="/escaperpg/images/secrets/gaspard.png" alt="gaspard">
@@ -200,20 +199,23 @@
                             </p>
                         </div>
                     </div>
-                    Gaspard semble cacher quelque chose, mais la cérémonie va effectivement bientôt débuter.<br>
-                    Vous avez peut-être encore le temps de lui poser une question, à moins que vous ne préfériez retourner vous installer ?
+                    <p>
+                        Gaspard semble cacher quelque chose, mais la cérémonie va effectivement bientôt débuter.<br>
+                        Vous avez peut-être encore le temps de lui poser une question, à moins que vous ne préfériez retourner vous installer ?
                     </p>
                     <form action="cimetiere" method="post">
-                        <input type="text" name="question"> <input type="submit" name="medecin" value="Interroger.">
-                    </form>
-                    <form action="cimetiere" method="post">
+                        <input list="notesListe" name="question">
+                        <datalist id="notesListe"></datalist>
+                        <input type="submit" name="medecin" value="Interroger.">
+                        <br>
                         <input type="submit" name="retour" value="Retourner à la cérémonie.">
                     </form>
                     <?php
-                    if (!in_array('pellington', $_SESSION['mdp'])) {
+                    if (!in_array('Pellington', $_SESSION['mdp'])) {
                         $_SESSION['mdp'][] = 'Pellington';
                     }
                     ?>
+                    <script src="/escaperpg/scripts/updateDataList.js"></script>
                 <?php elseif (isset($_POST['question']) && str_replace($search, $replace, stripslashes($_POST['question'])) == "sacochedemedecin"): ?>
                     <p>
                     <div class="dialogue">
@@ -244,9 +246,13 @@
                         </div>
                     </div>
                     <form action="cimetiere" method="post">
-                        <input type="text" name="question"> <input type="submit" name="medecin" value="Interroger.">
+                        <input list="notesListe" name="question">
+                        <datalist id="notesListe"></datalist>
+                        <input type="submit" name="medecin" value="Interroger.">
+                        <br>
                         <input type="submit" name="retour" value="Retourner à la cérémonie.">
                     </form>
+                    <script src="/escaperpg/scripts/updateDataList.js"></script>
                 <?php elseif (isset($_POST['retour']) && isset($_SESSION['finceremonie'])): ?>
                     <p>
                         Après la cérémonie, le corps est finalement mis en terre et la foule se disperse lentement.<br>

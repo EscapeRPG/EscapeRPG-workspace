@@ -72,7 +72,7 @@
 								</p>
 								<center>
 									<form action="matin" method="post">
-										<input type="text" name="police"> <input type="submit" name="repondre" value="Répondre.">
+										<input list="notesListe" name="police"> <input type="submit" name="repondre" value="Répondre.">
 									</form>
 									<form action="matin" method="post">
 										<button type="submit" name="indice" class="boutonindice"></button>
@@ -97,7 +97,7 @@
 								</p>
 								<center>
 									<form action="matin" method="post">
-										<input type="text" name="police"> <input type="submit" name="repondre" value="Répondre.">
+										<input list="notesListe" name="police"> <input type="submit" name="repondre" value="Répondre.">
 									</form>
 								</center>
 							';
@@ -155,7 +155,7 @@
 								</p>
 								<center>
 									<form action="matin" method="post">
-										<input type="text" name="telephone"> <input type="submit" name="repondre" value="Répondre.">
+										<input list="notesListe" name="telephone"> <input type="submit" name="repondre" value="Répondre.">
 									</form>
 									<form action="matin" method="post">
 										<button type="submit" name="indice" class="boutonindice"></button>
@@ -183,7 +183,7 @@
 								</p>
 								<center>
 									<form action="matin" method="post">
-										<input type="text" name="telephone"> <input type="submit" name="repondre" value="Répondre.">
+										<input list="notesListe" name="telephone"> <input type="submit" name="repondre" value="Répondre.">
 									</form>
 								</center>
 							';

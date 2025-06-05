@@ -9,7 +9,7 @@
     <li><a href="etage">Étage</a></li>
     <ul>
         <li><a href="chambre">Chambre de William</a></li>
-        <?php if ($_SESSION['bureauprive']): ?>
+        <?php if (isset($_SESSION['bureauprive'])): ?>
             <li><a href="bureauprive">Bureau privé</a></li>
         <?php else: ?>
             <li><a href="bureau">Bureau</a></li>

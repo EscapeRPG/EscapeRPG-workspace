@@ -49,9 +49,11 @@
                         Rien ne se passe.
                     </p>
                     <form action="bureau" method="post">
-                        <input type="text" name="phr">
+                        <input list="notesListe" name="phr">
+                        <datalist id="notesListe"></datalist>
                         <input type="submit" name="ouvrir" value="Ouvrir.">
                     </form>
+                    <script src="/escaperpg/scripts/updateDataList.js"></script>
                 <?php endif;
             elseif (isset($_POST['symporte'])): ?>
                 <p>
@@ -59,8 +61,7 @@
                     Vous n'avez aucune idée de sa signification, mais peut-être pourriez-vous poser des questions aux domestiques ?
                 </p>
                 <form action="bureau" method="post">
-                    <input type="text" name="phr">
-                    <input type="submit" name="ouvrir" value="Ouvrir.">
+                    <input type="submit" name="retour" value="retour">
                 </form>
                 <?php
                 if (!in_array('Symbole', $_SESSION['mdp'])) {
@@ -85,14 +86,17 @@
                     Cette porte doit être scellée par un autre moyen.
                 </p>
                 <form action="bureau" method="post">
-                    <input type="text" name="phr">
+                    <input list="notesListe" name="phr">
+                    <datalist id="notesListe"></datalist>
                     <input type="submit" name="ouvrir" value="Ouvrir.">
                 </form>
-            <?php
+                <?php
                 if (!in_array('Bureau', $_SESSION['mdp'])) {
                     $_SESSION['mdp'][] = 'Bureau';
                 }
-            endif; ?>
+                ?>
+                <script src="/escaperpg/scripts/updateDataList.js"></script>
+            <?php endif; ?>
         </div>
     </main>
     <div id="load">

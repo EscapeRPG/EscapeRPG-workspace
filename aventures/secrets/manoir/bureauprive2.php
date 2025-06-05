@@ -102,12 +102,13 @@
                         Ça ne semble pas être la bonne.
                     </p>
                     <form action="bureauprive2" method="post">
-                        <input type="text" name="cadenas"><input type="submit" name="utiliser" value="Utiliser la clé.">
-                    </form>
-                    <br>
-                    <form action="bureauprive2" method="post">
+                        <input list="notesListe" name="cadenas">
+                        <datalist id="notesListe"></datalist>
+                        <input type="submit" name="utiliser" value="Utiliser la clé.">
+                        <br>
                         <input type="submit" name="retour" value="Retour.">
                     </form>
+                    <script src="/escaperpg/scripts/updateDataList.js"></script>
                 <?php endif; ?>
             <?php elseif (isset($_POST['trappe'])): ?>
                 <p>
@@ -123,9 +124,11 @@
                     </p>
                 <?php endif; ?>
                 <form action="bureauprive2" method="post">
-                    <input type="text" name="cadenas">
+                    <input list="notesListe" name="cadenas">
+                    <datalist id="notesListe"></datalist>
                     <input type="submit" name="utiliser" value="Utiliser la clé.">
                 </form>
+                <script src="/escaperpg/scripts/updateDataList.js"></script>
             <?php elseif (isset($_POST['trappehidden'])): ?>
                 <p>
                     Sous le tapis se trouvait une trappe secrète !

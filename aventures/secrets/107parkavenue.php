@@ -13,7 +13,7 @@
     <title>Chez Pellington - Secrets Familiaux</title>
 </head>
 
-<body onload="chargement()">
+<body>
     <?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/header.php"; ?>
     <div id="banniere"><img src="/escaperpg/images/secrets/secretsfamiliauxmini.png" alt="secrets familiaux bannière"></div>
     <main>

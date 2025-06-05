@@ -69,7 +69,7 @@
 								</p>
 								<center>
 									<form action="deuxiemeetage" method="post">
-										<input type="text" name="fouille"> <input type="submit" name="fouiller" value="Fouiller.">
+										<input list="notesListe" name="fouille"> <input type="submit" name="fouiller" value="Fouiller.">
 									</form>
 								</center>
 							';
@@ -102,7 +102,7 @@
 								</p>
 								<center>
 									<form action="deuxiemeetage" method="post">
-										<input type="text" name="fouille"> <input type="submit" name="fouiller" value="Fouiller.">
+										<input list="notesListe" name="fouille"> <input type="submit" name="fouiller" value="Fouiller.">
 									</form>
 								</center>
 							';

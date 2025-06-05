@@ -47,7 +47,7 @@
 								</p>
 								<center>
 									<form action="jour2" method="post">
-										<input type="text" name="nuit"> <input type="submit" name="interroger" value="Interroger.">
+										<input list="notesListe" name="nuit"> <input type="submit" name="interroger" value="Interroger.">
 									</form>
 									<form action="jour2" method="post">
 										<input type="submit" name="dormir2" value="Retourner dormir.">
@@ -75,7 +75,7 @@
 											</p>
 											<center>
 												<form action="jour2" method="post">
-													<input type="text" name="nuit"> <input type="submit" name="interroger" value="Interroger.">
+													<input list="notesListe" name="nuit"> <input type="submit" name="interroger" value="Interroger.">
 												</form>
 												<form action="jour2" method="post">
 													<input type="submit" name="dormir" value="Retourner dormir.">
@@ -125,7 +125,7 @@
 											</p>
 											<center>
 												<form action="jour2" method="post">
-													<input type="text" name="nuit"> <input type="submit" name="interroger" value="Interroger.">
+													<input list="notesListe" name="nuit"> <input type="submit" name="interroger" value="Interroger.">
 												</form>
 												<form action="jour2" method="post">
 													<input type="submit" name="dormir" value="Retourner dormir.">

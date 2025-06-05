@@ -23,8 +23,8 @@
             <?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/aventures/secrets/includes/navigationmanoir.php"; ?>
         </nav>
         <div id="txt">
-            <?php if (isset($_POST['domestiques'])):
-                switch (str_replace($search, $replace, stripslashes($_POST['domestiques']))):
+            <?php if (isset($_POST['domestiques'])): ?>
+                <?php switch (str_replace($search, $replace, stripslashes($_POST['domestiques']))):
                     case "pellington": ?>
                         <div class="dialogue">
                             <div class="portrait">
@@ -37,10 +37,11 @@
                                 </p>
                             </div>
                         </div>
-                        <form action="aile" method="post">
-                            <input type="text" name="domestiques"> <input type="submit" name="interroger" value="Interroger.">
-                        </form>
-                    <?php break;
+                        <?php
+                        if (!in_array('Domestiques', $_SESSION['mdp'])) {
+                        $_SESSION['mdp'][] = "Domestiques";
+                        }
+                        break;
                     case "domestiques": ?>
                         <div class="dialogue">
                             <div class="portrait">
@@ -57,9 +58,6 @@
                                 </p>
                             </div>
                         </div>
-                        <form action="aile" method="post">
-                            <input type="text" name="domestiques"> <input type="submit" name="interroger" value="Interroger.">
-                        </form>
                         <?php
                         if (!in_array('Téona', $_SESSION['mdp'])) {
                             $_SESSION['mdp'][] = "Téona";
@@ -87,9 +85,6 @@
                         <p>
                             La jeune domestique vous sourit en rougissant légèrement, comme si ce qu'elle venait de vous dire ne convenait pas à une personne de sa condition.
                         </p>
-                        <form action="aile" method="post">
-                            <input type="text" name="domestiques"> <input type="submit" name="interroger" value="Interroger.">
-                        </form>
                     <?php break;
                     case "monica": ?>
                         <div class="dialogue">
@@ -111,9 +106,6 @@
                             Vous n'êtes pas sûr de vouloir poursuivre la conversation. La vieille domestique semble friande de ragots et vous risqueriez de vous retrouver bloqué dans des discussions interminables.
                             Vous préférez changer de sujet.
                         </p>
-                        <form action="aile" method="post">
-                            <input type="text" name="domestiques"> <input type="submit" name="interroger" value="Interroger.">
-                        </form>
                     <?php break;
                     case "mmenouveau": ?>
                         <div class="dialogue">
@@ -129,9 +121,6 @@
                         <p>
                             La femme parle avec un fort accent français et ne semble pas particulièrement ouverte à la discussion. Vous n'insistez pas.
                         </p>
-                        <form action="aile" method="post">
-                            <input type="text" name="domestiques"> <input type="submit" name="interroger" value="Interroger.">
-                        </form>
                     <?php break;
                     case "gaspard": ?>
                         <div class="dialogue">
@@ -145,9 +134,6 @@
                                 </p>
                             </div>
                         </div>
-                        <form action="aile" method="post">
-                            <input type="text" name="domestiques"> <input type="submit" name="interroger" value="Interroger.">
-                        </form>
                     <?php break;
                     case "soucis": ?>
                         <div class="dialogue">
@@ -163,9 +149,6 @@
                                 </p>
                             </div>
                         </div>
-                        <form action="aile" method="post">
-                            <input type="text" name="domestiques"> <input type="submit" name="interroger" value="Interroger.">
-                        </form>
                     <?php break;
                     case "odeur": ?>
                         <div class="dialogue">
@@ -179,9 +162,6 @@
                                 </p>
                             </div>
                         </div>
-                        <form action="aile" method="post">
-                            <input type="text" name="domestiques"> <input type="submit" name="interroger" value="Interroger.">
-                        </form>
                         <?php
                         if (!in_array('Fuite', $_SESSION['mdp'])) {
                             $_SESSION['mdp'][] = 'Fuite';
@@ -199,9 +179,6 @@
                                 </p>
                             </div>
                         </div>
-                        <form action="aile" method="post">
-                            <input type="text" name="domestiques"> <input type="submit" name="interroger" value="Interroger.">
-                        </form>
                     <?php break;
                     case "bureau": ?>
                         <div class="dialogue">
@@ -217,9 +194,6 @@
                                 </p>
                             </div>
                         </div>
-                        <form action="aile" method="post">
-                            <input type="text" name="domestiques"> <input type="submit" name="interroger" value="Interroger.">
-                        </form>
                         <?php
                         if (!in_array('Coupures de courant', $_SESSION['mdp'])) {
                             $_SESSION['mdp'][] = 'Coupures de courant';
@@ -240,9 +214,6 @@
                                 </p>
                             </div>
                         </div>
-                        <form action="aile" method="post">
-                            <input type="text" name="domestiques"> <input type="submit" name="interroger" value="Interroger.">
-                        </form>
                     <?php break;
                     case "tableau": ?>
                         <div class="dialogue">
@@ -256,9 +227,6 @@
                                 </p>
                             </div>
                         </div>
-                        <form action="aile" method="post">
-                            <input type="text" name="domestiques"> <input type="submit" name="interroger" value="Interroger.">
-                        </form>
                         <?php
                         if (!in_array('Restes', $_SESSION['mdp'])) {
                             $_SESSION['mdp'][] = 'Restes';
@@ -277,9 +245,6 @@
                                 </p>
                             </div>
                         </div>
-                        <form action="aile" method="post">
-                            <input type="text" name="domestiques"> <input type="submit" name="interroger" value="Interroger.">
-                        </form>
                         <?php
                         if (!in_array('Magna Mater', $_SESSION['mdp'])) {
                             $_SESSION['mdp'][] = 'Magna Mater';
@@ -296,27 +261,27 @@
                                 </p>
                             </div>
                         </div>
-                        <form action="aile" method="post">
-                            <input type="text" name="domestiques"> <input type="submit" name="interroger" value="Interroger.">
-                        </form>
-                <?php endswitch;
-            else: ?>
+                <?php endswitch; ?>
+            <?php else: ?>
                 <p>
                     C'est ici que dorment les domestiques.<br>
                     Lorsque vous leur demandez pourquoi ils ne rentrent pas chez eux, ils vous disent qu'ils préfèrent rester pour le moment afin de vous aider dans vos tâches.<br>
                     <br>
                     Vous sentez qu'ils ne vous disent pas tout.
                 </p>
-                <form action="aile" method="post">
-                    <input type="text" name="domestiques"> <input type="submit" name="interroger" value="Interroger.">
-                </form>
             <?php endif; ?>
+            <form action="aile" method="post">
+                <input list="notesListe" name="domestiques">
+                <datalist id="notesListe"></datalist>
+                <input type="submit" name="interroger" value="Interroger.">
+            </form>
         </div>
     </main>
     <div id="load">
         <div id="loader"></div>
     </div>
     <script src="/escaperpg/scripts/aventures-chargement.js"></script>
+    <script src="/escaperpg/scripts/updateDataList.js"></script>
     <?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/aventures/secrets/includes/footer.php"; ?>
 </body>
 

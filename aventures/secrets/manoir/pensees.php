@@ -43,7 +43,7 @@
 								</p>
 								<center>
 									<form action="pensees" method="post">
-										<input type="text" name="thoughts"> <input type="submit" name="reflechir" value="Rassembler ses pensées">
+										<input list="notesListe" name="thoughts"> <input type="submit" name="reflechir" value="Rassembler ses pensées">
 									</form>
 								</center>
 							';
@@ -64,7 +64,7 @@
 								</p>
 								<center>
 									<form action="pensees" method="post">
-										<input type="text" name="thoughts"> <input type="submit" name="reflechir" value="Rassembler ses pensées">
+										<input list="notesListe" name="thoughts"> <input type="submit" name="reflechir" value="Rassembler ses pensées">
 									</form>
 									<form action="pensees" method="post">
 										<button type="submit" name="reponse" class="boutonreponse"></button>
@@ -86,7 +86,7 @@
 								</p>
 								<center>
 									<form action="pensees" method="post">
-										<input type="text" name="thoughts"> <input type="submit" name="reflechir" value="Rassembler ses pensées">
+										<input list="notesListe" name="thoughts"> <input type="submit" name="reflechir" value="Rassembler ses pensées">
 									</form>
 									<form action="pensees" method="post">
 										<button type="submit" name="indice3" class="boutonindice"></button>
@@ -107,7 +107,7 @@
 								</p>
 								<center>
 									<form action="pensees" method="post">
-										<input type="text" name="thoughts"> <input type="submit" name="reflechir" value="Rassembler ses pensées">
+										<input list="notesListe" name="thoughts"> <input type="submit" name="reflechir" value="Rassembler ses pensées">
 									</form>
 									<form action="pensees" method="post">
 										<button type="submit" name="indice2" class="boutonindice"></button>
@@ -142,7 +142,7 @@
 								</p>
 								<center>
 									<form action="pensees" method="post">
-										<input type="text" name="thoughts"> <input type="submit" name="reflechir" value="Rassembler ses pensées">
+										<input list="notesListe" name="thoughts"> <input type="submit" name="reflechir" value="Rassembler ses pensées">
 									</form>
 									<form action="pensees" method="post">
 										<button type="submit" name="indice" class="boutonindice"></button>
@@ -161,7 +161,7 @@
 								</p>
 								<center>
 									<form action="pensees" method="post">
-										<input type="text" name="thoughts"> <input type="submit" name="reflechir" value="Rassembler ses pensées">
+										<input list="notesListe" name="thoughts"> <input type="submit" name="reflechir" value="Rassembler ses pensées">
 									</form>
 									<form action="pensees" method="post">
 										<button type="submit" name="indice" class="boutonindice"></button>
@@ -179,7 +179,7 @@
 								</p>
 								<center>
 									<form action="pensees" method="post">
-										<input type="text" name="thoughts"> <input type="submit" name="reflechir" value="Rassembler ses pensées">
+										<input list="notesListe" name="thoughts"> <input type="submit" name="reflechir" value="Rassembler ses pensées">
 									</form>
 									<form action="pensees" method="post">
 										<button type="submit" name="indice" class="boutonindice"></button>

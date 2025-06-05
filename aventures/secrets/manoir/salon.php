@@ -81,7 +81,7 @@
 											Un feu de cheminée réchauffe agréablement la pièce.
 											<center>
 												<form action="salon" method="post">
-													<input type="text" name="salon"> <input type="submit" name="chercher" value="Chercher.">
+													<input list="notesListe" name="salon"> <input type="submit" name="chercher" value="Chercher.">
 												</form>
 											</center>
 										</p>

@@ -40,9 +40,11 @@
                             Votre médaillon vibre toujours lorsque vous êtes proche de la bibliothèque.
                         </p>
                         <form action="bureauprive" method="post">
-                            <input type="text" name="fouiller">
+                            <input list="notesListe" name="fouiller">
+                            <datalist id="notesListe"></datalist>
                             <input type="submit" name="bibliotheque" value="Fouiller la bibliothèque.">
                         </form>
+                        <script src="/escaperpg/scripts/updateDataList.js"></script>
                     <?php endif; ?>
                 <?php else: ?>
                     <p>
@@ -117,9 +119,11 @@
                             Vous ne trouvez pas ce que vous cherchez.
                         </p>
                         <form action="bureauprive" method="post">
-                            <input type="text" name="fouiller">
+                            <input list="notesListe" name="fouiller">
+                            <datalist id="notesListe"></datalist>
                             <input type="submit" name="bibliotheque" value="Fouiller la bibliothèque.">
                         </form>
+                        <script src="/escaperpg/scripts/updateDataList.js"></script>
                     <?php endif; ?>
                 <?php elseif (isset($_POST['journaladd'])): ?>
                     <script src="/escaperpg/scripts/inventaireadd.js"></script>
@@ -135,9 +139,11 @@
                             Votre médaillon vibre toujours lorsque vous êtes proche de la bibliothèque.
                         </p>
                         <form action="bureauprive" method="post">
-                            <input type="text" name="fouiller">
+                            <input list="notesListe" name="fouiller">
+                            <datalist id="notesListe"></datalist>
                             <input type="submit" name="bibliotheque" value="Fouiller la bibliothèque.">
                         </form>
+                        <script src="/escaperpg/scripts/updateDataList.js"></script>
                     <?php endif; ?>
                     <form action="bureauprive2" method="post">
                         <input type="submit" name="fond" value="Passer de l'autre côté.">
@@ -188,18 +194,21 @@
                                 Votre médaillon vibre toujours lorsque vous êtes proche de la bibliothèque.
                             </p>
                             <form action="bureauprive" method="post">
-                                <input type="text" name="fouiller">
+                                <input list="notesListe" name="fouiller">
+                                <datalist id="notesListe"></datalist>
                                 <input type="submit" name="bibliotheque" value="Fouiller la bibliothèque.">
                             </form>
                         <?php endif; ?>
                         <form action="bureauprive" method="post">
-                            <input type="text" name="petitecle">
+                            <input list="notesListe" name="petitecle">
+                            <datalist id="notesListe"></datalist>
                             <input type="submit" name="utiliser" value="Utiliser la clé.">
                         </form>
                         <br>
                         <form action="bureauprive2" method="post">
                             <input type="submit" name="fond" value="Passer de l'autre côté.">
                         </form>
+                        <script src="/escaperpg/scripts/updateDataList.js"></script>
                     <?php endif; ?>
                 <?php elseif (isset($_POST['tiroir'])): ?>
                     <div id="enigmelieu">
@@ -218,18 +227,21 @@
                             Votre médaillon vibre toujours lorsque vous êtes proche de la bibliothèque.
                         </p>
                         <form action="bureauprive" method="post">
-                            <input type="text" name="fouiller">
+                            <input list="notesListe" name="fouiller">
+                            <datalist id="notesListe"></datalist>
                             <input type="submit" name="bibliotheque" value="Fouiller la bibliothèque.">
                         </form>
                     <?php endif; ?>
                     <form action="bureauprive" method="post">
-                        <input type="text" name="petitecle">
+                        <input list="notesListe" name="petitecle">
+                        <datalist id="notesListe"></datalist>
                         <input type="submit" name="utiliser" value="Utiliser la clé.">
                     </form>
                     <br>
                     <form action="bureauprive2" method="post">
                         <input type="submit" name="fond" value="Passer de l'autre côté.">
                     </form>
+                    <script src="/escaperpg/scripts/updateDataList.js"></script>
                 <?php else: ?>
                     <div id="succespopup">
                         <?php
@@ -267,9 +279,11 @@
                             Vous devriez l'observer de plus près.
                         </p>
                         <form action="bureauprive" method="post">
-                            <input type="text" name="fouiller">
+                            <input list="notesListe" name="fouiller">
+                            <datalist id="notesListe"></datalist>
                             <input type="submit" name="bibliotheque" value="Fouiller la bibliothèque.">
                         </form>
+                        <script src="/escaperpg/scripts/updateDataList.js"></script>
                     <?php endif; ?>
                     <form action="bureauprive2" method="post">
                         <input type="submit" name="fond" value="Passer de l'autre côté.">

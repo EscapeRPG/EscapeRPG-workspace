@@ -50,7 +50,7 @@
 											</p>
 											<center>
 												<form action="maisongaspard" method="post">
-													<input type="text" name="gaspard"> <input type="submit" name="interroger" value="Interroger.">
+													<input list="notesListe" name="gaspard"> <input type="submit" name="interroger" value="Interroger.">
 												</form>
 											</center>
 										';
@@ -72,7 +72,7 @@
 											</p>
 											<center>
 												<form action="maisongaspard" method="post">
-													<input type="text" name="gaspard"> <input type="submit" name="interroger" value="Interroger.">
+													<input list="notesListe" name="gaspard"> <input type="submit" name="interroger" value="Interroger.">
 												</form>
 											</center>
 										';
@@ -95,7 +95,7 @@
 											</p>
 											<center>
 												<form action="maisongaspard" method="post">
-													<input type="text" name="gaspard"> <input type="submit" name="interroger" value="Interroger.">
+													<input list="notesListe" name="gaspard"> <input type="submit" name="interroger" value="Interroger.">
 												</form>
 											</center>
 										';
@@ -117,7 +117,7 @@
 											</p>
 											<center>
 												<form action="maisongaspard" method="post">
-													<input type="text" name="gaspard"> <input type="submit" name="interroger" value="Interroger.">
+													<input list="notesListe" name="gaspard"> <input type="submit" name="interroger" value="Interroger.">
 												</form>
 											</center>
 										';
@@ -140,7 +140,7 @@
 											</p>
 											<center>
 												<form action="maisongaspard" method="post">
-													<input type="text" name="gaspard"> <input type="submit" name="interroger" value="Interroger.">
+													<input list="notesListe" name="gaspard"> <input type="submit" name="interroger" value="Interroger.">
 												</form>
 											</center>
 										';
@@ -161,7 +161,7 @@
 											</p>
 											<center>
 												<form action="maisongaspard" method="post">
-													<input type="text" name="gaspard"> <input type="submit" name="interroger" value="Interroger.">
+													<input list="notesListe" name="gaspard"> <input type="submit" name="interroger" value="Interroger.">
 												</form>
 											</center>
 										';
@@ -182,7 +182,7 @@
 											</p>
 											<center>
 												<form action="maisongaspard" method="post">
-													<input type="text" name="gaspard"> <input type="submit" name="interroger" value="Interroger.">
+													<input list="notesListe" name="gaspard"> <input type="submit" name="interroger" value="Interroger.">
 												</form>
 											</center>
 										';
@@ -203,7 +203,7 @@
 											</p>
 											<center>
 												<form action="maisongaspard" method="post">
-													<input type="text" name="gaspard"> <input type="submit" name="interroger" value="Interroger.">
+													<input list="notesListe" name="gaspard"> <input type="submit" name="interroger" value="Interroger.">
 												</form>
 											</center>
 										';
@@ -251,7 +251,7 @@
 											</p>
 											<center>
 												<form action="maisongaspard" method="post">
-													<input type="text" name="gaspard"> <input type="submit" name="interroger" value="Interroger.">
+													<input list="notesListe" name="gaspard"> <input type="submit" name="interroger" value="Interroger.">
 												</form>
 											</center>
 										';
@@ -274,7 +274,7 @@
 											</p>
 											<center>
 												<form action="maisongaspard" method="post">
-													<input type="text" name="gaspard"> <input type="submit" name="interroger" value="Interroger.">
+													<input list="notesListe" name="gaspard"> <input type="submit" name="interroger" value="Interroger.">
 												</form>
 											</center>
 										';
@@ -296,7 +296,7 @@
 											</p>
 											<center>
 												<form action="maisongaspard" method="post">
-													<input type="text" name="gaspard"> <input type="submit" name="interroger" value="Interroger.">
+													<input list="notesListe" name="gaspard"> <input type="submit" name="interroger" value="Interroger.">
 												</form>
 											</center>
 										';
@@ -317,7 +317,7 @@
 											</p>
 											<center>
 												<form action="maisongaspard" method="post">
-													<input type="text" name="gaspard"> <input type="submit" name="interroger" value="Interroger.">
+													<input list="notesListe" name="gaspard"> <input type="submit" name="interroger" value="Interroger.">
 												</form>
 											</center>
 										';
@@ -342,7 +342,7 @@
 								</p>
 								<center>
 									<form action="maisongaspard" method="post">
-										<input type="text" name="gaspard"> <input type="submit" name="interroger" value="Interroger.">
+										<input list="notesListe" name="gaspard"> <input type="submit" name="interroger" value="Interroger.">
 									</form>
 								</center>
 							';
@@ -384,7 +384,7 @@
 								</p>
 								<center>
 									<form action="maisongaspard" method="post">
-										<input type="text" name="gaspard"> <input type="submit" name="interroger" value="Interroger.">
+										<input list="notesListe" name="gaspard"> <input type="submit" name="interroger" value="Interroger.">
 									</form>
 								</center>
 							';
@@ -442,7 +442,7 @@
 								</p>
 								<center>
 									<form action="maisongaspard" method="post">
-										<input type="text" name="gaspard"> <input type="submit" name="interroger" value="Interroger.">
+										<input list="notesListe" name="gaspard"> <input type="submit" name="interroger" value="Interroger.">
 									</form>
 								</center>
 							';
@@ -455,7 +455,7 @@
 								</p>
 								<center>
 									<form action="maisongaspard" method="post">
-										<input type="text" name="gaspard"> <input type="submit" name="interroger" value="Interroger.">
+										<input list="notesListe" name="gaspard"> <input type="submit" name="interroger" value="Interroger.">
 									</form>
 								</center>
 							';

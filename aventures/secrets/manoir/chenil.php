@@ -130,9 +130,11 @@
                         Il se retourne pour reporter son attention sur les animaux et ne semble plus enclin à discuter avec vous.
                     </p>
                     <form action="chenil" method="post">
-                        <input type="text" name="antidote">
+                        <input list="notesListe" name="antidote">
+                        <datalist id="notesListe"></datalist>
                         <input type="submit" name="parler" value="Parler.">
                     </form>
+                    <script src="/escaperpg/scripts/updateDataList.js"></script>
                 <?php else: ?>
                     <?php if (isset($_SESSION['chiensmalades'])): ?>
                         <p>
@@ -152,9 +154,11 @@
                             Il se retourne pour reporter son attention sur les animaux et ne semble plus enclin à discuter avec vous.
                         </p>
                         <form action="chenil" method="post">
-                            <input type="text" name="antidote">
+                            <input list="notesListe" name="antidote">
+                            <datalist id="notesListe"></datalist>
                             <input type="submit" name="parler" value="Parler.">
                         </form>
+                        <script src="/escaperpg/scripts/updateDataList.js"></script>
                     <?php else: ?>
                         <p>
                             Gaspard est toujours en train de s'occuper des 4 chiens empoisonnés.<br>
@@ -162,9 +166,11 @@
                             Il ne semble toujours pas enclin à discuter avec vous.
                         </p>
                         <form action="chenil" method="post">
-                            <input type="text" name="antidote">
+                            <input list="notesListe" name="antidote">
+                            <datalist id="notesListe"></datalist>
                             <input type="submit" name="parler" value="Parler.">
                         </form>
+                        <script src="/escaperpg/scripts/updateDataList.js"></script>
                     <?php endif; ?>
                 <?php endif; ?>
             <?php elseif (isset($_SESSION['chienssauves']) || isset($_SESSION['chienssauvesfin'])): ?>

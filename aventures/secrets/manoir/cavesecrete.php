@@ -126,20 +126,25 @@
                     Vous jetez un nouveau regard sur la pièce autour de vous.
                 </p>
                 <form action="cavesecrete" method="post">
-                    <input type="text" name="cave"> <input type="submit" name="chercher" value="Inspecter.">
+                    <input list="notesListe" name="cave">
+                    <datalist id="notesListe"></datalist>
+                    <input type="submit" name="chercher" value="Inspecter.">
                 </form>
-                <?php elseif (isset($_POST['cave'])):
-                switch (str_replace($search, $replace, stripslashes($_POST['cave']))):
+                <script src="/escaperpg/scripts/updateDataList.js"></script>
+            <?php elseif (isset($_POST['cave'])): ?>
+                <?php switch (str_replace($search, $replace, stripslashes($_POST['cave']))):
                     case "liquidejaunatre": ?>
                         <p>
                             Ce liquide semble être du formol, un produit permettant de conserver des corps morts sur une longue période.
                             Votre oncle espérait ainsi pouvoir maintenir l'état de votre père le temps de parfaire sa technique et de le réanimer.
                         </p>
                         <form action="cavesecrete" method="post">
-                            <input type="text" name="cave"> <input type="submit" name="chercher" value="Inspecter.">
+                            <input list="notesListe" name="cave">
+                            <datalist id="notesListe"></datalist>
+                            <input type="submit" name="chercher" value="Inspecter.">
                         </form>
-                    <?php
-                        break;
+                        <script src="/escaperpg/scripts/updateDataList.js"></script>
+                    <?php break;
                     case "cadavres": ?>
                         <p>
                             En examinant de plus près les corps disposés ça-et-là, vous en trouvez un dont le ventre ouvert a été vidé pour y remplacer les organes par un shoggoth, le nom donné par votre oncle à la masse protoplasmique.
@@ -151,19 +156,19 @@
                         <form action="pensees" method="post">
                             <input type="submit" name="pensees" value="Réfléchir calmement.">
                         </form>
-                    <?php
-                        break;
+                    <?php break;
                     default: ?>
                         <p>
                             Êtes-vous sûr de savoir ce que vous cherchez ici ?
                         </p>
                         <form action="cavesecrete" method="post">
-                            <input type="text" name="cave"> <input type="submit" name="chercher" value="Inspecter.">
+                            <input list="notesListe" name="cave">
+                            <datalist id="notesListe"></datalist>
+                            <input type="submit" name="chercher" value="Inspecter.">
                         </form>
-                <?php
-                        break;
-                endswitch;
-                ?>
+                        <script src="/escaperpg/scripts/updateDataList.js"></script>
+                <?php break;
+                endswitch; ?>
             <?php else: ?>
                 <p>
                     En arrivant au bas de l'échelle, vos pieds foulent un sol de terre battue.<br>

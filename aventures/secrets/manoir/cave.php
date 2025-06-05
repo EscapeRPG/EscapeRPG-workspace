@@ -31,9 +31,11 @@
                             La théorie apportée par les domestiques ne semble pas être la bonne...
                         </p>
                         <form action="cave" method="post">
-                            <input type="text" name="cave">
+                            <input list="notesListe" name="cave">
+                            <datalist id="notesListe"></datalist>
                             <input type="submit" name="chercher" value="Chercher.">
                         </form>
+                        <script src="/escaperpg/scripts/updateDataList.js"></script>
                     <?php break;
                     case "restes": ?>
                         <p>
@@ -61,33 +63,38 @@
                             Vous avez beau chercher, vous ne trouvez rien de particulier ici.
                         </p>
                         <form action="cave" method="post">
-                            <input type="text" name="cave">
+                            <input list="notesListe" name="cave">
+                            <datalist id="notesListe"></datalist>
                             <input type="submit" name="chercher" value="Chercher.">
                         </form>
-                <?php
-                        break;
-                endswitch;
-                ?>
+                        <script src="/escaperpg/scripts/updateDataList.js"></script>
+                <?php break;
+                endswitch; ?>
             <?php elseif (isset($_POST['restab'])): ?>
                 <script src="/escaperpg/scripts/inventaireadd.js"></script>
                 <p>
                     Vous essayez de fouiller un peu plus, mais il est évident maintenant que vous ne trouverez pas d'autres morceaux du tableau pour vous aider à avancer.
                 </p>
                 <form action="cave" method="post">
-                    <input type="text" name="cave"> <input type="submit" name="chercher" value="Chercher.">
+                    <input list="notesListe" name="cave">
+                    <datalist id="notesListe"></datalist>
+                    <input type="submit" name="chercher" value="Chercher.">
                 </form>
                 <?php
                 $_SESSION['inventaire'][] = 'tableaubrule';
                 ?>
+                <script src="/escaperpg/scripts/updateDataList.js"></script>
             <?php else: ?>
                 <p>
                     En entrant dans la cave, vous êtes assailli par la terrible <span class="mdp">odeur</span> qui vous a gêné lors de votre arrivée.<br>
                     Elle semble beaucoup plus forte ici. Cependant, vous n'arrivez pas à découvrir d'où elle pourrait provenir précisément.
                 </p>
                 <form action="cave" method="post">
-                    <input type="text" name="cave">
+                    <input list="notesListe" name="cave">
+                    <datalist id="notesListe"></datalist>
                     <input type="submit" name="chercher" value="Chercher.">
                 </form>
+                <script src="/escaperpg/scripts/updateDataList.js"></script>
             <?php endif; ?>
         </div>
     </main>

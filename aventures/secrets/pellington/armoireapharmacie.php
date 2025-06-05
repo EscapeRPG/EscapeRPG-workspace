@@ -74,15 +74,15 @@
 								<form action="armoireapharmacie" method="post">
 									<div id="armoireapharmacie">
 										<img src="/escaperpg/images/secrets/armoireapharmacie.png">
-										<input type="text" name="1" id="1" class="hg" placeholder="0">
-										<input type="text" name="2" id="2" class="hm" placeholder="0">
-										<input type="text" name="3" class="hd" placeholder="0">
-										<input type="text" name="4" class="mg" placeholder="0">
-										<input type="text" name="5" class="mm" placeholder="0">
-										<input type="text" name="6" class="md" placeholder="0">
-										<input type="text" name="7" class="bg" placeholder="0">
-										<input type="text" name="8" class="bm" placeholder="0">
-										<input type="text" name="9" class="bd" placeholder="0">
+										<input list="notesListe" name="1" id="1" class="hg" placeholder="0">
+										<input list="notesListe" name="2" id="2" class="hm" placeholder="0">
+										<input list="notesListe" name="3" class="hd" placeholder="0">
+										<input list="notesListe" name="4" class="mg" placeholder="0">
+										<input list="notesListe" name="5" class="mm" placeholder="0">
+										<input list="notesListe" name="6" class="md" placeholder="0">
+										<input list="notesListe" name="7" class="bg" placeholder="0">
+										<input list="notesListe" name="8" class="bm" placeholder="0">
+										<input list="notesListe" name="9" class="bd" placeholder="0">
 									</div>
 									<center>
 										<input type="submit" name="melanger" value="Mélanger.">
@@ -106,15 +106,15 @@
 								<form action="armoireapharmacie" method="post">
 									<div id="armoireapharmacie">
 										<img src="/escaperpg/images/secrets/armoireapharmacie.png">
-										<input type="text" name="1" id="1" class="hg" placeholder="0">
-										<input type="text" name="2" id="2" class="hm" placeholder="0">
-										<input type="text" name="3" class="hd" placeholder="0">
-										<input type="text" name="4" class="mg" placeholder="0">
-										<input type="text" name="5" class="mm" placeholder="0">
-										<input type="text" name="6" class="md" placeholder="0">
-										<input type="text" name="7" class="bg" placeholder="0">
-										<input type="text" name="8" class="bm" placeholder="0">
-										<input type="text" name="9" class="bd" placeholder="0">
+										<input list="notesListe" name="1" id="1" class="hg" placeholder="0">
+										<input list="notesListe" name="2" id="2" class="hm" placeholder="0">
+										<input list="notesListe" name="3" class="hd" placeholder="0">
+										<input list="notesListe" name="4" class="mg" placeholder="0">
+										<input list="notesListe" name="5" class="mm" placeholder="0">
+										<input list="notesListe" name="6" class="md" placeholder="0">
+										<input list="notesListe" name="7" class="bg" placeholder="0">
+										<input list="notesListe" name="8" class="bm" placeholder="0">
+										<input list="notesListe" name="9" class="bd" placeholder="0">
 									</div>
 									<center>
 										<input type="submit" name="melanger" value="Mélanger.">

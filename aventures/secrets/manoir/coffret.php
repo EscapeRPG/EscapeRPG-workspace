@@ -13,7 +13,7 @@
     <title>Coffret - Secrets Familiaux</title>
 </head>
 
-<body onload="chargement()">
+<body>
     <?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/header.php"; ?>
     <div id="banniere"><img src="/escaperpg/images/secrets/secretsfamiliauxmini.png" alt="secrets familiaux bannière"></div>
     <main>
@@ -69,9 +69,11 @@
                         Avez-vous bien trouvé les 5 éléments à insérer ici ?
                     </p>
                     <form action="coffret" method="post">
-                        <input type="text" name="coffret">
+                        <input list="notesListe" name="coffret">
+                        <datalist id="notesListe"></datalist>
                         <input type="submit" name="cavite" value="Regarder de plus près.">
                     </form>
+                    <script src="/escaperpg/scripts/updateDataList.js"></script>
                 <?php endif; ?>
             <?php else: ?>
                 <p>
@@ -79,7 +81,8 @@
                     Sur la façade, vous apercevez 5 cavités circulaires.
                 </p>
                 <form action="coffret" method="post">
-                    <input type="text" name="coffret">
+                    <input list="notesListe" name="coffret">
+                    <datalist id="notesListe"></datalist>
                     <input type="submit" name="cavite" value="Regarder de plus près.">
                 </form>
                 <?php
@@ -91,6 +94,7 @@
                 $_SESSION['coffrenigme'] = true;
                 unset($_SESSION['aveux']);
                 ?>
+                <script src="/escaperpg/scripts/updateDataList.js"></script>
             <?php endif; ?>
         </div>
     </main>
