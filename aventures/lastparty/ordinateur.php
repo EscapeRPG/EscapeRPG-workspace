@@ -116,7 +116,8 @@
                     <div id="connexion">
                         <form action="ordinateur" method="post">
                             <label for="identifiant">Identifiant</label> :<br>
-                            <input type="text" name="identifiant" id="identifiant">
+                            <input list="notesListe" name="identifiant" id="identifiant">
+                            <datalist id="notesListe"></datalist>
                             <br>
                             <br>
                             <label for="mdpasse">Mot de passe</label> :<br>
@@ -149,6 +150,7 @@
                     $_SESSION['mdp'][] = 'jonathan-lt';
                 }
                 ?>
+                <script src="/escaperpg/scripts/updateDataList.js"></script>
             <?php else: ?>
                 <p>
                     Mince ! Vous n'êtes pas connecté !<br>
