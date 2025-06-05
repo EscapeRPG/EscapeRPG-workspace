@@ -11,6 +11,7 @@
 }
 
 input[type="submit"],
+input[list="notesListe"],
 input[type="text"],
 input[type="password"],
 input[type="email"] {
