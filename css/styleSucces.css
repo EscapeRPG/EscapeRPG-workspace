@@ -290,11 +290,11 @@
 
 @keyframes glow {
     0% {
-        box-shadow: 0 0 10px let(--couleur);
+        box-shadow: 0 0 10px var(--couleur);
     }
 
     100% {
-        box-shadow: 0 0 20px let(--couleur);
+        box-shadow: 0 0 20px var(--couleur);
     }
 }
 
@@ -323,7 +323,7 @@
         background-repeat: no-repeat;
         background-position: 0 0;
         background-image: conic-gradient(rgba(0, 0, 0, 0),
-                let(--couleurshine),
+                var(--couleurshine),
                 rgba(0, 0, 0, 0) 10%);
         animation: succesrotate 5s linear infinite;
         filter: blur(5px);

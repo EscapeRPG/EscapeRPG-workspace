@@ -284,11 +284,11 @@ main {
 
 @keyframes glow {
 	0% {
-		box-shadow: 0 0 10px let(--couleur);
+		box-shadow: 0 0 10px var(--couleur);
 	}
 
 	100% {
-		box-shadow: 0 0 20px let(--couleur);
+		box-shadow: 0 0 20px var(--couleur);
 	}
 }
 
@@ -1605,17 +1605,17 @@ input[type=color] {
 	--scaleY: 0.4;
 	width: 200% !important;
 	left: -50% !important;
-	transform: scale(let(--scaleX), let(--scaleY));
+	transform: scale(var(--scaleX), var(--scaleY));
 	animation: slide 3s linear infinite;
 }
 
 @keyframes slide {
 	from {
-		transform: translateX(0) scale(let(--scaleX), let(--scaleY));
+		transform: translateX(0) scale(var(--scaleX), var(--scaleY));
 	}
 
 	to {
-		transform: translateX(calc(let(--scaleX) * -25%)) scale(let(--scaleX), let(--scaleY));
+		transform: translateX(calc(var(--scaleX) * -25%)) scale(var(--scaleX), var(--scaleY));
 	}
 }
 
@@ -2373,7 +2373,7 @@ input[type=color] {
 	margin: 0 0 10px 0;
 	font-size: 14px;
 	text-align: justify;
-	font-family: consolas;
+	font-family: consolas, sans-serif !important;
 
 	div {
 		margin: 0 10px 14px 0;
@@ -2390,7 +2390,7 @@ input[type=color] {
 	left: 0;
 	background-color: #333;
 	color: #fff;
-	font-family: consolas !important;
+	font-family: consolas, sans-serif !important;
 	min-height: 10px;
 }
 
@@ -2416,7 +2416,7 @@ input[type=color] {
 	font-size: 14px;
 	resize: none;
 	max-width: 600px !important;
-	font-family: consolas !important;
+	font-family: consolas, sans-serif !important;
 
 	&:focus {
 		outline: none;

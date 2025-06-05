@@ -46,8 +46,6 @@ header
 	left: 50%;
 	top: 50%;
 	z-index: 1;
-	width: 150px;
-	height: 150px;
 	margin: -75px 0 0 -75px;
 	border: 5px solid #f3f3f3;
 	border-radius: 50%;
@@ -147,7 +145,6 @@ main
 
 .succesapercu
 {
-	display: inline-block;
 	color: orange;
 	border-radius: 50%;
 	width: 50px;
@@ -302,7 +299,7 @@ main
 
 @keyframes glow
 {
-	0% { box-shadow: 0 0 10px let(--couleur); } 100% { box-shadow: 0 0 20px let(--couleur); }
+	0% { box-shadow: 0 0 10px var(--couleur); } 100% { box-shadow: 0 0 20px var(--couleur); }
 }
 
 .succesbronze, .succesargent, .succesgold, .succesdiamant
@@ -698,18 +695,6 @@ button img
 	text-align: center;
 }
 
-#inventaire
-{
-	display: inline-block;
-	vertical-align: middle;
-	width: 23%;
-}
-
-#inventaire img
-{
-	width: 100%;
-}
-
 input[type=submit]
 {
 	width: 100%;
@@ -781,7 +766,6 @@ input[type=range]
 	bottom: 27.75%;
 	width: 40%;
 	left: 5%;
-	-webkit-appearance: none;
 	background-color: black;
 	padding: 0;
 	border: none;
