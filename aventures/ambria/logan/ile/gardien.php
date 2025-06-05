@@ -22,8 +22,8 @@
 		<main>
 			<nav>
 				<a href="/escaperpg/images/ambria/loganbarthelemymini.png" rel="lightbox[logan]" title="Logan Barthélémy"><img src="/escaperpg/images/ambria/loganbarthelemymini.png"></a>
-				<div id="inventairefooter"><input type="submit" onclick="inventaireshow()" value="INVENTAIRE"></div>
-				<div id="motsdepasse"><input type="submit" onclick="mdpshow()" value="NOTES"></div>
+				<div id="inventairefooter"><input type="submit" value="INVENTAIRE"></div>
+				<div id="motsdepasse"><input type="submit" value="NOTES"></div>
 				<a href="/escaperpg/aventures/ambria/save/save.php" target="_blank" rel="noreferrer"><input type="submit" name="save" value="SAUVEGARDER"></a>
 			</nav>
 			<div id="txt">
@@ -77,7 +77,7 @@
 					elseif (isset ($_POST['combatfin']))
 						{
 							echo'<div id="succespopup">';
-							$nouveausucces = '<img src="/escaperpg/images/succes/ambria/gardien.png"><span><u><b>Défense obsolète !</b></u><br>Vaincre le terrible gardien de la cité</span>';
+							$nouveausucces = '<img src="/escaperpg/images/succes/ambria/gardien.png" alt="gardien"><span><u><b>Défense obsolète !</b></u><br>Vaincre le terrible gardien de la cité</span>';
 							$scenario = 'ambria';
 							$description = 'gardien';
 							$cache = 'oui';

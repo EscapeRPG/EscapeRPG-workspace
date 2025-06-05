@@ -18,12 +18,12 @@
 	
 	<body>
 		<?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/header.php"; ?>
-		<div id="banniere"><img src="/escaperpg/images/secrets/secretsfamiliauxmini.png"></div>
+		<div id="banniere"><img src="/escaperpg/images/secrets/secretsfamiliauxmini.png" alt="secrets familiaux bannière"></div>
 		<main>
 			<nav>
-				<a href="/escaperpg/images/secrets/inspecteurdeckard.png" rel="lightbox[bastian]" title="inspecteurdeckard"><img src="/escaperpg/images/secrets/inspecteurdeckardmini.png"></a>
-				<div id="inventairefooter"><input type="submit" onclick="inventaireshow()" value="INVENTAIRE"></div>
-				<div id="motsdepasse"><input type="submit" onclick="mdpshow()" value="NOTES"></div>
+				<a href="/escaperpg/images/secrets/inspecteurdeckard.png" rel="lightbox[bastian]" title="inspecteurdeckard"><img src="/escaperpg/images/secrets/inspecteurdeckardmini.png" alt="inspecteur deckard"></a>
+				<div id="inventairefooter"><input type="submit" value="INVENTAIRE"></div>
+				<div id="motsdepasse"><input type="submit" value="NOTES"></div>
 				<a href="/escaperpg/aventures/secrets/save/save.php" target="_blank" rel="noreferrer"><input type="submit" name="save" value="SAUVEGARDER"></a>
 			</nav>
 			<div id="txt">
@@ -34,7 +34,7 @@
 								<p>
 									<div class="dialogue">
 										<div class="portrait">
-											<img src="/escaperpg/images/secrets/gaspard.png">
+											<img src="/escaperpg/images/secrets/gaspard.png" alt="gaspard">
 										</div>
 										<div class="bulleperso">
 											<p>
@@ -64,7 +64,7 @@
 											<p>
 												<div class="dialogue">
 													<div class="portrait">
-														<img src="/escaperpg/images/secrets/gaspard.png">
+														<img src="/escaperpg/images/secrets/gaspard.png" alt="gaspard">
 													</div>
 													<div class="bulleperso">
 														<p>
@@ -88,7 +88,7 @@
 											<p>
 												<div class="dialogue">
 													<div class="portrait">
-														<img src="/escaperpg/images/secrets/gaspard.png">
+														<img src="/escaperpg/images/secrets/gaspard.png" alt="gaspard">
 													</div>
 													<div class="bulleperso">
 														<p>
@@ -114,7 +114,7 @@
 											<p>
 												<div class="dialogue">
 													<div class="portrait">
-														<img src="/escaperpg/images/secrets/gaspard.png">
+														<img src="/escaperpg/images/secrets/gaspard.png" alt="gaspard">
 													</div>
 													<div class="bulleperso">
 														<p>

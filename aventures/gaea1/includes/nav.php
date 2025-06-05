@@ -46,9 +46,9 @@
 		</div>
 	<?php endif; ?>
 
-	<div id="inventairefooter"><input type="submit" onclick="inventaireshow()" value="INVENTAIRE"></div>
+	<div id="inventairefooter"><input type="submit" value="INVENTAIRE"></div>
 
-	<div id="motsdepasse"><input type="submit" onclick="mdpshow()" value="NOTES"></div>
+	<div id="motsdepasse"><input type="submit" value="NOTES"></div>
 
 	<a href="/escaperpg/aventures/gaea1/save/save" target="_blank" rel="noreferrer"><input type="submit" name="save" value="SAUVEGARDER"></a>
 </nav>

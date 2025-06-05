@@ -1,4 +1,4 @@
-var	coordonnee1 = document.getElementById('coordonnee1img'),
+let	coordonnee1 = document.getElementById('coordonnee1img'),
 	coordonnee2 = document.getElementById('coordonnee2img'),
 	coordonnee3 = document.getElementById('coordonnee3img'),
 	coordonnee4 = document.getElementById('coordonnee4img'),

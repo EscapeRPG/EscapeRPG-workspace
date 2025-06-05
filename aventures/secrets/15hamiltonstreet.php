@@ -34,7 +34,7 @@
                     <input type="submit" name="suivant2" value="Suivant.">
                 </form>
                 <?php
-                if (!in_array('chiens', $_SESSION['mdp'])) {
+                if (!in_array('Chiens', $_SESSION['mdp'])) {
                     $_SESSION['mdp'][] = 'Chiens';
                 }
                 ?>
@@ -61,8 +61,8 @@
                     <input type="submit" name="suivre" value="Le suivre.">
                 </form>
                 <?php
-                if (!in_array('soucis', $_SESSION['mdp'])) {
-                    $_SESSION['mdp'][] = 'soucis';
+                if (!in_array('Soucis', $_SESSION['mdp'])) {
+                    $_SESSION['mdp'][] = 'Soucis';
                 }
                 ?>
             <?php elseif (isset($_POST['suivre'])): ?>

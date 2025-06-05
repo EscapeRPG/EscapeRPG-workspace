@@ -18,7 +18,7 @@
 	
 	<body>
 		<?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/header.php"; ?>
-		<div id="banniere"><img src="/escaperpg/images/secrets/secretsfamiliauxmini.png"></div>
+		<div id="banniere"><img src="/escaperpg/images/secrets/secretsfamiliauxmini.png" alt="secrets familiaux bannière"></div>
 		<main>
 			<nav>
 				<a href="/escaperpg/images/secrets/inspecteurdeckard.png" rel="lightbox[bastian]" title="inspecteurdeckard"><img src="/escaperpg/images/secrets/inspecteurdeckardmini.png"></a>
@@ -50,7 +50,7 @@
 											<br>
 											<div class="dialogue">
 												<div class="portrait">
-													<img src="/escaperpg/images/secrets/teona.png">
+													<img src="/escaperpg/images/secrets/teona.png" alt="teona">
 												</div>
 												<div class="bulleperso">
 													<p>

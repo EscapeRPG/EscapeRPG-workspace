@@ -1,4 +1,4 @@
-var ali = document.getElementById("lia"),
+let ali = document.getElementById("lia"),
 	bli = document.getElementById("lib"),
 	cli = document.getElementById("lic"),
 	dli = document.getElementById("lid"),

@@ -4,7 +4,7 @@
 
 <sub>French only, might add an english version later.</sub>
 
-## Navigator game, live adventures by incarnating their main protagonists
+## Navigator game, live adventures playing as their main protagonists
 
 What is EscapeRPG ?
 >Escape RPG is a game on navigator where you play texted stories as the main character.

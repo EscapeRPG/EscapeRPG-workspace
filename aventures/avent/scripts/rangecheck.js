@@ -1,6 +1,6 @@
 function rangecheck()
 	{
-		var range = document.getElementById("range").value;
+		let range = document.getElementById("range").value;
 
 		if (range == 4)
 			{

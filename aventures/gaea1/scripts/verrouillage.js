@@ -1,4 +1,4 @@
-var topasalle = document.getElementById("asalletop"),
+let topasalle = document.getElementById("asalletop"),
 	topbsalle = document.getElementById("bsalletop"),
 	topcsalle = document.getElementById("csalletop"),
 	topdsalle = document.getElementById("dsalletop"),
@@ -23,13 +23,13 @@ var topasalle = document.getElementById("asalletop"),
 	cheminchampi = false,
 	countDownDate = new Date().setMinutes(new Date().getMinutes() + 2);
 
-var x = setInterval(function()
+let x = setInterval(function()
 {
-	var now = new Date().getTime();
-	var distance = countDownDate - now;
-	var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60)).toString().padStart(2, '0');
-	var secondes = Math.floor((distance % (1000 * 60)) / 1000).toString().padStart(2, '0');
-	var millisecondes = Math.floor((distance % (1000)) / 100);
+	let now = new Date().getTime();
+	let distance = countDownDate - now;
+	let minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60)).toString().padStart(2, '0');
+	let secondes = Math.floor((distance % (1000 * 60)) / 1000).toString().padStart(2, '0');
+	let millisecondes = Math.floor((distance % (1000)) / 100);
 	timer.innerHTML = minutes + " : " + secondes + " : " + millisecondes;
 	if (distance < 0) { clearInterval(x); timer.innerHTML = "00 : 00 : 0"; alert('Game over man !'); }
 }, 100);
