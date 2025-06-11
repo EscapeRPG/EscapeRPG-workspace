@@ -21,29 +21,6 @@ let first,
   twentyfirst,
   twentysecond,
   twentythird,
-  drop1 = document.getElementById("c1"),
-  drop2 = document.getElementById("d1"),
-  drop3 = document.getElementById("e1"),
-  drop4 = document.getElementById("a2"),
-  drop5 = document.getElementById("b2"),
-  drop6 = document.getElementById("c2"),
-  drop7 = document.getElementById("d2"),
-  drop8 = document.getElementById("e2"),
-  drop9 = document.getElementById("a3"),
-  drop10 = document.getElementById("b3"),
-  drop11 = document.getElementById("c3"),
-  drop12 = document.getElementById("d3"),
-  drop13 = document.getElementById("e3"),
-  drop14 = document.getElementById("a4"),
-  drop15 = document.getElementById("b4"),
-  drop16 = document.getElementById("c4"),
-  drop17 = document.getElementById("d4"),
-  drop18 = document.getElementById("e4"),
-  drop19 = document.getElementById("a5"),
-  drop20 = document.getElementById("b5"),
-  drop21 = document.getElementById("c5"),
-  drop22 = document.getElementById("d5"),
-  drop23 = document.getElementById("e5"),
   drag1 = document.getElementById("dra1"),
   drag2 = document.getElementById("dra2"),
   drag3 = document.getElementById("dra3"),
@@ -69,14 +46,14 @@ let first,
   drag23 = document.getElementById("dra23"),
   panneau = document.getElementById("panneauelec");
 
+let i = 0,
+  letter = "c",
+  index = 1;
+
+const id = `${letter}${index}`,
+  elementRefs = {};
+
 function dragdrop() {
-  let i = 0,
-    letter = "c",
-    index = 1;
-
-  const id = `${letter}${index}`,
-    elementRefs = {};
-
   while (i < 24) {
     panneau.innerHTML += `<div class="dropperelec" id="${id}"></div>`;
     elementRefs[id] = document.getElementById(id);
@@ -134,218 +111,7 @@ function dragdrop() {
 
         draggedElement.parentNode.removeChild(draggedElement); // Suppression de l'élément d'origine
 
-        if (target == drop1 && clonedElement == dra23) {
-          first = true;
-        } else if (
-          (target == drop1 && clonedElement != dra23) ||
-          (target != drop1 && clonedElement == dra23)
-        ) {
-          first = false;
-        }
-        if (target == drop2 && clonedElement == dra8) {
-          second = true;
-        } else if (
-          (target == drop2 && clonedElement != dra8) ||
-          (target != drop2 && clonedElement == dra8)
-        ) {
-          second = false;
-        }
-        if (target == drop3 && clonedElement == dra18) {
-          third = true;
-        } else if (
-          (target == drop3 && clonedElement != dra18) ||
-          (target != drop3 && clonedElement == dra18)
-        ) {
-          third = false;
-        }
-        if (target == drop4 && clonedElement == dra5) {
-          fourth = true;
-        } else if (
-          (target == drop4 && clonedElement != dra5) ||
-          (target != drop4 && clonedElement == dra5)
-        ) {
-          fourth = false;
-        }
-        if (target == drop5 && clonedElement == dra1) {
-          fifth = true;
-        } else if (
-          (target == drop5 && clonedElement != dra1) ||
-          (target != drop5 && clonedElement == dra1)
-        ) {
-          fifth = false;
-        }
-        if (target == drop6 && clonedElement == dra14) {
-          sixth = true;
-        } else if (
-          (target == drop6 && clonedElement != dra14) ||
-          (target != drop6 && clonedElement == dra14)
-        ) {
-          sixth = false;
-        }
-        if (target == drop7 && clonedElement == dra9) {
-          seventh = true;
-        } else if (
-          (target == drop7 && clonedElement != dra9) ||
-          (target != drop7 && clonedElement == dra9)
-        ) {
-          seventh = false;
-        }
-        if (target == drop8 && clonedElement == dra21) {
-          eighth = true;
-        } else if (
-          (target == drop8 && clonedElement != dra21) ||
-          (target != drop8 && clonedElement == dra21)
-        ) {
-          eighth = false;
-        }
-        if (target == drop9 && clonedElement == dra2) {
-          nineth = true;
-        } else if (
-          (target == drop9 && clonedElement != dra2) ||
-          (target != drop9 && clonedElement == dra2)
-        ) {
-          nineth = false;
-        }
-        if (target == drop10 && clonedElement == dra11) {
-          tenth = true;
-        } else if (
-          (target == drop10 && clonedElement != dra11) ||
-          (target != drop10 && clonedElement == dra11)
-        ) {
-          tenth = false;
-        }
-        if (target == drop11 && clonedElement == dra20) {
-          eleventh = true;
-        } else if (
-          (target == drop11 && clonedElement != dra20) ||
-          (target != drop11 && clonedElement == dra20)
-        ) {
-          eleventh = false;
-        }
-        if (target == drop12 && clonedElement == dra15) {
-          twelveth = true;
-        } else if (
-          (target == drop12 && clonedElement != dra15) ||
-          (target != drop12 && clonedElement == dra15)
-        ) {
-          twelveth = false;
-        }
-        if (target == drop13 && clonedElement == dra6) {
-          thirteenth = true;
-        } else if (
-          (target == drop13 && clonedElement != dra6) ||
-          (target != drop13 && clonedElement == dra6)
-        ) {
-          thirteenth = false;
-        }
-        if (target == drop14 && clonedElement == dra4) {
-          fourteenth = true;
-        } else if (
-          (target == drop14 && clonedElement != dra4) ||
-          (target != drop14 && clonedElement == dra4)
-        ) {
-          fourteenth = false;
-        }
-        if (target == drop15 && clonedElement == dra19) {
-          fifteenth = true;
-        } else if (
-          (target == drop15 && clonedElement != dra19) ||
-          (target != drop15 && clonedElement == dra19)
-        ) {
-          fifteenth = false;
-        }
-        if (target == drop16 && clonedElement == dra16) {
-          sixteenth = true;
-        } else if (
-          (target == drop16 && clonedElement != dra16) ||
-          (target != drop16 && clonedElement == dra16)
-        ) {
-          sixteenth = false;
-        }
-        if (target == drop17 && clonedElement == dra22) {
-          seventeenth = true;
-        } else if (
-          (target == drop17 && clonedElement != dra22) ||
-          (target != drop17 && clonedElement == dra22)
-        ) {
-          seventeenth = false;
-        }
-        if (target == drop18 && clonedElement == dra7) {
-          eighteenth = true;
-        } else if (
-          (target == drop18 && clonedElement != dra7) ||
-          (target != drop18 && clonedElement == dra7)
-        ) {
-          eighteenth = false;
-        }
-        if (target == drop19 && clonedElement == dra17) {
-          nineteenth = true;
-        } else if (
-          (target == drop19 && clonedElement != dra17) ||
-          (target != drop19 && clonedElement == dra17)
-        ) {
-          nineteenth = false;
-        }
-        if (target == drop20 && clonedElement == dra12) {
-          twentieth = true;
-        } else if (
-          (target == drop20 && clonedElement != dra12) ||
-          (target != drop20 && clonedElement == dra12)
-        ) {
-          twentieth = false;
-        }
-        if (target == drop21 && clonedElement == dra13) {
-          twentyfirst = true;
-        } else if (
-          (target == drop21 && clonedElement != dra13) ||
-          (target != drop21 && clonedElement == dra13)
-        ) {
-          twentyfirst = false;
-        }
-        if (target == drop22 && clonedElement == dra3) {
-          twentysecond = true;
-        } else if (
-          (target == drop22 && clonedElement != dra3) ||
-          (target != drop22 && clonedElement == dra3)
-        ) {
-          twentysecond = false;
-        }
-        if (target == drop23 && clonedElement == dra10) {
-          twentythird = true;
-        } else if (
-          (target == drop23 && clonedElement != dra10) ||
-          (target != drop23 && clonedElement == dra10)
-        ) {
-          twentythird = false;
-        }
-        if (
-          first &&
-          second &&
-          third &&
-          fourth &&
-          fifth &&
-          sixth &&
-          seventh &&
-          eighth &&
-          nineth &&
-          tenth &&
-          eleventh &&
-          twelveth &&
-          thirteenth &&
-          fourteenth &&
-          fifteenth &&
-          sixteenth &&
-          seventeenth &&
-          eighteenth &&
-          nineteenth &&
-          twentieth &&
-          twentyfirst &&
-          twentysecond &&
-          twentythird
-        ) {
-          alert("Le bourdonnement rassurant de l'électricité semble revenir.");
-          document.location.href = "cuves.php";
-        }
+        checkDrags();
       });
     },
 
@@ -406,3 +172,62 @@ function dragdrop() {
 }
 
 dragdrop();
+
+function checkDrags() {
+  first = !!(target == drop1 && clonedElement == drag23);
+  second = !!(target == drop2 && clonedElement == drag8);
+  third = !!(target == drop3 && clonedElement == drag18);
+  fourth = !!(target == drop4 && clonedElement == drag5);
+  fifth = !!(target == drop5 && clonedElement == drag1);
+  sixth = !!(target == drop6 && clonedElement == drag14);
+  seventh = !!(target == drop7 && clonedElement == drag9);
+  eighth = !!(target == drop8 && clonedElement == drag21);
+  nineth = !!(target == drop9 && clonedElement == drag2);
+  tenth = !!(target == drop10 && clonedElement == drag11);
+  eleventh = !!(target == drop11 && clonedElement == drag20);
+  twelveth = !!(target == drop12 && clonedElement == drag15);
+  thirteenth = !!(target == drop13 && clonedElement == drag6);
+  fourteenth = !!(target == drop14 && clonedElement == drag4);
+  fifteenth = !!(target == drop15 && clonedElement == drag19);
+  sixteenth = !!(target == drop16 && clonedElement == drag16);
+  seventeenth = !!(target == drop17 && clonedElement == drag22);
+  eighteenth = !!(target == drop18 && clonedElement == drag7);
+  nineteenth = !!(target == drop19 && clonedElement == drag17);
+  twentieth = !!(target == drop20 && clonedElement == drag12);
+  twentyfirst = !!(target == drop21 && clonedElement == drag13);
+  twentysecond = !!(target == drop22 && clonedElement == drag3);
+  twentythird = !!(target == drop23 && clonedElement == drag10);
+
+  finalCheck();
+}
+
+function finalCheck() {
+  if (
+    first &&
+    second &&
+    third &&
+    fourth &&
+    fifth &&
+    sixth &&
+    seventh &&
+    eighth &&
+    nineth &&
+    tenth &&
+    eleventh &&
+    twelveth &&
+    thirteenth &&
+    fourteenth &&
+    fifteenth &&
+    sixteenth &&
+    seventeenth &&
+    eighteenth &&
+    nineteenth &&
+    twentieth &&
+    twentyfirst &&
+    twentysecond &&
+    twentythird
+  ) {
+    alert("Le bourdonnement rassurant de l'électricité semble revenir.");
+    document.location.href = "cuves.php";
+  }
+}
