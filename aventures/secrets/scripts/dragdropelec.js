@@ -1,71 +1,137 @@
-let first,
-  second,
-  third,
-  fourth,
-  fifth,
-  sixth,
-  seventh,
-  eighth,
-  nineth,
-  tenth,
-  eleventh,
-  twelveth,
-  thirteenth,
-  fourteenth,
-  fifteenth,
-  sixteenth,
-  seventeenth,
-  eighteenth,
-  nineteenth,
-  twentieth,
-  twentyfirst,
-  twentysecond,
-  twentythird,
-  drag1 = document.getElementById("dra1"),
-  drag2 = document.getElementById("dra2"),
-  drag3 = document.getElementById("dra3"),
-  drag4 = document.getElementById("dra4"),
-  drag5 = document.getElementById("dra5"),
-  drag6 = document.getElementById("dra6"),
-  drag7 = document.getElementById("dra7"),
-  drag8 = document.getElementById("dra8"),
-  drag9 = document.getElementById("dra9"),
-  drag10 = document.getElementById("dra10"),
-  drag11 = document.getElementById("dra11"),
-  drag12 = document.getElementById("dra12"),
-  drag13 = document.getElementById("dra13"),
-  drag14 = document.getElementById("dra14"),
-  drag15 = document.getElementById("dra15"),
-  drag16 = document.getElementById("dra16"),
-  drag17 = document.getElementById("dra17"),
-  drag18 = document.getElementById("dra18"),
-  drag19 = document.getElementById("dra19"),
-  drag20 = document.getElementById("dra20"),
-  drag21 = document.getElementById("dra21"),
-  drag22 = document.getElementById("dra22"),
-  drag23 = document.getElementById("dra23"),
-  panneau = document.getElementById("panneauelec");
+function createDroppers(panneau) {
+  for (let i = 0; i < 23; i++) {
+    const id = `drop${i + 1}`;
+    const dropDiv = document.createElement("div");
+    dropDiv.className = "dropperelec";
+    dropDiv.id = id;
+    panneau.appendChild(dropDiv);
+  }
+}
 
-let i = 0,
-  letter = "c",
-  index = 1;
+const correctMapping = {
+  drop1: "drag23",
+  drop2: "drag8",
+  drop3: "drag18",
+  drop4: "drag5",
+  drop5: "drag1",
+  drop6: "drag14",
+  drop7: "drag9",
+  drop8: "drag21",
+  drop9: "drag2",
+  drop10: "drag11",
+  drop11: "drag20",
+  drop12: "drag15",
+  drop13: "drag6",
+  drop14: "drag4",
+  drop15: "drag19",
+  drop16: "drag16",
+  drop17: "drag22",
+  drop18: "drag7",
+  drop19: "drag17",
+  drop20: "drag12",
+  drop21: "drag13",
+  drop22: "drag3",
+  drop23: "drag10",
+};
 
-const id = `${letter}${index}`,
-  elementRefs = {};
+function enableDragDrop() {
+  const draggables = document.querySelectorAll(".draggableelec");
+  const droppers = document.querySelectorAll(".dropperelec");
 
-function dragdrop() {
-  while (i < 24) {
-    panneau.innerHTML += `<div class="dropperelec" id="${id}"></div>`;
-    elementRefs[id] = document.getElementById(id);
-    letter = String.fromCharCode(letter.charCodeAt(0) + 1);
-    i++;
+  draggables.forEach((el) => {
+    el.draggable = true;
+    el.addEventListener("dragstart", (e) => {
+      e.dataTransfer.setData("text/plain", e.target.id);
+    });
+  });
 
-    if (letter == "e") {
-      index++;
-      letter = "a";
+  droppers.forEach((drop) => {
+    drop.addEventListener("dragover", (e) => {
+      e.preventDefault();
+      drop.classList.add("drop_hover");
+    });
+
+    drop.addEventListener("dragleave", () => {
+      drop.classList.remove("drop_hover");
+    });
+
+    drop.addEventListener("drop", (e) => {
+      e.preventDefault();
+      drop.classList.remove("drop_hover");
+
+      const draggedId = e.dataTransfer.getData("text/plain");
+      const draggedElement = document.getElementById(draggedId);
+
+      if (draggedElement) {
+        drop.innerHTML = "";
+        drop.appendChild(draggedElement);
+      }
+
+      checkDrags();
+    });
+  });
+}
+
+function checkDrags() {
+  let isCorrect = true;
+
+  for (let [dropId, dragId] of Object.entries(correctMapping)) {
+    const drop = document.getElementById(dropId);
+    const drag = drop.firstElementChild;
+
+    if (!drag || drag.id !== dragId) {
+      isCorrect = false;
+      break;
     }
   }
 
+  if (isCorrect) {
+    alert("Le bourdonnement rassurant de l'électricité semble revenir.");
+    document.location.href = "cuves.php";
+  }
+}
+
+window.addEventListener("DOMContentLoaded", () => {
+  const panneau = document.getElementById("panneauelec");
+  createDroppers(panneau);
+  enableDragDrop();
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+function dragdrop() {
   let dndHandler = {
     draggedElement: null, // Propriété pointant vers l'élément en cours de déplacement
 
@@ -170,8 +236,8 @@ function dragdrop() {
     dndHandler.applyDropdragEvents(draggables[i]); // Application des événements nécessaires aux zones de drag et drop d'où proviennent les draggables d'origine
   }
 }
-
 dragdrop();
+
 
 function checkDrags() {
   first = !!(target == drop1 && clonedElement == drag23);
