@@ -19,8 +19,8 @@
     <main>
         <nav>
             <?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/aventures/secrets/includes/navAvatar.php"; ?>
-            <?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/aventures/secrets/includes/navInputs.php"; ?>
             <?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/aventures/secrets/includes/navigationmanoir.php"; ?>
+            <?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/aventures/secrets/includes/navInputs.php"; ?>
         </nav>
         <div id="txt">
             <?php if (isset($_POST['domestiques'])): ?>
@@ -39,7 +39,7 @@
                         </div>
                         <?php
                         if (!in_array('Domestiques', $_SESSION['mdp'])) {
-                        $_SESSION['mdp'][] = "Domestiques";
+                            $_SESSION['mdp'][] = "Domestiques";
                         }
                         break;
                     case "domestiques": ?>

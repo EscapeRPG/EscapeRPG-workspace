@@ -19,8 +19,8 @@
     <main>
         <nav>
             <?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/aventures/secrets/includes/navAvatar.php"; ?>
-            <?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/aventures/secrets/includes/navInputs.php"; ?>
             <?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/aventures/secrets/includes/navigationmanoir.php"; ?>
+            <?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/aventures/secrets/includes/navInputs.php"; ?>
         </nav>
         <div id="txt">
             <?php if (isset($_SESSION['visitepellington'])): ?>
@@ -44,8 +44,12 @@
                         <input type="submit" name="coffret" value="Ajouter à l'inventaire.">
                     </form>
                     <?php
-                    $_SESSION['inventaire'][] = 'piecedi';
-                    $_SESSION['inventaire'][] = 'oldcle';
+                    if (!in_array('piecedi', $_SESSION['inventaire'])) {
+                        $_SESSION['inventaire'][] = 'piecedi';
+                    }
+                    if (!in_array('vieillecle', $_SESSION['inventaire'])) {
+                        $_SESSION['inventaire'][] = 'oldcle';
+                    }
                     unset($_SESSION['restab']);
                     unset($_SESSION['magna']);
                     ?>
@@ -58,7 +62,11 @@
                     <form action="coffret" method="post">
                         <input type="submit" name="retour" value="Étudier le coffret.">
                     </form>
-                    <?php $_SESSION['inventaire'][] = 'coffret'; ?>
+                    <?php
+                    if (!in_array('coffret', $_SESSION['inventaire'])) {
+                        $_SESSION['inventaire'][] = 'coffret';
+                    }
+                    ?>
                 <?php else: ?>
                     <img src="/escaperpg/images/secrets/coffrefort.png" alt="la porte du coffre-fort">
                     <?php if (isset($_POST['droite']) || isset($_POST['gauche']) || isset($_POST['retry'])): ?>

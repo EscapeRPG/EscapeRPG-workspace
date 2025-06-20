@@ -19,8 +19,8 @@
     <main>
         <nav>
             <?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/aventures/secrets/includes/navAvatar.php"; ?>
-            <?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/aventures/secrets/includes/navInputs.php"; ?>
             <?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/aventures/secrets/includes/navigationmanoir.php"; ?>
+            <?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/aventures/secrets/includes/navInputs.php"; ?>
         </nav>
         <div id="txt">
             <?php if (isset($_POST['sad'])): ?>
@@ -31,7 +31,8 @@
                 <form action="chambre" method="post">
                     <input type="submit" name="retour" value="Retour.">
                 </form>
-                <?php if (!in_array('piecead', $_SESSION['inventaire'])) {
+                <?php
+                if (!in_array('piecead', $_SESSION['inventaire'])) {
                     $_SESSION['inventaire'][] = 'piecead';
                 }
                 ?>
