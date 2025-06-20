@@ -25,6 +25,11 @@
         <div id="txt">
             <?php if (isset($_POST['coffret']) || isset($_SESSION['coffrenigme'])): ?>
                 <?php if (isset($_SESSION['coffrenigme']) || str_replace($search, $replace, stripslashes($_POST['coffret'])) == "aeb6fcu2m8"): ?>
+                    <?php
+                    if (isset($_POST['coffret'])) {
+                        include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/resetIndices.php";
+                    }
+                    ?>
                     <div id="coffret">
                         <img src="/escaperpg/images/secrets/coffretface.png" alt="coffret">
                         <div class="dropper" id="drop1"></div>
@@ -92,7 +97,11 @@
                 $indice3 = "Chaque pièce comporte un fragment de code, récupérez-les et associez-les pour obtenir le code.";
                 include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/indices.php";
                 $_SESSION['coffrenigme'] = true;
-                unset($_SESSION['aveux']);
+                $key = array_search('aveux', $_SESSION['inventaire']);
+                if ($key !== false) {
+                    unset($_SESSION['inventaire'][$key]);
+                    $_SESSION['inventaire'] = array_values($_SESSION['inventaire']);
+                }
                 ?>
                 <script src="/escaperpg/scripts/updateDataList.js"></script>
             <?php endif; ?>

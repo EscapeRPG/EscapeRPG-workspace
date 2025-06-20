@@ -87,7 +87,6 @@
                 $indice2 = "Si ce n'est pas le cas, vous devriez vous intéresser d'un peu plus près à la porte du bureau de votre oncle, quelque chose pourrait attirer votre attention.";
                 $indice3 = "Il s'agit d'un message codé par la technique des templiers. Chaque tableau est séparé en 4 parties, essayez de visualiser chacune de ces parties indépendament pour décoder le message.";
                 include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/indices.php";
-                $_SESSION['telephone'] = true;
                 ?>
             <?php else: ?>
                 <div id="enigme">
@@ -107,6 +106,7 @@
                 <form action="papier" method="post">
                     <input type="submit" name="papier" value="Ajouter à l'inventaire.">
                 </form>
+                <?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/resetIndices.php"; ?>
             <?php endif; ?>
         </div>
     </main>

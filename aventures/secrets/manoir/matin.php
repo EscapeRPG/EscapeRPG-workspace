@@ -45,6 +45,7 @@ $indicesInclude = "/escaperpg/includes/indices.php";
                     <form action="matin" method="post">
                         <input type="submit" name="non" value="Non.">
                     </form>
+                    <?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/resetIndices.php"; ?>
                 <?php else: ?>
                     <div class="dialogue">
                         <div class="portrait">
@@ -59,8 +60,6 @@ $indicesInclude = "/escaperpg/includes/indices.php";
                     <form action="matin" method="post">
                         <input list="notesListe" name="police">
                         <input type="submit" name="repondre" value="Répondre.">
-                        <br>
-                        <button type="submit" name="indice" class="boutonindice"></button>
                     </form>
                 <?php endif; ?>
             <?php elseif (isset($_POST['telephone'])): ?>

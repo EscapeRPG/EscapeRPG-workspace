@@ -290,8 +290,17 @@
                     </form>
                     <?php
                     unset($_SESSION['bureauprive']);
-                    unset($_SESSION['templar']);
-                    unset($_SESSION['papier']);
+                    $key = array_search('templar', $_SESSION['inventaire']);
+                    if ($key !== false) {
+                        unset($_SESSION['inventaire'][$key]);
+                        $_SESSION['inventaire'] = array_values($_SESSION['inventaire']);
+                    }
+                    $key = array_search('papier', $_SESSION['inventaire']);
+                    if ($key !== false) {
+                        unset($_SESSION['inventaire'][$key]);
+                        $_SESSION['inventaire'] = array_values($_SESSION['inventaire']);
+                    }
+                    include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/resetIndices.php";
                     ?>
                 <?php endif; ?>
             <?php endif; ?>

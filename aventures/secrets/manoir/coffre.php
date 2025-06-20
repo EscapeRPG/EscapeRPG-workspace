@@ -113,6 +113,7 @@
                                 if (!in_array('Vieille clé', $_SESSION['mdp'])) {
                                     $_SESSION['mdp'][] = 'Vieille clé';
                                 }
+                                include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/resetIndices.php";
                                 ?>
                             <?php else: ?>
                                 <?php
@@ -196,6 +197,7 @@
                                 Impossible de l'ouvrir sans la <span class="indice">combinaison</span>, mais peut-être l'avez-vous trouvée maintenant ?<br>
                                 <br>
                                 Entrez le premier chiffre.
+                            </p>
                             <form action="coffre" method="post">
                                 <input type="submit" name="gauche" value="←">
                                 <input type="text" name="combinaison1">
@@ -205,9 +207,9 @@
                             <form action="chambre" method="post">
                                 <input type="submit" name="retour" value="Retour.">
                             </form>
-                            </p>
+                            <?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/resetIndices.php"; ?>
+                        <?php endif; ?>
                         <?php
-                        endif;
                         if (!isset($_SESSION['coffrefortouvert'])) {
                             $reponse = `
                                 Le premier chiffre est 2, le tome du Magna Mater, à tourner vers la droite.<br>
