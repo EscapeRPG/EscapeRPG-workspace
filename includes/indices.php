@@ -14,13 +14,14 @@
         }
         ?>
     </div>
-<?php
+    <?php
     $_SESSION['indice2'] ? $_SESSION['indice3'] = true : null;
     $_SESSION['indice1'] ? $_SESSION['indice2'] = true : null;
     $_SESSION['indice1'] = true;
-endif;
+    ?>
+<?php endif; ?>
 
-if (isset($_POST['reponse'])): ?>
+<?php if (isset($_POST['reponse'])): ?>
     <div id="succespopup">
         <?php
         $nouveausucces = '<img src="/escaperpg/images/succes/general/reponse.png"><span><u><b>Je n\'y arrivais pas...</b></u><br>Utiliser une réponse pour s\'en sortir d\'une énigme</span>';
@@ -48,7 +49,7 @@ if (isset($_POST['reponse'])): ?>
     <div class="indice">
         <?php if ($_SESSION['indice1']): ?><?= $indice1 ?><?php endif; ?>
         <?php if ($_SESSION['indice2']): ?><br><br><?= $indice2 ?><?php endif; ?>
-        <?php if ($_SESSION['indice3']): ?><br><br><?= $indice3 ?><?php endif; ?>
+            <?php if ($_SESSION['indice3']): ?><br><br><?= $indice3 ?><?php endif; ?>
     </div>
 
     <form method="post">
