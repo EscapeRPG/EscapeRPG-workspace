@@ -47,8 +47,7 @@
                 }
                 ?>
             <?php elseif (isset($_POST['nuit'])): ?>
-                <?php switch (str_replace($search, $replace, stripslashes($_POST['nuit']))): ?>
-                <?php
+                <?php switch (str_replace($search, $replace, stripslashes($_POST['nuit']))):
                     case "voituregrise": ?>
                         <div class="dialogue">
                             <div class="portrait">
@@ -60,8 +59,7 @@
                                 </p>
                             </div>
                         </div>
-                        <?php break; ?>
-                    <?php
+                    <?php break;
                     case "pellington": ?>
                         <div class="dialogue">
                             <div class="portrait">
@@ -75,8 +73,7 @@
                                 </p>
                             </div>
                         </div>
-                        <?php break; ?>
-                    <?php
+                    <?php break;
                     default: ?>
                         <div class="dialogue">
                             <div class="portrait">
@@ -88,8 +85,8 @@
                                 </p>
                             </div>
                         </div>
-                        <?php break; ?>
-                <?php endswitch; ?>
+                <?php break;
+                endswitch; ?>
                 <form action="jour2" method="post">
                     <input list="notesListe" name="nuit">
                     <input type="submit" name="interroger" value="Interroger.">

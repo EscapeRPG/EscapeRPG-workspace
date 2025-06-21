@@ -24,8 +24,7 @@
         </nav>
         <div id="txt">
             <?php if (isset($_POST['gaspard'])): ?>
-                <?php switch (str_replace($search, $replace, stripslashes($_POST['gaspard']))): ?>
-                <?php
+                <?php switch (str_replace($search, $replace, stripslashes($_POST['gaspard']))):
                     case "pellington": ?>
                         <div class="dialogue">
                             <div class="portrait">
@@ -38,8 +37,7 @@
                                 </p>
                             </div>
                         </div>
-                        <?php break; ?>
-                    <?php
+                    <?php break;
                     case "domestiques": ?>
                         <div class="dialogue">
                             <div class="portrait">
@@ -52,8 +50,7 @@
                                 </p>
                             </div>
                         </div>
-                        <?php break; ?>
-                    <?php
+                    <?php break;
                     case "chiens": ?>
                         <div class="dialogue">
                             <div class="portrait">
@@ -67,8 +64,7 @@
                                 </p>
                             </div>
                         </div>
-                        <?php break; ?>
-                    <?php
+                    <?php break;
                     case "soucis": ?>
                         <div class="dialogue">
                             <div class="portrait">
@@ -85,8 +81,7 @@
                         if (!in_array("Chiens", $_SESSION['mdp'])) {
                             $_SESSION['mdp'][] = "Chiens";
                         }
-                        break; ?>
-                    <?php
+                        break;
                     case "odeur": ?>
                         <div class="dialogue">
                             <div class="portrait">
@@ -100,8 +95,7 @@
                                 </p>
                             </div>
                         </div>
-                        <?php break; ?>
-                    <?php
+                    <?php break;
                     case "symbole": ?>
                         <div class="dialogue">
                             <div class="portrait">
@@ -113,8 +107,7 @@
                                 </p>
                             </div>
                         </div>
-                        <?php break; ?>
-                    <?php
+                    <?php break;
                     case "bureau": ?>
                         <div class="dialogue">
                             <div class="portrait">
@@ -127,8 +120,7 @@
                                 </p>
                             </div>
                         </div>
-                        <?php break; ?>
-                    <?php
+                    <?php break;
                     case "empreintedepas": ?>
                         <div class="dialogue">
                             <div class="portrait">
@@ -140,8 +132,7 @@
                                 </p>
                             </div>
                         </div>
-                        <?php break; ?>
-                    <?php
+                    <?php break;
                     case "nourriture": ?>
                         <div class="dialogue">
                             <div class="portrait">
@@ -158,12 +149,10 @@
                         <p>
                             Soudain, Gaspard blêmit et se rue hors de sa maison pour aller voir les <span class="mdp">chiens</span>.
                         </p>
-                        <?php
+                    <?php
                         $_SESSION['chiensmal'] = true;
                         unset($_SESSION['intrusion']);
                         break;
-                        ?>
-                    <?php
                     case "teona": ?>
                         <div class="dialogue">
                             <div class="portrait">
@@ -176,8 +165,7 @@
                             </div>
                             <br>
                         </div>
-                        <?php break; ?>
-                    <?php
+                    <?php break;
                     case "monica": ?>
                         <div class="dialogue">
                             <div class="portrait">
@@ -192,8 +180,7 @@
                             </div>
                             <br>
                         </div>
-                        <?php break; ?>
-                    <?php
+                    <?php break;
                     case "mmenouveau": ?>
                         <div class="dialogue">
                             <div class="portrait">
@@ -206,8 +193,7 @@
                             </div>
                             <br>
                         </div>
-                        <?php break; ?>
-                    <?php
+                    <?php break;
                     default: ?>
                         <div class="dialogue">
                             <div class="portrait">
@@ -220,8 +206,8 @@
                             </div>
                         </div>
                         </p>
-                        <?php break; ?>
-                <?php endswitch; ?>
+                <?php break;
+                endswitch; ?>
                 <form action="maisongaspard" method="post">
                     <input list="notesListe" name="gaspard">
                     <input type="submit" name="interroger" value="Interroger.">
