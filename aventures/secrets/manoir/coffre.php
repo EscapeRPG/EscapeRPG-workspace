@@ -51,7 +51,7 @@
                         $_SESSION['inventaire'][] = 'oldcle';
                     }
                     unset($_SESSION['restab']);
-                    unset($_SESSION['magna']);
+                    unset($_SESSION['magnamater']);
                     ?>
                 <?php elseif (isset($_POST['coffret'])): ?>
                     <script src="/escaperpg/scripts/inventaireadd.js"></script>
@@ -69,9 +69,9 @@
                     ?>
                 <?php else: ?>
                     <img src="/escaperpg/images/secrets/coffrefort.png" alt="la porte du coffre-fort">
-                    <?php if (isset($_POST['droite']) || isset($_POST['gauche']) || isset($_POST['retry'])): ?>
+                    <?php if (isset($_POST['droite']) || isset($_POST['gauche'])): ?>
                         <?php if (isset($_POST['combinaison4'])): ?>
-                            <?php $_SESSION['combinaisoncoffre'] += isset($_POST['gauche']) ? "g" : "d" + $_POST['combinaison4'] ?>
+                            <?php $_SESSION['combinaisoncoffre'] .= (isset($_POST['gauche']) ? "g" : "d") . $_POST['combinaison4']; ?>
                             <?php if ($_SESSION['combinaisoncoffre'] == "d2d9g4d7"): ?>
                                 <div id="succespopup">
                                     <?php
@@ -117,8 +117,8 @@
                                 ?>
                             <?php else: ?>
                                 <?php
-                                $_SESSION['combinaisoncoffre'] += "";
-                                $_SESSION['combinaisonactuelle'] == "";
+                                $_SESSION['combinaisoncoffre'] = "";
+                                $_SESSION['combinaisonactuelle'] = "1";
                                 ?>
                                 <audio src="/escaperpg/sons/secrets/coffrefort4.mp3" autoplay></audio>
                                 <p>
@@ -139,7 +139,7 @@
                             <?php endif; ?>
                         <?php elseif (isset($_POST['combinaison3']) || $_SESSION['combinaisonactuelle'] == "3"): ?>
                             <?php
-                            $_SESSION['combinaisoncoffre'] += isset($_POST['gauche']) ? "g" : "d" + $_POST['combinaison3'];
+                            $_SESSION['combinaisoncoffre'] .= (isset($_POST['gauche']) ? "g" : "d") . $_POST['combinaison3'];
                             $_SESSION['combinaisonactuelle'] = "3";
                             ?>
                             <audio src="/escaperpg/sons/secrets/coffrefort3.mp3" autoplay></audio>
@@ -157,7 +157,7 @@
                             </form>
                         <?php elseif (isset($_POST['combinaison2']) || $_SESSION['combinaisonactuelle'] == "2"): ?>
                             <?php
-                            $_SESSION['combinaisoncoffre'] += isset($_POST['gauche']) ? "g" : "d" + $_POST['combinaison2'];
+                            $_SESSION['combinaisoncoffre'] .= (isset($_POST['gauche']) ? "g" : "d") . $_POST['combinaison2'];
                             $_SESSION['combinaisonactuelle'] = "2";
                             ?>
                             <audio src="/escaperpg/sons/secrets/coffrefort2.mp3" autoplay></audio>
@@ -175,7 +175,7 @@
                             </form>
                         <?php elseif (isset($_POST['combinaison1']) || $_SESSION['combinaisonactuelle'] == "1"): ?>
                             <?php
-                            $_SESSION['combinaisoncoffre'] += isset($_POST['gauche']) ? "g" : "d" + $_POST['combinaison1'];
+                            $_SESSION['combinaisoncoffre'] .= (isset($_POST['gauche']) ? "g" : "d") . $_POST['combinaison1'];
                             $_SESSION['combinaisonactuelle'] = "1";
                             ?>
                             <audio src="/escaperpg/sons/secrets/coffrefort1.mp3" autoplay></audio>
@@ -191,34 +191,39 @@
                             <form action="chambre" method="post">
                                 <input type="submit" name="retour" value="Retour.">
                             </form>
-                        <?php else: ?>
-                            <p>
-                                En retirant le tableau au-dessus du lit, vous trouvez un coffre-fort incrusté dans le mur.<br>
-                                Impossible de l'ouvrir sans la <span class="indice">combinaison</span>, mais peut-être l'avez-vous trouvée maintenant ?<br>
-                                <br>
-                                Entrez le premier chiffre.
-                            </p>
-                            <form action="coffre" method="post">
-                                <input type="submit" name="gauche" value="←">
-                                <input type="text" name="combinaison1">
-                                <input type="submit" name="droite" value="→">
-                            </form>
-                            <br>
-                            <form action="chambre" method="post">
-                                <input type="submit" name="retour" value="Retour.">
-                            </form>
-                            <?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/resetIndices.php"; ?>
                         <?php endif; ?>
+                    <?php else: ?>
+                        <p>
+                            En retirant le tableau au-dessus du lit, vous trouvez un coffre-fort incrusté dans le mur.<br>
+                            Impossible de l'ouvrir sans la <span class="indice">combinaison</span>, mais peut-être l'avez-vous trouvée maintenant ?<br>
+                            <br>
+                            Entrez le premier chiffre.
+                        </p>
+                        <form action="coffre" method="post">
+                            <input type="submit" name="gauche" value="←">
+                            <input type="text" name="combinaison1">
+                            <input type="submit" name="droite" value="→">
+                        </form>
+                        <br>
+                        <form action="chambre" method="post">
+                            <input type="submit" name="retour" value="Retour.">
+                        </form>
                         <?php
-                        if (!isset($_SESSION['coffrefortouvert'])) {
-                            $reponse = `
+                        include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/resetIndices.php";
+                        $_SESSION['combinaisonactuelle'] = "";
+                        $_SESSION['combinaisoncoffre'] = "";
+                        ?>
+                    <?php endif; ?>
+                    <?php
+                    if (!isset($_SESSION['coffrefortouvert'])) {
+                        $reponse = `
                                 Le premier chiffre est 2, le tome du Magna Mater, à tourner vers la droite.<br>
                                 Le second est 9, le nombre total présents sur le tableau de Rembrandt brûlé par votre oncle, à tourner vers la droite également.<br>
                                 Le troisième est 4, en comptant les portraits présents et retirés sur les murs de la chambre de William, à tourner vers la gauche.<br>
                                 Le quatrième chiffre est 7, le plus fort des chiffres-frères (9) s'associe au plus faible (2). Le troisième (4) se soustrait à eux,
                                 ce qui donne 2+9-4 = 7, à tourner vers la droite.
                             `;
-                            $indice1 = `
+                        $indice1 = `
                                 Avez-vous trouvé les 3 premiers chiffres du code ?
                                 Si ce n'est pas le cas, essayez de fouiller au niveau de la bibliothèque, du salon et de la chambre de William pour les trouver,
                                 grâce aux aveux de Pellington.<br>
@@ -226,15 +231,16 @@
                                 <br>
                                 Si le problème vient de la phrase concernant les "frères", dites-vous que vous cherchez bien un code à 4 chiffres.
                             `;
-                            $indice2 = `Qui peuvent bien être ces "frères" dont parle le docteur ?`;
-                            $indice3 = `Les "frères" sont les 3 premiers chiffres de la combinaison. La phrase vous permet de déterminer le 4e.`;
-                            include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/indices.php";
-                        }
-                        ?>
-                    <?php endif; ?>
+                        $indice2 = `Qui peuvent bien être ces "frères" dont parle le docteur ?`;
+                        $indice3 = `Les "frères" sont les 3 premiers chiffres de la combinaison. La phrase vous permet de déterminer le 4e.`;
+                        include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/indices.php";
+                    }
+                    ?>
                 <?php endif; ?>
             <?php else: ?>
-                <img src="/escaperpg/images/secrets/coffrefort.png" alt="la porte du coffre-fort">
+                <div id="enigmelieu">
+                    <img src="/escaperpg/images/secrets/coffrefort.png" alt="la porte du coffre-fort">
+                </div>
                 <p>
                     En retirant le tableau au-dessus du lit, vous trouvez un coffre-fort incrusté dans le mur.<br>
                     Impossible de l'ouvrir sans la combinaison.

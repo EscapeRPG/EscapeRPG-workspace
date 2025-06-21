@@ -24,212 +24,201 @@
         </nav>
         <div id="txt">
             <?php if (isset($_POST['gaspard'])): ?>
-                <?php switch (str_replace($search, $replace, stripslashes($_POST['gaspard']))):
-                    case "pellington": ?>
-                        <div class="dialogue">
-                            <div class="portrait">
-                                <img src="/escaperpg/images/secrets/gaspard.png" alt="gaspard">
-                            </div>
-                            <div class="bulleperso">
-                                <p>
-                                    Je ne le connais pas vraiment... Je n'ai dû le voir qu'une fois ou deux deux, avant aujourd'hui.<br>
-                                    C'est un médecin, il a un cabinet en ville, mais je ne connais pas son adresse.
-                                </p>
-                            </div>
+                <?php if (str_replace($search, $replace, stripslashes($_POST['gaspard'])) == "nourriture"): ?>
+                    <div class="dialogue">
+                        <div class="portrait">
+                            <img src="/escaperpg/images/secrets/gaspard.png" alt="gaspard">
                         </div>
-                    <?php break;
-                    case "domestiques": ?>
-                        <div class="dialogue">
-                            <div class="portrait">
-                                <img src="/escaperpg/images/secrets/gaspard.png" alt="gaspard">
-                            </div>
-                            <div class="bulleperso">
-                                <p>
-                                    Hum, je suis entré au service de votre oncle il y a 3 ans environ.<br>
-                                    Je suis l'un des derniers à être arrivé, mais je crois bien que les autres ne sont pas là depuis bien longtemps avant.
-                                </p>
-                            </div>
+                        <div class="bulleperso">
+                            <p>
+                                Non, je viens tout juste de rentrer et je ne suis pas encore allé les nourrir.<br>
+                                Les domestiques n'osent pas s'approcher des bêtes, donc si ce n'est ni eux qui ont donné à manger, ni vous...
+                            </p>
                         </div>
-                    <?php break;
-                    case "chiens": ?>
-                        <div class="dialogue">
-                            <div class="portrait">
-                                <img src="/escaperpg/images/secrets/gaspard.png" alt="gaspard">
-                            </div>
-                            <div class="bulleperso">
-                                <p>
-                                    Des bons <span class="mdp">chiens</span> de garde, j'aimerais pas être leur ennemi.<br>
-                                    Je ne sais pas pourquoi, mais ils n'ont jamais eu l'air d'aimer votre oncle.
-                                    Ils n'arrêtaient pas de gronder dès qu'ils l'apercevaient, sans vouloir vous manquer de respect.
-                                </p>
-                            </div>
-                        </div>
-                    <?php break;
-                    case "soucis": ?>
-                        <div class="dialogue">
-                            <div class="portrait">
-                                <img src="/escaperpg/images/secrets/gaspard.png" alt="gaspard">
-                            </div>
-                            <div class="bulleperso">
-                                <p>
-                                    J'ai été engagé par votre oncle lorsqu'il a acheté les <span class="mdp">chiens</span>.<br>
-                                    Apparemment, il voulait se prémunir contre des rôdeurs.
-                                </p>
-                            </div>
-                        </div>
-                        <?php
-                        if (!in_array("Chiens", $_SESSION['mdp'])) {
-                            $_SESSION['mdp'][] = "Chiens";
-                        }
-                        break;
-                    case "odeur": ?>
-                        <div class="dialogue">
-                            <div class="portrait">
-                                <img src="/escaperpg/images/secrets/gaspard.png" alt="gaspard">
-                            </div>
-                            <div class="bulleperso">
-                                <p>
-                                    J'aime pas cette odeur. J'aime pas cet endroit. Sans vouloir vous offenser.<br>
-                                    On dirait une odeur de charogne en décomposition. Je sais pas d'où ça peut venir. Sans doute un rat mort dans les murs.<br>
-                                    Je ferai venir quelqu'un, vous inquiétez pas.
-                                </p>
-                            </div>
-                        </div>
-                    <?php break;
-                    case "symbole": ?>
-                        <div class="dialogue">
-                            <div class="portrait">
-                                <img src="/escaperpg/images/secrets/gaspard.png" alt="gaspard">
-                            </div>
-                            <div class="bulleperso">
-                                <p>
-                                    Aucune idée de ce que ça signifie.
-                                </p>
-                            </div>
-                        </div>
-                    <?php break;
-                    case "bureau": ?>
-                        <div class="dialogue">
-                            <div class="portrait">
-                                <img src="/escaperpg/images/secrets/gaspard.png" alt="gaspard">
-                            </div>
-                            <div class="bulleperso">
-                                <p>
-                                    Je ne sais pas. Je vis ici et je ne suis pratiquement jamais allé dans le manoir.
-                                    Désolé de ne pas pouvoir vous en apprendre plus.
-                                </p>
-                            </div>
-                        </div>
-                    <?php break;
-                    case "empreintedepas": ?>
-                        <div class="dialogue">
-                            <div class="portrait">
-                                <img src="/escaperpg/images/secrets/gaspard.png" alt="gaspard">
-                            </div>
-                            <div class="bulleperso">
-                                <p>
-                                    C'est vous le flic, non ? Je ne vois pas en quoi je pourrais vous aider là-dessus.
-                                </p>
-                            </div>
-                        </div>
-                    <?php break;
-                    case "nourriture": ?>
-                        <div class="dialogue">
-                            <div class="portrait">
-                                <img src="/escaperpg/images/secrets/gaspard.png" alt="gaspard">
-                            </div>
-                            <div class="bulleperso">
-                                <p>
-                                    Non, je viens tout juste de rentrer et je ne suis pas encore allé les nourrir.<br>
-                                    Les domestiques n'osent pas s'approcher des bêtes, donc si ce n'est ni eux qui ont donné à manger, ni vous...
-                                </p>
-                            </div>
-                            <br>
-                        </div>
-                        <p>
-                            Soudain, Gaspard blêmit et se rue hors de sa maison pour aller voir les <span class="mdp">chiens</span>.
-                        </p>
+                        <br>
+                    </div>
+                    <p>
+                        Soudain, Gaspard blêmit et se rue hors de sa maison pour aller voir les <span class="mdp">chiens</span>.
+                    </p>
+                    <form action="chenil" method="post">
+                        <input type="submit" value="le suivre.">
+                    </form>
                     <?php
-                        $_SESSION['chiensmal'] = true;
-                        unset($_SESSION['intrusion']);
-                        break;
-                    case "teona": ?>
-                        <div class="dialogue">
-                            <div class="portrait">
-                                <img src="/escaperpg/images/secrets/gaspard.png" alt="gaspard">
+                    $_SESSION['chiensmal'] = true;
+                    unset($_SESSION['intrusion']);
+                    ?>
+                <?php else: ?>
+                    <?php switch (str_replace($search, $replace, stripslashes($_POST['gaspard']))):
+                        case "pellington": ?>
+                            <div class="dialogue">
+                                <div class="portrait">
+                                    <img src="/escaperpg/images/secrets/gaspard.png" alt="gaspard">
+                                </div>
+                                <div class="bulleperso">
+                                    <p>
+                                        Je ne le connais pas vraiment... Je n'ai dû le voir qu'une fois ou deux deux, avant aujourd'hui.<br>
+                                        C'est un médecin, il a un cabinet en ville, mais je ne connais pas son adresse.
+                                    </p>
+                                </div>
                             </div>
-                            <div class="bulleperso">
-                                <p>
-                                    Elle est plutôt gentille, mais nous n'avons presque jamais discuté, vous savez.
-                                </p>
+                        <?php break;
+                        case "domestiques": ?>
+                            <div class="dialogue">
+                                <div class="portrait">
+                                    <img src="/escaperpg/images/secrets/gaspard.png" alt="gaspard">
+                                </div>
+                                <div class="bulleperso">
+                                    <p>
+                                        Hum, je suis entré au service de votre oncle il y a 3 ans environ.<br>
+                                        Je suis l'un des derniers à être arrivé, mais je crois bien que les autres ne sont pas là depuis bien longtemps avant.
+                                    </p>
+                                </div>
                             </div>
-                            <br>
-                        </div>
+                        <?php break;
+                        case "chiens": ?>
+                            <div class="dialogue">
+                                <div class="portrait">
+                                    <img src="/escaperpg/images/secrets/gaspard.png" alt="gaspard">
+                                </div>
+                                <div class="bulleperso">
+                                    <p>
+                                        Des bons <span class="mdp">chiens</span> de garde, j'aimerais pas être leur ennemi.<br>
+                                        Je ne sais pas pourquoi, mais ils n'ont jamais eu l'air d'aimer votre oncle.
+                                        Ils n'arrêtaient pas de gronder dès qu'ils l'apercevaient, sans vouloir vous manquer de respect.
+                                    </p>
+                                </div>
+                            </div>
+                        <?php break;
+                        case "soucis": ?>
+                            <div class="dialogue">
+                                <div class="portrait">
+                                    <img src="/escaperpg/images/secrets/gaspard.png" alt="gaspard">
+                                </div>
+                                <div class="bulleperso">
+                                    <p>
+                                        J'ai été engagé par votre oncle lorsqu'il a acheté les <span class="mdp">chiens</span>.<br>
+                                        Apparemment, il voulait se prémunir contre des rôdeurs.
+                                    </p>
+                                </div>
+                            </div>
+                            <?php
+                            if (!in_array("Chiens", $_SESSION['mdp'])) {
+                                $_SESSION['mdp'][] = "Chiens";
+                            }
+                            break;
+                        case "odeur": ?>
+                            <div class="dialogue">
+                                <div class="portrait">
+                                    <img src="/escaperpg/images/secrets/gaspard.png" alt="gaspard">
+                                </div>
+                                <div class="bulleperso">
+                                    <p>
+                                        J'aime pas cette odeur. J'aime pas cet endroit. Sans vouloir vous offenser.<br>
+                                        On dirait une odeur de charogne en décomposition. Je sais pas d'où ça peut venir. Sans doute un rat mort dans les murs.<br>
+                                        Je ferai venir quelqu'un, vous inquiétez pas.
+                                    </p>
+                                </div>
+                            </div>
+                        <?php break;
+                        case "symbole": ?>
+                            <div class="dialogue">
+                                <div class="portrait">
+                                    <img src="/escaperpg/images/secrets/gaspard.png" alt="gaspard">
+                                </div>
+                                <div class="bulleperso">
+                                    <p>
+                                        Aucune idée de ce que ça signifie.
+                                    </p>
+                                </div>
+                            </div>
+                        <?php break;
+                        case "bureau": ?>
+                            <div class="dialogue">
+                                <div class="portrait">
+                                    <img src="/escaperpg/images/secrets/gaspard.png" alt="gaspard">
+                                </div>
+                                <div class="bulleperso">
+                                    <p>
+                                        Je ne sais pas. Je vis ici et je ne suis pratiquement jamais allé dans le manoir.
+                                        Désolé de ne pas pouvoir vous en apprendre plus.
+                                    </p>
+                                </div>
+                            </div>
+                        <?php break;
+                        case "empreintedepas": ?>
+                            <div class="dialogue">
+                                <div class="portrait">
+                                    <img src="/escaperpg/images/secrets/gaspard.png" alt="gaspard">
+                                </div>
+                                <div class="bulleperso">
+                                    <p>
+                                        C'est vous le flic, non ? Je ne vois pas en quoi je pourrais vous aider là-dessus.
+                                    </p>
+                                </div>
+                            </div>
+                        <?php break;
+                        case "teona": ?>
+                            <div class="dialogue">
+                                <div class="portrait">
+                                    <img src="/escaperpg/images/secrets/gaspard.png" alt="gaspard">
+                                </div>
+                                <div class="bulleperso">
+                                    <p>
+                                        Elle est plutôt gentille, mais nous n'avons presque jamais discuté, vous savez.
+                                    </p>
+                                </div>
+                                <br>
+                            </div>
+                        <?php break;
+                        case "monica": ?>
+                            <div class="dialogue">
+                                <div class="portrait">
+                                    <img src="/escaperpg/images/secrets/gaspard.png" alt="gaspard">
+                                </div>
+                                <div class="bulleperso">
+                                    <p>
+                                        Ah, celle-là...<br>
+                                        Bon elle est pas méchante, hein, mais si vous ne voulez pas vous retrouver enfermé dans des discussions sans fin,
+                                        ne la lancez jamais sur un sujet !
+                                    </p>
+                                </div>
+                                <br>
+                            </div>
+                        <?php break;
+                        case "mmenouveau": ?>
+                            <div class="dialogue">
+                                <div class="portrait">
+                                    <img src="/escaperpg/images/secrets/gaspard.png" alt="gaspard">
+                                </div>
+                                <div class="bulleperso">
+                                    <p>
+                                        Ça doit être celle que je croise le plus, mais c'est une femme très austère, ne vous attendez pas à passer de longs moments à bavarder avec.
+                                    </p>
+                                </div>
+                                <br>
+                            </div>
+                        <?php break;
+                        default: ?>
+                            <div class="dialogue">
+                                <div class="portrait">
+                                    <img src="/escaperpg/images/secrets/gaspard.png" alt="gaspard">
+                                </div>
+                                <div class="bulleperso">
+                                    <p>
+                                        Je ne vois pas ce que je peux vous dire à ce propos.
+                                    </p>
+                                </div>
+                            </div>
+                            </p>
                     <?php break;
-                    case "monica": ?>
-                        <div class="dialogue">
-                            <div class="portrait">
-                                <img src="/escaperpg/images/secrets/gaspard.png" alt="gaspard">
-                            </div>
-                            <div class="bulleperso">
-                                <p>
-                                    Ah, celle-là...<br>
-                                    Bon elle est pas méchante, hein, mais si vous ne voulez pas vous retrouver enfermé dans des discussions sans fin,
-                                    ne la lancez jamais sur un sujet !
-                                </p>
-                            </div>
-                            <br>
-                        </div>
-                    <?php break;
-                    case "mmenouveau": ?>
-                        <div class="dialogue">
-                            <div class="portrait">
-                                <img src="/escaperpg/images/secrets/gaspard.png" alt="gaspard">
-                            </div>
-                            <div class="bulleperso">
-                                <p>
-                                    Ça doit être celle que je croise le plus, mais c'est une femme très austère, ne vous attendez pas à passer de longs moments à bavarder avec.
-                                </p>
-                            </div>
-                            <br>
-                        </div>
-                    <?php break;
-                    default: ?>
-                        <div class="dialogue">
-                            <div class="portrait">
-                                <img src="/escaperpg/images/secrets/gaspard.png" alt="gaspard">
-                            </div>
-                            <div class="bulleperso">
-                                <p>
-                                    Je ne vois pas ce que je peux vous dire à ce propos.
-                                </p>
-                            </div>
-                        </div>
-                        </p>
-                <?php break;
-                endswitch; ?>
-                <form action="maisongaspard" method="post">
-                    <input list="notesListe" name="gaspard">
-                    <input type="submit" name="interroger" value="Interroger.">
-                </form>
-            <?php elseif (isset($_SESSION['intrusion'])): ?>
-                <p>
-                    Gaspard vient tout juste de revenir de la ville, il est en train de déposer des sacs de courses sur la table de sa cuisine.
-                </p>
-                <div class="dialogue">
-                    <div class="portrait">
-                        <img src="/escaperpg/images/secrets/gaspard.png" alt="gaspard">
-                    </div>
-                    <div class="bulleperso">
-                        <p>
-                            Je peux vous aider monsieur ?
-                        </p>
-                    </div>
-                </div>
-                <form action="maisongaspard" method="post">
-                    <input list="notesListe" name="gaspard">
-                    <input type="submit" name="interroger" value="Interroger.">
-                </form>
+                    endswitch; ?>
+                    <form action="maisongaspard" method="post">
+                        <input list="notesListe" name="gaspard">
+                        <datalist id="notesListe"></datalist>
+                        <input type="submit" name="interroger" value="Interroger.">
+                    </form>
+                    <script src="/escaperpg/scripts/updateDataList.js"></script>
+                <?php endif; ?>
             <?php elseif (isset($_SESSION['chiensemp'])): ?>
                 <p>
                     Gaspard est toujours au <span class="lieu">chenil</span> pour s'occuper des <span class="mdp">chiens</span> empoisonnés.
@@ -269,6 +258,7 @@
                 </p>
                 <form action="maisongaspard" method="post">
                     <input list="notesListe" name="gaspard">
+                    <datalist id="notesListe"></datalist>
                     <input type="submit" name="interroger" value="Interroger.">
                 </form>
                 <?php
@@ -281,6 +271,7 @@
                     $_SESSION['mdp'][] = "Chiens";
                 }
                 ?>
+                <script src="/escaperpg/scripts/updateDataList.js"></script>
             <?php elseif (isset($_SESSION['chienssauves'])): ?>
                 <p>
                     Gaspard est en train de fouiller dans un tiroir de sa table de nuit.<br>
@@ -329,14 +320,36 @@
                     <input list="notesListe" name="gaspard">
                     <input type="submit" name="interroger" value="Interroger.">
                 </form>
+            <?php elseif (isset($_SESSION['intrusion'])): ?>
+                <p>
+                    Gaspard vient tout juste de revenir de la ville, il est en train de déposer des sacs de courses sur la table de sa cuisine.
+                </p>
+                <div class="dialogue">
+                    <div class="portrait">
+                        <img src="/escaperpg/images/secrets/gaspard.png" alt="gaspard">
+                    </div>
+                    <div class="bulleperso">
+                        <p>
+                            Je peux vous aider monsieur ?
+                        </p>
+                    </div>
+                </div>
+                <form action="maisongaspard" method="post">
+                    <input list="notesListe" name="gaspard">
+                    <datalist id="notesListe"></datalist>
+                    <input type="submit" name="interroger" value="Interroger.">
+                </form>
+                <script src="/escaperpg/scripts/updateDataList.js"></script>
             <?php else: ?>
                 <p>
                     Gaspard vit dans une petite maison de pierre, juste à côté de la grille d'entrée. Juste derrière elle se trouve le <span class="lieu">chenil</span>.
                 </p>
                 <form action="maisongaspard" method="post">
                     <input list="notesListe" name="gaspard">
+                    <datalist id="notesListe"></datalist>
                     <input type="submit" name="interroger" value="Interroger.">
                 </form>
+                <script src="/escaperpg/scripts/updateDataList.js"></script>
             <?php endif; ?>
         </div>
     </main>

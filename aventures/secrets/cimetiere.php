@@ -28,6 +28,7 @@
                     <p>
                         L'homme s'approche de la grille à votre appel.<br>
                         Voir quelqu'un de vivant ici vous rassure un peu.
+                    </p>
                     <div class="dialogue">
                         <div class="portrait">
                             <img src="/escaperpg/images/secrets/gardien.png" alt="gardien">
@@ -41,12 +42,10 @@
                             </p>
                         </div>
                     </div>
-                    </p>
                     <form action="cimetiere" method="post">
                         <input type="submit" name="repondre" value="Lui dire qui vous êtes.">
                     </form>
                 <?php elseif (isset($_POST['repondre'])): ?>
-                    <p>
                     <div class="dialogue">
                         <div class="portrait">
                             <img src="/escaperpg/images/secrets/gardien.png" alt="gardien">
@@ -59,8 +58,9 @@
                             </p>
                         </div>
                     </div>
-                    <br>
-                    Vous vous sentez défaillir, arriveriez-vous trop tard ?
+                    <p>
+                        Vous vous sentez défaillir, arriveriez-vous trop tard ?
+                    </p>
                     <div class="dialogue">
                         <div class="portrait">
                             <img src="/escaperpg/images/secrets/gardien.png" alt="gardien">
@@ -71,12 +71,10 @@
                             </p>
                         </div>
                     </div>
-                    </p>
                     <form action="cimetiere" method="post">
                         <input type="submit" name="demander" value="Lui demander d'entrer.">
                     </form>
                 <?php elseif (isset($_POST['demander'])): ?>
-                    <p>
                     <div class="dialogue">
                         <div class="portrait">
                             <img src="/escaperpg/images/secrets/gardien.png" alt="gardien">
@@ -89,13 +87,11 @@
                             </p>
                         </div>
                     </div>
-                    </p>
                     <form action="cimetiere" method="post">
                         <input type="submit" name="badge" value="Lui montrer votre badge.">
                     </form>
                 <?php elseif (isset($_POST['badge'])): ?>
                     <audio src="/escaperpg/sons/secrets/grilleouverture.mp3" autoplay></audio>
-                    <p>
                     <div class="dialogue">
                         <div class="portrait">
                             <img src="/escaperpg/images/secrets/gardien.png" alt="gardien">
@@ -108,8 +104,9 @@
                             </p>
                         </div>
                     </div>
-                    Il sort une énorme clé sans âge et débloque l'accès au cimetière.
-                    Vous l'assurez pouvoir continuer seul et foncez vers le caveau familial.
+                    <p>
+                        Il sort une énorme clé sans âge et débloque l'accès au cimetière.
+                        Vous l'assurez pouvoir continuer seul et foncez vers le caveau familial.
                     </p>
                     <form action="cimetiere" method="post">
                         <input type="submit" name="suivant2" value="Suivant.">
@@ -216,44 +213,44 @@
                     }
                     ?>
                     <script src="/escaperpg/scripts/updateDataList.js"></script>
-                <?php elseif (isset($_POST['question']) && str_replace($search, $replace, stripslashes($_POST['question'])) == "sacochedemedecin"): ?>
-                    <p>
-                    <div class="dialogue">
-                        <div class="portrait">
-                            <img src="/escaperpg/images/secrets/gaspard.png" alt="gaspard">
+                <?php elseif (isset($_POST['medecin'])): ?>
+                    <?php if (str_replace($search, $replace, stripslashes($_POST['question'])) == "sacochedemedecin"): ?>
+                        <div class="dialogue">
+                            <div class="portrait">
+                                <img src="/escaperpg/images/secrets/gaspard.png" alt="gaspard">
+                            </div>
+                            <div class="bulleperso">
+                                <p>
+                                    Hum… Eh bien je ne sais pas pourquoi, mais le docteur voulait examiner le corps de votre oncle avant sa mise en bière.<br>
+                                    Je ne sais vraiment pas pourquoi. Il a refusé de me l'expliquer.<br>
+                                    Je ne pouvais décemment pas le laisser profaner la dépouille, vous comprenez ?
+                                </p>
+                            </div>
                         </div>
-                        <div class="bulleperso">
-                            <p>
-                                Hum… Eh bien je ne sais pas pourquoi, mais le docteur voulait examiner le corps de votre oncle avant sa mise en bière.<br>
-                                Je ne sais vraiment pas pourquoi. Il a refusé de me l'expliquer.<br>
-                                Je ne pouvais décemment pas le laisser profaner la dépouille, vous comprenez ?
-                            </p>
+                        <form action="cimetiere" method="post">
+                            <input type="submit" name="retour" value="Retourner à la cérémonie.">
+                        </form>
+                    <?php else: ?>
+                        <div class="dialogue">
+                            <div class="portrait">
+                                <img src="/escaperpg/images/secrets/gaspard.png" alt="gaspard">
+                            </div>
+                            <div class="bulleperso">
+                                <p>
+                                    Je vous demande pardon ?
+                                </p>
+                            </div>
                         </div>
-                    </div>
-                    <form action="cimetiere" method="post">
-                        <input type="submit" name="retour" value="Retourner à la cérémonie.">
-                    </form>
-                <?php elseif (isset($_POST['question'])): ?>
-                    <p>
-                    <div class="dialogue">
-                        <div class="portrait">
-                            <img src="/escaperpg/images/secrets/gaspard.png" alt="gaspard">
-                        </div>
-                        <div class="bulleperso">
-                            <p>
-                                Je vous demande pardon ?
-                            </p>
-                        </div>
-                    </div>
-                    <form action="cimetiere" method="post">
-                        <input list="notesListe" name="question">
-                        <datalist id="notesListe"></datalist>
-                        <input type="submit" name="medecin" value="Interroger.">
-                        <br>
-                        <input type="submit" name="retour" value="Retourner à la cérémonie.">
-                    </form>
-                    <script src="/escaperpg/scripts/updateDataList.js"></script>
-                <?php elseif (isset($_POST['retour']) && isset($_SESSION['finceremonie'])): ?>
+                        <form action="cimetiere" method="post">
+                            <input list="notesListe" name="question">
+                            <datalist id="notesListe"></datalist>
+                            <input type="submit" name="medecin" value="Interroger.">
+                            <br>
+                            <input type="submit" name="retour" value="Retourner à la cérémonie.">
+                        </form>
+                        <script src="/escaperpg/scripts/updateDataList.js"></script>
+                    <?php endif; ?>
+                <?php elseif (isset($_POST['retour']) || isset($_SESSION['finceremonie'])): ?>
                     <p>
                         Après la cérémonie, le corps est finalement mis en terre et la foule se disperse lentement.<br>
                         <br>

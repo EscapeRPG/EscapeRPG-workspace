@@ -78,8 +78,12 @@
                         <input type="submit" name="fond" value="Passer de l'autre côté.">
                     </form>
                     <?php
-                    $_SESSION['pnakotiques'] = true;
-                    $_SESSION['pnakotiquesnotes'] = true;
+                    if (!in_array("pnakotiques", $_SESSION['inventaire'])) {
+                        $_SESSION['inventaire'][] = "pnakotiques";
+                    }
+                    if (!in_array("pnakotiquesnotes", $_SESSION['inventaire'])) {
+                        $_SESSION['pnakotiquesnotes'] = "pnakotiquesnotes";
+                    }
                     ?>
                 <?php elseif (isset($_POST['fouiller'])): ?>
                     <?php if (str_replace($search, $replace, stripslashes($_POST['fouiller'])) == "cerclerituel"): ?>
@@ -150,9 +154,15 @@
                     </form>
                     <?php
                     $_SESSION['tiroiropened'] = true;
-                    $_SESSION['inventaire'][] = 'journal1';
-                    $_SESSION['inventaire'][] = 'journal3';
-                    $_SESSION['inventaire'][] = 'journal4';
+                    if (!in_array("journal1", $_SESSION['inventaire'])) {
+                        $_SESSION['inventaire'][] = 'journal1';
+                    }
+                    if (!in_array("journal3", $_SESSION['inventaire'])) {
+                        $_SESSION['inventaire'][] = 'journal3';
+                    }
+                    if (!in_array("journal4", $_SESSION['inventaire'])) {
+                        $_SESSION['inventaire'][] = 'journal4';
+                    }
                     ?>
                 <?php elseif (isset($_POST['petitecle'])): ?>
                     <?php if (str_replace($search, $replace, stripslashes($_POST['petitecle'])) == "tirlitke"): ?>

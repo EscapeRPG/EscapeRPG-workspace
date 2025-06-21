@@ -49,6 +49,9 @@
                     <input type="submit" name="sad" value="Ajouter à l'inventaire.">
                 </form>
             <?php else: ?>
+                <?php if (isset($_POST['chbrtab']) || isset($_POST['chbrtabnuit'])): ?>
+                    <?php $_SESSION['scof'] = true; ?>
+                <?php endif; ?>
                 <div id="enigmelieu">
                     <img src="/escaperpg/images/secrets/chambrewilliam<?= isset($_SESSION['jour']) ? '' : 'nuit' ?>.png" alt="l'ancienne chambre de votre oncle">
                     <?php if (isset($_SESSION['scof']) && !isset($_SESSION['coffrefortouvert'])): ?>
@@ -60,7 +63,7 @@
                     <?php else: ?>
                         <div id="tabchbr">
                             <form action="chambre" method="post">
-                                <button type="submit" name="chbrtabnuit">
+                                <button type="submit" name="chbrtab<?= isset($_SESSION['jour']) ? '' : 'nuit' ?>">
                                     <img src="/escaperpg/images/secrets/tableau<?= isset($_SESSION['jour']) ? '' : 'nuit' ?>.png" alt="un grand tableau au-dessus du lit">
                                 </button>
                             </form>
@@ -76,11 +79,10 @@
                         </div>
                     <?php endif; ?>
                 </div>
-                <?php if (isset($_POST['chbrtab'])): ?>
+                <?php if (isset($_POST['chbrtab']) || isset($_POST['chbrtabnuit'])): ?>
                     <p>
                         Derrière le tableau se trouvait un coffre-fort.
                     </p>
-                    <?php $_SESSION['scof'] = true; ?>
                 <?php else: ?>
                     <p>
                         La chambre de votre défunt oncle. Elle est propre et bien entretenue.
@@ -101,7 +103,7 @@
                         <?php endif; ?>
                     <?php endif; ?>
                 <?php endif; ?>
-                <?php if ($_SESSION['aveux']): ?>
+                <?php if (isset($_SESSION['aveux'])): ?>
                     <?php
                     $reponse = "Il y avait donc 4 portraits auparavant.";
                     $indice1 = "Plusieurs portraits sont accrochés au mur.";

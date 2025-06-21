@@ -25,18 +25,9 @@
             <p>
                 Il semblerait que ce ne soit pas la bonne clé.
             </p>
-            <div id="enigmelieu">
-                <img src="/escaperpg/images/secrets/porteentree.png" alt="la porte d'entrée du manoir">
-            </div>
-            <div id="enigme">
-                <form action="manor" method="post">
-                    <button type="submit" name="cle1" class="cle1"></button>
-                    <button type="submit" name="cle2" class="cle2"></button>
-                    <button type="submit" name="cle3" class="cle3"></button>
-                    <button type="submit" name="cle4" class="cle4" formaction="manoir"></button>
-                    <button type="submit" name="cle5" class="cle5"></button>
-                </form>
-            </div>
+            <form action="15hamiltonstreet" method="post">
+                <input type="submit" name="retour" value="Retour.">
+            </form>
         </div>
     </main>
     <div id="load">

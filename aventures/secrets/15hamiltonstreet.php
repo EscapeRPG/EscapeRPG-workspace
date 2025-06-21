@@ -65,7 +65,7 @@
                     $_SESSION['mdp'][] = 'Soucis';
                 }
                 ?>
-            <?php elseif (isset($_POST['suivre'])): ?>
+            <?php elseif (isset($_POST['suivre']) || isset($_SESSION['manoircles'])): ?>
                 <p>
                     Il vous fait traverser l'allée et vous tend un jeu de clés.
                 </p>
@@ -86,15 +86,14 @@
                     <img src="/escaperpg/images/secrets/porteentree.png" alt="la porte d'entrée du manoir">
                 </div>
                 <br>
-                <div id="enigme">
-                    <form action="manor" method="post">
-                        <button type="submit" name="cle1" class="cle1"></button>
-                        <button type="submit" name="cle2" class="cle2"></button>
-                        <button type="submit" name="cle3" class="cle3"></button>
-                        <button type="submit" name="cle4" class="cle4" formaction="manoir"></button>
-                        <button type="submit" name="cle5" class="cle5"></button>
-                    </form>
+                <div id="cle-form">
+                    <a href="manor"><img src="/escaperpg/images/secrets/cle1.png" alt="clé 1"></a>
+                    <a href="manor"><img src="/escaperpg/images/secrets/cle2.png" alt="clé 2"></a>
+                    <a href="manor"><img src="/escaperpg/images/secrets/cle3.png" alt="clé 3"></a>
+                    <a href="manoirint"><img src="/escaperpg/images/secrets/cle4.png" alt="clé 4"></a>
+                    <a href="manor"><img src="/escaperpg/images/secrets/cle5.png" alt="clé 5"></a>
                 </div>
+                <?php $_SESSION['manoircles'] = true; ?>
             <?php else: ?>
                 <p>
                     Le manoir Deckard est situé aux abords de la ville, dans une petite zone boisée, calme et isolée.<br>

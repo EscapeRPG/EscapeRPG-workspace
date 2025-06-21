@@ -69,7 +69,11 @@
 							$_SESSION['visitepellington'] = true;
 							$_SESSION['jour'] = false;
 							$_SESSION['sse'] = true;
-						}
+
+					if (!in_array("piecese", $_SESSION['inventaire'])) {
+						$_SESSION['inventaire'][] = "piecese";
+					}
+				}
 					elseif ($_SESSION['visitepellington'])
 						{
 							echo '

@@ -37,6 +37,7 @@
                 </div>
                 <form action="jour2" method="post">
                     <input list="notesListe" name="nuit">
+                    <datalist id="notesListe"></datalist>
                     <input type="submit" name="interroger" value="Interroger.">
                     <br>
                     <input type="submit" name="dormir2" value="Retourner dormir.">
@@ -46,6 +47,7 @@
                     $_SESSION['mdp'][] = "Chiens";
                 }
                 ?>
+                <script src="/escaperpg/scripts/updateDataList.js"></script>
             <?php elseif (isset($_POST['nuit'])): ?>
                 <?php switch (str_replace($search, $replace, stripslashes($_POST['nuit']))):
                     case "voituregrise": ?>
@@ -59,6 +61,14 @@
                                 </p>
                             </div>
                         </div>
+                        <form action="jour2" method="post">
+                            <input list="notesListe" name="nuit">
+                            <datalist id="notesListe"></datalist>
+                            <input type="submit" name="interroger" value="Interroger.">
+                            <br>
+                            <input type="submit" name="dormir2" value="Retourner dormir.">
+                        </form>
+                        <script src="/escaperpg/scripts/updateDataList.js"></script>
                     <?php break;
                     case "pellington": ?>
                         <div class="dialogue">
@@ -73,6 +83,9 @@
                                 </p>
                             </div>
                         </div>
+                        <form action="jour2" method="post">
+                            <input type="submit" name="dormir2" value="Retourner dormir.">
+                        </form>
                     <?php break;
                     default: ?>
                         <div class="dialogue">
@@ -85,14 +98,16 @@
                                 </p>
                             </div>
                         </div>
+                        <form action="jour2" method="post">
+                            <input list="notesListe" name="nuit">
+                            <datalist id="notesListe"></datalist>
+                            <input type="submit" name="interroger" value="Interroger.">
+                            <br>
+                            <input type="submit" name="dormir2" value="Retourner dormir.">
+                        </form>
+                        <script src="/escaperpg/scripts/updateDataList.js"></script>
                 <?php break;
                 endswitch; ?>
-                <form action="jour2" method="post">
-                    <input list="notesListe" name="nuit">
-                    <input type="submit" name="interroger" value="Interroger.">
-                    <br>
-                    <input type="submit" name="dormir2" value="Retourner dormir.">
-                </form>
             <?php elseif (isset($_POST['enqueter'])): ?>
                 <p>
                     En faisant le tour du jardin, vous finissez par remarquer une <span class="mdp">empreinte de pas</span>.<br>
@@ -153,7 +168,7 @@
                     </div>
                 </div>
             <?php else: ?>
-                <audio src="/sons/secrets/chiensdehors.mp3" autoplay></audio>
+                <audio src="/escaperpg/sons/secrets/chiensdehors.mp3" autoplay></audio>
                 <p>
                     En plein milieu de la nuit, vous êtes réveillé par des aboiements de <span class="mdp">chiens</span> au dehors.<br>
                     En regardant par la fenêtre, vous voyez Gaspard dans le jardin, lampe torche à la main, en train de patrouiller.<br>

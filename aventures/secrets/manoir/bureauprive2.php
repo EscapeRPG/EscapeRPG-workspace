@@ -24,6 +24,12 @@
         </nav>
         <div id="txt">
             <div id="enigmelieu">
+                <?php if (isset($_POST['trappehidden'])) {
+                    $_SESSION['trappe'] = true;
+                } elseif (isset($_POST['cadenas']) && (str_replace($search, $replace, stripslashes($_POST['cadenas'])) == "vieillecle")) {
+                    $_SESSION['trappeopen'] = true;
+                }
+                ?>
                 <img src="/escaperpg/images/secrets/bureausecret2cuves.png" alt="les cuves contenant l'étrange masse">
                 <form action="bureauprive2" method="post">
                     <?php if (isset($_SESSION['trappeopen'])): ?>
@@ -58,7 +64,6 @@
                 <form action="cavesecrete" method="post">
                     <input type="submit" name="descendre" value="Descendre.">
                 </form>
-                <br>
                 <form action="bureauprive2" method="post">
                     <input type="submit" name="retour" value="Pas maintenant.">
                 </form>
@@ -95,7 +100,6 @@
                     <?php
                     unset($_SESSION['trappe']);
                     unset($_SESSION['oldcle']);
-                    $_SESSION['trappeopen'] = true;
                     ?>
                 <?php else: ?>
                     <p>
@@ -133,9 +137,6 @@
                 <p>
                     Sous le tapis se trouvait une trappe secrète !
                 </p>
-                <?php
-                $_SESSION['trappe'] = true;
-                ?>
             <?php elseif (isset($_SESSION['cuves']) || isset($_SESSION['masseactive'])): ?>
                 <?php if (isset($_SESSION['cuves'])): ?>
                     <p>

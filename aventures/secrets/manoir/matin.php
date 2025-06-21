@@ -59,11 +59,13 @@ $indicesInclude = "/escaperpg/includes/indices.php";
                     </div>
                     <form action="matin" method="post">
                         <input list="notesListe" name="police">
+                        <datalist id="notesListe"></datalist>
                         <input type="submit" name="repondre" value="Répondre.">
                     </form>
+                    <script src="/escaperpg/scripts/updateDataList.js"></script>
                 <?php endif; ?>
-            <?php elseif (isset($_POST['telephone'])): ?>
-                <?php if (str_replace($search, $replace, stripslashes($_POST['telephone'])) == "inspecteurdeckard085" || isset($_SESSION['telephone'])): ?>
+            <?php elseif (isset($_SESSION['telephone1']) || isset($_POST['telephone'])): ?>
+                <?php if (isset($_SESSION['telephone1']) || str_replace($search, $replace, stripslashes($_POST['telephone'])) == "inspecteurdeckard085"): ?>
                     <?php if (isset($_POST['telephone'])): ?>
                         <?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/resetIndices.php"; ?>
                     <?php endif; ?>
@@ -79,6 +81,7 @@ $indicesInclude = "/escaperpg/includes/indices.php";
                     </div>
                     <form action="matin" method="post">
                         <input list="notesListe" name="police">
+                        <datalist id="notesListe"></datalist>
                         <input type="submit" name="repondre" value="Répondre.">
                     </form>
                     <?php
@@ -87,8 +90,9 @@ $indicesInclude = "/escaperpg/includes/indices.php";
                     $indice2 = "Vous souvenez-vous de son nom ?";
                     $indice3 = "Il s'agit de l'ancien docteur de famille.";
                     include $_SERVER['DOCUMENT_ROOT'] . $indicesInclude;
-                    $_SESSION['telephone'] = true;
+                    $_SESSION['telephone1'] = true;
                     ?>
+                    <script src="/escaperpg/scripts/updateDataList.js"></script>
                 <?php else: ?>
                     <div class="dialogue">
                         <div class="portrait">
@@ -103,6 +107,7 @@ $indicesInclude = "/escaperpg/includes/indices.php";
                     </div>
                     <form action="matin" method="post">
                         <input list="notesListe" name="telephone">
+                        <datalist id="notesListe"></datalist>
                         <input type="submit" name="repondre" value="Répondre.">
                     </form>
                     <?php
@@ -112,6 +117,7 @@ $indicesInclude = "/escaperpg/includes/indices.php";
                     $indice3 = "Regardez bien votre insigne";
                     include $_SERVER['DOCUMENT_ROOT'] . $indicesInclude;
                     ?>
+                    <script src="/escaperpg/scripts/updateDataList.js"></script>
                 <?php endif; ?>
             <?php else: ?>
                 <audio src="/escaperpg/sons/secrets/policebox.mp3" autoplay></audio>
@@ -131,6 +137,7 @@ $indicesInclude = "/escaperpg/includes/indices.php";
                 </div>
                 <form action="matin" method="post">
                     <input list="notesListe" name="telephone">
+                    <datalist id="notesListe"></datalist>
                     <input type="submit" name="repondre" value="Répondre.">
                 </form>
                 <?php
@@ -140,6 +147,7 @@ $indicesInclude = "/escaperpg/includes/indices.php";
                 $indice3 = "Regardez bien votre insigne";
                 include $_SERVER['DOCUMENT_ROOT'] . $indicesInclude;
                 ?>
+                <script src="/escaperpg/scripts/updateDataList.js"></script>
             <?php endif; ?>
         </div>
     </main>
