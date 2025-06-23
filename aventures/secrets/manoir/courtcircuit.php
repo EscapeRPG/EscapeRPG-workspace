@@ -28,35 +28,41 @@
                     À tâtons, vous finissez par trouver un petit boîtier sur le mur, que vous ouvrez pour découvrir un système archaïque de câblages électriques.
                     Si vous désirez retrouver la lumière, il va falloir remettre de l'ordre dans tout ça.
                 </p>
-                <div id="panneauelec"></div>
-                <br>
-                <div class="draggableelec"><img src="/escaperpg/images/secrets/cables/1.png" id="dra1" alt="cable"></div>
-                <div class="draggableelec"><img src="/escaperpg/images/secrets/cables/2.png" id="dra2" alt="cable"></div>
-                <div class="draggableelec"><img src="/escaperpg/images/secrets/cables/3.png" id="dra3" alt="cable"></div>
-                <div class="draggableelec"><img src="/escaperpg/images/secrets/cables/4.png" id="dra4" alt="cable"></div>
-                <div class="draggableelec"><img src="/escaperpg/images/secrets/cables/5.png" id="dra5" alt="cable"></div>
-                <div class="draggableelec"><img src="/escaperpg/images/secrets/cables/6.png" id="dra6" alt="cable"></div>
-                <div class="draggableelec"><img src="/escaperpg/images/secrets/cables/7.png" id="dra7" alt="cable"></div>
-                <div class="draggableelec"><img src="/escaperpg/images/secrets/cables/8.png" id="dra8" alt="cable"></div>
-                <div class="draggableelec"><img src="/escaperpg/images/secrets/cables/9.png" id="dra9" alt="cable"></div>
-                <div class="draggableelec"><img src="/escaperpg/images/secrets/cables/10.png" id="dra10" alt="cable"></div>
-                <div class="draggableelec"><img src="/escaperpg/images/secrets/cables/11.png" id="dra11" alt="cable"></div>
-                <div class="draggableelec"><img src="/escaperpg/images/secrets/cables/12.png" id="dra12" alt="cable"></div>
-                <div class="draggableelec"><img src="/escaperpg/images/secrets/cables/13.png" id="dra13" alt="cable"></div>
-                <div class="draggableelec"><img src="/escaperpg/images/secrets/cables/14.png" id="dra14" alt="cable"></div>
-                <div class="draggableelec"><img src="/escaperpg/images/secrets/cables/15.png" id="dra15" alt="cable"></div>
-                <div class="draggableelec"><img src="/escaperpg/images/secrets/cables/16.png" id="dra16" alt="cable"></div>
-                <div class="draggableelec"><img src="/escaperpg/images/secrets/cables/17.png" id="dra17" alt="cable"></div>
-                <div class="draggableelec"><img src="/escaperpg/images/secrets/cables/18.png" id="dra18" alt="cable"></div>
-                <div class="draggableelec"><img src="/escaperpg/images/secrets/cables/19.png" id="dra19" alt="cable"></div>
-                <div class="draggableelec"><img src="/escaperpg/images/secrets/cables/20.png" id="dra20" alt="cable"></div>
-                <div class="draggableelec"><img src="/escaperpg/images/secrets/cables/21.png" id="dra21" alt="cable"></div>
-                <div class="draggableelec"><img src="/escaperpg/images/secrets/cables/22.png" id="dra22" alt="cable"></div>
-                <div class="draggableelec"><img src="/escaperpg/images/secrets/cables/23.png" id="dra23" alt="cable"></div>
+                <div id="container">
+                    <div id="panneauelec">
+                        <img src="/escaperpg/images/secrets/panneauelec.png" alt="panneau électrique">
+                        <div id="innerpanneau"></div>
+                    </div>
+                    <div class="draggables-container">
+                        <div class="draggableelec" id="drag1"><img src="/escaperpg/images/secrets/cables/1.png" alt="cable"></div>
+                        <div class="draggableelec" id="drag2"><img src="/escaperpg/images/secrets/cables/2.png" alt="cable"></div>
+                        <div class="draggableelec" id="drag3"><img src="/escaperpg/images/secrets/cables/3.png" alt="cable"></div>
+                        <div class="draggableelec" id="drag4"><img src="/escaperpg/images/secrets/cables/4.png" alt="cable"></div>
+                        <div class="draggableelec" id="drag5"><img src="/escaperpg/images/secrets/cables/5.png" alt="cable"></div>
+                        <div class="draggableelec" id="drag6"><img src="/escaperpg/images/secrets/cables/6.png" alt="cable"></div>
+                        <div class="draggableelec" id="drag7"><img src="/escaperpg/images/secrets/cables/7.png" alt="cable"></div>
+                        <div class="draggableelec" id="drag8"><img src="/escaperpg/images/secrets/cables/8.png" alt="cable"></div>
+                        <div class="draggableelec" id="drag9"><img src="/escaperpg/images/secrets/cables/9.png" alt="cable"></div>
+                        <div class="draggableelec" id="drag10"><img src="/escaperpg/images/secrets/cables/10.png" alt="cable"></div>
+                        <div class="draggableelec" id="drag11"><img src="/escaperpg/images/secrets/cables/11.png" alt="cable"></div>
+                        <div class="draggableelec" id="drag12"><img src="/escaperpg/images/secrets/cables/12.png" alt="cable"></div>
+                        <div class="draggableelec" id="drag13"><img src="/escaperpg/images/secrets/cables/13.png" alt="cable"></div>
+                        <div class="draggableelec" id="drag14"><img src="/escaperpg/images/secrets/cables/14.png" alt="cable"></div>
+                        <div class="draggableelec" id="drag15"><img src="/escaperpg/images/secrets/cables/15.png" alt="cable"></div>
+                        <div class="draggableelec" id="drag16"><img src="/escaperpg/images/secrets/cables/16.png" alt="cable"></div>
+                        <div class="draggableelec" id="drag17"><img src="/escaperpg/images/secrets/cables/17.png" alt="cable"></div>
+                        <div class="draggableelec" id="drag18"><img src="/escaperpg/images/secrets/cables/18.png" alt="cable"></div>
+                        <div class="draggableelec" id="drag19"><img src="/escaperpg/images/secrets/cables/19.png" alt="cable"></div>
+                        <div class="draggableelec" id="drag20"><img src="/escaperpg/images/secrets/cables/20.png" alt="cable"></div>
+                        <div class="draggableelec" id="drag21"><img src="/escaperpg/images/secrets/cables/21.png" alt="cable"></div>
+                        <div class="draggableelec" id="drag22"><img src="/escaperpg/images/secrets/cables/22.png" alt="cable"></div>
+                        <div class="draggableelec" id="drag23"><img src="/escaperpg/images/secrets/cables/23.png" alt="cable"></div>
+                    </div>
+                </div>
                 <form action="courtcircuit" method="post">
                     <input type="submit" name="reset" value="Réinitialiser.">
                 </form>
-                <script src="/escaperpg/aventures/scripts/dragdropelec.js"></script>
+                <script src="/escaperpg/aventures/secrets/scripts/dragdropelec.js"></script>
             <?php else: ?>
                 <audio src="/escaperpg/sons/secrets/courtcircuit.mp3" autoplay></audio>
                 <p>

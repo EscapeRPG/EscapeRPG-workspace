@@ -29,7 +29,7 @@
                 </a>
             </div>
             <p>
-                <?php if ($_SESSION['visitepellington']): ?>
+                <?php if (isset($_SESSION['visitepellington'])): ?>
                     Vous êtes de retour au manoir, encore troublé par les découvertes faites dans la maison du docteur Pellington.<br>
                     Vous ne savez pas ce que sont les embryons évoqués dans sa lettre d'adieux, mais il semblerait que ce soit ici que vous puissiez en apprendre plus.<br>
                     <br>

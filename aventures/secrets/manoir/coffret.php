@@ -38,28 +38,38 @@
                         <div class="dropper" id="drop4"></div>
                         <div class="dropper" id="drop5"></div>
                     </div>
+                    <br>
                     <div id="dragdropcoffret">
-                        <img src="/escaperpg/images/secrets/piecevide.png" alt="emplacements pièce">
-                        <div class="draggable" id="drag1">
-                            <img src="/escaperpg/images/secrets/di.png" id="dimini" alt="pièce vieil homme">
+                        <div class="dragslot">
+                            <div class="draggable" data-piece="dimini">
+                                <img src="/escaperpg/images/secrets/di.png" alt="pièce vieil homme">
+                            </div>
                         </div>
-                        <div class="draggable" id="drag2">
-                            <img src="/escaperpg/images/secrets/ad.png" id="admini" alt="pièce homme">
+                        <div class="dragslot">
+                            <div class="draggable" data-piece="admini">
+                                <img src="/escaperpg/images/secrets/ad.png" alt="pièce homme">
+                            </div>
                         </div>
-                        <div class="draggable" id="drag3">
-                            <img src="/escaperpg/images/secrets/se.png" id="semini" alt="pièce serpent">
+                        <div class="dragslot">
+                            <div class="draggable" data-piece="semini">
+                                <img src="/escaperpg/images/secrets/se.png" alt="pièce serpent">
+                            </div>
                         </div>
-                        <div class="draggable" id="drag4">
-                            <img src="/escaperpg/images/secrets/ev.png" id="evmini" alt="pièce femme">
+                        <div class="dragslot">
+                            <div class="draggable" data-piece="evmini">
+                                <img src="/escaperpg/images/secrets/ev.png" alt="pièce femme">
+                            </div>
                         </div>
-                        <div class="draggable" id="drag5">
-                            <img src="/escaperpg/images/secrets/po.png" id="pomini" alt="pièce pomme">
+                        <div class="dragslot">
+                            <div class="draggable" data-piece="pomini">
+                                <img src="/escaperpg/images/secrets/po.png" alt="pièce pomme">
+                            </div>
                         </div>
                     </div>
+                    <br>
                     <form action="#" method="post">
                         <input type="submit" name="reset" value="Réinitialiser.">
                     </form>
-                    <script src="/escaperpg/aventures/scripts/dragDropCoffret.js"></script>
                     <?php
                     $reponse = "Les pièces sont à mettre dans cet ordre : Serpent - Pomme - Femme - Homme - Vieil homme.";
                     $indice1 = "Chaque phrase du coffret fait référence aux pièces que vous avez. Essayez de bien les identifier et tout devrait devenir plus clair.";
@@ -68,6 +78,7 @@
                     include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/indices.php";
                     $_SESSION['coffrenigme'] = true;
                     ?>
+                    <script src="/escaperpg/aventures/secrets/scripts/dragDropCoffret.js"></script>
                 <?php else: ?>
                     <p>
                         Quelque chose ne va pas.

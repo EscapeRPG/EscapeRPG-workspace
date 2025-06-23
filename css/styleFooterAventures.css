@@ -10,10 +10,13 @@ footer {
     background: linear-gradient(to top, rgba(0, 0, 0, 0.3) 80%, transparent);
 }
 
-#inventaire {
-    text-align: center;
-    display: inline-block;
-    vertical-align: middle;
+#inventaireshow {
+    width: 80%;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
 
     img {
         width: 150px;
@@ -33,7 +36,7 @@ footer {
 }
 
 .footerhidden {
-    display: none;
+    display: none !important;
 }
 
 .footeraffichage {
@@ -43,4 +46,8 @@ footer {
   max-height: 250px;
   overflow: auto;
   margin: auto;
+}
+
+.current input {
+    background-color: orange;
 }

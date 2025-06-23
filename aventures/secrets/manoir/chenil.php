@@ -19,24 +19,11 @@
     <main>
         <nav>
             <?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/aventures/secrets/includes/navAvatar.php"; ?>
-            <?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/aventures/secrets/includes/navInputs.php"; ?>
             <?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/aventures/secrets/includes/navigationmanoir.php"; ?>
+            <?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/aventures/secrets/includes/navInputs.php"; ?>
         </nav>
         <div id="txt">
-            <?php if (isset($_SESSION['intrusion'])): ?>
-                <p>
-                    Vous décidez d'aller voir les chiens.<br>
-                    <br>
-                    À votre arrivée, vous êtes étonné de voir que ceux-ci semblent bien plus calmes que d'habitude.
-                    Ils sont calmement allongés au fond de leurs cages.<br>
-                    Au niveau de l'entrée de chacune d'elles se trouve une gamelle presque pleine de viande.
-                    Vous trouvez un peu étrange que les chiens aient à peine touché à leur <span class="mdp">nourriture</span>.
-                </p>
-                <?php if (!in_array('Nourriture', $_SESSION['mdp'])) {
-                    $_SESSION['mdp'][] = 'Nourriture';
-                }
-                ?>
-            <?php elseif (isset($_SESSION['chiensmal'])): ?>
+            <?php if (isset($_SESSION['chiensmal'])): ?>
                 <p>
                     Vous rejoignez Gaspard dans le chenil.
                     Il a ouvert la cage et est accroupi près des chiens, toujours allongés.<br>
@@ -177,6 +164,19 @@
                 <p>
                     À votre arrivée dans le chenil, les chiens se redressent sur leurs pattes et agitent joyeusement la queue en vous voyant.
                 </p>
+            <?php elseif (isset($_SESSION['intrusion'])): ?>
+                <p>
+                    Vous décidez d'aller voir les chiens.<br>
+                    <br>
+                    À votre arrivée, vous êtes étonné de voir que ceux-ci semblent bien plus calmes que d'habitude.
+                    Ils sont calmement allongés au fond de leurs cages.<br>
+                    Au niveau de l'entrée de chacune d'elles se trouve une gamelle presque pleine de viande.
+                    Vous trouvez un peu étrange que les chiens aient à peine touché à leur <span class="mdp">nourriture</span>.
+                </p>
+                <?php if (!in_array('Nourriture', $_SESSION['mdp'])) {
+                    $_SESSION['mdp'][] = 'Nourriture';
+                }
+                ?>
             <?php else: ?>
                 <p>
                     C'est ici que dorment les 4 <span class="mdp">chiens</span> de garde. 3 dobermans et un rottweiler.

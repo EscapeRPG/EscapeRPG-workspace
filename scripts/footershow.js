@@ -8,24 +8,24 @@ mdpnav.addEventListener("click", mdpshow);
 
 function inventaireshow() {
   if (inventaire.classList == "footerhidden") {
-    inventaire.classList.add("footeraffichage");
+    inventaire.className = "footeraffichage";
     inventairenav.classList.add("current");
-    mdp.classList.remove("footeraffichage");
+    mdp.className = "footerhidden";
     mdpnav.classList.remove("current");
   } else {
-    inventaire.classList.remove("footeraffichage");
+    inventaire.className = "footerhidden";
     inventairenav.classList.remove("current");
   }
 }
 
 function mdpshow() {
   if (mdp.classList == "footerhidden") {
-    mdp.classList.add("footeraffichage");
+    mdp.className = "footeraffichage";
     mdpnav.classList.add("current");
-    inventaire.classList.remove("footeraffichage");
+    inventaire.className = "footerhidden";;
     inventairenav.classList.remove("current");
   } else {
-    mdp.classList.remove("footeraffichage");
+    mdp.className = "footerhidden";
     mdpnav.classList.remove("current");
   }
 }

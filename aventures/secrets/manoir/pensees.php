@@ -23,8 +23,7 @@
         </nav>
         <div id="txt">
             <?php if (isset($_POST['thoughts'])): ?>
-                <?php switch (str_replace($search, $replace, stripslashes($_POST['thoughts']))): ?>
-                <?php
+                <?php switch (str_replace($search, $replace, stripslashes($_POST['thoughts']))):
                     case "oncle": ?>
                         <p>
                             Votre oncle possède un shoggoth dans son corps qui pourrait chercher à s'échapper dans la nature !
@@ -37,11 +36,10 @@
                             <br>
                             Il semblerait qu'il soit temps de retourner au <span class="lieu">cimetière</span>... !
                         </p>
-                        <?php
+                    <?php
                         $_SESSION['verite'] = true;
                         include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/resetIndices.php";
-                        break; ?>
-                    <?php
+                        break;
                     case "votreonclepeutrevenir": ?>
                         <div id="enigmepensees">
                             <img src="/escaperpg/images/secrets/pensees.gif" alt="pensées diffuses">
@@ -54,8 +52,7 @@
                             <input list="notesListe" name="thoughts">
                             <input type="submit" name="reflechir" value="Rassembler ses pensées">
                         </form>
-                        <?php break; ?>
-                    <?php
+                    <?php break;
                     default: ?>
                         <div id="enigmepensees">
                             <img src="/escaperpg/images/secrets/pensees.gif" alt="pensées diffuses">
@@ -67,8 +64,8 @@
                             <input list="notesListe" name="thoughts">
                             <input type="submit" name="reflechir" value="Rassembler ses pensées">
                         </form>
-                        <?php break; ?>
-                <?php endswitch; ?>
+                <?php break;
+                endswitch; ?>
             <?php else: ?>
                 <div id="enigmepensees">
                     <img src="/escaperpg/images/secrets/pensees.gif" alt="pensées diffuses">

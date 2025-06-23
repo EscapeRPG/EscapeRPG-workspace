@@ -95,7 +95,6 @@ $_SESSION['cuves'] = true;
                 <form action="cuves" method="post">
                     <input type="submit" name="oui" value="Tirer sur le levier.">
                 </form>
-                <br>
                 <form action="bureauprive2" method="post">
                     <input type="submit" name="non" value="Ne pas y toucher.">
                 </form>

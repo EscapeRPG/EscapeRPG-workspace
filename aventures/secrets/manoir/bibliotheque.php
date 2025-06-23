@@ -42,7 +42,9 @@
                     <script src="/escaperpg/scripts/updateDataList.js"></script>
                 <?php
                 endif;
-                $_SESSION['inventaire'][] = 'magna';
+                if (!in_array('magnamater', $_SESSION['inventaire'])) {
+                    $_SESSION['inventaire'][] = "magnamater";
+                }
                 $_SESSION['magna'] = true;
                 ?>
             <?php elseif (isset($_POST['templar'])): ?>
@@ -59,7 +61,9 @@
                     </form>
                 <?php
                 endif;
-                $_SESSION['inventaire'][] = 'templar';
+                if (!in_array('templar', $_SESSION['inventaire'])) {
+                    $_SESSION['inventaire'][] = "templar";
+                }
                 $_SESSION['templar'] = true;
                 ?>
                 <script src="/escaperpg/scripts/updateDataList.js"></script>

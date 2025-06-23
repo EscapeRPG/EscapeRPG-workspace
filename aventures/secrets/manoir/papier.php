@@ -72,7 +72,7 @@
                 }
                 unset($_SESSION['coffrenigme']);
                 ?>
-            <?php elseif ($_SESSION['papier']): ?>
+            <?php elseif (isset($_SESSION['papier'])): ?>
                 <div id="enigme">
                     <a href="/escaperpg/images/secrets/papier.png" rel="lightbox[invent]">
                         <img src="/escaperpg/images/secrets/papier.png" alt="un morceau de papier avec une inscription étrange">

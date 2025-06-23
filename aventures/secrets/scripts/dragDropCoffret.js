@@ -1,120 +1,90 @@
-let gauche,
-  migauche,
-  milieu,
-  midroite,
-  droite,
-  drop1 = document.getElementById("drop1"),
-  drop2 = document.getElementById("drop2"),
-  drop3 = document.getElementById("drop3"),
-  drop4 = document.getElementById("drop4"),
-  drop5 = document.getElementById("drop5"),
-  drag1 = document.getElementById("dimini"),
-  drag2 = document.getElementById("admini"),
-  drag3 = document.getElementById("semini"),
-  drag4 = document.getElementById("evmini"),
-  drag5 = document.getElementById("pomini"),
-  audiocoffret = new Audio("/escaperpg/sons/secrets/coffretouvert.mp3");
-
 function dragdrop() {
-  let dndHandler = {
+  const audioCoffret = new Audio("/escaperpg/sons/secrets/coffretouvert.mp3");
+
+  const correctPairs = {
+    drop1: "semini",
+    drop2: "pomini",
+    drop3: "evmini",
+    drop4: "admini",
+    drop5: "dimini",
+  };
+
+  const dndHandler = {
     draggedElement: null,
 
-    applyDragEvents: function (element) {
+    applyDragEvents(element) {
       element.draggable = true;
-      let dndHandler = this;
-
-      element.addEventListener("dragstart", function (e) {
-        dndHandler.draggedElement = e.target;
+      element.addEventListener("dragstart", (e) => {
+        this.draggedElement = e.target.closest(".draggable");
         e.dataTransfer.setData("text/plain", "");
       });
     },
 
-    applyDropEvents: function (dropper) {
-      dropper.addEventListener("dragover", function (e) {
+    applyDropEvents(dropTarget) {
+      dropTarget.addEventListener("dragover", (e) => {
         e.preventDefault();
-        this.className = "dropper drop_hover";
+        dropTarget.classList.add("drop_hover");
       });
 
-      dropper.addEventListener("dragleave", function () {
-        this.className = "dropper";
+      dropTarget.addEventListener("dragleave", () => {
+        dropTarget.classList.remove("drop_hover");
       });
 
-      let dndHandler = this;
-
-      dropper.addEventListener("drop", function (e) {
+      dropTarget.addEventListener("drop", (e) => {
         e.preventDefault();
-        let target = e.target,
-          draggedElement = dndHandler.draggedElement,
-          clonedElement = draggedElement.cloneNode(true);
+        dropTarget.classList.remove("drop_hover");
 
-        while (target.className.indexOf("dropper") == -1) {
-          target = target.parentNode;
+        const dragged = this.draggedElement;
+        if (!dragged) return;
+
+        // Supprimer le précédent parent
+        if (dragged.parentNode) {
+          dragged.parentNode.innerHTML = "";
         }
 
-        target.className = "dropper";
-        clonedElement = target.appendChild(clonedElement);
-        dndHandler.applyDragEvents(clonedElement);
-        draggedElement.parentNode.removeChild(draggedElement);
+        // Ajouter l'élément déplacé dans le nouvel emplacement
+        const clone = dragged.cloneNode(true);
+        clone.dataset.piece = dragged.dataset.piece;
+        clone.className = "draggable";
 
-        gauche = !!(target == drop1 && clonedElement == semini);
-        migauche = !!(target == drop2 && clonedElement == pomini);
-        milieu = !!(target == drop3 && clonedElement == evmini);
-        midroite = !!(target == drop4 && clonedElement == admini);
-        droite = !!(target == drop5 && clonedElement == dimini);
+        dropTarget.innerHTML = "";
+        dropTarget.appendChild(clone);
+        this.applyDragEvents(clone);
 
-        if (gauche && migauche && milieu && midroite && droite) {
-          setTimeout(() => {
-            audiocoffret.play();
-            alert("Vous entendez un petit déclic.");
-            document.location.href = "papier.php";
-          }, 500);
-        }
-      });
-    },
-
-    applyDropdragEvents: function (draggable) {
-      draggable.addEventListener("dragover", function (e) {
-        e.preventDefault();
-        this.className = "draggable drag_hover";
-      });
-
-      draggable.addEventListener("dragleave", function () {
-        this.className = "draggable";
-      });
-
-      let dndHandler = this;
-
-      draggable.addEventListener("drop", function (e) {
-        e.preventDefault();
-
-        let target = e.target,
-          draggedElement = dndHandler.draggedElement,
-          clonedElement = draggedElement.cloneNode(true);
-
-        while (target.className.indexOf("draggable") == -1) {
-          target = target.parentNode;
-        }
-
-        target.className = "draggable";
-        clonedElement = target.appendChild(clonedElement);
-        dndHandler.applyDragEvents(clonedElement);
-        draggedElement.parentNode.removeChild(draggedElement);
+        // Vérifie si tous les éléments sont bien placés
+        checkAllPlacedCorrectly();
       });
     },
   };
 
-  let draggables = document.querySelectorAll(".draggable");
+  function checkAllPlacedCorrectly() {
+    const allCorrect = Object.entries(correctPairs).every(
+      ([dropId, expectedId]) => {
+        const drop = document.getElementById(dropId);
+        const placed = drop.querySelector(".draggable");
+        return placed?.dataset.piece === expectedId;
+      }
+    );
 
-  for (const element of draggables) {
-    dndHandler.applyDragEvents(element);
-    dndHandler.applyDropdragEvents(element);
+    if (allCorrect) {
+      audioCoffret.play();
+      alert("Vous entendez un petit déclic.");
+      document.location.href = "papier.php";
+    }
   }
 
-  let droppers = document.querySelectorAll(".dropper");
+  // Initialisation des zones de départ (dragslot) et d'arrivée (dropper)
+  document.querySelectorAll(".dragslot").forEach((slot) => {
+    dndHandler.applyDropEvents(slot);
+    const draggable = slot.querySelector(".draggable");
+    if (draggable) {
+      dndHandler.applyDragEvents(draggable);
+    }
+  });
 
-  for (const element of droppers) {
-    dndHandler.applyDropEvents(element);
-  }
+  document.querySelectorAll(".dropper").forEach((drop) => {
+    dndHandler.applyDropEvents(drop);
+  });
 }
 
 dragdrop();

@@ -21,10 +21,16 @@
     color: dodgerblue;
     text-align: center;
     font-weight: bold;
+    margin: 10px auto;
 }
 
 .reponse {
     color: red;
     text-align: center;
     font-weight: bold;
+    margin: 10px auto;
+
+    img {
+        width: 60%;
+    }
 }
