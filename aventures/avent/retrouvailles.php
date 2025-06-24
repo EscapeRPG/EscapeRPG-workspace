@@ -18,10 +18,10 @@
 	
 	<body>
 		<?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/header.php"; ?>
-		<div id="banniere"><img src="/escaperpg/images/avent/aventmini.png"></div>
+		<div id="banniere"><img src="/escaperpg/images/avent/aventmini.png" alt="bannière le grenier d'arthur"></div>
 		<main>
 			<nav>
-				<img src="/escaperpg/images/avent/sarah.png">
+				<img src="/escaperpg/images/avent/sarah.png" alt="sarah">
 				<form action="/escaperpg/aventures/avent/cartes.php" target="_blank" rel="noreferrer" method="post"><input type="submit" name="cartes" value="Cartes"></form>
 				<a href="/escaperpg/aventures/avent/save/save.php" target="_blank" rel="noreferrer"><input type="submit" name="save" value="SAUVEGARDER"></a>
 			</nav>
@@ -30,7 +30,7 @@
 					if (isset ($_POST['suivant']))
 						{
 							echo'<div id="succespopup">';
-							$nouveausucces = '<img src="/escaperpg/images/succes/avent/grandpere.png"><span><u><b>Réunion de famille</b></u><br>Retrouver Grand-Père</span>';
+							$nouveausucces = '<img src="/escaperpg/images/succes/avent/grandpere.png" alt="père"><span><u><b>Réunion de famille</b></u><br>Retrouver Grand-Père</span>';
 							$scenario = 'avent';
 							$description = 'grandpère';
 							$cache = 'oui';
@@ -48,7 +48,7 @@
 									<br>
 									<div class="dialogue">
 										<div class="portrait">
-											<img src="/escaperpg/images/avent/arthur.png">
+											<img src="/escaperpg/images/avent/arthur.png" alt="arthur">
 										</div>
 										<div class="bulleperso">
 											<p>
@@ -72,7 +72,7 @@
 									<br>
 									<div class="dialogue">
 										<div class="portrait">
-											<img src="/escaperpg/images/avent/arthur.png">
+											<img src="/escaperpg/images/avent/arthur.png" alt="arthur">
 										</div>
 										<div class="bulleperso">
 											<p>
@@ -86,7 +86,7 @@
 									<br>
 									<div class="dialogue">
 										<div class="portrait">
-											<img src="/escaperpg/images/avent/arthur.png">
+											<img src="/escaperpg/images/avent/arthur.png" alt="arthur">
 										</div>
 										<div class="bulleperso">
 											<p>
@@ -114,7 +114,7 @@
 								<p>
 									<div class="dialogue">
 										<div class="portrait">
-											<img src="/escaperpg/images/avent/arthur.png">
+											<img src="/escaperpg/images/avent/arthur.png" alt="arthur">
 										</div>
 										<div class="bulleperso">
 											<p>
@@ -128,7 +128,7 @@
 									<br>
 									<div class="dialogue">
 										<div class="portrait">
-											<img src="/escaperpg/images/avent/arthur.png">
+											<img src="/escaperpg/images/avent/arthur.png" alt="arthur">
 										</div>
 										<div class="bulleperso">
 											<p>
@@ -161,7 +161,7 @@
 								<p>
 									<div class="dialogue">
 										<div class="portrait">
-											<img src="/escaperpg/images/avent/arthur.png">
+											<img src="/escaperpg/images/avent/arthur.png" alt="arthur">
 										</div>
 										<div class="bulleperso">
 											<p>
@@ -192,7 +192,7 @@
 								<p>
 									<div class="dialogue">
 										<div class="portrait">
-											<img src="/escaperpg/images/avent/arthur.png">
+											<img src="/escaperpg/images/avent/arthur.png" alt="arthur">
 										</div>
 										<div class="bulleperso">
 											<p>
@@ -221,7 +221,7 @@
 								<p>
 									<div class="dialogue">
 										<div class="portrait">
-											<img src="/escaperpg/images/avent/arthur.png">
+											<img src="/escaperpg/images/avent/arthur.png" alt="arthur">
 										</div>
 										<div class="bulleperso">
 											<p>
@@ -259,7 +259,7 @@
 								</p>
 								<center>
 									<form action="retrouvailles" method="post">
-										<input type="text" name="traduire"> <input type="submit" name="translate" value="TRADUIRE.">
+										<input list="notesListe" name="traduire"> <input type="submit" name="translate" value="TRADUIRE.">
 									</form>
 									<br>
 									<form action="retrouvailles" method="post">
@@ -286,7 +286,7 @@
 									Avez-vous remarqué le nombre de cases ?</span><br>
 									<br>
 									<form action="retrouvailles" method="post">
-										<input type="text" name="traduire"> <input type="submit" name="translate" value="TRADUIRE.">
+										<input list="notesListe" name="traduire"> <input type="submit" name="translate" value="TRADUIRE.">
 									</form>
 									<br>
 									<form action="retrouvailles" method="post">
@@ -314,7 +314,7 @@
 									Chaque case correspond à une lettre de notre alphabet. La première ligne vous donne les lettres A, B, C, D, E, F et G et ainsi de suite.</span><br>
 									<br>
 									<form action="retrouvailles" method="post">
-										<input type="text" name="traduire"> <input type="submit" name="translate" value="TRADUIRE.">
+										<input list="notesListe" name="traduire"> <input type="submit" name="translate" value="TRADUIRE.">
 									</form>
 									<br>
 									<form action="retrouvailles" method="post">
@@ -340,7 +340,7 @@
 									<span class="reponse">L\'objet dont vous avez besoin est un sapence.</span><br>
 									<br>
 									<form action="retrouvailles" method="post">
-										<input type="text" name="traduire"> <input type="submit" name="translate" value="TRADUIRE.">
+										<input list="notesListe" name="traduire"> <input type="submit" name="translate" value="TRADUIRE.">
 									</form>
 								</center>
 							';
@@ -475,7 +475,7 @@
 											</p>
 											<center>
 												<form action="retrouvailles" method="post">
-													<input type="text" name="traduire"> <input type="submit" name="translate" value="TRADUIRE.">
+													<input list="notesListe" name="traduire"> <input type="submit" name="translate" value="TRADUIRE.">
 												</form>
 												<br>
 												<form action="retrouvailles" method="post">

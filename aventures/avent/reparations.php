@@ -18,10 +18,10 @@
 	
 	<body>
 		<?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/header.php"; ?>
-		<div id="banniere"><img src="/escaperpg/images/avent/aventmini.png"></div>
+		<div id="banniere"><img src="/escaperpg/images/avent/aventmini.png" alt="bannière le grenier d'arthur"></div>
 		<main>
 			<nav>
-				<img src="/escaperpg/images/avent/sarah.png">
+				<img src="/escaperpg/images/avent/sarah.png" alt="sarah">
 				<form action="/escaperpg/aventures/avent/cartes.php" target="_blank" rel="noreferrer" method="post"><input type="submit" name="cartes" value="Cartes"></form>
 				<a href="/escaperpg/aventures/avent/save/save.php" target="_blank" rel="noreferrer"><input type="submit" name="save" value="SAUVEGARDER"></a>
 			</nav>
@@ -44,7 +44,7 @@
 											<div class="dropper" id="drop3"></div>
 											<div class="dropper" id="drop4"></div>
 											<input type="range" name="range" min="1" max="9" value="1">
-											<input type="text" name="reservoir" id="reservoir">
+											<input list="notesListe" name="reservoir" id="reservoir">
 											<div id="boutonmachineoff">
 												<form action="reparations" method="post">
 													<button type="submit" name="boutonmachine">
@@ -86,7 +86,7 @@
 											<div class="dropper" id="drop3"></div>
 											<div class="dropper" id="drop4"></div>
 											<input type="range" name="range" min="0" max="9" value="0">
-											<input type="text" name="reservoir" id="reservoir">
+											<input list="notesListe" name="reservoir" id="reservoir">
 											<div id="boutonmachineoff">
 												<form action="reparations" method="post">
 													<button type="submit" name="boutonmachine">
@@ -131,7 +131,7 @@
 											<div class="dropper" id="drop3"></div>
 											<div class="dropper" id="drop4"></div>
 											<input type="range" name="range" min="0" max="9" value="0">
-											<input type="text" name="reservoir" id="reservoir">
+											<input list="notesListe" name="reservoir" id="reservoir">
 											<div id="boutonmachineoff">
 												<form action="reparations" method="post">
 													<button type="submit" name="boutonmachine">
@@ -177,7 +177,7 @@
 											<div class="dropper" id="drop3"></div>
 											<div class="dropper" id="drop4"></div>
 											<input type="range" name="range" min="0" max="9" value="0">
-											<input type="text" name="reservoir" id="reservoir">
+											<input list="notesListe" name="reservoir" id="reservoir">
 											<div id="boutonmachineoff">
 												<form action="reparations" method="post">
 													<button type="submit" name="boutonmachine">
@@ -219,7 +219,7 @@
 											<div class="dropper" id="drop3"></div>
 											<div class="dropper" id="drop4"></div>
 											<input type="range" name="range" min="0" max="9" value="0">
-											<input type="text" name="reservoir" id="reservoir">
+											<input list="notesListe" name="reservoir" id="reservoir">
 											<div id="boutonmachineoff">
 												<form action="reparations" method="post">
 													<button type="submit" name="boutonmachine">
@@ -250,7 +250,7 @@
 								<p>
 									<div class="dialogue">
 										<div class="portrait">
-											<img src="/escaperpg/images/avent/arthur.png">
+											<img src="/escaperpg/images/avent/arthur.png" alt="arthur">
 										</div>
 										<div class="bulleperso">
 											<p>

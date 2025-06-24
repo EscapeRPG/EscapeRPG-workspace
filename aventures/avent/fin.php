@@ -18,10 +18,10 @@
 	
 	<body>
 		<?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/header.php"; ?>
-		<div id="banniere"><img src="/escaperpg/images/avent/aventmini.png"></div>
+		<div id="banniere"><img src="/escaperpg/images/avent/aventmini.png" alt="bannière le grenier d'arthur"></div>
 		<main>
 			<nav>
-				<img src="/escaperpg/images/avent/sarah.png">
+				<img src="/escaperpg/images/avent/sarah.png" alt="sarah">
 				<form action="/escaperpg/aventures/avent/cartes.php" target="_blank" rel="noreferrer" method="post"><input type="submit" name="cartes" value="Cartes"></form>
 			</nav>
 			<div id="txt">
@@ -110,7 +110,7 @@
 									<form action="neutralending" method="post">
 										<fieldset>
 											<label for="nom">Votre nom (20 caractères max) :</label>
-											<input type="text" name="nom" id="nom" maxlength="20" required><br>
+											<input list="notesListe" name="nom" id="nom" maxlength="20" required><br>
 											<br>
 											<label for="message">Votre message :</label>
 											<textarea name="message" id="message" rows="7" cols="50">J\'ai terminé ce scénario !</textarea><br>
@@ -264,7 +264,7 @@
 									<br>
 									<div class="dialogue">
 										<div class="portrait">
-											<img src="/escaperpg/images/avent/arthur.png">
+											<img src="/escaperpg/images/avent/arthur.png" alt="arthur">
 										</div>
 										<div class="bulleperso">
 											<p>
@@ -321,7 +321,7 @@
 									<br>
 									<div class="dialogue">
 										<div class="portrait">
-											<img src="/escaperpg/images/avent/arthur.png">
+											<img src="/escaperpg/images/avent/arthur.png" alt="arthur">
 										</div>
 										<div class="bulleperso">
 											<p>

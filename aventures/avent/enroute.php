@@ -18,10 +18,10 @@
 	
 	<body>
 		<?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/header.php"; ?>
-		<div id="banniere"><img src="/escaperpg/images/avent/aventmini.png"></div>
+		<div id="banniere"><img src="/escaperpg/images/avent/aventmini.png" alt="bannière le grenier d'arthur"></div>
 		<main>
 			<nav>
-				<img src="/escaperpg/images/avent/sarah.png">
+				<img src="/escaperpg/images/avent/sarah.png" alt="sarah">
 				<form action="/escaperpg/aventures/avent/cartes.php" target="_blank" rel="noreferrer" method="post"><input type="submit" name="cartes" value="Cartes"></form>
 				<a href="/escaperpg/aventures/avent/save/save.php" target="_blank" rel="noreferrer"><input type="submit" name="save" value="SAUVEGARDER"></a>
 			</nav>
@@ -75,7 +75,7 @@
 													</form>
 													<br>
 													<form action="enroute" method="post">
-														<input type="text" name="aller"> <input type="submit" name="validate" value="VALIDER.">
+														<input list="notesListe" name="aller"> <input type="submit" name="validate" value="VALIDER.">
 													</form>
 													<br>
 													<form action="enroute" method="post">
@@ -106,7 +106,7 @@
 										<span class="indice">Essayez de comparer le drap et la carte avec les étoiles que vous avez trouvée. Peut-être se complètent-ils l\'un et l\'autre ?</span><br>
 										<br>
 										<form action="enroute" method="post">
-											<input type="text" name="aller"> <input type="submit" name="validate" value="VALIDER.">
+											<input list="notesListe" name="aller"> <input type="submit" name="validate" value="VALIDER.">
 										</form>
 										<br>
 										<form action="enroute" method="post">
@@ -137,7 +137,7 @@
 										Vous pouvez dessiner directement sur le drap. Reproduisez le dessin que vous avez sur votre carte.</span><br>
 										<br>
 										<form action="enroute" method="post">
-											<input type="text" name="aller"> <input type="submit" name="validate" value="VALIDER.">
+											<input list="notesListe" name="aller"> <input type="submit" name="validate" value="VALIDER.">
 										</form>
 										<br>
 										<form action="enroute" method="post">
@@ -167,7 +167,7 @@
 										<span class="reponse">Le mot de passe est Pôle Nord.</span><br>
 										<br>
 										<form action="enroute" method="post">
-											<input type="text" name="aller"> <input type="submit" name="validate" value="VALIDER.">
+											<input list="notesListe" name="aller"> <input type="submit" name="validate" value="VALIDER.">
 										</form>
 									</center>
 								';
@@ -191,7 +191,7 @@
 									</p>
 									<center>
 										<form action="enroute" method="post">
-											<input type="text" name="aller"> <input type="submit" name="validate" value="VALIDER.">
+											<input list="notesListe" name="aller"> <input type="submit" name="validate" value="VALIDER.">
 										</form>
 										<br>
 										<form action="enroute" method="post">

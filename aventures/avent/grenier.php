@@ -18,10 +18,10 @@
 	
 	<body>
 		<?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/header.php"; ?>
-		<div id="banniere"><img src="/escaperpg/images/avent/aventmini.png"></div>
+		<div id="banniere"><img src="/escaperpg/images/avent/aventmini.png" alt="bannière le grenier d'arthur"></div>
 		<main>
 			<nav>
-				<img src="/escaperpg/images/avent/sarah.png">
+				<img src="/escaperpg/images/avent/sarah.png" alt="sarah">
 				<form action="/escaperpg/aventures/avent/cartes.php" target="_blank" rel="noreferrer" method="post"><input type="submit" name="cartes" value="Cartes"></form>
 				<a href="/escaperpg/aventures/avent/save/save.php" target="_blank" rel="noreferrer"><input type="submit" name="save" value="SAUVEGARDER"></a>
 			</nav>
@@ -55,7 +55,7 @@
 												Accroché sur le drap, vous remarquez un petit papier et vous vous en emparez.
 											</p>
 											<center>
-												<span class="important">Retournez la carte 9.</span><br>
+												<span class="turn-card">Retournez la carte 9.</span><br>
 												<br>
 												<form action="enroute" method="post">
 													<input type="submit" name="suivant3" value="SUIVANT.">
@@ -92,7 +92,7 @@
 											<script src="/escaperpg/aventures/scripts/rotation.js"></script>
 											<center>
 												<form action="grenier" method="post">
-													<input type="text" name="activate"> <input type="submit" name="activer" value="ACTIVER.">
+													<input list="notesListe" name="activate"> <input type="submit" name="activer" value="ACTIVER.">
 												</form>
 												<br>
 												<form action="grenier" method="post">
@@ -139,7 +139,7 @@
 										<span class="indice">Certaines des pièces semblent ne pas être installées correctement. Essayez de les faire bouger.</span><br>
 										<br>
 										<form action="grenier" method="post">
-											<input type="text" name="activate"> <input type="submit" name="activer" value="ACTIVER.">
+											<input list="notesListe" name="activate"> <input type="submit" name="activer" value="ACTIVER.">
 										</form>
 										<br>
 										<form action="grenier" method="post">
@@ -185,7 +185,7 @@
 										Associez bien les embouts de couleur entre eux et vous devriez voir un mot se dessiner.</span><br>
 										<br>
 										<form action="grenier" method="post">
-											<input type="text" name="activate"> <input type="submit" name="activer" value="ACTIVER.">
+											<input list="notesListe" name="activate"> <input type="submit" name="activer" value="ACTIVER.">
 										</form>
 										<br>
 										<form action="grenier" method="post">
@@ -229,7 +229,7 @@
 										<span class="reponse">Le mot de passe à rentrer est Départ.</span><br>
 										<br>
 										<form action="grenier" method="post">
-											<input type="text" name="activate"> <input type="submit" name="activer" value="ACTIVER.">
+											<input list="notesListe" name="activate"> <input type="submit" name="activer" value="ACTIVER.">
 										</form>
 									</center>
 								';
@@ -272,7 +272,7 @@
 											<script src="/escaperpg/aventures/scripts/rotation.js"></script>
 											<center>
 												<form action="grenier" method="post">
-													<input type="text" name="activate"> <input type="submit" name="activer" value="ACTIVER.">
+													<input list="notesListe" name="activate"> <input type="submit" name="activer" value="ACTIVER.">
 												</form>
 												<br>
 												<form action="grenier" method="post">
@@ -295,7 +295,7 @@
 											</p>
 											<center>
 												<form action="grenier" method="post">
-													<input type="text" name="ref"> <input type="submit" name="reference" value="valider.">
+													<input list="notesListe" name="ref"> <input type="submit" name="reference" value="valider.">
 												</form>
 												<br>
 												<form action="grenier" method="post">
@@ -315,7 +315,7 @@
 									Vous la prenez avec vous, au cas où.
 								</p>
 								<center>
-									<span class="important">Retournez la carte numéro 3.<br>
+									<span class="turn-card">Retournez la carte numéro 3.<br>
 									<br>
 									<form action="grenier" method="post">
 										<input type="submit" name="suivant2" value="RETOUR.">
@@ -337,7 +337,7 @@
 								</p>
 								<center>
 									<form action="grenier" method="post">
-										<input type="text" name="ref"> <input type="submit" name="reference" value="valider.">
+										<input list="notesListe" name="ref"> <input type="submit" name="reference" value="valider.">
 									</form>
 									<br>
 									<form action="grenier" method="post">
@@ -359,7 +359,7 @@
 										<span class="indice">Observez bien les deux pièces que vous avez récupérées. Il y a sans doute un indice dessus.</span><br>
 										<br>
 										<form action="grenier" method="post">
-											<input type="text" name="ref"> <input type="submit" name="reference" value="valider.">
+											<input list="notesListe" name="ref"> <input type="submit" name="reference" value="valider.">
 										</form>
 										<br>
 										<form action="grenier" method="post">
@@ -382,7 +382,7 @@
 										Avez-vous remarqué les références qui sont gravées sur les plaques ?</span><br>
 										<br>
 										<form action="grenier" method="post">
-											<input type="text" name="ref"> <input type="submit" name="reference" value="valider.">
+											<input list="notesListe" name="ref"> <input type="submit" name="reference" value="valider.">
 										</form>
 										<br>
 										<form action="grenier" method="post">
@@ -406,7 +406,7 @@
 										Pour trouver l\'ordre, fiez-vous à la forme des pièces. Ne vous rappellent-elles pas quelque chose ?</span><br>
 										<br>
 										<form action="grenier" method="post">
-											<input type="text" name="ref"> <input type="submit" name="reference" value="valider.">
+											<input list="notesListe" name="ref"> <input type="submit" name="reference" value="valider.">
 										</form>
 										<br>
 										<form action="grenier" method="post">
@@ -429,7 +429,7 @@
 										La référence à entrer est 7ff-8357.</span><br>
 										<br>
 										<form action="grenier" method="post">
-											<input type="text" name="ref"> <input type="submit" name="reference" value="valider.">
+											<input list="notesListe" name="ref"> <input type="submit" name="reference" value="valider.">
 										</form>
 									</center>
 								';
@@ -511,7 +511,7 @@
 									Vous trouvez une pièce de machine étrange qui pourrait parfaitement convenir.
 								</p>
 								<center>
-									<span class="important">Retournez la carte numéro 5.<br>
+									<span class="turn-card">Retournez la carte numéro 5.<br>
 									<br>
 									<form action="grenier" method="post">
 										<input type="submit" name="suivant2" value="RETOUR.">
@@ -528,7 +528,7 @@
 									Vous trouvez une pièce de machine étrange qui pourrait parfaitement convenir.
 								</p>
 								<center>
-									<span class="important">Retournez la carte numéro 12.<br>
+									<span class="turn-card">Retournez la carte numéro 12.<br>
 									<br>
 									<form action="grenier" method="post">
 										<input type="submit" name="suivant2" value="RETOUR.">

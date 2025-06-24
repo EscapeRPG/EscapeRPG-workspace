@@ -18,9 +18,9 @@
 	
 	<body>
 		<?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/header.php"; ?>
-		<div id="banniere"><img src="/escaperpg/images/avent/aventmini.png"></div>
+		<div id="banniere"><img src="/escaperpg/images/avent/aventmini.png" alt="bannière le grenier d'arthur"></div>
 		<main>
-			<nav><img src="/escaperpg/images/avent/sarah.png"></nav>
+			<nav><img src="/escaperpg/images/avent/sarah.png" alt="sarah"></nav>
 			<div id="txt">
 				<?php
 					if ($_SESSION['loggedin']) {
@@ -72,12 +72,12 @@
 									Gardez bien le code à retaper en mémoire, il vous sera demandé pour charger votre partie !</span>
 								</p>
 								<form action="save" method ="post">
-									<input type="text" name="nom" id="nom" placeholder="Nom" maxlength="20" required>
+									<input list="notesListe" name="nom" id="nom" placeholder="Nom" maxlength="20" required>
 									<br>
 									<br>
 									<b>'.$random.'</b> 
 									<br>
-									<input type="text" name="code" id="code" placeholder="Retapez le code ci-dessus" pattern="[0-9]{6}" title="Veuillez entrer le code à 6 chiffres ci-dessus" required>
+									<input list="notesListe" name="code" id="code" placeholder="Retapez le code ci-dessus" pattern="[0-9]{6}" title="Veuillez entrer le code à 6 chiffres ci-dessus" required>
 									<br>
 									<br>
 									<input type="submit" name="continuer" value="Sauvegarder.">

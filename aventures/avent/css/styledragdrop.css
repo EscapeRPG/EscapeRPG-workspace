@@ -1,0 +1,32 @@
+.dropper {
+    width: 14.33%;
+    height: 21.5%;
+    display: inline-block;
+    vertical-align: top;
+    background-color: rgba(40, 40, 40, 0.4);
+    border-radius: 10px;
+    transition: all 200ms linear;
+    padding: 0;
+}
+
+.drop_hover {
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.8) inset;
+}
+
+.draggable {
+    width: 10%;
+    display: inline-block;
+    vertical-align: top;
+    background-color: rgba(40, 40, 40, 0.4);
+    border-radius: 10px;
+    transition: all 200ms linear;
+    user-select: none;
+}
+
+.draggable img {
+    width: 100%;
+}
+
+.drag_hover {
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.8) inset;
+}

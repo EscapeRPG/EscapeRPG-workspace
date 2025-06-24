@@ -18,10 +18,10 @@
 	
 	<body>
 		<?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/header.php"; ?>
-		<div id="banniere"><img src="/escaperpg/images/avent/aventmini.png"></div>
+		<div id="banniere"><img src="/escaperpg/images/avent/aventmini.png" alt="bannière le grenier d'arthur"></div>
 		<main>
 			<nav>
-				<img src="/escaperpg/images/avent/sarah.png">
+				<img src="/escaperpg/images/avent/sarah.png" alt="sarah">
 				<form action="/escaperpg/aventures/avent/cartes.php" target="_blank" rel="noreferrer" method="post"><input type="submit" name="cartes" value="Cartes"></form>
 				<a href="/escaperpg/aventures/avent/save/save.php" target="_blank" rel="noreferrer"><input type="submit" name="save" value="SAUVEGARDER"></a>
 			</nav>
@@ -33,7 +33,7 @@
 								<p>
 									<div class="dialogue">
 										<div class="portrait">
-											<img src="/escaperpg/images/avent/arthur.png">
+											<img src="/escaperpg/images/avent/arthur.png" alt="arthur">
 										</div>
 										<div class="bulleperso">
 											<p>
@@ -56,7 +56,7 @@
 									<br>
 									<div class="dialogue">
 										<div class="portrait">
-											<img src="/escaperpg/images/avent/arthur.png">
+											<img src="/escaperpg/images/avent/arthur.png" alt="arthur">
 										</div>
 										<div class="bulleperso">
 											<p>
@@ -74,7 +74,7 @@
 									<br>
 									<div class="dialogue">
 										<div class="portrait">
-											<img src="/escaperpg/images/avent/arthur.png">
+											<img src="/escaperpg/images/avent/arthur.png" alt="arthur">
 										</div>
 										<div class="bulleperso">
 											<p>
@@ -87,7 +87,7 @@
 									<br>
 									<div class="dialogue">
 										<div class="portrait">
-											<img src="/escaperpg/images/avent/arthur.png">
+											<img src="/escaperpg/images/avent/arthur.png" alt="arthur">
 										</div>
 										<div class="bulleperso">
 											<p>
@@ -112,7 +112,7 @@
 								<p>
 									<div class="dialogue">
 										<div class="portrait">
-											<img src="/escaperpg/images/avent/arthur.png">
+											<img src="/escaperpg/images/avent/arthur.png" alt="arthur">
 										</div>
 										<div class="bulleperso">
 											<p>
@@ -128,7 +128,7 @@
 									<br>
 									<div class="dialogue">
 										<div class="portrait">
-											<img src="/escaperpg/images/avent/arthur.png">
+											<img src="/escaperpg/images/avent/arthur.png" alt="arthur">
 										</div>
 										<div class="bulleperso">
 											<p>
@@ -170,7 +170,7 @@
 								</p>
 								<center>
 									<form action="retour" method="post">
-										<input type="text" name="prendre"> <input type="submit" name="take" value="prendre.">
+										<input list="notesListe" name="prendre"> <input type="submit" name="take" value="prendre.">
 									</form>
 									<br>
 									<form action="retour" method="post">
@@ -203,7 +203,7 @@
 									<span class="indice">Essayez de repérer tous les produits dont vous avez besoin. Ils ont tous une couleur particulière.</span><br>
 									<br>
 									<form action="retour" method="post">
-										<input type="text" name="prendre"> <input type="submit" name="take" value="prendre.">
+										<input list="notesListe" name="prendre"> <input type="submit" name="take" value="prendre.">
 									</form>
 									<br>
 									<form action="retour" method="post">
@@ -237,7 +237,7 @@
 									Regardez bien les cartes que vous avez, certaines ont des dos de couleur.</span><br>
 									<br>
 									<form action="retour" method="post">
-										<input type="text" name="prendre"> <input type="submit" name="take" value="prendre.">
+										<input list="notesListe" name="prendre"> <input type="submit" name="take" value="prendre.">
 									</form>
 									<br>
 									<form action="retour" method="post">
@@ -272,7 +272,7 @@
 									Prenez dans l\'ordre, les cartes de couleur bleu, vert, orange, blanc et rose.</span><br>
 									<br>
 									<form action="retour" method="post">
-										<input type="text" name="prendre"> <input type="submit" name="take" value="prendre.">
+										<input list="notesListe" name="prendre"> <input type="submit" name="take" value="prendre.">
 									</form>
 									<br>
 									<form action="retour" method="post">
@@ -305,7 +305,7 @@
 									<span class="reponse">Le code à rentrer est "Paré au décollage".</span><br>
 									<br>
 									<form action="retour" method="post">
-										<input type="text" name="prendre"> <input type="submit" name="take" value="prendre.">
+										<input list="notesListe" name="prendre"> <input type="submit" name="take" value="prendre.">
 									</form>
 								</center>
 							';
@@ -324,7 +324,7 @@
 												<br>
 												<div class="dialogue">
 													<div class="portrait">
-														<img src="/escaperpg/images/avent/arthur.png">
+														<img src="/escaperpg/images/avent/arthur.png" alt="arthur">
 													</div>
 													<div class="bulleperso">
 														<p>
@@ -363,7 +363,7 @@
 											</p>
 											<center>
 												<form action="retour" method="post">
-													<input type="text" name="prendre"> <input type="submit" name="take" value="prendre.">
+													<input list="notesListe" name="prendre"> <input type="submit" name="take" value="prendre.">
 												</form>
 												<br>
 												<form action="retour" method="post">
@@ -390,7 +390,7 @@
 									<br>
 									<div class="dialogue">
 										<div class="portrait">
-											<img src="/escaperpg/images/avent/arthur.png">
+											<img src="/escaperpg/images/avent/arthur.png" alt="arthur">
 										</div>
 										<div class="bulleperso">
 											<p>
