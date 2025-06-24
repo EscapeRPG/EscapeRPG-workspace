@@ -222,7 +222,7 @@
 											</p>
 											<center>
 												<form action="pyramide" method="post">
-													<input type="text" name="sullivan"><input type="submit" name="suivant" value="Suivant.">
+													<input list="notesListe" name="sullivan"><input type="submit" name="suivant" value="Suivant.">
 												</form>
 											</center>
 										';
@@ -748,7 +748,7 @@
 								</p>
 								<center>
 									<form action="pyramide" method="post">
-										<input type="text" name="sullivan"><input type="submit" name="suivant" value="Suivant.">
+										<input list="notesListe" name="sullivan"><input type="submit" name="suivant" value="Suivant.">
 									</form>
 								</center>
 							';

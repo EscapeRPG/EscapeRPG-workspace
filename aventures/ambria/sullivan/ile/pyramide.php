@@ -226,7 +226,7 @@
 								</p>
 								<center>
 									<form action="pyramide" method="post">
-										<input type="text" name="logan"><input type="submit" name="avancer" value="Avancer.">
+										<input list="notesListe" name="logan"><input type="submit" name="avancer" value="Avancer.">
 									</form>
 								</center>
 							';
@@ -348,7 +348,7 @@
 											</div>
 											<center>
 												<form action="pyramide" method="post">
-													<input type="text" name="mutinerie"><input type="submit" name="attendre" value="Attendre sa réponse.">
+													<input list="notesListe" name="mutinerie"><input type="submit" name="attendre" value="Attendre sa réponse.">
 												</form>
 											</center>
 										';
@@ -464,7 +464,7 @@
 											<p>Êtes-vous sûr d\'avoir bien compris ce que Logan vous a dit ?</p>
 											<center>
 												<form action="pyramide" method="post">
-													<input type="text" name="logan"><input type="submit" name="avancer" value="Avancer.">
+													<input list="notesListe" name="logan"><input type="submit" name="avancer" value="Avancer.">
 												</form>
 											</center>
 										';
@@ -630,7 +630,7 @@
 											<p>Êtes-vous sûr d\'avoir bien compris ce que Logan a répondu ?</p>
 											<center>
 												<form action="pyramide" method="post">
-													<input type="text" name="mutinerie"><input type="submit" name="attendre" value="Attendre sa réponse.">
+													<input list="notesListe" name="mutinerie"><input type="submit" name="attendre" value="Attendre sa réponse.">
 												</form>
 											</center>
 										';
@@ -730,7 +730,7 @@
 											<p>Êtes-vous sûr d\'avoir bien compris ce que Logan a dit ?</p>
 											<center>
 												<form action="pyramide" method="post">
-													<input type="text" name="levers"><input type="submit" name="reagir" value="Suivant.">
+													<input list="notesListe" name="levers"><input type="submit" name="reagir" value="Suivant.">
 												</form>
 											</center>
 										';
@@ -792,7 +792,7 @@
 								</p>
 								<center>
 									<form action="pyramide" method="post">
-										<input type="text" name="levers"><input type="submit" name="reagir" value="Suivant.">
+										<input list="notesListe" name="levers"><input type="submit" name="reagir" value="Suivant.">
 									</form>
 								</center>
 							';

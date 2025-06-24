@@ -89,7 +89,7 @@
 								</p>
 								<center>
 									<form action="bordel" method="post">
-										<input type="text" name="vieux"> <input type="submit" name="donner" value="Lui donner.">
+										<input list="notesListe" name="vieux"> <input type="submit" name="donner" value="Lui donner.">
 									</form>
 								</center>
 							';
@@ -155,7 +155,7 @@
 								</p>
 								<center>
 									<form action="bordel" method="post">
-										<input type="text" name="vieux"> <input type="submit" name="donner" value="Lui donner.">
+										<input list="notesListe" name="vieux"> <input type="submit" name="donner" value="Lui donner.">
 									</form>
 								</center>
 							';

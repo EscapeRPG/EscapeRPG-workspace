@@ -50,7 +50,7 @@
 											</div>
 											<center>
 												<form action="quartierdesequipages" method="post">
-													<input type="text" name="ask"><input type="submit" name="demander" value="Demander.">
+													<input list="notesListe" name="ask"><input type="submit" name="demander" value="Demander.">
 												</form>
 											</center>
 										';
@@ -107,7 +107,7 @@
 											</div>
 											<center>
 												<form action="quartierdesequipages" method="post">
-													<input type="text" name="ask"><input type="submit" name="demander" value="Demander.">
+													<input list="notesListe" name="ask"><input type="submit" name="demander" value="Demander.">
 												</form>
 											</center>
 										';
@@ -198,7 +198,7 @@
 								</div>
 								<center>
 									<form action="quartierdesequipages" method="post">
-										<input type="text" name="ask"><input type="submit" name="demander" value="Demander.">
+										<input list="notesListe" name="ask"><input type="submit" name="demander" value="Demander.">
 									</form>
 								</center>
 							';

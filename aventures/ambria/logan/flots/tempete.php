@@ -91,7 +91,7 @@
 											</p>
 											<center>
 												<form action="tempete" method="post">
-													<input type="text" name="ordres"><input type="submit" name="attendre" value="Attendre les ordres.">
+													<input list="notesListe" name="ordres"><input type="submit" name="attendre" value="Attendre les ordres.">
 												</form>
 											</center>
 										';
@@ -136,7 +136,7 @@
 								</p>
 								<center>
 									<form action="tempete" method="post">
-										<input type="text" name="tonneaux"><input type="submit" name="attendre3" value="Réagir.">
+										<input list="notesListe" name="tonneaux"><input type="submit" name="attendre3" value="Réagir.">
 									</form>
 								</center>
 							';
@@ -165,7 +165,7 @@
 								</p>
 								<center>
 									<form action="tempete" method="post">
-										<input type="text" name="tonneaux"><input type="submit" name="attendre3" value="Réagir.">
+										<input list="notesListe" name="tonneaux"><input type="submit" name="attendre3" value="Réagir.">
 									</form>
 								</center>
 							';
@@ -210,7 +210,7 @@
 											</p>
 											<center>
 												<form action="tempete" method="post">
-													<input type="text" name="tonneaux"><input type="submit" name="attendre3" value="Réagir.">
+													<input list="notesListe" name="tonneaux"><input type="submit" name="attendre3" value="Réagir.">
 												</form>
 											</center>
 										';
@@ -433,7 +433,7 @@
 											</p>
 											<center>
 												<form action="tempete" method="post">
-													<input type="text" name="recifs"><input type="submit" name="finrecifs" value="Attendre les ordres.">
+													<input list="notesListe" name="recifs"><input type="submit" name="finrecifs" value="Attendre les ordres.">
 												</form>
 											</center>
 										';
@@ -451,7 +451,7 @@
 								</p>
 								<center>
 									<form action="tempete" method="post">
-										<input type="text" name="recifs"><input type="submit" name="finrecifs" value="Attendre les ordres.">
+										<input list="notesListe" name="recifs"><input type="submit" name="finrecifs" value="Attendre les ordres.">
 									</form>
 								</center>
 							';
@@ -545,7 +545,7 @@
 								</p>
 								<center>
 									<form action="tempete" method="post">
-										<input type="text" name="ordres2"><input type="submit" name="attendre2" value="Suivre les ordres.">
+										<input list="notesListe" name="ordres2"><input type="submit" name="attendre2" value="Suivre les ordres.">
 									</form>
 								</center>
 							';
@@ -588,7 +588,7 @@
 											</p>
 											<center>
 												<form action="tempete" method="post">
-													<input type="text" name="ordres2"><input type="submit" name="attendre2" value="Suivre les ordres.">
+													<input list="notesListe" name="ordres2"><input type="submit" name="attendre2" value="Suivre les ordres.">
 												</form>
 											</center>
 										';
@@ -699,7 +699,7 @@
 								</p>
 								<center>
 									<form action="tempete" method="post">
-										<input type="text" name="ordres"><input type="submit" name="attendre" value="Attendre les ordres.">
+										<input list="notesListe" name="ordres"><input type="submit" name="attendre" value="Attendre les ordres.">
 									</form>
 								</center>
 							';

@@ -71,7 +71,7 @@
 											</p>
 											<center>
 												<form action="gardien" method="post">
-													<input type="text" name="attention"><input type="submit" name="logan" value="Prêter attention.">
+													<input list="notesListe" name="attention"><input type="submit" name="logan" value="Prêter attention.">
 												</form>
 											</center>
 										';
@@ -385,7 +385,7 @@
 											</p>
 											<center>
 												<form action="gardien" method="post">
-													<input type="text" name="ecouter"><input type="submit" name="surveiller" value="Suivant.">
+													<input list="notesListe" name="ecouter"><input type="submit" name="surveiller" value="Suivant.">
 												</form>
 											</center>
 										';
@@ -405,7 +405,7 @@
 								</p>
 								<center>
 									<form action="gardien" method="post">
-										<input type="text" name="ecouter"><input type="submit" name="surveiller" value="Suivant.">
+										<input list="notesListe" name="ecouter"><input type="submit" name="surveiller" value="Suivant.">
 									</form>
 								</center>
 							';
@@ -680,7 +680,7 @@
 								</div>
 								<center>
 									<form action="gardien" method="post">
-										<input type="text" name="attention"><input type="submit" name="logan" value="Prêter attention.">
+										<input list="notesListe" name="attention"><input type="submit" name="logan" value="Prêter attention.">
 									</form>
 								</center>
 							';

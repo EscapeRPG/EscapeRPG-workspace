@@ -68,8 +68,8 @@
 								<p>Il y a eu une erreur quelque part, veuillez réessayer.</p>
 								<center>
 									<form action="load" method="post">
-										<input type="text" name="nom" id="nom" placeholder="Nom" required>
-										<input type="text" name="code" id="code" placeholder="Code" required>
+										<input list="notesListe" name="nom" id="nom" placeholder="Nom" required>
+										<input list="notesListe" name="code" id="code" placeholder="Code" required>
 										<input type="submit" name="continuer" value="Charger.">
 									</form>
 								</center>
@@ -81,8 +81,8 @@
 							<p>Veuillez entrer le nom et le code utilisés lors de votre dernière sauvegarde.</p>
 							<center>
 								<form action="load" method="post">
-									<input type="text" name="nom" id="nom" placeholder="Nom" required>
-									<input type="text" name="code" id="code" placeholder="Code" required>
+									<input list="notesListe" name="nom" id="nom" placeholder="Nom" required>
+									<input list="notesListe" name="code" id="code" placeholder="Code" required>
 									<input type="submit" name="continuer" value="Charger.">
 								</form>
 							</center>

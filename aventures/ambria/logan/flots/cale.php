@@ -93,7 +93,7 @@
 											</p>
 											<center>
 												<form action="cale" method="post">
-													<input type="text" name="capitaine"><input type="submit" name="jouer" value="Jouer.">
+													<input list="notesListe" name="capitaine"><input type="submit" name="jouer" value="Jouer.">
 												</form>
 											</center>
 										';
@@ -186,7 +186,7 @@
 								</div>
 								<center>
 									<form action="cale" method="post">
-										<input type="text" name="capitaine"><input type="submit" name="jouer" value="Jouer.">
+										<input list="notesListe" name="capitaine"><input type="submit" name="jouer" value="Jouer.">
 									</form>
 								</center>
 							';

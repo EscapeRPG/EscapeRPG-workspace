@@ -115,9 +115,9 @@
 								<center>
 									<form action="docks" method="post">
 										<label for="qui">Qui possède la carte ?</label>
-										<input type="text" name="qui" id="qui"><br><br>
+										<input list="notesListe" name="qui" id="qui"><br><br>
 										<label for="ou">Où se trouve cette personne ?</label>
-										<input type="text" name="ou" id="ou"><br><br>
+										<input list="notesListe" name="ou" id="ou"><br><br>
 										<input type="submit" name="validate" value="Valider.">
 									</form>
 								</center>

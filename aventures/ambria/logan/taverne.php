@@ -70,7 +70,7 @@
 											</p>
 											<center>
 												<form action="taverne" method="post">
-													<input type="text" name="objet"><input type="submit" name="suivant" value="Suivant.">
+													<input list="notesListe" name="objet"><input type="submit" name="suivant" value="Suivant.">
 												</form>
 												<form action="taverne" method="post">
 													<button type="submit" name="indice1" class="boutonindice"></button>
@@ -228,7 +228,7 @@
 								</p>
 								<center>
 									<form action="taverne" method="post">
-										<input type="text" name="objet"><input type="submit" name="suivant" value="Suivant.">
+										<input list="notesListe" name="objet"><input type="submit" name="suivant" value="Suivant.">
 									</form>
 								</center>
 							';

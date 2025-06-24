@@ -294,7 +294,7 @@
 											</p>
 											<center>
 												<form action="gardien" method="post">
-													<input type="text" name="combatfini"><input type="submit" name="combatfin" value="Suivant.">
+													<input list="notesListe" name="combatfini"><input type="submit" name="combatfin" value="Suivant.">
 												</form>
 											</center>
 										';
@@ -312,7 +312,7 @@
 								</p>
 								<center>
 									<form action="gardien" method="post">
-										<input type="text" name="combatfini"><input type="submit" name="combatfin" value="Suivant.">
+										<input list="notesListe" name="combatfini"><input type="submit" name="combatfin" value="Suivant.">
 									</form>
 								</center>
 							';
@@ -525,7 +525,7 @@
 											</p>
 											<center>
 												<form action="gardien" method="post">
-													<input type="text" name="ecouter"><input type="submit" name="surveiller" value="Agir.">
+													<input list="notesListe" name="ecouter"><input type="submit" name="surveiller" value="Agir.">
 												</form>
 											</center>
 										';
@@ -543,7 +543,7 @@
 								</p>
 								<center>
 									<form action="gardien" method="post">
-										<input type="text" name="ecouter"><input type="submit" name="surveiller" value="Agir.">
+										<input list="notesListe" name="ecouter"><input type="submit" name="surveiller" value="Agir.">
 									</form>
 								</center>
 							';

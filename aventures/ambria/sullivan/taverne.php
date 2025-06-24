@@ -113,7 +113,7 @@
 													</p>
 													<center>
 														<form action="taverne" method="post">
-															<input type="text" name="loganreponse"><input type="submit" name="discuter" value="Discuter.">
+															<input list="notesListe" name="loganreponse"><input type="submit" name="discuter" value="Discuter.">
 														</form>
 														<form action="taverne" method="post">
 															<button type="submit" name="indice3" class="boutonindice"></button>
@@ -147,7 +147,7 @@
 										</p>
 										<center>
 											<form action="taverne" method="post">
-												<input type="text" name="loganreponse"><input type="submit" name="discuter" value="Discuter.">
+												<input list="notesListe" name="loganreponse"><input type="submit" name="discuter" value="Discuter.">
 											</form>
 										</center>
 									';
@@ -280,7 +280,7 @@
 										</div>
 										<center>
 											<form action="taverne" method="post">
-												<input type="text" name="don"> <input type="submit" name="demander" value="Demander.">
+												<input list="notesListe" name="don"> <input type="submit" name="demander" value="Demander.">
 											</form>
 										</center>
 									';
@@ -305,7 +305,7 @@
 													</div>
 													<center>
 														<form action="taverne" method="post">
-															<input type="text" name="don"> <input type="submit" name="demander" value="Demander.">
+															<input list="notesListe" name="don"> <input type="submit" name="demander" value="Demander.">
 														</form>
 													</center>
 												';
@@ -324,7 +324,7 @@
 													</div>
 													<center>
 														<form action="taverne" method="post">
-															<input type="text" name="don"> <input type="submit" name="demander" value="Demander.">
+															<input list="notesListe" name="don"> <input type="submit" name="demander" value="Demander.">
 														</form>
 													</center>
 												';
@@ -374,7 +374,7 @@
 													</div>
 													<center>
 														<form action="taverne" method="post">
-															<input type="text" name="don"> <input type="submit" name="demander" value="Demander.">
+															<input list="notesListe" name="don"> <input type="submit" name="demander" value="Demander.">
 														</form>
 													</center>
 												';
@@ -399,7 +399,7 @@
 										</div>
 										<center>
 											<form action="taverne" method="post">
-												<input type="text" name="don"> <input type="submit" name="demander" value="Demander.">
+												<input list="notesListe" name="don"> <input type="submit" name="demander" value="Demander.">
 											</form>
 										</center>
 									';
@@ -428,7 +428,7 @@
 										</div>
 										<center>
 											<form action="taverne" method="post">
-												<input type="text" name="don"> <input type="submit" name="demander" value="Demander.">
+												<input list="notesListe" name="don"> <input type="submit" name="demander" value="Demander.">
 											</form>
 										</center>
 									';

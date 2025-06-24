@@ -185,7 +185,7 @@
 								</p>
 								<center>
 									<form action="tempete" method="post">
-										<input type="text" name="vigie"><input type="submit" name="vague" value="L\'écouter.">
+										<input list="notesListe" name="vigie"><input type="submit" name="vague" value="L\'écouter.">
 									</form>
 								</center>
 							';
@@ -214,7 +214,7 @@
 								</p>
 								<center>
 									<form action="tempete" method="post">
-										<input type="text" name="vigie"><input type="submit" name="vague" value="L\'écouter.">
+										<input list="notesListe" name="vigie"><input type="submit" name="vague" value="L\'écouter.">
 									</form>
 								</center>
 							';

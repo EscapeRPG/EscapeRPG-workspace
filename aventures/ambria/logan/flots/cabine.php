@@ -41,7 +41,7 @@
 								</p>
 								<center>
 									<form action="cabine" method="post">
-										<input type="text" name="cap"><input type="submit" name="carte" value="Déchiffrer le parchemin.">
+										<input list="notesListe" name="cap"><input type="submit" name="carte" value="Déchiffrer le parchemin.">
 									</form>
 								</center>
 							';
@@ -116,7 +116,7 @@
 											</p>
 											<center>
 												<form action="cabine" method="post">
-													<input type="text" name="cap"><input type="submit" name="carte" value="Déchiffrer le parchemin.">
+													<input list="notesListe" name="cap"><input type="submit" name="carte" value="Déchiffrer le parchemin.">
 												</form>
 											</center>
 										';

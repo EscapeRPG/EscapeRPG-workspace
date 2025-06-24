@@ -76,7 +76,7 @@
 											</p>
 											<center>
 												<form action="cite" method="post">
-													<input type="text" name="enavant"><input type="submit" name="ecouter" value="L\'écouter.">
+													<input list="notesListe" name="enavant"><input type="submit" name="ecouter" value="L\'écouter.">
 												</form>
 											</center>
 										';
@@ -172,7 +172,7 @@
 								</p>
 								<center>
 									<form action="cite" method="post">
-										<input type="text" name="enavant"><input type="submit" name="ecouter" value="L\'écouter.">
+										<input list="notesListe" name="enavant"><input type="submit" name="ecouter" value="L\'écouter.">
 									</form>
 								</center>
 							';

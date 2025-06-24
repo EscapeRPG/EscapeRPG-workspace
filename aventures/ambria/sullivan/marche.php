@@ -64,7 +64,7 @@
 								</div>
 								<center>
 									<form action="marche" method="post">
-										<input type="text" name="bernard"> <input type="submit" name="demander" value="Demander.">
+										<input list="notesListe" name="bernard"> <input type="submit" name="demander" value="Demander.">
 									</form>
 								</center>
 							';
@@ -95,7 +95,7 @@
 								</div>
 								<center>
 									<form action="marche" method="post">
-										<input type="text" name="bernard"> <input type="submit" name="demander" value="Demander.">
+										<input list="notesListe" name="bernard"> <input type="submit" name="demander" value="Demander.">
 									</form>
 								</center>
 							';

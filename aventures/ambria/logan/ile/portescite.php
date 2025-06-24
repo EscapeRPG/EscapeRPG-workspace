@@ -55,9 +55,9 @@
 								<form action="portescite" method="post">
 									<div id="loganporte">
 										<img src="/escaperpg/images/ambria/porte/loganporte.png">
-										<input type="text" name="1" class="emplacementboule1" placeholder="0">
-										<input type="text" name="2" class="emplacementboule2" placeholder="0">
-										<input type="text" name="3" class="emplacementboule3" placeholder="0">
+										<input list="notesListe" name="1" class="emplacementboule1" placeholder="0">
+										<input list="notesListe" name="2" class="emplacementboule2" placeholder="0">
+										<input list="notesListe" name="3" class="emplacementboule3" placeholder="0">
 									</div>
 									<center>
 										<input type="submit" name="boulets" value="Valider.">
@@ -85,9 +85,9 @@
 								<form action="portescite" method="post">
 									<div id="loganporte">
 										<img src="/escaperpg/images/ambria/porte/loganporte.png">
-										<input type="text" name="1" class="emplacementboule1" placeholder="0">
-										<input type="text" name="2" class="emplacementboule2" placeholder="0">
-										<input type="text" name="3" class="emplacementboule3" placeholder="0">
+										<input list="notesListe" name="1" class="emplacementboule1" placeholder="0">
+										<input list="notesListe" name="2" class="emplacementboule2" placeholder="0">
+										<input list="notesListe" name="3" class="emplacementboule3" placeholder="0">
 									</div>
 									<center>
 										<input type="submit" name="boulets" value="Valider.">

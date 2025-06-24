@@ -55,7 +55,7 @@
 											</p>
 											<center>
 												<form action="cite" method="post">
-													<input type="text" name="enavant"><input type="submit" name="avancer" value="Avancer.">
+													<input list="notesListe" name="enavant"><input type="submit" name="avancer" value="Avancer.">
 												</form>
 											</center>
 										';
@@ -158,7 +158,7 @@
 								</div>
 								<center>
 									<form action="cite" method="post">
-										<input type="text" name="enavant"><input type="submit" name="avancer" value="Avancer.">
+										<input list="notesListe" name="enavant"><input type="submit" name="avancer" value="Avancer.">
 									</form>
 								</center>
 							';

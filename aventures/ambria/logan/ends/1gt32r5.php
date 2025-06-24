@@ -121,7 +121,7 @@
 									<form action="1gt32r5" method="post">
 										<fieldset>
 											<label for="nom">Votre nom (20 caractères max) :</label>
-											<input type="text" name="nom" id="nom" maxlength="20" required><br>
+											<input list="notesListe" name="nom" id="nom" maxlength="20" required><br>
 											<br>
 											<label for="message">Votre message :</label>
 											<textarea name="message" id="message" rows="7" cols="50">J\'ai terminé ce scénario et ai obtenu 1 étoile !</textarea><br>

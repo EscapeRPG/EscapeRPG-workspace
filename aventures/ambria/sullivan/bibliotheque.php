@@ -157,7 +157,7 @@
 											</p>
 											<center>
 												<form action="bibliotheque" method="post">
-													<input type="text" name="look"><input type="submit" name="inspecter" value="Inspecter.">
+													<input list="notesListe" name="look"><input type="submit" name="inspecter" value="Inspecter.">
 												</form>
 												<form action="bibliotheque" method="post">
 													<button type="submit" name="indice1" class="boutonindice"></button>
@@ -206,7 +206,7 @@
 								</p>
 								<center>
 									<form action="bibliotheque" method="post">
-										<input type="text" name="look"><input type="submit" name="inspecter" value="Inspecter.">
+										<input list="notesListe" name="look"><input type="submit" name="inspecter" value="Inspecter.">
 									</form>
 								</center>
 							';

@@ -66,7 +66,7 @@
 											</p>
 											<center>
 												<form action="embrouilles" method="post">
-													<input type="text" name="baston"><input type="submit" name="react" value="Réagir.">
+													<input list="notesListe" name="baston"><input type="submit" name="react" value="Réagir.">
 												</form>
 											</center>
 										';
@@ -103,7 +103,7 @@
 											</p>
 											<center>
 												<form action="embrouilles" method="post">
-													<input type="text" name="baston"><input type="submit" name="react" value="Réagir.">
+													<input list="notesListe" name="baston"><input type="submit" name="react" value="Réagir.">
 												</form>
 											</center>
 										';
@@ -363,7 +363,7 @@
 								</div>
 								<center>
 									<form action="embrouilles" method="post">
-										<input type="text" name="bagarre"><input type="submit" name="battre" value="Réagir.">
+										<input list="notesListe" name="bagarre"><input type="submit" name="battre" value="Réagir.">
 									</form>
 								</center>
 							';

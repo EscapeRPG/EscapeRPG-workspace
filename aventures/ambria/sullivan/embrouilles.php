@@ -69,7 +69,7 @@
 								</p>
 								<center>
 									<form action="embrouilles" method="post">
-										<input type="text" name="danger"><input type="submit" name="react" value="Réagir.">
+										<input list="notesListe" name="danger"><input type="submit" name="react" value="Réagir.">
 									</form>
 								</center>
 							';
@@ -103,7 +103,7 @@
 											</p>
 											<center>
 												<form action="embrouilles" method="post">
-													<input type="text" name="bagarre"><input type="submit" name="battre" value="Réagir.">
+													<input list="notesListe" name="bagarre"><input type="submit" name="battre" value="Réagir.">
 												</form>
 											</center>
 										';
@@ -138,7 +138,7 @@
 											</p>
 											<center>
 												<form action="embrouilles" method="post">
-													<input type="text" name="bagarre"><input type="submit" name="battre" value="Réagir.">
+													<input list="notesListe" name="bagarre"><input type="submit" name="battre" value="Réagir.">
 												</form>
 											</center>
 										';
@@ -174,7 +174,7 @@
 											</div>
 											<center>
 												<form action="embrouilles" method="post">
-													<input type="text" name="sortir"><input type="submit" name="partir" value="Sortir.">
+													<input list="notesListe" name="sortir"><input type="submit" name="partir" value="Sortir.">
 												</form>
 											</center>
 										';
@@ -208,7 +208,7 @@
 											</div>
 											<center>
 												<form action="embrouilles" method="post">
-													<input type="text" name="sortir"><input type="submit" name="partir" value="Sortir.">
+													<input list="notesListe" name="sortir"><input type="submit" name="partir" value="Sortir.">
 												</form>
 											</center>
 										';
@@ -261,7 +261,7 @@
 											</p>
 											<center>
 												<form action="embrouilles" method="post">
-													<input type="text" name="sortir"><input type="submit" name="partir" value="Sortir.">
+													<input list="notesListe" name="sortir"><input type="submit" name="partir" value="Sortir.">
 												</form>
 											</center>
 										';
@@ -325,7 +325,7 @@
 											</div>
 											<center>
 												<form action="embrouilles" method="post">
-													<input type="text" name="logannom"><input type="submit" name="loganreponse" value="Suivant.">
+													<input list="notesListe" name="logannom"><input type="submit" name="loganreponse" value="Suivant.">
 												</form>
 												<form action="embrouilles" method="post">
 													<button type="submit" name="indice1" class="boutonindice"></button>
@@ -393,7 +393,7 @@
 								</div>
 								<center>
 									<form action="embrouilles" method="post">
-										<input type="text" name="logannom"><input type="submit" name="loganreponse" value="Suivant.">
+										<input list="notesListe" name="logannom"><input type="submit" name="loganreponse" value="Suivant.">
 									</form>
 								</center>
 							';
