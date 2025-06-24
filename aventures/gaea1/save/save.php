@@ -117,11 +117,11 @@ $random = rand(100000, 999999); ?>
 					</span>
 				</p>
 				<form action="save" method="post">
-					<input type="text" name="nom" id="nom" placeholder="Nom" maxlength="20" required><br>
+					<input list="notesListe" name="nom" id="nom" placeholder="Nom" maxlength="20" required><br>
 					<br>
 					<b><?= $random ?></b>
 					<br>
-					<input type="text" name="code" id="code" placeholder="Retapez le code ci-dessus" pattern="[0-9]{6}" title="Veuillez entrer le code à 6 chiffres ci-dessus" required><br>
+					<input list="notesListe" name="code" id="code" placeholder="Retapez le code ci-dessus" pattern="[0-9]{6}" title="Veuillez entrer le code à 6 chiffres ci-dessus" required><br>
 					<br>
 					<input type="submit" name="continuer" value="Sauvegarder.">
 				</form>

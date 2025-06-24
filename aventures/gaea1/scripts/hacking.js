@@ -1,26 +1,10 @@
 const consoleInput = document.getElementById("prompt");
 const consoleOutput = document.getElementById("console-output");
 const inputShadow = document.getElementById("input-shadow");
-const notesListe = document.getElementById("notesListe");
 const bulleMarv = document.getElementById("bullemarv");
 const terminal = document.getElementById("terminal-wrap");
 let mappse = false,
   filse = false;
-
-function updateDataList() {
-  fetch("/escaperpg/aventures/gaea1/includes/get_items.php")
-    .then((response) => response.json())
-    .then((items) => {
-      notesListe.innerHTML = "";
-
-      items.forEach((item) => {
-        const option = document.createElement("option");
-        option.value = item;
-        notesListe.appendChild(option);
-      });
-    });
-}
-updateDataList();
 
 adjustInputWidth(consoleInput.value);
 

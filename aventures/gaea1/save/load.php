@@ -20,7 +20,7 @@
 			<div id="txt">
 				<?php if ($_SESSION['loggedin']): ?>
 					<div id="succespopup">
-						<?php 
+						<?php
 							$nouveausucces = '<img src="/escaperpg/images/succes/general/charger.png"><span><u><b>On reprend ?</b></u><br>Reprendre sa progression dans une aventure</span>';
 							$scenario = 'general';
 							$description = 'charger';
@@ -82,8 +82,8 @@
 						<p>Il y a eu une erreur quelque part, veuillez réessayer.</p>
 						
 						<form action="load" method="post">
-							<input type="text" name="nom" id="nom" placeholder="Nom" required>
-							<input type="text" name="code" id="code" placeholder="Code" required>
+							<input list="notesListe" name="nom" id="nom" placeholder="Nom" required>
+							<input list="notesListe" name="code" id="code" placeholder="Code" required>
 							<input type="submit" name="continuer" value="Charger.">
 						</form>
 					<?php endif; ?>
@@ -94,8 +94,8 @@
 					</p>
 
 					<form action="load" method="post">
-						<input type="text" name="nom" id="nom" placeholder="Nom" required>
-						<input type="text" name="code" id="code" placeholder="Code" required>
+						<input list="notesListe" name="nom" id="nom" placeholder="Nom" required>
+						<input list="notesListe" name="code" id="code" placeholder="Code" required>
 						<input type="submit" name="continuer" value="Charger.">
 					</form>
 				<?php endif; ?>

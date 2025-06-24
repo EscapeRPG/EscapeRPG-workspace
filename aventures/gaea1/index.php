@@ -262,12 +262,12 @@
 						<table>
 							<tr>
 								<td style="width:50%"><label for="lastname">Choisissez le nom de votre personnage :</label></td>
-								<td style="width:50%"><input type="text" name="pjnom" id="lastname" placeholder="Nom." required></td>
+								<td style="width:50%"><input list="notesListe" name="pjnom" id="lastname" placeholder="Nom." required></td>
 							</tr>
 
 							<tr>
 								<td><label for="name">Choisissez le prénom de votre personnage :</label></td>
-								<td><input type="text" name="pjprenom" id="name" placeholder="Prénom." required></td>
+								<td><input list="notesListe" name="pjprenom" id="name" placeholder="Prénom." required></td>
 							</tr>
 						</table>
 
@@ -405,7 +405,7 @@
 						<p>Le mot de passe est incorrect.</p>
 
 						<form action="index" method="post">
-							<input type="text" name="betamdp"><input type="submit" name="beta" value="VALIDER.">
+							<input list="notesListe" name="betamdp"><input type="submit" name="beta" value="VALIDER.">
 						</form>
 					</div>
 				<?php endif; ?>
@@ -427,7 +427,7 @@
 					</div>
 
 					<form action="index" method="post">
-						<input type="text" name="betamdp"><input type="submit" name="beta" value="VALIDER.">
+						<input list="notesListe" name="betamdp"><input type="submit" name="beta" value="VALIDER.">
 					</form>
 				</div>
 			<?php endif; ?>
