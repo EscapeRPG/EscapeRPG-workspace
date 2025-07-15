@@ -62,7 +62,10 @@
                     <br>
                     Vous pouvez également laisser un commentaire directement ci-dessous pour faire savoir que vous avez terminé ce scénario !
                 </p>
-                <?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/commentairesAventures.php"; ?>
+                <?php
+                $scenarioEnCours = "lastpartycoms";
+                include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/commentairesAventures.php";
+                ?>
             <?php else: ?>
                 <?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/sessioninc.php"; ?>
                 <p>

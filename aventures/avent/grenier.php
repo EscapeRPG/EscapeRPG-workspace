@@ -173,26 +173,18 @@ $indices = "/escaperpg/includes/indices.php";
                 <form action="grenier" method="post">
                     <div id="enigmelieu">
                         <img src="/escaperpg/images/avent/grenier.png" alt="grenier">
-                        <div id="machine">
-                            <button type="submit" name="machineetrange">
-                                <img src="/escaperpg/images/avent/machine.png" alt="la machine bizarre de grand-père, elle semble incomplète">
-                            </button>
-                        </div>
-                        <div id="piecedemachine1">
-                            <button type="submit" name="piecemachine1">
-                                <img src="/escaperpg/images/avent/piece1.png" alt="une pièce de machine">
-                            </button>
-                        </div>
-                        <div id="piecedemachine2">
-                            <button type="submit" name="piecemachine2">
-                                <img src="/escaperpg/images/avent/piece2.png" alt="une pièce de machine">
-                            </button>
-                        </div>
-                        <div id="carteciel">
-                            <button type="submit" name="carteduciel">
-                                <img src="/escaperpg/images/avent/carteciel.png" alt="une carte des étoiles">
-                            </button>
-                        </div>
+                        <button type="submit" name="machineetrange" id="machine">
+                            <img src="/escaperpg/images/avent/machine.png" alt="la machine bizarre de grand-père, elle semble incomplète">
+                        </button>
+                        <button type="submit" name="piecemachine1" id="piecedemachine1">
+                            <img src="/escaperpg/images/avent/piece1.png" alt="une pièce de machine">
+                        </button>
+                        <button type="submit" name="piecemachine2" id="piecedemachine2">
+                            <img src="/escaperpg/images/avent/piece2.png" alt="une pièce de machine">
+                        </button>
+                        <button type="submit" name="carteduciel" id="carteciel">
+                            <img src="/escaperpg/images/avent/carteciel.png" alt="une carte des étoiles">
+                        </button>
                     </div>
                 </form>
                 <?php

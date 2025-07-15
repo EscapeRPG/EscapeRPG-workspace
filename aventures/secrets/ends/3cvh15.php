@@ -57,6 +57,11 @@
                     $cache = 'oui';
                     $rarete = 'succesgold';
                     include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/succesadd.php";
+                    if (!$succesexiste) {
+                        echo $_SESSION['loggedin'] ?
+                            '<script src="/escaperpg/scripts/succescount.js"></script>' :
+                            '<script src="/escaperpg/scripts/succescountoffline.js"></script>';
+                    }
                     ?>
                 </div>
                 <div id="enigme">
@@ -83,7 +88,10 @@
                     <br>
                     Vous pouvez également laisser un commentaire directement ci-dessous pour faire savoir que vous avez terminé ce scénario !
                 </p>
-                <?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/commentairesAventures.php"; ?>
+                <?php
+                $scenarioEnCours = "secretscoms";
+                include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/commentairesAventures.php";
+                ?>
             <?php else: ?>
                 <?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/sessioninc.php"; ?>
                 <audio src="/escaperpg/sons/secrets/shoggothfeu.mp3" autoplay></audio>

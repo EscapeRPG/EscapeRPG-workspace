@@ -1,6 +1,6 @@
 <?php
 $nombreDeComsParPage = 5;
-$stmt = $conn->query("SELECT COUNT(*) AS nb_coms FROM lastpartycoms");
+$stmt = $conn->query("SELECT COUNT(*) AS nb_coms FROM $scenarioEnCours");
 $donnees = $stmt->fetch();
 $stmt->closeCursor();
 $totalDesComs = $donnees['nb_coms'];
@@ -14,7 +14,7 @@ if (isset($_GET['page'])) {
     $page = 1;
 }
 $premierComAafficher = ($page - 1) * $nombreDeComsParPage;
-$reponse = $conn->query("SELECT * FROM lastpartycoms ORDER BY id DESC LIMIT $premierComAafficher, $nombreDeComsParPage");
+$reponse = $conn->query("SELECT * FROM $scenarioEnCours ORDER BY id DESC LIMIT $premierComAafficher, $nombreDeComsParPage");
 
 if ($totalDesComs == 0): ?>
     <p>Apparemment, personne n'a laissé de commentaire avant vous !</p>
@@ -22,14 +22,8 @@ if ($totalDesComs == 0): ?>
     function pseudoToHSL($pseudo)
     {
         $hash = crc32($pseudo);
-
-        // Hue : entre 0 et 360 degrés
         $hue = $hash % 360;
-
-        // Saturation : entre 60 et 90 %
         $saturation = 60 + ($hash % 30);
-
-        // Lightness de base : entre 40 et 60 %
         $lightness = 100;
 
         return [$hue, $saturation, $lightness];
@@ -38,10 +32,10 @@ if ($totalDesComs == 0): ?>
     while ($donnees = $reponse->fetch()): ?>
         <?php
         list($h, $s, $l) = pseudoToHSL($donnees['pseudo']);
-        $l2 = max(0, $l - 40); // Plus sombre pour le dégradé
-        $l3 = max(0, $l - 60); // Plus sombre pour le dégradé
-        $l4 = max(0, $l - 70); // Plus sombre pour le dégradé
-        $l5 = max(0, $l - 90); // Plus sombre pour le dégradé
+        $l2 = max(0, $l - 40);
+        $l3 = max(0, $l - 60);
+        $l4 = max(0, $l - 70);
+        $l5 = max(0, $l - 90);
         ?>
         <div class="dialogueCommentaire">
             <div class="portraitCommentaire"
