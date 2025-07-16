@@ -155,27 +155,10 @@ a {
 }
 
 
-.container {
+.myCanvas {
 	overflow: hidden;
-	position: relative;
 	width: 80%;
-	height: 0;
 	padding-bottom: 60%;
-}
-
-.drawframe {
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-}
-
-iframe {
-	border: none;
-	width: 80%;
-	padding: 0;
-	margin: auto;
 }
 
 #drop1 {
@@ -200,15 +183,4 @@ iframe {
 	position: absolute;
 	top: 9.75%;
 	left: 76.33%;
-}
-
-.turn-card {
-	display: block;
-	background-color: rgba(0, 0, 0, 0.7);
-	border-radius: 20px;
-	padding: 15px;
-	margin: 10px auto;
-	color: red;
-	font-weight: bold;
-	width: fit-content;
 }

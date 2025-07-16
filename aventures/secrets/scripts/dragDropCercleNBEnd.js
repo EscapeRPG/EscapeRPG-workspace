@@ -19,7 +19,6 @@ function dragdrop() {
     symb14: "mag10",
   };
 
-  // Générer les éléments dynamiquement
   for (let i = 1; i <= 14; i++) {
     dropsContainer.innerHTML += `<div class="droppercercle" id="symb${i}"></div>`;
     dragsContainer.innerHTML += `
@@ -55,19 +54,16 @@ function dragdrop() {
         const dragged = this.draggedElement;
         const clone = dragged.cloneNode(true);
 
-        // Nettoyer le dropper avant d'ajouter un nouvel élément
         target.innerHTML = "";
         target.appendChild(clone);
         this.applyDragEvents(clone);
         dragged.parentNode.removeChild(dragged);
 
-        // Vérification des correspondances
         checkMatches();
       });
     },
   };
 
-  // Fonction de vérification globale
   function checkMatches() {
     const allCorrect = Object.entries(correctMatches).every(
       ([dropId, expectedMagId]) => {
@@ -85,10 +81,9 @@ function dragdrop() {
     }
   }
 
-  // Appliquer les événements
   document.querySelectorAll(".draggablecercle").forEach((el) => {
     dndHandler.applyDragEvents(el);
-    dndHandler.applyDropEvents(el); // Pour permettre aussi le retour
+    dndHandler.applyDropEvents(el);
   });
   document.querySelectorAll(".droppercercle").forEach((el) => {
     dndHandler.applyDropEvents(el);

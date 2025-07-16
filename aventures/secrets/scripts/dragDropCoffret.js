@@ -37,12 +37,10 @@ function dragdrop() {
         const dragged = this.draggedElement;
         if (!dragged) return;
 
-        // Supprimer le précédent parent
         if (dragged.parentNode) {
           dragged.parentNode.innerHTML = "";
         }
 
-        // Ajouter l'élément déplacé dans le nouvel emplacement
         const clone = dragged.cloneNode(true);
         clone.dataset.piece = dragged.dataset.piece;
         clone.className = "draggable";
@@ -51,7 +49,6 @@ function dragdrop() {
         dropTarget.appendChild(clone);
         this.applyDragEvents(clone);
 
-        // Vérifie si tous les éléments sont bien placés
         checkAllPlacedCorrectly();
       });
     },
@@ -73,7 +70,6 @@ function dragdrop() {
     }
   }
 
-  // Initialisation des zones de départ (dragslot) et d'arrivée (dropper)
   document.querySelectorAll(".dragslot").forEach((slot) => {
     dndHandler.applyDropEvents(slot);
     const draggable = slot.querySelector(".draggable");

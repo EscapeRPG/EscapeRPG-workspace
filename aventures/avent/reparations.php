@@ -29,7 +29,7 @@
 				<?php
 					if (isset ($_POST['suivant']))
 						{
-							echo'
+							echo '
 								<p>
 									- Placer le sapence dans son compartiment.<br>
 									- Calibrer le régulateur sur 4 et abaisser le levier.<br>
@@ -55,11 +55,11 @@
 										</div>
 									</div>
 									<br>
-									<center>
+									<div class="dragslot">
 										<div class="draggable" id="drag1">
 											<img src="/escaperpg/images/avent/sapence.png" id="dra1">
 										</div>
-									</center>
+									</div>
 									<script src="/escaperpg/aventures/scripts/dragdrop.js"></script>
 								</p>
 								<center>
@@ -97,11 +97,11 @@
 										</div>
 									</div>
 									<br>
-									<center>
+									<div class="dragslot">
 										<div class="draggable" id="drag1">
 											<img src="/escaperpg/images/avent/sapence.png" id="dra1">
 										</div>
-									</center>
+									</div>
 									<script src="/escaperpg/aventures/scripts/dragdrop.js"></script>
 								</p>
 								<center>
@@ -142,11 +142,11 @@
 										</div>
 									</div>
 									<br>
-									<center>
+									<div class="dragslot">
 										<div class="draggable" id="drag1">
 											<img src="/escaperpg/images/avent/sapence.png" id="dra1">
 										</div>
-									</center>
+									</div>
 									<script src="/escaperpg/aventures/scripts/dragdrop.js"></script>
 								</p>
 								<center>
@@ -188,11 +188,11 @@
 										</div>
 									</div>
 									<br>
-									<center>
+									<div class="dragslot">
 										<div class="draggable" id="drag1">
 											<img src="/escaperpg/images/avent/sapence.png" id="dra1">
 										</div>
-									</center>
+									</div>
 									<script src="/escaperpg/aventures/scripts/dragdrop.js"></script>
 								</p>
 								<center>
@@ -230,11 +230,11 @@
 										</div>
 									</div>
 									<br>
-									<center>
+									<div class="dragslot">
 										<div class="draggable" id="drag1">
 											<img src="/escaperpg/images/avent/sapence.png" id="dra1">
 										</div>
-									</center>
+									</div>
 									<script src="/escaperpg/aventures/scripts/dragdrop.js"></script>
 								</p>
 								<center>

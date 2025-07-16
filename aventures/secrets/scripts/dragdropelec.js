@@ -76,7 +76,6 @@ function enableDragDrop() {
       e.dataTransfer.setData("text/plain", el.id);
     });
 
-    // Permet le retour d’un câble vers son origine
     el.addEventListener("dragover", (e) => {
       e.preventDefault();
       el.classList.add("drag_hover");
@@ -104,7 +103,6 @@ function enableDragDrop() {
       const draggedId = e.dataTransfer.getData("text/plain");
       const draggedElement = document.getElementById(draggedId);
 
-      // Vérifie qu'on ne le réinsère pas si déjà dedans
       if (draggedElement && draggedElement.parentElement !== container) {
         container.appendChild(draggedElement);
         checkDrags();
@@ -129,18 +127,16 @@ function enableDragDrop() {
       const draggedId = e.dataTransfer.getData("text/plain");
       const draggedElement = document.getElementById(draggedId);
 
-      // Refuse si un élément est déjà dans cette dropzone
       if (drop.querySelector(".draggableelec")) {
         drop.classList.add("shake");
         setTimeout(() => drop.classList.remove("shake"), 300);
         return;
       }
 
-      // 🔒 Empêche le drop dans un enfant de la zone (target ≠ drop)
       if (!drop.contains(e.target)) return;
 
       if (draggedElement) {
-        drop.appendChild(draggedElement); // append TO drop, pas à target
+        drop.appendChild(draggedElement);
         checkDrags();
       }
     });
