@@ -1,3 +1,5 @@
+document.getElementById("levier").addEventListener("click", rangecheck);
+
 function rangecheck() {
   let range = document.getElementById("range").value;
 

@@ -32,6 +32,7 @@
 								$cache = 'oui';
 								$rarete = 'succesnormal';
 								include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/succesadd.php";
+								include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/resetIndices.php";
 								?>
 							</div>
 							<audio src="/escaperpg/sons/avent/bipssifflement.mp3" autoplay></audio>

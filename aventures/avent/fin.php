@@ -29,18 +29,19 @@
             if (isset($_POST['fin']) || $_SESSION['fin']): ?>
                 <div id="succespopup">
                     <?php
+                    $succesadd = "/escaperpg/includes/succesadd.php";
                     $nouveausucces = '<img src="/escaperpg/images/succes/general/fin.png"><span><u><b>Une page qui se tourne...</b></u><br>Terminer sa première aventure</span>';
                     $scenario = 'general';
                     $description = 'fin';
                     $cache = 'non';
                     $rarete = 'succesbronze';
-                    include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/succesadd.php";
+                    include $_SERVER['DOCUMENT_ROOT'] . $succesadd;
                     $nouveausucces = '<img src="/escaperpg/images/succes/avent/fin.png"><span><u><b>... et ils vécurent heureux</b></u><br>Terminer l\'aventure</span>';
                     $scenario = 'avent';
                     $description = 'fin';
                     $cache = 'non';
                     $rarete = 'succesbronze';
-                    include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/succesadd.php";
+                    include $_SERVER['DOCUMENT_ROOT'] . $succesadd;
                     if (!$succesexiste) {
                         echo $_SESSION['loggedin'] ?
                             '<script src="/escaperpg/scripts/succescount.js"></script>' :
