@@ -1,0 +1,119 @@
+.boutonhaut {
+  background-image: url("/escaperpg/images/ambria/cap/boutoncaphaut.png");
+  width: 17px;
+  height: 19px;
+}
+
+.boutonbas {
+  background-image: url("/escaperpg/images/ambria/cap/boutoncapbas.png");
+  width: 17px;
+  height: 19px;
+}
+
+.boutonhauton {
+  background-image: url("/escaperpg/images/ambria/cap/boutoncaphauton.png");
+  width: 17px;
+  height: 19px;
+}
+
+.boutonbason {
+  background-image: url("/escaperpg/images/ambria/cap/boutoncapbason.png");
+  width: 17px;
+  height: 19px;
+}
+
+#bouton1haut {
+  position: absolute;
+  top: 33px;
+  left: 19px;
+  width: 17px;
+  height: 19px;
+}
+
+#bouton2haut {
+  position: absolute;
+  top: 33px;
+  left: 77px;
+  width: 17px;
+  height: 19px;
+}
+
+#bouton3haut {
+  position: absolute;
+  top: 33px;
+  left: 135px;
+  width: 17px;
+  height: 19px;
+}
+
+#bouton4haut {
+  position: absolute;
+  top: 33px;
+  right: 19px;
+  width: 17px;
+  height: 19px;
+}
+
+#bouton1bas {
+  position: absolute;
+  bottom: 31px;
+  left: 19px;
+  width: 17px;
+  height: 19px;
+}
+
+#bouton2bas {
+  position: absolute;
+  bottom: 31px;
+  left: 77px;
+  width: 17px;
+  height: 19px;
+}
+
+#bouton3bas {
+  position: absolute;
+  bottom: 31px;
+  left: 135px;
+  width: 17px;
+  height: 19px;
+}
+
+#bouton4bas {
+  position: absolute;
+  bottom: 31px;
+  right: 19px;
+  width: 17px;
+  height: 19px;
+}
+
+#coordonnee1 {
+  position: absolute;
+  top: 60px;
+  left: 4px;
+  width: 47px;
+  height: 89px;
+}
+
+#coordonnee2 {
+  position: absolute;
+  top: 60px;
+  left: 62px;
+  width: 47px;
+  height: 89px;
+}
+
+#coordonnee3 {
+  position: absolute;
+  top: 60px;
+  left: 120px;
+  width: 47px;
+  height: 89px;
+}
+
+#coordonnee4 {
+  position: absolute;
+  top: 60px;
+  right: 4px;
+  width: 47px;
+  height: 89px;
+}

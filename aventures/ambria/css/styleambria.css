@@ -1,1820 +1,210 @@
-html
-{
-	scroll-behavior: smooth;
-}
-
-body
-{
-	background: url("/escaperpg/images/ambria/fond.png") fixed;
-	background-repeat: no-repeat;
-	background-size: 100% 100%;
-	-webkit-background-size: 100% 100%;
-	font-family: arial, "arial black", "comic sans ms", "courier new", georgia, impact, "times new roman", "trebuchet ms", verdana, serif;
-	padding: 0px;
-	margin-bottom: 100px;
-}
-	
-header
-{
-	width: 100%;
-	text-align: center;
-	margin: 0;
-	padding: 10px 0px;
-	background-color: rgb(255,255,255);
-	box-shadow: 0px 3px 10px black;
-}
-
-#banniere
-{
-	width: 100%
-}
-
-#banniere img
-{
-	width: 100%;
-}
-
-#load
-{
-	width: 70%;
-	height: 200px;
-	vertical-align: top;
-	display: inline-block;
-}
-
-#loader
-{
-	position: relative;
-	left: 50%;
-	top: 50%;
-	z-index: 1;
-	margin: -75px 0 0 -75px;
-	border: 5px solid #f3f3f3;
-	border-radius: 50%;
-	border-top: 5px solid black;
-	width: 20px;
-	height: 20px;
-	-webkit-animation: spin 1s linear infinite;
-	animation: spin 1s linear infinite;
-}
-
-@-webkit-keyframes spin
-{
-  0% { -webkit-transform: rotate(0deg); }
-  100% { -webkit-transform: rotate(360deg); }
-}
-
-@keyframes spin
-{
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
-}
-
-main
-{
-	width: 100%;
-	margin: auto;
-	padding: 10px 0px;
-	text-align: center;
-	display: none;
-}
-
-#connexioncompte
-{
-	position: fixed;
-	top: 50px;
-	right: 0;
-	padding: 10px;
-	overflow: hidden;
-	background-color: rgba(0,0,0,0.2);
-	border: 7px double black;
-	border-right: none;
-	border-radius: 20px 0px 0px 20px;
-	text-align: center;
-	font-size: x-small;
-}
-
-#connexioncompte img
-{
-	width: 50px;
-	height: 50px;
-	border-radius: 50%;
-}
-
-#connexioncompte:hover
-{
-	border: 7px double orange;
-	border-right: none;
-	border-radius: 20px 0px 0px 20px;
-}
-
-#succespopup
-{
-	width: 150px;
-	position: fixed;
-	top: 180px;
-	right: -230px;
-	background-color: rgba(0,0,0,0.2);
-	border: 7px double black;
-	color: orange;
-	border-right: none;
-	border-radius: 20px 0px 0px 20px;
-	text-align: center;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	flex-wrap: wrap;
-	z-index: 20;
-}
-
-#succespopup p
-{
-	text-align: center !important;
-}
-
-#succespopup a
-{
-	color: red;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-}
-
-#succespopup a:hover
-{
-	color: orange;
-}
-
-.succesapercu
-{
-	color: orange;
-	border-radius: 50%;
-	width: 50px;
-	height: 65px;
-	margin: 10px;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-}
-
-.succesapercu span
-{
-	position: absolute;
-	top: 40px;
-	right: 0;
-	background-color: black;
-	color: orange;
-	border-radius: 10px;
-	opacity: 0;
-	font-weight: normal;
-	font-size: 12px;
-	width: 200px;
-	padding: 20px;
-	text-align: justify;
-	pointer-events: none;
-	z-index: 3;
-}
-
-.succesapercu:hover span
-{
-	opacity: 1;
-}
-
-.succesapercu .succesplatine:before
-{
-	width: 80px;
-	height: 80px;
-}
-
-.succesapercu div
-{
-	width: 50px;
-	height: 65px;
-	border-radius: 50%;
-}
-
-.succesapercu img
-{
-	width: 80%;
-	height: 84.6%;
-	border-radius: 50%;
-	z-index: 2;
-}
-
-.succesnormal
-{
-	width: 100%;
-	height: 100%;
-	position: absolute;
-	overflow: hidden;
-	z-index: auto;
-	border-radius: 50%;
-	background: linear-gradient(315deg, #151515, 10%, #404040, 90%, #606060);
-	&::after
-	{
-		content: '';
-		position: absolute;
-		z-index: auto;
-		left: 3px;
-		top: 3px;
-		width: calc(100% - 6px);
-		height: calc(100% - 6px);
-		border-radius: 50%;
-		background: linear-gradient(135deg, #151515, 10%, #404040, 90%, #606060);
-	}
-}
-
-.succesbronze
-{
-	--couleurshine: #dd8546;
-	background: linear-gradient(315deg, #1e110c, 10%, #974c20, 90%, #dd8546);
-	&::after
-	{
-		background: linear-gradient(135deg, #1e110c, 10%, #974c20, 90%, #dd8546);
-	}
-}
-
-.succesargent
-{
-	--couleurshine: white;
-	background: linear-gradient(315deg, grey, 10%, #BEBEBE, 90%, #DCDCDC);
-	&::after
-	{
-		background: linear-gradient(135deg, grey, 10%, #BEBEBE, 90%, #DCDCDC);
-	}
-}
-
-.succesgold
-{
-	--couleurshine: white;
-	background: linear-gradient(315deg, #671908, 10%, orange, 90%, #fdf4c2);
-	&::after
-	{
-		background: linear-gradient(135deg, #671908, 10%, orange, 90%, #fdf4c2);
-	}
-}
-
-.succesdiamant
-{
-	--couleurshine: white;
-	background: linear-gradient(315deg, #0089ab, 10%, #71cee6, 90%, #dcf1f7);
-	box-shadow: 0 0 20px #71cee6;
-	animation: glow 1s alternate infinite;
-	--couleur: #71cee6;
-	&::after
-	{
-		background: linear-gradient(135deg, #0089ab, 10%, #71cee6, 90%, #dcf1f7);
-	}
-}
-
-.succesplatine
-{
-	width: 100%;
-	height: 100%;
-	position: absolute;
-	z-index: -2;
-	border-radius: 50%;
-	background-color: #ffffe6;
-	box-shadow: 0 0 10px #ffffe6;
-	--couleur: white;
-	animation: glow 1s alternate infinite;
-	&::before
-	{
-		content: '';
-		z-index: -4;
-		text-align: center;
-		top: 50%;
-		left: 50%;
-		transform: translate(-50%, -50%) rotate(0deg);
-		position: absolute;
-		width: 130%;
-		height: 130%;
-		background-repeat: no-repeat;
-		background-position: 0 0;
-		background-image: conic-gradient(rgba(255,255,230,0.5) 0deg 30deg, transparent 30deg 60deg, rgba(255,255,230,0.5) 60deg 90deg, transparent 90deg 120deg, rgba(255,255,230,0.5) 120deg 150deg, transparent 150deg 180deg,
-			rgba(255,255,230,0.5) 180deg 210deg, transparent 210deg 240deg, rgba(255,255,230,0.5) 240deg 270deg, transparent 270deg 300deg, rgba(255,255,230,0.5) 300deg 330deg, transparent 330deg 360deg);
-		animation: succesrotate 6s linear infinite;
-		border-radius: 100%;
-		filter: blur(10px);
-	}
-}
-
-@keyframes glow
-{
-	0% { box-shadow: 0 0 10px var(--couleur); } 100% { box-shadow: 0 0 20px var(--couleur); }
-}
-
-.succesbronze, .succesargent, .succesgold, .succesdiamant
-{
-	width: 100%;
-	height: 100%;
-	position: absolute;
-	overflow: hidden;
-	z-index: 0;
-	border-radius: 50%;
-	&::before
-	{
-		content: '';
-		z-index: -2;
-		text-align: center;
-		top: 50%;
-		left: 50%;
-		transform: translate(-50%, -50%) rotate(0deg);
-		position: absolute;
-		width: 150%;
-		height: 150%;
-		background-repeat: no-repeat;
-		background-position: 0 0;
-		background-image: conic-gradient(rgba(0,0,0,0), rgb(255,248,220), rgba(0,0,0,0) 15%);
-		animation: succesrotate 5s linear infinite;
-		filter: blur(10px);
-	}
-	&::after
-	{
-		content: '';
-		position: absolute;
-		z-index: -1;
-		left: 3px;
-		top: 3px;
-		width: calc(100% - 6px);
-		height: calc(100% - 6px);
-		border-radius: 50%;
-	}
-}
-
-@keyframes succesrotate
-{
-	100% { transform: translate(-50%, -50%) rotate(1turn); }
-}
-
-nav
-{
-	width: 20%;
-	display: inline-block;
-	vertical-align: top;
-	background-color: rgba(65,40,15,0.8);
-	border-radius: 10px;
-	color : white;
-	text-align: center;
-	padding: 10px;
-}
-
-nav img
-{
-	width: 70%;
-}
-
-nav a
-{
-	color: brown;
-}
-
-nav a:hover
-{
-	color: black;
-}
-
-nav li
-{
-	padding: 5px;
-	list-style-type: none;
-}
-
-nav ul
-{
-	background: url("/escaperpg/images/ambria/nav.png");
-	background-size: 100% 100%;
-	width: 80%;
-	padding: 5px;
-	margin: auto;
-}
-
-h1
-{
-	color: black;
-	text-transform: uppercase;
-	font-size: 16px;
-	font-weight: bold;
-	text-decoration: underline;
-	background: url("/escaperpg/images/ambria/bordtop.png");
-	background-size: 100% 100%;
-	width: 80%;
-	padding: 5px;
-	margin: auto;
-}
-
-.navbottom
-{
-	background: url("/escaperpg/images/ambria/bordbottom.png");
-	background-size: 100% 100%;
-	width: 80%;
-	padding: 5px;
-	margin: auto;
-}
-
-a
-{
-	color: red;
-	font-weight: bold;
-	text-decoration: none;
-}
-
-a:hover
-{
-	color: orange;
-}
-
-.mdp
-{
-	font-weight: bold;
-	text-shadow: grey 1px 1px;
-}
-
-.mdp2
-{
-	color: dodgerblue;
-	font-weight: bold;
-	text-shadow: skyblue 1px 1px;
-}
-	
-.info
-{
-	color: orange;
-}
-	
-.lieu
-{
-	color: green;
-	font-weight: bold;
-}
-	
-.important
-{
-	color: red;
-	font-weight: bold;
-}
-
-#indice
-{
-	color: dodgerblue;
-	text-align: center;
-	font-weight: bold;
-	margin: 10px;
-}
-	
-#reponse
-{
-	color: red;
-	text-align: center;
-	font-weight: bold;
-	text-shadow: 2px 2px 5px black;
-	margin: 10px;
-}
-
-.boutonindice
-{
-	background: url("/escaperpg/images/indice.png");
-	border: none;
-	width: 30px;
-	height: 30px;
-	cursor: help;
-	margin: 20px;
-}
-
-.boutonreponse
-{
-	background: url("/escaperpg/images/reponse.png");
-	border: none;
-	width: 30px;
-	height: 30px;
-	cursor: help;
-	margin: 20px;
-}
-
-#inventaire
-{
-	text-align: center;
-	display: inline-block;
-	vertical-align: middle;
-	margin: 0 5px;
-}
-
-#inventaire img
-{
-	width: 70px;
-}
-
-#txt
-{
-	width: 70%;
-	background-color: rgba(65,40,15,0.8);
-	display: inline-block;
-	vertical-align: top;
-	padding: 10px;
-	border-radius: 10px;
-	color: white;
-}
-
-#txt p
-{
-	text-align: justify;
-}
-
-.dialogue
-{
-	margin: 10px 0px;
-}
-
-.portrait
-{
-	width: 20%;
-	display: inline-block;
-	vertical-align: top;
-}
-
-.portrait img
-{
-	width: 100%;
-}
-
-.bulleperso
-{
-	background: rgba(255,255,255,0.8);
-	display: inline-block;
-	vertical-align: top;
-	width: 60%;
-	min-height: 70px;
-	margin-left: 30px;
-	position: relative;
-	-moz-border-radius: 10px;
-	-webkit-border-radius: 10px;
-	border-radius: 10px;
-	padding: 14px 30px;
-	margin-top: 10px;
-	margin-bottom: 10px;
-}
-
-.bulleperso:before
-{
-	content: "";
-	position: absolute;
-	right: 100%;
-	top: 50px;
-	width: 0;
-	height: 0;
-	border-top: 13px solid transparent;
-	border-right: 20px solid rgba(255,255,255,0.8);
-	border-bottom: 13px solid transparent;
-}
-
-.bulleperso p
-{
-	text-align: justify;
-	color: black;
-}
-
-.bulleperso2
-{
-	background: rgba(255,255,255,0.8);
-	display: inline-block;
-	vertical-align: top;
-	width: 60%;
-	min-height: 70px;
-	margin-right: 30px;
-	position: relative;
-	-moz-border-radius: 10px;
-	-webkit-border-radius: 10px;
-	border-radius: 10px;
-	padding: 14px 30px;
-	margin-top: 10px;
-	margin-bottom: 10px;
-}
-
-.bulleperso2:after
-{
-	content: "";
-	position: absolute;
-	left: 100%;
-	top: 50px;
-	width: 0;
-	height: 0;
-	border-top: 13px solid transparent;
-	border-left: 20px solid rgba(255,255,255,0.8);
-	border-bottom: 13px solid transparent;
-}
-
-.bulleperso2 p
-{
-	text-align: justify;
-	color: black;
-}
-
-.portrait2
-{
-	width: 20%;
-	display: inline-block;
-	vertical-align: top;
-}
-
-.portrait2 img
-{
-	width: 100%;
-}
-
-input[type=submit]
-{
-	width: 100%;
-	max-width: 300px;
-	padding: 10px;
-	background-color: white;
-	border: 2px solid black;
-	border-radius: 10px;
-	cursor: pointer;
-	text-transform: uppercase;
-}
-
-input[type=submit]:hover
-{
-	background-color: rgb(220,120,0);
-}
-
-.current input[type=submit]
-{
-	background-color: orange;
-}
-
-.current input[type=submit]:hover
-{
-	background-color: rgb(220,120,0);
-}
-
-input[type=submit].noway
-{
-	background-color: grey;
-	color: black;
-}
-
-input[type=submit].noway:hover
-{
-	background-color: grey;
-	color: black;
-}
-
-input[type=text]
-{
-	width: 100%;
-	max-width: 200px;
-	max-height: 20px;
-}
-
-#enigme
-{
-	text-align: center;
-}
-
-#enigme img
-{
-	display: inline-block;
-	vertical-align: middle;
-	max-width: 200px;
-}
-
-#enigme a
-{
-	cursor: zoom-in;
-}
-
-#enigmelieu
-{
-	max-width: 800px;
-	background-color: none;
-	position: relative;
-	margin: auto;
-	margin-bottom: 20px;
-}
-
-#enigmelieu a
-{
-	cursor: default;
-}
-
-#enigmelieu img
-{
-	width: 100%;
-}
-
-button
-{
-	background: none;
-	border: none;
-	cursor: default;
-	padding: 0;
-}
-
-#controls button
-{
-	width: 50px;
-	padding: 10px;
-	background-color: white;
-	border: 2px solid black;
-	border-radius: 10px;
-	cursor: pointer;
-	text-transform: uppercase;
-	position: relative;
-}
-
-#controls button:hover
-{
-	background-color: rgb(220,120,0);
-}
-
-button[type=submit].noway
-{
-	width: 100%;
-	max-width: 300px;
-	padding: 10px;
-	background-color: white;
-	border: 2px solid black;
-	border-radius: 10px;
-	cursor: pointer;
-	text-transform: uppercase;
-}
-
-button[type=submit].noway:hover
-{
-	background-color: rgb(220,120,0);
-}
-
-button img
-{
-	width: 100%;
-	height: 100%;
-	margin: 0;
-}
-
-.card
-{
-	display: inline-block;
-	width: 330px;
-	height: 558px;
-	vertical-align: top;
-	border-radius: 20px;
-	background-color: black;
-	border: 5px solid black;
-	box-shadow: 3px 3px 10px 3px rgba(0,0,0,0.5);
-	margin: 10px;
-}
-
-.cardfond
-{
-	background: url("/escaperpg/images/fondcard.png");
-	background-repeat: no-repeat;
-	background-size: 100%;
-	border-radius: 15px;
-	padding: 0;
-	width: 100%;
-	height: 100%;
-}
-
-h3
-{
-	text-align: center;
-	color: black;
-	font-weight: bold;
-	font-size: 14px;
-	margin: auto;
-	padding: 12px 0px 12px 0px;
-}
-
-.cardimage
-{
-	text-align: center;
-	background-color: black;
-	margin: 2px 3px;
-	padding: 0;
-	overflow: hidden;
-	border: 2px solid black;
-	border-radius: 10px;
-	height: 196px;
-}
-
-.cardimage img
-{
-	width: 100%;
-}
-
-.card p
-{
-	text-align: justify;
-	color: black;
-	width: 80%;
-	margin: auto;
-	word-wrap: break-word;
-	font-size: 12px;
-	padding: 20px 20px;
-	overflow: visible;
-}
-
-#top
-{
-	position: fixed;
-	right: 20px;
-	bottom: 70px;
-}
-
-#tavlogan
-{
-	position: absolute;
-	left: 13.58%;
-	top: 59.6%;
-	width: 7.9%;
-	height: 23.49%;
-}
-
-#cadranscap
-{
-	width: 229px;
-	height: 210px;
-	position: relative;
-	margin: auto;
-	margin-bottom: 20px;
-}
-
-.boutonhaut
-{
-	background-image: url("/escaperpg/images/ambria/cap/boutoncaphaut.png");
-	width: 17px;
-	height: 19px;
-}
-
-.boutonbas
-{
-	background-image: url("/escaperpg/images/ambria/cap/boutoncapbas.png");
-	width: 17px;
-	height: 19px;
-}
-
-.boutonhauton
-{
-	background-image: url("/escaperpg/images/ambria/cap/boutoncaphauton.png");
-	width: 17px;
-	height: 19px;
-}
-
-.boutonbason
-{
-	background-image: url("/escaperpg/images/ambria/cap/boutoncapbason.png");
-	width: 17px;
-	height: 19px;
-}
-
-#bouton1haut
-{
-	position: absolute;
-	top: 33px;
-	left: 19px;
-	width: 17px;
-	height: 19px;
-}
-
-#bouton2haut
-{
-	position: absolute;
-	top: 33px;
-	left: 77px;
-	width: 17px;
-	height: 19px;
-}
-
-#bouton3haut
-{
-	position: absolute;
-	top: 33px;
-	left: 135px;
-	width: 17px;
-	height: 19px;
-}
-
-#bouton4haut
-{
-	position: absolute;
-	top: 33px;
-	right: 19px;
-	width: 17px;
-	height: 19px;
-}
-
-#bouton1bas
-{
-	position: absolute;
-	bottom: 31px;
-	left: 19px;
-	width: 17px;
-	height: 19px;
-}
-
-#bouton2bas
-{
-	position: absolute;
-	bottom: 31px;
-	left: 77px;
-	width: 17px;
-	height: 19px;
-}
-
-#bouton3bas
-{
-	position: absolute;
-	bottom: 31px;
-	left: 135px;
-	width: 17px;
-	height: 19px;
-}
-
-#bouton4bas
-{
-	position: absolute;
-	bottom: 31px;
-	right: 19px;
-	width: 17px;
-	height: 19px;
-}
-
-#coordonnee1
-{
-	position: absolute;
-	top: 60px;
-	left: 4px;
-	width: 47px;
-	height: 89px;
-}
-
-#coordonnee2
-{
-	position: absolute;
-	top: 60px;
-	left: 62px;
-	width: 47px;
-	height: 89px;
-}
-
-#coordonnee3
-{
-	position: absolute;
-	top: 60px;
-	left: 120px;
-	width: 47px;
-	height: 89px;
-}
-
-#coordonnee4
-{
-	position: absolute;
-	top: 60px;
-	right: 4px;
-	width: 47px;
-	height: 89px;
-}
-
-#barre1
-{
-	position: absolute;
-	left: 2.13%;
-	top: 71.43%;
-	width: 20.24%;
-	height: 21.84%;
-}
-
-#barre2
-{
-	position: absolute;
-	left: 21.02%;
-	top: 43.33%;
-	width: 14.41%;
-	height: 30.34%;
-}
-
-#barre3
-{
-	position: absolute;
-	left: 47.64%;
-	top: 34.24%;
-	width: 4.72%;
-	height: 30.93%;
-}
-
-#barre4
-{
-	position: absolute;
-	left: 64.49%;
-	top: 43.33%;
-	width: 14.41%;
-	height: 30.34%;
-}
-
-#barre5
-{
-	position: absolute;
-	left: 77.56%;
-	top: 71.43%;
-	width: 20.24%;
-	height: 21.84%;
-}
-
-#grotte1
-{
-	position: absolute;
-	left: 9.45%;
-	top: 21.82%;
-	width: 4.58%;
-	height: 20.82%;
-}
-
-#grotte2
-{
-	position: absolute;
-	left: 23.99%;
-	top: 18.16%;
-	width: 4.58%;
-	height: 20.82%;
-}
-
-#grotte3
-{
-	position: absolute;
-	left: 37.42%;
-	top: 20.27%;
-	width: 4.58%;
-	height: 20.82%;
-}
-
-#grotte4
-{
-	position: absolute;
-	left: 54.69%;
-	top: 19.38%;
-	width: 4.58%;
-	height: 20.82%;
-}
-
-#grotte5
-{
-	position: absolute;
-	left: 70.7%;
-	top: 23.7%;
-	width: 4.58%;
-	height: 20.82%;
-}
-
-#grotte6
-{
-	position: absolute;
-	left: 90.11%;
-	top: 27.35%;
-	width: 4.58%;
-	height: 20.82%;
-}
-
-#grotte1 button[type=submit]
-{
-	cursor: url(/escaperpg/images/ambria/grottenw.png), auto;
-}
-
-#grotte2 button[type=submit], #grotte3 button[type=submit], #grotte4 button[type=submit]
-{
-	cursor: url(/escaperpg/images/ambria/grotten.png), auto;
-}
-
-#grotte5 button[type=submit], #grotte6 button[type=submit]
-{
-	cursor: url(/escaperpg/images/ambria/grottene.png), auto;
-}
-
-#golem1gemme1, #golem1gemme2, #golem1gemme3
-{
-	position: absolute;
-	width: 5.38%;
-	height: 8.97%;
-}
-
-#golem1gemme1
-{
-	left: 49.42%;
-	top: 28.93%;
-}
-
-#golem1gemme2
-{
-	left: 45.65%;
-	top: 36.9%;
-}
-
-#golem1gemme3
-{
-	left: 57.96%;
-	top: 36.4%;
-}
-
-#golem3gemme1, #golem3gemme2, #golem3gemme3, #golem3gemme4, #golem3gemme5
-{
-	position: absolute;
-	width: 3.84%;
-	height: 6.4%;
-}
-
-#golem3gemme1
-{
-	left: 55.7%;
-	top: 16.8%;
-}
-
-#golem3gemme2
-{
-	left: 57.9%;
-	top: 17%;
-}
-
-#golem3gemme3
-{
-	left: 60.4%;
-	top: 17.2%;
-}
-
-#golem3gemme4
-{
-	left: 63.1%;
-	top: 17.5%;
-}
-
-#golem3gemme5
-{
-	left: 65.15%;
-	top: 17.75%;
-}
-
-#panneau
-{
-	width: 90%;
-	background-color: rgba(0,0,0,0.3);
-	margin: auto;
-	padding: 20px;
-	border-radius: 10px;
-}
-
-.hidden
-{
-	display: none;
-}
-
-.rondbleu
-{
-	width: 50px;
-	height: 50px;
-	background-image: url("/escaperpg/images/ambria/rondbleu.png");
-}
-
-.rondrouge
-{
-	width: 50px;
-	height: 50px;
-	background-image: url("/escaperpg/images/ambria/rondrouge.png");
-}
-
-.rondvert
-{
-	width: 50px;
-	height: 50px;
-	background-image: url("/escaperpg/images/ambria/rondvert.png");
-}
-
-.rondjaune
-{
-	width: 50px;
-	height: 50px;
-	background-image: url("/escaperpg/images/ambria/rondjaune.png");
-}
-
-.carrebleu
-{
-	width: 50px;
-	height: 50px;
-	background-image: url("/escaperpg/images/ambria/carrebleu.png");
-}
-
-.carrerouge
-{
-	width: 50px;
-	height: 50px;
-	background-image: url("/escaperpg/images/ambria/carrerouge.png");
-}
-
-.carrevert
-{
-	width: 50px;
-	height: 50px;
-	background-image: url("/escaperpg/images/ambria/carrevert.png");
-}
-
-.carrejaune
-{
-	width: 50px;
-	height: 50px;
-	background-image: url("/escaperpg/images/ambria/carrejaune.png");
-}
-
-.trianglebleu
-{
-	width: 50px;
-	height: 50px;
-	background-image: url("/escaperpg/images/ambria/trianglebleu.png");
-}
-
-.trianglerouge
-{
-	width: 50px;
-	height: 50px;
-	background-image: url("/escaperpg/images/ambria/trianglerouge.png");
-}
-
-.trianglevert
-{
-	width: 50px;
-	height: 50px;
-	background-image: url("/escaperpg/images/ambria/trianglevert.png");
-}
-
-.trianglejaune
-{
-	width: 50px;
-	height: 50px;
-	background-image: url("/escaperpg/images/ambria/trianglejaune.png");
-}
-
-#etagerecapitaine
-{
-	width: 600px;
-	height: 800px;
-	position: relative;
-	margin: auto;
-	background-image: url("/escaperpg/images/ambria/etagere/etagerecapitaine.png");
-}
-
-.dropperetagere
-{
-	width: 150px;
-	height: 200px;
-	display: inline-block;
-	vertical-align: top;
-	transition: all 200ms linear;
-	margin: 0;
-}
-
-.drop_hover
-{
-	box-shadow: 0 0 30px rgba(0, 0, 0, 0.8) inset;
-}
-
-.drag_hover
-{
-	box-shadow: 0 0 30px rgba(0, 0, 0, 0.8) inset;
-}
-
-.draggeretagere
-{
-	display: inline-block;
-	vertical-align: top;
-	transition: all 200ms linear;
-	user-select: none;
-	background-color: rgba(100,100,100,0.4);
-	width: 150px;
-	height: 200px;
-	margin: 0;
-}
-
-#dropetagere1
-{
-	position: absolute;
-	top: 0;
-	left: 0;
-}
-
-#dropetagere2
-{
-	position: absolute;
-	top: 0;
-	left: 150px;
-}
-
-#dropetagere3
-{
-	position: absolute;
-	top: 200px;
-	left: 0;
-}
-
-#dropetagere4
-{
-	position: absolute;
-	top: 200px;
-	left: 300px;
-}
-
-#dropetagere5
-{
-	position: absolute;
-	top: 200px;
-	left: 450px;
-}
-
-#dropetagere6
-{
-	position: absolute;
-	top: 400px;
-	left: 0;
-}
-
-#dropetagere7
-{
-	position: absolute;
-	top: 400px;
-	left: 150px;
-}
-
-#dropetagere8
-{
-	position: absolute;
-	top: 400px;
-	left: 300px;
-}
-
-#dropetagere9
-{
-	position: absolute;
-	top: 400px;
-	left: 450px;
-}
-
-#dropetagere10
-{
-	position: absolute;
-	top: 600px;
-	left: 150px;
-}
-
-#sullivanporte
-{
-	max-width: 800px;
-	background-color: none;
-	position: relative;
-	margin: auto;
-	margin-bottom: 20px;
-}
-
-#sullivanporte img
-{
-	width: 100%;
-}
-
-#loganporte
-{
-	max-width: 800px;
-	background-color: none;
-	position: relative;
-	margin: auto;
-	margin-bottom: 20px;
-}
-
-#loganporte img
-{
-	width: 100%;
-}
-
-input[type=text].emplacementboule1
-{
-	width: 100%;
-	max-width: 100px;
-	max-height: 20px;
-	position: absolute;
-	top: 86.5%;
-	left: 18.5%;
-}
-
-input[type=text].emplacementboule2
-{
-	width: 100%;
-	max-width: 100px;
-	max-height: 20px;
-	position: absolute;
-	top: 86.5%;
-	left: 43.5%;
-}
-
-input[type=text].emplacementboule3
-{
-	width: 100%;
-	max-width: 100px;
-	max-height: 20px;
-	position: absolute;
-	top: 86.5%;
-	left: 68.5%;
-}
-
-#drag1, #drag2, #drag3
-{
-	display: inline-block;
-	vertical-align: middle;
-	transition: all 200ms linear;
-	user-select: none;
-	background-color: rgba(100,100,100,0.4);
-	width: 150px;
-	height: 150px;
-	margin: 0;
-}
-
-#drag1 img, #drag2 img, #drag3 img
-{
-	width: 100%;
-}
-
-.dropperporte
-{
-	width: 15.7%;
-	height: 16.5%;
-}
-
-#dropporte1
-{
-	position: absolute;
-	top: 33%;
-	left: 20.2%;
-}
-
-#dropporte2
-{
-	position: absolute;
-	top: 10.5%;
-	left: 42.2%;
-}
-
-#dropporte3
-{
-	position: absolute;
-	top: 33%;
-	left: 63.9%;
-}
-
-#dropporte4
-{
-	position: absolute;
-	top: 76.4%;
-	left: 20.2%;
-}
-
-#dropporte5
-{
-	position: absolute;
-	top: 54%;
-	left: 42.2%;
-}
-
-#dropporte6
-{
-	position: absolute;
-	top: 76.4%;
-	left: 63.9%;
-}
-
-#noeuds
-{
-	width: 800px;
-	height: 200px;
-	position: relative;
-	margin: auto;
-	background-image: url("/escaperpg/images/ambria/noeuds/noeuds.png");
-}
-
-.droppernoeud
-{
-	width: 200px;
-	height: 100px;
-	display: inline-block;
-	vertical-align: top;
-	transition: all 200ms linear;
-	margin: 0;
-}
-
-.draggernoeud
-{
-	display: inline-block;
-	vertical-align: top;
-	transition: all 200ms linear;
-	user-select: none;
-	background-color: rgba(100,100,100,0.3);
-	width: 200px;
-	height: 100px;
-	margin: 5px;
-}
-
-#dropnoeud1
-{
-	position: absolute;
-	top: 51px;
-	left: 45px;
-}
-
-#dropnoeud2
-{
-	position: absolute;
-	top: 51px;
-	left: 300px;
-}
-
-#dropnoeud3
-{
-	position: absolute;
-	top: 51px; 
-	right: 45px;
-}
-
-.game-container
-{
-	margin: auto;
-}
-
-#map-and-controls
-{
-	display: flex;
-	justify-content: center;
-	align-items: center;
-}
-
-#controls
-{
-	margin-left: 10px;
-	text-align: center;
-}
-
-#tileshaubans div
-{
-	border: none;
-}
-
-.map-haubans
-{
-	position: relative;
-	background-image: url("/escaperpg/images/ambria/haubans.png");
-	background-repeat: no-repeat;
-}
-
-.haubans .cordage
-{
-	background-color: none;
-}
-
-.loganhaubans
-{
-	background-image: url("/escaperpg/images/ambria/loganhaubans.png");
-	background-size: 100% 100%;
-	border: 1px solid black;
-	transition: left 0.5s linear, top 0.5s linear;
-	transform-origin: center;
-	transform:scale(0.7);
-	z-index: 2;
-}
-
-.goalhaubans
-{
-	background-image: url("/escaperpg/images/ambria/goalhaubans.png");
-	background-size: 100% 100%;
-	background-color: none;
-	border: none;
-	transition: left 0.5s linear, top 0.5s linear;
-	transform-origin: center;
-	transform:scale(0.7);
-	z-index: 2;
-}
-
-.map-levier
-{
-	position: relative;
-	background-image: url("/escaperpg/images/ambria/leviermap.png");
-	background-size: 100% 100%;
-	background-repeat: no-repeat;
-}
-
-.levier .floor
-{
-	background-color: none;
-	border: 1px solid black;
-}
-
-.levier .wall
-{
-	background-color: none;
-	border: 1px solid black;
-}
-
-.levier .rien
-{
-	background-color: none;
-	border: none;
-}
-
-.goallevier
-{
-	background-color: none;
-	border: none;
-}
-
-.playerlevier
-{
-	background-image: url("/escaperpg/images/ambria/levierplayer.png");
-	background-size: 100% 100%;
-	background-color: none;
-	border: none;
-	transition: left 0.5s linear, top 0.5s linear;
-	transform: translate(0, -40%);
-	z-index: 2;
-}
-
-.levier #tiles div
-{
-	border: none;
-}
-
-.game-map
-{
-	position: relative;
-	background-image: url("/escaperpg/images/ambria/bateau.png");
-	background-repeat: no-repeat;
-}
-
-div.layer, div.layer div
-{
-	position: absolute;
-}
-
-#tiles div
-{
-	border: none;
-}
-
-.default .floor
-{
-	background-color: none;
-}
-
-.default .wall
-{
-	background-color: none;
-}
-
-.default .sea
-{
-	background-color: none;
-}
-
-.player, .goal, .tresor, .garde1, .garde2
-{
-	transform-origin: center;
-	transform:scale(0.7);
-}
-
-.goal
-{
-	background-color: none;
-	border: none;
-}
-
-.tresor
-{
-	background-color: none;
-	border: none;
-}
-
-.hide
-{
-	opacity: 0;
-}
-
-.garde1
-{
-	background-color: none;
-	border: none;
-}
-
-.garde2
-{
-	background-color: none;
-	border: none;
-}
-
-.player
-{
-	background-image: url("/escaperpg/images/ambria/loganhaubans.png");
-	background-size: 100% 100%;
-	border: 1px solid black;
-	transition: left 0.5s linear, top 0.5s linear;
-	z-index: 2;
-}
-
-#tresorimg
-{
-	position: absolute;
-	bottom: 0;
-	right: 80px;
-}
-
-#crack1
-{
-	position: absolute;
-	top: 40px;
-	left: 480px;
-}
-
-#crack2
-{
-	position: absolute;
-	bottom: 0;
-	right: 120px;
-}
-
-#crack3
-{
-	position: absolute;
-	top: 80px;
-	right: 40px;
-}
-
-.cracking
-{
-	background-image: url("/escaperpg/images/ambria/crack.png");
-	z-index: 1;
-}
-
-#leviersolo1, #leviersolo2, #leviersolo3
-{
-	position: absolute;
-	width: 7.98%;
-	height: 13.3%;
-}
-
-#leviersolo1
-{
-	left: 67.54%;
-	top: 51.07%;
-}
-
-#leviersolo2
-{
-	left: 76.74%;
-	top: 49.73%;
-}
-
-#leviersolo3
-{
-	left: 85%;
-	top: 49.23%;
-}
-
-footer
-{
-	width: 100%;
-	color: white;
-	text-align: center;
-	padding: 0;
-	clear: both;
-	font-size: small;
-	bottom: 0;
-	position: fixed;
-	background: linear-gradient(to top, rgba(0,0,0,0.6) 80%, transparent);
-}
-
-#inventairefooter
-{
-	width: 100%;
-	margin: auto;
-	cursor: pointer;
-}
-
-#motsdepasse
-{
-	width: 100%;
-	margin: auto;
-	cursor: pointer;
-}
-
-.footerhidden
-{
-	display: none;
-}
-
-.footeraffichage
-{
-	display: block;
-	width: 90%;
-	padding: 10px;
-	max-height: 250px;
-	overflow: auto;
-	margin: auto;
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: url("/escaperpg/images/ambria/fond.png") fixed;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  -webkit-background-size: 100% 100%;
+  font-family: arial, "arial black", "comic sans ms", "courier new", georgia,
+    impact, "times new roman", "trebuchet ms", verdana, serif;
+  padding: 0px;
+  margin-bottom: 100px;
+}
+
+header {
+  width: 100%;
+  text-align: center;
+  margin: 0;
+  padding: 10px 0px;
+  background-color: rgb(255, 255, 255);
+  box-shadow: 0px 3px 10px black;
+}
+
+#banniere {
+  width: 100%;
+
+  img {
+    width: 100%;
+  }
+}
+
+main {
+  width: 100%;
+  margin: auto;
+  padding: 10px 0px;
+  text-align: center;
+  display: none;
+}
+
+nav {
+  h1 {
+    color: black;
+    text-transform: uppercase;
+    font-size: 16px;
+    font-weight: bold;
+    text-decoration: underline;
+    background: url("/escaperpg/images/ambria/bordtop.png");
+    background-size: 100% 100%;
+    width: 80%;
+    padding: 5px;
+    margin: auto;
+  }
+
+  .navbottom {
+    background: url("/escaperpg/images/ambria/bordbottom.png");
+    background-size: 100% 100%;
+    width: 80%;
+    padding: 5px;
+    margin: auto;
+  }
+}
+
+a {
+  color: red;
+  font-weight: bold;
+  text-decoration: none;
+
+  &:hover {
+    color: orange;
+  }
+}
+
+#txt {
+  width: 70%;
+  background-color: rgba(65, 40, 15, 0.8);
+  display: inline-block;
+  vertical-align: top;
+  padding: 10px;
+  border-radius: 10px;
+  color: white;
+
+  p {
+    text-align: justify;
+  }
+}
+
+input[type="submit"] {
+  border: 2px solid black;
+
+  &:hover {
+    background-color: rgb(220, 120, 0);
+  }
+
+  .noway {
+    background-color: grey;
+    color: black;
+
+    &:hover {
+      background-color: grey;
+      color: black;
+    }
+  }
+}
+
+.current input[type="submit"] {
+  background-color: orange;
+
+  &:hover {
+    background-color: rgb(220, 120, 0);
+  }
+
+  .noway {
+    width: 100%;
+    max-width: 300px;
+    padding: 10px;
+    background-color: white;
+    border: 2px solid black;
+    border-radius: 10px;
+    cursor: pointer;
+    text-transform: uppercase;
+
+    &:hover {
+      background-color: rgb(220, 120, 0);
+    }
+  }
+}
+
+#enigme {
+  text-align: center;
+
+  img {
+    display: inline-block;
+    vertical-align: middle;
+    max-width: 200px;
+  }
+
+  a {
+    cursor: zoom-in;
+  }
+}
+
+#enigmelieu {
+  max-width: 800px;
+  background-color: none;
+  position: relative;
+  margin: auto;
+  margin-bottom: 20px;
+
+  a {
+    cursor: default;
+  }
+
+  img {
+    width: 100%;
+  }
+}
+
+button {
+  background: none;
+  border: none;
+  cursor: default;
+  padding: 0;
+
+  img {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+  }
+}
+
+#controls button {
+  width: 50px;
+  padding: 10px;
+  background-color: white;
+  border: 2px solid black;
+  border-radius: 10px;
+  cursor: pointer;
+  text-transform: uppercase;
+  position: relative;
+
+  &:hover {
+    background-color: rgb(220, 120, 0);
+  }
+}
+
+h3 {
+  text-align: center;
+  color: black;
+  font-weight: bold;
+  font-size: 14px;
+  margin: auto;
+  padding: 12px 0px 12px 0px;
+}
+
+#tavlogan {
+  position: absolute;
+  left: 13.58%;
+  top: 59.6%;
+  width: 7.9%;
+  height: 23.49%;
+}
+
+#cadranscap {
+  width: 229px;
+  height: 210px;
+  position: relative;
+  margin: auto;
+  margin-bottom: 20px;
 }

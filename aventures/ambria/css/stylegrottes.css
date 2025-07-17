@@ -1,0 +1,62 @@
+#grotte1 {
+  position: absolute;
+  left: 9.45%;
+  top: 21.82%;
+  width: 4.58%;
+  height: 20.82%;
+}
+
+#grotte2 {
+  position: absolute;
+  left: 23.99%;
+  top: 18.16%;
+  width: 4.58%;
+  height: 20.82%;
+}
+
+#grotte3 {
+  position: absolute;
+  left: 37.42%;
+  top: 20.27%;
+  width: 4.58%;
+  height: 20.82%;
+}
+
+#grotte4 {
+  position: absolute;
+  left: 54.69%;
+  top: 19.38%;
+  width: 4.58%;
+  height: 20.82%;
+}
+
+#grotte5 {
+  position: absolute;
+  left: 70.7%;
+  top: 23.7%;
+  width: 4.58%;
+  height: 20.82%;
+}
+
+#grotte6 {
+  position: absolute;
+  left: 90.11%;
+  top: 27.35%;
+  width: 4.58%;
+  height: 20.82%;
+}
+
+#grotte1 button[type="submit"] {
+  cursor: url(/escaperpg/images/ambria/grottenw.png), auto;
+}
+
+#grotte2 button[type="submit"],
+#grotte3 button[type="submit"],
+#grotte4 button[type="submit"] {
+  cursor: url(/escaperpg/images/ambria/grotten.png), auto;
+}
+
+#grotte5 button[type="submit"],
+#grotte6 button[type="submit"] {
+  cursor: url(/escaperpg/images/ambria/grottene.png), auto;
+}

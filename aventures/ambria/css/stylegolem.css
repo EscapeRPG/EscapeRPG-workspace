@@ -1,0 +1,141 @@
+#golem1gemme1,
+#golem1gemme2,
+#golem1gemme3 {
+  position: absolute;
+  width: 5.38%;
+  height: 8.97%;
+}
+
+#golem1gemme1 {
+  left: 49.42%;
+  top: 28.93%;
+}
+
+#golem1gemme2 {
+  left: 45.65%;
+  top: 36.9%;
+}
+
+#golem1gemme3 {
+  left: 57.96%;
+  top: 36.4%;
+}
+
+#golem3gemme1,
+#golem3gemme2,
+#golem3gemme3,
+#golem3gemme4,
+#golem3gemme5 {
+  position: absolute;
+  width: 3.84%;
+  height: 6.4%;
+}
+
+#golem3gemme1 {
+  left: 55.7%;
+  top: 16.8%;
+}
+
+#golem3gemme2 {
+  left: 57.9%;
+  top: 17%;
+}
+
+#golem3gemme3 {
+  left: 60.4%;
+  top: 17.2%;
+}
+
+#golem3gemme4 {
+  left: 63.1%;
+  top: 17.5%;
+}
+
+#golem3gemme5 {
+  left: 65.15%;
+  top: 17.75%;
+}
+
+#panneau {
+  width: 90%;
+  background-color: rgba(0, 0, 0, 0.3);
+  margin: auto;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.hidden {
+  display: none;
+}
+
+.rondbleu {
+  width: 50px;
+  height: 50px;
+  background-image: url("/escaperpg/images/ambria/rondbleu.png");
+}
+
+.rondrouge {
+  width: 50px;
+  height: 50px;
+  background-image: url("/escaperpg/images/ambria/rondrouge.png");
+}
+
+.rondvert {
+  width: 50px;
+  height: 50px;
+  background-image: url("/escaperpg/images/ambria/rondvert.png");
+}
+
+.rondjaune {
+  width: 50px;
+  height: 50px;
+  background-image: url("/escaperpg/images/ambria/rondjaune.png");
+}
+
+.carrebleu {
+  width: 50px;
+  height: 50px;
+  background-image: url("/escaperpg/images/ambria/carrebleu.png");
+}
+
+.carrerouge {
+  width: 50px;
+  height: 50px;
+  background-image: url("/escaperpg/images/ambria/carrerouge.png");
+}
+
+.carrevert {
+  width: 50px;
+  height: 50px;
+  background-image: url("/escaperpg/images/ambria/carrevert.png");
+}
+
+.carrejaune {
+  width: 50px;
+  height: 50px;
+  background-image: url("/escaperpg/images/ambria/carrejaune.png");
+}
+
+.trianglebleu {
+  width: 50px;
+  height: 50px;
+  background-image: url("/escaperpg/images/ambria/trianglebleu.png");
+}
+
+.trianglerouge {
+  width: 50px;
+  height: 50px;
+  background-image: url("/escaperpg/images/ambria/trianglerouge.png");
+}
+
+.trianglevert {
+  width: 50px;
+  height: 50px;
+  background-image: url("/escaperpg/images/ambria/trianglevert.png");
+}
+
+.trianglejaune {
+  width: 50px;
+  height: 50px;
+  background-image: url("/escaperpg/images/ambria/trianglejaune.png");
+}

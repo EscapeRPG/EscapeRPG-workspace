@@ -3,6 +3,12 @@
     text-shadow: grey 1px 1px;
 }
 
+.mdp2 {
+  color: dodgerblue;
+  font-weight: bold;
+  text-shadow: skyblue 1px 1px;
+}
+
 .info {
     color: orange;
 }

@@ -1,0 +1,99 @@
+#sullivanporte,
+#loganporte {
+  max-width: 800px;
+  background-color: none;
+  position: relative;
+  margin: auto;
+  margin-bottom: 20px;
+
+  img {
+    width: 100%;
+  }
+}
+
+.emplacementboule1 {
+  width: 100%;
+  max-width: 100px;
+  max-height: 20px;
+  position: absolute;
+  top: 86.5%;
+  left: 18.5%;
+}
+
+.emplacementboule2 {
+  width: 100%;
+  max-width: 100px;
+  max-height: 20px;
+  position: absolute;
+  top: 86.5%;
+  left: 43.5%;
+}
+
+.emplacementboule3 {
+  width: 100%;
+  max-width: 100px;
+  max-height: 20px;
+  position: absolute;
+  top: 86.5%;
+  left: 68.5%;
+}
+
+#drag1,
+#drag2,
+#drag3 {
+  display: inline-block;
+  vertical-align: middle;
+  transition: all 200ms linear;
+  user-select: none;
+  background-color: rgba(100, 100, 100, 0.4);
+  width: 150px;
+  height: 150px;
+  margin: 0;
+}
+
+#drag1 img,
+#drag2 img,
+#drag3 img {
+  width: 100%;
+}
+
+.dropperporte {
+  width: 15.7%;
+  height: 16.5%;
+}
+
+#dropporte1 {
+  position: absolute;
+  top: 33%;
+  left: 20.2%;
+}
+
+#dropporte2 {
+  position: absolute;
+  top: 10.5%;
+  left: 42.2%;
+}
+
+#dropporte3 {
+  position: absolute;
+  top: 33%;
+  left: 63.9%;
+}
+
+#dropporte4 {
+  position: absolute;
+  top: 76.4%;
+  left: 20.2%;
+}
+
+#dropporte5 {
+  position: absolute;
+  top: 54%;
+  left: 42.2%;
+}
+
+#dropporte6 {
+  position: absolute;
+  top: 76.4%;
+  left: 63.9%;
+}

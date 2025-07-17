@@ -1,0 +1,214 @@
+.game-container {
+  margin: auto;
+}
+
+#map-and-controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#controls {
+  margin-left: 10px;
+  text-align: center;
+}
+
+#tileshaubans div {
+  border: none;
+}
+
+.map-haubans {
+  position: relative;
+  background-image: url("/escaperpg/images/ambria/haubans.png");
+  background-repeat: no-repeat;
+}
+
+.haubans .cordage {
+  background-color: none;
+}
+
+.loganhaubans {
+  background-image: url("/escaperpg/images/ambria/loganhaubans.png");
+  background-size: 100% 100%;
+  border: 1px solid black;
+  transition: left 0.5s linear, top 0.5s linear;
+  transform-origin: center;
+  transform: scale(0.7);
+  z-index: 2;
+}
+
+.goalhaubans {
+  background-image: url("/escaperpg/images/ambria/goalhaubans.png");
+  background-size: 100% 100%;
+  background-color: none;
+  border: none;
+  transition: left 0.5s linear, top 0.5s linear;
+  transform-origin: center;
+  transform: scale(0.7);
+  z-index: 2;
+}
+
+.map-levier {
+  position: relative;
+  background-image: url("/escaperpg/images/ambria/leviermap.png");
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+}
+
+.levier {
+  .floor {
+    background-color: none;
+    border: 1px solid black;
+  }
+
+  .wall {
+    background-color: none;
+    border: 1px solid black;
+  }
+
+  .rien {
+    background-color: none;
+    border: none;
+  }
+}
+
+.goallevier {
+  background-color: none;
+  border: none;
+}
+
+.playerlevier {
+  background-image: url("/escaperpg/images/ambria/levierplayer.png");
+  background-size: 100% 100%;
+  background-color: none;
+  border: none;
+  transition: left 0.5s linear, top 0.5s linear;
+  transform: translate(0, -40%);
+  z-index: 2;
+}
+
+.levier #tiles div {
+  border: none;
+}
+
+.game-map {
+  position: relative;
+  background-image: url("/escaperpg/images/ambria/bateau.png");
+  background-repeat: no-repeat;
+}
+
+div.layer,
+div.layer div {
+  position: absolute;
+}
+
+#tiles div {
+  border: none;
+}
+
+.default {
+  .floor {
+    background-color: none;
+  }
+
+  .wall {
+    background-color: none;
+  }
+
+  .sea {
+    background-color: none;
+  }
+}
+
+.player,
+.goal,
+.tresor,
+.garde1,
+.garde2 {
+  transform-origin: center;
+  transform: scale(0.7);
+}
+
+.goal {
+  background-color: none;
+  border: none;
+}
+
+.tresor {
+  background-color: none;
+  border: none;
+}
+
+.hide {
+  opacity: 0;
+}
+
+.garde1 {
+  background-color: none;
+  border: none;
+}
+
+.garde2 {
+  background-color: none;
+  border: none;
+}
+
+.player {
+  background-image: url("/escaperpg/images/ambria/loganhaubans.png");
+  background-size: 100% 100%;
+  border: 1px solid black;
+  transition: left 0.5s linear, top 0.5s linear;
+  z-index: 2;
+}
+
+#tresorimg {
+  position: absolute;
+  bottom: 0;
+  right: 80px;
+}
+
+#crack1 {
+  position: absolute;
+  top: 40px;
+  left: 480px;
+}
+
+#crack2 {
+  position: absolute;
+  bottom: 0;
+  right: 120px;
+}
+
+#crack3 {
+  position: absolute;
+  top: 80px;
+  right: 40px;
+}
+
+.cracking {
+  background-image: url("/escaperpg/images/ambria/crack.png");
+  z-index: 1;
+}
+
+#leviersolo1,
+#leviersolo2,
+#leviersolo3 {
+  position: absolute;
+  width: 7.98%;
+  height: 13.3%;
+}
+
+#leviersolo1 {
+  left: 67.54%;
+  top: 51.07%;
+}
+
+#leviersolo2 {
+  left: 76.74%;
+  top: 49.73%;
+}
+
+#leviersolo3 {
+  left: 85%;
+  top: 49.23%;
+}

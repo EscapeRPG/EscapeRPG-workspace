@@ -1,0 +1,45 @@
+#noeuds {
+  width: 800px;
+  height: 200px;
+  position: relative;
+  margin: auto;
+  background-image: url("/escaperpg/images/ambria/noeuds/noeuds.png");
+}
+
+.droppernoeud {
+  width: 200px;
+  height: 100px;
+  display: inline-block;
+  vertical-align: top;
+  transition: all 200ms linear;
+  margin: 0;
+}
+
+.draggernoeud {
+  display: inline-block;
+  vertical-align: top;
+  transition: all 200ms linear;
+  user-select: none;
+  background-color: rgba(100, 100, 100, 0.3);
+  width: 200px;
+  height: 100px;
+  margin: 5px;
+}
+
+#dropnoeud1 {
+  position: absolute;
+  top: 51px;
+  left: 45px;
+}
+
+#dropnoeud2 {
+  position: absolute;
+  top: 51px;
+  left: 300px;
+}
+
+#dropnoeud3 {
+  position: absolute;
+  top: 51px;
+  right: 45px;
+}

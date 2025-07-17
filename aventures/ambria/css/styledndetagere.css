@@ -1,0 +1,95 @@
+#etagerecapitaine {
+  width: 600px;
+  height: 800px;
+  position: relative;
+  margin: auto;
+  background-image: url("/escaperpg/images/ambria/etagere/etagerecapitaine.png");
+}
+
+.dropperetagere {
+  width: 150px;
+  height: 200px;
+  display: inline-block;
+  vertical-align: top;
+  transition: all 200ms linear;
+  margin: 0;
+}
+
+.drop_hover {
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.8) inset;
+}
+
+.drag_hover {
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.8) inset;
+}
+
+.draggeretagere {
+  display: inline-block;
+  vertical-align: top;
+  transition: all 200ms linear;
+  user-select: none;
+  background-color: rgba(100, 100, 100, 0.4);
+  width: 150px;
+  height: 200px;
+  margin: 0;
+}
+
+#dropetagere1 {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+#dropetagere2 {
+  position: absolute;
+  top: 0;
+  left: 150px;
+}
+
+#dropetagere3 {
+  position: absolute;
+  top: 200px;
+  left: 0;
+}
+
+#dropetagere4 {
+  position: absolute;
+  top: 200px;
+  left: 300px;
+}
+
+#dropetagere5 {
+  position: absolute;
+  top: 200px;
+  left: 450px;
+}
+
+#dropetagere6 {
+  position: absolute;
+  top: 400px;
+  left: 0;
+}
+
+#dropetagere7 {
+  position: absolute;
+  top: 400px;
+  left: 150px;
+}
+
+#dropetagere8 {
+  position: absolute;
+  top: 400px;
+  left: 300px;
+}
+
+#dropetagere9 {
+  position: absolute;
+  top: 400px;
+  left: 450px;
+}
+
+#dropetagere10 {
+  position: absolute;
+  top: 600px;
+  left: 150px;
+}
