@@ -21,9 +21,9 @@
 	
 	<body>
 		<?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/header.php"; ?>
-		<div id="banniere"><img src="/escaperpg/images/ambria/tresorambria.png"></div>
+		<div id="banniere"><img src="/escaperpg/images/ambria/tresorambria.png" alt="le trésor d'ambria"></div>
 		<main>
-			<nav><img src="/escaperpg/images/ambria/ambriamedaillon.png"></nav>
+			<nav><img src="/escaperpg/images/ambria/ambriamedaillon.png" alt="le trésor d'ambria"></nav>
 			<div id="txt"><?php echo'<p>Oups, il semblerait que vous ayez entré une mauvaise adresse !<br><br>Cliquez <a href='.$_SESSION['page'].'>ici</a> pour revenir à l\'étape précédente.</p>'; ?></div>
 		</div>
 		<div id="load"><div id="loader"></div></div>

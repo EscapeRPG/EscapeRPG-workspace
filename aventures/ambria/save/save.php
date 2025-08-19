@@ -15,7 +15,7 @@
 		<?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/header.php"; ?>
 		<div id="banniere"><img src="/escaperpg/images/ambria/tresorambriamini.png"></div>
 		<main>
-			<nav><img src="/escaperpg/images/ambria/ambriamedaillon.png"></nav>
+			<nav><img src="/escaperpg/images/ambria/ambriamedaillon.png" alt="le trésor d'ambria"></nav>
 			<div id="txt">
 				<?php
 					if ($_SESSION['loggedin']) {
