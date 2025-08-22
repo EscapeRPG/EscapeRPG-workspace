@@ -48,7 +48,8 @@
                         </div>
                     </div>
                     <form action="marche" method="post">
-                        <input list="notesListe" name="bernard"> <input type="submit" name="demander" value="Demander.">
+                        <input list="notesListe" name="bernard">
+                        <input type="submit" name="demander" value="Demander.">
                     </form>
                 <?php endif; ?>
             <?php else: ?>
@@ -74,8 +75,10 @@
                     </div>
                 </div>
                 <form action="marche" method="post">
-                    <input list="notesListe" name="bernard"> <input type="submit" name="demander" value="Demander.">
+                    <input list="notesListe" name="bernard">
+                    <input type="submit" name="demander" value="Demander.">
                 </form>
+                <?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/resetIndices.php"; ?>
             <?php endif; ?> ?>
         </div>
     </main>

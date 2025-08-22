@@ -161,6 +161,7 @@
                 if (!in_array('Peter - Don - Louis - Bernard', $_SESSION['mdp'])) {
                     $_SESSION['mdp'][] = 'Peter - Don - Louis - Bernard';
                 }
+                include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/resetIndices.php";
                 ?>
             <?php endif; ?>
         </div>

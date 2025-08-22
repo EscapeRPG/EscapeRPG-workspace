@@ -759,7 +759,7 @@
 										</p>
 										<div class="dialogue">
 											<div class="portrait">
-												<img src="/escaperpg/images/ambria/vieuxtype.png">
+												<img src="/escaperpg/images/ambria/vieuxtype.png" alt="un vieux type">
 											</div>
 											<div class="bulleperso">
 												<p>
@@ -788,7 +788,7 @@
 										</p>
 										<div class="dialogue">
 											<div class="portrait">
-												<img src="/escaperpg/images/ambria/vieuxtype.png">
+												<img src="/escaperpg/images/ambria/vieuxtype.png" alt="un vieux type">
 											</div>
 											<div class="bulleperso">
 												<p>
@@ -801,7 +801,7 @@
 										</p>
 										<div class="dialogue">
 											<div class="portrait">
-												<img src="/escaperpg/images/ambria/vieuxtype.png">
+												<img src="/escaperpg/images/ambria/vieuxtype.png" alt="un vieux type">
 											</div>
 											<div class="bulleperso">
 												<p>
@@ -829,7 +829,7 @@
 										</p>
 										<div class="dialogue">
 											<div class="portrait">
-												<img src="/escaperpg/images/ambria/vieuxtype.png">
+												<img src="/escaperpg/images/ambria/vieuxtype.png" alt="un vieux type">
 											</div>
 											<div class="bulleperso">
 												<p>
@@ -859,7 +859,7 @@
 										</p>
 										<div class="dialogue">
 											<div class="portrait">
-												<img src="/escaperpg/images/ambria/vieuxtype.png">
+												<img src="/escaperpg/images/ambria/vieuxtype.png" alt="un vieux type">
 											</div>
 											<div class="bulleperso">
 												<p>
@@ -872,7 +872,7 @@
 										</p>
 										<div class="dialogue">
 											<div class="portrait">
-												<img src="/escaperpg/images/ambria/vieuxtype.png">
+												<img src="/escaperpg/images/ambria/vieuxtype.png" alt="un vieux type">
 											</div>
 											<div class="bulleperso">
 												<p>
@@ -889,7 +889,7 @@
 										</p>
 										<div class="dialogue">
 											<div class="portrait">
-												<img src="/escaperpg/images/ambria/vieuxtype.png">
+												<img src="/escaperpg/images/ambria/vieuxtype.png" alt="un vieux type">
 											</div>
 											<div class="bulleperso">
 												<p>
@@ -902,7 +902,7 @@
 										</p>
 										<div class="dialogue">
 											<div class="portrait">
-												<img src="/escaperpg/images/ambria/vieuxtype.png">
+												<img src="/escaperpg/images/ambria/vieuxtype.png" alt="un vieux type">
 											</div>
 											<div class="bulleperso">
 												<p>

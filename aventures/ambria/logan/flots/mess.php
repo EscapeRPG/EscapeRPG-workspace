@@ -47,7 +47,7 @@
 								</p>
 								<div class="dialogue">
 									<div class="portrait">
-										<img src="/escaperpg/images/ambria/don.png">
+										<img src="/escaperpg/images/ambria/don.png" alt="don">
 									</div>
 									<div class="bulleperso">
 										<p>
@@ -65,12 +65,12 @@
 										</p>
 									</div>
 									<div class="portrait2">
-										<img src="/escaperpg/images/ambria/don.png">
+										<img src="/escaperpg/images/ambria/don.png" alt="don">
 									</div>
 								</div>
 								<div class="dialogue">
 									<div class="portrait">
-										<img src="/escaperpg/images/ambria/don.png">
+										<img src="/escaperpg/images/ambria/don.png" alt="don">
 									</div>
 									<div class="bulleperso">
 										<p>

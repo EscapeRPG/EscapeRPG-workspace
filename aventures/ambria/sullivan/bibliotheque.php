@@ -32,7 +32,6 @@ $_SESSION['ambriabibliotheque'] = true;
                 include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/succesadd.php";
                 ?>
             </div>
-
             <?php if (isset($_POST['suivant'])): ?>
                 <audio src="/escaperpg/sons/ambria/epeegratte.mp3" autoplay></audio>
                 <p>
@@ -114,7 +113,9 @@ $_SESSION['ambriabibliotheque'] = true;
             <?php elseif (isset($_POST['inspecter'])): ?>
                 <?php if (str_replace($search, $replace, stripslashes($_POST['look'])) == "bourseencuir"): ?>
                     <div id="enigme">
-                        <a href="/escaperpg/images/ambria/bourseencuir.png" rel="lightbox[invent]"><img src="/escaperpg/images/ambria/bourseencuir.png" alt="une bourse en cuir"></a>
+                        <a href="/escaperpg/images/ambria/bourseencuir.png" rel="lightbox[invent]">
+                            <img src="/escaperpg/images/ambria/bourseencuir.png" alt="une bourse en cuir">
+                        </a>
                     </div>
                     <p>
                         Vous attrapez la petite bourse en cuir qui se révèle contenir un peu de monnaie.<br>
@@ -135,10 +136,16 @@ $_SESSION['ambriabibliotheque'] = true;
                         De quoi peut-il bien s'agir ?
                     </p>
                     <form action="bibliotheque" method="post">
-                        <input list="notesListe" name="look"><input type="submit" name="inspecter" value="Inspecter.">
-                        <br>
-                        <button type="submit" name="indice1" class="boutonindice"></button>
+                        <input list="notesListe" name="look">
+                        <input type="submit" name="inspecter" value="Inspecter.">
                     </form>
+                    <?php
+                    $reponse = "Le mot de passe à entrer est \"Bourse en cuir\"";
+                    $indice1 = "Il doit bien y avoir un moyen de savoir ce qui se trouve sur le sol.";
+                    $indice2 = "Peut-être que ce n'est pas vous qui avez la réponse ?";
+                    $indice3 = "Demandez au joueur qui incarne Logan quel est le mot de passe de l'objet qu'il a laissé tomber en s'enfuyant.";
+                    include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/indices.php";
+                    ?>
                 <?php endif; ?>
             <?php elseif (isset($_POST['prendre'])): ?>
                 <script src="/escaperpg/scripts/inventaireadd.js"></script>
@@ -170,9 +177,9 @@ $_SESSION['ambriabibliotheque'] = true;
                     De quoi peut-il bien s'agir ?
                 </p>
                 <form action="bibliotheque" method="post">
-                    <input list="notesListe" name="look"><input type="submit" name="inspecter" value="Inspecter.">
+                    <input list="notesListe" name="look">
+                    <input type="submit" name="inspecter" value="Inspecter.">
                 </form>
-
                 <?php
                 $reponse = "Le mot de passe à entrer est \"Bourse en cuir\"";
                 $indice1 = "Il doit bien y avoir un moyen de savoir ce qui se trouve sur le sol.";
