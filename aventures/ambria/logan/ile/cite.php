@@ -138,7 +138,7 @@
 							$rarete = 'succesnormal';
 							include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/succesadd.php";
 							echo'</div>';
-							
+							unset ($_SESSION['ile']);
 							echo'
 								<audio src="/escaperpg/sons/ambria/cite.mp3" autoplay></audio>
 								<p>

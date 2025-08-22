@@ -71,7 +71,7 @@
 									</form>
 								</center>
 							';
-							$_SESSION['ambriasurlesflots'] = true;
+							$_SESSION['flots'] = true;
 							$_SESSION['loganconfiance'] += 10;
 						}
 				?>

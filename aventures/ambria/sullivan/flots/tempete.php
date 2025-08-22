@@ -625,6 +625,11 @@
 							$rarete = 'succesargent';
 							include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/succesadd.php";
 							echo'</div>';
+
+							if ($_SESSION['etatquille'] <= 0) {
+								$_SESSION['quillecassee'] = true;
+								$_SESSION['sullivanconfiance'] -= 20;
+							}
 							
 							if ($_SESSION['matcasse'] AND $_SESSION['quillecassee'])
 								{
@@ -827,7 +832,7 @@
 									</div>
 									<div class="bulleperso">
 										<p>
-											Cap\'taine. Vous savez où on doit aller ?												
+											Cap\'taine. Vous savez où on doit aller ?
 										</p>
 									</div>
 								</div>
@@ -850,7 +855,7 @@
 									</div>
 									<div class="bulleperso">
 										<p>
-											Vous... vous êtes bien sûr ? C\'est qu\'les eaux par là-bas sont d\'sacrées garces !												
+											Vous... vous êtes bien sûr ? C\'est qu\'les eaux par là-bas sont d\'sacrées garces !
 										</p>
 									</div>
 								</div>

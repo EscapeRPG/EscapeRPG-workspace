@@ -31,6 +31,7 @@
 				<?php
 					if ($_SESSION['ambrialogantrouve'])
 						{
+							unset ($_SESSION['flots']);
 							if (isset ($_POST['suivant']) OR $_SESSION['cap'])
 								{
 									echo'

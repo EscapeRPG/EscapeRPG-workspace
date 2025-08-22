@@ -20,7 +20,10 @@
         <nav><img src="/escaperpg/images/ambria/ambriamedaillon.png" alt="le trésor d'ambria"></nav>
         <div id="txt">
             <?php if (isset($_POST['new'])): ?>
-                <?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/aventures/ambria/includes/sessioninc.php"; ?>
+                <?php
+                include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/aventures/ambria/includes/sessioninc.php";
+                $_SESSION['etatquille'] = 100;
+                ?>
                 <div class="dialogue">
                     <div class="portrait">
                         <img src="/escaperpg/images/narrateur.png" alt="narrateur">
@@ -51,8 +54,9 @@
                             Sullivan Mason
                         </h3>
                         <div class="cardimage">
-                            <a href="/escaperpg/aventures/ambria/sullivan/depart.php"><img
-                                    src="/escaperpg/images/ambria/sullivancard.png" alt="Sullivan Mason"></a>
+                            <a href="/escaperpg/aventures/ambria/sullivan/depart.php">
+                                <img src="/escaperpg/images/ambria/sullivancard.png" alt="Sullivan Mason">
+                            </a>
                         </div>
                         <p>
                             Le capitaine du Surgisseur des Tempêtes.<br>
@@ -69,8 +73,9 @@
                             Logan Barthélémy
                         </h3>
                         <div class="cardimage">
-                            <a href="/escaperpg/aventures/ambria/logan/depart.php"><img
-                                    src="/escaperpg/images/ambria/logancard.png" alt="Logan Barthélémy"></a>
+                            <a href="/escaperpg/aventures/ambria/logan/depart.php">
+                                <img src="/escaperpg/images/ambria/logancard.png" alt="Logan Barthélémy">
+                            </a>
                         </div>
                         <p>
                             Un jeune habitant de l'Île de la Tortue, candide, sincère et rêvant d'aventure.<br>

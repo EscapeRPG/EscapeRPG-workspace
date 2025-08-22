@@ -65,6 +65,7 @@
 							$_SESSION['ambriacabine'] = false;
 							$_SESSION['ambriasurlesflots'] = true;
 							$_SESSION['mdp6'] = true;
+							$_SESSION['flots'] = true;
 						}
 				?>
 			</div>

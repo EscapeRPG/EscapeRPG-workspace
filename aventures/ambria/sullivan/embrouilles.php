@@ -1,36 +1,27 @@
 <?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/entete.php"; ?>
 <!DOCTYPE html>
 <html lang="fr">
-	<head>
-		<script type="text/javascript" src="/escaperpg/lightbox/js/prototype.js"></script>
-		<script type="text/javascript" src="/escaperpg/lightbox/js/scriptaculous.js?load=effects,builder"></script>
-		<script type="text/javascript" src="/escaperpg/lightbox/js/lightbox.js"></script>
-		<link rel="stylesheet" href="/escaperpg/lightbox/css/lightbox.css" type="text/css" media="screen">
-		
-		<!-- [if lt IE 9]>
-		<script src="http://html5shiv.googlecode.code/svn/trunk/html5.js"></scipt>
-		<![endif]-->
-	   
-		<link rel="stylesheet" href="/escaperpg/aventures/ambria/css/style.css">
-		<meta charset="utf-8">
-		<title>La Taverne - Le Trésor d'Ambria</title>
-	</head>
-	
-	<body>
-		<?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/header.php"; ?>
-		<div id="banniere"><img src="/escaperpg/images/ambria/tresorambriamini.png" alt="le trésor d'ambria"></div>
-		<main>
-			<nav>
-				<a href="/escaperpg/images/ambria/sullivanmasonmini.png" rel="lightbox[sullivan]" title="Sullivan Mason"><img src="/escaperpg/images/ambria/sullivanmasonmini.png" alt="capitaine sullivan mason"></a>
-				<div id="inventairefooter"><input type="submit" value="INVENTAIRE"></div>
-				<div id="motsdepasse"><input type="submit" value="NOTES"></div>
-				<a href="/escaperpg/aventures/ambria/save/save.php" target="_blank" rel="noreferrer"><input type="submit" name="save" value="SAUVEGARDER"></a>
-			</nav>
-			<div id="txt">
-				<?php
-					if (isset ($_POST['suite2']))
-						{
-							echo'
+
+<head>
+	<script type="text/javascript" src="/escaperpg/lightbox/js/prototype.js"></script>
+	<script type="text/javascript" src="/escaperpg/lightbox/js/scriptaculous.js?load=effects,builder"></script>
+	<script type="text/javascript" src="/escaperpg/lightbox/js/lightbox.js"></script>
+	<link rel="stylesheet" href="/escaperpg/lightbox/css/lightbox.css" type="text/css" media="screen">
+	<?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/styleAventures.php"; ?>
+	<?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/aventures/ambria/includes/stylesAmbria.php"; ?>
+	<meta charset="utf-8">
+	<title>La Taverne - Le Trésor d'Ambria</title>
+</head>
+
+<body>
+	<?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/header.php"; ?>
+	<div id="banniere"><img src="/escaperpg/images/ambria/tresorambriamini.png" alt="le trésor d'ambria"></div>
+	<main>
+		<?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/aventures/ambria/includes/nav-sullivan.php"; ?>
+		<div id="txt">
+			<?php
+			if (isset($_POST['suite2'])) {
+				echo '
 								<audio src="/escaperpg/sons/ambria/bagarretaverne.mp3" autoplay></audio>
 								<p>
 									Sans se démonter, le jeune homme soutient votre regard avant de répondre.
@@ -73,13 +64,10 @@
 									</form>
 								</center>
 							';
-						}
-					elseif (isset ($_POST['react']))
-						{
-							switch (str_replace($search, $replace, stripslashes($_POST['danger'])))
-								{
-									case "attention":
-										echo'
+			} elseif (isset($_POST['react'])) {
+				switch (str_replace($search, $replace, stripslashes($_POST['danger']))) {
+					case "attention":
+						echo '
 											<audio src="/escaperpg/sons/ambria/tavernehommetombe.mp3" autoplay></audio>
 											<p>
 												Vous réagissez juste à temps pour éviter le corps de l\'un des hommes qui a été propulsé vers vous et qui se vautre sur votre table, la renversant.
@@ -107,10 +95,10 @@
 												</form>
 											</center>
 										';
-										$_SESSION['mdp4'] = true;
-										break;
-									default:
-										echo'
+						$_SESSION['mdp4'] = true;
+						break;
+					default:
+						echo '
 											<audio src="/escaperpg/sons/ambria/tavernehommetombe.mp3" autoplay></audio>
 											<p>
 												Vous vous retournez une seconde trop tard.<br>
@@ -142,16 +130,13 @@
 												</form>
 											</center>
 										';
-										$_SESSION['mdp4'] = true;
-										$_SESSION['sullivanconfiance'] -= 10;
-								}
-						}
-					elseif (isset ($_POST['battre']))
-						{
-							switch (str_replace($search, $replace, stripslashes($_POST['bagarre'])))
-								{
-									case "baissezvous":
-										echo'
+						$_SESSION['mdp4'] = true;
+						$_SESSION['sullivanconfiance'] -= 10;
+				}
+			} elseif (isset($_POST['battre'])) {
+				switch (str_replace($search, $replace, stripslashes($_POST['bagarre']))) {
+					case "baissezvous":
+						echo '
 											<audio src="/escaperpg/sons/ambria/sullivanesquivecoup.mp3" autoplay></audio>
 											<p>
 												Vous vous baissez juste à temps pour éviter un coup de tabouret porté par un homme dans votre dos.<br>
@@ -178,10 +163,10 @@
 												</form>
 											</center>
 										';
-										$_SESSION['mdp5'] = true;
-										break;
-									default:
-										echo'
+						$_SESSION['mdp5'] = true;
+						break;
+					default:
+						echo '
 											<audio src="/escaperpg/sons/ambria/sullivanprendcoup.mp3" autoplay></audio>
 											<p>
 												Vous n\'arrivez pas bien à comprendre ce que vous crie le jeune homme et tardez à réagir.<br>
@@ -212,25 +197,22 @@
 												</form>
 											</center>
 										';
-										$_SESSION['mdp5'] = true;
-										$_SESSION['sullivanconfiance'] -= 20;
-								}
-						}
-					elseif (isset ($_POST['partir']))
-						{
-							switch (str_replace($search, $replace, stripslashes($_POST['sortir'])))
-								{
-									case "compris":
-										echo'<div id="succespopup">';
-										$nouveausucces = '<img src="/escaperpg/images/succes/ambria/bagarre.png"><span><u><b>Classique de la taverne</b></u><br>Participer à sa première bagarre</span>';
-										$scenario = 'ambria';
-										$description = 'bagarre';
-										$cache = 'oui';
-										$rarete = 'succesnormal';
-										include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/succesadd.php";
-										echo'</div>';
-										
-										echo'
+						$_SESSION['mdp5'] = true;
+						$_SESSION['sullivanconfiance'] -= 20;
+				}
+			} elseif (isset($_POST['partir'])) {
+				switch (str_replace($search, $replace, stripslashes($_POST['sortir']))) {
+					case "compris":
+						echo '<div id="succespopup">';
+						$nouveausucces = '<img src="/escaperpg/images/succes/ambria/bagarre.png"><span><u><b>Classique de la taverne</b></u><br>Participer à sa première bagarre</span>';
+						$scenario = 'ambria';
+						$description = 'bagarre';
+						$cache = 'oui';
+						$rarete = 'succesnormal';
+						include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/succesadd.php";
+						echo '</div>';
+
+						echo '
 											<audio src="/escaperpg/sons/ambria/finbagarre.mp3" autoplay></audio>
 											<p>
 												Vous sortez de la taverne, laissant derrière-vous le vacarme de la confrontation qui ne s\'est toujours pas arrêtée.<br>
@@ -253,9 +235,9 @@
 												</form>
 											</center>
 										';
-										break;
-									default:
-										echo'
+						break;
+					default:
+						echo '
 											<p>
 												Ce n\'est manifestement pas la réponse attendue.
 											</p>
@@ -265,14 +247,11 @@
 												</form>
 											</center>
 										';
-								}
-						}
-					elseif (isset ($_POST['loganreponse']))
-						{
-							switch (str_replace($search, $replace, stripslashes($_POST['logannom'])))
-								{
-									case "logan":
-										echo'
+				}
+			} elseif (isset($_POST['loganreponse'])) {
+				switch (str_replace($search, $replace, stripslashes($_POST['logannom']))) {
+					case "logan":
+						echo '
 											<div class="dialogue">
 												<div class="portrait">
 													<img src="/escaperpg/images/ambria/loganbarthelemymini.png" alt="logan barthélémy">
@@ -307,9 +286,9 @@
 												</form>
 											</center>
 										';
-										break;
-									default:
-										echo'
+						break;
+					default:
+						echo '
 											<p>
 												Êtes-vous sûr d\'avoir bien compris sa réponse ?
 											</p>
@@ -332,11 +311,9 @@
 												</form>
 											</center>
 										';
-								}
-						}
-					elseif (isset ($_POST['seloigner']) OR $_SESSION['seloigner'])
-						{
-							echo'
+				}
+			} elseif (isset($_POST['seloigner']) or $_SESSION['seloigner']) {
+				echo '
 								<div class="dialogue">
 									<div class="portrait">
 										<img src="/escaperpg/images/ambria/loganbarthelemymini.png" alt="logan barthélémy">
@@ -397,10 +374,9 @@
 									</form>
 								</center>
 							';
-							$_SESSION['seloigner'] = true;
-							if (isset ($_POST['indice']))
-								{
-									echo'
+				$_SESSION['seloigner'] = true;
+				if (isset($_POST['indice'])) {
+					echo '
 										<div id="indice">
 											Vous avez demandé le nom de votre interlocuteur. Quel est-il ?
 										</div>
@@ -410,10 +386,8 @@
 											</form>
 										</center>
 									';
-								}
-							elseif (isset ($_POST['indice2']))
-								{
-									echo'
+				} elseif (isset($_POST['indice2'])) {
+					echo '
 										<div id="indice">
 											Vous avez demandé le nom de votre interlocuteur. Quel est-il ?<br>
 											Il suffit de noter le prénom de ce personnage, incarné par le second joueur.
@@ -424,29 +398,23 @@
 											</form>
 										</center>
 									';
-								}
-							elseif (isset ($_POST['reponse']))
-								{
-									echo'
+				} elseif (isset($_POST['reponse'])) {
+					echo '
 										<div class="reponse">
 											La réponse est "Logan".
 										</div>
 									';
-								}
-							else
-								{
-									echo'
+				} else {
+					echo '
 										<center>
 											<form action="embrouilles" method="post">
 												<button type="submit" name="indice" class="boutonindice"></button>
 											</form>
 										</center>
 									';
-								}
-						}
-					else
-						{
-							echo'
+				}
+			} else {
+				echo '
 								<p>
 									Le jeune homme déglutit péniblement en regardant fixement votre sabre sur la table.
 								</p>
@@ -506,12 +474,15 @@
 									</form>
 								</center>
 							';
-						}
-				?>
-			</div>
+			}
+			?>
 		</div>
-		<div id="load"><div id="loader"></div></div>
+		</div>
+		<div id="load">
+			<div id="loader"></div>
+		</div>
 		<script src="/escaperpg/scripts/aventures-chargement.js"></script>
 		<?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/aventures/ambria/sullivan/includes/footer.php"; ?>
-	</body>
+</body>
+
 </html>

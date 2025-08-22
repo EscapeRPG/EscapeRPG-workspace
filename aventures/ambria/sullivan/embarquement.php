@@ -1,36 +1,27 @@
 <?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/entete.php"; ?>
 <!DOCTYPE html>
 <html lang="fr">
-	<head>
-		<script type="text/javascript" src="/escaperpg/lightbox/js/prototype.js"></script>
-		<script type="text/javascript" src="/escaperpg/lightbox/js/scriptaculous.js?load=effects,builder"></script>
-		<script type="text/javascript" src="/escaperpg/lightbox/js/lightbox.js"></script>
-		<link rel="stylesheet" href="/escaperpg/lightbox/css/lightbox.css" type="text/css" media="screen">
-		
-		<!-- [if lt IE 9]>
-		<script src="http://html5shiv.googlecode.code/svn/trunk/html5.js"></scipt>
-		<![endif]-->
-	   
-		<link rel="stylesheet" href="/escaperpg/aventures/ambria/css/style.css">
-		<meta charset="utf-8">
-		<title>Embarquement - Le Trésor d'Ambria</title>
-	</head>
-	
-	<body>
-		<?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/header.php"; ?>
-		<div id="banniere"><img src="/escaperpg/images/ambria/tresorambriamini.png" alt="le trésor d'ambria"></div>
-		<main>
-			<nav>
-				<a href="/escaperpg/images/ambria/sullivanmasonmini.png" rel="lightbox[sullivan]" title="Sullivan Mason"><img src="/escaperpg/images/ambria/sullivanmasonmini.png" alt="capitaine sullivan mason"></a>
-				<div id="inventairefooter"><input type="submit" value="INVENTAIRE"></div>
-				<div id="motsdepasse"><input type="submit" value="NOTES"></div>
-				<a href="/escaperpg/aventures/ambria/save/save.php" target="_blank" rel="noreferrer"><input type="submit" name="save" value="SAUVEGARDER"></a>
-			</nav>
-			<div id="txt">
-				<?php
-					if (isset ($_POST['suivant']))
-						{
-							echo'
+
+<head>
+	<script type="text/javascript" src="/escaperpg/lightbox/js/prototype.js"></script>
+	<script type="text/javascript" src="/escaperpg/lightbox/js/scriptaculous.js?load=effects,builder"></script>
+	<script type="text/javascript" src="/escaperpg/lightbox/js/lightbox.js"></script>
+	<link rel="stylesheet" href="/escaperpg/lightbox/css/lightbox.css" type="text/css" media="screen">
+	<?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/styleAventures.php"; ?>
+	<?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/aventures/ambria/includes/stylesAmbria.php"; ?>
+	<meta charset="utf-8">
+	<title>Embarquement - Le Trésor d'Ambria</title>
+</head>
+
+<body>
+	<?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/header.php"; ?>
+	<div id="banniere"><img src="/escaperpg/images/ambria/tresorambriamini.png" alt="le trésor d'ambria"></div>
+	<main>
+		<?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/aventures/ambria/includes/nav-sullivan.php"; ?>
+		<div id="txt">
+			<?php
+			if (isset($_POST['suivant'])) {
+				echo '
 								<audio src="/escaperpg/sons/ambria/combatmarins.mp3" autoplay></audio>
 								<p>
 									Il vous fait un petit signe de tête avant de sortir un couteau.<br>
@@ -50,10 +41,8 @@
 									</form>
 								</center>
 							';
-						}
-					elseif (isset ($_POST['suivant2']))
-						{
-							echo'
+			} elseif (isset($_POST['suivant2'])) {
+				echo '
 								<audio src="/escaperpg/sons/ambria/combatmarins2.mp3" autoplay></audio>
 								<p>
 									Vous tendez votre bras pour interrompre la course de Logan.
@@ -103,10 +92,8 @@
 									</form>
 								</center>
 							';
-						}
-					elseif (isset ($_POST['suivant3']))
-						{
-							echo'
+			} elseif (isset($_POST['suivant3'])) {
+				echo '
 								<audio src="/escaperpg/sons/ambria/embarquement.mp3" autoplay></audio>
 								<p>
 									À votre approche du Surgisseur des Tempêtes, vos hommes d\'équipage mettent en place la planche vous permettant de monter à bord.<br>
@@ -114,35 +101,30 @@
 									Vos hommes lui disent de le suivre et qu\'ils vont lui montrer ce qu\'il doit savoir.
 								</p>
 							';
-							if ($_SESSION['sullivanconfiance'] == 90)
-								{
-									echo'
+				if ($_SESSION['sullivanconfiance'] == 90) {
+					echo '
 										<p>
 											Vous vous dirigez vers la dunette, d\'où vos hommes pourront bien vous entendre crier les ordres.
 											Ayant encore mal à la hanche, vous boitez un peu, ce qui ne manque pas d\'échapper à leur regard.
 										</p>
 									';
-								}
-							elseif ($_SESSION['sullivanconfiance'] == 80)
-								{
-									echo'
+				} elseif ($_SESSION['sullivanconfiance'] == 80) {
+					echo '
 										<p>
 											Willy, qui fait office de médecin de bord, s\'approche de vous, manifestement inquiet par le sang qui macule votre visage.
 											Vous le repoussez sans ménagement en lui assurant que ce n\'est rien, puis vous vous hissez sur la dunette, d\'où vos hommes pourront bien vous entendre crier les ordres.
 										</p>
 									';
-								}
-							elseif ($_SESSION['sullivanconfiance'] == 70)
-								{
-									echo'
+				} elseif ($_SESSION['sullivanconfiance'] == 70) {
+					echo '
 										<p>
 											Willy, qui fait office de médecin de bord, s\'approche de vous, manifestement inquiet par le sang qui macule votre visage.
 											Vous le repoussez sans ménagement en lui assurant que ce n\'est rien, puis vous vous hissez sur la dunette, d\'où vos hommes pourront bien vous entendre crier les ordres.
 											Ayant encore mal à la hanche, vous boitez un peu, ce qui ne manque pas d\'échapper à leur regard.
 										</p>
 									';
-								}
-							echo'
+				}
+				echo '
 								<div class="dialogue">
 									<div class="bulleperso2">
 										<p>
@@ -165,10 +147,8 @@
 									</form>
 								</center>
 							';
-						}
-					elseif (isset ($_POST['suivant4']) OR $_SESSION['ambriacabine'])
-						{
-							echo'
+			} elseif (isset($_POST['suivant4']) or $_SESSION['ambriacabine']) {
+				echo '
 								<p>
 									Vous êtes dans votre cabine et pouvez vous mettre à votre aise.
 									Vous posez votre manteau sur le fauteuil et retirez votre baudrier et votre pistolet avant de défaire la taïole qui ceint votre taille.<br>
@@ -227,10 +207,9 @@
 									</form>
 								</center>
 							';
-							$_SESSION['ambriacabine'] = true;
-							if (isset ($_POST['indice']))
-								{
-									echo'
+				$_SESSION['ambriacabine'] = true;
+				if (isset($_POST['indice'])) {
+					echo '
 										<div id="indice">
 											Vu le nombre d\'objets à ranger, l\'une des étagères se trouvera complètement vide.
 										</div>
@@ -240,10 +219,8 @@
 											</form>
 										</center>
 									';
-								}
-							elseif (isset ($_POST['indice2']))
-								{
-									echo'
+				} elseif (isset($_POST['indice2'])) {
+					echo '
 										<div id="indice">
 											Vu le nombre d\'objets à ranger, l\'une des étagères se trouvera complètement vide.<br>
 											Faites bien attention de placer la bouteille de rhum le plus loin possible des bougies et de la lampe, tout en respectant les autres conditions.
@@ -254,10 +231,8 @@
 											</form>
 										</center>
 									';
-								}
-							elseif (isset ($_POST['reponse']))
-								{
-									echo'
+				} elseif (isset($_POST['reponse'])) {
+					echo '
 										<div class="reponse">
 											La caisse étant trop lourde, placez-la dans l\'emplacement tout en bas.<br>
 											Comme le pistolet doit être vers le centre et que l\'une des étagères sera vide au final, il faut le placer juste à côté des livres sur la deuxième étagère en partant du haut.<br>
@@ -267,21 +242,17 @@
 											Enfin, le compas sera placé dans la première case de cette même étagère pour qu\'elle soit remplie.
 										</div>
 									';
-								}
-							else
-								{
-									echo'
+				} else {
+					echo '
 										<center>
 											<form action="embarquement" method="post">
 												<button type="submit" name="indice" class="boutonindice"></button>
 											</form>
 										</center>
 									';
-								}
-						}
-					else
-						{
-							echo'
+				}
+			} else {
+				echo '
 								<p>
 									Vous arrivez finalement sur les docks sans avoir rencontré de menace.<br>
 									À une centaine de mètres devant vous se dresse fièrement votre navire.
@@ -323,12 +294,15 @@
 									</form>
 								</center>
 							';
-						}
-				?>
-			</div>
+			}
+			?>
 		</div>
-		<div id="load"><div id="loader"></div></div>
+		</div>
+		<div id="load">
+			<div id="loader"></div>
+		</div>
 		<script src="/escaperpg/scripts/aventures-chargement.js"></script>
 		<?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/aventures/ambria/sullivan/includes/footer.php"; ?>
-	</body>
+</body>
+
 </html>

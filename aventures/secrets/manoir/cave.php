@@ -81,7 +81,9 @@
                     <input type="submit" name="chercher" value="Chercher.">
                 </form>
                 <?php
-                $_SESSION['inventaire'][] = 'tableaubrule';
+                if (!in_array('tableaubrule', $_SESSION['inventaire'])) {
+                    $_SESSION['inventaire'][] = 'tableaubrule';
+                }
                 ?>
                 <script src="/escaperpg/scripts/updateDataList.js"></script>
             <?php else: ?>

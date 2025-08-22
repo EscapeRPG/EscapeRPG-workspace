@@ -101,6 +101,7 @@
 						}
 					else
 						{
+							unset ($_SESSION['flots']);
 							echo '
 								<audio src="/escaperpg/sons/ambria/cale.mp3" autoplay></audio>
 								<p>

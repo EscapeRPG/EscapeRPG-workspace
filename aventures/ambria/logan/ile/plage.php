@@ -47,6 +47,7 @@
 						}
 					elseif (isset ($_POST['suivant']))
 						{
+							$_SESSION['ile'] = true;
 							echo'
 								<audio src="/escaperpg/sons/ambria/plage.mp3" autoplay></audio>
 								<p>
