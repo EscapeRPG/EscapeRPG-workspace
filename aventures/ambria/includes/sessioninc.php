@@ -103,4 +103,3 @@
 	$_SESSION['mdp24'] = false;
 	$_SESSION['mdp25'] = false;
 	$_SESSION['mdp26'] = false;
-?>

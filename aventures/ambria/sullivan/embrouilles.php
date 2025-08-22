@@ -18,10 +18,10 @@
 	
 	<body>
 		<?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/header.php"; ?>
-		<div id="banniere"><img src="/escaperpg/images/ambria/tresorambriamini.png"></div>
+		<div id="banniere"><img src="/escaperpg/images/ambria/tresorambriamini.png" alt="le trésor d'ambria"></div>
 		<main>
 			<nav>
-				<a href="/escaperpg/images/ambria/sullivanmasonmini.png" rel="lightbox[sullivan]" title="Sullivan Mason"><img src="/escaperpg/images/ambria/sullivanmasonmini.png"></a>
+				<a href="/escaperpg/images/ambria/sullivanmasonmini.png" rel="lightbox[sullivan]" title="Sullivan Mason"><img src="/escaperpg/images/ambria/sullivanmasonmini.png" alt="capitaine sullivan mason"></a>
 				<div id="inventairefooter"><input type="submit" value="INVENTAIRE"></div>
 				<div id="motsdepasse"><input type="submit" value="NOTES"></div>
 				<a href="/escaperpg/aventures/ambria/save/save.php" target="_blank" rel="noreferrer"><input type="submit" name="save" value="SAUVEGARDER"></a>
@@ -37,7 +37,7 @@
 								</p>
 								<div class="dialogue">
 									<div class="portrait">
-										<img src="/escaperpg/images/ambria/loganbarthelemymini.png">
+										<img src="/escaperpg/images/ambria/loganbarthelemymini.png" alt="logan barthélémy">
 									</div>
 									<div class="bulleperso">
 										<p>
@@ -61,7 +61,7 @@
 										</p>
 									</div>
 									<div class="portrait2">
-										<img src="/escaperpg/images/ambria/sullivanmasonmini.png">
+										<img src="/escaperpg/images/ambria/sullivanmasonmini.png" alt="capitaine sullivan mason">
 									</div>
 								</div>
 								<p>
@@ -95,7 +95,7 @@
 													</p>
 												</div>
 												<div class="portrait2">
-													<img src="/escaperpg/images/ambria/sullivanmasonmini.png">
+													<img src="/escaperpg/images/ambria/sullivanmasonmini.png" alt="capitaine sullivan mason">
 												</div>
 											</div>
 											<p>
@@ -130,7 +130,7 @@
 													</p>
 												</div>
 												<div class="portrait2">
-													<img src="/escaperpg/images/ambria/sullivanmasonmini.png">
+													<img src="/escaperpg/images/ambria/sullivanmasonmini.png" alt="capitaine sullivan mason">
 												</div>
 											</div>
 											<p>
@@ -169,7 +169,7 @@
 													</p>
 												</div>
 												<div class="portrait2">
-													<img src="/escaperpg/images/ambria/sullivanmasonmini.png">
+													<img src="/escaperpg/images/ambria/sullivanmasonmini.png" alt="capitaine sullivan mason">
 												</div>
 											</div>
 											<center>
@@ -203,7 +203,7 @@
 													</p>
 												</div>
 												<div class="portrait2">
-													<img src="/escaperpg/images/ambria/sullivanmasonmini.png">
+													<img src="/escaperpg/images/ambria/sullivanmasonmini.png" alt="capitaine sullivan mason">
 												</div>
 											</div>
 											<center>
@@ -244,7 +244,7 @@
 													</p>
 												</div>
 												<div class="portrait2">
-													<img src="/escaperpg/images/ambria/sullivanmasonmini.png">
+													<img src="/escaperpg/images/ambria/sullivanmasonmini.png" alt="capitaine sullivan mason">
 												</div>
 											</div>
 											<center>
@@ -275,7 +275,7 @@
 										echo'
 											<div class="dialogue">
 												<div class="portrait">
-													<img src="/escaperpg/images/ambria/loganbarthelemymini.png">
+													<img src="/escaperpg/images/ambria/loganbarthelemymini.png" alt="logan barthélémy">
 												</div>
 												<div class="bulleperso">
 													<p>
@@ -292,7 +292,7 @@
 													</p>
 												</div>
 												<div class="portrait2">
-													<img src="/escaperpg/images/ambria/sullivanmasonmini.png">
+													<img src="/escaperpg/images/ambria/sullivanmasonmini.png" alt="capitaine sullivan mason">
 												</div>
 											</div>
 											<p>
@@ -320,7 +320,7 @@
 													</p>
 												</div>
 												<div class="portrait2">
-													<img src="/escaperpg/images/ambria/sullivanmasonmini.png">
+													<img src="/escaperpg/images/ambria/sullivanmasonmini.png" alt="capitaine sullivan mason">
 												</div>
 											</div>
 											<center>
@@ -339,7 +339,7 @@
 							echo'
 								<div class="dialogue">
 									<div class="portrait">
-										<img src="/escaperpg/images/ambria/loganbarthelemymini.png">
+										<img src="/escaperpg/images/ambria/loganbarthelemymini.png" alt="logan barthélémy">
 									</div>
 									<div class="bulleperso">
 										<p>
@@ -357,7 +357,7 @@
 										</p>
 									</div>
 									<div class="portrait2">
-										<img src="/escaperpg/images/ambria/sullivanmasonmini.png">
+										<img src="/escaperpg/images/ambria/sullivanmasonmini.png" alt="capitaine sullivan mason">
 									</div>
 								</div>
 								<p>
@@ -375,7 +375,7 @@
 										</p>
 									</div>
 									<div class="portrait2">
-										<img src="/escaperpg/images/ambria/sullivanmasonmini.png">
+										<img src="/escaperpg/images/ambria/sullivanmasonmini.png" alt="capitaine sullivan mason">
 									</div>
 								</div>
 								<p>
@@ -388,7 +388,7 @@
 										</p>
 									</div>
 									<div class="portrait2">
-										<img src="/escaperpg/images/ambria/sullivanmasonmini.png">
+										<img src="/escaperpg/images/ambria/sullivanmasonmini.png" alt="capitaine sullivan mason">
 									</div>
 								</div>
 								<center>
@@ -452,7 +452,7 @@
 								</p>
 								<div class="dialogue">
 									<div class="portrait">
-										<img src="/escaperpg/images/ambria/loganbarthelemymini.png">
+										<img src="/escaperpg/images/ambria/loganbarthelemymini.png" alt="logan barthélémy">
 									</div>
 									<div class="bulleperso">
 										<p>
@@ -470,12 +470,12 @@
 										</p>
 									</div>
 									<div class="portrait2">
-										<img src="/escaperpg/images/ambria/sullivanmasonmini.png">
+										<img src="/escaperpg/images/ambria/sullivanmasonmini.png" alt="capitaine sullivan mason">
 									</div>
 								</div>
 								<div class="dialogue">
 									<div class="portrait">
-										<img src="/escaperpg/images/ambria/loganbarthelemymini.png">
+										<img src="/escaperpg/images/ambria/loganbarthelemymini.png" alt="logan barthélémy">
 									</div>
 									<div class="bulleperso">
 										<p>
@@ -497,7 +497,7 @@
 										</p>
 									</div>
 									<div class="portrait2">
-										<img src="/escaperpg/images/ambria/sullivanmasonmini.png">
+										<img src="/escaperpg/images/ambria/sullivanmasonmini.png" alt="capitaine sullivan mason">
 									</div>
 								</div>
 								<center>

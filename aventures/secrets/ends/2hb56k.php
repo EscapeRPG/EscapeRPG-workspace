@@ -1,4 +1,7 @@
-<?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/entete.php"; ?>
+<?php
+include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/entete.php";
+$succesadd = "/escaperpg/includes/succesadd.php";
+?>
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -32,36 +35,31 @@
                     $description = 'fin';
                     $cache = 'non';
                     $rarete = 'succesbronze';
-                    include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/succesadd.php";
+                    include $_SERVER['DOCUMENT_ROOT'] . $succesadd;
                     $nouveausucces = '<img src="/escaperpg/images/succes/secrets/fin.png"><span><u><b>Ainsi s\'achève l\'histoire</b></u><br>Terminer l\'aventure</span>';
                     $scenario = 'secrets';
                     $description = 'fin';
                     $cache = 'non';
                     $rarete = 'succesbronze';
-                    include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/succesadd.php";
+                    include $_SERVER['DOCUMENT_ROOT'] . $succesadd;
                     $nouveausucces = '<img src="/escaperpg/images/succes/secrets/fin1.png"><span><u><b>Victime</b></u><br>Terminer l\'aventure et obtenir 1 étoile</span>';
                     $scenario = 'secrets';
                     $description = 'étoile1';
                     $cache = 'oui';
                     $rarete = 'succesbronze';
-                    include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/succesadd.php";
+                    include $_SERVER['DOCUMENT_ROOT'] . $succesadd;
                     $nouveausucces = '<img src="/escaperpg/images/succes/secrets/fin2.png"><span><u><b>Martyr</b></u><br>Terminer l\'aventure et obtenir 2 étoiles</span>';
                     $scenario = 'secrets';
                     $description = 'étoile2';
                     $cache = 'oui';
                     $rarete = 'succesargent';
-                    include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/succesadd.php";
+                    include $_SERVER['DOCUMENT_ROOT'] . $succesadd;
                     $nouveausucces = '<img src="/escaperpg/images/succes/secrets/shoggoth.png"><span><u><b>Bannisseur</b></u><br>Réussir à se débarrasser de la terrible créature !</span>';
                     $scenario = 'secrets';
                     $description = 'shoggoth';
                     $cache = 'oui';
                     $rarete = 'succesargent';
-                    include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/succesadd.php";
-                    if (!$succesexiste) {
-                        echo $_SESSION['loggedin'] ?
-                            '<script src="/escaperpg/scripts/succescount.js"></script>' :
-                            '<script src="/escaperpg/scripts/succescountoffline.js"></script>';
-                    }
+                    include $_SERVER['DOCUMENT_ROOT'] . $succesadd;
                     ?>
                 </div>
                 <div id="enigme">

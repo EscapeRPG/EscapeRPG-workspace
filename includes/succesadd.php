@@ -32,4 +32,5 @@ if (!$succesexiste): ?>
             </a>
         </div>
     <?php endif; ?>
+    <script src="/escaperpg/scripts/<?= $_SESSION['loggedin'] ? 'succescount.js' : 'succescountoffline' ?>"></script>
 <?php endif; ?>

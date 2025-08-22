@@ -2,6 +2,7 @@
     <?php if ($_SESSION['loggedin'] || isset($_POST['continuer'])): ?>
         <?php
         include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/succesSave.php";
+
         if ($_SESSION['loggedin']) {
             $nom = $_SESSION['idcompte'];
             $code = $random;
@@ -9,11 +10,13 @@
             $nom = htmlspecialchars($_POST['nom']);
             $code = htmlspecialchars($_POST['code']);
         }
+
         $session = session_encode();
         $page = $_SESSION['page'];
         $verifsave = $conn->prepare("SELECT * FROM $scenarioEnCours WHERE id = ?");
         $verifsave->execute([$nom]);
         $saveexiste = $verifsave->rowCount();
+
         if ($saveexiste == 0) {
             $stmt = $conn->prepare("INSERT INTO $scenarioEnCours (id, code, sess, savepage) VALUES (?, ?, ?, ?)");
             $stmt->execute([$nom, $code, $session, $page]);

@@ -1,4 +1,4 @@
-function createDroppers(panneau) {
+function createDroppers(panneau, panneauDrag) {
   const positions = [
     [1, 3],
     [1, 4],
@@ -25,18 +25,29 @@ function createDroppers(panneau) {
     [5, 5],
   ];
 
-  for (let i = 0; i < 23; i++) {
-    const id = `dropelec${i + 1}`;
+  for (let i = 1; i < 24; i++) {
+    let y = i + 1;
+    const id = `dropelec${y}`;
     const dropDiv = document.createElement("div");
     dropDiv.className = "dropperelec";
     dropDiv.id = id;
 
-    // Positionnement grid
     const [row, col] = positions[i];
     dropDiv.style.gridRow = row;
     dropDiv.style.gridColumn = col;
 
     panneau.appendChild(dropDiv);
+
+    const dragDiv = document.createElement("div");
+    dragDiv.className = "draggableelec";
+    dragDiv.id = `drag${y}`;
+
+    const dragImg = document.createElement("img");
+    dragImg.src = `/escaperpg/images/secrets/cables/${y}.png`;
+    dragImg.alt = `cable ${y}`;
+    
+    dragDiv.appendChild(dragImg);
+    panneauDrag.appendChild(dragDiv);
   }
 }
 
@@ -164,6 +175,7 @@ function checkDrags() {
 
 window.addEventListener("DOMContentLoaded", () => {
   const panneau = document.getElementById("innerpanneau");
-  createDroppers(panneau);
+  const panneauDrag = document.querySelector(".draggables-container");
+  createDroppers(panneau, panneauDrag);
   enableDragDrop();
 });

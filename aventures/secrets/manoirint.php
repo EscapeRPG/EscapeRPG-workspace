@@ -44,11 +44,6 @@
                     $cache = 'non';
                     $rarete = 'succesnormal';
                     include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/succesadd.php";
-                    if (!$succesexiste) {
-                        echo $_SESSION['loggedin'] ?
-                            '<script src="/escaperpg/scripts/succescount.js"></script>' :
-                            '<script src="/escaperpg/scripts/succescountoffline.js"></script>';
-                    }
                     ?>
                 </div>
                 <div id="enigme">

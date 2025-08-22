@@ -1,5 +1,6 @@
 <div id="txt">
-    <?php if ($_SESSION['loggedin'] || isset($_POST['nom'])):
+    <?php if ($_SESSION['loggedin'] || isset($_POST['nom'])): ?>
+        <?php
         include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/succesLoad.php";
         $nom = $_SESSION['loggedin'] ? $_SESSION['idcompte'] : htmlspecialchars($_POST['nom']);
 
@@ -12,17 +13,20 @@
             $query->execute([$nom, $code]);
         }
         $result = $query->fetch();
+        ?>
 
-        if ($result):
+        <?php if ($result): ?>
+            <?php
             $sess = $result['sess'];
             $savepage = $result['savepage'];
-            $session = session_decode($sess); ?>
+            $session = session_decode($sess);
+            ?>
             <p>
                 La partie a été chargée avec succès !
                 Rendez-vous sur <a href=<?= $savepage ?>>cette page</a> pour la reprendre !
             </p>
-            <?php else:
-            if ($_SESSION['loggedin']): ?>
+        <?php else: ?>
+            <?php if ($_SESSION['loggedin']): ?>
                 <p>
                     Il y a eu une erreur quelque part, veuillez contacter le support à <a href="mailto:escaperpg@escaperpg.com">escaperpg [ at ] escaperpg.com</a>
                     pour retrouver votre sauvegarde.

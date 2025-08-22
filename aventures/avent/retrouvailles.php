@@ -216,8 +216,7 @@
                 include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/indices.php";
                 ?>
             <?php elseif (isset($_POST['translate'])): ?>
-                <?php switch (str_replace($search, $replace, stripslashes($_POST['traduire']))): ?>
-                <?php
+                <?php switch (str_replace($search, $replace, stripslashes($_POST['traduire']))):
                     case "sapence":
                     case "dusapence":
                     case "unsapence":
@@ -235,12 +234,11 @@
                         <form action="reparations" method="post">
                             <input type="submit" name="suivant5" value="SUIVANT.">
                         </form>
-                        <?php
+                    <?php
                         include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/resetIndices.php";
                         break;
-                        ?>
-                    <?php
-                    default: ?>
+                    default:
+                    ?>
                         <div id="enigmelieu">
                             <img src="/escaperpg/images/avent/livre.png" alt="un bien étrange livre">
                         </div>

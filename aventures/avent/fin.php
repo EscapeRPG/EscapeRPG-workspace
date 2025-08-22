@@ -42,11 +42,6 @@
                     $cache = 'non';
                     $rarete = 'succesbronze';
                     include $_SERVER['DOCUMENT_ROOT'] . $succesadd;
-                    if (!$succesexiste) {
-                        echo $_SESSION['loggedin'] ?
-                            '<script src="/escaperpg/scripts/succescount.js"></script>' :
-                            '<script src="/escaperpg/scripts/succescountoffline.js"></script>';
-                    }
                     ?>
                 </div>
                 <img src="/escaperpg/images/etoilefinpleine.png" alt="étoile pleine"><br>
