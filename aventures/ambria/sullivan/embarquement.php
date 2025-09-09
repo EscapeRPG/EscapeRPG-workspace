@@ -139,38 +139,52 @@
                     Vous envisagez donc de remettre un peu d'ordre ici.
                 </p>
                 <div id="etagerecapitaine">
-                    <div class="dropperetagere" id="dropetagere1"></div>
-                    <div class="dropperetagere" id="dropetagere2"></div>
-                    <div class="dropperetagere" id="dropetagere3"></div>
-                    <div class="dropperetagere" id="dropetagere4"></div>
-                    <div class="dropperetagere" id="dropetagere5"></div>
-                    <div class="dropperetagere" id="dropetagere6"></div>
-                    <div class="dropperetagere" id="dropetagere7"></div>
-                    <div class="dropperetagere" id="dropetagere8"></div>
-                    <div class="dropperetagere" id="dropetagere9"></div>
-                    <div class="dropperetagere" id="dropetagere10"></div>
+                    <div class="dropper" id="drop1"></div>
+                    <div class="dropper" id="drop2"></div>
+                    <div class="dropper" id="drop3"></div>
+                    <div class="dropper" id="drop4"></div>
+                    <div class="dropper" id="drop5"></div>
+                    <div class="dropper" id="drop6"></div>
+                    <div class="dropper" id="drop7"></div>
+                    <div class="dropper" id="drop8"></div>
+                    <div class="dropper" id="drop9"></div>
+                    <div class="dropper" id="drop10"></div>
                 </div>
-                <br>
-                <div class="draggeretagere" id="dragetagere1">
-                    <img src="/escaperpg/images/ambria/etagere/longuevue.png" id="dra1" alt="longue-vue">
-                </div>
-                <div class="draggeretagere" id="dragetagere2">
-                    <img src="/escaperpg/images/ambria/etagere/caisse.png" id="dra2" alt="caisse">
-                </div>
-                <div class="draggeretagere" id="dragetagere3">
-                    <img src="/escaperpg/images/ambria/etagere/rhum.png" id="dra3" alt="rhum">
-                </div>
-                <div class="draggeretagere" id="dragetagere4">
-                    <img src="/escaperpg/images/ambria/etagere/pistolet.png" id="dra4" alt="pistolet">
-                </div>
-                <div class="draggeretagere" id="dragetagere5">
-                    <img src="/escaperpg/images/ambria/etagere/compas.png" id="dra5" alt="compas">
-                </div>
-                <div class="draggeretagere" id="dragetagere6">
-                    <img src="/escaperpg/images/ambria/etagere/lampe.png" id="dra6" alt="lampe">
+                <div class="draggers">
+                    <div class="dragslot">
+                        <div class="draggable" id="dragetagere1">
+                            <img src="/escaperpg/images/ambria/etagere/longuevue.png" id="longue-vue" alt="longue-vue">
+                        </div>
+                    </div>
+                    <div class="dragslot">
+                        <div class="draggable" id="dragetagere2">
+                            <img src="/escaperpg/images/ambria/etagere/caisse.png" id="caisse" alt="caisse">
+                        </div>
+                    </div>
+                    <div class="dragslot">
+                        <div class="draggable" id="dragetagere3">
+                            <img src="/escaperpg/images/ambria/etagere/rhum.png" id="rhum" alt="rhum">
+                        </div>
+                    </div>
+                    <div class="dragslot">
+                        <div class="draggable" id="dragetagere4">
+                            <img src="/escaperpg/images/ambria/etagere/pistolet.png" id="pistolet" alt="pistolet">
+                        </div>
+                    </div>
+                    <div class="dragslot">
+                        <div class="draggable" id="dragetagere5">
+                            <img src="/escaperpg/images/ambria/etagere/compas.png" id="compas" alt="compas">
+                        </div>
+                    </div>
+                    <div class="dragslot">
+                        <div class="draggable" id="dragetagere6">
+                            <img src="/escaperpg/images/ambria/etagere/lampe.png" id="lampe" alt="lampe">
+                        </div>
+                    </div>
                 </div>
                 <p>
-                    Après une courte réflexion, vous en venez à cette conclusion :<br>
+                    Après une courte réflexion, vous en venez à cette conclusion :
+                </p>
                 <ul class="reflexion-etagere">
                     <li>- La caisse est trop lourde pour risquer de la mettre en hauteur.</li>
                     <li>- Vous aimez avoir votre longue-vue à portée de votre pistolet.</li>
@@ -178,11 +192,10 @@
                     <li>- En cas de précipitation, il serait préférable que votre pistolet se trouve bien au centre de l'étagère, pour pouvoir le récupérer plus rapidement.</li>
                     <li>- Pour éviter que le matériel ne gîte, les rangées doivent être soit remplies, soit vides.</li>
                 </ul>
-                </p>
-                <script src="/escaperpg/aventures/ambria/sullivan/scripts/dragdropetagere.js"></script>
                 <form action="embarquement" method="post">
                     <input type="submit" name="reset" value="Réinitialiser.">
                 </form>
+                <script src="/escaperpg/aventures/ambria/sullivan/scripts/dragdropetagere.js"></script>
                 <?php
                 $_SESSION['ambriacabine'] = true;
                 $reponse = `La caisse étant trop lourde, placez-la dans l'emplacement tout en bas.<br>

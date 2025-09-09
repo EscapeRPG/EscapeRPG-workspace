@@ -1,40 +1,29 @@
 <?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/entete.php"; ?>
 <!DOCTYPE html>
 <html lang="fr">
-	<head>
-		<script type="text/javascript" src="/escaperpg/lightbox/js/prototype.js"></script>
-		<script type="text/javascript" src="/escaperpg/lightbox/js/scriptaculous.js?load=effects,builder"></script>
-		<script type="text/javascript" src="/escaperpg/lightbox/js/lightbox.js"></script>
-		<link rel="stylesheet" href="/escaperpg/lightbox/css/lightbox.css" type="text/css" media="screen">
-		
-		<!-- [if lt IE 9]>
-		<script src="http://html5shiv.googlecode.code/svn/trunk/html5.js"></scipt>
-		<![endif]-->
-	   
-		<link rel="stylesheet" href="/escaperpg/aventures/ambria/css/style.css">
-		<meta charset="utf-8">
-		<title>Pont Principal - Le Trésor d'Ambria</title>
-	</head>
-	
-	<body>
-		<?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/header.php"; ?>
-		<div id="banniere"><img src="/escaperpg/images/ambria/tresorambriamini.png" alt="le trésor d'ambria"></div>
-		<main>
-			<nav>
-				<a href="/escaperpg/images/ambria/sullivanmasonmini.png" rel="lightbox[sullivan]" title="Sullivan Mason"><img src="/escaperpg/images/ambria/sullivanmasonmini.png" alt="capitaine sullivan mason"></a>
-				<div id="inventairefooter"><input type="submit" value="INVENTAIRE"></div>
-				<div id="motsdepasse"><input type="submit" value="NOTES"></div>
-				<a href="/escaperpg/aventures/ambria/save/save.php" target="_blank" rel="noreferrer"><input type="submit" name="save" value="SAUVEGARDER"></a>
-				<?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/aventures/ambria/sullivan/includes/navigationbateau.php"; ?>
-			</nav>
-			<div id="txt">
-				<?php
-					if (isset ($_POST['demander']))
-						{
-							switch (str_replace($search, $replace, stripslashes($_POST['ask'])))
-								{
-									case "logan":
-										echo '
+
+<head>
+	<script type="text/javascript" src="/escaperpg/lightbox/js/prototype.js"></script>
+	<script type="text/javascript" src="/escaperpg/lightbox/js/scriptaculous.js?load=effects,builder"></script>
+	<script type="text/javascript" src="/escaperpg/lightbox/js/lightbox.js"></script>
+	<link rel="stylesheet" href="/escaperpg/lightbox/css/lightbox.css" type="text/css" media="screen">
+	<?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/styleAventures.php"; ?>
+	<?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/aventures/ambria/includes/stylesAmbria.php"; ?>
+	<meta charset="utf-8">
+	<title>Pont Principal - Le Trésor d'Ambria</title>
+</head>
+
+<body>
+	<?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/header.php"; ?>
+	<div id="banniere"><img src="/escaperpg/images/ambria/tresorambriamini.png" alt="le trésor d'ambria"></div>
+	<main>
+		<?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/aventures/ambria/includes/nav-sullivan.php"; ?>
+		<div id="txt">
+			<?php
+			if (isset($_POST['demander'])) {
+				switch (str_replace($search, $replace, stripslashes($_POST['ask']))) {
+					case "logan":
+						echo '
 											<div class="dialogue">
 												<div class="portrait">
 													<img src="/escaperpg/images/ambria/matelots.png">
@@ -51,10 +40,10 @@
 												</form>
 											</center>
 										';
-										$_SESSION['mdp7'] = true;
-										break;
-									case "jake":
-										echo '
+						$_SESSION['mdp7'] = true;
+						break;
+					case "jake":
+						echo '
 											<div class="dialogue">
 												<div class="portrait">
 													<img src="/escaperpg/images/ambria/matelots.png">
@@ -72,9 +61,9 @@
 												</form>
 											</center>
 										';
-										break;
-									default:
-										echo'
+						break;
+					default:
+						echo '
 											<div class="dialogue">
 												<div class="portrait">
 													<img src="/escaperpg/images/ambria/matelots.png">
@@ -91,11 +80,9 @@
 												</form>
 											</center>
 										';
-								}
-						}
-					else
-						{
-							echo '
+				}
+			} else {
+				echo '
 								<audio src="/escaperpg/sons/ambria/flots.mp3" autoplay></audio>
 								<p>
 									Vous marchez sur le pont principal.
@@ -122,12 +109,15 @@
 									</form>
 								</center>
 							';
-						}
-				?>
-			</div>
+			}
+			?>
 		</div>
-		<div id="load"><div id="loader"></div></div>
+		</div>
+		<div id="load">
+			<div id="loader"></div>
+		</div>
 		<script src="/escaperpg/scripts/aventures-chargement.js"></script>
 		<?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/aventures/ambria/sullivan/includes/footer.php"; ?>
-	</body>
+</body>
+
 </html>

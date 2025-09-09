@@ -1,36 +1,27 @@
 <?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/entete.php"; ?>
 <!DOCTYPE html>
 <html lang="fr">
-	<head>
-		<script type="text/javascript" src="/escaperpg/lightbox/js/prototype.js"></script>
-		<script type="text/javascript" src="/escaperpg/lightbox/js/scriptaculous.js?load=effects,builder"></script>
-		<script type="text/javascript" src="/escaperpg/lightbox/js/lightbox.js"></script>
-		<link rel="stylesheet" href="/escaperpg/lightbox/css/lightbox.css" type="text/css" media="screen">
-		
-		<!-- [if lt IE 9]>
-		<script src="http://html5shiv.googlecode.code/svn/trunk/html5.js"></scipt>
-		<![endif]-->
-	   
-		<link rel="stylesheet" href="/escaperpg/aventures/ambria/css/style.css">
-		<meta charset="utf-8">
-		<title>La Tempête - Le Trésor d'Ambria</title>
-	</head>
-	
-	<body>
-		<?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/header.php"; ?>
-		<div id="banniere"><img src="/escaperpg/images/ambria/tresorambriamini.png" alt="le trésor d'ambria"></div>
-		<main>
-			<nav>
-				<a href="/escaperpg/images/ambria/sullivanmasonmini.png" rel="lightbox[sullivan]" title="Sullivan Mason"><img src="/escaperpg/images/ambria/sullivanmasonmini.png" alt="capitaine sullivan mason"></a>
-				<div id="inventairefooter"><input type="submit" value="INVENTAIRE"></div>
-				<div id="motsdepasse"><input type="submit" value="NOTES"></div>
-				<a href="/escaperpg/aventures/ambria/save/save.php" target="_blank" rel="noreferrer"><input type="submit" name="save" value="SAUVEGARDER"></a>
-			</nav>
-			<div id="txt">
-				<?php
-					if (isset ($_POST['cap']))
-						{
-							echo'
+
+<head>
+	<script type="text/javascript" src="/escaperpg/lightbox/js/prototype.js"></script>
+	<script type="text/javascript" src="/escaperpg/lightbox/js/scriptaculous.js?load=effects,builder"></script>
+	<script type="text/javascript" src="/escaperpg/lightbox/js/lightbox.js"></script>
+	<link rel="stylesheet" href="/escaperpg/lightbox/css/lightbox.css" type="text/css" media="screen">
+	<?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/styleAventures.php"; ?>
+	<?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/aventures/ambria/includes/stylesAmbria.php"; ?>
+	<meta charset="utf-8">
+	<title>La Tempête - Le Trésor d'Ambria</title>
+</head>
+
+<body>
+	<?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/header.php"; ?>
+	<div id="banniere"><img src="/escaperpg/images/ambria/tresorambriamini.png" alt="le trésor d'ambria"></div>
+	<main>
+		<?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/aventures/ambria/includes/nav-sullivan.php"; ?>
+		<div id="txt">
+			<?php
+			if (isset($_POST['cap'])) {
+				echo '
 								<audio src="/escaperpg/sons/ambria/flots.mp3" autoplay></audio>
 								<p>
 									Naviguant au gré des vents, le Surgisseur des Tempêtes glisse sur les flots calmes depuis plusieurs jours maintenant.<br>
@@ -62,10 +53,8 @@
 									</form>
 								</center>
 							';
-						}
-					elseif (isset ($_POST['detour']))
-						{
-							echo'
+			} elseif (isset($_POST['detour'])) {
+				echo '
 								<audio src="/escaperpg/sons/ambria/ordres.mp3" autoplay></audio>
 								<div class="dialogue">
 									<div class="bulleperso2">
@@ -88,11 +77,9 @@
 									</form>
 								</center>
 							';
-							$_SESSION['mdp21'] = true;
-						}
-					elseif (isset ($_POST['enavant']))
-						{
-							echo'
+				$_SESSION['mdp21'] = true;
+			} elseif (isset($_POST['enavant'])) {
+				echo '
 								<audio src="/escaperpg/sons/ambria/ordres.mp3" autoplay></audio>
 								<p>
 									Vous le regardez droit dans les yeux.
@@ -133,12 +120,10 @@
 									</form>
 								</center>
 							';
-							$_SESSION['sullivanconfiance'] -= 20;
-							$_SESSION['mdp22'] = true;
-						}
-					elseif (isset ($_POST['suivant']))
-						{
-							echo'
+				$_SESSION['sullivanconfiance'] -= 20;
+				$_SESSION['mdp22'] = true;
+			} elseif (isset($_POST['suivant'])) {
+				echo '
 								<audio src="/escaperpg/sons/ambria/tempete.mp3" autoplay></audio>
 								<p>
 									En moins de temps que vous ne l\'auriez cru, la tempête s\'abat sur vous.<br>
@@ -160,10 +145,8 @@
 									</form>
 								</center>
 							';
-						}
-					elseif (isset ($_POST['affaler']))
-						{
-							echo'
+			} elseif (isset($_POST['affaler'])) {
+				echo '
 								<audio src="/escaperpg/sons/ambria/tempetecracks.mp3" autoplay></audio>
 								<div class="dialogue">
 									<div class="bulleperso2">
@@ -189,13 +172,11 @@
 									</form>
 								</center>
 							';
-							$_SESSION['sullivanconfiance'] -= 40;
-							$_SESSION['matcasse'] = true;
-							$_SESSION['mdp9'] = true;
-						}
-					elseif (isset ($_POST['ferler']))
-						{
-							echo'
+				$_SESSION['sullivanconfiance'] -= 40;
+				$_SESSION['matcasse'] = true;
+				$_SESSION['mdp9'] = true;
+			} elseif (isset($_POST['ferler'])) {
+				echo '
 								<audio src="/escaperpg/sons/ambria/tempetecracks.mp3" autoplay></audio>
 								<div class="dialogue">
 									<div class="bulleperso2">
@@ -218,14 +199,11 @@
 									</form>
 								</center>
 							';
-							$_SESSION['mdp10'] = true;
-						}
-					elseif (isset ($_POST['vague']))
-						{
-							switch (str_replace($search, $replace, stripslashes($_POST['vigie'])))
-								{
-									case "scelerateababord": // mauvais choix de Logan, conséquences sur l'équipage mais le capitaine fait une manœuvre de fifou qui sauve plein de mecs et qui remonte sa réputation
-										echo'
+				$_SESSION['mdp10'] = true;
+			} elseif (isset($_POST['vague'])) {
+				switch (str_replace($search, $replace, stripslashes($_POST['vigie']))) {
+					case "scelerateababord": // mauvais choix de Logan, conséquences sur l'équipage mais le capitaine fait une manœuvre de fifou qui sauve plein de mecs et qui remonte sa réputation
+						echo '
 											<audio src="/escaperpg/sons/ambria/scelerate.mp3" autoplay></audio>
 											<p>
 												Entendant les cris du jeune garçon, vous tournez aussitôt la tête vers bâbord et vous vous préparez à faire face, mais le danger ne semble pas venir de cette direction.
@@ -255,10 +233,10 @@
 												</form>
 											</center>
 										';
-										$_SESSION['sullivanconfiance'] += 20;
-										break;
-									case "scelerateatribord": // le bon mdp
-										echo'
+						$_SESSION['sullivanconfiance'] += 20;
+						break;
+					case "scelerateatribord": // le bon mdp
+						echo '
 											<audio src="/escaperpg/sons/ambria/scelerate.mp3" autoplay></audio>
 											<p>
 												Entendant les cris du jeune garçon, vous tournez aussitôt la tête vers tribord et vous vous préparez à faire face.<br>
@@ -286,10 +264,10 @@
 												</form>
 											</center>
 										';
-										$_SESSION['sullivanconfiance'] += 10;
-										break;
-									default:
-										echo'
+						$_SESSION['sullivanconfiance'] += 10;
+						break;
+					default:
+						echo '
 											<audio src="/escaperpg/sons/ambria/scelerate.mp3" autoplay></audio>
 											<p>
 												La tempête qui fait rage vous empêche de comprendre ce que Logan tente de vous dire et vous réagissez trop tard pour éviter l\'immense vague qui vient de tribord.<br>
@@ -317,13 +295,11 @@
 												</form>
 											</center>
 										';
-										$_SESSION['sullivanconfiance'] -= 20;
-										$_SESSION['mdp11'] = true;
-								}
-						}
-					elseif (isset ($_POST['poursuivre']))
-						{
-							echo'
+						$_SESSION['sullivanconfiance'] -= 20;
+						$_SESSION['mdp11'] = true;
+				}
+			} elseif (isset($_POST['poursuivre'])) {
+				echo '
 								<audio src="/escaperpg/sons/ambria/tempete.mp3" autoplay></audio>
 								<p>
 									Logan et les hommes se jettent sur les tonneaux pour les empêcher de passer par-dessus bord et parviennent à en rattraper quelques-uns qu\'ils s\'empressent d\'arrimer solidement.
@@ -346,21 +322,16 @@
 									</form>
 								</center>
 							';
-						}
-					elseif (isset ($_POST['recifs']) OR $_SESSION['recifs'])
-						{
-							if (isset ($_POST['1barre']) OR isset($_POST['2barre']) OR isset($_POST['3barre']) OR isset($_POST['4barre']) OR isset($_POST['5barre']))
-								{
-									if ($_SESSION['recifsetape4'])
-										{
-											$_SESSION['recifs'] = false;
-											$_SESSION['recifsetape2'] = false;
-											$_SESSION['recifsetape3'] = false;
-											$_SESSION['recifsetape4'] = false;
-											$_SESSION['recifsetape5'] = true;
-											if (isset ($_POST['4barre']))
-												{
-													echo'
+			} elseif (isset($_POST['recifs']) or $_SESSION['recifs']) {
+				if (isset($_POST['1barre']) or isset($_POST['2barre']) or isset($_POST['3barre']) or isset($_POST['4barre']) or isset($_POST['5barre'])) {
+					if ($_SESSION['recifsetape4']) {
+						$_SESSION['recifs'] = false;
+						$_SESSION['recifsetape2'] = false;
+						$_SESSION['recifsetape3'] = false;
+						$_SESSION['recifsetape4'] = false;
+						$_SESSION['recifsetape5'] = true;
+						if (isset($_POST['4barre'])) {
+							echo '
 														<audio src="/escaperpg/sons/ambria/recifevite.mp3" autoplay></audio>
 														<p>
 															Même si ce dernier récif ne semble pas présenter de menace en soit, vous savez que sous la surface se trouvent de nombreux écueils particulièrement dangereux.<br>
@@ -372,10 +343,8 @@
 															</form>
 														</center>
 													';
-												}
-											else
-												{
-													echo'
+						} else {
+							echo '
 														<audio src="/escaperpg/sons/ambria/reciftouche.mp3" autoplay></audio>
 														<p>
 															Même si ce dernier récif ne semble pas présenter de menace en soit, vous savez que sous la surface se trouvent de nombreux écueils particulièrement dangereux.<br>
@@ -392,14 +361,11 @@
 															</form>
 														</center>
 													';
-													$_SESSION['etatquille'] -= 50;
-												}
-										}
-									elseif ($_SESSION['recifsetape3'])
-										{
-											if (isset ($_POST['3barre']))
-												{
-													echo'
+							$_SESSION['etatquille'] -= 50;
+						}
+					} elseif ($_SESSION['recifsetape3']) {
+						if (isset($_POST['3barre'])) {
+							echo '
 														<audio src="/escaperpg/sons/ambria/recifevite.mp3" autoplay></audio>
 														<p>
 															Une nouvelle fois, vous donnez un grand coup de barre pour franchir l\'étroit passage qui s\'offre à vous.
@@ -408,11 +374,9 @@
 															Plus qu\'un à passer et vous serez hors de danger.
 														</p>
 													';
-													$_SESSION['recifsetape4'] = true;
-												}
-											else
-												{
-													echo'
+							$_SESSION['recifsetape4'] = true;
+						} else {
+							echo '
 														<audio src="/escaperpg/sons/ambria/reciftouche.mp3" autoplay></audio>
 														<p>
 															Le passage se révèle trop étroit pour passer.<br>
@@ -425,15 +389,12 @@
 															Vous n\'avez cependant pas le temps de vous apitoyer sur le sort du pauvre homme, car un nouveau récif menace de couler le navire si vous n\'agissez pas promptement.
 														</p>
 													';
-													$_SESSION['etatquille'] -= 50;
-													$_SESSION['recifsetape4'] = true;
-												}
-										}
-									elseif ($_SESSION['recifsetape2'])
-										{
-											if (isset ($_POST['5barre']))
-												{
-													echo'
+							$_SESSION['etatquille'] -= 50;
+							$_SESSION['recifsetape4'] = true;
+						}
+					} elseif ($_SESSION['recifsetape2']) {
+						if (isset($_POST['5barre'])) {
+							echo '
 														<audio src="/escaperpg/sons/ambria/recifevite.mp3" autoplay></audio>
 														<p>
 															Le second récif vous oblige à tourner la barre au maximum pour opérer à un brusque changement de direction, mais vos années d\'expérience vous ont aidées à connaître par cœur votre navire.
@@ -442,10 +403,8 @@
 															De ce que vous en comprenez, il en reste encore deux.
 														</p>
 													';
-												}
-											else
-												{
-													echo'
+						} else {
+							echo '
 														<audio src="/escaperpg/sons/ambria/reciftouche.mp3" autoplay></audio>
 														<p>
 															Peut-être est-ce Logan qui vous a mal indiqué le danger, ou vous qui n\'avez pas réagi assez rapidement, mais le passage du second obstacle ne se fait pas sans dommage.<br>
@@ -454,24 +413,19 @@
 															Vous parvenez malgré tout à garder le contrôle.
 														</p>
 													';
-													$_SESSION['etatquille'] -= 50;
-												}
-											$_SESSION['recifsetape3'] = true;
-										}
-									elseif ($_SESSION['recifs'])
-										{
-											if (isset ($_POST['2barre']))
-												{
-													echo'
+							$_SESSION['etatquille'] -= 50;
+						}
+						$_SESSION['recifsetape3'] = true;
+					} elseif ($_SESSION['recifs']) {
+						if (isset($_POST['2barre'])) {
+							echo '
 														<audio src="/escaperpg/sons/ambria/recifevite.mp3" autoplay></audio>
 														<p>
 															Manœuvrant au mieux, vous parvenez à passer les premiers récifs sans problème.
 														</p>
 													';
-												}
-											else
-												{
-													echo'
+						} else {
+							echo '
 														<audio src="/escaperpg/sons/ambria/reciftouche.mp3" autoplay></audio>
 														<p>
 															En tentant de passer, vous entendez un choc sourd provenir des entrailles du navire.<br>
@@ -480,14 +434,12 @@
 															Heureusement, celle-ci ne semble pas s\'être brisée et vous avez encore une chance de traverser, mais vous savez qu\'il ne vous faudra pas faire une erreur de plus.
 														</p>
 													';
-													$_SESSION['etatquille'] -= 50;
-												}
-											$_SESSION['recifsetape2'] = true;
-										}
-								}
-							elseif (isset ($_POST['recifs']))
-								{
-									echo'
+							$_SESSION['etatquille'] -= 50;
+						}
+						$_SESSION['recifsetape2'] = true;
+					}
+				} elseif (isset($_POST['recifs'])) {
+					echo '
 										<audio src="/escaperpg/sons/ambria/tempete.mp3" autoplay></audio>
 										<p>
 											Les récifs ne pourront pas être évités, mais vos compétences de navigation devraient vous permettre de les négocier sans heurt.<br>
@@ -497,10 +449,9 @@
 											Vous espérez que Logan saura vous avertir au mieux des dangers à venir.
 										</p>
 									';
-								}
-							if ($_SESSION['recifsetape5'] == false)
-								{
-									echo'
+				}
+				if ($_SESSION['recifsetape5'] == false) {
+					echo '
 										<div id="enigmelieu">
 											<img src="/escaperpg/images/ambria/barrebateau.png">
 											<div id="barre1">
@@ -540,10 +491,9 @@
 											</div>
 										</div>
 									';
-									$_SESSION['recifs'] = true;
-									if (isset ($_POST['indice']))
-										{
-											echo'
+					$_SESSION['recifs'] = true;
+					if (isset($_POST['indice'])) {
+						echo '
 												<div id="indice">
 													Le journal de bord que vous avez récupéré dans votre cabine vous sera très utile.
 													Vous devriez regarder dans votre inventaire.
@@ -554,10 +504,8 @@
 													</form>
 												</center>
 											';
-										}
-									elseif (isset ($_POST['indice2']))
-										{
-											echo'
+					} elseif (isset($_POST['indice2'])) {
+						echo '
 												<div id="indice">
 													Le journal de bord que vous avez récupéré dans votre cabine vous sera très utile.
 													Vous devriez regarder dans votre inventaire.<br>
@@ -571,10 +519,8 @@
 													</form>
 												</center>
 											';
-										}
-									elseif (isset ($_POST['indice3']))
-										{
-											echo'
+					} elseif (isset($_POST['indice3'])) {
+						echo '
 												<div id="indice">
 													Le journal de bord que vous avez récupéré dans votre cabine vous sera très utile.
 													Vous devriez regarder dans votre inventaire.<br>
@@ -591,10 +537,8 @@
 													</form>
 												</center>
 											';
-										}
-									elseif (isset ($_POST['reponse']))
-										{
-											echo'
+					} elseif (isset($_POST['reponse'])) {
+						echo '
 												<div class="reponse">
 													Pour le premier récif, cliquez sur la 2e poignée.<br>
 													Pour le second récif, cliquez sur la 5e poignée.<br>
@@ -602,38 +546,33 @@
 													Pour le dernier récif, cliquez sur la 4e poignée.
 												</div>
 											';
-										}
-									else
-										{
-											echo'
+					} else {
+						echo '
 												<center>
 													<form action="tempete" method="post">
 														<button type="submit" name="indice" class="boutonindice"></button>
 													</form>
 												</center>
 											';
-										}
-								}
-						}						
-					elseif (isset ($_POST['tempetefin']))
-						{
-							echo'<div id="succespopup">';
-							$nouveausucces = '<img src="/escaperpg/images/succes/ambria/tempete.png"><span><u><b>Un mauvais temps qui s\'annonce</b></u><br>Affronter la tempête</span>';
-							$scenario = 'ambria';
-							$description = 'tempête';
-							$cache = 'oui';
-							$rarete = 'succesargent';
-							include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/succesadd.php";
-							echo'</div>';
+					}
+				}
+			} elseif (isset($_POST['tempetefin'])) {
+				echo '<div id="succespopup">';
+				$nouveausucces = '<img src="/escaperpg/images/succes/ambria/tempete.png"><span><u><b>Un mauvais temps qui s\'annonce</b></u><br>Affronter la tempête</span>';
+				$scenario = 'ambria';
+				$description = 'tempête';
+				$cache = 'oui';
+				$rarete = 'succesargent';
+				include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/succesadd.php";
+				echo '</div>';
 
-							if ($_SESSION['etatquille'] <= 0) {
-								$_SESSION['quillecassee'] = true;
-								$_SESSION['sullivanconfiance'] -= 20;
-							}
-							
-							if ($_SESSION['matcasse'] AND $_SESSION['quillecassee'])
-								{
-									echo'
+				if ($_SESSION['etatquille'] <= 0) {
+					$_SESSION['quillecassee'] = true;
+					$_SESSION['sullivanconfiance'] -= 20;
+				}
+
+				if ($_SESSION['matcasse'] and $_SESSION['quillecassee']) {
+					echo '
 										<audio src="/escaperpg/sons/ambria/tempetefinmatcasse.mp3" autoplay></audio>
 										<p>
 											Alors que le danger des récifs semble être écarté, une nouvelle rafale vient ébranler le navire.<br>
@@ -667,11 +606,9 @@
 											</form>
 										</center>
 									';
-									$_SESSION['mdp13'] = true;
-								}
-							elseif ($_SESSION['matcasse'] AND $_SESSION['quillecassee'] == false)
-								{
-									echo'
+					$_SESSION['mdp13'] = true;
+				} elseif ($_SESSION['matcasse'] and $_SESSION['quillecassee'] == false) {
+					echo '
 										<audio src="/escaperpg/sons/ambria/tempetefinmatcasse.mp3" autoplay></audio>
 										<p>
 											Alors que le danger des récifs semble être écarté, une nouvelle rafale vient ébranler le navire.<br>
@@ -703,11 +640,9 @@
 											</form>
 										</center>
 									';
-									$_SESSION['mdp14'] = true;
-								}
-							elseif ($_SESSION['matcasse'] == false AND $_SESSION['quillecassee'])
-								{
-									echo'
+					$_SESSION['mdp14'] = true;
+				} elseif ($_SESSION['matcasse'] == false and $_SESSION['quillecassee']) {
+					echo '
 										<audio src="/escaperpg/sons/ambria/tempetefin.mp3" autoplay></audio>
 										<p>
 											Alors que le danger des récifs semble être écarté, une nouvelle rafale vient ébranler le navire, qui se déporte violemment sur le côté.<br>
@@ -738,20 +673,18 @@
 											</form>
 										</center>
 									';
-									$_SESSION['mdp15'] = true;
-								}
-							else
-								{
-									echo'<div id="succespopup">';
-									$nouveausucces = '<img src="/escaperpg/images/succes/ambria/tempeteparfaite.png"><span><u><b>Duo de choc !</b></u><br>Se sortir de la tempête sans subir de dégât !</span>';
-									$scenario = 'ambria';
-									$description = 'tempêteparfaite';
-									$cache = 'oui';
-									$rarete = 'succesgold';
-									include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/succesadd.php";
-									echo'</div>';
-									
-									echo'
+					$_SESSION['mdp15'] = true;
+				} else {
+					echo '<div id="succespopup">';
+					$nouveausucces = '<img src="/escaperpg/images/succes/ambria/tempeteparfaite.png"><span><u><b>Duo de choc !</b></u><br>Se sortir de la tempête sans subir de dégât !</span>';
+					$scenario = 'ambria';
+					$description = 'tempêteparfaite';
+					$cache = 'oui';
+					$rarete = 'succesgold';
+					include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/succesadd.php";
+					echo '</div>';
+
+					echo '
 										<audio src="/escaperpg/sons/ambria/tempetefin.mp3" autoplay></audio>
 										<p>
 											La tempête semble soudain perdre de sa rage et vous prenez une seconde pour souffler et redresser votre chapeau, que le vent a manqué de peu d\'emporter.<br>
@@ -779,21 +712,19 @@
 											</form>
 										</center>
 									';
-									$_SESSION['mdp12'] = true;
-								}
-						}
-					else
-						{
-							echo'<div id="succespopup">';
-							$nouveausucces = '<img src="/escaperpg/images/succes/ambria/cap.png"><span><u><b>Droit vers l\'horizon !</b></u><br>Trouver un cap pour le Surgisseur des Tempêtes</span>';
-							$scenario = 'ambria';
-							$description = 'cap';
-							$cache = 'non';
-							$rarete = 'succesbronze';
-							include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/succesadd.php";
-							echo'</div>';
-							
-							echo'
+					$_SESSION['mdp12'] = true;
+				}
+			} else {
+				echo '<div id="succespopup">';
+				$nouveausucces = '<img src="/escaperpg/images/succes/ambria/cap.png"><span><u><b>Droit vers l\'horizon !</b></u><br>Trouver un cap pour le Surgisseur des Tempêtes</span>';
+				$scenario = 'ambria';
+				$description = 'cap';
+				$cache = 'non';
+				$rarete = 'succesbronze';
+				include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/succesadd.php";
+				echo '</div>';
+
+				echo '
 								<audio src="/escaperpg/sons/ambria/cap.mp3" autoplay></audio>
 								<p>
 									Enfin, après toutes ces années, vous savez comment vous rendre sur l\'île d\'Ambria.<br>
@@ -812,16 +743,15 @@
 									</div>
 								</div>
 							';
-							if ($_SESSION['ambriajournalsullivan'] == false)
-								{
-									echo'
+				if ($_SESSION['ambriajournalsullivan'] == false) {
+					echo '
 										<p>
 											Vous attrapez votre journal de bord qui était posé sur le bureau, à côté de la carte, et le rangez dans votre veste.
 										</p>
 									';
-									$_SESSION['ambriajournalsullivan'] = true;
-								}
-							echo'
+					$_SESSION['ambriajournalsullivan'] = true;
+				}
+				echo '
 								<p>
 									Vous vous levez de votre fauteuil puis vous dirigez vers la sortie de votre cabine, Logan sur les talons.<br>
 									Le timonier vous salue lorsque vous arrivez devant lui.
@@ -884,13 +814,16 @@
 									</form>
 								</center>
 							';
-							$_SESSION['mdp25'] = true;
-						}
-				?>
-			</div>
+				$_SESSION['mdp25'] = true;
+			}
+			?>
 		</div>
-		<div id="load"><div id="loader"></div></div>
+		</div>
+		<div id="load">
+			<div id="loader"></div>
+		</div>
 		<script src="/escaperpg/scripts/aventures-chargement.js"></script>
 		<?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/aventures/ambria/sullivan/includes/footer.php"; ?>
-	</body>
+</body>
+
 </html>

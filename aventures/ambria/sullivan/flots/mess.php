@@ -1,40 +1,29 @@
 <?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/entete.php"; ?>
 <!DOCTYPE html>
 <html lang="fr">
-	<head>
-		<script type="text/javascript" src="/escaperpg/lightbox/js/prototype.js"></script>
-		<script type="text/javascript" src="/escaperpg/lightbox/js/scriptaculous.js?load=effects,builder"></script>
-		<script type="text/javascript" src="/escaperpg/lightbox/js/lightbox.js"></script>
-		<link rel="stylesheet" href="/escaperpg/lightbox/css/lightbox.css" type="text/css" media="screen">
-		
-		<!-- [if lt IE 9]>
-		<script src="http://html5shiv.googlecode.code/svn/trunk/html5.js"></scipt>
-		<![endif]-->
-	   
-		<link rel="stylesheet" href="/escaperpg/aventures/ambria/css/style.css">
-		<meta charset="utf-8">
-		<title>Mess - Le Trésor d'Ambria</title>
-	</head>
-	
-	<body>
-		<?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/header.php"; ?>
-		<div id="banniere"><img src="/escaperpg/images/ambria/tresorambriamini.png" alt="le trésor d'ambria"></div>
-		<main>
-			<nav>
-				<a href="/escaperpg/images/ambria/sullivanmasonmini.png" rel="lightbox[sullivan]" title="Sullivan Mason"><img src="/escaperpg/images/ambria/sullivanmasonmini.png" alt="capitaine sullivan mason"></a>
-				<div id="inventairefooter"><input type="submit" value="INVENTAIRE"></div>
-				<div id="motsdepasse"><input type="submit" value="NOTES"></div>
-				<a href="/escaperpg/aventures/ambria/save/save.php" target="_blank" rel="noreferrer"><input type="submit" name="save" value="SAUVEGARDER"></a>
-				<?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/aventures/ambria/sullivan/includes/navigationbateau.php"; ?>
-			</nav>
-			<div id="txt">
-				<?php
-					if (isset ($_POST['demander']))
-						{
-							switch (str_replace($search, $replace, stripslashes($_POST['ask'])))
-								{
-									case "logan":
-										echo '
+
+<head>
+	<script type="text/javascript" src="/escaperpg/lightbox/js/prototype.js"></script>
+	<script type="text/javascript" src="/escaperpg/lightbox/js/scriptaculous.js?load=effects,builder"></script>
+	<script type="text/javascript" src="/escaperpg/lightbox/js/lightbox.js"></script>
+	<link rel="stylesheet" href="/escaperpg/lightbox/css/lightbox.css" type="text/css" media="screen">
+	<?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/styleAventures.php"; ?>
+	<?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/aventures/ambria/includes/stylesAmbria.php"; ?>
+	<meta charset="utf-8">
+	<title>Mess - Le Trésor d'Ambria</title>
+</head>
+
+<body>
+	<?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/header.php"; ?>
+	<div id="banniere"><img src="/escaperpg/images/ambria/tresorambriamini.png" alt="le trésor d'ambria"></div>
+	<main>
+		<?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/aventures/ambria/includes/nav-sullivan.php"; ?>
+		<div id="txt">
+			<?php
+			if (isset($_POST['demander'])) {
+				switch (str_replace($search, $replace, stripslashes($_POST['ask']))) {
+					case "logan":
+						echo '
 											<p>
 												Haussant le ton, vous demandez à vos hommes s\'ils savent où se trouve le jeune mousse, mais vous obtenez des résultats peu satisfaisants.<br>
 												Certains pensent l\'avoir vu se diriger vers la <span class="lieu">cale</span> tandis que d\'autres affirment qu\'ils l\'ont vu s\'arrêter au <span class="lieu">quartier des équipages</span>.
@@ -45,9 +34,9 @@
 												</form>
 											</center>
 										';
-										break;
-									case "jake":
-										echo'
+						break;
+					case "jake":
+						echo '
 											<p>
 												Hurlant presque pour vous faire entendre, vous essayez de savoir si quelqu\'un a vu Jake récemment, mais personne ne semble pouvoir vous répondre clairement.<br>
 												De ce que vous réussissez à en tirer, Jake serait passé ici un peu plus tôt dans la journée mais,
@@ -59,9 +48,9 @@
 												</form>
 											</center>
 										';
-										break;
-									default:
-										echo'
+						break;
+					default:
+						echo '
 											<p>
 												Les hommes d\'équipage présents ici ne semblent pas comprendre où vous voulez en venir.
 											</p>
@@ -71,11 +60,9 @@
 												</form>
 											</center>
 										';
-								}
-						}
-					else
-						{
-							echo '
+				}
+			} else {
+				echo '
 								<audio src="/escaperpg/sons/ambria/mess.mp3" autoplay></audio>
 								<p>
 									Le mess est l\'endroit où la plupart des hommes viennent lorsqu\'ils ont un peu de temps libre pour manger, boire ou discuter.<br>
@@ -96,12 +83,15 @@
 									</form>
 								</center>
 							';
-						}
-				?>
-			</div>
+			}
+			?>
 		</div>
-		<div id="load"><div id="loader"></div></div>
+		</div>
+		<div id="load">
+			<div id="loader"></div>
+		</div>
 		<script src="/escaperpg/scripts/aventures-chargement.js"></script>
 		<?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/aventures/ambria/sullivan/includes/footer.php"; ?>
-	</body>
+</body>
+
 </html>
