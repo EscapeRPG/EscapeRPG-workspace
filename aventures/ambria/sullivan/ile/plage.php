@@ -79,7 +79,7 @@
 								</p>
 								<div class="dialogue">
 									<div class="portrait">
-										<img src="/escaperpg/images/ambria/matelots.png">
+										<img src="/escaperpg/images/ambria/matelots.png" alt="matelots">
 									</div>
 									<div class="bulleperso">
 										<p>
@@ -119,7 +119,7 @@
 								</div>
 								<div class="dialogue">
 									<div class="portrait">
-										<img src="/escaperpg/images/ambria/matelots.png">
+										<img src="/escaperpg/images/ambria/matelots.png" alt="matelots">
 									</div>
 									<div class="bulleperso">
 										<p>
@@ -147,7 +147,7 @@
 								</p>
 								<div class="dialogue">
 									<div class="portrait">
-										<img src="/escaperpg/images/ambria/jake.png">
+										<img src="/escaperpg/images/ambria/jake.png" alt="jake">
 									</div>
 									<div class="bulleperso">
 										<p>
@@ -169,7 +169,7 @@
 								</div>
 								<div class="dialogue">
 									<div class="portrait">
-										<img src="/escaperpg/images/ambria/jake.png">
+										<img src="/escaperpg/images/ambria/jake.png" alt="jake">
 									</div>
 									<div class="bulleperso">
 										<p>
@@ -184,7 +184,7 @@
 								</p>
 								<div class="dialogue">
 									<div class="portrait">
-										<img src="/escaperpg/images/ambria/jake.png">
+										<img src="/escaperpg/images/ambria/jake.png" alt="jake">
 									</div>
 									<div class="bulleperso">
 										<p>
@@ -427,7 +427,7 @@
 										</p>
 										<div class="dialogue">
 											<div class="portrait">
-												<img src="/escaperpg/images/ambria/matelots.png">
+												<img src="/escaperpg/images/ambria/matelots.png" alt="matelots">
 											</div>
 											<div class="bulleperso">
 												<p>
@@ -613,7 +613,7 @@
 										</p>
 										<div class="dialogue">
 											<div class="portrait">
-												<img src="/escaperpg/images/ambria/timonier.png">
+												<img src="/escaperpg/images/ambria/timonier.png" alt="timonier">
 											</div>
 											<div class="bulleperso">
 												<p>
@@ -660,7 +660,7 @@
 										</p>
 										<div class="dialogue">
 											<div class="portrait">
-												<img src="/escaperpg/images/ambria/timonier.png">
+												<img src="/escaperpg/images/ambria/timonier.png" alt="timonier">
 											</div>
 											<div class="bulleperso">
 												<p>

@@ -123,7 +123,7 @@
 								</p>
 								<div class="dialogue">
 									<div class="portrait">
-										<img src="/escaperpg/images/ambria/jake.png">
+										<img src="/escaperpg/images/ambria/jake.png" alt="jake">
 									</div>
 									<div class="bulleperso">
 										<p>

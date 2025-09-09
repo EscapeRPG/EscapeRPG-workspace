@@ -188,7 +188,7 @@
 								</p>
 								<div class="dialogue">
 									<div class="portrait">
-										<img src="/escaperpg/images/ambria/matelots.png">
+										<img src="/escaperpg/images/ambria/matelots.png" alt="matelots">
 									</div>
 									<div class="bulleperso">
 										<p>

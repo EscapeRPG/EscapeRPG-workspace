@@ -19,7 +19,7 @@
     <main>
         <?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/aventures/ambria/includes/nav-sullivan.php"; ?>
         <div id="txt">
-            <?php if ($_SESSION['ambrialogantrouve']): ?>
+            <?php if (isset($_SESSION['ambrialogantrouve'])): ?>
                 <?php unset($_SESSION['flots']); ?>
                 <?php if (isset($_POST['suivant']) || isset($_SESSION['cap'])): ?>
                     <div id="enigmelieu">
@@ -121,7 +121,7 @@
                         <input type="submit" name="suivant" value="Suivant.">
                     </form>
                 <?php endif; ?>
-            <?php elseif (isset($_SESSION['ambriajournalsullivan'])): ?>
+            <?php elseif (in_array('ambriajournalsullivan', $_SESSION['inventaire'])): ?>
                 <audio src="/escaperpg/sons/ambria/cabine.mp3" autoplay></audio>
                 <p>
                     À la poupe du Surgisseur des Tempêtes se trouve votre cabine.<br>
@@ -134,7 +134,7 @@
                 <p>
                     Vous prenez votre journal et le glissez dans la poche intérieure de votre veste.
                 </p>
-                <?php $_SESSION['ambriajournalsullivan'] = true; ?>
+                <?php $_SESSION['inventaire'][] = 'ambriajournalsullivan'; ?>
             <?php else: ?>
                 <audio src="/escaperpg/sons/ambria/cabine.mp3" autoplay></audio>
                 <p>
