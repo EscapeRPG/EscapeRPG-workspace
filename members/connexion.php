@@ -27,7 +27,7 @@ isset($_COOKIE['session_token']) ? $_SESSION['loggedin'] = true : null;
         <?php
         include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/header.php";
 
-        function afficherFormulaire($message = '')
+        function afficherFormulaire($message = ''): void
         {
             echo "<h1>Création d'un nouveau compte</h1>";
             if ($message) {
@@ -115,7 +115,7 @@ isset($_COOKIE['session_token']) ? $_SESSION['loggedin'] = true : null;
                 <?php endif;
         elseif (isset($_POST['register'])):
             $stoperr = false;
-            $uploads_dir = '../images/uploads';
+            $uploads_dir = '../escaperpg/images/uploads';
             $file = 'narrateur.png';
 
             if (isset($_FILES['avatar']) && $_FILES['avatar']['error'] != 4):
@@ -187,7 +187,7 @@ isset($_COOKIE['session_token']) ? $_SESSION['loggedin'] = true : null;
                 </form>
                 <br>
                 <form action="connexion" method="post">
-                    <label for="inscription">Vous n\'avez pas de compte ? Créez-en un maintenant !</label><br>
+                    <label for="inscription">Vous n'avez pas de compte ? Créez-en un maintenant !</label><br>
                     <input type="submit" name="inscription" id="inscription" value="Créer un compte">
                 </form>
                 <br>

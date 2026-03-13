@@ -38,15 +38,12 @@
             <?php else: ?>
                 <div id="succespopup">
                     <?php
-                    $nouveausucces = '<img src="/escaperpg/images/succes/secrets/manoir.png"><span><u><b>Nouveau propriétaire</b></u><br>Entrer pour la première fois dans le manoir</span>';
                     $scenario = 'secrets';
-                    $description = 'manoir';
-                    $cache = 'non';
-                    $rarete = 'succesnormal';
-                    include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/succesadd.php";
+                    $nom = 'manoir';
+                    include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/succesAdd.php";
                     ?>
                 </div>
-                <div id="enigme">
+                <div class="enigme">
                     <a href="/escaperpg/images/secrets/rdc.png" rel="lightbox[invent]"><img src="/escaperpg/images/secrets/rdc.png" alt="rez-de-chaussée"></a>
                 </div>
                 <p>

@@ -68,7 +68,7 @@
                 ?>
                 <script src="/escaperpg/scripts/updateDataList.js"></script>
             <?php elseif (isset($_POST['bibliotheque'])): ?>
-                <?php switch (str_replace($search, $replace, stripslashes($_POST['bibliotheque']))):
+                <?php switch (handleSpecialChars($_POST['bibliotheque'])):
                     case "symbole": ?>
                         <p>
                             L'un des livres attire votre attention.<br>
@@ -78,7 +78,7 @@
                             <br>
                             En feuilletant les pages, de petits papiers tombent du livre.
                         </p>
-                        <div id="enigme">
+                        <div class="enigme">
                             <a href="/escaperpg/images/secrets/templar.png" rel="lightbox[invent]">
                                 <img src="/escaperpg/images/secrets/templar.png" alt="un papier avec l'explication d'un code">
                             </a>
@@ -102,7 +102,7 @@
                         <script src="/escaperpg/scripts/updateDataList.js"></script>
                     <?php break;
                     case "magnamater": ?>
-                        <div id="enigme">
+                        <div class="enigme">
                             <a href="/escaperpg/images/secrets/magnamater.png" rel="lightbox[invent]">
                                 <img src="/escaperpg/images/secrets/magnamater.png" alt="le magna mater">
                             </a>

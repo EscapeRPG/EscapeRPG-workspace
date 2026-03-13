@@ -79,10 +79,10 @@
 		<?php
 		$nouveausucces = '<img src="/escaperpg/images/succes/gaea1/touriste.png"><span><u><b>Touriste</b></u><br>Visiter l\'intégralité de la station</span>';
 		$scenario = 'gaea1';
-		$description = 'touriste';
+		$nom = 'touriste';
 		$cache = 'non';
 		$rarete = 'succesargent';
-		include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/succesadd.php";
+		include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/succesAdd.php";
 		?>
 	</div>
 <?php endif; ?>

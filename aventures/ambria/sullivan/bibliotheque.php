@@ -24,12 +24,9 @@ $_SESSION['ambriabibliotheque'] = true;
         <div id="txt">
             <div id="succespopup">
                 <?php
-                $nouveausucces = '<img src="/escaperpg/images/succes/ambria/carte.png"><span><u><b>Fin limier</b></u><br>Trouver une piste menant à la carte d\'Ambria</span>';
                 $scenario = 'ambria';
-                $description = 'carte';
-                $cache = 'non';
-                $rarete = 'succesnormal';
-                include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/succesadd.php";
+                $nom = 'carte';
+                include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/succesAdd.php";
                 ?>
             </div>
             <?php if (isset($_POST['suivant'])): ?>
@@ -111,8 +108,8 @@ $_SESSION['ambriabibliotheque'] = true;
                     <input type="submit" name="suivant3" value="Suivant.">
                 </form>
             <?php elseif (isset($_POST['inspecter'])): ?>
-                <?php if (str_replace($search, $replace, stripslashes($_POST['look'])) == "bourseencuir"): ?>
-                    <div id="enigme">
+                <?php if (handleSpecialChars($_POST['look']) == "bourseencuir"): ?>
+                    <div class="enigme">
                         <a href="/escaperpg/images/ambria/bourseencuir.png" rel="lightbox[invent]">
                             <img src="/escaperpg/images/ambria/bourseencuir.png" alt="une bourse en cuir">
                         </a>

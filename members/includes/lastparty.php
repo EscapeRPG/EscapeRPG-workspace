@@ -1,17 +1,29 @@
 <?php
-$reqbadges = $conn->prepare('SELECT * FROM 0succes WHERE pseudo = ? && scenario = "lastparty"');
-$reqbadges->execute([$getid]);
-$badges = $reqbadges->fetchAll();
-$debut = '<div class="succesbox"><div class="succesbloque"></div><div class="succesobtenu"><img src="/escaperpg/images/succes/lastparty/debutoff.png"><span><u><b>Réveil difficile</b></u><br>Lancer l\'aventure pour la première fois</span></div></div>';
-$debutcheck = false;
-$fin = '<div class="succesbox"><div class="succesbloque"></div><div class="succesobtenu"><img src="/escaperpg/images/succes/lastparty/finoff.png"><span><u><b>Recouvrer la mémoire</b></u><br>Terminer l\'aventure</span></div></div>';
-$fincheck = false;
+$reqAll = $conn->prepare("
+    SELECT *
+    FROM 0succes
+    WHERE scenario = 'lastparty'
+    ORDER BY FIELD(rarete,
+        'platine',
+        'diamant',
+        'gold',
+        'argent',
+        'bronze',
+        'normal'
+    )
+");
+$reqAll->execute();
+$allSucces = $reqAll->fetchAll(PDO::FETCH_ASSOC);
+
+$earnedIds = array_column($succeslp, 'id');
 ?>
+
 <div id="containerscenario">
     <div id="bannieresucces">
-        <img src="/escaperpg/images/lastpartycard.png" alt="last party">
+        <img src="/escaperpg/images/lastpartycard.png" alt="bannière">
         <div class="containerprog">
             <div class="banniereprogression" style="width :<?= $widthlp ?>%"></div>
+
             <p>
                 <?= (round($widthlp * 2) / 2) ?>%
             </p>
@@ -19,78 +31,30 @@ $fincheck = false;
     </div>
 
     <div id="containersucces">
-        <?php foreach ($badges as $succes) {
-            if ($succes['description'] == 'début') {
-                $debutcheck = true;
-            }
-            if ($succes['description'] == 'fin') {
-                $fincheck = true;
-            }
-            if ($succes['cache'] == 'oui') {
-                $counterlastparty++;
+        <?php
+        $earnedList = [];
+        $missingList = [];
+
+        foreach ($allSucces as $succes) {
+            if (in_array($succes['id'], $earnedIds)) {
+                $earnedList[] = $succes;
+
+                if ($succes['cache'] === 1) {
+                    $counterlastparty++;
+                }
+            } else {
+                $missingList[] = $succes;
             }
         }
 
-        $reqbadges = $conn->prepare('SELECT * FROM 0succes WHERE pseudo = ? && scenario = "lastparty" && rarete = "succesplatine" ORDER BY id DESC');
-        $reqbadges->execute([$getid]);
-        while ($badges = $reqbadges->fetch()): ?>
-            <div class="succesbox">
-                <div class="<?= $badges['rarete'] ?>"></div>
-                <div class="succesobtenu"><?= $badges['badge'] ?></div>
-            </div>
-        <?php endwhile;
-
-        $reqbadges = $conn->prepare('SELECT * FROM 0succes WHERE pseudo = ? && scenario = "lastparty" && rarete = "succesdiamant" ORDER BY id DESC');
-        $reqbadges->execute([$getid]);
-        while ($badges = $reqbadges->fetch()): ?>
-            <div class="succesbox">
-                <div class="<?= $badges['rarete'] ?>"></div>
-                <div class="succesobtenu"><?= $badges['badge'] ?></div>
-            </div>
-        <?php endwhile;
-
-        $reqbadges = $conn->prepare('SELECT * FROM 0succes WHERE pseudo = ? && scenario = "lastparty" && rarete = "succesgold" ORDER BY id DESC');
-        $reqbadges->execute([$getid]);
-        while ($badges = $reqbadges->fetch()): ?>
-            <div class="succesbox">
-                <div class="<?= $badges['rarete'] ?>"></div>
-                <div class="succesobtenu"><?= $badges['badge'] ?></div>
-            </div>
-        <?php endwhile;
-
-        $reqbadges = $conn->prepare('SELECT * FROM 0succes WHERE pseudo = ? && scenario = "lastparty" && rarete = "succesargent" ORDER BY id DESC');
-        $reqbadges->execute([$getid]);
-        while ($badges = $reqbadges->fetch()): ?>
-            <div class="succesbox">
-                <div class="<?= $badges['rarete'] ?>"></div>
-                <div class="succesobtenu"><?= $badges['badge'] ?></div>
-            </div>
-        <?php endwhile;
-
-        $reqbadges = $conn->prepare('SELECT * FROM 0succes WHERE pseudo = ? && scenario = "lastparty" && rarete = "succesbronze" ORDER BY id DESC');
-        $reqbadges->execute([$getid]);
-        while ($badges = $reqbadges->fetch()): ?>
-            <div class="succesbox">
-                <div class="<?= $badges['rarete'] ?>"></div>
-                <div class="succesobtenu"><?= $badges['badge'] ?></div>
-            </div>
-        <?php endwhile;
-
-        $reqbadges = $conn->prepare('SELECT * FROM 0succes WHERE pseudo = ? && scenario = "lastparty" && rarete = "succesnormal" ORDER BY id DESC');
-        $reqbadges->execute([$getid]);
-        while ($badges = $reqbadges->fetch()): ?>
-            <div class="succesbox">
-                <div class="<?= $badges['rarete'] ?>"></div>
-                <div class="succesobtenu"><?= $badges['badge'] ?></div>
-            </div>
-        <?php endwhile;
-
-        if (!$debutcheck) {
-            echo $debut;
+        foreach ($earnedList as $succes) {
+            renderSucces($succes, true, 'lastparty');
         }
-        if (!$fincheck) {
-            echo $fin;
+
+        foreach ($missingList as $succes) {
+            renderSucces($succes, false, 'lastparty');
         }
+
         if ((3 - $counterlastparty) > 1): ?>
             <div class="succesbox">
                 <div class="succesbloque"></div>
@@ -102,7 +66,8 @@ $fincheck = false;
         <?php elseif ((3 - $counterlastparty) == 1): ?>
             <div class="succesbox">
                 <div class="succesbloque"></div>
-                <div class="succesobtenu">+1
+                <div class="succesobtenu">
+                    +1
                     <span>Encore 1 succès caché à débloquer !</span>
                 </div>
             </div>

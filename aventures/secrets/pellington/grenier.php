@@ -24,7 +24,7 @@
         </nav>
         <div id="txt">
             <p>
-            <div id="enigme">
+            <div class="enigme">
                 <a href="/escaperpg/images/secrets/pellgrenier.png" rel="lightbox[invent]">
                     <img src="/escaperpg/images/secrets/pellgrenier.png" alt="le grenier du docteur Pellington">
                 </a>

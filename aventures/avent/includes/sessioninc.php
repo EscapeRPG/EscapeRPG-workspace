@@ -1,4 +1,7 @@
 <?php
+
+	/* Voir si on peut retirer tout ça
+	
 	$loggedin = $_SESSION['loggedin'] ?? null;
 	$idcompte = $_SESSION['idcompte'] ?? null;
 	session_unset();
@@ -6,6 +9,8 @@
 	session_start();
 	if ($loggedin !== null) { $_SESSION['loggedin'] = $loggedin; }
 	if ($idcompte !== null) { $_SESSION['idcompte'] = $idcompte; }
+	
+
 	
 	$_SESSION['piecemachine1'] = false; // Le joueur n'a pas trouvé la première pièce de la machine dans le grenier
 	$_SESSION['piecemachine2'] = false; // Le joueur n'a pas trouvé la deuxième pièce de la machine dans le grenier
@@ -32,4 +37,4 @@
 	$_SESSION['carte15'] = false; // Le joueur n'a pas retourné la carte 15
 	$_SESSION['carte16'] = false; // Le joueur n'a pas retourné la carte 16
 	$_SESSION['fin'] = false;
-?>
+	*/

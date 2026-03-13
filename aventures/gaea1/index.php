@@ -22,16 +22,16 @@
 					<?php
 						$nouveausucces = '<img src="/escaperpg/images/succes/general/debut.png"><span><u><b>Se lancer dans l\'aventure</b></u><br>Commencer une aventure pour la première fois</span>';
 						$scenario = 'general';
-						$description = 'début';
+						$nom = 'début';
 						$cache = 'non';
 						$rarete = 'succesnormal';
-						include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/succesadd.php";
+						include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/succesAdd.php";
 						$nouveausucces = '<img src="/escaperpg/images/succes/gaea1/debut.png"><span><u><b>Dérive spatiale</b></u><br>Lancer l\'aventure pour la première fois</span>';
 						$scenario = 'gaea1';
-						$description = 'début';
+						$nom = 'début';
 						$cache = 'non';
 						$rarete = 'succesnormal';
-						include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/succesadd.php";
+						include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/succesAdd.php";
 					?>
 				</div>
 
@@ -309,10 +309,10 @@
 					<?php
 						$nouveausucces = '<img src="/escaperpg/images/succes/gaea1/personnage.png"><span><u><b>Carte d\'identité</b></u><br>Créer son personnage pour l\'aventure</span>';
 						$scenario = 'gaea1';
-						$description = 'personnage';
+						$nom = 'personnage';
 						$cache = 'non';
 						$rarete = 'succesnormal';
-						include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/succesadd.php";
+						include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/succesAdd.php";
 					?>
 				</div>
 
@@ -345,10 +345,10 @@
 					<?php
 						$nouveausucces = '<img src="/escaperpg/images/succes/gaea1/personnage.png"><span><u><b>Carte d\'identité</b></u><br>Créer son personnage pour l\'aventure</span>';
 						$scenario = 'gaea1';
-						$description = 'personnage';
+						$nom = 'personnage';
 						$cache = 'non';
 						$rarete = 'succesnormal';
-						include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/succesadd.php";
+						include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/succesAdd.php";
 					?>
 				</div>
 
@@ -376,7 +376,7 @@
 				</div>
 
 			<?php elseif (isset ($_POST['beta'])): ?>
-				<?php if (str_replace($search, $replace, stripslashes($_POST['betamdp'])) === "fsb12em"): ?>
+				<?php if (handleSpecialChars($_POST['betamdp']) === "fsb12em"): ?>
 					<div id="txt">
 						<div class="dialogue">
 							<div id="marv" style="border: none;"><img src="/escaperpg/images/narrateur.png" alt="narrateur"></div>

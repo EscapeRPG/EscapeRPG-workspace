@@ -49,10 +49,10 @@ $random = rand(100000, 999999); ?>
 					<?php
 					$nouveausucces = '<img src="/escaperpg/images/succes/general/sauvegarder.png"><span><u><b>Prendre une pause</b></u><br>Sauvegarder sa progression au cours d\'une aventure</span>';
 					$scenario = 'general';
-					$description = 'sauvegarder';
+					$nom = 'sauvegarder';
 					$cache = 'non';
 					$rarete = 'succesnormal';
-					include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/succesadd.php";
+					include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/succesAdd.php";
 					?>
 				</div>
 				<?php
@@ -81,9 +81,9 @@ $random = rand(100000, 999999); ?>
 					<?php
 					$nouveausucces = '<img src="/escaperpg/images/succes/general/sauvegarder.png"><span><u><b>Prendre une pause</b></u><br>Sauvegarder sa progression au cours d\'une aventure</span>';
 					$scenario = 'general';
-					$description = 'sauvegarder';
+					$nom = 'sauvegarder';
 					$cache = 'non';
-					include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/succesadd.php";
+					include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/succesAdd.php";
 					?>
 				</div>
 				<?php

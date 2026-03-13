@@ -49,7 +49,7 @@
                 ?>
                 <script src="/escaperpg/scripts/updateDataList.js"></script>
             <?php elseif (isset($_POST['nuit'])): ?>
-                <?php switch (str_replace($search, $replace, stripslashes($_POST['nuit']))):
+                <?php switch (handleSpecialChars($_POST['nuit'])):
                     case "voituregrise": ?>
                         <div class="dialogue">
                             <div class="portrait">
@@ -157,7 +157,7 @@
                 <p>
                     Vous retournez dans la salle à manger pour finir votre repas, mais quelque chose vous dérange.
                 </p>
-                <div id="enigmelieu">
+                <div class="enigmelieu">
                     <img src="/escaperpg/images/secrets/salleamanger.png" alt="salle à manger">
                     <div id="fenetre">
                         <form action="intrusion" method="post">

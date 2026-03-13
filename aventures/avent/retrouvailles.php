@@ -22,12 +22,9 @@
             <?php if (isset($_POST['suivant'])): ?>
                 <div id="succespopup">
                     <?php
-                    $nouveausucces = '<img src="/escaperpg/images/succes/avent/grandpere.png" alt="père"><span><u><b>Réunion de famille</b></u><br>Retrouver Grand-Père</span>';
                     $scenario = 'avent';
-                    $description = 'grandpère';
-                    $cache = 'oui';
-                    $rarete = 'succesnormal';
-                    include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/succesadd.php";
+                    $nom = 'grandpere';
+                    include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/succesAdd.php";
                     ?>
                 </div>
                 <p>
@@ -196,7 +193,7 @@
                     <input type="submit" name="suivant4" value="SUIVANT.">
                 </form>
             <?php elseif (isset($_POST['suivant4'])): ?>
-                <div id="enigmelieu">
+                <div class="enigmelieu">
                     <img src="/escaperpg/images/avent/livre.png" alt="un bien étrange livre">
                 </div>
                 <p>
@@ -216,7 +213,7 @@
                 include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/indices.php";
                 ?>
             <?php elseif (isset($_POST['translate'])): ?>
-                <?php switch (str_replace($search, $replace, stripslashes($_POST['traduire']))):
+                <?php switch (handleSpecialChars($_POST['traduire'])):
                     case "sapence":
                     case "dusapence":
                     case "unsapence":
@@ -239,7 +236,7 @@
                         break;
                     default:
                     ?>
-                        <div id="enigmelieu">
+                        <div class="enigmelieu">
                             <img src="/escaperpg/images/avent/livre.png" alt="un bien étrange livre">
                         </div>
                         <p>

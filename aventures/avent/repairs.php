@@ -27,15 +27,12 @@ $indices = "/escaperpg/includes/indices.php";
         <?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/aventures/avent/includes/nav.php"; ?>
         <div id="txt">
             <?php if (isset($_POST['boutonmachine'])): ?>
-                <?php if (str_replace($search, $replace, stripslashes($_POST['reservoir'])) == 53): ?>
+                <?php if (handleSpecialChars($_POST['reservoir']) == 53): ?>
                     <div id="succespopup">
                         <?php
-                        $nouveausucces = '<img src="/escaperpg/images/succes/avent/cadeaux.png"><span><u><b>Véritable mécano !</b></u><br>Réparer la machine à cadeaux du Père Noël !</span>';
                         $scenario = 'avent';
-                        $description = 'cadeaux';
-                        $cache = 'oui';
-                        $rarete = 'succesbronze';
-                        include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/succesadd.php";
+                        $nom = 'cadeaux';
+                        include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/succesAdd.php";
                         ?>
                     </div>
                     <audio src="/escaperpg/sons/avent/etape3.mp3" autoplay></audio>
@@ -87,7 +84,7 @@ $indices = "/escaperpg/includes/indices.php";
                     <form action="retour" method="post">
                         <input type="submit" name="ouvrir" value="ouvrir le cadeau.">
                     </form>
-                <?php elseif (str_replace($search, $replace, stripslashes($_POST['reservoir'])) == 75): ?>
+                <?php elseif (handleSpecialChars($_POST['reservoir']) == 75): ?>
                     <p>
                         Rien ne se passe.<br>
                         <br>
@@ -96,7 +93,7 @@ $indices = "/escaperpg/includes/indices.php";
                         - Remplir le réservoir aux 3/4.<br>
                         - Appuyer sur le bouton rouge.
                     </p>
-                    <div id="enigmelieu">
+                    <div class="enigmelieu">
                         <img src="/escaperpg/images/avent/machineperenoel3.png" alt="la machine à cadeaux du père noël">
                         <div id="machineperenoel">
                             <input type="range" name="range" min="1" max="9" value="4">
@@ -123,7 +120,7 @@ $indices = "/escaperpg/includes/indices.php";
                         - Remplir le réservoir aux 3/4.<br>
                         - Appuyer sur le bouton rouge.
                     </p>
-                    <div id="enigmelieu">
+                    <div class="enigmelieu">
                         <img src="/escaperpg/images/avent/machineperenoel3.png" alt="la machine à cadeaux du père noël">
                         <div id="machineperenoel">
                             <input type="range" name="range" min="1" max="9" value="4">
@@ -152,7 +149,7 @@ $indices = "/escaperpg/includes/indices.php";
                     - Remplir le réservoir aux 3/4.<br>
                     - Appuyer sur le bouton rouge.
                 </p>
-                <div id="enigmelieu">
+                <div class="enigmelieu">
                     <img src="/escaperpg/images/avent/machineperenoel3.png" alt="la machine à cadeaux du père noël">
                     <div id="machineperenoel">
                         <input type="range" name="range" min="1" max="9" value="4">

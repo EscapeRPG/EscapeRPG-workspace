@@ -26,18 +26,12 @@
             if (isset($_POST['fin']) || isset($_SESSION['fin'])): ?>
                 <div id="succespopup">
                     <?php
-                    $nouveausucces = '<img src="/escaperpg/images/succes/general/fin.png"><span><u><b>Une page qui se tourne...</b></u><br>Terminer sa première aventure</span>';
                     $scenario = 'general';
-                    $description = 'fin';
-                    $cache = 'non';
-                    $rarete = 'succesbronze';
-                    include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/succesadd.php";
-                    $nouveausucces = '<img src="/escaperpg/images/succes/lastparty/fin.png"><span><u><b>Recouvrer la mémoire</b></u><br>Terminer l\'aventure</span>';
+                    $nom = 'fin';
+                    include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/succesAdd.php";
                     $scenario = 'lastparty';
-                    $description = 'fin';
-                    $cache = 'non';
-                    $rarete = 'succesbronze';
-                    include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/succesadd.php";
+                    $nom = 'fin';
+                    include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/succesAdd.php";
                     ?>
                 </div>
                 <img src="/escaperpg/images/etoilefinpleine.png" alt="étoile fin">

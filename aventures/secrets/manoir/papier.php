@@ -73,7 +73,7 @@
                 unset($_SESSION['coffrenigme']);
                 ?>
             <?php elseif (isset($_SESSION['papier'])): ?>
-                <div id="enigme">
+                <div class="enigme">
                     <a href="/escaperpg/images/secrets/papier.png" rel="lightbox[invent]">
                         <img src="/escaperpg/images/secrets/papier.png" alt="un morceau de papier avec une inscription étrange">
                     </a>
@@ -89,7 +89,7 @@
                 include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/indices.php";
                 ?>
             <?php else: ?>
-                <div id="enigme">
+                <div class="enigme">
                     <a href="/escaperpg/images/secrets/papier.png" rel="lightbox[invent]">
                         <img src="/escaperpg/images/secrets/papier.png" alt="un morceau de papier avec une inscription étrange">
                     </a>

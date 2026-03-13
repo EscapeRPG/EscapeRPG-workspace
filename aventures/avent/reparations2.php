@@ -28,7 +28,7 @@
                     <br>
                     Rien ne se passe, la machine n'est sans doute pas encore prête.
                 </p>
-                <div id="enigmelieu">
+                <div class="enigmelieu">
                     <img src="/escaperpg/images/avent/machineperenoel2.png" alt="la machine à cadeaux du père noël">
                     <div id="machineperenoel">
                         <input type="range" id="range" name="range" min="1" max="9" value="1">
@@ -64,7 +64,7 @@
                     - Remplir le réservoir aux 3/4.<br>
                     - Appuyer sur le bouton rouge.
                 </p>
-                <div id="enigmelieu">
+                <div class="enigmelieu">
                     <img src="/escaperpg/images/avent/machineperenoel2.png" alt="la machine à cadeaux du père noël">
                     <div id="machineperenoel">
                         <input type="range" id="range" name="range" min="1" max="9" value="1">

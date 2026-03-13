@@ -75,7 +75,7 @@ a {
 	}
 }
 
-#enigme {
+.enigme {
 	text-align: center;
 	margin-bottom: 20px;
 	width: 80%;
@@ -91,7 +91,7 @@ a {
 	}
 }
 
-#enigmelieu {
+.enigmelieu {
 	width: 80%;
 	position: relative;
 	margin: auto;

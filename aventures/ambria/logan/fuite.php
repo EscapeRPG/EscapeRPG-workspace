@@ -6,11 +6,6 @@
 		<script type="text/javascript" src="/escaperpg/lightbox/js/scriptaculous.js?load=effects,builder"></script>
 		<script type="text/javascript" src="/escaperpg/lightbox/js/lightbox.js"></script>
 		<link rel="stylesheet" href="/escaperpg/lightbox/css/lightbox.css" type="text/css" media="screen">
-		
-		<!-- [if lt IE 9]>
-		<script src="http://html5shiv.googlecode.code/svn/trunk/html5.js"></scipt>
-		<![endif]-->
-	   
 		<link rel="stylesheet" href="/escaperpg/aventures/ambria/css/style.css">
 		<meta charset="utf-8">
 		<title>La Bibliothèque - Le Trésor d'Ambria</title>
@@ -189,12 +184,9 @@
 							if ($_SESSION['cledocks'])
 								{
 									echo'<div id="succespopup">';
-									$nouveausucces = '<img src="/escaperpg/images/succes/ambria/fuir.png"><span><u><b>Échappée belle</b></u><br>Fuir et semer ses poursuivants dans les ruelles</span>';
 									$scenario = 'ambria';
-									$description = 'fuir';
-									$cache = 'non';
-									$rarete = 'succesnormal';
-									include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/succesadd.php";
+									$nom = 'fuir';
+									include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/succesAdd.php";
 									echo'</div>';
 									
 									echo'

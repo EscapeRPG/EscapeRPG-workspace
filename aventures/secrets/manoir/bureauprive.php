@@ -33,7 +33,7 @@
                             <input type="submit" name="fond" value="Passer de l'autre côté.">
                         </form>
                     <?php else: ?>
-                        <div id="enigmelieu">
+                        <div class="enigmelieu">
                             <img src="/escaperpg/images/secrets/bureausecret1tiroiropened.png" alt="tiroir du bureau ouvert">
                         </div>
                         <p>
@@ -62,7 +62,7 @@
                             Il semble que vous ayez trouvé tout ce qu'il y avait de ce côté.
                         </p>
                     <?php else: ?>
-                        <div id="enigmelieu">
+                        <div class="enigmelieu">
                             <img src="/escaperpg/images/secrets/bureausecret1.png" alt="bureau privé">
                             <form action="bureauprive" method="post">
                                 <button type="submit" name="tiroir" id="tiroir">
@@ -86,8 +86,8 @@
                     }
                     ?>
                 <?php elseif (isset($_POST['fouiller'])): ?>
-                    <?php if (str_replace($search, $replace, stripslashes($_POST['fouiller'])) == "cerclerituel"): ?>
-                        <div id="enigme">
+                    <?php if (handleSpecialChars($_POST['fouiller']) == "cerclerituel"): ?>
+                        <div class="enigme">
                             <a href="/escaperpg/images/secrets/pnakotiques.png" rel="lightbox[invent]">
                                 <img src="/escaperpg/images/secrets/pnakotiques.png" alt="une page des manuscrits pnakotiques">
                             </a><br>
@@ -111,7 +111,7 @@
                             <input type="submit" name="pnako" value="Ajouter à l'inventaire.">
                         </form>
                     <?php else: ?>
-                        <div id="enigmelieu">
+                        <div class="enigmelieu">
                             <img src="/escaperpg/images/secrets/bureausecret1.png" alt="bureau privé">
                             <form action="bureauprive" method="post">
                                 <button type="submit" name="tiroir" id="tiroir">
@@ -131,7 +131,7 @@
                     <?php endif; ?>
                 <?php elseif (isset($_POST['journaladd'])): ?>
                     <script src="/escaperpg/scripts/inventaireadd.js"></script>
-                    <div id="enigmelieu">
+                    <div class="enigmelieu">
                         <img src="/escaperpg/images/secrets/bureausecret1tiroiropened.png" alt="tiroir du bureau ouvert">
                     </div>
                     <p>
@@ -165,15 +165,15 @@
                     }
                     ?>
                 <?php elseif (isset($_POST['petitecle'])): ?>
-                    <?php if (str_replace($search, $replace, stripslashes($_POST['petitecle'])) == "tirlitke"): ?>
+                    <?php if (handleSpecialChars($_POST['petitecle']) == "tirlitke"): ?>
                         <audio src="/escaperpg/sons/secrets/tiroir.mp3" autoplay></audio>
-                        <div id="enigmelieu">
+                        <div class="enigmelieu">
                             <img src="/escaperpg/images/secrets/bureausecret1tiroiropened.png" alt="tiroir du bureau ouvert">
                         </div>
                         <p>
                             Vous débloquez le tiroir et l'ouvrez.
                         </p>
-                        <div id="enigme">
+                        <div class="enigme">
                             <a href="/escaperpg/images/secrets/journal1.png" rel="lightbox[invent]">
                                 <img src="/escaperpg/images/secrets/journal1.png" alt="la première page du journal de l'oncle William">
                             </a>
@@ -221,7 +221,7 @@
                         <script src="/escaperpg/scripts/updateDataList.js"></script>
                     <?php endif; ?>
                 <?php elseif (isset($_POST['tiroir'])): ?>
-                    <div id="enigmelieu">
+                    <div class="enigmelieu">
                         <img src="/escaperpg/images/secrets/bureausecret1.png" alt="bureau privé">
                         <form action="bureauprive" method="post">
                             <button type="submit" name="tiroir" id="tiroir">
@@ -255,15 +255,12 @@
                 <?php else: ?>
                     <div id="succespopup">
                         <?php
-                        $nouveausucces = '<img src="/escaperpg/images/succes/secrets/bureau.png"><span><u><b>Incantateur</b></u><br>Entrer dans le bureau privé de l\'oncle William</span>';
                         $scenario = 'secrets';
-                        $description = 'bureau';
-                        $cache = 'oui';
-                        $rarete = 'succesbronze';
-                        include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/succesadd.php";
+                        $nom = 'bureau';
+                        include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/succesAdd.php";
                         ?>
                     </div>
-                    <div id="enigmelieu">
+                    <div class="enigmelieu">
                         <img src="/escaperpg/images/secrets/bureausecret1.png" alt="bureau privé">
                         <form action="bureauprive" method="post">
                             <button type="submit" name="tiroir" id="tiroir">

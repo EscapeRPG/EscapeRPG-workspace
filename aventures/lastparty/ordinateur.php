@@ -19,16 +19,13 @@
     <main>
         <?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/aventures/lastparty/includes/nav.php"; ?>
         <div id="txt">
-            <?php if (isset($_POST['rechercher']) && str_replace($search, $replace, stripslashes($_POST['rechercher'])) == "juliette" || isset($_SESSION['juliette'])): ?>
+            <?php if (isset($_POST['rechercher']) && handleSpecialChars($_POST['rechercher']) == "juliette" || isset($_SESSION['juliette'])): ?>
                 <?php $_SESSION['juliette'] = true; ?>
                 <div id="succespopup">
                     <?php
-                    $nouveausucces = '<img src="/escaperpg/images/succes/lastparty/juliette.png"><span><u><b>Le mystère s\'épaissit</b></u><br>Apprendre que tout le monde à la fête a perdu ses souvenirs</span>';
                     $scenario = 'lastparty';
-                    $description = 'juliette';
-                    $cache = 'oui';
-                    $rarete = 'succesnormal';
-                    include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/succesadd.php";
+                    $nom = 'juliette';
+                    include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/succesAdd.php";
                     ?>
                 </div>
                 <?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/aventures/lastparty/includes/julietteinc.php"; ?>
@@ -60,17 +57,14 @@
                     ?>
                 <?php else: ?>
                     <?php if (
-                        str_replace($search, $replace, stripslashes($_POST['identifiant'])) == "jonathanlt"
-                        && str_replace($search, $replace, stripslashes($_POST['mdpasse'] == "party4ever"))
+                        handleSpecialChars($_POST['identifiant']) == "jonathanlt"
+                        && handleSpecialChars($_POST['mdpasse'] == "party4ever")
                     ): ?>
                         <div id="succespopup">
                             <?php
-                            $nouveausucces = '<img src="/escaperpg/images/succes/lastparty/connexion.png"><span><u><b>Addict des réseaux sociaux</b></u><br>Se connecter à son compte Faceeebook</span>';
                             $scenario = 'lastparty';
-                            $description = 'connexion';
-                            $cache = 'oui';
-                            $rarete = 'succesnormal';
-                            include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/succesadd.php";
+                            $nom = 'connexion';
+                            include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/succesAdd.php";
                             ?>
                         </div>
                         <p>

@@ -8,34 +8,54 @@ $counterambria = 0;
 $countergaea1 = 0;
 
 // Compteurs de progression
-$countsuccesgeneral = $conn->prepare('SELECT * FROM 0succes WHERE pseudo = ? && scenario = "general"');
-$countsuccesgeneral->execute([$getid]);
-$generalcount = $countsuccesgeneral->rowCount();
+$countsucces = $conn->prepare("SELECT s.*
+    FROM 0membre_succes ms
+    JOIN 0succes s ON ms.id_succes = s.id
+    WHERE ms.id_membre = ?
+      AND s.scenario = ?
+    ORDER BY FIELD(s.rarete,
+        'platine',
+        'diamant',
+        'gold',
+        'argent',
+        'bronze',
+        'normal'
+    )
+");
+$countsucces->execute([$idmembre, 'general']);
+$generalcount = $countsucces->rowCount();
 $widthgeneral = (100 - ((14 - $generalcount) * 100) / 14);
-$countsucceslp = $conn->prepare('SELECT * FROM 0succes WHERE pseudo = ? && scenario = "lastparty"');
-$countsucceslp->execute([$getid]);
-$lpcount = $countsucceslp->rowCount();
+$succesgeneral = $countsucces->fetchAll(PDO::FETCH_ASSOC);
+
+$countsucces->execute([$idmembre, 'lastparty']);
+$lpcount = $countsucces->rowCount();
 $widthlp = (100 - ((5 - $lpcount) * 100) / 5);
-$countsuccessecrets = $conn->prepare('SELECT * FROM 0succes WHERE pseudo = ? && scenario = "secrets"');
-$countsuccessecrets->execute([$getid]);
-$secretscount = $countsuccessecrets->rowCount();
+$succeslp = $countsucces->fetchAll(PDO::FETCH_ASSOC);
+
+$countsucces->execute([$idmembre, 'secrets']);
+$secretscount = $countsucces->rowCount();
 $widthsecrets = (100 - ((16 - $secretscount) * 100) / 16);
-$countsuccesavent = $conn->prepare('SELECT * FROM 0succes WHERE pseudo = ? && scenario = "avent"');
-$countsuccesavent->execute([$getid]);
-$aventcount = $countsuccesavent->rowCount();
+$successecrets = $countsucces->fetchAll(PDO::FETCH_ASSOC);
+
+$countsucces->execute([$idmembre, 'avent']);
+$aventcount = $countsucces->rowCount();
 $widthavent = (100 - ((7 - $aventcount) * 100) / 7);
-$countsuccesambria = $conn->prepare('SELECT * FROM 0succes WHERE pseudo = ? && scenario = "ambria"');
-$countsuccesambria->execute([$getid]);
-$ambriacount = $countsuccesambria->rowCount();
+$succesavent = $countsucces->fetchAll(PDO::FETCH_ASSOC);
+
+$countsucces->execute([$idmembre, 'ambria']);
+$ambriacount = $countsucces->rowCount();
 $widthambria = (100 - ((24 - $ambriacount) * 100) / 24);
-$countsuccesgaea1 = $conn->prepare('SELECT * FROM 0succes WHERE pseudo = ? && scenario = "gaea1"');
-$countsuccesgaea1->execute([$getid]);
-$gaea1count = $countsuccesgaea1->rowCount();
-$widthgaea1 = (100 - ((24 - $gaea1count) * 100) / 24);
+$succesambria = $countsucces->fetchAll(PDO::FETCH_ASSOC);
+
+$countsucces->execute([$idmembre, 'gaea1']);
+$gaea1count = $countsucces->rowCount();
+$widthgaea1 = (100 - ((26 - $gaea1count) * 100) / 26);
+$succesgaea1 = $countsucces->fetchAll(PDO::FETCH_ASSOC);
 
 // Compteur de progression global
 $countglobal = round(($widthgeneral + $widthlp + $widthsecrets + $widthavent + $widthambria + $widthgaea1) / 6);
 ?>
+
 <div class="containerprog">
     <div class="banniereprogression" style="width :<?= $countglobal ?>%"></div>
     <p>

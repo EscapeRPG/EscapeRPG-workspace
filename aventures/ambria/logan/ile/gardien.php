@@ -6,11 +6,6 @@
 		<script type="text/javascript" src="/escaperpg/lightbox/js/scriptaculous.js?load=effects,builder"></script>
 		<script type="text/javascript" src="/escaperpg/lightbox/js/lightbox.js"></script>
 		<link rel="stylesheet" href="/escaperpg/lightbox/css/lightbox.css" type="text/css" media="screen">
-		
-		<!-- [if lt IE 9]>
-		<script src="http://html5shiv.googlecode.code/svn/trunk/html5.js"></scipt>
-		<![endif]-->
-	   
 		<link rel="stylesheet" href="/escaperpg/aventures/ambria/css/style.css">
 		<meta charset="utf-8">
 		<title>Le Gardien - Le Trésor d'Ambria</title>
@@ -77,15 +72,12 @@
 					elseif (isset ($_POST['combatfin']))
 						{
 							echo'<div id="succespopup">';
-							$nouveausucces = '<img src="/escaperpg/images/succes/ambria/gardien.png" alt="gardien"><span><u><b>Défense obsolète !</b></u><br>Vaincre le terrible gardien de la cité</span>';
 							$scenario = 'ambria';
-							$description = 'gardien';
-							$cache = 'oui';
-							$rarete = 'succesnormal';
-							include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/succesadd.php";
+							$nom = 'gardien';
+							include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/succesAdd.php";
 							echo'</div>';
 							
-							switch (str_replace($search, $replace, stripslashes($_POST['combatfini'])))
+							switch (handleSpecialChars($_POST['combatfini']))
 								{
 									case "toutvabien":
 										if ($_SESSION['loganblesse'])
@@ -286,7 +278,7 @@
 											<p>
 												Avez-vous bien entendu ce que le capitaine vous a dit ?
 											</p>
-											<div id="enigmelieu">
+											<div class="enigmelieu">
 												<img src="/escaperpg/images/ambria/golem3logan.png">
 											</div>
 											<p>
@@ -304,7 +296,7 @@
 						{
 							echo'
 								<audio src="/escaperpg/sons/ambria/gardien.mp3" autoplay></audio>
-								<div id="enigmelieu">
+								<div class="enigmelieu">
 									<img src="/escaperpg/images/ambria/golem3logan.png">
 								</div>
 								<p>
@@ -497,7 +489,7 @@
 						}
 					elseif (isset ($_POST['surveiller']))
 						{
-							switch (str_replace($search, $replace, stripslashes($_POST['ecouter'])))
+							switch (handleSpecialChars($_POST['ecouter']))
 								{
 									case "epaule":
 										echo'
@@ -535,7 +527,7 @@
 						{
 							echo'
 								<audio src="/escaperpg/sons/ambria/gardien.mp3" autoplay></audio>
-								<div id="enigmelieu">
+								<div class="enigmelieu">
 									<img src="/escaperpg/images/ambria/golem1logan.png">
 								</div>
 								<p>

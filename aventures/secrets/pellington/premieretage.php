@@ -23,7 +23,7 @@
             <?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/aventures/secrets/includes/navInputs.php"; ?>
         </nav>
         <div id="txt">
-            <div id="enigme">
+            <div class="enigme">
                 <a href="/escaperpg/images/secrets/pellpremier.png" rel="lightbox[invent]">
                     <img src="/escaperpg/images/secrets/pellpremier.png" alt="premier étage de la maison du docteur Pellington">
                 </a>

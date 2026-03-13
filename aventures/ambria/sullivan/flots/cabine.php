@@ -22,7 +22,7 @@
             <?php if (isset($_SESSION['ambrialogantrouve'])): ?>
                 <?php unset($_SESSION['flots']); ?>
                 <?php if (isset($_POST['suivant']) || isset($_SESSION['cap'])): ?>
-                    <div id="enigmelieu">
+                    <div class="enigmelieu">
                         <a href="/escaperpg/images/ambria/cartedumonde.png" target="blank" style="cursor: zoom-in;">
                             <img src="/escaperpg/images/ambria/cartedumonde.png" alt="la carte du monde">
                         </a>
@@ -145,7 +145,7 @@
                     <br>
                     Vous prenez tout de même le temps de vous installer dans votre fauteuil puis récupérez votre journal pour y consigner les derniers événements et certaines de vos réflexions.
                 </p>
-                <div id="enigme">
+                <div class="enigme">
                     <a href="/escaperpg/images/ambria/journalsullivan.png" rel="lightbox[invent]">
                         <img src="/escaperpg/images/ambria/journalsullivan.png" alt="le journal de bord de sullivan">
                     </a>

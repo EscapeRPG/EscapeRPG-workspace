@@ -37,7 +37,7 @@
                 }
                 ?>
             <?php elseif (isset($_POST['chbrpiece'])): ?>
-                <div id="enigme">
+                <div class="enigme">
                     <a href="/escaperpg/images/secrets/ad.png" rel="lightbox[invent]">
                         <img src="/escaperpg/images/secrets/ad.png" alt="pièce avec une tête d'homme">
                     </a>
@@ -52,7 +52,7 @@
                 <?php if (isset($_POST['chbrtab']) || isset($_POST['chbrtabnuit'])): ?>
                     <?php $_SESSION['scof'] = true; ?>
                 <?php endif; ?>
-                <div id="enigmelieu">
+                <div class="enigmelieu">
                     <img src="/escaperpg/images/secrets/chambrewilliam<?= isset($_SESSION['jour']) ? '' : 'nuit' ?>.png" alt="l'ancienne chambre de votre oncle">
                     <?php if (isset($_SESSION['scof']) && !isset($_SESSION['coffrefortouvert'])): ?>
                         <div id="cofchbr">

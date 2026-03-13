@@ -20,7 +20,7 @@
         <?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/aventures/ambria/includes/nav-sullivan.php"; ?>
         <div id="txt">
             <?php if (isset($_POST['validate'])): ?>
-                <?php if (str_replace($search, $replace, stripslashes($_POST['qui'])) == "louis" && str_replace($search, $replace, stripslashes($_POST['ou'])) == "bibliotheque"): ?>
+                <?php if (handleSpecialChars($_POST['qui']) == "louis" && handleSpecialChars($_POST['ou']) == "bibliotheque"): ?>
                     <p>
                         Vous savez maintenant où vous rendre et ne traînez pas une seconde de plus, prenant la direction de la <span class="lieu">bibliothèque</span>.
                     </p>

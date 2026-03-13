@@ -26,10 +26,10 @@
 							<?php
 								$nouveausucces = '<img src="/escaperpg/images/succes/gaea1/signal.png"><span><u><b>Expert·e en communications</b></u><br>Intercepter et nettoyer le signal de détresse</span>';
 								$scenario = 'gaea1';
-								$description = 'signal';
+								$nom = 'signal';
 								$cache = 'non';
 								$rarete = 'succesbronze';
-								include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/succesadd.php";
+								include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/succesAdd.php";
 							?>
 						</div>
 

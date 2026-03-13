@@ -6,11 +6,6 @@
 		<script type="text/javascript" src="/escaperpg/lightbox/js/scriptaculous.js?load=effects,builder"></script>
 		<script type="text/javascript" src="/escaperpg/lightbox/js/lightbox.js"></script>
 		<link rel="stylesheet" href="/escaperpg/lightbox/css/lightbox.css" type="text/css" media="screen">
-		
-		<!-- [if lt IE 9]>
-		<script src="http://html5shiv.googlecode.code/svn/trunk/html5.js"></scipt>
-		<![endif]-->
-	   
 		<link rel="stylesheet" href="/escaperpg/aventures/ambria/css/style.css">
 		<meta charset="utf-8">
 		<title>Les Portes de la Cité - Le Trésor d'Ambria</title>

@@ -21,15 +21,12 @@
         <div id="txt">
             <?php if (isset($_SESSION['carteciel'])): ?>
                 <?php if (isset($_POST['validate'])): ?>
-                    <?php if (str_replace($search, $replace, stripslashes($_POST['aller'])) == "polenord"): ?>
+                    <?php if (handleSpecialChars($_POST['aller']) == "polenord"): ?>
                         <div id="succespopup">
                             <?php
-                            $nouveausucces = '<img src="/escaperpg/images/succes/avent/polenord.png"><span><u><b>En route !</b></u><br>Partir pour le Pôle Nord !</span>';
                             $scenario = 'avent';
-                            $description = 'pôlenord';
-                            $cache = 'oui';
-                            $rarete = 'succesnormal';
-                            include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/succesadd.php";
+                            $nom = 'polenord';
+                            include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/succesAdd.php";
                             include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/resetIndices.php";
                             ?>
                         </div>
@@ -93,7 +90,7 @@
                     <script src="/escaperpg/aventures/scripts/draw.js"></script>
                 <?php endif; ?>
             <?php elseif (isset($_POST['retour']) || isset($_SESSION['cielobscur'])): ?>
-                <div id="enigmelieu">
+                <div class="enigmelieu">
                     <img src="/escaperpg/images/avent/grenier.png" alt="grenier">
                     <form action="enroute" method="post">
                         <button type="submit" name="carteduciel" id="carteciel">

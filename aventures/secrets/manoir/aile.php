@@ -24,7 +24,7 @@
         </nav>
         <div id="txt">
             <?php if (isset($_POST['domestiques'])): ?>
-                <?php switch (str_replace($search, $replace, stripslashes($_POST['domestiques']))):
+                <?php switch (handleSpecialChars($_POST['domestiques'])):
                     case "pellington": ?>
                         <div class="dialogue">
                             <div class="portrait">

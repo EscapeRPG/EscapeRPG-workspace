@@ -44,12 +44,9 @@
             <?php elseif (isset($_POST['suivant2'])): ?>
                 <div id="succespopup">
                     <?php
-                    $nouveausucces = '<img src="/escaperpg/images/succes/secrets/verite.png"><span><u><b>Découvreur</b></u><br>Apprendre l\'horrible vérité sur le secret du manoir</span>';
                     $scenario = 'secrets';
-                    $description = 'vérité';
-                    $cache = 'non';
-                    $rarete = 'succesargent';
-                    include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/succesadd.php";
+                    $nom = 'vérité';
+                    include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/succesAdd.php";
                     ?>
                 </div>
                 <p>
@@ -59,7 +56,7 @@
                     <br>
                     Vous remarquez alors les quelques feuilles posées dessus.
                 </p>
-                <div id="enigme">
+                <div class="enigme">
                     <a href="/escaperpg/images/secrets/journal2.png" rel="lightbox[invent]">
                         <img src="/escaperpg/images/secrets/journal2.png" alt="La deuxième page du journal de votre oncle">
                     </a>
@@ -91,12 +88,9 @@
                 <?php if (in_array('journal1', $_SESSION['inventaire'])): ?>
                     <div id="succespopup">
                         <?php
-                        $nouveausucces = '<img src="/escaperpg/images/succes/secrets/journal.png"><span><u><b>Archiviste</b></u><br>Récupérer toutes les pages du journal de l\'oncle William</span>';
                         $scenario = 'secrets';
-                        $description = 'journal';
-                        $cache = 'non';
-                        $rarete = 'succesbronze';
-                        include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/succesadd.php";
+                        $nom = 'journal';
+                        include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/succesAdd.php";
                         ?>
                     </div>
                 <?php endif; ?>
@@ -132,7 +126,7 @@
                 </form>
                 <script src="/escaperpg/scripts/updateDataList.js"></script>
             <?php elseif (isset($_POST['cave'])): ?>
-                <?php switch (str_replace($search, $replace, stripslashes($_POST['cave']))):
+                <?php switch (handleSpecialChars($_POST['cave'])):
                     case "liquidejaunatre": ?>
                         <p>
                             Ce liquide semble être du formol, un produit permettant de conserver des corps morts sur une longue période.

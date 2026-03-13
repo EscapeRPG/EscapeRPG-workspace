@@ -24,7 +24,7 @@
         </nav>
         <div id="txt">
             <p>
-            <div id="enigme">
+            <div class="enigme">
                 <a href="/escaperpg/images/secrets/pellrdc.png" rel="lightbox[invent]">
                     <img src="/escaperpg/images/secrets/pellrdc.png" alt="rez-de-chaussée de la maison du docteur Pellington">
                 </a>

@@ -6,11 +6,6 @@
 		<script type="text/javascript" src="/escaperpg/lightbox/js/scriptaculous.js?load=effects,builder"></script>
 		<script type="text/javascript" src="/escaperpg/lightbox/js/lightbox.js"></script>
 		<link rel="stylesheet" href="/escaperpg/lightbox/css/lightbox.css" type="text/css" media="screen">
-		
-		<!-- [if lt IE 9]>
-		<script src="http://html5shiv.googlecode.code/svn/trunk/html5.js"></scipt>
-		<![endif]-->
-	   
 		<link rel="stylesheet" href="/escaperpg/aventures/ambria/css/style.css">
 		<meta charset="utf-8">
 		<title>La Tempête - Le Trésor d'Ambria</title>
@@ -30,7 +25,7 @@
 				<?php
 					if (isset ($_POST['attendre']))
 						{
-							switch (str_replace($search, $replace, stripslashes($_POST['ordres'])))
+							switch (handleSpecialChars($_POST['ordres']))
 								{
 									case "barreatribord":
 										echo'
@@ -174,7 +169,7 @@
 						}
 					elseif (isset ($_POST['attendre3']))
 						{
-							switch (str_replace($search, $replace, stripslashes($_POST['tonneaux'])))
+							switch (handleSpecialChars($_POST['tonneaux']))
 								{
 									case "lestonneaux":
 										echo'
@@ -263,16 +258,13 @@
 						}
 					elseif (isset ($_POST['finrecifs']))
 						{
-							switch (str_replace($search, $replace, stripslashes($_POST['recifs'])))
+							switch (handleSpecialChars($_POST['recifs']))
 								{
 									case "rames":
 										echo'<div id="succespopup">';
-										$nouveausucces = '<img src="/escaperpg/images/succes/ambria/tempete.png"><span><u><b>Un mauvais temps qui s\'annonce</b></u><br>Affronter la tempête</span>';
 										$scenario = 'ambria';
-										$description = 'tempête';
-										$cache = 'oui';
-										$rarete = 'succesargent';
-										include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/succesadd.php";
+										$nom = 'tempete';
+										include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/succesAdd.php";
 										echo'</div>';
 										
 										echo'
@@ -304,12 +296,9 @@
 										break;
 									case "accoster":
 										echo'<div id="succespopup">';
-										$nouveausucces = '<img src="/escaperpg/images/succes/ambria/tempete.png"><span><u><b>Un mauvais temps qui s\'annonce</b></u><br>Affronter la tempête</span>';
 										$scenario = 'ambria';
-										$description = 'tempête';
-										$cache = 'oui';
-										$rarete = 'succesargent';
-										include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/succesadd.php";
+										$nom = 'tempete';
+										include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/succesAdd.php";
 										echo'</div>';
 										
 										echo'
@@ -342,12 +331,9 @@
 										break;
 									case "sortezlesrames":
 										echo'<div id="succespopup">';
-										$nouveausucces = '<img src="/escaperpg/images/succes/ambria/tempete.png"><span><u><b>Un mauvais temps qui s\'annonce</b></u><br>Affronter la tempête</span>';
 										$scenario = 'ambria';
-										$description = 'tempête';
-										$cache = 'oui';
-										$rarete = 'succesargent';
-										include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/succesadd.php";
+										$nom = 'tempete';
+										include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/succesAdd.php";
 										echo'</div>';
 										
 										echo'
@@ -383,18 +369,12 @@
 										break;
 									case "chaloupe":
 										echo'<div id="succespopup">';
-										$nouveausucces = '<img src="/escaperpg/images/succes/ambria/tempete.png"><span><u><b>Un mauvais temps qui s\'annonce</b></u><br>Affronter la tempête</span>';
 										$scenario = 'ambria';
-										$description = 'tempête';
-										$cache = 'oui';
-										$rarete = 'succesargent';
-										include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/succesadd.php";
-										$nouveausucces = '<img src="/escaperpg/images/succes/ambria/tempeteparfaite.png"><span><u><b>Duo de choc !</b></u><br>Se sortir de la tempête sans subir de dégât !</span>';
+										$nom = 'tempete';
+										include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/succesAdd.php";
 										$scenario = 'ambria';
-										$description = 'tempêteparfaite';
-										$cache = 'oui';
-										$rarete = 'succesgold';
-										include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/succesadd.php";
+										$nom = 'tempeteparfaite';
+										include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/succesAdd.php";
 										echo'</div>';
 										
 										echo'
@@ -425,7 +405,7 @@
 												<br>
 												Ou peut-être n\'êtes-vous tout simplement pas encore sortis des récifs ?
 											</p>
-											<div id="enigmelieu">
+											<div class="enigmelieu">
 												<img src="/escaperpg/images/ambria/recifs.png">
 											</div>
 											<p>
@@ -443,7 +423,7 @@
 						{
 							echo'
 								<audio src="/escaperpg/sons/ambria/tempete.mp3" autoplay></audio>
-								<div id="enigmelieu">
+								<div class="enigmelieu">
 									<img src="/escaperpg/images/ambria/recifs.png">
 								</div>
 								<p>
@@ -552,7 +532,7 @@
 						}
 					elseif (isset ($_POST['attendre2']))
 						{
-							switch (str_replace($search, $replace, stripslashes($_POST['ordres2'])))
+							switch (handleSpecialChars($_POST['ordres2']))
 								{
 									case "affale":
 										echo'
@@ -665,7 +645,7 @@
 							elseif (isset ($_POST['reponse']))
 								{
 									echo'
-										<div id="enigmelieu">
+										<div class="enigmelieu">
 											<img src="/escaperpg/images/ambria/haubansreponse.png">
 										</div>
 									';

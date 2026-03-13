@@ -24,7 +24,7 @@
         </nav>
         <div id="txt">
             <?php if (in_array('pieceev', $_SESSION['inventaire'])): ?>
-                <div id="enigmelieu">
+                <div class="enigmelieu">
                     <img src="/escaperpg/images/secrets/vuegrenier.png" alt="grenier">
                 </div>
                 <p>
@@ -45,7 +45,7 @@
                     }
                     ?>
                 <?php elseif (isset($_POST['grenierpiece'])): ?>
-                    <div id="enigme">
+                    <div class="enigme">
                         <a href="/escaperpg/images/secrets/ev.png" rel="lightbox[invent]">
                             <img src="/escaperpg/images/secrets/ev.png" alt="pièce avec une tête de femme">
                         </a>
@@ -61,7 +61,7 @@
                         <input type="submit" name="sev" value="Ajouter à l'inventaire.">
                     </form>
                 <?php elseif (isset($_POST['piano']) || isset($_SESSION['grenierpiano'])): ?>
-                    <div id="enigmelieu">
+                    <div class="enigmelieu">
                         <img src="/escaperpg/images/secrets/vuegrenier.png" alt="grenier">
                         <div id="grenierpiece">
                             <form action="grenier" method="post">
@@ -78,7 +78,7 @@
                     </p>
                     <?php $_SESSION['grenierpiano'] = true; ?>
                 <?php else: ?>
-                    <div id="enigmelieu">
+                    <div class="enigmelieu">
                         <img src="/escaperpg/images/secrets/vuegrenier.png" alt="grenier">
                         <div id="piano">
                             <form action="grenier" method="post">
@@ -94,7 +94,7 @@
                     </p>
                 <?php endif; ?>
             <?php else: ?>
-                <div id="enigmelieu">
+                <div class="enigmelieu">
                     <img src="/escaperpg/images/secrets/vuegreniernuit.png" alt="grenier">
                 </div>
                 <p>

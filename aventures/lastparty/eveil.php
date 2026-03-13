@@ -22,7 +22,7 @@
             <?php if (isset($_POST['suivant']) || isset($_SESSION['eveil'])): ?>
                 <?php $_SESSION['eveil'] = true; ?>
                 <audio src="/escaperpg/sons/lastparty/message.mp3" autoplay></audio>
-                <div id="enigmelieu">
+                <div class="enigmelieu">
                     <img src="/escaperpg/images/lastparty/appartement.png" alt="appartement">
                     <form action="telephone" method="post">
                         <button type="submit" name="telephonemini" id="phone">

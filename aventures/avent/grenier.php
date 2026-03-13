@@ -24,15 +24,12 @@ $indices = "/escaperpg/includes/indices.php";
         <?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/aventures/avent/includes/nav.php"; ?>
         <div id="txt">
             <?php if (isset($_POST['activer'])): ?>
-                <?php if (str_replace($search, $replace, stripslashes($_POST['activate'])) == "depart"): ?>
+                <?php if (handleSpecialChars($_POST['activate']) == "depart"): ?>
                     <div id="succespopup">
                         <?php
-                        $nouveausucces = '<img src="/escaperpg/images/succes/avent/machine.png"><span><u><b>Apprentie mécanicienne</b></u><br>Réparer l\'étrange machine de Grand-Père</span>';
                         $scenario = 'avent';
-                        $description = 'machine';
-                        $cache = 'oui';
-                        $rarete = 'succesnormal';
-                        include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/succesadd.php";
+                        $nom = 'machine';
+                        include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/succesAdd.php";
                         ?>
                     </div>
                     <audio src="/escaperpg/sons/avent/machinedemarre.mp3" autoplay></audio>
@@ -71,7 +68,7 @@ $indices = "/escaperpg/includes/indices.php";
                     <script src="/escaperpg/aventures/scripts/rotation.js"></script>
                 <?php endif; ?>
             <?php elseif (isset($_POST['reference']) || isset($_SESSION['reference'])): ?>
-                <?php if (str_replace($search, $replace, stripslashes($_POST['ref'])) == "7ff8357" || isset($_SESSION['reference'])): ?>
+                <?php if (handleSpecialChars($_POST['ref']) == "7ff8357" || isset($_SESSION['reference'])): ?>
                     <?php if (isset($_POST['reference'])): ?>
                         <?php include $_SERVER['DOCUMENT_ROOT'] . $resetIndices; ?>
                     <?php endif; ?>
@@ -171,7 +168,7 @@ $indices = "/escaperpg/includes/indices.php";
                     En attendant qu'il revienne, peut-être pouvez-vous essayer de remettre la machine en état de marche ?
                 </p>
                 <form action="grenier" method="post">
-                    <div id="enigmelieu">
+                    <div class="enigmelieu">
                         <img src="/escaperpg/images/avent/grenier.png" alt="grenier">
                         <button type="submit" name="machineetrange" id="machine">
                             <img src="/escaperpg/images/avent/machine.png" alt="la machine bizarre de grand-père, elle semble incomplète">

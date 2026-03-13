@@ -1,128 +1,60 @@
 <?php
-$reqbadges = $conn->prepare('SELECT * FROM 0succes WHERE pseudo = ? && scenario = "ambria"');
-$reqbadges->execute([$getid]);
-$badges = $reqbadges->fetchAll();
-$debut = '<div class="succesbox"><div class="succesbloque"></div><div class="succesobtenu"><img src="/escaperpg/images/succes/ambria/debutoff.png"><span><u><b>En route pour l\'aventure !</b></u><br>Lancer l\'aventure pour la première fois</span></div></div>';
-$debutcheck = false;
-$fin = '<div class="succesbox"><div class="succesbloque"></div><div class="succesobtenu"><img src="/escaperpg/images/succes/ambria/finoff.png"><span><u><b>La vie de pirate</b></u><br>Terminer l\'aventure</span></div></div>';
-$fincheck = false;
-$carte = '<div class="succesbox"><div class="succesbloque"></div><div class="succesobtenu"><img src="/escaperpg/images/succes/ambria/carteoff.png"><span><u><b>Fin limier</b></u><br>Trouver une piste menant à la carte d\'Ambria</span></div></div>';
-$cartecheck = false;
-$fuir = '<div class="succesbox"><div class="succesbloque"></div><div class="succesobtenu"><img src="/escaperpg/images/succes/ambria/fuiroff.png"><span><u><b>Échappée belle</b></u><br>Fuir et semer ses poursuivants dans les ruelles</span></div></div>';
-$fuircheck = false;
-$cap = '<div class="succesbox"><div class="succesbloque"></div><div class="succesobtenu"><img src="/escaperpg/images/succes/ambria/capoff.png"><span><u><b>Droit vers l\'horizon !</b></u><br>Trouver un cap pour le Surgisseur des Tempêtes</span></div></div>';
-$capcheck = false;
-$ambria = '<div class="succesbox"><div class="succesbloque"></div><div class="succesobtenu"><img src="/escaperpg/images/succes/ambria/ambriaoff.png"><span><u><b>Vestiges du passé</b></u><br>Entrer dans la cité perdue d\'Ambria</span></div></div>';
-$ambriacheck = false;
+$reqAll = $conn->prepare("
+    SELECT *
+    FROM 0succes
+    WHERE scenario = 'ambria'
+    ORDER BY FIELD(rarete,
+        'platine',
+        'diamant',
+        'gold',
+        'argent',
+        'bronze',
+        'normal'
+    )
+");
+$reqAll->execute();
+$allSucces = $reqAll->fetchAll(PDO::FETCH_ASSOC);
+
+$earnedIds = array_column($succesambria, 'id');
 ?>
 
 <div id="containerscenario">
     <div id="bannieresucces">
-        <img src="/escaperpg/images/tresorambriacard.png" alt="le trésor d'ambria">
+        <img src="/escaperpg/images/tresorambriacard.png" alt="bannière">
         <div class="containerprog">
             <div class="banniereprogression" style="width :<?= $widthambria ?>%"></div>
+
             <p>
                 <?= (round($widthambria * 2) / 2) ?>%
             </p>
         </div>
     </div>
+
     <div id="containersucces">
-        <?php foreach ($badges as $succes) {
-            if ($succes['description'] == 'début') {
-                $debutcheck = true;
-            }
-            if ($succes['description'] == 'fin') {
-                $fincheck = true;
-            }
-            if ($succes['description'] == 'carte') {
-                $cartecheck = true;
-            }
-            if ($succes['description'] == 'fuir') {
-                $fuircheck = true;
-            }
-            if ($succes['description'] == 'cap') {
-                $capcheck = true;
-            }
-            if ($succes['description'] == 'ambria') {
-                $ambriacheck = true;
-            }
-            if ($succes['cache'] == 'oui') {
-                $counterambria++;
+        <?php
+        $earnedList = [];
+        $missingList = [];
+
+        foreach ($allSucces as $succes) {
+            if (in_array($succes['id'], $earnedIds)) {
+                $earnedList[] = $succes;
+
+                if ($succes['cache'] === 1) {
+                    $counterambria++;
+                }
+            } else {
+                $missingList[] = $succes;
             }
         }
 
-        $reqbadges = $conn->prepare('SELECT * FROM 0succes WHERE pseudo = ? && scenario = "ambria" && rarete = "succesplatine" ORDER BY id DESC');
-        $reqbadges->execute([$getid]);
-        while ($badges = $reqbadges->fetch()): ?>
-            <div class="succesbox">
-                <div class="<?= $badges['rarete'] ?>"></div>
-                <div class="succesobtenu"><?= $badges['badge'] ?></div>
-            </div>
-        <?php endwhile;
-
-        $reqbadges = $conn->prepare('SELECT * FROM 0succes WHERE pseudo = ? && scenario = "ambria" && rarete = "succesdiamant" ORDER BY id DESC');
-        $reqbadges->execute([$getid]);
-        while ($badges = $reqbadges->fetch()): ?>
-            <div class="succesbox">
-                <div class="<?= $badges['rarete'] ?>"></div>
-                <div class="succesobtenu"><?= $badges['badge'] ?></div>
-            </div>
-        <?php endwhile;
-
-        $reqbadges = $conn->prepare('SELECT * FROM 0succes WHERE pseudo = ? && scenario = "ambria" && rarete = "succesgold" ORDER BY id DESC');
-        $reqbadges->execute([$getid]);
-        while ($badges = $reqbadges->fetch()): ?>
-            <div class="succesbox">
-                <div class="<?= $badges['rarete'] ?>"></div>
-                <div class="succesobtenu"><?= $badges['badge'] ?></div>
-            </div>
-        <?php endwhile;
-
-        $reqbadges = $conn->prepare('SELECT * FROM 0succes WHERE pseudo = ? && scenario = "ambria" && rarete = "succesargent" ORDER BY id DESC');
-        $reqbadges->execute([$getid]);
-        while ($badges = $reqbadges->fetch()): ?>
-            <div class="succesbox">
-                <div class="<?= $badges['rarete'] ?>"></div>
-                <div class="succesobtenu"><?= $badges['badge'] ?></div>
-            </div>
-        <?php endwhile;
-
-        $reqbadges = $conn->prepare('SELECT * FROM 0succes WHERE pseudo = ? && scenario = "ambria" && rarete = "succesbronze" ORDER BY id DESC');
-        $reqbadges->execute([$getid]);
-        while ($badges = $reqbadges->fetch()): ?>
-            <div class="succesbox">
-                <div class="<?= $badges['rarete'] ?>"></div>
-                <div class="succesobtenu"><?= $badges['badge'] ?></div>
-            </div>
-        <?php endwhile;
-
-        $reqbadges = $conn->prepare('SELECT * FROM 0succes WHERE pseudo = ? && scenario = "ambria" && rarete = "succesnormal" ORDER BY id DESC');
-        $reqbadges->execute([$getid]);
-        while ($badges = $reqbadges->fetch()): ?>
-            <div class="succesbox">
-                <div class="<?= $badges['rarete'] ?>"></div>
-                <div class="succesobtenu"><?= $badges['badge'] ?></div>
-            </div>
-        <?php endwhile;
-
-        if (!$debutcheck) {
-            echo $debut;
+        foreach ($earnedList as $succes) {
+            renderSucces($succes, true, 'ambria');
         }
-        if (!$fincheck) {
-            echo $fin;
+
+        foreach ($missingList as $succes) {
+            renderSucces($succes, false, 'ambria');
         }
-        if (!$cartecheck) {
-            echo $carte;
-        }
-        if (!$fuircheck) {
-            echo $fuir;
-        }
-        if (!$capcheck) {
-            echo $cap;
-        }
-        if (!$ambriacheck) {
-            echo $ambria;
-        }
+
         if ((18 - $counterambria) > 1): ?>
             <div class="succesbox">
                 <div class="succesbloque"></div>

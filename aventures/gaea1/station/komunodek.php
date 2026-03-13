@@ -90,10 +90,10 @@ $_SESSION['plancurrent'] = "e"; ?>
                         <?php
                         $nouveausucces = '<img src="/escaperpg/images/succes/gaea1/traducteur.png"><span><u><b>Expert·e en langues</b></u><br>Créer un traducteur pour le langage de GAEA-I</span>';
                         $scenario = 'gaea1';
-                        $description = 'traducteur';
+                        $nom = 'traducteur';
                         $cache = 'non';
                         $rarete = 'succesargent';
-                        include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/succesadd.php";
+                        include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/succesAdd.php";
                         ?>
                     </div>
 
@@ -187,15 +187,15 @@ $_SESSION['plancurrent'] = "e"; ?>
                 ?>
 
             <?php elseif (isset($_POST['connexion'])): ?>
-                <?php if (str_replace($search, $replace, stripslashes($_POST['identifiant'])) == "ahyrdxbp718" && str_replace($search, $replace, stripslashes($_POST['motdepasse'])) == "gaeaikomunthyrd"): ?>
+                <?php if (handleSpecialChars($_POST['identifiant']) == "ahyrdxbp718" && handleSpecialChars($_POST['motdepasse']) == "gaeaikomunthyrd"): ?>
                     <div id="succespopup">
                         <?php
                         $nouveausucces = '<img src="/escaperpg/images/succes/gaea1/hacking.png"><span><u><b>Expert·e en hacking</b></u><br>Se connecter au terminal du pont de commandement</span>';
                         $scenario = 'gaea1';
-                        $description = 'hacking';
+                        $nom = 'hacking';
                         $cache = 'non';
                         $rarete = 'succesnormal';
-                        include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/succesadd.php";
+                        include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/succesAdd.php";
                         ?>
                     </div>
 
@@ -225,7 +225,7 @@ $_SESSION['plancurrent'] = "e"; ?>
                     $_SESSION['traduction'] = true;
                     ?>
 
-                <?php elseif (str_replace($search, $replace, stripslashes($_POST['identifiant'])) == "ahyrdxbp718" && str_replace($search, $replace, stripslashes($_POST['motdepasse'])) == "hmpo62x4sdr"): ?>
+                <?php elseif (handleSpecialChars($_POST['identifiant']) == "ahyrdxbp718" && handleSpecialChars($_POST['motdepasse']) == "hmpo62x4sdr"): ?>
                     <p>
                         Cela ne semble pas fonctionner.
                     </p>
@@ -244,15 +244,15 @@ $_SESSION['plancurrent'] = "e"; ?>
                         <input type="submit" name="hacker" value="retour.">
                     </form>
 
-                <?php elseif (str_replace($search, $replace, stripslashes($_POST['motdepasse'])) == "0ff1s3r713"): ?>
+                <?php elseif (handleSpecialChars($_POST['motdepasse']) == "0ff1s3r713"): ?>
                     <div id="succespopup">
                         <?php
                         $nouveausucces = '<img src="/escaperpg/images/succes/gaea1/offiser.png"><span><u><b>Qui ne tente rien n\'a rien...</b></u><br>Essayer de se connecter au terminal avec le mot de passe d\'un autre</span>';
                         $scenario = 'gaea1';
-                        $description = 'offiser';
+                        $nom = 'offiser';
                         $cache = 'oui';
                         $rarete = 'succesbronze';
-                        include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/succesadd.php";
+                        include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/succesAdd.php";
                         if ($_SESSION['loggedin']) {
                             echo '<script src="/escaperpg/scripts/succescount.js"></script>';
                         } else {

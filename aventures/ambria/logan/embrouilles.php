@@ -6,11 +6,6 @@
 		<script type="text/javascript" src="/escaperpg/lightbox/js/scriptaculous.js?load=effects,builder"></script>
 		<script type="text/javascript" src="/escaperpg/lightbox/js/lightbox.js"></script>
 		<link rel="stylesheet" href="/escaperpg/lightbox/css/lightbox.css" type="text/css" media="screen">
-		
-		<!-- [if lt IE 9]>
-		<script src="http://html5shiv.googlecode.code/svn/trunk/html5.js"></scipt>
-		<![endif]-->
-	   
 		<link rel="stylesheet" href="/escaperpg/aventures/ambria/css/style.css">
 		<meta charset="utf-8">
 		<title>La Taverne - Le Trésor d'Ambria</title>
@@ -30,7 +25,7 @@
 				<?php
 					if (isset ($_POST['battre']))
 						{
-							switch (str_replace($search, $replace, stripslashes($_POST['bagarre'])))
+							switch (handleSpecialChars($_POST['bagarre']))
 								{
 									case "derrieretoi":
 										echo'
@@ -112,7 +107,7 @@
 						}
 					elseif (isset ($_POST['react']))
 						{
-							switch (str_replace($search, $replace, stripslashes($_POST['baston'])))
+							switch (handleSpecialChars($_POST['baston']))
 								{
 									case "onsort":
 										echo'
@@ -190,12 +185,9 @@
 					elseif (isset ($_POST['suivant']))
 						{
 							echo'<div id="succespopup">';
-							$nouveausucces = '<img src="/escaperpg/images/succes/ambria/bagarre.png"><span><u><b>Classique de la taverne</b></u><br>Participer à sa première bagarre</span>';
 							$scenario = 'ambria';
-							$description = 'bagarre';
-							$cache = 'oui';
-							$rarete = 'succesnormal';
-							include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/succesadd.php";
+							$nom = 'bagarre';
+							include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/succesAdd.php";
 							echo'</div>';
 							
 							echo'

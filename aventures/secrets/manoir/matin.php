@@ -30,7 +30,7 @@ $indicesInclude = "/escaperpg/includes/indices.php";
                     Vous raccrochez le téléphone et retournez au manoir pour prendre votre voiture, avant de vous diriger vers le <span class="lieu">107 Park Avenue</span>.
                 </p>
             <?php elseif (isset($_POST['police'])): ?>
-                <?php if (str_replace($search, $replace, stripslashes($_POST['police'])) == "pellington"): ?>
+                <?php if (handleSpecialChars($_POST['police']) == "pellington"): ?>
                     <div class="dialogue">
                         <div class="portrait">
                             <img src="/escaperpg/images/secrets/bornepolice.png" alt="borne de police">
@@ -65,7 +65,7 @@ $indicesInclude = "/escaperpg/includes/indices.php";
                     <script src="/escaperpg/scripts/updateDataList.js"></script>
                 <?php endif; ?>
             <?php elseif (isset($_SESSION['telephone1']) || isset($_POST['telephone'])): ?>
-                <?php if (isset($_SESSION['telephone1']) || str_replace($search, $replace, stripslashes($_POST['telephone'])) == "inspecteurdeckard085"): ?>
+                <?php if (isset($_SESSION['telephone1']) || handleSpecialChars($_POST['telephone']) == "inspecteurdeckard085"): ?>
                     <?php if (isset($_POST['telephone'])): ?>
                         <?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/resetIndices.php"; ?>
                     <?php endif; ?>

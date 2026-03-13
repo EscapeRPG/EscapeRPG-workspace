@@ -61,7 +61,7 @@
                     <input type="submit" name="react" value="Réagir.">
                 </form>
             <?php elseif (isset($_POST['react'])): ?>
-                <?php if (str_replace($search, $replace, stripslashes($_POST['danger'])) == "attention"): ?>
+                <?php if (handleSpecialChars($_POST['danger']) == "attention"): ?>
                     <audio src="/escaperpg/sons/ambria/tavernehommetombe.mp3" autoplay></audio>
                     <p>
                         Vous réagissez juste à temps pour éviter le corps de l'un des hommes qui a été propulsé vers vous et qui se vautre sur votre table, la renversant.
@@ -127,7 +127,7 @@
                     ?>
                 <?php endif; ?>
             <?php elseif (isset($_POST['battre'])): ?>
-                <?php if (str_replace($search, $replace, stripslashes($_POST['bagarre'])) == "baissezvous"): ?>
+                <?php if (handleSpecialChars($_POST['bagarre']) == "baissezvous"): ?>
                     <audio src="/escaperpg/sons/ambria/sullivanesquivecoup.mp3" autoplay></audio>
                     <p>
                         Vous vous baissez juste à temps pour éviter un coup de tabouret porté par un homme dans votre dos.<br>
@@ -194,15 +194,12 @@
                     ?>
                 <?php endif; ?>
             <?php elseif (isset($_POST['partir'])): ?>
-                <?php if (str_replace($search, $replace, stripslashes($_POST['sortir'])) == "compris"): ?>
+                <?php if (handleSpecialChars($_POST['sortir']) == "compris"): ?>
                     <div id="succespopup">
                         <?php
-                        $nouveausucces = '<img src="/escaperpg/images/succes/ambria/bagarre.png"><span><u><b>Classique de la taverne</b></u><br>Participer à sa première bagarre</span>';
                         $scenario = 'ambria';
-                        $description = 'bagarre';
-                        $cache = 'oui';
-                        $rarete = 'succesnormal';
-                        include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/succesadd.php";
+                        $nom = 'bagarre';
+                        include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/succesAdd.php";
                         ?>
                     </div>
                     <audio src="/escaperpg/sons/ambria/finbagarre.mp3" autoplay></audio>
@@ -234,7 +231,7 @@
                     </form>
                 <?php endif; ?>
             <?php elseif (isset($_POST['loganreponse'])): ?>
-                <?php if (str_replace($search, $replace, stripslashes($_POST['logannom'])) == "logan"): ?>
+                <?php if (handleSpecialChars($_POST['logannom']) == "logan"): ?>
                     <div class="dialogue">
                         <div class="portrait">
                             <img src="/escaperpg/images/ambria/loganbarthelemymini.png" alt="logan barthélémy">

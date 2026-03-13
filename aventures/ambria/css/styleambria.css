@@ -126,7 +126,7 @@ input[type="submit"] {
   }
 }
 
-#enigme {
+.enigme {
   text-align: center;
 
   img {
@@ -140,7 +140,7 @@ input[type="submit"] {
   }
 }
 
-#enigmelieu {
+.enigmelieu {
   max-width: 800px;
   background-color: none;
   position: relative;

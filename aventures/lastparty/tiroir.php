@@ -31,7 +31,7 @@
                 <?php $_SESSION['inventaire'][] = 'carnet'; ?>
             <?php else: ?>
                 <audio src="/escaperpg/sons/lastparty/tiroir.mp3" autoplay></audio>
-                <div id="enigme">
+                <div class="enigme">
                     <a href="/escaperpg/images/lastparty/carnet.png" rel="lightbox[invent]"><img src="/escaperpg/images/lastparty/carnet.png" alt="carnet"></a>
                 </div>
                 <p>

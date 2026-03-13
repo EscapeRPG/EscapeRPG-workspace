@@ -24,7 +24,7 @@
         </nav>
         <div id="txt">
             <?php if (isset($_POST['phr'])):
-                if (str_replace($search, $replace, stripslashes($_POST['phr'])) == "leclaireouvrelechemin"): ?>
+                if (handleSpecialChars($_POST['phr']) == "leclaireouvrelechemin"): ?>
                     <p>
                         <audio src="/escaperpg/sons/secrets/bureauouvert.mp3" autoplay></audio>
                         Alors que vous prononcez les mots, vous sentez l'air autour de vous devenir un peu plus dense.<br>
@@ -35,7 +35,7 @@
                         <input type="submit" name="entrer" value="Entrer.">
                     </form>
                 <?php else: ?>
-                    <div id="enigmelieu">
+                    <div class="enigmelieu">
                         <img src="/escaperpg/images/secrets/portebureau.png" alt="porte du bureau">
                         <div id="symbureau">
                             <form action="bureau" method="post">
@@ -69,7 +69,7 @@
                 }
                 ?>
             <?php else: ?>
-                <div id="enigmelieu">
+                <div class="enigmelieu">
                     <img src="/escaperpg/images/secrets/portebureau.png" alt="porte du bureau">
                     <div id="symbureau">
                         <form action="bureau" method="post">

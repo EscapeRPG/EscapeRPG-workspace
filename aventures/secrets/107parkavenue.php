@@ -36,15 +36,12 @@
             <?php elseif (isset($_POST['suivant2'])): ?>
                 <div id="succespopup">
                     <?php
-                    $nouveausucces = '<img src="/escaperpg/images/succes/secrets/pellington.png"><span><u><b>Cambrioleur</b></u><br>Entrer chez le docteur Pellington</span>';
                     $scenario = 'secrets';
-                    $description = 'pellington';
-                    $cache = 'oui';
-                    $rarete = 'succesnormal';
-                    include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/succesadd.php";
+                    $nom = 'pellington';
+                    include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/succesAdd.php";
                     ?>
                 </div>
-                <div id="enigme">
+                <div class="enigme">
                     <a href="/escaperpg/images/secrets/pellrdc.png" rel="lightbox[invent]"><img src="/escaperpg/images/secrets/pellrdc.png" alt="rez-de-chaussée"></a>
                 </div>
                 <br>

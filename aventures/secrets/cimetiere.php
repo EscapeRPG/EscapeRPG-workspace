@@ -214,7 +214,7 @@
                     ?>
                     <script src="/escaperpg/scripts/updateDataList.js"></script>
                 <?php elseif (isset($_POST['medecin'])): ?>
-                    <?php if (str_replace($search, $replace, stripslashes($_POST['question'])) == "sacochedemedecin"): ?>
+                    <?php if (handleSpecialChars($_POST['question']) == "sacochedemedecin"): ?>
                         <div class="dialogue">
                             <div class="portrait">
                                 <img src="/escaperpg/images/secrets/gaspard.png" alt="gaspard">

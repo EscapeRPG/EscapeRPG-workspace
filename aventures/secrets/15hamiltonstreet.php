@@ -82,7 +82,7 @@
                 <p>
                     Vous êtes devant la porte du manoir qui semble fermée.
                 </p>
-                <div id="enigmelieu">
+                <div class="enigmelieu">
                     <img src="/escaperpg/images/secrets/porteentree.png" alt="la porte d'entrée du manoir">
                 </div>
                 <br>

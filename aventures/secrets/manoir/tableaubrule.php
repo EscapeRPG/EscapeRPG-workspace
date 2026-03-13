@@ -23,7 +23,7 @@
             <?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/aventures/secrets/includes/navInputs.php"; ?>
         </nav>
         <div id="txt">
-            <div id="enigmelieu">
+            <div class="enigmelieu">
                 <img src="/escaperpg/images/secrets/tableaubrule.png" alt="les restes d'un tableau brûlé">
             </div>
             <p>

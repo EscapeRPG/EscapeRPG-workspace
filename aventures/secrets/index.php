@@ -26,18 +26,12 @@
                 <?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/sessioninc.php"; ?>
                 <div id="succespopup">
                     <?php
-                    $nouveausucces = '<img src="/escaperpg/images/succes/general/debut.png"><span><u><b>Se lancer dans l\'aventure</b></u><br>Commencer une aventure pour la première fois</span>';
                     $scenario = 'general';
-                    $description = 'début';
-                    $cache = 'non';
-                    $rarete = 'succesnormal';
-                    include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/succesadd.php";
-                    $nouveausucces = '<img src="/escaperpg/images/succes/secrets/debut.png"><span><u><b>Cadeau empoisonné ?</b></u><br>Lancer l\'aventure pour la première fois</span>';
+                    $nom = 'debut';
+                    include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/succesAdd.php";
                     $scenario = 'secrets';
-                    $description = 'début';
-                    $cache = 'non';
-                    $rarete = 'succesnormal';
-                    include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/succesadd.php";
+                    $nom = 'debut';
+                    include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/succesAdd.php";
                     ?>
                 </div>
                 <p>

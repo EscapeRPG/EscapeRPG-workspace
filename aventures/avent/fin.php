@@ -29,18 +29,12 @@
             if (isset($_POST['fin']) || $_SESSION['fin']): ?>
                 <div id="succespopup">
                     <?php
-                    $succesadd = "/escaperpg/includes/succesadd.php";
-                    $nouveausucces = '<img src="/escaperpg/images/succes/general/fin.png"><span><u><b>Une page qui se tourne...</b></u><br>Terminer sa première aventure</span>';
+                    $succesadd = "/escaperpg/includes/succesAdd.php";
                     $scenario = 'general';
-                    $description = 'fin';
-                    $cache = 'non';
-                    $rarete = 'succesbronze';
+                    $nom = 'fin';
                     include $_SERVER['DOCUMENT_ROOT'] . $succesadd;
-                    $nouveausucces = '<img src="/escaperpg/images/succes/avent/fin.png"><span><u><b>... et ils vécurent heureux</b></u><br>Terminer l\'aventure</span>';
                     $scenario = 'avent';
-                    $description = 'fin';
-                    $cache = 'non';
-                    $rarete = 'succesbronze';
+                    $nom = 'fin';
                     include $_SERVER['DOCUMENT_ROOT'] . $succesadd;
                     ?>
                 </div>
@@ -224,12 +218,9 @@
             <?php else: ?>
                 <div id="succespopup">
                     <?php
-                    $nouveausucces = '<img src="/escaperpg/images/succes/avent/maison.png"><span><u><b>Voyage de retour</b></u><br>Rentrer à la maison après toutes ces émotions</span>';
                     $scenario = 'avent';
-                    $description = 'maison';
-                    $cache = 'oui';
-                    $rarete = 'succesargent';
-                    include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/succesadd.php";
+                    $nom = 'maison';
+                    include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/succesAdd.php";
                     ?>
                 </div>
                 <?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/sessioninc.php"; ?>

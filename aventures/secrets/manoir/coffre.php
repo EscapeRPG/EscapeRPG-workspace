@@ -29,7 +29,7 @@
                     <p>
                         Vous vous intéressez alors au coffret.
                     </p>
-                    <div id="enigme">
+                    <div class="enigme">
                         <a href="/escaperpg/images/secrets/coffret.png" rel="lightbox[invent]">
                             <img src="/escaperpg/images/secrets/coffret.png" alt="un petit coffret ouvragé">
                         </a>
@@ -75,12 +75,9 @@
                             <?php if ($_SESSION['combinaisoncoffre'] == "d2d9g4d7"): ?>
                                 <div id="succespopup">
                                     <?php
-                                    $nouveausucces = '<img src="/escaperpg/images/succes/secrets/coffre.png"><span><u><b>Crocheteur</b></u><br>Ouvrir le coffre-fort de l\'oncle William</span>';
                                     $scenario = 'secrets';
-                                    $description = 'coffre';
-                                    $cache = 'oui';
-                                    $rarete = 'succesnormal';
-                                    include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/succesadd.php";
+                                    $nom = 'coffre';
+                                    include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/succesAdd.php";
                                     ?>
                                 </div>
                                 <audio src="/escaperpg/sons/secrets/coffrefortouverture.mp3" autoplay></audio>
@@ -88,7 +85,7 @@
                                     Le coffre-fort s'ouvre, vous laissant découvrir son contenu :
                                     un petit coffret, une <span class="mdp">vieille clé</span> rouillée et une pièce de monnaie.
                                 </p>
-                                <div id="enigme">
+                                <div class="enigme">
                                     <a href="/escaperpg/images/secrets/coffret.png" rel="lightbox[invent]">
                                         <img src="/escaperpg/images/secrets/coffret.png" alt="un petit coffret ouvragé">
                                     </a>
@@ -238,7 +235,7 @@
                     ?>
                 <?php endif; ?>
             <?php else: ?>
-                <div id="enigmelieu">
+                <div class="enigmelieu">
                     <img src="/escaperpg/images/secrets/coffrefort.png" alt="la porte du coffre-fort">
                 </div>
                 <p>

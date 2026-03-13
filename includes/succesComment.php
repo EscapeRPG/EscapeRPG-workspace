@@ -1,11 +1,8 @@
 <div id="succespopup">
     <?php
-    $nouveausucces = '<img src="/escaperpg/images/succes/general/commentaire.png"><span><u><b>Crieur public</b></u><br>Laisser un commentaire en fin d\'aventure</span>';
     $scenario = 'general';
-    $description = 'commentaire';
-    $cache = 'non';
-    $rarete = 'succesbronze';
-    include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/succesadd.php";
+    $nom = 'commentaire';
+    include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/succesAdd.php";
     ?>
 </div>
 

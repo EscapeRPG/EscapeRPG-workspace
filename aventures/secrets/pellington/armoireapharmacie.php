@@ -41,7 +41,7 @@
                 ?>
                 <?php if ($melangeCorrect): ?>
                     <audio src="/escaperpg/sons/secrets/melange.mp3" autoplay></audio>
-                    <div id="enigme">
+                    <div class="enigme">
                         <a href="/escaperpg/images/secrets/analeptique.png" rel="lightbox[invent]">
                             <img src="/escaperpg/images/secrets/analeptique.png" alt="un analeptique pour guérir les chiens empoisonnés">
                         </a>

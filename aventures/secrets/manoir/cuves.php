@@ -77,12 +77,9 @@ $_SESSION['cuves'] = true;
             <?php else: ?>
                 <div id="succespopup">
                     <?php
-                    $nouveausucces = '<img src="/escaperpg/images/succes/secrets/electricite.png"><span><u><b>Électricien</b></u><br>Remettre le courant après avoir fait sauter les plombs</span>';
                     $scenario = 'secrets';
-                    $description = 'électricité';
-                    $cache = 'oui';
-                    $rarete = 'succesbronze';
-                    include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/succesadd.php";
+                    $nom = 'électricité';
+                    include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/succesAdd.php";
                     ?>
                 </div>
                 <audio src="/escaperpg/sons/secrets/electriciteretablie.mp3" autoplay></audio>

@@ -6,11 +6,6 @@
 		<script type="text/javascript" src="/escaperpg/lightbox/js/scriptaculous.js?load=effects,builder"></script>
 		<script type="text/javascript" src="/escaperpg/lightbox/js/lightbox.js"></script>
 		<link rel="stylesheet" href="/escaperpg/lightbox/css/lightbox.css" type="text/css" media="screen">
-		
-		<!-- [if lt IE 9]>
-		<script src="http://html5shiv.googlecode.code/svn/trunk/html5.js"></scipt>
-		<![endif]-->
-	   
 		<link rel="stylesheet" href="/escaperpg/aventures/ambria/css/style.css">
 		<meta charset="utf-8">
 		<title>Cabine du Capitaine - Le Trésor d'Ambria</title>
@@ -33,7 +28,7 @@
 						{
 							echo '
 								<audio src="/escaperpg/sons/ambria/ouverturecarte.mp3" autoplay></audio>
-								<div id="enigmelieu">
+								<div class="enigmelieu">
 									<img src="/escaperpg/images/ambria/parchemin.png">
 								</div>
 								<p>
@@ -48,15 +43,12 @@
 						}
 					elseif (isset ($_POST['carte']))
 						{
-							switch (str_replace($search, $replace, stripslashes($_POST['cap'])))
+							switch (handleSpecialChars($_POST['cap']))
 								{
 									case "toutlemondeasonposte":
-										$nouveausucces = '<img src="/escaperpg/images/succes/ambria/cap.png"><span><u><b>Droit vers l\'horizon !</b></u><br>Trouver un cap pour le Surgisseur des Tempêtes</span>';
 										$scenario = 'ambria';
-										$description = 'cap';
-										$cache = 'non';
-										$rarete = 'succesbronze';
-										include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/succesadd.php";
+										$nom = 'cap';
+										include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/succesAdd.php";
 										echo '
 											<audio src="/escaperpg/sons/ambria/cap.mp3" autoplay></audio>
 											<p>
@@ -106,7 +98,7 @@
 										break;
 									default:
 										echo '
-											<div id="enigmelieu">
+											<div class="enigmelieu">
 												<img src="/escaperpg/images/ambria/parchemin.png">
 											</div>
 											<p>

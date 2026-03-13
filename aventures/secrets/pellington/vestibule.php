@@ -24,7 +24,7 @@
         </nav>
         <div id="txt">
             <?php if (isset($_POST['veste'])): ?>
-                <div id="enigme">
+                <div class="enigme">
                     <a href="/escaperpg/images/secrets/flacon.png" rel="lightbox[invent]">
                         <img src="/escaperpg/images/secrets/flacon.png" alt="un flacon de barbiturique vide">
                     </a>
@@ -44,7 +44,7 @@
                 }
                 ?>
             <?php else: ?>
-                <div id="enigmelieu">
+                <div class="enigmelieu">
                     <img src="/escaperpg/images/secrets/vestibule.png" alt="le vestibule du docteur Pellington">
                     <?php if (!in_array('Barbiturique', $_SESSION['mdp'])): ?>
                         <div id="vest">
@@ -72,7 +72,7 @@
                         }
                         ?>
                     <?php elseif (isset($_POST['entree'])): ?>
-                        <?php if (str_replace($search, $replace, stripslashes($_POST['fouille'])) == "empreintedepas"): ?>
+                        <?php if (handleSpecialChars($_POST['fouille']) == "empreintedepas"): ?>
                             <p>
                                 En regardant de plus près la paire de chaussures rangée au pied du porte-manteau, vous constatez qu'elles sont pleines de boue et de taille 40,
                                 ce qui confirme que c'était bien le docteur qui rôdait autour de la maison depuis tout ce temps.

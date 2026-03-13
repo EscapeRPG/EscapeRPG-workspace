@@ -1,6 +1,6 @@
 <?php
 include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/entete.php";
-$succesadd = "/escaperpg/includes/succesadd.php";
+$succesadd = "/escaperpg/includes/succesAdd.php";
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -30,27 +30,17 @@ $succesadd = "/escaperpg/includes/succesadd.php";
             <?php if (isset($_POST['fin']) || $_SESSION['fin']): ?>
                 <div id="succespopup">
                     <?php
-                    $nouveausucces = '<img src="/escaperpg/images/succes/general/fin.png"><span><u><b>Une page qui se tourne...</b></u><br>Terminer sa première aventure</span>';
                     $scenario = 'general';
-                    $description = 'fin';
-                    $cache = 'non';
-                    $rarete = 'succesbronze';
+                    $nom = 'fin';
                     include $_SERVER['DOCUMENT_ROOT'] . $succesadd;
-                    $nouveausucces = '<img src="/escaperpg/images/succes/secrets/fin.png"><span><u><b>Ainsi s\'achève l\'histoire</b></u><br>Terminer l\'aventure</span>';
                     $scenario = 'secrets';
-                    $description = 'fin';
-                    $cache = 'non';
-                    $rarete = 'succesbronze';
+                    $nom = 'fin';
                     include $_SERVER['DOCUMENT_ROOT'] . $succesadd;
-                    $nouveausucces = '<img src="/escaperpg/images/succes/secrets/fin1.png"><span><u><b>Victime</b></u><br>Terminer l\'aventure et obtenir 1 étoile</span>';
-                    $scenario = 'secrets';
-                    $description = 'étoile1';
-                    $cache = 'oui';
-                    $rarete = 'succesbronze';
+                    $nom = 'fin1';
                     include $_SERVER['DOCUMENT_ROOT'] . $succesadd;
                     ?>
                 </div>
-                <div id="enigme">
+                <div class="enigme">
                     <img src="/escaperpg/images/secrets/fin.png" alt="fin">
                 </div>
                 <img src="/escaperpg/images/etoilefinpleine.png" alt="étoile plein">

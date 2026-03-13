@@ -22,12 +22,9 @@
             <?php if (isset($_POST['add'])): ?>
                 <div id="succespopup">
                     <?php
-                    $nouveausucces = '<img src="/escaperpg/images/succes/lastparty/carte.png"><span><u><b>Mystérieux inconnu</b></u><br>Récupérer la carte de visite de Darren Braun</span>';
                     $scenario = 'lastparty';
-                    $description = 'carte';
-                    $cache = 'oui';
-                    $rarete = 'succesnormal';
-                    include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/succesadd.php";
+                    $nom = 'carte';
+                    include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/succesAdd.php";
                     ?>
                 </div>
                 <script src="/escaperpg/scripts/inventaireadd.js"></script>
@@ -52,7 +49,7 @@
                 include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/indices.php";
                 ?>
             <?php else: ?>
-                <div id="enigme">
+                <div class="enigme">
                     <a href="/escaperpg/images/lastparty/cartedevisite.png" rel="lightbox[invent]"><img src="/escaperpg/images/lastparty/cartedevisite.png" alt="carte de visite"></a>
                 </div>
                 <p>

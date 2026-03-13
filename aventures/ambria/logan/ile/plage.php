@@ -6,11 +6,6 @@
 		<script type="text/javascript" src="/escaperpg/lightbox/js/scriptaculous.js?load=effects,builder"></script>
 		<script type="text/javascript" src="/escaperpg/lightbox/js/lightbox.js"></script>
 		<link rel="stylesheet" href="/escaperpg/lightbox/css/lightbox.css" type="text/css" media="screen">
-		
-		<!-- [if lt IE 9]>
-		<script src="http://html5shiv.googlecode.code/svn/trunk/html5.js"></scipt>
-		<![endif]-->
-	   
 		<link rel="stylesheet" href="/escaperpg/aventures/ambria/css/style.css">
 		<meta charset="utf-8">
 		<title>La Plage - Le Trésor d'Ambria</title>
@@ -488,7 +483,7 @@
 						{
 							echo'
 								<audio src="/escaperpg/sons/ambria/plage.mp3" autoplay></audio>
-								<div id="enigmelieu">
+								<div class="enigmelieu">
 									<img src="/escaperpg/images/ambria/grottesentree.png">
 									<div id="grotte1">
 										<form action="plage" method="post">

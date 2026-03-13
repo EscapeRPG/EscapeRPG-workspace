@@ -132,7 +132,7 @@
                     </form>
                 <?php endif; ?>
             <?php else: ?>
-                <div id="enigmelieu">
+                <div class="enigmelieu">
                     <img src="/escaperpg/images/lastparty/telephone.png" alt="telephone">
                     <form action="telephone" method="post">
                         <button type="submit" name="sms" id="sms"></button>

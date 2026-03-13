@@ -43,7 +43,7 @@
                     <br>
                     Le trousseau comporte cinq clés, laquelle est la bonne ?
                 </p>
-                <div id="enigmelieu">
+                <div class="enigmelieu">
                     <img src="/escaperpg/images/avent/jeucles.png" alt="les clés de la maison">
                     <form action="maison" method="post">
                         <button type="submit" name="1cle">
@@ -95,7 +95,7 @@
                     <br>
                     Le trousseau comporte cinq clés, laquelle est la bonne ?
                 </p>
-                <div id="enigmelieu">
+                <div class="enigmelieu">
                     <img src="/escaperpg/images/avent/jeucles.png" alt="les clés de la maison">
                     <form action="maison" method="post">
                         <button type="submit" name="1cle">

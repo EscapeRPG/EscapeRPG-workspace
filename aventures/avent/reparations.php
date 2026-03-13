@@ -26,7 +26,7 @@
                     - Remplir le réservoir aux 3/4.<br>
                     - Appuyer sur le bouton rouge.
                 </p>
-                <div id="enigmelieu">
+                <div class="enigmelieu">
                     <img src="/escaperpg/images/avent/machineperenoel.png" alt="la machine à cadeaux du père noël">
                     <div id="machineperenoel">
                         <div class="dropper" id="drop1"></div>
@@ -64,7 +64,7 @@
                     - Remplir le réservoir aux 3/4.<br>
                     - Appuyer sur le bouton rouge.
                 </p>
-                <div id="enigmelieu">
+                <div class="enigmelieu">
                     <img src="/escaperpg/images/avent/machineperenoel.png" alt="la machine à cadeaux du père noël">
                     <div id="machineperenoel">
                         <div class="dropper" id="drop1"></div>

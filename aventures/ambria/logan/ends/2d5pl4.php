@@ -6,11 +6,6 @@
 		<script type="text/javascript" src="/escaperpg/lightbox/js/scriptaculous.js?load=effects,builder"></script>
 		<script type="text/javascript" src="/escaperpg/lightbox/js/lightbox.js"></script>
 		<link rel="stylesheet" href="/escaperpg/lightbox/css/lightbox.css" type="text/css" media="screen">
-		
-		<!-- [if lt IE 9]>
-		<script src="http://html5shiv.googlecode.code/svn/trunk/html5.js"></scipt>
-		<![endif]-->
-	   
 		<link rel="stylesheet" href="/escaperpg/aventures/ambria/css/style.css">
 		<meta charset="utf-8">
 		<title>Fin - Le Trésor d'Ambria</title>
@@ -30,12 +25,9 @@
 					if (isset ($_POST['envoyermessage']))
 						{
 							echo'<div id="succespopup">';
-							$nouveausucces = '<img src="/escaperpg/images/succes/general/commentaire.png"><span><u><b>Crieur public</b></u><br>Laisser un commentaire en fin d\'aventure</span>';
 							$scenario = 'general';
-							$description = 'commentaire';
-							$cache = 'non';
-							$rarete = 'succesbronze';
-							include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/succesadd.php";
+							$nom = 'commentaire';
+							include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/succesAdd.php";
 							echo'</div>';
 							
 							if ($_SESSION['loggedin']) { $nom = $_SESSION['idcompte']; } else { $nom = $_POST['nom']; }
@@ -45,30 +37,16 @@
 							echo'<center>Merci d\'avoir enregistré votre commentaire !<br></center>';
 						}
 					echo'<div id="succespopup">';
-					$nouveausucces = '<img src="/escaperpg/images/succes/general/fin.png"><span><u><b>Une page qui se tourne...</b></u><br>Terminer sa première aventure</span>';
 					$scenario = 'general';
-					$description = 'fin';
-					$cache = 'non';
-					$rarete = 'succesbronze';
-					include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/succesadd.php";
-					$nouveausucces = '<img src="/escaperpg/images/succes/ambria/fin.png"><span><u><b>La vie de pirate</b></u><br>Terminer l\'aventure</span>';
+					$nom = 'fin';
+					include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/succesAdd.php";
 					$scenario = 'ambria';
-					$description = 'fin';
-					$cache = 'non';
-					$rarete = 'succesbronze';
-					include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/succesadd.php";
-					$nouveausucces = '<img src="/escaperpg/images/succes/ambria/fin1logan.png"><span><u><b>Une vie en cage</b></u><br>En incarnant Logan, terminer l\'aventure et obtenir 1 étoile</span>';
-					$scenario = 'ambria';
-					$description = 'étoile1logan';
-					$cache = 'oui';
-					$rarete = 'succesbronze';
-					include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/succesadd.php";
-					$nouveausucces = '<img src="/escaperpg/images/succes/ambria/fin2logan.png"><span><u><b>Traître parmi les traîtres</b></u><br>En incarnant Logan, terminer l\'aventure et obtenir 2 étoiles</span>';
-					$scenario = 'ambria';
-					$description = 'étoile2logan';
-					$cache = 'oui';
-					$rarete = 'succesargent';
-					include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/succesadd.php";
+					$nom = 'fin';
+					include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/succesAdd.php";
+					$nom = 'fin1logan';
+					include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/succesAdd.php";
+					$nom = 'fin2logan';
+					include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/succesAdd.php";
 					echo'</div>';
 					
 					echo'

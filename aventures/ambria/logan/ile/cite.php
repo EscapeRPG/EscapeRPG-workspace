@@ -6,11 +6,6 @@
 		<script type="text/javascript" src="/escaperpg/lightbox/js/scriptaculous.js?load=effects,builder"></script>
 		<script type="text/javascript" src="/escaperpg/lightbox/js/lightbox.js"></script>
 		<link rel="stylesheet" href="/escaperpg/lightbox/css/lightbox.css" type="text/css" media="screen">
-		
-		<!-- [if lt IE 9]>
-		<script src="http://html5shiv.googlecode.code/svn/trunk/html5.js"></scipt>
-		<![endif]-->
-	   
 		<link rel="stylesheet" href="/escaperpg/aventures/ambria/css/style.css">
 		<meta charset="utf-8">
 		<title>La Cité Perdue - Le Trésor d'Ambria</title>
@@ -30,7 +25,7 @@
 				<?php
 					if (isset ($_POST['ecouter']))
 						{
-							switch (str_replace($search, $replace, stripslashes($_POST['enavant'])))
+							switch (handleSpecialChars($_POST['enavant']))
 								{
 									case "premiereprime":
 										echo'
@@ -131,12 +126,9 @@
 					else
 						{
 							echo'<div id="succespopup">';
-							$nouveausucces = '<img src="/escaperpg/images/succes/ambria/ambria.png"><span><u><b>Vestiges du passé</b></u><br>Entrer dans la cité perdue d\'Ambria</span>';
 							$scenario = 'ambria';
-							$description = 'ambria';
-							$cache = 'non';
-							$rarete = 'succesnormal';
-							include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/succesadd.php";
+							$nom = 'ambria';
+							include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/succesAdd.php";
 							echo'</div>';
 							unset ($_SESSION['ile']);
 							echo'

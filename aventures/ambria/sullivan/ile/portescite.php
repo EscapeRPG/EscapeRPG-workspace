@@ -6,11 +6,6 @@
 		<script type="text/javascript" src="/escaperpg/lightbox/js/scriptaculous.js?load=effects,builder"></script>
 		<script type="text/javascript" src="/escaperpg/lightbox/js/lightbox.js"></script>
 		<link rel="stylesheet" href="/escaperpg/lightbox/css/lightbox.css" type="text/css" media="screen">
-		
-		<!-- [if lt IE 9]>
-		<script src="http://html5shiv.googlecode.code/svn/trunk/html5.js"></scipt>
-		<![endif]-->
-	   
 		<link rel="stylesheet" href="/escaperpg/aventures/ambria/css/style.css">
 		<meta charset="utf-8">
 		<title>Les Portes de la Cité - Le Trésor d'Ambria</title>
@@ -125,7 +120,7 @@
 						{
 							echo'
 								<audio src="/escaperpg/sons/ambria/cite.mp3" autoplay></audio>
-								<div id="enigmelieu">
+								<div class="enigmelieu">
 									<a href="/escaperpg/images/ambria/porte/tablette.png" rel="lightbox[sullivan]" title="Une tablette en or gravée."><img src="/escaperpg/images/ambria/porte/tablette.png"></a>
 								</div>
 								<p>
@@ -147,7 +142,7 @@
 								<p>
 									Jake n\'étant pas avec vous, vous ne pouvez compter sur lui pour vous traduire la tablette.
 									De toute façon, le langage utilisé ici ne ressemble à aucun que vous n\'ayez vu auparavant,
-									il va donc vous falloir trouver le moyen d\'en comprendre son sens si vous espérez pouvoir continuer.									
+									il va donc vous falloir trouver le moyen d\'en comprendre son sens si vous espérez pouvoir continuer.
 								</p>
 								<center>
 									<form action="portescite" method="post">

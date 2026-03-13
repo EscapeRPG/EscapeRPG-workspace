@@ -24,7 +24,7 @@
         </nav>
         <div id="txt">
             <?php if (in_array("analeptique", $_SESSION['inventaire'])): ?>
-                <div id="enigmelieu">
+                <div class="enigmelieu">
                     <img src="/escaperpg/images/secrets/sdbarmoireopened.png" alt="la salle de bain du docteur Pellington">
                 </div>
                 <p>
@@ -33,7 +33,7 @@
                     Maintenant que vous avez synthétisé l'antidote pour les chiens, vous n'avez plus rien à faire ici.
                 </p>
             <?php else: ?>
-                <div id="enigmelieu">
+                <div class="enigmelieu">
                     <img src="/escaperpg/images/secrets/sdbarmoireopened.png" alt="la salle de bain du docteur Pellington">
                     <div id="armoireopened">
                         <form action="armoireapharmacie" method="post">

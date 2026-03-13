@@ -30,7 +30,7 @@
                     Vous vous souvenez de ce qu'il vous a dit : "Dans les rumeurs, il y a toujours du vrai et du faux".
                 </p>
             <?php elseif (isset($_POST['vieux'])): ?>
-                <?php if (str_replace($search, $replace, stripslashes($_POST['vieux'])) == "fonddewhisky"): ?>
+                <?php if (handleSpecialChars($_POST['vieux']) == "fonddewhisky"): ?>
                     <audio src="/escaperpg/sons/ambria/vieuxboit.mp3" autoplay></audio>
                     <div class="dialogue">
                         <div class="portrait">

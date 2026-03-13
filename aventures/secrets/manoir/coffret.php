@@ -24,7 +24,7 @@
         </nav>
         <div id="txt">
             <?php if (isset($_POST['coffret']) || isset($_SESSION['coffrenigme'])): ?>
-                <?php if (isset($_SESSION['coffrenigme']) || str_replace($search, $replace, stripslashes($_POST['coffret'])) == "aeb6fcu2m8"): ?>
+                <?php if (isset($_SESSION['coffrenigme']) || handleSpecialChars($_POST['coffret']) == "aeb6fcu2m8"): ?>
                     <?php
                     if (isset($_POST['coffret'])) {
                         include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/resetIndices.php";

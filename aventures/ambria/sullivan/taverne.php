@@ -24,7 +24,7 @@ $indices = "/escaperpg/includes/indices.php";
         <div id="txt">
             <?php if (isset($_SESSION['ambriabibliotheque'])): ?>
                 <?php if (isset($_POST['discuter'])): ?>
-                    <?php if (str_replace($search, $replace, stripslashes($_POST['loganreponse'])) == "quietesvous"): ?>
+                    <?php if (handleSpecialChars($_POST['loganreponse']) == "quietesvous"): ?>
                         <audio src="/escaperpg/sons/ambria/epeeposee.mp3" autoplay></audio>
                         <p>
                             Vous attrapez une chaise et vous asseyez en face de lui.
@@ -151,7 +151,7 @@ $indices = "/escaperpg/includes/indices.php";
                     ?>
                 <?php else: ?>
                     <audio src="/escaperpg/sons/ambria/taverne.mp3" autoplay></audio>
-                    <div id="enigmelieu">
+                    <div class="enigmelieu">
                         <img src="/escaperpg/images/ambria/taverne.png" alt="la taverne de l'île de la tortue">
                         <div id="tavlogan">
                             <form action="taverne" method="post">
@@ -174,7 +174,7 @@ $indices = "/escaperpg/includes/indices.php";
                 <?php endif; ?>
             <?php else: ?>
                 <?php if (isset($_POST['don'])): ?>
-                    <?php switch (str_replace($search, $replace, stripslashes($_POST['don']))):
+                    <?php switch (handleSpecialChars($_POST['don'])):
                         case "vieuxtype": ?>
                             <?php if ($_SESSION['ambriapaul']): ?>
                                 <div class="dialogue">
@@ -211,7 +211,7 @@ $indices = "/escaperpg/includes/indices.php";
                                 <p>
                                     Il vous tend une bouteille avec un <span class="mdp">fond de whisky</span> de piètre qualité, à moitié vide.
                                 </p>
-                                <div id="enigme">
+                                <div class="enigme">
                                     <a href="/escaperpg/images/ambria/fonddewhisky.png" rel="lightbox[invent]"><img src="/escaperpg/images/ambria/fonddewhisky.png" alt="un fond de whisky"></a>
                                 </div>
                                 <form action="taverne" method="post">

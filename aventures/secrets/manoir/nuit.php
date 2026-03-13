@@ -56,7 +56,7 @@ $_SESSION['intrusion'] = false;
                     Lorsque vous arrivez dans le hall d'entrée, vous apercevez un petit objet sur le sol.<br>
                     En vous baissant pour le ramasser, vous vous rendez compte qu'il s'agit d'une pièce, manifestement tombée lorsque l'intrus s'est enfui.<br>
                 </p>
-                <div id="enigme">
+                <div class="enigme">
                     <img src="/escaperpg/images/secrets/po.png" alt="pièce avec une pomme">
                 </div>
                 <p>

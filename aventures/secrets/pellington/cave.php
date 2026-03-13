@@ -32,7 +32,7 @@
                     Cependant, un petit éclat de lumière au milieu des braises encore rougeoyantes attire votre regard.<br>
                     <br>
                     Vous écartez les morceaux incandescents et trouvez une nouvelle pièce que vous empochez aussitôt.
-                <div id="enigme">
+                <div class="enigme">
                     <a href="/escaperpg/images/secrets/se.png" rel="lightbox[invent]">
                         <img src="/escaperpg/images/secrets/se.png" alt="pièce avec un serpent">
                     </a>
@@ -71,7 +71,7 @@
                     <input type="submit" name="retour" value="Retour au manoir.">
                 </form>
             <?php else: ?>
-                <div id="enigme">
+                <div class="enigme">
                     <a href="/escaperpg/images/secrets/pellcave.png" rel="lightbox[invent]">
                         <img src="/escaperpg/images/secrets/pellcave.png" alt="cave du docteur Pellington">
                     </a>
@@ -87,7 +87,7 @@
                     <br>
                     Vous déglutissez avec peine et vous approchez pour trouver un mot sur le sol, griffoné à la hâte. Les derniers mots de Pellington :<br>
                 </p>
-                <div id="enigme">
+                <div class="enigme">
                     <a href="/escaperpg/images/secrets/aveux.png" rel="lightbox[invent]">
                         <img src="/escaperpg/images/secrets/aveux.png" alt="les aveux du docteur Pellington">
                     </a>

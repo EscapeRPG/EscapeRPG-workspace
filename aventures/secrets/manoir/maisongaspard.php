@@ -24,7 +24,7 @@
         </nav>
         <div id="txt">
             <?php if (isset($_POST['gaspard'])): ?>
-                <?php if (str_replace($search, $replace, stripslashes($_POST['gaspard'])) == "nourriture"): ?>
+                <?php if (handleSpecialChars($_POST['gaspard']) == "nourriture"): ?>
                     <div class="dialogue">
                         <div class="portrait">
                             <img src="/escaperpg/images/secrets/gaspard.png" alt="gaspard">
@@ -48,7 +48,7 @@
                     unset($_SESSION['intrusion']);
                     ?>
                 <?php else: ?>
-                    <?php switch (str_replace($search, $replace, stripslashes($_POST['gaspard']))):
+                    <?php switch (handleSpecialChars($_POST['gaspard'])):
                         case "pellington": ?>
                             <div class="dialogue">
                                 <div class="portrait">
@@ -291,7 +291,7 @@
                     Il vous tend un petit objet de forme ronde, semblant taillé dans de la pierre.<br>
                     Des lignes s'entrecroisent en un dessin complexe que vous ne parvenez pas à analyser correctement.<br>
                 </p>
-                <div id="enigme">
+                <div class="enigme">
                     <a href="/escaperpg/images/secrets/talisman.png" rel="lightbox[invent]">
                         <img src="/escaperpg/images/secrets/talisman.png" alt="un étrange talisman confié par gaspard">
                     </a>

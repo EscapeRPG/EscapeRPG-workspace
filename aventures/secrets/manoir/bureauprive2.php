@@ -23,10 +23,10 @@
             <?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/aventures/secrets/includes/navInputs.php"; ?>
         </nav>
         <div id="txt">
-            <div id="enigmelieu">
+            <div class="enigmelieu">
                 <?php if (isset($_POST['trappehidden'])) {
                     $_SESSION['trappe'] = true;
-                } elseif (isset($_POST['cadenas']) && (str_replace($search, $replace, stripslashes($_POST['cadenas'])) == "vieillecle")) {
+                } elseif (isset($_POST['cadenas']) && (handleSpecialChars($_POST['cadenas']) == "vieillecle")) {
                     $_SESSION['trappeopen'] = true;
                 }
                 ?>
@@ -68,16 +68,13 @@
                     <input type="submit" name="retour" value="Pas maintenant.">
                 </form>
             <?php elseif (isset($_POST['cadenas'])): ?>
-                <?php if (str_replace($search, $replace, stripslashes($_POST['cadenas'])) == "vieillecle"): ?>
+                <?php if (handleSpecialChars($_POST['cadenas']) == "vieillecle"): ?>
                     <audio src="/escaperpg/sons/secrets/ouverturemanoir.mp3" autoplay></audio>
                     <div id="succespopup">
                         <?php
-                        $nouveausucces = '<img src="/escaperpg/images/succes/secrets/passage.png"><span><u><b>Enquêteur</b></u><br>Découvrir un passage secret dans le bureau privé de l\'oncle William !</span>';
                         $scenario = 'secrets';
-                        $description = 'passage';
-                        $cache = 'oui';
-                        $rarete = 'succesnormal';
-                        include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/succesadd.php";
+                        $nom = 'passage';
+                        include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/succesAdd.php";
                         ?>
                     </div>
                     <p>

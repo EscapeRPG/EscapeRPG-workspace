@@ -20,7 +20,7 @@
         <?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/aventures/ambria/includes/nav-sullivan.php"; ?>
         <div id="txt">
             <?php if (isset($_POST['demander'])): ?>
-                <?php switch (str_replace($search, $replace, stripslashes($_POST['ask']))):
+                <?php switch (handleSpecialChars($_POST['ask'])):
                     case "logan": ?>
                         <p>
                             Haussant le ton, vous demandez à vos hommes s'ils savent où se trouve le jeune mousse, mais vous obtenez des résultats peu satisfaisants.<br>

@@ -6,11 +6,6 @@
 		<script type="text/javascript" src="/escaperpg/lightbox/js/scriptaculous.js?load=effects,builder"></script>
 		<script type="text/javascript" src="/escaperpg/lightbox/js/lightbox.js"></script>
 		<link rel="stylesheet" href="/escaperpg/lightbox/css/lightbox.css" type="text/css" media="screen">
-		
-		<!-- [if lt IE 9]>
-		<script src="http://html5shiv.googlecode.code/svn/trunk/html5.js"></scipt>
-		<![endif]-->
-	   
 		<link rel="stylesheet" href="/escaperpg/aventures/ambria/css/style.css">
 		<meta charset="utf-8">
 		<title>La Pyramide - Le Trésor d'Ambria</title>
@@ -79,13 +74,13 @@
 										</center>
 									';
 								}
-							elseif (isset ($_POST['reponse'])) { echo'<div id="enigmelieu"><img src="/escaperpg/images/ambria/levierreponse.png"></div>'; }
+							elseif (isset ($_POST['reponse'])) { echo'<div class="enigmelieu"><img src="/escaperpg/images/ambria/levierreponse.png"></div>'; }
 							else { echo'<center><form action="pyramide" method="post"><button type="submit" name="indice" class="boutonindice"></button></form></center>'; }
 							$_SESSION['levier'] = true;
 						}
 					elseif (isset ($_POST['suivant']))
 						{
-							switch (str_replace($search, $replace, stripslashes($_POST['sullivan'])))
+							switch (handleSpecialChars($_POST['sullivan']))
 								{
 									case "rassemblelesgars":
 										echo'
@@ -231,12 +226,9 @@
 					elseif (isset ($_POST['suivant2']))
 						{
 							echo'<div id="succespopup">';
-							$nouveausucces = '<img src="/escaperpg/images/succes/ambria/tresor.png"><span><u><b>Au bout du chemin</b></u><br>Mettre la main sur le trésor d\'Ambria</span>';
 							$scenario = 'ambria';
-							$description = 'trésor';
-							$cache = 'oui';
-							$rarete = 'succesbronze';
-							include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/succesadd.php";
+							$nom = 'tresor';
+							include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/succesAdd.php";
 							echo'</div>';
 							
 							echo'
@@ -533,12 +525,9 @@
 					elseif (isset ($_POST['mutinerie']))
 						{
 							echo'<div id="succespopup">';
-							$nouveausucces = '<img src="/escaperpg/images/succes/ambria/mutinerie.png"><span><u><b>Mutin</b></u><br>En tant que Logan, fomenter une mutinerie contre le capitaine</span>';
 							$scenario = 'ambria';
-							$description = 'mutinerie';
-							$cache = 'oui';
-							$rarete = 'succesbronze';
-							include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/succesadd.php";
+							$nom = 'mutinerie';
+							include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/succesAdd.php";
 							echo'</div>';
 							
 							echo'

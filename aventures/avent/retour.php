@@ -136,7 +136,7 @@
                     - Une fois que c'est fait, n'oubliez pas de mettre un zeste de concentré de flocons de neige.<br>
                     - Enfin, mélangez un peu de lait avec du sucre d'orge liquide et faites lentement couler le tout dans le réservoir. Le sucre d'orge est sur l'étagère du haut, un peu à l'écart.
                 </p>
-                <div id="enigmelieu">
+                <div class="enigmelieu">
                     <img src="/escaperpg/images/avent/etagerecarburant.png" alt="une étagère pleine de produits fabuleux">
                 </div>
                 <p>
@@ -157,7 +157,7 @@
                 $_SESSION['retour'] = true;
                 ?>
             <?php elseif (isset($_POST['take'])): ?>
-                <?php if (str_replace($search, $replace, stripslashes($_POST['prendre'])) == "pareaudecollage"): ?>
+                <?php if (handleSpecialChars($_POST['prendre']) == "pareaudecollage"): ?>
                     <audio src="/escaperpg/sons/avent/essence.mp3" autoplay></audio>
                     <p>
                         Vous ramenez le nécessaire à votre grand-père qui les met dans une machine.<br>
@@ -189,7 +189,7 @@
                         - Une fois que c'est fait, n'oubliez pas de mettre un zeste de concentré de flocons de neige.<br>
                         - Enfin, mélangez un peu de lait avec du sucre d'orge liquide et faites lentement couler le tout dans le réservoir. Le sucre d'orge est sur l'étagère du haut, un peu à l'écart.<br>
                         <br>
-                    <div id="enigmelieu">
+                    <div class="enigmelieu">
                         <img src="/escaperpg/images/avent/etagerecarburant.png" alt="une étagère pleine de produits fabuleux">
                     </div>
                     <br>
@@ -217,7 +217,7 @@
                     <br>
                     Au fond de la boîte se trouve un petit papier plié en deux. Vous le sortez et l'ouvrez.
                 </p>
-                <div id="enigmelieu">
+                <div class="enigmelieu">
                     <img src="/escaperpg/images/avent/lettreperenoel.png" alt="une lettre laissée par le Père Noël">
                 </div>
                 <br>

@@ -20,7 +20,7 @@
         <?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/aventures/lastparty/includes/nav.php"; ?>
         <div id="txt">
             <?php if (isset($_SESSION['photos'])): ?>
-                <div id="enigmelieu">
+                <div class="enigmelieu">
                     <img src="/escaperpg/images/lastparty/appartement.png" alt="appartement">
                     <form action="appareilphoto" method="post">
                         <button type="submit" id="appareil"></button>
@@ -31,7 +31,7 @@
                 </p>
                 <?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/resetIndices.php"; ?>
             <?php else: ?>
-                <div id="enigmelieu">
+                <div class="enigmelieu">
                     <img src="/escaperpg/images/lastparty/appartement.png" alt="appartement">
                     <form action="ordinateur" method="post"><button type="submit" id="ordi"></button></form>
                     <?php

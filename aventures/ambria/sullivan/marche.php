@@ -20,7 +20,7 @@
         <?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/aventures/ambria/includes/nav-sullivan.php"; ?>
         <div id="txt">
             <?php if (isset($_POST['bernard'])): ?>
-                <?php if (str_replace($search, $replace, stripslashes($_POST['bernard'])) == "bernard"): ?>
+                <?php if (handleSpecialChars($_POST['bernard']) == "bernard"): ?>
                     <div class="dialogue">
                         <div class="portrait">
                             <img src="/escaperpg/images/ambria/bernard.png" alt="bernard">

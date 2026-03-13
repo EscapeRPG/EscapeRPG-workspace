@@ -23,7 +23,7 @@
         </nav>
         <div id="txt">
             <?php if (isset($_POST['thoughts'])): ?>
-                <?php switch (str_replace($search, $replace, stripslashes($_POST['thoughts']))):
+                <?php switch (handleSpecialChars($_POST['thoughts'])):
                     case "oncle": ?>
                         <p>
                             Votre oncle possède un shoggoth dans son corps qui pourrait chercher à s'échapper dans la nature !

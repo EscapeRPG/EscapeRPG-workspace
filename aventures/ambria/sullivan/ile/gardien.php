@@ -6,11 +6,6 @@
 		<script type="text/javascript" src="/escaperpg/lightbox/js/scriptaculous.js?load=effects,builder"></script>
 		<script type="text/javascript" src="/escaperpg/lightbox/js/lightbox.js"></script>
 		<link rel="stylesheet" href="/escaperpg/lightbox/css/lightbox.css" type="text/css" media="screen">
-		
-		<!-- [if lt IE 9]>
-		<script src="http://html5shiv.googlecode.code/svn/trunk/html5.js"></scipt>
-		<![endif]-->
-	   
 		<link rel="stylesheet" href="/escaperpg/aventures/ambria/css/style.css">
 		<meta charset="utf-8">
 		<title>Le Gardien - Le Trésor d'Ambria</title>
@@ -30,7 +25,7 @@
 				<?php
 					if (isset ($_POST['logan']))
 						{
-							switch (str_replace($search, $replace, stripslashes($_POST['attention'])))
+							switch (handleSpecialChars($_POST['attention']))
 								{
 									case "ilabouge":
 										echo'
@@ -158,12 +153,9 @@
 					elseif (isset ($_POST['1golem3']) OR isset ($_POST['2golem3']) OR isset ($_POST['3golem3']) OR isset ($_POST['4golem3']) OR isset ($_POST['5golem3']))
 						{
 							echo'<div id="succespopup">';
-							$nouveausucces = '<img src="/escaperpg/images/succes/ambria/gardien.png" alt="gardien"><span><u><b>Défense obsolète !</b></u><br>Vaincre le terrible gardien de la cité</span>';
 							$scenario = 'ambria';
-							$description = 'gardien';
-							$cache = 'oui';
-							$rarete = 'succesnormal';
-							include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/succesadd.php";
+							$nom = 'gardien';
+							include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/succesAdd.php";
 							echo'</div>';
 							
 							if (isset ($_POST['4golem3']))
@@ -244,7 +236,7 @@
 					{
 						echo'
 							<audio src="/escaperpg/sons/ambria/gardien.mp3" autoplay></audio>
-							<div id="enigmelieu">
+							<div class="enigmelieu">
 								<img src="/escaperpg/images/ambria/golem3sullivan.png">
 								<div id="golem3gemme1">
 									<form action="gardien" method="post">
@@ -339,7 +331,7 @@
 					}
 					elseif (isset ($_POST['surveiller']))
 						{
-							switch (str_replace($search, $replace, stripslashes($_POST['ecouter'])))
+							switch (handleSpecialChars($_POST['ecouter']))
 								{
 									case "maintenant":
 										echo'
@@ -395,7 +387,7 @@
 						{
 							echo'
 								<audio src="/escaperpg/sons/ambria/gardien.mp3" autoplay></audio>
-								<div id="enigmelieu">
+								<div class="enigmelieu">
 									<img src="/escaperpg/images/ambria/golem2sullivan.png">
 								</div>
 								<p>
@@ -561,7 +553,7 @@
 						{
 							echo'
 								<audio src="/escaperpg/sons/ambria/gardien.mp3" autoplay></audio>
-								<div id="enigmelieu">
+								<div class="enigmelieu">
 									<img src="/escaperpg/images/ambria/golem1sullivan.png">
 									<div id="golem1gemme1">
 										<form action="gardien" method="post">

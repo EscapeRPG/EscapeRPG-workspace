@@ -25,13 +25,13 @@
         <div id="txt">
             <?php
             if (isset($_POST['fouille'])): ?>
-                <?php if (str_replace($search, $replace, stripslashes($_POST['fouille'])) == "barbiturique"): ?>
+                <?php if (handleSpecialChars($_POST['fouille']) == "barbiturique"): ?>
                     <p>
                         En fouillant un peu, vous finissez par trouver des feuilles traitant de barbituriques et autres narcotiques.<br>
                         <br>
                         Sur l'une d'elles, vous trouvez une recette pour composer un traitement contrant leurs effets.
                     </p>
-                    <div id="enigme">
+                    <div class="enigme">
                         <a href="/escaperpg/images/secrets/recette.png" rel="lightbox[invent]">
                             <img src="/escaperpg/images/secrets/recette.png" alt="une recette indiquant comment fabriquer un médicament">
                         </a>
@@ -68,7 +68,7 @@
                     <input type="submit" name="fouiller" value="Fouiller.">
                 </form>
             <?php elseif (isset($_SESSION['recette'])): ?>
-                <div id="enigme">
+                <div class="enigme">
                     <a href="/escaperpg/images/secrets/pelldeuxieme.png" rel="lightbox[invent]">
                         <img src="/escaperpg/images/secrets/pelldeuxieme.png" alt="deuxième étage de la maison du docteur Pellington">
                     </a>
@@ -79,7 +79,7 @@
                     Vous trouvez tout un tas de notes à propos de ses travaux mais elles ne vous semblent d'aucune utilité.
                 </p>
             <?php else: ?>
-                <div id="enigme">
+                <div class="enigme">
                     <a href="/escaperpg/images/secrets/pelldeuxieme.png" rel="lightbox[invent]">
                         <img src="/escaperpg/images/secrets/pelldeuxieme.png" alt="deuxième étage de la maison du docteur Pellington">
                     </a>

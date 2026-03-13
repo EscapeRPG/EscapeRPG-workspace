@@ -7,3 +7,12 @@
 
 <?php
 include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/incmembers.php";
+
+$nomcompte = isset($_SESSION['loggedin']) && $_SESSION['loggedin'] ? htmlspecialchars($_SESSION['idcompte']) : null;
+
+if ($nomcompte !== null) {
+    $user = $conn->prepare('SELECT pk FROM 0membres WHERE id = ?');
+    $user->execute([$nomcompte]);
+    $idconnected = $user->fetch();
+    $idjoueur = $idconnected['pk'];
+}

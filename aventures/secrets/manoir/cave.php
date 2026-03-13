@@ -24,7 +24,7 @@
         </nav>
         <div id="txt">
             <?php if (isset($_POST['cave'])):
-                switch (str_replace($search, $replace, stripslashes($_POST['cave']))):
+                switch (handleSpecialChars($_POST['cave'])):
                     case "fuite": ?>
                         <p>
                             Vous inspectez les murs de la cave mais vous ne remarquez aucune trace d'humidité.
@@ -45,7 +45,7 @@
                             Au bout d'un moment, vous finissez par sortir quelques morceaux de tableau calcinés que vous essayez de rassembler.
                             Malheureusement, votre oncle a détruit la majeure partie de l'œuvre et vous ne pouvez pas compter le nombre de personnages se trouvant dessus.
                         </p>
-                        <div id="enigme">
+                        <div class="enigme">
                             <a href="/escaperpg/images/secrets/tableaubrule.png" rel="lightbox[invent]">
                                 <img src="/escaperpg/images/secrets/tableaubrule.png" alt="les morceaux d'un tableau brûlé">
                             </a>

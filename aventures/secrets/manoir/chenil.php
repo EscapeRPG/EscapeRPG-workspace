@@ -54,15 +54,12 @@
                 $_SESSION['chiensemp'] = true;
                 ?>
             <?php elseif (isset($_SESSION['chiensemp']) || isset($_SESSION['chiensmalades'])): ?>
-                <?php if (isset($_POST['antidote']) && str_replace($search, $replace, stripslashes($_POST['antidote'])) == "analeptique"): ?>
+                <?php if (isset($_POST['antidote']) && handleSpecialChars($_POST['antidote']) == "analeptique"): ?>
                     <div id="succespopup">
                         <?php
-                        $nouveausucces = '<img src="/escaperpg/images/succes/secrets/chiens.png"><span><u><b>Vétérinaire</b></u><br>Sauver les chiens de l\'empoisonnement !</span>';
                         $scenario = 'secrets';
-                        $description = 'chiens';
-                        $cache = 'oui';
-                        $rarete = 'succesgold';
-                        include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/succesadd.php";
+                        $nom = 'chiens';
+                        include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/succesAdd.php";
                         ?>
                     </div>
                     <p>

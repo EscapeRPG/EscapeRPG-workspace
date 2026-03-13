@@ -29,7 +29,7 @@
                 </p>
             <?php else: ?>
                 <?php if (isset($_POST['salon'])): ?>
-                    <?php if (str_replace($search, $replace, stripslashes($_POST['salon'])) == "tableau"): ?>
+                    <?php if (handleSpecialChars($_POST['salon']) == "tableau"): ?>
                         <p>
                             Vous observez autour de vous, en quête du fameux tableau décrit dans la note de Pellington, mais il semblerait qu'il ait été décroché.<br>
                             Vous vous souvenez en effet qu'il y avait un tableau sur la cheminée, mais il ne reste maintenant plus qu'un espace vide où il devait être accroché auparavant. <br>

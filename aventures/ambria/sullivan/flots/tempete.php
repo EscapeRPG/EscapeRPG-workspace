@@ -158,7 +158,8 @@
                     Le mât craque de plus en plus.
                 </p>
                 <form action="tempete" method="post">
-                    <input list="notesListe" name="vigie"><input type="submit" name="vague" value="L'écouter.">
+                    <input list="notesListe" name="vigie">
+                    <input type="submit" name="vague" value="L'écouter.">
                 </form>
                 <?php
                 $_SESSION['sullivanconfiance'] -= 40;
@@ -193,7 +194,7 @@
                 }
                 ?>
             <?php elseif (isset($_POST['vague'])): ?>
-                <?php switch (str_replace($search, $replace, stripslashes($_POST['vigie']))):
+                <?php switch (handleSpecialChars($_POST['vigie'])):
                     case "scelerateababord": ?>
                         <audio src="/escaperpg/sons/ambria/scelerate.mp3" autoplay></audio>
                         <p>
@@ -424,7 +425,7 @@
                     </p>
                 <?php endif; ?>
                 <?php if (!isset($_SESSION['recifsetape5'])): ?>
-                    <div id="enigmelieu">
+                    <div class="enigmelieu">
                         <img src="/escaperpg/images/ambria/barrebateau.png" alt="la barre du bateau">
                         <form action="tempete" method="post">
                             <button name="1barre" id="barre1"></button>
@@ -448,12 +449,9 @@
             <?php elseif (isset($_POST['tempetefin'])): ?>
                 <div id="succespopup">
                     <?php
-                    $nouveausucces = '<img src="/escaperpg/images/succes/ambria/tempete.png"><span><u><b>Un mauvais temps qui s\'annonce</b></u><br>Affronter la tempête</span>';
                     $scenario = 'ambria';
-                    $description = 'tempête';
-                    $cache = 'oui';
-                    $rarete = 'succesargent';
-                    include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/succesadd.php";
+                    $nom = 'tempete';
+                    include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/succesAdd.php";
                     ?>
                 </div>
 
@@ -571,12 +569,9 @@
                 <?php else: ?>
                     <div id="succespopup">
                         <?php
-                        $nouveausucces = '<img src="/escaperpg/images/succes/ambria/tempeteparfaite.png"><span><u><b>Duo de choc !</b></u><br>Se sortir de la tempête sans subir de dégât !</span>';
                         $scenario = 'ambria';
-                        $description = 'tempêteparfaite';
-                        $cache = 'oui';
-                        $rarete = 'succesgold';
-                        include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/succesadd.php";
+                        $nom = 'tempeteparfaite';
+                        include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/succesAdd.php";
                         ?>
                     </div>
 
@@ -614,12 +609,9 @@
             <?php else: ?>
                 <div id="succespopup">
                     <?php
-                    $nouveausucces = '<img src="/escaperpg/images/succes/ambria/cap.png"><span><u><b>Droit vers l\'horizon !</b></u><br>Trouver un cap pour le Surgisseur des Tempêtes</span>';
                     $scenario = 'ambria';
-                    $description = 'cap';
-                    $cache = 'non';
-                    $rarete = 'succesbronze';
-                    include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/succesadd.php";
+                    $nom = 'cap';
+                    include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/succesAdd.php";
                     ?>
                 </div>
 
