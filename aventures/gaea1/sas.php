@@ -160,8 +160,9 @@
 						<div class="bulleperso2">
 							<p>
 								Envoie-leur un message :
-								<?= ($_SESSION['feminin'] ? 'commandante' : 'commandant').' '.htmlspecialchars($_SESSION['pjprenom']).' '.htmlspecialchars(strtoupper($_SESSION['pjnom'])) ?>, du Seeker,
-								ayant intercepté votre appel de détresse. Quelle est la situation ?
+								<?= ($_SESSION['feminin'] ? 'commandante' : 'commandant').' '.htmlspecialchars($_SESSION['pjprenom']).' '.htmlspecialchars(strtoupper($_SESSION['pjnom'])) ?>,
+								du Seeker, ayant intercepté votre appel de détresse.<br>
+								Quelle est la situation ?
 							</p>
 						</div>
 

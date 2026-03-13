@@ -20,17 +20,11 @@
 			<?php if (isset($_POST['new'])): ?>
 				<div id="succespopup">
 					<?php
-						$nouveausucces = '<img src="/escaperpg/images/succes/general/debut.png"><span><u><b>Se lancer dans l\'aventure</b></u><br>Commencer une aventure pour la première fois</span>';
 						$scenario = 'general';
-						$nom = 'début';
-						$cache = 'non';
-						$rarete = 'succesnormal';
+						$nom = 'debut';
 						include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/succesAdd.php";
-						$nouveausucces = '<img src="/escaperpg/images/succes/gaea1/debut.png"><span><u><b>Dérive spatiale</b></u><br>Lancer l\'aventure pour la première fois</span>';
 						$scenario = 'gaea1';
-						$nom = 'début';
-						$cache = 'non';
-						$rarete = 'succesnormal';
+						$nom = 'debut';
 						include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/succesAdd.php";
 					?>
 				</div>
@@ -307,11 +301,8 @@
 			<?php elseif (isset ($_POST['feminin'])): ?>
 				<div id="succespopup">
 					<?php
-						$nouveausucces = '<img src="/escaperpg/images/succes/gaea1/personnage.png"><span><u><b>Carte d\'identité</b></u><br>Créer son personnage pour l\'aventure</span>';
 						$scenario = 'gaea1';
 						$nom = 'personnage';
-						$cache = 'non';
-						$rarete = 'succesnormal';
 						include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/succesAdd.php";
 					?>
 				</div>
@@ -343,11 +334,8 @@
 			<?php elseif (isset ($_POST['masculin'])): ?>
 				<div id="succespopup">
 					<?php
-						$nouveausucces = '<img src="/escaperpg/images/succes/gaea1/personnage.png"><span><u><b>Carte d\'identité</b></u><br>Créer son personnage pour l\'aventure</span>';
 						$scenario = 'gaea1';
 						$nom = 'personnage';
-						$cache = 'non';
-						$rarete = 'succesnormal';
 						include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/succesAdd.php";
 					?>
 				</div>

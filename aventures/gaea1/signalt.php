@@ -24,11 +24,8 @@
 					<?php if ($_POST['onde'] == 0 AND $_POST['amplitude'] == 0): ?>
 						<div id="succespopup">
 							<?php
-								$nouveausucces = '<img src="/escaperpg/images/succes/gaea1/signal.png"><span><u><b>Expert·e en communications</b></u><br>Intercepter et nettoyer le signal de détresse</span>';
 								$scenario = 'gaea1';
 								$nom = 'signal';
-								$cache = 'non';
-								$rarete = 'succesbronze';
 								include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/succesAdd.php";
 							?>
 						</div>

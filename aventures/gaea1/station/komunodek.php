@@ -88,11 +88,8 @@ $_SESSION['plancurrent'] = "e"; ?>
                 <?php if ($_SESSION['compilationterminee'] || ($_POST['schema1'] == 237) && ($_POST['schema2'] == 555) && ($_POST['schema3'] == 340)): ?>
                     <div id="succespopup">
                         <?php
-                        $nouveausucces = '<img src="/escaperpg/images/succes/gaea1/traducteur.png"><span><u><b>Expert·e en langues</b></u><br>Créer un traducteur pour le langage de GAEA-I</span>';
                         $scenario = 'gaea1';
                         $nom = 'traducteur';
-                        $cache = 'non';
-                        $rarete = 'succesargent';
                         include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/succesAdd.php";
                         ?>
                     </div>
@@ -190,11 +187,8 @@ $_SESSION['plancurrent'] = "e"; ?>
                 <?php if (handleSpecialChars($_POST['identifiant']) == "ahyrdxbp718" && handleSpecialChars($_POST['motdepasse']) == "gaeaikomunthyrd"): ?>
                     <div id="succespopup">
                         <?php
-                        $nouveausucces = '<img src="/escaperpg/images/succes/gaea1/hacking.png"><span><u><b>Expert·e en hacking</b></u><br>Se connecter au terminal du pont de commandement</span>';
-                        $scenario = 'gaea1';
+                       $scenario = 'gaea1';
                         $nom = 'hacking';
-                        $cache = 'non';
-                        $rarete = 'succesnormal';
                         include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/succesAdd.php";
                         ?>
                     </div>
@@ -247,11 +241,8 @@ $_SESSION['plancurrent'] = "e"; ?>
                 <?php elseif (handleSpecialChars($_POST['motdepasse']) == "0ff1s3r713"): ?>
                     <div id="succespopup">
                         <?php
-                        $nouveausucces = '<img src="/escaperpg/images/succes/gaea1/offiser.png"><span><u><b>Qui ne tente rien n\'a rien...</b></u><br>Essayer de se connecter au terminal avec le mot de passe d\'un autre</span>';
                         $scenario = 'gaea1';
                         $nom = 'offiser';
-                        $cache = 'oui';
-                        $rarete = 'succesbronze';
                         include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/succesAdd.php";
                         if ($_SESSION['loggedin']) {
                             echo '<script src="/escaperpg/scripts/succescount.js"></script>';

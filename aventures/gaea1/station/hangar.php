@@ -149,11 +149,8 @@ $_SESSION['plancurrent'] = "q"; ?>
             <?php else: ?>
                 <div id="succespopup">
                     <?php
-                    $nouveausucces = '<img src="/escaperpg/images/succes/gaea1/atterrir.png"><span><u><b>Appontage en douceur</b></u><br>Réussir à apponter sur la station</span>';
                     $scenario = 'gaea1';
                     $nom = 'atterrir';
-                    $cache = 'non';
-                    $rarete = 'succesnormal';
                     include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/succesAdd.php";
                     ?>
                 </div>
