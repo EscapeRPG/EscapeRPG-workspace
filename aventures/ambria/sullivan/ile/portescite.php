@@ -6,7 +6,8 @@
 		<script type="text/javascript" src="/escaperpg/lightbox/js/scriptaculous.js?load=effects,builder"></script>
 		<script type="text/javascript" src="/escaperpg/lightbox/js/lightbox.js"></script>
 		<link rel="stylesheet" href="/escaperpg/lightbox/css/lightbox.css" type="text/css" media="screen">
-		<link rel="stylesheet" href="/escaperpg/aventures/ambria/css/style.css">
+    <?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/styleAventures.php"; ?>
+    <?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/aventures/ambria/includes/stylesAmbria.php"; ?>
 		<meta charset="utf-8">
 		<title>Les Portes de la Cité - Le Trésor d'Ambria</title>
 	</head>
@@ -15,13 +16,7 @@
 		<?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/header.php"; ?>
 		<div id="banniere"><img src="/escaperpg/images/ambria/tresorambriamini.png" alt="le trésor d'ambria"></div>
 		<main>
-			<nav>
-				<a href="/escaperpg/images/ambria/sullivanmasonmini.png" rel="lightbox[sullivan]" title="Sullivan Mason"><img src="/escaperpg/images/ambria/sullivanmasonmini.png" alt="capitaine sullivan mason"></a>
-				<div id="inventairefooter"><input type="submit" value="INVENTAIRE"></div>
-				<div id="motsdepasse"><input type="submit" value="NOTES"></div>
-				<a href="/escaperpg/aventures/ambria/save/save.php" target="_blank" rel="noreferrer"><input type="submit" name="save" value="SAUVEGARDER"></a>
-				<?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/aventures/ambria/sullivan/includes/navigationile.php"; ?>
-			</nav>
+        <?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/aventures/ambria/includes/nav-sullivan.php"; ?>
 			<div id="txt">
 				<?php
 					if (isset ($_POST['porteenigme']) OR $_SESSION['portesciteenigme'])
@@ -71,7 +66,7 @@
 									echo'
 										<div id="indice">
 											Il existe forcément un endroit sur cette île où vous pourriez trouver un traducteur pour ce dialecte.<br>
-											Vous êtes certain d\'avoir remarqué une partie des symboles lorsque vous avez traversé l\'antichambre avec la mousse phosphorescente.
+											Vous êtes certain d'avoir remarqué une partie des symboles lorsque vous avez traversé l'antichambre avec la mousse phosphorescente.
 										</div>
 										<center>
 											<form action="portescite" method="post">
@@ -85,8 +80,8 @@
 									echo'
 										<div id="indice">
 											Il existe forcément un endroit sur cette île où vous pourriez trouver un traducteur pour ce dialecte.<br>
-											Vous êtes certain d\'avoir remarqué une partie des symboles lorsque vous avez traversé l\'antichambre avec la mousse phosphorescente.<br>
-											Revenez dans les grottes et essayez de trouver le moyen d\'observer correctement la mousse.
+											Vous êtes certain d'avoir remarqué une partie des symboles lorsque vous avez traversé l'antichambre avec la mousse phosphorescente.<br>
+											Revenez dans les grottes et essayez de trouver le moyen d'observer correctement la mousse.
 										</div>
 										<center>
 											<form action="portescite" method="post">
@@ -99,8 +94,8 @@
 								{
 									echo'
 										<div class="reponse">
-											Une fois le traducteur obtenu <i>- et avec l\'aide de Logan -</i> le message indique :<br>
-											"L\'oiseau vole au plus haut. Le serpent se repose à l\'ombre. Le dragon veille sur la cité."
+											Une fois le traducteur obtenu <i>- et avec l'aide de Logan -</i> le message indique :<br>
+											"L'oiseau vole au plus haut. Le serpent se repose à l'ombre. Le dragon veille sur la cité."
 										</div>
 									';
 								}
@@ -140,9 +135,9 @@
 							echo'
 								<script src="/escaperpg/scripts/inventaireadd.js"></script>
 								<p>
-									Jake n\'étant pas avec vous, vous ne pouvez compter sur lui pour vous traduire la tablette.
-									De toute façon, le langage utilisé ici ne ressemble à aucun que vous n\'ayez vu auparavant,
-									il va donc vous falloir trouver le moyen d\'en comprendre son sens si vous espérez pouvoir continuer.
+									Jake n'étant pas avec vous, vous ne pouvez compter sur lui pour vous traduire la tablette.
+									De toute façon, le langage utilisé ici ne ressemble à aucun que vous n'ayez vu auparavant,
+									il va donc vous falloir trouver le moyen d'en comprendre son sens si vous espérez pouvoir continuer.
 								</p>
 								<center>
 									<form action="portescite" method="post">
@@ -157,15 +152,15 @@
 							echo'
 								<audio src="/escaperpg/sons/ambria/cite.mp3" autoplay></audio>
 								<p>
-									Délaissant l\'antichambre derrière vous, vous reprenez le chemin et finissez par apercevoir la lumière caractéristique du soleil, à quelques mètres.<br>
-									Pressant le pas, vous débouchez sur une clairière cernée d\'une haute muraille naturelle.<br>
+									Délaissant l'antichambre derrière vous, vous reprenez le chemin et finissez par apercevoir la lumière caractéristique du soleil, à quelques mètres.<br>
+									Pressant le pas, vous débouchez sur une clairière cernée d'une haute muraille naturelle.<br>
 									<br>
-									Face à vous se dresse la porte la plus imposante qu\'il vous ait été donné de voir de votre vie.
-									À coup sûr, il s\'agit là du portail d\'entrée d\'Ambria !<br>
+									Face à vous se dresse la porte la plus imposante qu'il vous ait été donné de voir de votre vie.
+									À coup sûr, il s'agit là du portail d'entrée d'Ambria !<br>
 									<br>
-									Logan et les autres semblent être non loin, mais une muraille vous sépare. Ils semblent avoir des choses à voir de leur côté également, d\'après ce que vous pouvez entendre.<br>
+									Logan et les autres semblent être non loin, mais une muraille vous sépare. Ils semblent avoir des choses à voir de leur côté également, d'après ce que vous pouvez entendre.<br>
 									<br>
-									Vous vous avancez vers elle et ne voyez aucune poignée permettant de l\'ouvrir.
+									Vous vous avancez vers elle et ne voyez aucune poignée permettant de l'ouvrir.
 									Tentant de la pousser, celle-ci se révèle bien trop imposante pour que vous ne puissiez y faire quoi que ce soit, même aidé des hommes qui vous accompagnent.<br>
 									<br>
 									Vous prenez alors un peu de recul pour essayer de voir si quoi que ce soit pourrait vous aider à franchir ce dernier obstacle.

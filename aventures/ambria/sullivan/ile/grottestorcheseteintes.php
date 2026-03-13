@@ -6,7 +6,8 @@
 		<script type="text/javascript" src="/escaperpg/lightbox/js/scriptaculous.js?load=effects,builder"></script>
 		<script type="text/javascript" src="/escaperpg/lightbox/js/lightbox.js"></script>
 		<link rel="stylesheet" href="/escaperpg/lightbox/css/lightbox.css" type="text/css" media="screen">
-		<link rel="stylesheet" href="/escaperpg/aventures/ambria/css/style.css">
+    <?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/styleAventures.php"; ?>
+    <?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/aventures/ambria/includes/stylesAmbria.php"; ?>
 		<meta charset="utf-8">
 		<title>Les Grottes - Le Trésor d'Ambria</title>
 	</head>
@@ -15,12 +16,7 @@
 		<?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/header.php"; ?>
 		<div id="banniere"><img src="/escaperpg/images/ambria/tresorambriamini.png" alt="le trésor d'ambria"></div>
 		<main>
-			<nav>
-				<a href="/escaperpg/images/ambria/sullivanmasonmini.png" rel="lightbox[sullivan]" title="Sullivan Mason"><img src="/escaperpg/images/ambria/sullivanmasonmini.png" alt="capitaine sullivan mason"></a>
-				<div id="inventairefooter"><input type="submit" value="INVENTAIRE"></div>
-				<div id="motsdepasse"><input type="submit" value="NOTES"></div>
-				<a href="/escaperpg/aventures/ambria/save/save.php" target="_blank" rel="noreferrer"><input type="submit" name="save" value="SAUVEGARDER"></a>
-			</nav>
+        <?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/aventures/ambria/includes/nav-sullivan.php"; ?>
 			<div id="txt">
 				<?php
 					echo'
@@ -29,10 +25,10 @@
 							<img src="/escaperpg/images/ambria/grottestorcheseteintes.png">
 						</div>
 						<p>
-							Désirant profiter pleinement du spectacle offert par la mousse, vous donnez l\'ordre d\'éteindre les torches.<br>
-							S\'exécutant, ils ne peuvent retenir un son admiratif devant la beauté féerique du tableau qui s\'offre alors.<br>
+							Désirant profiter pleinement du spectacle offert par la mousse, vous donnez l'ordre d'éteindre les torches.<br>
+							S'exécutant, ils ne peuvent retenir un son admiratif devant la beauté féerique du tableau qui s'offre alors.<br>
 							<br>
-							Éclairant la pièce d\'une douce lueur vert-bleu, la mousse révèle un tout nouveau paysage dans cette obscurité, s\'étendant des parois jusqu\'au plafond dans un enchevêtrement compliqué.
+							Éclairant la pièce d'une douce lueur vert-bleu, la mousse révèle un tout nouveau paysage dans cette obscurité, s'étendant des parois jusqu'au plafond dans un enchevêtrement compliqué.
 						</p>
 					';
 					if (isset ($_POST['indice']))
@@ -53,7 +49,7 @@
 							echo'
 								<div id="indice">
 									Observez bien les motifs tracés par la mousse. Ne vous rappellent-ils par quelque chose ?<br>
-									Il s\'agit d\'une partie de la traduction du langage ambrien.
+									Il s'agit d'une partie de la traduction du langage ambrien.
 								</div>
 								<center>
 									<form action="grottestorcheseteintes" method="post">
@@ -67,7 +63,7 @@
 							echo'
 								<div id="indice">
 									Observez bien les motifs tracés par la mousse. Ne vous rappellent-ils par quelque chose ?<br>
-									Il s\'agit d\'une partie de la traduction du langage ambrien.<br>
+									Il s'agit d'une partie de la traduction du langage ambrien.<br>
 									Logan aura peut-être accès à la seconde partie ?
 								</div>
 								<center>
@@ -81,7 +77,7 @@
 						{
 							echo'
 								<div class="reponse">
-									Discutez avec l\'autre joueur pour constituer l\'alphabet qui vous permettra de traduire le message sur les portes de la cité.
+									Discutez avec l'autre joueur pour constituer l'alphabet qui vous permettra de traduire le message sur les portes de la cité.
 								</div>
 							';
 						}

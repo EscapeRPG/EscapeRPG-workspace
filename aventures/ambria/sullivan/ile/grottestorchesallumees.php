@@ -6,7 +6,8 @@
 		<script type="text/javascript" src="/escaperpg/lightbox/js/scriptaculous.js?load=effects,builder"></script>
 		<script type="text/javascript" src="/escaperpg/lightbox/js/lightbox.js"></script>
 		<link rel="stylesheet" href="/escaperpg/lightbox/css/lightbox.css" type="text/css" media="screen">
-		<link rel="stylesheet" href="/escaperpg/aventures/ambria/css/style.css">
+    <?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/styleAventures.php"; ?>
+    <?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/aventures/ambria/includes/stylesAmbria.php"; ?>
 		<meta charset="utf-8">
 		<title>Les Grottes - Le Trésor d'Ambria</title>
 	</head>
@@ -15,13 +16,7 @@
 		<?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/header.php"; ?>
 		<div id="banniere"><img src="/escaperpg/images/ambria/tresorambriamini.png" alt="le trésor d'ambria"></div>
 		<main>
-			<nav>
-				<a href="/escaperpg/images/ambria/sullivanmasonmini.png" rel="lightbox[sullivan]" title="Sullivan Mason"><img src="/escaperpg/images/ambria/sullivanmasonmini.png" alt="capitaine sullivan mason"></a>
-				<div id="inventairefooter"><input type="submit" value="INVENTAIRE"></div>
-				<div id="motsdepasse"><input type="submit" value="NOTES"></div>
-				<a href="/escaperpg/aventures/ambria/save/save.php" target="_blank" rel="noreferrer"><input type="submit" name="save" value="SAUVEGARDER"></a>
-				<?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/aventures/ambria/sullivan/includes/navigationile.php"; ?>
-			</nav>
+        <?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/aventures/ambria/includes/nav-sullivan.php"; ?>
 			<div id="txt">
 				<?php
 					if ($_SESSION['portescite'])
@@ -32,8 +27,8 @@
 									<img src="/escaperpg/images/ambria/grottestorchesallumees.png">
 								</div>
 								<p>
-									Vous revenez dans l\'antichambre où pousse l\'étonnante mousse bioluminescente.
-									Avec vos torches, vous essayer de l\'observer de près et constatez que certains endroits semblent luire plus fortement,
+									Vous revenez dans l'antichambre où pousse l'étonnante mousse bioluminescente.
+									Avec vos torches, vous essayer de l'observer de près et constatez que certains endroits semblent luire plus fortement,
 									mais la lumière que vous émettez est trop puissante pour vraiment distinguer quoi que ce soit.<br>
 									<br>
 									Cette mousse pourrait-elle vous apporter quelque chose ?
@@ -43,7 +38,7 @@
 								{
 									echo'
 										<div id="indice">
-											Cette mousse n\'est réellement bioluminescente que si la pièce est plongée dans le noir.
+											Cette mousse n'est réellement bioluminescente que si la pièce est plongée dans le noir.
 										</div>
 										<center>
 											<form action="grottestorchesallumees" method="post">
@@ -56,7 +51,7 @@
 								{
 									echo'
 										<div id="indice">
-											Cette mousse n\'est réellement bioluminescente que si la pièce est plongée dans le noir.<br>
+											Cette mousse n'est réellement bioluminescente que si la pièce est plongée dans le noir.<br>
 											Essayez de trouver un moyen pour éteindre vos torches.
 										</div>
 										<center>
@@ -70,9 +65,9 @@
 								{
 									echo'
 										<div id="indice">
-											Cette mousse n\'est réellement bioluminescente que si la pièce est plongée dans le noir.<br>
+											Cette mousse n'est réellement bioluminescente que si la pièce est plongée dans le noir.<br>
 											Essayez de trouver un moyen pour éteindre vos torches.<br>
-											N\'oubliez pas qu\'il faut bien observer tous les éléments de cette page pour trouver la solution.
+											N'oubliez pas qu'il faut bien observer tous les éléments de cette page pour trouver la solution.
 										</div>
 										<center>
 											<form action="grottestorchesallumees" method="post">
@@ -85,7 +80,7 @@
 								{
 									echo'
 										<div class="reponse">
-											Remplacez l\'adresse actuelle pour vous rendre sur <a href="grottestorcheseteintes.php">grottestorcheseteintes</a> et poursuivre votre aventure.
+											Remplacez l'adresse actuelle pour vous rendre sur <a href="grottestorcheseteintes.php">grottestorcheseteintes</a> et poursuivre votre aventure.
 										</div>
 									';
 								}
@@ -108,11 +103,11 @@
 									<img src="/escaperpg/images/ambria/grottestorchesallumees.png">
 								</div>
 								<p>
-									Alors que vous avancez, vous voyez que la lueur semble provenir d\'une sorte d\'antichambre un peu plus vaste.<br>
-									En y débouchant, vous découvrez que les murs sont tapissés d\'une mousse verdâtre bioluminescente.
-									Vous prenez quelques instants pour admirer cette fascinante étrangeté naturelle, évoquant le phénomène que certains marins aperçoivent parfois en mer lorsqu\'un certain type de plancton abonde.<br>
+									Alors que vous avancez, vous voyez que la lueur semble provenir d'une sorte d'antichambre un peu plus vaste.<br>
+									En y débouchant, vous découvrez que les murs sont tapissés d'une mousse verdâtre bioluminescente.
+									Vous prenez quelques instants pour admirer cette fascinante étrangeté naturelle, évoquant le phénomène que certains marins aperçoivent parfois en mer lorsqu'un certain type de plancton abonde.<br>
 									<br>
-									N\'étant cependant pas venu pour contempler le paysage, vous reprenez rapidement la route.
+									N'étant cependant pas venu pour contempler le paysage, vous reprenez rapidement la route.
 								</p>
 								<center>
 									<form action="portescite" method="post">
