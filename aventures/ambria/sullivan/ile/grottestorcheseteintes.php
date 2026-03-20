@@ -18,83 +18,27 @@
 		<main>
         <?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/aventures/ambria/includes/nav-sullivan.php"; ?>
 			<div id="txt">
+				<audio src="/escaperpg/sons/ambria/grotte.mp3" autoplay></audio>
+				<div class="enigmelieu">
+					<img src="/escaperpg/images/ambria/grottestorcheseteintes.png" alt="grotte">
+				</div>
+				<p>
+					Désirant profiter pleinement du spectacle offert par la mousse, vous donnez l'ordre d'éteindre les torches.<br>
+					S'exécutant, ils ne peuvent retenir un son admiratif devant la beauté féerique du tableau qui s'offre alors.<br>
+					<br>
+					Éclairant la pièce d'une douce lueur vert-bleu, la mousse révèle un tout nouveau paysage dans cette obscurité, s'étendant des parois jusqu'au plafond dans un enchevêtrement compliqué.
+				</p>
+
 				<?php
-					echo'
-						<audio src="/escaperpg/sons/ambria/grotte.mp3" autoplay></audio>
-						<div class="enigmelieu">
-							<img src="/escaperpg/images/ambria/grottestorcheseteintes.png">
-						</div>
-						<p>
-							Désirant profiter pleinement du spectacle offert par la mousse, vous donnez l'ordre d'éteindre les torches.<br>
-							S'exécutant, ils ne peuvent retenir un son admiratif devant la beauté féerique du tableau qui s'offre alors.<br>
-							<br>
-							Éclairant la pièce d'une douce lueur vert-bleu, la mousse révèle un tout nouveau paysage dans cette obscurité, s'étendant des parois jusqu'au plafond dans un enchevêtrement compliqué.
-						</p>
-					';
-					if (isset ($_POST['indice']))
-						{
-							echo'
-								<div id="indice">
-									Observez bien les motifs tracés par la mousse. Ne vous rappellent-ils par quelque chose ?
-								</div>
-								<center>
-									<form action="grottestorcheseteintes" method="post">
-										<button type="submit" name="indice2" class="boutonindice"></button>
-									</form>
-								</center>
-							';
-						}
-					elseif (isset ($_POST['indice2']))
-						{
-							echo'
-								<div id="indice">
-									Observez bien les motifs tracés par la mousse. Ne vous rappellent-ils par quelque chose ?<br>
-									Il s'agit d'une partie de la traduction du langage ambrien.
-								</div>
-								<center>
-									<form action="grottestorcheseteintes" method="post">
-										<button type="submit" name="indice3" class="boutonindice"></button>
-									</form>
-								</center>
-							';
-						}
-					elseif (isset ($_POST['indice3']))
-						{
-							echo'
-								<div id="indice">
-									Observez bien les motifs tracés par la mousse. Ne vous rappellent-ils par quelque chose ?<br>
-									Il s'agit d'une partie de la traduction du langage ambrien.<br>
-									Logan aura peut-être accès à la seconde partie ?
-								</div>
-								<center>
-									<form action="grottestorcheseteintes" method="post">
-										<button type="submit" name="reponse" class="boutonreponse"></button>
-									</form>
-								</center>
-							';
-						}
-					elseif (isset ($_POST['reponse']))
-						{
-							echo'
-								<div class="reponse">
-									Discutez avec l'autre joueur pour constituer l'alphabet qui vous permettra de traduire le message sur les portes de la cité.
-								</div>
-							';
-						}
-					else
-						{
-							echo'
-								<center>
-									<form action="grottestorcheseteintes" method="post">
-										<button type="submit" name="indice" class="boutonindice"></button>
-									</form>
-								</center>
-							';
-						}
-					$_SESSION['torcheseteintes'] = true;
+				$reponse = "Discutez avec l'autre joueur pour constituer l'alphabet qui vous permettra de traduire le message sur les portes de la cité.";
+				$indice1 = "Observez bien les motifs tracés par la mousse. Ne vous rappellent-ils par quelque chose ?";
+				$indice2 = "Il s'agit d'une partie de la traduction du langage ambrien.";
+				$indice3 = "Logan aura peut-être accès à la seconde partie ?";
+				include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/indices.php";
+				$_SESSION['torcheseteintes'] = true;
 				?>
 			</div>
-		</div>
+		</main>
 		<div id="load"><div id="loader"></div></div>
 		<script src="/escaperpg/scripts/aventures-chargement.js"></script>
 		<?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/aventures/ambria/sullivan/includes/footer.php"; ?>

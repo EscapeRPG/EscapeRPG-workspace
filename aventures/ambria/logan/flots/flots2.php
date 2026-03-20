@@ -24,7 +24,7 @@
 			</nav>
 			<div id="txt">
 				<?php
-					if (isset ($_POST['suivant']))
+					if (isset($_POST['suivant']))
 						{
 							echo'
 								<audio src="/escaperpg/sons/ambria/flots.mp3" autoplay></audio>

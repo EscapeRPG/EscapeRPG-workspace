@@ -32,7 +32,7 @@
 						De toute façon, il ne semble rien y avoir d'intéressant dans le coin.
 					</p>
 
-				<?php elseif (isset ($_POST['suivant'])): ?>
+				<?php elseif (isset($_POST['suivant'])): ?>
 					<p>
 						Vous traversez donc le terminal, suivant des indications au mur que vous ne comprenez pas mais qui, vous l'espérez, vous mèneront à la passerelle de commandement.
 						Vous passez ainsi dans une sorte de couloir et continuez tout droit, atteignant une porte légèrement entrouverte.
@@ -46,7 +46,7 @@
 						<input type="submit" name="suivant2" value="suivant.">
 					</form>
 
-				<?php elseif (isset ($_POST['pieddebiche'])): ?>
+				<?php elseif (isset($_POST['pieddebiche'])): ?>
 					<p>
 						Vous retournez au sas, avec votre outil de fortune.<br>
 						<br>

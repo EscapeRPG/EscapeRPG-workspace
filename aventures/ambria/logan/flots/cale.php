@@ -23,7 +23,7 @@
 			</nav>
 			<div id="txt">
 				<?php
-					if (isset ($_POST['jouer']))
+					if (isset($_POST['jouer']))
 						{
 							switch (handleSpecialChars($_POST['capitaine']))
 								{

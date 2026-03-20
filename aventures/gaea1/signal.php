@@ -51,7 +51,7 @@
 						<input type="submit" name="calibrer" value="calibrer l'antenne.">
 					</form>
 
-				<?php elseif (isset ($_POST['calibrer']) OR $_SESSION['scan']): ?>
+				<?php elseif (isset($_POST['calibrer']) OR $_SESSION['scan']): ?>
 					<?php $_SESSION['scan'] = true ?>
 					
 					<div id="canvas-wrap" style="width: 80%">

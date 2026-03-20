@@ -23,7 +23,7 @@
 			</nav>
 			<div id="txt">
 				<?php
-					if (isset ($_POST['suivant']))
+					if (isset($_POST['suivant']))
 						{
 							switch (handleSpecialChars($_POST['objet']))
 								{
@@ -74,7 +74,7 @@
 										';
 								}
 						}
-					elseif (isset ($_POST['suivant2']))
+					elseif (isset($_POST['suivant2']))
 						{
 							echo'
 								<audio src="/escaperpg/sons/ambria/epeeposee.mp3" autoplay></audio>
@@ -126,7 +126,7 @@
 								</center>
 							';
 						}
-					elseif (isset ($_POST['suivant3']))
+					elseif (isset($_POST['suivant3']))
 						{
 							echo'
 								<p>
@@ -190,7 +190,7 @@
 								</center>
 							';
 						}
-					elseif (isset ($_POST['suite']) OR $_SESSION['taverne'])
+					elseif (isset($_POST['suite']) OR $_SESSION['taverne'])
 						{
 							echo'
 								<audio src="/escaperpg/sons/ambria/taverne.mp3" autoplay></audio>
@@ -227,7 +227,7 @@
 									</form>
 								</center>
 							';
-							if (isset ($_POST['indice']))
+							if (isset($_POST['indice']))
 								{
 									echo'
 										<div id="indice">
@@ -240,7 +240,7 @@
 										</center>
 									';
 								}
-							elseif (isset ($_POST['indice2']))
+							elseif (isset($_POST['indice2']))
 								{
 									echo'
 										<div id="indice">
@@ -254,7 +254,7 @@
 										</center>
 									';
 								}
-							elseif (isset ($_POST['reponse']))
+							elseif (isset($_POST['reponse']))
 								{
 									echo'
 										<div class="reponse">

@@ -25,7 +25,7 @@
 				<?php
 					if ($_SESSION['loganconfiance'] < 70) { $_SESSION['loganpasconfiant'] = true; }
 					else { $_SESSION['loganconfiant'] = true; }
-					if (isset ($_POST['leviers']) OR $_SESSION['levier'])
+					if (isset($_POST['leviers']) OR $_SESSION['levier'])
 						{
 							echo'
 								<audio src="/escaperpg/sons/ambria/jungle.mp3" autoplay></audio>
@@ -45,7 +45,7 @@
 								<p>Comment savoir quels mouvements effectuer avec le levier pour libérer le capitaine ?</p>
 								<script src="/escaperpg/aventures/ambria/logan/scripts/levier.js"></script>
 							';
-							if (isset ($_POST['indice']))
+							if (isset($_POST['indice']))
 								{
 									echo'
 										<div id="indice">
@@ -59,7 +59,7 @@
 										</center>
 									';
 								}
-							elseif (isset ($_POST['indice2']))
+							elseif (isset($_POST['indice2']))
 								{
 									echo'
 										<div id="indice">
@@ -74,11 +74,11 @@
 										</center>
 									';
 								}
-							elseif (isset ($_POST['reponse'])) { echo'<div class="enigmelieu"><img src="/escaperpg/images/ambria/levierreponse.png"></div>'; }
+							elseif (isset($_POST['reponse'])) { echo'<div class="enigmelieu"><img src="/escaperpg/images/ambria/levierreponse.png"></div>'; }
 							else { echo'<center><form action="pyramide" method="post"><button type="submit" name="indice" class="boutonindice"></button></form></center>'; }
 							$_SESSION['levier'] = true;
 						}
-					elseif (isset ($_POST['suivant']))
+					elseif (isset($_POST['suivant']))
 						{
 							switch (handleSpecialChars($_POST['sullivan']))
 								{
@@ -223,7 +223,7 @@
 										';
 								}
 						}
-					elseif (isset ($_POST['suivant2']))
+					elseif (isset($_POST['suivant2']))
 						{
 							echo'<div id="succespopup">';
 							$scenario = 'ambria';
@@ -268,7 +268,7 @@
 								</center>
 							';
 						}
-					elseif (isset ($_POST['suivant3']))
+					elseif (isset($_POST['suivant3']))
 						{
 							if ($_SESSION['loganconfiant'])
 								{
@@ -522,7 +522,7 @@
 										}
 								}
 						}
-					elseif (isset ($_POST['mutinerie']))
+					elseif (isset($_POST['mutinerie']))
 						{
 							echo'<div id="succespopup">';
 							$scenario = 'ambria';
@@ -620,7 +620,7 @@
 							';
 							$_SESSION['mdp15'] = true;
 						}
-					elseif (isset ($_POST['refuser']))
+					elseif (isset($_POST['refuser']))
 						{
 							echo'
 								<audio src="/escaperpg/sons/ambria/recuptresor.mp3" autoplay></audio>

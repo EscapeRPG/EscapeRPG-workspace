@@ -39,7 +39,7 @@
 									Cette mousse pourrait-elle vous apporter quelque chose ?
 								</p>
 							';
-							if (isset ($_POST['indice']))
+							if (isset($_POST['indice']))
 								{
 									echo'
 										<div id="indice">
@@ -52,7 +52,7 @@
 										</center>
 									';
 								}
-							elseif (isset ($_POST['indice2']))
+							elseif (isset($_POST['indice2']))
 								{
 									echo'
 										<div id="indice">
@@ -66,7 +66,7 @@
 										</center>
 									';
 								}
-							elseif (isset ($_POST['indice3']))
+							elseif (isset($_POST['indice3']))
 								{
 									echo'
 										<div id="indice">
@@ -81,7 +81,7 @@
 										</center>
 									';
 								}
-							elseif (isset ($_POST['reponse']))
+							elseif (isset($_POST['reponse']))
 								{
 									echo'
 										<div class="reponse">
@@ -100,7 +100,7 @@
 									';
 								}
 						}
-					elseif (isset ($_POST['lueur']) OR $_SESSION['grottes'])
+					elseif (isset($_POST['lueur']) OR $_SESSION['grottes'])
 						{
 							echo'
 								<audio src="/escaperpg/sons/ambria/grottetorche.mp3" autoplay></audio>

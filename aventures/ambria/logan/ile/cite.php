@@ -23,7 +23,7 @@
 			</nav>
 			<div id="txt">
 				<?php
-					if (isset ($_POST['ecouter']))
+					if (isset($_POST['ecouter']))
 						{
 							switch (handleSpecialChars($_POST['enavant']))
 								{
@@ -77,7 +77,7 @@
 										';
 								}
 						}
-					elseif (isset ($_POST['suite']))
+					elseif (isset($_POST['suite']))
 						{
 							echo'
 								<audio src="/escaperpg/sons/ambria/cite.mp3" autoplay></audio>

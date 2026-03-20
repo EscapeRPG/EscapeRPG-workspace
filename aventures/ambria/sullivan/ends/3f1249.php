@@ -22,7 +22,7 @@
 			</nav>
 			<div id="txt">
 				<?php
-					if (isset ($_POST['envoyermessage']))
+					if (isset($_POST['envoyermessage']))
 						{
 							echo'<div id="succespopup">';
 							$scenario = 'general';
@@ -36,7 +36,7 @@
 							$stmt->execute([$nom, $message]);
 							echo'<center>Merci d\'avoir enregistré votre commentaire !<br></center>';
 						}
-					if (isset ($_POST['fin']) OR $_SESSION['fin'])
+					if (isset($_POST['fin']) OR $_SESSION['fin'])
 						{
 							echo'<div id="succespopup">';
 							$scenario = 'general';

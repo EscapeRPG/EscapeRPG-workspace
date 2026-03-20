@@ -24,7 +24,7 @@
 			</nav>
 			<div id="txt">
 				<?php
-					if (isset ($_POST['suivant']))
+					if (isset($_POST['suivant']))
 						{
 							echo '
 								<audio src="/escaperpg/sons/ambria/ouverturecarte.mp3" autoplay></audio>
@@ -41,7 +41,7 @@
 								</center>
 							';
 						}
-					elseif (isset ($_POST['carte']))
+					elseif (isset($_POST['carte']))
 						{
 							switch (handleSpecialChars($_POST['cap']))
 								{

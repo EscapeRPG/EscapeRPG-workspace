@@ -23,7 +23,7 @@
 			</nav>
 			<div id="txt">
 				<?php
-					if (isset ($_POST['battre']))
+					if (isset($_POST['battre']))
 						{
 							switch (handleSpecialChars($_POST['bagarre']))
 								{
@@ -105,7 +105,7 @@
 										$_SESSION['mdp3'] = true;
 								}
 						}
-					elseif (isset ($_POST['react']))
+					elseif (isset($_POST['react']))
 						{
 							switch (handleSpecialChars($_POST['baston']))
 								{
@@ -182,7 +182,7 @@
 										$_SESSION['mdp4'] = true;
 								}
 						}
-					elseif (isset ($_POST['suivant']))
+					elseif (isset($_POST['suivant']))
 						{
 							echo'<div id="succespopup">';
 							$scenario = 'ambria';
@@ -213,7 +213,7 @@
 								</center>
 							';
 						}
-					elseif (isset ($_POST['suivant2']))
+					elseif (isset($_POST['suivant2']))
 						{
 							echo'
 								<div class="dialogue">
