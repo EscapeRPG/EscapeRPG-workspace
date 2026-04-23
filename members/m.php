@@ -112,7 +112,6 @@ function renderSucces($succes, $isEarned, $scenario): void
                         FROM 0membre_amis a
                         JOIN 0membres m ON m.pk = a.id_ami
                         WHERE a.id_membre = ?
-                        ORDER BY a.date_add ASC
                     ");
                     $list->execute([$idmembre]);
                     $amis = $list->fetchAll(PDO::FETCH_ASSOC);
@@ -130,7 +129,7 @@ function renderSucces($succes, $isEarned, $scenario): void
                         <?php endif; ?>
                     </div>
 
-                    <?php if ($userinfo['id'] != $nomcompte):
+                    <?php if ($userinfo['id'] != $nomcompte && $nomcompte != null):
                         $friends = $conn->prepare('SELECT * FROM 0membre_amis WHERE id_membre = ? && id_ami = ?');
                         $friends->execute([$idjoueur, $idmembre]);
                         $amisajoutes = $friends->rowCount();

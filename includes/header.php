@@ -15,4 +15,6 @@ if ($nomcompte !== null) {
     $user->execute([$nomcompte]);
     $idconnected = $user->fetch();
     $idjoueur = $idconnected['pk'];
+} else {
+    $idjoueur = null;
 }
