@@ -37,7 +37,7 @@
 							Éclairant la pièce d\'une douce lueur vert-bleu, la mousse révèle un tout nouveau paysage dans cette obscurité, s\'étendant des parois jusqu\'au plafond dans un enchevêtrement compliqué.
 						</p>
 					';
-					if (isset ($_POST['indice']))
+					if (isset($_POST['indice']))
 						{
 							echo'
 								<div id="indice">
@@ -50,7 +50,7 @@
 								</center>
 							';
 						}
-					elseif (isset ($_POST['indice2']))
+					elseif (isset($_POST['indice2']))
 						{
 							echo'
 								<div id="indice">
@@ -64,7 +64,7 @@
 								</center>
 							';
 						}
-					elseif (isset ($_POST['indice3']))
+					elseif (isset($_POST['indice3']))
 						{
 							echo'
 								<div id="indice">
@@ -79,7 +79,7 @@
 								</center>
 							';
 						}
-					elseif (isset ($_POST['reponse']))
+					elseif (isset($_POST['reponse']))
 						{
 							echo'
 								<div class="reponse">

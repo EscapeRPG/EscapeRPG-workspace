@@ -40,7 +40,7 @@
 								</p>
 							';
 						}
-					elseif (isset ($_POST['suivant']))
+					elseif (isset($_POST['suivant']))
 						{
 							$_SESSION['ile'] = true;
 							echo'
@@ -92,7 +92,7 @@
 								</center>
 							';
 						}
-					elseif (isset ($_POST['grottes']))
+					elseif (isset($_POST['grottes']))
 						{
 							echo'
 								<audio src="/escaperpg/sons/ambria/plage.mp3" autoplay></audio>
@@ -479,7 +479,7 @@
 									$_SESSION['loganconfiance'] -= 20;
 								}
 						}
-					elseif (isset ($_POST['grottesenigme']) OR $_SESSION['grottesenigme'])
+					elseif (isset($_POST['grottesenigme']) OR $_SESSION['grottesenigme'])
 						{
 							echo'
 								<audio src="/escaperpg/sons/ambria/plage.mp3" autoplay></audio>
@@ -542,7 +542,7 @@
 								</p>
 							';
 							$_SESSION['grottesenigme'] = true;
-							if (isset ($_POST['indice']))
+							if (isset($_POST['indice']))
 								{
 									echo'
 										<div id="indice">
@@ -555,7 +555,7 @@
 										</center>
 									';
 								}
-							elseif (isset ($_POST['indice2']))
+							elseif (isset($_POST['indice2']))
 								{
 									echo'
 										<div id="indice">
@@ -569,7 +569,7 @@
 										</center>
 									';
 								}
-							elseif (isset ($_POST['indice3']))
+							elseif (isset($_POST['indice3']))
 								{
 									echo'
 										<div id="indice">
@@ -584,7 +584,7 @@
 										</center>
 									';
 								}
-							elseif (isset ($_POST['reponse']))
+							elseif (isset($_POST['reponse']))
 								{
 									echo'
 										<div class="reponse">

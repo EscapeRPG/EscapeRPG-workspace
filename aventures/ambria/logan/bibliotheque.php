@@ -28,7 +28,7 @@
 			</nav>
 			<div id="txt">
 				<?php
-					if (isset ($_POST['suivant']))
+					if (isset($_POST['suivant']))
 						{
 							echo'
 								<audio src="/escaperpg/sons/ambria/louis.mp3" autoplay></audio>
@@ -61,7 +61,7 @@
 								</center>
 							';
 						}
-					elseif (isset ($_POST['suivant2']))
+					elseif (isset($_POST['suivant2']))
 						{
 							echo'
 								<script src="/escaperpg/scripts/inventaireadd.js"></script>
@@ -126,7 +126,7 @@
 							';
 							$_SESSION['parchemin'] = true;
 						}
-					elseif (isset ($_POST['suivant3']))
+					elseif (isset($_POST['suivant3']))
 						{
 							echo'
 								<audio src="/escaperpg/sons/ambria/frappeporte.mp3" autoplay></audio>

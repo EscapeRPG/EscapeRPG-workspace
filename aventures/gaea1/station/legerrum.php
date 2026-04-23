@@ -28,7 +28,7 @@
 							Cette pièce vous met mal à l'aise et vous ne souhaitez pas traîner ici.
 						</p>
 								
-					<?php elseif (isset ($_POST['prendre'])): ?>
+					<?php elseif (isset($_POST['prendre'])): ?>
 						<script src="/escaperpg/scripts/inventaireadd.js"></script>
 
 						<p>

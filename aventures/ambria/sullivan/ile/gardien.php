@@ -16,9 +16,9 @@
 		<?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/header.php"; ?>
 		<div id="banniere"><img src="/escaperpg/images/ambria/tresorambriamini.png" alt="le trésor d'ambria"></div>
 		<main>
-        <?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/aventures/ambria/includes/nav-sullivan.php"; ?>
+        	<?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/aventures/ambria/includes/nav-sullivan.php"; ?>
 			<div id="txt">
-				<?php if (isset ($_POST['logan'])): ?>
+				<?php if (isset($_POST['logan'])): ?>
 					<?php switch (handleSpecialChars($_POST['attention'])): ?>
 						<?php case "ilabouge": ?>
 							<audio src="/escaperpg/sons/ambria/gardien.mp3" autoplay></audio>
@@ -60,7 +60,8 @@
 					<audio src="/escaperpg/sons/ambria/cite.mp3" autoplay></audio>
 					<p>
 						Hagards, vos hommes et vous contemplez la scène quelques instants, reprenant votre souffle.<br>
-						Le combat que vous venez de mener n'a sans doute pas duré plus de quelques minutes, pourtant vous n'avez que rarement vécu de moment aussi intense.<br>
+						Le combat que vous venez de mener n'a sans doute pas duré plus de quelques minutes,
+						pourtant vous n'avez que rarement vécu de moment aussi intense.<br>
 						<br>
 						Certains de vos équipiers se laissent choir sur le sol, comme sonnés par ce qui vient de se passer.
 						De votre côté, vous prenez un peu de recul pour tenter d'apercevoir Logan, toujours juché sur la terrasse.<br>
@@ -77,7 +78,8 @@
 						</div>
 					</div>
 					<p>
-						Quelques hommes s'éloignent vers les restes d'étals sur la place où ils ont déposé leur matériel un peu plus tôt, puis reviennent avec une corde qu'ils lancent à Logan.
+						Quelques hommes s'éloignent vers les restes d'étals sur la place où ils ont déposé leur matériel un peu plus tôt,
+						puis reviennent avec une corde qu'ils lancent à Logan.
 						Le nouveau marin s'empresse d'utiliser les créneaux de la terrasse comme point d'accroche pour y faire un nœud et descendre en rappel.
 					</p>
 					<div class="dialogue">
@@ -85,7 +87,8 @@
 							<p>
 								Parfait !<br>
 								<br>
-								On devrait plus avoir trop d'problème maintenant. Mais faites quand même gaffe quand on sera à l'intérieur, qui sait si ceux qu'étaient là avant ont pas laissé un piège ou deux...
+								On devrait plus avoir trop d'problème maintenant. Mais faites quand même gaffe quand on sera à l'intérieur,
+								qui sait si ceux qu'étaient là avant ont pas laissé un piège ou deux...
 							</p>
 						</div>
 						<div class="portrait2">
@@ -109,7 +112,8 @@
 							<p>
 								Parfait !<br>
 								<br>
-								On devrait plus avoir trop d'problème maintenant. Mais faites quand même gaffe quand on sera à l'intérieur, qui sait si ceux qu'étaient là avant ont pas laissé un piège ou deux...
+								On devrait plus avoir trop d'problème maintenant. Mais faites quand même gaffe quand on sera à l'intérieur,
+								qui sait si ceux qu'étaient là avant ont pas laissé un piège ou deux...
 							</p>
 						</div>
 						<div class="portrait2">
@@ -122,7 +126,7 @@
 					<form action="pyramide" method="post">
 						<input type="submit" name="suite" value="Entrer.">
 					</form>
-				<?php elseif (isset ($_POST['1golem3']) OR isset ($_POST['2golem3']) OR isset ($_POST['3golem3']) OR isset ($_POST['4golem3']) OR isset ($_POST['5golem3'])): ?>
+				<?php elseif (!empty(array_intersect(array_keys($_POST), ['1golem3', '2golem3', '3golem3', '4golem3', '5golem3']))): ?>
 					<div id="succespopup">
 						<?php
 						$scenario = 'ambria';
@@ -130,12 +134,12 @@
 						include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/succesAdd.php";
 						?>
 					</div>
-					<?php if (isset ($_POST['4golem3'])): ?>
+					<?php if (isset($_POST['4golem3'])): ?>
 						<audio src="/escaperpg/sons/ambria/golemfinreussi.mp3" autoplay></audio>
 						<p>
 							Concentré au maximum, vous appuyez sur la détente et avez le temps de voir la suite des événements comme si tout se déroulait au ralenti.<br>
-							Le chien qui pivote, venant percuter la lamelle de fer. L'étincelle qui se crée et vient embraser la poudre. La détonation. La flamme et la fumée.
-							La balle qui est éjectée, décrivant une trajectoire en ligne droite vers sa cible.<br>
+							Le chien qui pivote, venant percuter la lamelle de fer. L'étincelle qui se crée et vient embraser la poudre. La détonation.
+							La flamme et la fumée. La balle qui est éjectée, décrivant une trajectoire en ligne droite vers sa cible.<br>
 							Puis le moment où elle la touche, faisant exploser la pierre en une myriade de fragments colorés.<br>
 							<br>
 							Vous entendez comme une sorte d'explosion étouffée tandis que le colosse se raidit.
@@ -156,19 +160,23 @@
 						<form action="gardien" method="post">
 							<input type="submit" name="souffler" value="Suivant.">
 						</form>
-						<?php $_SESSION['mdp19'] = true; ?>
+						<?php if (!in_array('Tout va bien', $_SESSION['mdp'])) {
+							$_SESSION['mdp'][] = 'Tout va bien';
+						}
+						?>
 					<?php else: ?>
 						<audio src="/escaperpg/sons/ambria/golemfinrate.mp3" autoplay></audio>
 						<p>
 							Concentré au maximum, vous appuyez sur la détente et avez le temps de voir la suite des événements comme si tout se déroulait au ralenti.<br>
-							Le chien qui pivote, venant percuter la lamelle de fer. L'étincelle qui se crée et vient embraser la poudre. La détonation. La flamme et la fumée.
-							La balle qui est éjectée, décrivant une trajectoire en ligne droite vers sa cible.<br>
+							Le chien qui pivote, venant percuter la lamelle de fer. L'étincelle qui se crée et vient embraser la poudre. La détonation.
+							La flamme et la fumée. La balle qui est éjectée, décrivant une trajectoire en ligne droite vers sa cible.<br>
 							Puis le moment où elle la touche, faisant exploser la pierre en une myriade de fragments colorés.<br>
 							<br>
 							Et puis rien.<br>
 							Le colosse achève de se relever et frappe du poing la terrasse où se trouve Logan, la faisant s'écrouler.
 							Celui-ci retombe avec et roule sur le sol, avant de se relever, quelque peu sonné mais en vie.
-							Le golem se penche alors vers lui et tend la main pour le saisir. C'est alors que le reste de l'équipage encore présent lui envoie une volée de balles, tous ayant sorti leur pistolet.<br>
+							Le golem se penche alors vers lui et tend la main pour le saisir.
+							C'est alors que le reste de l'équipage encore présent lui envoie une volée de balles, tous ayant sorti leur pistolet.<br>
 							L'un des gars fait mouche et vous entendez comme une sorte d'explosion étouffée tandis que le colosse se raidit.
 							Une ou deux secondes passent, semblant durer une éternité.<br>
 							Et puis il s'écroule au sol, soulevant un épais tapis de poussière vous obligeant à vous protéger les yeux de votre bras.
@@ -191,48 +199,24 @@
 						</form>
 						<?php
 						$_SESSION['sullivanconfiance'] -= 20;
-						$_SESSION['mdp20'] = true;
+						if (!in_array('Rien de cassé', $_SESSION['mdp'])) {
+							$_SESSION['mdp'][] = 'Rien de cassé';
+						}
 						?>
 						<?php endif; ?>
-				<?php elseif (isset ($_POST['combat3']) OR $_SESSION['combat3']): ?>
+				<?php elseif (isset($_POST['combat3']) || isset($_SESSION['combat3'])): ?>
 					<audio src="/escaperpg/sons/ambria/gardien.mp3" autoplay></audio>
 					<div class="enigmelieu">
-						<img src="/escaperpg/images/ambria/golem3sullivan.png">
-						<div id="golem3gemme1">
+						<img src="/escaperpg/images/ambria/golem3sullivan.png" alt="golem">
+						<?php foreach (range(1, 5) as $i): ?>
+						<div id="golem3gemme<?= $i ?>">
 							<form action="gardien" method="post">
-								<button type="submit" name="1golem3">
-									<img src="/escaperpg/images/ambria/golem3gemme.png" onmouseover="this.src='/escaperpg/images/ambria/mire.png'" onmouseout="this.src='/escaperpg/images/ambria/golem3gemme.png'">
+								<button type="submit" name="<?= $i ?>golem3">
+									<img src="/escaperpg/images/ambria/golem3gemme.png" class="cibletir" alt="gemme <?= $i ?>">
 								</button>
 							</form>
 						</div>
-						<div id="golem3gemme2">
-							<form action="gardien" method="post">
-								<button type="submit" name="2golem3">
-									<img src="/escaperpg/images/ambria/golem3gemme.png" onmouseover="this.src='/escaperpg/images/ambria/mire.png'" onmouseout="this.src='/escaperpg/images/ambria/golem3gemme.png'">
-								</button>
-							</form>
-						</div>
-						<div id="golem3gemme3">
-							<form action="gardien" method="post">
-								<button type="submit" name="3golem3">
-									<img src="/escaperpg/images/ambria/golem3gemme.png" onmouseover="this.src='/escaperpg/images/ambria/mire.png'" onmouseout="this.src='/escaperpg/images/ambria/golem3gemme.png'">
-								</button>
-							</form>
-						</div>
-						<div id="golem3gemme4">
-							<form action="gardien" method="post">
-								<button type="submit" name="4golem3">
-									<img src="/escaperpg/images/ambria/golem3gemme.png" onmouseover="this.src='/escaperpg/images/ambria/mire.png'" onmouseout="this.src='/escaperpg/images/ambria/golem3gemme.png'">
-								</button>
-							</form>
-						</div>
-						<div id="golem3gemme5">
-							<form action="gardien" method="post">
-								<button type="submit" name="5golem3">
-									<img src="/escaperpg/images/ambria/golem3gemme.png" onmouseover="this.src='/escaperpg/images/ambria/mire.png'" onmouseout="this.src='/escaperpg/images/ambria/golem3gemme.png'">
-								</button>
-							</form>
-						</div>
+						<?php endforeach; ?>
 					</div>
 					<p>
 						Le golem redresse peu à peu sa tête et vous apercevez des gemmes encastrées dans son front, brillant d'un vif éclat surnaturel.<br>
@@ -250,22 +234,28 @@
 					include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/indices.php";
 					$_SESSION['combat3'] = true;
 					?>
-				<?php elseif (isset ($_POST['surveiller'])): ?>
+
+					<script src="/escaperpg/aventures/ambria/sullivan/scripts/cibletir.js"></script>
+				<?php elseif (isset($_POST['surveiller'])): ?>
 					<?php switch (handleSpecialChars($_POST['ecouter'])): ?>
 						<?php case "maintenant": ?>
 							<audio src="/escaperpg/sons/ambria/gardien.mp3" autoplay></audio>
 							<p>
-								Souple et agile, Logan gravit peu à peu le dos de votre adversaire et parvient jusqu'à son épaule, où une plaque semble être légèrement délogée.<br>
+								Souple et agile, Logan gravit peu à peu le dos de votre adversaire et parvient jusqu'à son épaule,
+								où une plaque semble être légèrement délogée.<br>
 								Assurant ses appuis, il sort son sabre et l'engouffre dans l'orifice, forçant pour faire levier.
 								La plaque ne tarde pas à céder et tombe lourdement au sol.<br>
-								Toujours affairé à garder vos distances, vous voyez votre compagnon armer son bras et frapper de toutes ses forces dans l'ouverture ainsi créée.<br>
+								Toujours affairé à garder vos distances,
+								vous voyez votre compagnon armer son bras et frapper de toutes ses forces dans l'ouverture ainsi créée.<br>
 								<br>
 								Le golem se cabre soudainement et commence à s'agiter en tous sens pour se débarrasser de l'importun.
-								Frappant dans son dos avec ses énormes mains comme pour chasser un vulgaire moustique, vous voyez le moment où Logan va se faire aplatir comme un insecte.<br>
+								Frappant dans son dos avec ses énormes mains comme pour chasser un vulgaire moustique,
+								vous voyez le moment où Logan va se faire aplatir comme un insecte.<br>
 								Au lieu de cela, le jeune homme est propulsé en arrière par l'un des soubresauts et atterrit sur la terrasse surplombant l'entrée.
 								Vous espérez qu'il a survécu au choc.<br>
 								<br>
-								Toujours saisie de tremblements d'une violence rare, la statue animée finit par flancher et tombe à moitié, son immense tête frappant le sol à quelques mètres de vous.
+								Toujours saisie de tremblements d'une violence rare, la statue animée finit par flancher et tombe à moitié,
+								son immense tête frappant le sol à quelques mètres de vous.
 								Cependant, votre adversaire ne semble pas vouloir s'avouer vaincu et commence à prendre appui pour se redresser.<br>
 								<br>
 								C'est alors que la voix de Logan retentit, juste au-dessus de vous.
@@ -281,22 +271,22 @@
 									</p>
 								</div>
 							</div>
-								<form action="gardien" method="post">
-									<input type="submit" name="combat3" value="Achever la créature.">
-								</form>
+							<form action="gardien" method="post">
+								<input type="submit" name="combat3" value="Achever la créature.">
+							</form>
 							<?php break; ?>
 						<?php default: ?>
-						<p>
-							Êtes-vous sûr d'avoir bien entendu ce que votre compagnon vous a dit ou de lui avoir fourni la bonne information ?
-						</p>
-						<form action="gardien" method="post">
-							<input list="notesListe" name="ecouter"><input type="submit" name="surveiller" value="Suivant.">
-						</form>
+							<p>
+								Êtes-vous sûr d'avoir bien entendu ce que votre compagnon vous a dit ou de lui avoir fourni la bonne information ?
+							</p>
+							<form action="gardien" method="post">
+								<input list="notesListe" name="ecouter"><input type="submit" name="surveiller" value="Suivant.">
+							</form>
 					<?php endswitch; ?>
-				<?php elseif (isset ($_POST['combat2']) OR $_SESSION['combat2']): ?>
+				<?php elseif (isset($_POST['combat2']) || isset($_SESSION['combat2'])): ?>
 					<audio src="/escaperpg/sons/ambria/gardien.mp3" autoplay></audio>
 					<div class="enigmelieu">
-						<img src="/escaperpg/images/ambria/golem2sullivan.png">
+						<img src="/escaperpg/images/ambria/golem2sullivan.png" alt="golem">
 					</div>
 					<p>
 						Les autres gars arrivent pour vous prêter main forte et, tandis que Logan s'approche discrètement,
@@ -315,8 +305,8 @@
 					include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/indices.php";
 					$_SESSION['combat2'] = true;
 					?>
-				<?php elseif (isset ($_POST['1golem']) OR isset ($_POST['2golem']) OR isset ($_POST['3golem'])): ?>
-					<?php if (isset ($_POST['1golem'])): ?>
+				<?php elseif (!empty(array_intersect(array_keys($_POST), ['1golem', '2golem', '3golem']))): ?>
+					<?php if (isset($_POST['1golem'])): ?>
 						<audio src="/escaperpg/sons/ambria/gardien.mp3" autoplay></audio>
 						<p>
 							Vous pensez avoir repéré un point faible mais celui-ci se trouve trop en hauteur et vous comprenez qu'il va vous falloir escalader le corps de cette chose.<br>
@@ -341,7 +331,7 @@
 						<form action="gardien" method="post">
 							<input type="submit" name="combat2" value="Suivant.">
 						</form>
-						<?php $_SESSION['mdp18'] = true; ?>
+						<?php if (!in_array('Épaule', $_SESSION['mdp'])) $_SESSION['mdp'][] = 'Épaule'; ?>
 					<?php else: ?>
 						<audio src="/escaperpg/sons/ambria/gardien.mp3" autoplay></audio>
 						<p>
@@ -370,35 +360,23 @@
 							<input type="submit" name="combat2" value="Suivant.">
 						</form>
 						<?php
-						$_SESSION['mdp18'] = true;
+						if (!in_array('Épaule', $_SESSION['mdp'])) $_SESSION['mdp'][] = 'Épaule';
 						$_SESSION['sullivanconfiance'] -= 10;
 						?>
 					<?php endif; ?>
-				<?php elseif (isset ($_POST['combat']) OR $_SESSION['combat']): ?>
+				<?php elseif (isset($_POST['combat']) || isset($_SESSION['combat'])): ?>
 					<audio src="/escaperpg/sons/ambria/gardien.mp3" autoplay></audio>
 					<div class="enigmelieu">
-						<img src="/escaperpg/images/ambria/golem1sullivan.png">
-						<div id="golem1gemme1">
+						<img src="/escaperpg/images/ambria/golem1sullivan.png" alt="golem">
+						<?php foreach (range(1, 3) as $i): ?>
+						<div id="golem1gemme<?= $i ?>">
 							<form action="gardien" method="post">
-								<button type="submit" name="1golem">
-									<img src="/escaperpg/images/ambria/golemgemme.png" onmouseover="this.src='/escaperpg/images/ambria/mire.png'" onmouseout="this.src='/escaperpg/images/ambria/golemgemme.png'">
+								<button type="submit" name="<?= $i ?>golem">
+									<img src="/escaperpg/images/ambria/golemgemme.png" class="cibletir" alt="gemme">
 								</button>
 							</form>
 						</div>
-						<div id="golem1gemme2">
-							<form action="gardien" method="post">
-								<button type="submit" name="2golem">
-									<img src="/escaperpg/images/ambria/golemgemme.png" onmouseover="this.src='/escaperpg/images/ambria/mire.png'" onmouseout="this.src='/escaperpg/images/ambria/golemgemme.png'">
-								</button>
-							</form>
-						</div>
-						<div id="golem1gemme3">
-							<form action="gardien" method="post">
-								<button type="submit" name="3golem">
-									<img src="/escaperpg/images/ambria/golemgemme.png" onmouseover="this.src='/escaperpg/images/ambria/mire.png'" onmouseout="this.src='/escaperpg/images/ambria/golemgemme.png'">
-								</button>
-							</form>
-						</div>
+						<?php endforeach; ?>
 					</div>
 					<p>
 						Le golem vous tournant le dos, vous vous dites que vous avez une chance de le frapper. Mais comment trouver son point faible ?
@@ -412,6 +390,8 @@
 					include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/indices.php";
 					$_SESSION['combat'] = true;
 					?>
+
+					<script src="/escaperpg/aventures/ambria/sullivan/scripts/cibletir.js"></script>
 				<?php else: ?>
 					<audio src="/escaperpg/sons/ambria/gardieneveil.mp3" autoplay></audio>
 					<p>
@@ -442,7 +422,7 @@
 					</form>
 				<?php endif; ?>
 			</div>
-		</div>
+		</main>
 		<div id="load"><div id="loader"></div></div>
 		<script src="/escaperpg/scripts/aventures-chargement.js"></script>
 		<?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/aventures/ambria/sullivan/includes/footer.php"; ?>

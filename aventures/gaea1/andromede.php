@@ -12,7 +12,7 @@
 	</head>
 
 	<body>
-		<?php if (isset ($_POST['commencer']) || $_SESSION['cineintro']): ?>
+		<?php if (isset($_POST['commencer']) || $_SESSION['cineintro']): ?>
 			<?php
 				include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/header.php";
 				$_SESSION['cineintro'] = true;

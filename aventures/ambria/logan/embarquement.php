@@ -23,7 +23,7 @@
 			</nav>
 			<div id="txt">
 				<?php
-					if (isset ($_POST['suivant']))
+					if (isset($_POST['suivant']))
 						{
 							echo'
 								<audio src="/escaperpg/sons/ambria/combatmarins.mp3" autoplay></audio>
@@ -47,7 +47,7 @@
 								</center>
 							';
 						}
-					elseif (isset ($_POST['suivant2']))
+					elseif (isset($_POST['suivant2']))
 						{
 							echo'
 								<audio src="/escaperpg/sons/ambria/combatmarins2.mp3" autoplay></audio>
@@ -98,7 +98,7 @@
 								</center>
 							';
 						}
-					elseif (isset ($_POST['suivant3']))
+					elseif (isset($_POST['suivant3']))
 						{
 							echo'
 								<audio src="/escaperpg/sons/ambria/embarquement.mp3" autoplay></audio>
@@ -206,7 +206,7 @@
 								</center>
 							';
 						}
-					elseif (isset ($_POST['suivant4']))
+					elseif (isset($_POST['suivant4']))
 						{
 							echo'
 								<audio src="/escaperpg/sons/ambria/noeud.mp3" autoplay></audio>
@@ -236,7 +236,7 @@
 								</center>
 							';
 						}
-					elseif (isset ($_POST['suivant5']) OR isset ($_POST['reset']))
+					elseif (isset($_POST['suivant5']) OR isset($_POST['reset']))
 						{
 							echo'
 								<audio src="/escaperpg/sons/ambria/noeud.mp3" autoplay></audio>

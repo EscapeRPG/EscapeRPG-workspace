@@ -80,7 +80,7 @@
 
 
 
-				<?php elseif (isset ($_POST['suivant2'])): ?>
+				<?php elseif (isset($_POST['suivant2'])): ?>
 					<p>
 						Observant l'approche de la station à travers la vitre du cockpit, vous constatez que votre vaisseau ralentit en arrivant devant la porte du hangar, qui reste hermétiquement close.
 					</p>
@@ -109,7 +109,7 @@
 						<input type="submit" name="ouvrir" value="suivant.">
 					</form>
 				
-				<?php elseif (isset ($_POST['ouvrir'])): ?>
+				<?php elseif (isset($_POST['ouvrir'])): ?>
 					<div id="canvas-wrap">
 						<img src="/escaperpg/images/gaea1/hangarsas/fond.png">
 						<div id="portehangarsasdroite"><img src="/escaperpg/images/gaea1/hangarsas/portedroite.png"></div>

@@ -23,7 +23,7 @@
 			</nav>
 			<div id="txt">
 				<?php
-					if (isset ($_POST['a1']))
+					if (isset($_POST['a1']))
 						{
 							if ($_SESSION['biscuits'])
 								{
@@ -68,7 +68,7 @@
 									$_SESSION['mouette'] = true;
 								}
 						}
-					elseif (isset ($_POST['a2']))
+					elseif (isset($_POST['a2']))
 						{
 							if ($_SESSION['chapeautypecolere'])
 								{
@@ -102,7 +102,7 @@
 									';
 								}
 						}
-					elseif (isset ($_POST['a3']))
+					elseif (isset($_POST['a3']))
 						{
 							echo'
 								<p>
@@ -117,7 +117,7 @@
 								</center>
 							';
 						}
-					elseif (isset ($_POST['a5']))
+					elseif (isset($_POST['a5']))
 						{
 							echo'
 								<p>
@@ -132,7 +132,7 @@
 								</center>
 							';
 						}
-					elseif (isset ($_POST['a6']))
+					elseif (isset($_POST['a6']))
 						{
 							echo'
 								<p>
@@ -148,7 +148,7 @@
 								</center>
 							';
 						}
-					elseif (isset ($_POST['b3']))
+					elseif (isset($_POST['b3']))
 						{
 							echo'
 								<p>
@@ -163,7 +163,7 @@
 								</center>
 							';
 						}
-					elseif (isset ($_POST['b6']))
+					elseif (isset($_POST['b6']))
 						{
 							echo'
 								<p>
@@ -179,7 +179,7 @@
 								</center>
 							';
 						}
-					elseif (isset ($_POST['c1']))
+					elseif (isset($_POST['c1']))
 						{
 							if ($_SESSION['cledocks'])
 								{
@@ -252,7 +252,7 @@
 									';
 								}
 						}
-					elseif (isset ($_POST['c3']))
+					elseif (isset($_POST['c3']))
 						{
 							echo'
 								<p>
@@ -267,7 +267,7 @@
 								</center>
 							';
 						}
-					elseif (isset ($_POST['c4']))
+					elseif (isset($_POST['c4']))
 						{
 							echo'
 								<p>
@@ -282,7 +282,7 @@
 								</center>
 							';
 						}
-					elseif (isset ($_POST['c5']))
+					elseif (isset($_POST['c5']))
 						{
 							echo'
 								<p>
@@ -297,7 +297,7 @@
 								</center>
 							';
 						}
-					elseif (isset ($_POST['c6']))
+					elseif (isset($_POST['c6']))
 						{
 							echo'
 								<audio src="/escaperpg/sons/ambria/incendie.mp3" autoplay></audio>
@@ -316,7 +316,7 @@
 								</center>
 							';
 						}
-					elseif (isset ($_POST['d1']))
+					elseif (isset($_POST['d1']))
 						{
 							echo'
 								<p>
@@ -332,7 +332,7 @@
 								</center>
 							';
 						}
-					elseif (isset ($_POST['d2']))
+					elseif (isset($_POST['d2']))
 						{
 							echo'
 								<p>
@@ -348,7 +348,7 @@
 								</center>
 							';
 						}
-					elseif (isset ($_POST['d3']))
+					elseif (isset($_POST['d3']))
 						{
 							echo'
 								<p>
@@ -363,7 +363,7 @@
 								</center>
 							';
 						}
-					elseif (isset ($_POST['d5']))
+					elseif (isset($_POST['d5']))
 						{
 							if ($_SESSION['cletypecolere'])
 								{
@@ -402,7 +402,7 @@
 									$_SESSION['cletypecolere'] = true;
 								}
 						}
-					elseif (isset ($_POST['e3']))
+					elseif (isset($_POST['e3']))
 						{
 							echo'
 								<p>
@@ -418,7 +418,7 @@
 								</center>
 							';
 						}
-					elseif (isset ($_POST['e4']))
+					elseif (isset($_POST['e4']))
 						{
 							echo'
 								<p>
@@ -433,7 +433,7 @@
 								</center>
 							';
 						}
-					elseif (isset ($_POST['e5']))
+					elseif (isset($_POST['e5']))
 						{
 							if ($_SESSION['cledocks'])
 								{
@@ -548,7 +548,7 @@
 									';
 								}
 						}
-					elseif (isset ($_POST['e6']))
+					elseif (isset($_POST['e6']))
 						{
 							echo'
 								<p>
@@ -563,7 +563,7 @@
 								</center>
 							';
 						}
-					elseif (isset ($_POST['e7']))
+					elseif (isset($_POST['e7']))
 						{
 							echo'
 								<p>
@@ -579,7 +579,7 @@
 								</center>
 							';
 						}
-					elseif (isset ($_POST['f2']))
+					elseif (isset($_POST['f2']))
 						{
 							if ($_SESSION['biscuits'])
 								{
@@ -617,7 +617,7 @@
 									';
 								}
 						}
-					elseif (isset ($_POST['f3']))
+					elseif (isset($_POST['f3']))
 						{
 							if ($_SESSION['cletypecolere'])
 								{
@@ -657,7 +657,7 @@
 									';
 								}
 						}
-					elseif (isset ($_POST['f5']))
+					elseif (isset($_POST['f5']))
 						{
 							echo'
 								<p>
@@ -673,7 +673,7 @@
 								</center>
 							';
 						}
-					elseif (isset ($_POST['f7']))
+					elseif (isset($_POST['f7']))
 						{
 							echo'
 								<p>
@@ -689,7 +689,7 @@
 								</center>
 							';
 						}
-					elseif (isset ($_POST['g2']))
+					elseif (isset($_POST['g2']))
 						{
 							if ($_SESSION['biscuits'])
 								{
@@ -740,7 +740,7 @@
 									';
 								}
 						}
-					elseif (isset ($_POST['g5']))
+					elseif (isset($_POST['g5']))
 						{
 							if ($_SESSION['cledocks'])
 								{

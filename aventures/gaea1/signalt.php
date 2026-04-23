@@ -20,7 +20,7 @@
 			<?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/aventures/gaea1/includes/nav.php"; ?>
 
 			<div id="txt">
-				<?php if (isset ($_POST['valider'])): ?>
+				<?php if (isset($_POST['valider'])): ?>
 					<?php if ($_POST['onde'] == 0 AND $_POST['amplitude'] == 0): ?>
 						<div id="succespopup">
 							<?php

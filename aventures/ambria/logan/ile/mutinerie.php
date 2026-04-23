@@ -23,7 +23,7 @@
 			</nav>
 			<div id="txt">
 				<?php
-					if (isset ($_POST['suivant']))
+					if (isset($_POST['suivant']))
 						{
 							echo'
 								<audio src="/escaperpg/sons/ambria/flots.mp3" autoplay></audio>
@@ -50,7 +50,7 @@
 								</center>
 							';
 						}
-					elseif (isset ($_POST['nuit']))
+					elseif (isset($_POST['nuit']))
 						{
 							echo'
 								<audio src="/escaperpg/sons/ambria/pontinferieur.mp3" autoplay></audio>
@@ -69,7 +69,7 @@
 								</center>
 							';
 						}
-					elseif (isset ($_POST['agir']))
+					elseif (isset($_POST['agir']))
 						{
 							echo'
 								<audio src="/escaperpg/sons/ambria/pontinferieur.mp3" autoplay></audio>

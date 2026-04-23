@@ -23,7 +23,7 @@
 			</nav>
 			<div id="txt">
 				<?php
-					if (isset ($_POST['indice2']))
+					if (isset($_POST['indice2']))
 						{
 							echo'
 								<div id="indice">
@@ -38,7 +38,7 @@
 								</center>
 							';
 						}
-					elseif (isset ($_POST['indice3']))
+					elseif (isset($_POST['indice3']))
 						{
 							echo'
 								<div id="indice">
@@ -55,7 +55,7 @@
 								</center>
 							';
 						}
-					elseif (isset ($_POST['reponse']))
+					elseif (isset($_POST['reponse']))
 						{
 							echo'
 								<div class="enigmelieu">

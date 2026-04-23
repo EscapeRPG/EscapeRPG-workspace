@@ -44,7 +44,7 @@
 								</p>
 							';
 						}
-					elseif (isset ($_POST['visiter']))
+					elseif (isset($_POST['visiter']))
 						{
 							echo '
 								<audio src="/escaperpg/sons/ambria/flots.mp3" autoplay></audio>
@@ -85,7 +85,7 @@
 							$_SESSION['loganpasaide'] = true;
 							$_SESSION['loganavecjake'] = true;
 						}
-					elseif (isset ($_POST['aider']))
+					elseif (isset($_POST['aider']))
 						{
 							echo '
 								<audio src="/escaperpg/sons/ambria/flots.mp3" autoplay></audio>

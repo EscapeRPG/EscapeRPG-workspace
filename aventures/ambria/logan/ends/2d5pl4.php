@@ -22,7 +22,7 @@
 			</nav>
 			<div id="txt">
 				<?php
-					if (isset ($_POST['envoyermessage']))
+					if (isset($_POST['envoyermessage']))
 						{
 							echo'<div id="succespopup">';
 							$scenario = 'general';

@@ -22,7 +22,7 @@
 			</nav>
 			<div id="txt">
 				<?php
-					if (isset ($_POST['envoyermessage']))
+					if (isset($_POST['envoyermessage']))
 						{
 							echo'<div id="succespopup">';
 							$scenario = 'general';
@@ -36,7 +36,7 @@
 							$stmt->execute([$nom, $message]);
 							echo'<center>Merci d\'avoir enregistré votre commentaire !<br></center>';
 						}
-					if (isset ($_POST['fin']) OR $_SESSION['fin'])
+					if (isset($_POST['fin']) OR $_SESSION['fin'])
 						{
 							echo'<div id="succespopup">';
 							$scenario = 'general';
@@ -119,7 +119,7 @@
 							';
 							$_SESSION['fin'] = true;
 						}
-					elseif (isset ($_POST['1levier'])) // énigme réussie
+					elseif (isset($_POST['1levier'])) // énigme réussie
 						{
 							include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/aventures/ambria/includes/sessioninc.php";
 							echo '

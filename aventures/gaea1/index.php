@@ -221,7 +221,7 @@
 					<script src="/escaperpg/aventures/gaea1/scripts/avatar.js"></script>
 				</div>
 
-			<?php elseif (isset ($_POST['avatarsubmit'])): ?>
+			<?php elseif (isset($_POST['avatarsubmit'])): ?>
 				<?php
 					$cheveuxbackend = $_SESSION['cheveuxbackend'] = '<img src="/escaperpg/images/gaea1/avatar/cheveuxbackend'.$_POST['cheveux'].'-'.$_POST['couleurcheveux'].'.png">';
 					$visage = $_SESSION['visage'] = '<img src="/escaperpg/images/gaea1/avatar/visage'.$_POST['visage'].'.png">';
@@ -269,7 +269,7 @@
 					</form>
 				</div>
 
-			<?php elseif (isset ($_POST['identite'])): ?>
+			<?php elseif (isset($_POST['identite'])): ?>
 				<?php
 					$prenom = null;
 					$tab_prenom = explode("-", $_POST['pjprenom']);
@@ -298,7 +298,7 @@
 					</form>
 				</div>
 
-			<?php elseif (isset ($_POST['feminin'])): ?>
+			<?php elseif (isset($_POST['feminin'])): ?>
 				<div id="succespopup">
 					<?php
 						$scenario = 'gaea1';
@@ -331,7 +331,7 @@
 					</form>
 				</div>
 
-			<?php elseif (isset ($_POST['masculin'])): ?>
+			<?php elseif (isset($_POST['masculin'])): ?>
 				<div id="succespopup">
 					<?php
 						$scenario = 'gaea1';
@@ -363,7 +363,7 @@
 					</form>
 				</div>
 
-			<?php elseif (isset ($_POST['beta'])): ?>
+			<?php elseif (isset($_POST['beta'])): ?>
 				<?php if (handleSpecialChars($_POST['betamdp']) === "fsb12em"): ?>
 					<div id="txt">
 						<div class="dialogue">

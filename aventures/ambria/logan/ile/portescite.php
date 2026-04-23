@@ -24,7 +24,7 @@
 			</nav>
 			<div id="txt">
 				<?php
-					if (isset ($_POST['boulets']) AND $_POST['1'] == 4 AND $_POST['2'] == 8 AND $_POST['3'] == 6)
+					if (isset($_POST['boulets']) AND $_POST['1'] == 4 AND $_POST['2'] == 8 AND $_POST['3'] == 6)
 						{
 							echo'
 								<audio src="/escaperpg/sons/ambria/porteciteouvre.mp3" autoplay></audio>
@@ -40,7 +40,7 @@
 								</center>
 							';
 						}
-					elseif (isset ($_POST['boulets']))
+					elseif (isset($_POST['boulets']))
 						{
 							echo'
 								<audio src="/escaperpg/sons/ambria/cite.mp3" autoplay></audio>
@@ -73,7 +73,7 @@
 								</center>
 							';
 						}
-					elseif (isset ($_POST['porte']) OR $_SESSION['portescite'])
+					elseif (isset($_POST['porte']) OR $_SESSION['portescite'])
 						{
 							echo'
 								<audio src="/escaperpg/sons/ambria/cite.mp3" autoplay></audio>
@@ -97,7 +97,7 @@
 									Jake vous indique ne pas connaître cette langue, il va donc vous falloir trouver le moyen d\'en comprendre son sens si vous espérez pouvoir continuer.
 								</p>
 							';
-							if (isset ($_POST['indice']))
+							if (isset($_POST['indice']))
 								{
 									echo'
 										<div id="indice">
@@ -110,7 +110,7 @@
 										</center>
 									';
 								}
-							elseif (isset ($_POST['indice2']))
+							elseif (isset($_POST['indice2']))
 								{
 									echo'
 										<div id="indice">
@@ -124,7 +124,7 @@
 										</center>
 									';
 								}
-							elseif (isset ($_POST['indice3']))
+							elseif (isset($_POST['indice3']))
 								{
 									echo'
 										<div id="indice">
@@ -139,7 +139,7 @@
 										</center>
 									';
 								}
-							elseif (isset ($_POST['reponse']))
+							elseif (isset($_POST['reponse']))
 								{
 									echo'
 										<div class="reponse">

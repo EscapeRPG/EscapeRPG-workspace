@@ -23,7 +23,7 @@
 			</nav>
 			<div id="txt">
 				<?php
-					if (isset ($_POST['attendre']))
+					if (isset($_POST['attendre']))
 						{
 							switch (handleSpecialChars($_POST['ordres']))
 								{
@@ -93,7 +93,7 @@
 										break;
 								}
 						}
-					elseif (isset ($_POST['vigie']))
+					elseif (isset($_POST['vigie']))
 						{
 							echo'
 								<audio src="/escaperpg/sons/ambria/tempete.mp3" autoplay></audio>
@@ -109,7 +109,7 @@
 								</center>
 							';
 						}
-					elseif (isset ($_POST['babord']))
+					elseif (isset($_POST['babord']))
 						{
 							echo'
 								<audio src="/escaperpg/sons/ambria/scelerate.mp3" autoplay></audio>
@@ -138,7 +138,7 @@
 							$_SESSION['loganconfiance'] -= 20;
 							$_SESSION['mdp6'] = true;
 						}
-					elseif (isset ($_POST['tribord']))
+					elseif (isset($_POST['tribord']))
 						{
 							echo'
 								<audio src="/escaperpg/sons/ambria/scelerate.mp3" autoplay></audio>
@@ -167,7 +167,7 @@
 							$_SESSION['loganconfiance'] += 10;
 							$_SESSION['mdp7'] = true;
 						}
-					elseif (isset ($_POST['attendre3']))
+					elseif (isset($_POST['attendre3']))
 						{
 							switch (handleSpecialChars($_POST['tonneaux']))
 								{
@@ -212,7 +212,7 @@
 										break;
 								}
 						}
-					elseif (isset ($_POST['rhum']))
+					elseif (isset($_POST['rhum']))
 						{
 							echo'
 								<audio src="/escaperpg/sons/ambria/tempetecracks.mp3" autoplay></audio>
@@ -234,7 +234,7 @@
 							$_SESSION['rhum'] = true;
 							$_SESSION['loganconfiance'] += 10;
 						}
-					elseif (isset ($_POST['riz']))
+					elseif (isset($_POST['riz']))
 						{
 							echo'
 								<audio src="/escaperpg/sons/ambria/tempetecracks.mp3" autoplay></audio>
@@ -256,7 +256,7 @@
 							$_SESSION['riz'] = true;
 							$_SESSION['loganconfiance'] -= 10;
 						}
-					elseif (isset ($_POST['finrecifs']))
+					elseif (isset($_POST['finrecifs']))
 						{
 							switch (handleSpecialChars($_POST['recifs']))
 								{
@@ -419,7 +419,7 @@
 										';
 								}
 						}
-					elseif (isset ($_POST['suite2']) OR $_SESSION['recifs'])
+					elseif (isset($_POST['suite2']) OR $_SESSION['recifs'])
 						{
 							echo'
 								<audio src="/escaperpg/sons/ambria/tempete.mp3" autoplay></audio>
@@ -435,7 +435,7 @@
 									</form>
 								</center>
 							';
-							if (isset ($_POST['indice']))
+							if (isset($_POST['indice']))
 								{
 									echo'
 										<div id="indice">
@@ -449,7 +449,7 @@
 										</center>
 									';
 								}
-							elseif (isset ($_POST['indice5']))
+							elseif (isset($_POST['indice5']))
 								{
 									echo'
 										<div id="indice">
@@ -465,7 +465,7 @@
 										</center>
 									';
 								}
-							elseif (isset ($_POST['indice6']))
+							elseif (isset($_POST['indice6']))
 								{
 									echo'
 										<div id="indice">
@@ -484,7 +484,7 @@
 										</center>
 									';
 								}
-							elseif (isset ($_POST['reponse2']))
+							elseif (isset($_POST['reponse2']))
 								{
 									echo'
 										<div class="reponse">
@@ -509,7 +509,7 @@
 								}
 							$_SESSION['recifs'] = true;
 						}
-					elseif (isset ($_POST['suivant']))
+					elseif (isset($_POST['suivant']))
 						{
 							echo'
 								<audio src="/escaperpg/sons/ambria/tempete.mp3" autoplay></audio>
@@ -530,7 +530,7 @@
 								</center>
 							';
 						}
-					elseif (isset ($_POST['attendre2']))
+					elseif (isset($_POST['attendre2']))
 						{
 							switch (handleSpecialChars($_POST['ordres2']))
 								{
@@ -574,7 +574,7 @@
 										';
 								}
 						}
-					elseif (isset ($_POST['haubans']) OR $_SESSION['haubans'])
+					elseif (isset($_POST['haubans']) OR $_SESSION['haubans'])
 						{
 							echo'
 								<audio src="/escaperpg/sons/ambria/tempetecracks.mp3" autoplay></audio>
@@ -600,7 +600,7 @@
 								</p>
 								<script src="/escaperpg/aventures/ambria/logan/scripts/haubans.js"></script>
 							';
-							if (isset ($_POST['indice']))
+							if (isset($_POST['indice']))
 								{
 									echo'
 										<div id="indice">
@@ -613,7 +613,7 @@
 										</center>
 									';
 								}
-							elseif (isset ($_POST['indice2']))
+							elseif (isset($_POST['indice2']))
 								{
 									echo'
 										<div id="indice">
@@ -627,7 +627,7 @@
 										</center>
 									';
 								}
-							elseif (isset ($_POST['indice3']))
+							elseif (isset($_POST['indice3']))
 								{
 									echo'
 										<div id="indice">
@@ -642,7 +642,7 @@
 										</center>
 									';
 								}
-							elseif (isset ($_POST['reponse']))
+							elseif (isset($_POST['reponse']))
 								{
 									echo'
 										<div class="enigmelieu">

@@ -86,7 +86,7 @@
 							';
 							$_SESSION['dunettevisitee'] = false;
 						}
-					elseif (isset ($_POST['add']))
+					elseif (isset($_POST['add']))
 						{
 							echo '
 								<script src="/escaperpg/scripts/inventaireadd.js"></script>
