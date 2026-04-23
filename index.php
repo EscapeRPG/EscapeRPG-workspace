@@ -20,16 +20,28 @@ ini_set("safe_mode", "off"); ?>
 <main>
     <?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/incmembers.php"; ?>
     <nav>
-        <div class="accueil"><a href="#bloc1"><img src="/escaperpg/images/home.png" id="accueilLink" alt="accueil"></a>
+        <div class="accueil">
+            <a href="#bloc1">
+                <img src="/escaperpg/images/home.png" id="accueilLink" alt="accueil">
+            </a>
         </div>
         <br>
-        <div class="accueil"><a href="#bloc2"><img src="/escaperpg/images/aventuresnav.png" id="aventuresLink"
-                                                   alt="lien aventures"></a></div>
+        <div class="accueil">
+            <a href="#bloc2">
+                <img src="/escaperpg/images/aventuresnav.png" id="aventuresLink" alt="lien aventures">
+            </a>
+        </div>
         <br>
-        <div class="accueil"><a href="#bloc3"><img src="/escaperpg/images/reglesnav.png" id="reglesLink"
-                                                   alt="lien règles"></a></div>
+        <div class="accueil">
+            <a href="#bloc3">
+                <img src="/escaperpg/images/reglesnav.png" id="reglesLink" alt="lien règles">
+            </a>
+        </div>
         <br>
-        <div class="accueil"><a href="#bloc4"><img src="/escaperpg/images/liensnav.png" id="liensLink" alt="liens"></a>
+        <div class="accueil">
+            <a href="#bloc4">
+                <img src="/escaperpg/images/liensnav.png" id="liensLink" alt="liens">
+            </a>
         </div>
     </nav>
     <div class="banner">
