@@ -1,16 +1,7 @@
 <?php
+/** @var Router $router */
 
-declare(strict_types=1);
+use App\Controllers\MainController;
+use App\Core\Router;
 
-return [
-    [
-        'method' => 'GET',
-        'path' => '/',
-        'action' => 'index',
-    ],
-    [
-        'method' => 'GET',
-        'path' => '/health',
-        'action' => 'health',
-    ],
-];
+$router->get(['/', '/index'], [MainController::class, 'index']);

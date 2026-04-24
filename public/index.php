@@ -1,15 +1,14 @@
 <?php
+session_start();
+require_once __DIR__ . '/../vendor/autoload.php';
 
-declare(strict_types=1);
+use App\Core\Router;
 
-use EscapeRPG\Framework\Application;
+define('BASE_PATH', dirname(__DIR__));
 
-$root = dirname(__DIR__);
+$router = new Router();
+require_once __DIR__ . '/../app/Helpers/helpers.php';
+const BASE_URL = '';
+require_once __DIR__ . '/../config/routes.php';
 
-require $root . '/src/Support/autoload.php';
-
-$config = require $root . '/config/app.php';
-$request = Request::fromGlobals($config['base_path'] ?? '');
-$app = require $root . '/bootstrap/app.php';
-$response = $app->handle($request);
-$response->send();
+$router->dispatch($_SERVER['REQUEST_URI'], $_SERVER['REQUEST_METHOD']);
