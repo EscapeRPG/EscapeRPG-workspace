@@ -1,11 +1,13 @@
-.idea
-/0_natif
-**/zz - diceroll
-/Changements avant mise en ligne.php
-/Morceaux de code pratiques.php
-/public
-/config
-/vendor
+.idea/
+0_natif/
+vendor/
 
+config/database.local.php
+
+public/img/uploads/
+
+**/zz - diceroll
+Changements avant mise en ligne.php
+Morceaux de code pratiques.php
 bdd.sql
 favicon.ico

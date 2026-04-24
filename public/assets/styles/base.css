@@ -1,0 +1,330 @@
+@font-face {
+  font-family: 'OldNewspaperTypes';
+  src: url('/assets/fonts/OldNewspaperTypes.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+html {
+  scroll-behavior: smooth;
+  margin: 0;
+}
+
+body {
+  background: url("/assets/img/fond.png") no-repeat fixed;
+  background-size: 100% 100%;
+  -webkit-background-size: 100% 100%;
+  font-family: arial, "arial black", "comic sans ms", "courier new", "georgia",
+    "impact", "times new roman", "trebuchet ms", "verdana", serif;
+  overflow: auto;
+  padding: 0;
+  margin: 0;
+}
+
+header {
+  width: 100%;
+  display: flex;
+  align-items: end;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+  text-align: center;
+  margin: 0;
+  padding: 10px 100px;
+  box-sizing: border-box;
+
+  img {
+    display: block;
+  }
+
+  .site-header__link {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    color: black;
+    font-size: 20px;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-family: OldNewspaperTypes, serif;
+    padding: 10px 25px;
+    border: 5px double black;
+    border-radius: 20px;
+
+    svg {
+      width: 30px;
+    }
+
+    &:hover {
+      color: orange;
+      border-color: orange;
+
+      g {
+        fill: orange;
+      }
+    }
+  }
+}
+
+.banner {
+  width: 100%;
+  height: 100vh;
+}
+
+nav {
+  text-align: left;
+  position: fixed;
+  top: 200px;
+  left: 0;
+  width: 170px;
+}
+
+.accueil {
+  width: 50px;
+  height: 50px;
+  overflow: hidden;
+  background-color: rgba(0, 0, 0, 0.5);
+  border: 7px double black;
+  border-left: none;
+  border-radius: 0 20px 20px 0;
+  transition: all 1s ease;
+
+  a {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    gap: 12px;
+    min-width: max-content;
+    height: 100%;
+    color: white;
+    padding: 0 18px 0 10px;
+    box-sizing: border-box;
+    white-space: nowrap;
+    transition: color 1s ease;
+  }
+
+  svg {
+    height: 30px;
+    width: 30px;
+
+    g {
+      fill: white;
+      transition: fill 1s ease;
+    }
+  }
+
+  &:hover {
+    width: 100%;
+    background-color: orange;
+
+    a {
+      width: 100%;
+      color: black;
+      transition: color 1s ease;
+    }
+
+    g {
+      fill: black;
+      transition: fill 1s ease;
+    }
+  }
+}
+
+a {
+  color: red;
+  font-weight: bold;
+  text-decoration: none;
+
+  &:hover {
+    color: orange;
+  }
+}
+
+main {
+  width: 100%;
+  display: none;
+  margin-bottom: 100px;
+  text-align: center;
+}
+
+#bloc1,
+#bloc3 {
+  margin: 0;
+  padding: 50px 170px;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+#bloc2,
+#bloc4 {
+  margin: 0;
+  padding: 50px 170px;
+  min-height: 500px;
+}
+
+@keyframes fadezoom {
+  0% {
+    opacity: 0;
+    transform: scale(0.3);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes fade {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+#bann {
+  opacity: 0;
+  animation: fadezoom 5s forwards;
+  animation-delay: 1s;
+
+  img {
+    width: 50%;
+  }
+}
+
+.banniere {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+
+  a {
+    opacity: 0;
+    animation: fade 9s forwards;
+    animation-delay: 16s;
+    width: 150px;
+    height: 50px;
+    margin: 50px;
+  }
+}
+
+@keyframes typewriting {
+  0% {
+    width: 0;
+    opacity: 1;
+    border-color: white;
+  }
+
+  99% {
+    width: 99%;
+    opacity: 1;
+    border-color: white;
+  }
+
+  100% {
+    width: 100%;
+    opacity: 1;
+  }
+}
+
+@keyframes blink {
+  0% {
+    border-color: transparent;
+  }
+
+  50% {
+    border-color: transparent;
+  }
+
+  75% {
+    border-color: white;
+  }
+
+  100% {
+    border-color: white;
+  }
+}
+
+.bannierep {
+  display: inline-block;
+}
+
+.type1 {
+  opacity: 0;
+  color: white;
+  text-shadow: 2px 2px 2px rgba(255, 255, 255, 0.3);
+  font-size: 20px;
+  font-family: "source code pro", monospace;
+  overflow: hidden;
+  border-right: 3px solid transparent;
+  white-space: nowrap;
+  width: 0;
+  animation: typewriting 6s steps(58, end) forwards;
+  animation-delay: 6s;
+}
+
+.type2 {
+  opacity: 0;
+  color: white;
+  text-shadow: 2px 2px 2px rgba(255, 255, 255, 0.3);
+  font-size: 20px;
+  font-family: "source code pro", monospace;
+  overflow: hidden;
+  border-right: 3px solid white;
+  white-space: nowrap;
+  width: 0;
+  animation: typewriting 3s steps(37, end) forwards, blink 1s infinite;
+  animation-delay: 12s, 15.5s;
+}
+
+.vos {
+  text-shadow: 2px 2px 2px rgba(255, 0, 0, 0.3);
+  font-weight: bold;
+  color: red;
+}
+
+h2 {
+  color: orange;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 20px;
+  font-family: "arial black", "arial", "courier new", serif;
+  text-align: center;
+  padding: 20px 0;
+}
+
+.jouer {
+  text-align: center;
+  color: black;
+}
+
+h3 {
+  text-align: center;
+  color: black;
+  font-weight: bold;
+  font-size: 14px;
+  margin: auto;
+  padding: 12px 0 12px 0;
+}
+
+#lienspage {
+  width: 90%;
+  padding: 0;
+  margin: auto;
+  text-align: center;
+}
+
+footer {
+  width: 100%;
+  color: white;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.7) 35px, transparent);
+  text-align: center;
+  padding: 15px 2px 0 2px;
+  clear: both;
+  font-size: small;
+  position: fixed;
+  bottom: 0;
+  z-index: 2;
+}
