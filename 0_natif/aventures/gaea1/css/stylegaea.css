@@ -5,16 +5,16 @@ html {
 body {
 	background-color: rgb(10, 10, 10);
 	font-family: arial, "arial black", "comic sans ms", "courier new", georgia, impact, "times new roman", "trebuchet ms", verdana, serif;
-	padding: 0px;
+	padding: 0;
 }
 
 header {
 	width: 100%;
 	text-align: center;
 	margin: 0;
-	padding: 10px 0px;
+	padding: 10px 0;
 	background-color: white;
-	box-shadow: 0px 3px 10px black;
+	box-shadow: 0 3px 10px black;
 }
 
 #banniere {
@@ -75,7 +75,7 @@ header {
 main {
 	width: 100%;
 	margin: auto;
-	padding: 10px 0px;
+	padding: 10px 0;
 	text-align: center;
 	margin-bottom: 100px;
 	display: none;
@@ -90,14 +90,14 @@ main {
 	background-color: rgba(0, 0, 0, 0.2);
 	border: 7px double black;
 	border-right: none;
-	border-radius: 20px 0px 0px 20px;
+	border-radius: 20px 0 0 20px;
 	text-align: center;
 	font-size: x-small;
 
 	&:hover {
 		border: 7px double orange;
 		border-right: none;
-		border-radius: 20px 0px 0px 20px;
+		border-radius: 20px 0 0 20px;
 	}
 
 	img {
@@ -116,7 +116,7 @@ main {
 	border: 7px double black;
 	color: orange;
 	border-right: none;
-	border-radius: 20px 0px 0px 20px;
+	border-radius: 20px 0 0 20px;
 	text-align: center;
 	display: flex;
 	justify-content: center;
@@ -692,7 +692,7 @@ a {
 }
 
 .dialogue {
-	margin: 10px 0px;
+	margin: 10px 0;
 }
 
 #marv {
@@ -857,7 +857,7 @@ h3 {
 	font-weight: bold;
 	font-size: 14px;
 	margin: auto;
-	padding: 12px 0px 12px 0px;
+	padding: 12px 0 12px 0;
 }
 
 .cardimage {
@@ -1410,7 +1410,7 @@ input[type=color] {
 
 @keyframes vaisseau2 {
 	0% {
-		transform: translate(0px, 0px);
+		transform: translate(0px, 0);
 	}
 
 	10% {
@@ -1418,7 +1418,7 @@ input[type=color] {
 	}
 
 	20% {
-		transform: translate(2px, 0px);
+		transform: translate(2px, 0);
 	}
 
 	30% {
@@ -1430,7 +1430,7 @@ input[type=color] {
 	}
 
 	50% {
-		transform: translate(2px, 0px);
+		transform: translate(2px, 0);
 	}
 
 	60% {
@@ -1450,7 +1450,7 @@ input[type=color] {
 	}
 
 	100% {
-		transform: translate(0px, 0px);
+		transform: translate(0px, 0);
 	}
 }
 

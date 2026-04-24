@@ -45,7 +45,7 @@
 #connexion {
     width: 60%;
     background-color: white;
-    box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.5);
     border-radius: 20px;
     margin: auto;
     padding: 100px 50px;
@@ -67,7 +67,7 @@
 #faceeebookheader {
     background-color: #edf2f7;
     margin-top: 0;
-    box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.5);
     width: 100%;
     text-align: center;
     color: black;
@@ -92,7 +92,7 @@
     display: inline-block;
     vertical-align: bottom;
     min-width: 30%;
-    padding: 10px 0px;
+    padding: 10px 0;
 }
 
 #faceeebook {
@@ -100,7 +100,7 @@
     width: 80%;
     margin: auto;
     margin-bottom: 20px;
-    padding: 0px 0px 50px 0px;
+    padding: 0 0 50px 0;
     overflow: auto;
     height: 500px;
     position: relative;
@@ -124,12 +124,12 @@ input[type=search] {
     display: inline-block;
     vertical-align: bottom;
     min-width: 20%;
-    margin: 10px 7% 0px 7%;
+    margin: 10px 7% 0 7%;
 
     img {
         display: inline-block;
         vertical-align: middle;
-        margin: 0px 3%;
+        margin: 0 3%;
     }
 }
 
@@ -137,13 +137,13 @@ input[type=search] {
     display: inline-block;
     vertical-align: bottom;
     min-width: 30%;
-    padding: 10px 0px;
+    padding: 10px 0;
 }
 
 .actus {
     width: 60%;
     background-color: white;
-    box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.5);
     border-radius: 20px;
     margin: auto;
     padding: 10px;
@@ -154,7 +154,7 @@ input[type=search] {
     p {
         text-align: justify;
         font-size: large;
-        padding: 10px 0px;
+        padding: 10px 0;
         margin: 3px 10px;
 
         img {
@@ -243,10 +243,10 @@ input[type=search] {
 #chgt {
     width: 10%;
     background-color: rgba(0, 0, 0, 0.2);
-    box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.5);
     border-radius: 40px;
     margin: auto;
-    padding: 0px;
+    padding: 0;
     font-size: x-large;
     font-weight: bold;
     color: rgba(0, 0, 0, 0.5);
@@ -262,7 +262,7 @@ input[type=search] {
     float: right;
     margin: -30px 20px 20px auto;
     background-color: rgba(0, 0, 0, 0.2);
-    box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.5);
     border-radius: 20px;
     border: none;
     padding: 2px 10px;

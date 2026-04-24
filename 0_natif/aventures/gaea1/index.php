@@ -236,7 +236,7 @@
 					$accessoire = $_SESSION['accessoire'] = '<img src="/escaperpg/images/gaea1/avatar/accessoire'.$_POST['accessoire'].'.png">';
 					$_SESSION['avatar'] = "$cheveuxbackend$visage$bouche$yeux$nez$cheveuxback$pilosite$oreilles$sourcils$accessoire$cheveux";
 					$_SESSION['avatarimg'] = true;
-					include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/aventures/gaea1/includes/nav.php";
+					include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/aventures/gaea1/includes/_nav.php";
 				?>
 
 				<div id="txt">
@@ -277,7 +277,7 @@
 					$prenom = substr($prenom,0,-1);
 					$_SESSION['pjnom'] = $_POST['pjnom'];
 					$_SESSION['pjprenom'] = $prenom;
-					include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/aventures/gaea1/includes/nav.php";
+					include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/aventures/gaea1/includes/_nav.php";
 				?>
 
 				<div id="txt">
@@ -310,7 +310,7 @@
 				<?php
 					$_SESSION['genre'] = true;
 					$_SESSION['feminin'] = true;
-					include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/aventures/gaea1/includes/nav.php";
+					include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/aventures/gaea1/includes/_nav.php";
 				?>
 
 				<div id="txt">
@@ -342,7 +342,7 @@
 
 				<?php
 					$_SESSION['genre'] = true;
-					include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/aventures/gaea1/includes/nav.php";
+					include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/aventures/gaea1/includes/_nav.php";
 				?>
 
 				<div id="txt">

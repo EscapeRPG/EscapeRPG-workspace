@@ -1,0 +1,90 @@
+#containerscenario,
+#containeramis {
+    display: flex;
+    width: 90%;
+    flex-wrap: wrap;
+    margin: 25px auto;
+    position: relative;
+    padding: 10px;
+    justify-content: center;
+}
+
+#containerscenario {
+    &::before {
+        content: "";
+        position: absolute;
+        left: 5%;
+        top: 0;
+        height: 1px;
+        width: 90%;
+        border-bottom: 1px solid orange;
+    }
+
+    &::after {
+        content: "";
+        position: absolute;
+        left: 5%;
+        bottom: 0;
+        height: 1px;
+        width: 90%;
+        border-bottom: 1px solid orange;
+    }
+}
+
+#containeramis {
+    p {
+        text-align: center;
+        color: white;
+        width: 100%;
+    }
+
+    img {
+        width: 100px;
+        height: 100px;
+        overflow: hidden;
+        border-radius: 50%;
+        object-fit: cover;
+        margin: 10px;
+    }
+}
+
+.containerprog {
+    position: relative;
+    width: 60%;
+    height: 20px;
+    outline: 1px solid orange;
+    border-radius: 10px;
+    background-color: rgba(0, 0, 0, 0.2);
+    margin: 10px auto 0;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    p {
+        color: white;
+        margin: 0;
+        z-index: 1;
+    }
+}
+
+.banniereprogression {
+    position: absolute;
+    height: 100%;
+    left: 0;
+    background-color: orange;
+}
+
+.portraitavatarcompte {
+    width: 200px;
+    height: 200px;
+    overflow: hidden;
+    border-radius: 50%;
+    margin: auto;
+
+    img {
+        width: 200px;
+        height: 200px;
+        object-fit: cover;
+    }
+}

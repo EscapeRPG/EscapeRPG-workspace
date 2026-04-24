@@ -1,18 +1,8 @@
+.idea
+/0_natif
 **/zz - diceroll
-**/zz - old
-**/zz - sons bruts
-**/zz - testzone
-**/sessions
-**/images
-/0_natif/home
-**/lightbox
-**/sons
 /Changements avant mise en ligne.php
-favicon.ico
 /Morceaux de code pratiques.php
 
-/aventures/secrets/manoir/000currentsave.php
-
 bdd.sql
-
-.idea
+favicon.ico

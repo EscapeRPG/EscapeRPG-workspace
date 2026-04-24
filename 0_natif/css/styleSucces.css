@@ -7,7 +7,7 @@
     border: 7px double black;
     color: orange;
     border-right: none;
-    border-radius: 20px 0px 0px 20px;
+    border-radius: 20px 0 0 20px;
     text-align: center;
     display: flex;
     justify-content: center;

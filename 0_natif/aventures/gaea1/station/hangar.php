@@ -19,7 +19,7 @@ $_SESSION['plancurrent'] = "q"; ?>
     <div id="banniere"><img src="/escaperpg/images/gaea1/gaea1mini.png" alt="gaea 1 bannière"></div>
 
     <main>
-        <?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/aventures/gaea1/includes/nav.php"; ?>
+        <?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/aventures/gaea1/includes/_nav.php"; ?>
 
         <div id="txt">
             <?php if ($_SESSION['visitestation']): ?>

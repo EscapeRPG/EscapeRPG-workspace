@@ -17,7 +17,7 @@
     <?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/header.php"; ?>
     <div id="banniere"><img src="/escaperpg/images/avent/aventmini.png" alt="bannière le grenier d'arthur"></div>
     <main>
-        <?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/aventures/avent/includes/nav.php"; ?>
+        <?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/aventures/avent/includes/_nav.php"; ?>
         <div id="txt">
             <p>
                 Bien essayé, mais ça n'est pas la bonne méthode ! Revenez en arrière pour trouver la solution.

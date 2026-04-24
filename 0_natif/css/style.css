@@ -19,7 +19,7 @@ nav {
   text-align: left;
   position: fixed;
   top: 200px;
-  left: 0px;
+  left: 0;
   width: 170px;
 }
 
@@ -27,7 +27,7 @@ header {
   width: 100%;
   text-align: center;
   margin: 0;
-  padding: 10px 0px;
+  padding: 10px 0;
 }
 
 .banner {
@@ -43,7 +43,7 @@ header {
   background-color: rgba(0, 0, 0, 0.5);
   border: 7px double black;
   border-left: none;
-  border-radius: 0px 20px 20px 0px;
+  border-radius: 0 20px 20px 0;
 
   a {
     position: absolute;
@@ -236,7 +236,7 @@ h1 {
   font-size: 20px;
   font-family: "arial black", "arial", "courier new", serif;
   text-align: center;
-  padding: 20px 0px;
+  padding: 20px 0;
 }
 
 .jouer {
@@ -250,7 +250,7 @@ h2 {
   font-weight: bold;
   font-size: 14px;
   margin: auto;
-  padding: 12px 0px 12px 0px;
+  padding: 12px 0 12px 0;
 }
 
 #lienspage {
@@ -265,7 +265,7 @@ footer {
   color: white;
   background: linear-gradient(to top, rgba(0, 0, 0, 0.7) 35px, transparent);
   text-align: center;
-  padding: 15px 2px 0px 2px;
+  padding: 15px 2px 0 2px;
   clear: both;
   font-size: small;
   position: fixed;

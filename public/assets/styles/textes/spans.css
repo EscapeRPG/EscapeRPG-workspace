@@ -1,0 +1,42 @@
+.mdp {
+    font-weight: bold;
+    text-shadow: grey 1px 1px;
+}
+
+.mdp2 {
+  color: dodgerblue;
+  font-weight: bold;
+  text-shadow: skyblue 1px 1px;
+}
+
+.info {
+    color: orange;
+}
+
+.lieu {
+    color: lightgreen;
+    font-weight: bold;
+}
+
+.important {
+    color: darkred;
+    font-weight: bold;
+}
+
+.indice {
+    color: dodgerblue;
+    text-align: center;
+    font-weight: bold;
+    margin: 10px auto;
+}
+
+.reponse {
+    color: red;
+    text-align: center;
+    font-weight: bold;
+    margin: 10px auto;
+
+    img {
+        width: 60%;
+    }
+}

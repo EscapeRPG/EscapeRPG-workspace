@@ -17,7 +17,7 @@
     <?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/header.php"; ?>
     <div id="banniere"><img src="/escaperpg/images/avent/aventmini.png" alt="bannière le grenier d'arthur"></div>
     <main>
-        <?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/aventures/avent/includes/nav.php"; ?>
+        <?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/aventures/avent/includes/_nav.php"; ?>
         <div id="txt">
             <?php if (isset($_POST['bisous'])): ?>
                 <audio src="/escaperpg/sons/avent/tirercarte.mp3" autoplay></audio>

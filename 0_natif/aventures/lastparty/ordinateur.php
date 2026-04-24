@@ -17,7 +17,7 @@
     <?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/includes/header.php"; ?>
     <div id="banniere"><img src="/escaperpg/images/lastparty/lpmini.png" alt="last party bannière"></div>
     <main>
-        <?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/aventures/lastparty/includes/nav.php"; ?>
+        <?php include $_SERVER['DOCUMENT_ROOT'] . "/escaperpg/aventures/lastparty/includes/_nav.php"; ?>
         <div id="txt">
             <?php if (isset($_POST['rechercher']) && handleSpecialChars($_POST['rechercher']) == "juliette" || isset($_SESSION['juliette'])): ?>
                 <?php $_SESSION['juliette'] = true; ?>

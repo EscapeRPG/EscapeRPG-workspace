@@ -7,10 +7,16 @@ use PDO;
 class Controller
 {
     protected PDO $db;
+    protected Request $request;
+    protected Response $response;
+    protected Session $session;
 
     public function __construct()
     {
         $this->db = Database::get();
+        $this->request = Request::capture();
+        $this->response = new Response();
+        $this->session = new Session();
     }
 
     protected function view(string $path, array $data = [], string $layout = 'main'): void
