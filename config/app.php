@@ -6,5 +6,5 @@ return [
     'app_name' => 'EscapeRPG Framework',
     'environment' => 'dev',
     'debug' => true,
-    'base_path' => '/framework/public',
+    'base_path' => '/public',
 ];

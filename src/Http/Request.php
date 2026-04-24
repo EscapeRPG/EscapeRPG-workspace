@@ -15,24 +15,23 @@ final class Request
     ) {
     }
 
-    public static function fromGlobals(): self
-    {
-        $uri = $_SERVER['REQUEST_URI'] ?? '/';
-        $path = (string) parse_url($uri, PHP_URL_PATH);
-        $basePath = '/framework/public';
+    public static function fromGlobals(string $basePath = ''): self
+{
+    $uri = $_SERVER['REQUEST_URI'] ?? '/';
+    $path = (string) parse_url($uri, PHP_URL_PATH);
 
-        if ($basePath !== '' && str_starts_with($path, $basePath)) {
-            $path = substr($path, strlen($basePath)) ?: '/';
-        }
-
-        return new self(
-            strtoupper($_SERVER['REQUEST_METHOD'] ?? 'GET'),
-            $path,
-            $_GET,
-            $_POST,
-            $_SERVER
-        );
+    if ($basePath !== '' && str_starts_with($path, $basePath)) {
+        $path = substr($path, strlen($basePath)) ?: '/';
     }
+
+    return new self(
+        strtoupper($_SERVER['REQUEST_METHOD'] ?? 'GET'),
+        $path,
+        $_GET,
+        $_POST,
+        $_SERVER
+    );
+}
 
     public function method(): string
     {
