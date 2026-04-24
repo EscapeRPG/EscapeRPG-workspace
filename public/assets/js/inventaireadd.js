@@ -1,1 +1,0 @@
-alert('L\'élément a bien été ajouté à votre inventaire.')
