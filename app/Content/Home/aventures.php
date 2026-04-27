@@ -12,7 +12,7 @@ return [
             'cards' => [
                 [
                     'title' => 'LAST PARTY',
-                    'href' => '/aventures/lastparty/index',
+                    'href' => '/aventures/lastparty',
                     'image' => 'assets/img/lastpartycard.png',
                     'alt' => 'last party',
                     'paragraphs' => [

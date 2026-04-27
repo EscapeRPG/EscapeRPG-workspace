@@ -3,7 +3,7 @@ session_start();
 require_once __DIR__ . '/../vendor/autoload.php';
 
 use App\Core\Router;
-use App\Services\AuthService;
+use App\Services\Account\AuthService;
 
 define('BASE_PATH', dirname(__DIR__));
 

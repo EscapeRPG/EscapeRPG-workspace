@@ -6,11 +6,17 @@ use App\Core\Controller;
 use App\Repositories\AchievementRepository;
 use App\Repositories\FriendRepository;
 use App\Repositories\MemberRepository;
-use App\Services\AchievementService;
-use App\Services\AuthService;
+use App\Services\Account\AchievementService;
+use App\Services\Account\AuthService;
 
+/**
+ * Gère les profils membres et les relations d'amitié.
+ */
 class MemberController extends Controller
 {
+    /**
+     * Redirige la recherche d'un pseudo vers son URL de profil.
+     */
     public function search(): void
     {
         $id = trim((string) $this->request->query('id', ''));
@@ -21,6 +27,9 @@ class MemberController extends Controller
         $this->response->redirect('/membres/' . rawurlencode($id));
     }
 
+    /**
+     * Affiche le profil du membre connecté.
+     */
     public function showCurrent(): void
     {
         $member = AuthService::user();
@@ -31,6 +40,9 @@ class MemberController extends Controller
         $this->renderMemberProfile($member, true);
     }
 
+    /**
+     * Affiche le profil public d'un membre.
+     */
     public function show(string $id): void
     {
         $members = new MemberRepository($this->db);
@@ -43,6 +55,9 @@ class MemberController extends Controller
         $this->renderMemberProfile($member, AuthService::id() === $member['id']);
     }
 
+    /**
+     * Affiche le formulaire d'édition du profil courant.
+     */
     public function edit(): void
     {
         $member = AuthService::user();
@@ -56,6 +71,9 @@ class MemberController extends Controller
         ]);
     }
 
+    /**
+     * Met à jour les informations du profil courant.
+     */
     public function update(): void
     {
         if (!verify_csrf($this->request->post('_token'))) {
@@ -119,6 +137,9 @@ class MemberController extends Controller
         $this->response->redirect('/mon-compte');
     }
 
+    /**
+     * Ajoute un membre à la liste d'amis du membre connecté.
+     */
     public function addFriend(string $id): void
     {
         if (!verify_csrf($this->request->post('_token'))) {
@@ -159,6 +180,9 @@ class MemberController extends Controller
         $this->response->redirect('/membres/' . rawurlencode($id));
     }
 
+    /**
+     * Prépare toutes les données nécessaires à l'affichage d'un profil.
+     */
     private function renderMemberProfile(array $member, bool $isOwner): void
     {
         $friends = new FriendRepository($this->db);
@@ -255,6 +279,9 @@ class MemberController extends Controller
         ]);
     }
 
+    /**
+     * Traite le changement d'avatar sur le profil courant.
+     */
     private function handleAvatarUpload(?string $currentAvatar): ?string
     {
         $file = $this->request->file('avatar');

@@ -2,10 +2,18 @@
 
 namespace App\Core;
 
+/**
+ * Charge et met en cache les fichiers de configuration du projet.
+ *
+ * Les clés sont résolues via la notation pointée `fichier.cle.sous_cle`.
+ */
 class Config
 {
     private static array $items = [];
 
+    /**
+     * Retourne une valeur de configuration à partir de sa clé.
+     */
     public static function get(string $key, mixed $default = null): mixed
     {
         [$file, $nestedKey] = array_pad(explode('.', $key, 2), 2, null);

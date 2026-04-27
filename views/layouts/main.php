@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?= $title ?? 'EscapeRPG' ?></title>
     <link rel="stylesheet" href="<?= asset('assets/styles/base.css') ?>">
+    <link rel="stylesheet" href="<?= asset('assets/styles/header.css') ?>">
     <link rel="stylesheet" href="<?= asset('assets/styles/aventures_general/dialogues.css') ?>">
     <link rel="stylesheet" href="<?= asset('assets/styles/cartes/cartes.css') ?>">
     <link rel="stylesheet" href="<?= asset('assets/styles/textes/liens.css') ?>">

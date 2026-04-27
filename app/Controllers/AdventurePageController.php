@@ -2,43 +2,52 @@
 
 namespace App\Controllers;
 
-use App\Services\Adventures\AdventureActionResult;
+use App\Services\Adventures\Engine\AdventureFlowFactory;
 
+/**
+ * Contrôleur d'entrée des pages d'aventure.
+ *
+ * Il délègue entièrement l'affichage et les actions métier
+ * au flow configuré pour le scénario demandé.
+ */
 class AdventurePageController extends AdventureController
 {
+    /**
+     * Affiche une scène d'aventure.
+     */
     public function show(string $slug, ?string $scene = null): void
     {
         $this->ensureAdventureExists($slug);
         $config = $this->adventureConfig($slug);
         $state = $this->adventureState($slug);
+        $flow = (new AdventureFlowFactory())->make($config);
 
-        $scene ??= $state->scene() ?? ($config['entry_scene'] ?? 'index');
-        $state->setScene($scene);
+        $resolvedScene = $scene ?? ($config['entry_scene'] ?? 'index');
 
-        $this->renderAdventure('adventures/show', [
-            'title' => ($config['title'] ?? 'Aventure') . ' - ' . ucfirst($scene),
-            'adventure' => $config,
-            'scene' => $scene,
-            'state' => $state->all(),
-        ], $config['layout'] ?? 'main');
+        if ($scene !== null) {
+            $state->setScene($resolvedScene);
+        }
+
+        $page = $flow->show($config, $state, $this->request, $resolvedScene);
+        $this->renderAdventure($page->view, $page->data, $page->layout);
     }
 
+    /**
+     * Traite une action soumise depuis une scène d'aventure.
+     */
     public function update(string $slug, ?string $scene = null): void
     {
         $this->ensureAdventureExists($slug);
         $config = $this->adventureConfig($slug);
         $state = $this->adventureState($slug);
+        $flow = (new AdventureFlowFactory())->make($config);
 
-        if ($this->request->has('restart')) {
-            $state->reset();
-        }
-
-        $targetScene = $this->request->post('scene', $scene ?? $state->scene() ?? $config['entry_scene'] ?? 'index');
+        $scene ??= $config['entry_scene'] ?? 'index';
 
         $this->applyAdventureResult(
             $slug,
             $state,
-            new AdventureActionResult(nextScene: $targetScene),
+            $flow->handle($config, $state, $this->request, $scene),
         );
     }
 }

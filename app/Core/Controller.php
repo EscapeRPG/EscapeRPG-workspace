@@ -4,6 +4,12 @@ namespace App\Core;
 
 use PDO;
 
+/**
+ * Contrôleur de base du projet.
+ *
+ * Il centralise l'accès aux briques partagées d'une requête HTTP
+ * et fournit l'assistant de rendu des vues.
+ */
 class Controller
 {
     protected PDO $db;
@@ -11,6 +17,9 @@ class Controller
     protected Response $response;
     protected Session $session;
 
+    /**
+     * Initialise les dépendances communes à tous les contrôleurs.
+     */
     public function __construct()
     {
         $this->db = Database::get();
@@ -19,6 +28,11 @@ class Controller
         $this->session = new Session();
     }
 
+    /**
+     * Rend une vue puis l'injecte dans le layout demandé.
+     *
+     * @param array<string, mixed> $data
+     */
     protected function view(string $path, array $data = [], string $layout = 'main'): void
     {
         extract($data);

@@ -2,20 +2,45 @@
 
 namespace App\Core;
 
+/**
+ * Routeur HTTP minimaliste de l'application.
+ *
+ * Il associe des chemins à un contrôleur, une méthode et une liste
+ * de middlewares, puis résout la route au moment du dispatch.
+ */
 class Router
 {
     private array $routes = [];
 
+    /**
+     * Enregistre une route GET.
+     *
+     * @param array{0: class-string, 1: string} $action
+     * @param array<int, class-string> $middlewares
+     */
     public function get(string|array $paths, array $action, array $middlewares = []): void
     {
         $this->map('GET', $paths, $action, $middlewares);
     }
 
+    /**
+     * Enregistre une route POST.
+     *
+     * @param array{0: class-string, 1: string} $action
+     * @param array<int, class-string> $middlewares
+     */
     public function post(string|array $paths, array $action, array $middlewares = []): void
     {
         $this->map('POST', $paths, $action, $middlewares);
     }
 
+    /**
+     * Enregistre une même action sur plusieurs méthodes HTTP.
+     *
+     * @param string[] $methods
+     * @param array{0: class-string, 1: string} $action
+     * @param array<int, class-string> $middlewares
+     */
     public function match(array $methods, string|array $paths, array $action, array $middlewares = []): void
     {
         foreach ($methods as $method) {
@@ -23,6 +48,12 @@ class Router
         }
     }
 
+    /**
+     * Enregistre une route normalisée dans la table interne.
+     *
+     * @param array{0: class-string, 1: string} $action
+     * @param array<int, class-string> $middlewares
+     */
     private function map(string $method, string|array $paths, array $action, array $middlewares = []): void
     {
         foreach ((array) $paths as $path) {
@@ -30,6 +61,9 @@ class Router
         }
     }
 
+    /**
+     * Résout la requête courante et exécute l'action associée.
+     */
     public function dispatch(string $uri, string $method): void
     {
         $path = $this->normalizePath(rawurldecode(parse_url($uri, PHP_URL_PATH) ?? '/'));
@@ -63,6 +97,9 @@ class Router
         echo '404';
     }
 
+    /**
+     * Normalise un chemin pour unifier les enregistrements et les comparaisons.
+     */
     private function normalizePath(string $path): string
     {
         $normalized = '/' . trim($path, '/');

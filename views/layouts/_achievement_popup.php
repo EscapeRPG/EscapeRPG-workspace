@@ -1,5 +1,9 @@
 <?php
-$popupAchievements = (new \App\Services\AchievementService())->consumePopup();
+
+use App\Services\Account\AchievementService;
+
+$achievementService = new AchievementService();
+$popupAchievements = $achievementService->consumePopup();
 ?>
 <?php if ($popupAchievements !== []): ?>
     <div id="succespopup" data-logged-in="<?= auth_check() ? '1' : '0' ?>">
@@ -10,7 +14,7 @@ $popupAchievements = (new \App\Services\AchievementService())->consumePopup();
             ?>
             <div class="succesapercu">
                 <div class="succes<?= e($achievement['rarete'] ?? 'normal') ?>"></div>
-                <a href="<?= $profileUrl ?>">
+                <a href="<?= $profileUrl ?>" target="_blank">
                     <img src="<?= asset($image) ?>" alt="<?= e($achievement['titre'] ?? '') ?>">
                     <span>
                         <u><strong><?= e($achievement['titre'] ?? '') ?></strong></u><br>

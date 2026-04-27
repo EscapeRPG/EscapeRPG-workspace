@@ -1,5 +1,5 @@
-.boutonindice {
-    background: url("/escaperpg/images/indice.png");
+.boutonindice,
+.boutonreponse {
     border: none;
     width: 30px;
     height: 30px;
@@ -7,11 +7,10 @@
     margin: 20px;
 }
 
+.boutonindice {
+    background: url("/assets/img/indice.png");
+}
+
 .boutonreponse {
-    background: url("/escaperpg/images/reponse.png");
-    border: none;
-    width: 30px;
-    height: 30px;
-    cursor: help;
-    margin: 20px;
+    background: url("/assets/img/reponse.png");
 }

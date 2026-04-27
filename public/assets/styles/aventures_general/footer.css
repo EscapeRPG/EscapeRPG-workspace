@@ -10,7 +10,11 @@ footer {
     background: linear-gradient(to top, rgba(0, 0, 0, 0.3) 80%, transparent);
 }
 
-#inventaireshow {
+.footerhidden {
+    display: none !important;
+}
+
+.footeraffichage {
     width: 80%;
     margin: auto;
     display: flex;
@@ -21,31 +25,6 @@ footer {
     img {
         width: 150px;
     }
-}
-
-#inventairefooter {
-    width: 100%;
-    margin: auto;
-    cursor: pointer;
-}
-
-#motsdepasse {
-    width: 100%;
-    margin: auto;
-    cursor: pointer;
-}
-
-.footerhidden {
-    display: none !important;
-}
-
-.footeraffichage {
-    display: block;
-    width: 100%;
-  padding: 10px;
-  max-height: 250px;
-  overflow: auto;
-  margin: auto;
 }
 
 .current input {

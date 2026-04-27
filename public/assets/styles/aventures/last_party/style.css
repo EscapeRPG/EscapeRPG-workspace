@@ -1,0 +1,88 @@
+html {
+	scroll-behavior: smooth;
+	height: 100%;
+}
+
+body {
+	background: #2A5689 url("/assets/img/bg.png") repeat;
+}
+
+#banniere {
+	width: 100%;
+
+	img {
+		width: 100%;
+	}
+}
+
+h1 {
+	color: orange;
+	text-transform: uppercase;
+	font-size: small;
+}
+
+a {
+	color: red;
+	font-weight: bold;
+	text-decoration: none;
+
+	&:hover {
+		color: orange;
+	}
+}
+
+.portrait {
+	width: 20%;
+	display: inline-block;
+	vertical-align: top;
+
+	img {
+		width: 100%;
+	}
+}
+
+.enigmelieu {
+	width: 60%;
+	background-color: transparent;
+	position: relative;
+	margin: auto auto 20px;
+
+	a {
+		cursor: default;
+	}
+
+	img {
+		width: 100%;
+	}
+}
+
+.enigme {
+	text-align: center;
+	margin-bottom: 20px;
+
+	img {
+		display: inline-block;
+		vertical-align: middle;
+		max-width: 400px;
+	}
+
+	a {
+		cursor: zoom-in;
+	}
+}
+
+#phone {
+	position: absolute;
+	bottom: 18%;
+	left: 7.67%;
+	width: 5.83%;
+	height: 6.25%;
+}
+
+#sms {
+	position: absolute;
+	bottom: 14.5%;
+	left: 40.5%;
+	width: 5.67%;
+	height: 8%;
+}

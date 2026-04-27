@@ -4,11 +4,17 @@ namespace App\Controllers;
 
 use App\Core\Controller;
 use App\Repositories\MemberRepository;
-use App\Services\AchievementService;
-use App\Services\AuthService;
+use App\Services\Account\AchievementService;
+use App\Services\Account\AuthService;
 
+/**
+ * Gère les écrans et actions d'authentification.
+ */
 class AuthController extends Controller
 {
+    /**
+     * Affiche le formulaire de connexion.
+     */
     public function showLogin(): void
     {
         $this->view('auth/login', [
@@ -16,6 +22,9 @@ class AuthController extends Controller
         ]);
     }
 
+    /**
+     * Tente de connecter un membre à partir du formulaire.
+     */
     public function login(): void
     {
         if (!verify_csrf($this->request->post('_token'))) {
@@ -41,6 +50,9 @@ class AuthController extends Controller
         $this->response->redirect('/mon-compte');
     }
 
+    /**
+     * Affiche le formulaire d'inscription.
+     */
     public function showRegister(): void
     {
         $this->view('auth/register', [
@@ -48,6 +60,9 @@ class AuthController extends Controller
         ]);
     }
 
+    /**
+     * Crée un nouveau compte membre.
+     */
     public function register(): void
     {
         if (!verify_csrf($this->request->post('_token'))) {
@@ -90,6 +105,9 @@ class AuthController extends Controller
         $this->response->redirect('/mon-compte');
     }
 
+    /**
+     * Déconnecte le membre courant.
+     */
     public function logout(): void
     {
         if (!verify_csrf($this->request->post('_token'))) {
@@ -101,6 +119,11 @@ class AuthController extends Controller
         $this->response->redirect('/login');
     }
 
+    /**
+     * Valide les données principales du formulaire d'inscription.
+     *
+     * @return string[]
+     */
     private function validateRegistration(string $username, string $email, string $password, string $passwordConfirmation): array
     {
         $errors = [];
@@ -128,6 +151,9 @@ class AuthController extends Controller
         return $errors;
     }
 
+    /**
+     * Traite l'upload de l'avatar d'inscription et retourne son nom de fichier.
+     */
     private function handleAvatarUpload(): string
     {
         $file = $this->request->file('avatar');

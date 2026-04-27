@@ -4,10 +4,16 @@ namespace App\Core;
 
 use PDO;
 
+/**
+ * Fournit une connexion PDO partagée à l'ensemble de l'application.
+ */
 class Database
 {
     private static ?PDO $pdo = null;
 
+    /**
+     * Retourne l'instance PDO unique du processus courant.
+     */
     public static function get(): PDO
     {
         if (!self::$pdo) {

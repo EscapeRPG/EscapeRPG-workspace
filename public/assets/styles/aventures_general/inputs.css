@@ -10,6 +10,7 @@ button {
         margin: 0;
     }
 }
+
 input[list="notesListe"],
 input[type="text"],
 input[type="password"] {
@@ -18,7 +19,8 @@ input[type="password"] {
     max-height: 20px;
 }
 
-input[type=submit] {
+input[type=submit],
+button.action{
     width: 100%;
     max-width: 300px;
     padding: 10px;

@@ -1,23 +1,39 @@
 <?php use App\Core\View; ?>
 
+<?php
+if (empty(View::get('aside')) && !empty($adventure['sidebar_view'])) {
+    View::start('aside');
+    require __DIR__ . '/../' . $adventure['sidebar_view'] . '.php';
+    View::end();
+}
+
+if (empty(View::get('footer')) && !empty($adventure['footer_view'])) {
+    require __DIR__ . '/../' . $adventure['footer_view'] . '.php';
+}
+?>
+
 <?php View::start('content'); ?>
 <section class="adventure-shell">
-    <h1><?= htmlspecialchars($adventure['title'] ?? 'Aventure', ENT_QUOTES, 'UTF-8') ?></h1>
-    <p>Point d'entree du framework aventure en cours de mise en place.</p>
+    <?php if ($message = flash('success')): ?>
+        <p><?= e($message) ?></p>
+    <?php endif; ?>
+    <?php if ($message = flash('error')): ?>
+        <p><?= e($message) ?></p>
+    <?php endif; ?>
+    <?php if ($message = flash('info')): ?>
+        <p><?= e($message) ?></p>
+    <?php endif; ?>
 
-    <p>
-        Scenario :
-        <strong><?= htmlspecialchars($adventure['slug'] ?? '', ENT_QUOTES, 'UTF-8') ?></strong>
-        |
-        Scene :
-        <strong><?= htmlspecialchars($scene, ENT_QUOTES, 'UTF-8') ?></strong>
-    </p>
+    <?php
+    $sceneViewPath = null;
+    if (!empty($sceneView)) {
+        $candidate = __DIR__ . '/../' . $sceneView . '.php';
+        if (is_file($candidate)) {
+            $sceneViewPath = $candidate;
+        }
+    }
+    ?>
 
-    <form action="<?= url('/aventures/' . ($adventure['slug'] ?? '') . '/' . $scene) ?>" method="post">
-        <input type="hidden" name="scene" value="<?= htmlspecialchars($scene, ENT_QUOTES, 'UTF-8') ?>">
-        <button type="submit" name="restart" value="1">Reinitialiser l'etat</button>
-    </form>
-
-    <pre><?= htmlspecialchars(var_export($state, true), ENT_QUOTES, 'UTF-8') ?></pre>
+    <?php require $sceneViewPath; ?>
 </section>
 <?php View::end(); ?>

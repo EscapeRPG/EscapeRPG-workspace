@@ -35,7 +35,7 @@ return [
             'alt' => 'aventurier novice',
             'html_paragraphs' => [
                 'Si c\'est la première fois que vous venez sur EscapeRPG, il vous est fortement recommandé de prendre connaissance des quelques <a href="#bloc3">règles du jeu</a> pour mieux appréhender ce qui vous attend par la suite.',
-                'Une fois que ce sera fait, vous devriez commencer par jouer le <a href="/aventures/lastparty/index">scénario de découverte</a> !',
+                'Une fois que ce sera fait, vous devriez commencer par jouer le <a href="/aventures/lastparty">scénario de découverte</a> !',
             ],
         ],
     ],
