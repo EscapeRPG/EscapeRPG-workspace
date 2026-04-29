@@ -1,32 +1,30 @@
-<?php
-
-$legacyHtml = <<<'HTML'
 <div id="faceeebook">
     <div id="faceeebookheader">
         <ul>
             <li class="topleft">
-                <img src="/escaperpg/images/lastparty/logofaceeebook.png" alt="logo faceeebook">
-                <form action="#" method="post">
+                <img src="<?= asset('assets/img/lastparty/logofaceeebook.png') ?>" alt="logo faceeebook">
+                <form action="<?= url('/aventures/lastparty/ordinateur') ?>" method="post">
                     <input type="search" name="rechercher" placeholder="Rechercher...">
+                    <input type="hidden" name="action" value="search_profile">
                 </form>
             </li>
             <li class="logoscentre">
-                <img src="/escaperpg/images/lastparty/maison.png" alt="accueil">
-                <img src="/escaperpg/images/lastparty/drapeau.png" alt="langues">
-                <img src="/escaperpg/images/lastparty/bonhommes.png" alt="amis connectés">
+                <img src="<?= asset('assets/img/lastparty/maison.png') ?>" alt="accueil">
+                <img src="<?= asset('assets/img/lastparty/drapeau.png') ?>" alt="langues">
+                <img src="<?= asset('assets/img/lastparty/bonhommes.png') ?>" alt="amis connectés">
             </li>
             <li class="topright">
-                <img src="/escaperpg/images/lastparty/jonathan.png" alt="jonathan">
+                <img src="<?= asset('assets/img/lastparty/jonathan.png') ?>" alt="jonathan">
                 Jonathan
-                <img src="/escaperpg/images/lastparty/plus.png" alt="plus">
-                <img src="/escaperpg/images/lastparty/cloche.png" alt="notifications">
-                <img src="/escaperpg/images/lastparty/fleche.png" alt="menu plus">
+                <img src="<?= asset('assets/img/lastparty/plus.png') ?>" alt="plus">
+                <img src="<?= asset('assets/img/lastparty/cloche.png') ?>" alt="notifications">
+                <img src="<?= asset('assets/img/lastparty/fleche.png') ?>" alt="menu plus">
             </li>
         </ul>
     </div>
 
     <div id="couverture">
-        <img src="/escaperpg/images/lastparty/juliettetop.png" alt="couverture juliette">
+        <img src="<?= asset('assets/img/lastparty/juliettetop.png') ?>" alt="couverture juliette">
         <p>
             <b>Juliette Cestlafete</b>
             <br>
@@ -35,7 +33,7 @@ $legacyHtml = <<<'HTML'
     </div>
 
     <div class="actus">
-        <img src="/escaperpg/images/lastparty/juliette.png" alt="juliette">
+        <img src="<?= asset('assets/img/lastparty/juliette.png') ?>" alt="juliette">
         <div class="name">
             Juliette Cestlafete<br>
             <span class="light">2h</span>
@@ -43,16 +41,16 @@ $legacyHtml = <<<'HTML'
         <p>
             Euuuuuuh... Les gens, vous vous souvenez de ce qu'il s'est passé hier ?
             Parce que moi PAS DU TOUT ! J'ai dû un peu trop abuser de la picole... !!!!!!!!
-            <img src="/escaperpg/images/lastparty/mdr.png" alt="emoji mdr">
-            <img src="/escaperpg/images/lastparty/lol.png" alt="emoji lol">
-            <img src="/escaperpg/images/lastparty/oups.png" alt="emoji oups">
-            <img src="/escaperpg/images/lastparty/biere.png" alt="emoji bière">
-            <img src="/escaperpg/images/lastparty/biere.png" alt="emoji bière">
-            <img src="/escaperpg/images/lastparty/biere.png" alt="emoji bière">
-            <img src="/escaperpg/images/lastparty/biere.png" alt="emoji bière">
+            <img src="<?= asset('assets/img/lastparty/mdr.png') ?>" alt="emoji mdr">
+            <img src="<?= asset('assets/img/lastparty/lol.png') ?>" alt="emoji lol">
+            <img src="<?= asset('assets/img/lastparty/oups.png') ?>" alt="emoji oups">
+            <img src="<?= asset('assets/img/lastparty/biere.png') ?>" alt="emoji bière">
+            <img src="<?= asset('assets/img/lastparty/biere.png') ?>" alt="emoji bière">
+            <img src="<?= asset('assets/img/lastparty/biere.png') ?>" alt="emoji bière">
+            <img src="<?= asset('assets/img/lastparty/biere.png') ?>" alt="emoji bière">
         </p>
         <div class="comment">
-            <img src="/escaperpg/images/lastparty/oscar.png" alt="oscar">
+            <img src="<?= asset('assets/img/lastparty/oscar.png') ?>" alt="oscar">
             <div class="commentaire">
                 <div class="name">
                     Oscar Duchamp
@@ -62,7 +60,7 @@ $legacyHtml = <<<'HTML'
                 </p>
             </div>
             <br>
-            <img src="/escaperpg/images/lastparty/antoine.png" alt="antoine">
+            <img src="<?= asset('assets/img/lastparty/antoine.png') ?>" alt="antoine">
             <div class="commentaire">
                 <div class="name">
                     Antoine Ballet
@@ -72,7 +70,7 @@ $legacyHtml = <<<'HTML'
                 </p>
             </div>
             <br>
-            <img src="/escaperpg/images/lastparty/leslie.png" alt="leslie">
+            <img src="<?= asset('assets/img/lastparty/leslie.png') ?>" alt="leslie">
             <div class="commentaire">
                 <div class="name">
                     Leslie Calais
@@ -83,7 +81,7 @@ $legacyHtml = <<<'HTML'
                 </p>
             </div>
             <br>
-            <img src="/escaperpg/images/lastparty/marine.png" alt="marine">
+            <img src="<?= asset('assets/img/lastparty/marine.png') ?>" alt="marine">
             <div class="commentaire">
                 <div class="name">
                     Marine Després
@@ -93,7 +91,7 @@ $legacyHtml = <<<'HTML'
                 </p>
             </div>
             <br>
-            <img src="/escaperpg/images/lastparty/benjamin.png" alt="benjamin">
+            <img src="<?= asset('assets/img/lastparty/benjamin.png') ?>" alt="benjamin">
             <div class="commentaire">
                 <div class="name">
                     Benjamin Villedieu
@@ -103,7 +101,7 @@ $legacyHtml = <<<'HTML'
                 </p>
             </div>
             <br>
-            <img src="/escaperpg/images/lastparty/juliette.png" alt="juliette">
+            <img src="<?= asset('assets/img/lastparty/juliette.png') ?>" alt="juliette">
             <div class="commentaire">
                 <div class="name">
                     Juliette Cestlafete
@@ -114,7 +112,7 @@ $legacyHtml = <<<'HTML'
                 </p>
             </div>
             <br>
-            <img src="/escaperpg/images/lastparty/oscar.png" alt="oscar">
+            <img src="<?= asset('assets/img/lastparty/oscar.png') ?>" alt="oscar">
             <div class="commentaire">
                 <div class="name">
                     Oscar Duchamp
@@ -124,7 +122,7 @@ $legacyHtml = <<<'HTML'
                 </p>
             </div>
             <br>
-            <img src="/escaperpg/images/lastparty/leslie.png" alt="leslie">
+            <img src="<?= asset('assets/img/lastparty/leslie.png') ?>" alt="leslie">
             <div class="commentaire">
                 <div class="name">
                     Leslie Calais
@@ -134,7 +132,7 @@ $legacyHtml = <<<'HTML'
                 </p>
             </div>
             <br>
-            <img src="/escaperpg/images/lastparty/juliette.png" alt="juliette">
+            <img src="<?= asset('assets/img/lastparty/juliette.png') ?>" alt="juliette">
             <div class="commentaire">
                 <div class="name">
                     Juliette Cestlafete
@@ -144,7 +142,7 @@ $legacyHtml = <<<'HTML'
                 </p>
             </div>
             <br>
-            <img src="/escaperpg/images/lastparty/leslie.png" alt="leslie">
+            <img src="<?= asset('assets/img/lastparty/leslie.png') ?>" alt="leslie">
             <div class="commentaire">
                 <div class="name">
                     Leslie Calais
@@ -154,16 +152,16 @@ $legacyHtml = <<<'HTML'
                 </p>
             </div>
             <br>
-            <img src="/escaperpg/images/lastparty/jonathan.png" alt="jonathan">
+            <img src="<?= asset('assets/img/lastparty/jonathan.png') ?>" alt="jonathan">
             <div class="quoineuf">
                 Votre commentaire...
             </div>
-            <img src="/escaperpg/images/lastparty/like.png" alt="like">
+            <img src="<?= asset('assets/img/lastparty/like.png') ?>" alt="like">
         </div>
     </div>
 
     <div class="actus">
-        <img src="/escaperpg/images/lastparty/juliette.png" alt="juliette">
+        <img src="<?= asset('assets/img/lastparty/juliette.png') ?>" alt="juliette">
         <div class="name">
             Juliette Cestlafete<br>
             <span class="light">26h</span>
@@ -172,13 +170,13 @@ $legacyHtml = <<<'HTML'
             Ce soir c'est GROSSE CHOUIIIIIIIIIIIIIIIIIIIIIILLE !!!
         </p>
         <div class="likes">
-            <img src="/escaperpg/images/lastparty/coeur.png" alt="cœur">
+            <img src="<?= asset('assets/img/lastparty/coeur.png') ?>" alt="cœur">
             <p>
                 21
             </p>
         </div>
         <div class="comment">
-            <img src="/escaperpg/images/lastparty/oscar.png" alt="oscar">
+            <img src="<?= asset('assets/img/lastparty/oscar.png') ?>" alt="oscar">
             <div class="commentaire">
                 <div class="name">
                     Oscar Duchamp
@@ -188,29 +186,29 @@ $legacyHtml = <<<'HTML'
                 </p>
             </div>
             <br>
-            <img src="/escaperpg/images/lastparty/leslie.png" alt="leslie">
+            <img src="<?= asset('assets/img/lastparty/leslie.png') ?>" alt="leslie">
             <div class="commentaire">
                 <div class="name">
                     Leslie Calais
                 </div>
                 <p>
                     Yeeeeeeeeeeeees !!!! Je ramène la bibine !!!
-                    <img src="/escaperpg/images/lastparty/biere.png" alt="emoji bière">
-                    <img src="/escaperpg/images/lastparty/biere.png" alt="emoji bière">
-                    <img src="/escaperpg/images/lastparty/biere.png" alt="emoji bière">
-                    <img src="/escaperpg/images/lastparty/biere.png" alt="emoji bière">
-                    <img src="/escaperpg/images/lastparty/biere.png" alt="emoji bière">
-                    <img src="/escaperpg/images/lastparty/biere.png" alt="emoji bière">
-                    <img src="/escaperpg/images/lastparty/biere.png" alt="emoji bière">
-                    <img src="/escaperpg/images/lastparty/biere.png" alt="emoji bière">
-                    <img src="/escaperpg/images/lastparty/biere.png" alt="emoji bière">
-                    <img src="/escaperpg/images/lastparty/biere.png" alt="emoji bière">
-                    <img src="/escaperpg/images/lastparty/biere.png" alt="emoji bière">
-                    <img src="/escaperpg/images/lastparty/biere.png" alt="emoji bière">
+                    <img src="<?= asset('assets/img/lastparty/biere.png') ?>" alt="emoji bière">
+                    <img src="<?= asset('assets/img/lastparty/biere.png') ?>" alt="emoji bière">
+                    <img src="<?= asset('assets/img/lastparty/biere.png') ?>" alt="emoji bière">
+                    <img src="<?= asset('assets/img/lastparty/biere.png') ?>" alt="emoji bière">
+                    <img src="<?= asset('assets/img/lastparty/biere.png') ?>" alt="emoji bière">
+                    <img src="<?= asset('assets/img/lastparty/biere.png') ?>" alt="emoji bière">
+                    <img src="<?= asset('assets/img/lastparty/biere.png') ?>" alt="emoji bière">
+                    <img src="<?= asset('assets/img/lastparty/biere.png') ?>" alt="emoji bière">
+                    <img src="<?= asset('assets/img/lastparty/biere.png') ?>" alt="emoji bière">
+                    <img src="<?= asset('assets/img/lastparty/biere.png') ?>" alt="emoji bière">
+                    <img src="<?= asset('assets/img/lastparty/biere.png') ?>" alt="emoji bière">
+                    <img src="<?= asset('assets/img/lastparty/biere.png') ?>" alt="emoji bière">
                 </p>
             </div>
             <br>
-            <img src="/escaperpg/images/lastparty/oscar.png" alt="oscar">
+            <img src="<?= asset('assets/img/lastparty/oscar.png') ?>" alt="oscar">
             <div class="commentaire">
                 <div class="name">
                     Oscar Duchamp
@@ -220,7 +218,7 @@ $legacyHtml = <<<'HTML'
                 </p>
             </div>
             <br>
-            <img src="/escaperpg/images/lastparty/antoine.png" alt="antoine">
+            <img src="<?= asset('assets/img/lastparty/antoine.png') ?>" alt="antoine">
             <div class="commentaire">
                 <div class="name">
                     Antoine Ballet
@@ -230,11 +228,11 @@ $legacyHtml = <<<'HTML'
                 </p>
             </div>
             <br>
-            <img src="/escaperpg/images/lastparty/jonathan.png" alt="jonathan">
+            <img src="<?= asset('assets/img/lastparty/jonathan.png') ?>" alt="jonathan">
             <div class="quoineuf">
                 Votre commentaire...
             </div>
-            <img src="/escaperpg/images/lastparty/like.png" alt="like">
+            <img src="<?= asset('assets/img/lastparty/like.png') ?>" alt="like">
         </div>
     </div>
 
@@ -252,14 +250,3 @@ $legacyHtml = <<<'HTML'
         </p>
     </div>
 </div>
-
-HTML;
-
-$legacyHtml = str_replace('/escaperpg/images/lastparty/', asset('assets/img/lastparty') . '/', $legacyHtml);
-$legacyHtml = str_replace(
-    '<form action="#" method="post">',
-    '<form action="' . url('/aventures/lastparty/ordinateur') . '" method="post"><input type="hidden" name="action" value="search_profile">',
-    $legacyHtml,
-);
-
-echo $legacyHtml;
