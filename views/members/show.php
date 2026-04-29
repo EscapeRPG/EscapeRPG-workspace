@@ -3,15 +3,11 @@
 <?php View::start('content'); ?>
 <div id="formconnexion">
     <div class="portraitavatarcompte">
-        <img src="<?= asset('assets/img/uploads/' . ($member['avatar'] ?? 'narrateur.png')) ?>" alt="<?= e($member['id'] ?? '') ?>">
+        <img src="<?= asset('assets/img/uploads/' . ($member['avatar'] ?? 'narrateur.png')) ?>" alt="<?= e($member['pseudo'] ?? '') ?>">
     </div>
-    <h2><?= e($member['id'] ?? '') ?></h2>
-
-    <?php if ($message = flash('success')): ?>
-        <p><?= e($message) ?></p>
-    <?php endif; ?>
-    <?php if ($message = flash('error')): ?>
-        <p><?= e($message) ?></p>
+    <h2><?= e($member['pseudo'] ?? '') ?></h2>
+    <?php if (!empty($member['date_inscription'])): ?>
+        <p>Membre depuis le <?= e(date('d/m/Y', strtotime((string) $member['date_inscription']))) ?></p>
     <?php endif; ?>
 
     <?php if (!empty($isOwner)): ?>
@@ -25,19 +21,19 @@
     <?php endif; ?>
 </div>
 
-<?php if (($member['id'] ?? '') === 'le narrateur'): ?>
-    <h2>Félicitations d'être arrivé·e ici ! Vous méritez bien un succès spécial !</h2>
+<?php if (($member['pseudo'] ?? '') === 'le narrateur'): ?>
+    <h2>Félicitations d'être arrivé·e jusqu'ici ! Vous méritez bien un succès spécial !</h2>
 <?php else: ?>
     <h2>Partenaires d'aventure</h2>
 
     <div id="containeramis">
         <?php if (!empty($friends)): ?>
             <?php foreach ($friends as $friend): ?>
-                <a href="<?= url('/membres/' . rawurlencode($friend['id'] ?? '')) ?>">
+                <a href="<?= url('/membres/' . rawurlencode($friend['pseudo'] ?? '')) ?>">
                     <img
                         src="<?= asset('assets/img/uploads/' . ($friend['avatar'] ?? 'narrateur.png')) ?>"
-                        alt="<?= e($friend['id'] ?? '') ?>"
-                        title="<?= e($friend['id'] ?? '') ?>"
+                        alt="<?= e($friend['pseudo'] ?? '') ?>"
+                        title="<?= e($friend['pseudo'] ?? '') ?>"
                     >
                 </a>
             <?php endforeach; ?>
@@ -47,7 +43,7 @@
     </div>
 
     <?php if (!empty($canAddFriend)): ?>
-        <form action="<?= url('/membres/' . rawurlencode($member['id'] ?? '') . '/amis') ?>" method="post">
+        <form action="<?= url('/membres/' . rawurlencode($member['pseudo'] ?? '') . '/amis') ?>" method="post">
             <?= csrf_field() ?>
             <input type="submit" name="addfriend" value="Devenir partenaires d'aventure">
         </form>
@@ -55,7 +51,7 @@
 <?php endif; ?>
 
 <form action="<?= url('/membres') ?>" method="get">
-    <input type="text" name="id" value="<?= e($member['id'] ?? '') ?>">
+    <input type="text" name="pseudo" value="<?= e($member['pseudo'] ?? '') ?>">
     <input type="submit" class="connecting" value="Rechercher un membre">
 </form>
 

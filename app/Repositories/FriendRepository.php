@@ -20,17 +20,17 @@ class FriendRepository
     /**
      * Retourne la liste des amis d'un membre.
      */
-    public function getFriendsForMember(int|string $memberPk): array
+    public function getFriendsForMember(int|string $memberId): array
     {
         $statement = $this->db->prepare(
             "SELECT m.*
-             FROM 0membre_amis a
-             JOIN 0membres m ON m.pk = a.id_ami
+             FROM membre_amis a
+             JOIN membres m ON m.id = a.id_ami
              WHERE a.id_membre = :member
              ORDER BY m.id ASC"
         );
         $statement->execute([
-            'member' => $memberPk,
+            'member' => $memberId,
         ]);
 
         return $statement->fetchAll();
@@ -39,14 +39,14 @@ class FriendRepository
     /**
      * Vérifie si une relation d'amitié existe déjà.
      */
-    public function exists(int|string $memberPk, int|string $friendPk): bool
+    public function exists(int|string $memberId, int|string $friendId): bool
     {
         $statement = $this->db->prepare(
-            "SELECT 1 FROM 0membre_amis WHERE id_membre = :member AND id_ami = :friend LIMIT 1"
+            "SELECT 1 FROM membre_amis WHERE id_membre = :member AND id_ami = :friend LIMIT 1"
         );
         $statement->execute([
-            'member' => $memberPk,
-            'friend' => $friendPk,
+            'member' => $memberId,
+            'friend' => $friendId,
         ]);
 
         return (bool) $statement->fetchColumn();
@@ -55,14 +55,14 @@ class FriendRepository
     /**
      * Ajoute une relation d'amitié.
      */
-    public function add(int|string $memberPk, int|string $friendPk): void
+    public function add(int|string $memberId, int|string $friendId): void
     {
         $statement = $this->db->prepare(
-            "INSERT INTO 0membre_amis (id_membre, id_ami) VALUES (:member, :friend)"
+            "INSERT INTO membre_amis (id_membre, id_ami) VALUES (:member, :friend)"
         );
         $statement->execute([
-            'member' => $memberPk,
-            'friend' => $friendPk,
+            'member' => $memberId,
+            'friend' => $friendId,
         ]);
     }
 }

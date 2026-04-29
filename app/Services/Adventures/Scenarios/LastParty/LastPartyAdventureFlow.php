@@ -10,6 +10,13 @@ use App\Services\Adventures\Engine\AdventureSceneHandler;
 use App\Services\Adventures\Engine\AdventureState;
 use App\Services\Adventures\Scenarios\LastParty\Scenes\EveilSceneHandler;
 use App\Services\Adventures\Scenarios\LastParty\Scenes\IndexSceneHandler;
+use App\Services\Adventures\Scenarios\LastParty\Scenes\AppartementSceneHandler;
+use App\Services\Adventures\Scenarios\LastParty\Scenes\TelephoneSceneHandler;
+use App\Services\Adventures\Scenarios\LastParty\Scenes\OrdinateurSceneHandler;
+use App\Services\Adventures\Scenarios\LastParty\Scenes\TiroirSceneHandler;
+use App\Services\Adventures\Scenarios\LastParty\Scenes\AppareilPhotoSceneHandler;
+use App\Services\Adventures\Scenarios\LastParty\Scenes\CouloirSceneHandler;
+use App\Services\Adventures\Scenarios\LastParty\Scenes\FinSceneHandler;
 use App\Services\Adventures\Support\AdventureSaveService;
 
 /**
@@ -34,6 +41,13 @@ class LastPartyAdventureFlow extends SceneBasedAdventureFlow
         $this->handlers = [
             'index' => new IndexSceneHandler(),
             'eveil' => new EveilSceneHandler(),
+            'telephone' => new TelephoneSceneHandler(),
+            'appartement' => new AppartementSceneHandler(),
+            'tiroir' => new TiroirSceneHandler(),
+            'ordinateur' => new OrdinateurSceneHandler(),
+            'appareilphoto' => new AppareilPhotoSceneHandler(),
+            'couloir' => new CouloirSceneHandler(),
+            'ebaubi' => new FinSceneHandler(),
         ];
     }
 

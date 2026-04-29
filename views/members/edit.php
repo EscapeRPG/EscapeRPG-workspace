@@ -3,14 +3,10 @@
 <?php View::start('content'); ?>
 <div id="formconnexion">
     <div class="portraitavatarcompte">
-        <img src="<?= asset('assets/img/uploads/' . ($member['avatar'] ?? 'narrateur.png')) ?>" alt="<?= e($member['id'] ?? '') ?>">
+        <img src="<?= asset('assets/img/uploads/' . ($member['avatar'] ?? 'narrateur.png')) ?>" alt="<?= e($member['pseudo'] ?? '') ?>">
     </div>
 
-    <h1><?= e($member['id'] ?? '') ?></h1>
-
-    <?php if ($message = flash('error')): ?>
-        <p><?= e($message) ?></p>
-    <?php endif; ?>
+    <h1><?= e($member['pseudo'] ?? '') ?></h1>
 
     <form action="<?= url('/profil/edit') ?>" method="post" enctype="multipart/form-data">
         <?= csrf_field() ?>

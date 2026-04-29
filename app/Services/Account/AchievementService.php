@@ -40,10 +40,10 @@ class AchievementService
         $member ??= AuthService::user();
         $isNew = true;
 
-        if ($member && isset($member['pk'])) {
-            $isNew = !$this->achievements->memberHasAchievement($member['pk'], $achievement['id']);
+        if ($member && isset($member['id'])) {
+            $isNew = !$this->achievements->memberHasAchievement($member['id'], $achievement['id']);
             if ($isNew) {
-                $this->achievements->grantToMember($member['pk'], $achievement['id']);
+                $this->achievements->grantToMember($member['id'], $achievement['id']);
             }
         }
 

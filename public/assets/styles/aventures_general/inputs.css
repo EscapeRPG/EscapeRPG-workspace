@@ -1,4 +1,4 @@
-button {
+button:not(.action) {
     background: none;
     border: none;
     cursor: default;
@@ -20,7 +20,7 @@ input[type="password"] {
 }
 
 input[type=submit],
-button.action{
+button.action {
     width: 100%;
     max-width: 300px;
     padding: 10px;

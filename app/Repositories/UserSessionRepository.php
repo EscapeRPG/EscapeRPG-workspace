@@ -20,7 +20,7 @@ class UserSessionRepository
     /**
      * Retourne l'identifiant utilisateur associé à un token encore valide.
      */
-    public function findValidUserIdByToken(string $token): ?string
+    public function findValidUserPseudoByToken(string $token): ?string
     {
         $statement = $this->db->prepare(
             "SELECT user_id FROM user_session WHERE token = :token AND expires > NOW() LIMIT 1"

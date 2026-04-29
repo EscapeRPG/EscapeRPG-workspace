@@ -3,13 +3,6 @@
 <?php View::start('content'); ?>
 <div id="formconnexion">
     <h1>Connexion à l'espace membres</h1>
-    <?php if ($message = flash('error')): ?>
-        <p><?= e($message) ?></p>
-    <?php endif; ?>
-    <?php if ($message = flash('success')): ?>
-        <p><?= e($message) ?></p>
-    <?php endif; ?>
-
     <form action="<?= url('/login') ?>" method="post">
         <?= csrf_field() ?>
         <input type="text" name="pseudocompte" placeholder="Pseudo" required>

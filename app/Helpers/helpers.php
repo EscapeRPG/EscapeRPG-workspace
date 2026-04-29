@@ -75,7 +75,7 @@ function auth_user(): ?array
  */
 function auth_id(): ?string
 {
-    return \App\Services\Account\AuthService::id();
+    return \App\Services\Account\AuthService::pseudo();
 }
 
 /**

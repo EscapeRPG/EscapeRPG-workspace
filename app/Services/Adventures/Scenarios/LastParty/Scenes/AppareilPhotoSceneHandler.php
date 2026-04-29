@@ -8,21 +8,21 @@ use App\Services\Adventures\Engine\AdventureSceneHandler;
 use App\Services\Adventures\Engine\AdventureState;
 
 /**
- * Gère la scène d'éveil de Last Party.
+ * Gere la decouverte des photos de la veille.
  */
-class EveilSceneHandler implements AdventureSceneHandler
+class AppareilPhotoSceneHandler implements AdventureSceneHandler
 {
     public function variant(AdventureState $state, Request $request, bool $isLandingPage = false): string
     {
-        return (int) $state->get('eveil_step', 0) < 1
-            ? 'introduction'
-            : 'room';
+        return (int) $state->get('camera_step', 0) < 1
+            ? 'intro'
+            : 'photo_clue';
     }
 
     public function viewData(array $config, AdventureState $state, Request $request, bool $isLandingPage = false): array
     {
         return [
-            'step' => (int) $state->get('eveil_step', 0),
+            'step' => (int) $state->get('camera_step', 0),
         ];
     }
 
@@ -31,14 +31,11 @@ class EveilSceneHandler implements AdventureSceneHandler
         $action = (string) $request->post('action', '');
 
         return match ($action) {
-            'continue_intro' => new AdventureActionResult(
-                nextScene: 'eveil',
-                stateChanges: ['eveil_step' => 1],
+            'inspect_gallery' => new AdventureActionResult(
+                nextScene: 'appareilphoto',
+                stateChanges: ['camera_step' => 1],
             ),
-            'open_phone' => new AdventureActionResult(
-                nextScene: 'telephone',
-            ),
-            default => new AdventureActionResult(nextScene: 'eveil'),
+            default => new AdventureActionResult(nextScene: 'appareilphoto'),
         };
     }
 }

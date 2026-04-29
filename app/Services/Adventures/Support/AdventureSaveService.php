@@ -30,11 +30,11 @@ class AdventureSaveService
     public function saveForCurrentUser(string $scenarioSlug, array $state, string $scene): bool
     {
         $user = AuthService::user();
-        if (!$user || empty($user['id'])) {
+        if (!$user || empty($user['pseudo'])) {
             return false;
         }
 
-        $this->repository->saveForMember($scenarioSlug, (string) $user['id'], $state, $scene);
+        $this->repository->saveForMember($scenarioSlug, (string) $user['pseudo'], $state, $scene);
 
         return true;
     }
@@ -63,11 +63,11 @@ class AdventureSaveService
     public function loadForCurrentUser(string $scenarioSlug): ?array
     {
         $user = AuthService::user();
-        if (!$user || empty($user['id'])) {
+        if (!$user || empty($user['pseudo'])) {
             return null;
         }
 
-        return $this->normalizeSave($this->repository->findForMember($scenarioSlug, (string) $user['id']));
+        return $this->normalizeSave($this->repository->findForMember($scenarioSlug, (string) $user['pseudo']));
     }
 
     /**

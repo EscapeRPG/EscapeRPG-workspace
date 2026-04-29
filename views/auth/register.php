@@ -3,10 +3,6 @@
 <?php View::start('content'); ?>
 <div id="formconnexion">
     <h1>Création d'un nouveau compte</h1>
-    <?php if ($message = flash('error')): ?>
-        <p><?= e($message) ?></p>
-    <?php endif; ?>
-
     <form action="<?= url('/register') ?>" method="post" enctype="multipart/form-data">
         <?= csrf_field() ?>
         <input type="text" name="pseudocompte" placeholder="Pseudo (20 caractères max)" maxlength="20" required>

@@ -22,18 +22,18 @@ class AchievementRepository
     /**
      * Retourne les succès obtenus par un membre pour un scénario donné.
      */
-    public function getEarnedByScenario(int|string $memberPk, string $scenario): array
+    public function getEarnedByScenario(int|string $memberId, string $scenario): array
     {
         $statement = $this->db->prepare(
             "SELECT s.*
-             FROM 0membre_succes ms
-             JOIN 0succes s ON ms.id_succes = s.id
+             FROM membre_succes ms
+             JOIN succes s ON ms.id_succes = s.id
              WHERE ms.id_membre = :member
                AND s.scenario = :scenario
              ORDER BY FIELD(s.rarete, " . self::RARITY_ORDER . ")"
         );
         $statement->execute([
-            'member' => $memberPk,
+            'member' => $memberId,
             'scenario' => $scenario,
         ]);
 
@@ -46,7 +46,7 @@ class AchievementRepository
     public function findByScenarioAndName(string $scenario, string $name): ?array
     {
         $statement = $this->db->prepare(
-            "SELECT * FROM 0succes WHERE scenario = :scenario AND nom = :name LIMIT 1"
+            "SELECT * FROM succes WHERE scenario = :scenario AND nom = :name LIMIT 1"
         );
         $statement->execute([
             'scenario' => $scenario,
@@ -59,13 +59,13 @@ class AchievementRepository
     /**
      * Indique si un membre possède déjà un succès donné.
      */
-    public function memberHasAchievement(int|string $memberPk, int|string $achievementId): bool
+    public function memberHasAchievement(int|string $memberId, int|string $achievementId): bool
     {
         $statement = $this->db->prepare(
-            "SELECT 1 FROM 0membre_succes WHERE id_membre = :member AND id_succes = :achievement LIMIT 1"
+            "SELECT 1 FROM membre_succes WHERE id_membre = :member AND id_succes = :achievement LIMIT 1"
         );
         $statement->execute([
-            'member' => $memberPk,
+            'member' => $memberId,
             'achievement' => $achievementId,
         ]);
 
@@ -75,13 +75,13 @@ class AchievementRepository
     /**
      * Attribue un succès à un membre.
      */
-    public function grantToMember(int|string $memberPk, int|string $achievementId): void
+    public function grantToMember(int|string $memberId, int|string $achievementId): void
     {
         $statement = $this->db->prepare(
-            "INSERT INTO 0membre_succes (id_membre, id_succes) VALUES (:member, :achievement)"
+            "INSERT INTO membre_succes (id_membre, id_succes) VALUES (:member, :achievement)"
         );
         $statement->execute([
-            'member' => $memberPk,
+            'member' => $memberId,
             'achievement' => $achievementId,
         ]);
     }
@@ -93,7 +93,7 @@ class AchievementRepository
     {
         $statement = $this->db->prepare(
             "SELECT *
-             FROM 0succes
+             FROM succes
              WHERE scenario = :scenario
              ORDER BY FIELD(rarete, " . self::RARITY_ORDER . ")"
         );
@@ -110,12 +110,12 @@ class AchievementRepository
      * @param array<string, int> $targets
      * @return array<string, array{earned: int, total: int, percent: float|int}>
      */
-    public function getScenarioProgress(int|string $memberPk, array $targets): array
+    public function getScenarioProgress(int|string $memberId, array $targets): array
     {
         $progress = [];
 
         foreach ($targets as $scenario => $total) {
-            $earned = count($this->getEarnedByScenario($memberPk, $scenario));
+            $earned = count($this->getEarnedByScenario($memberId, $scenario));
             $percent = $total > 0 ? (100 - (($total - $earned) * 100) / $total) : 0;
 
             $progress[$scenario] = [

@@ -40,7 +40,7 @@
             <?php if (!empty($members)): ?>
                 <div id="containeramis">
                     <?php foreach ($members as $member): ?>
-                        <a href="<?= url('/membres/' . rawurlencode($member['id'] ?? '')) ?>">
+                        <a href="<?= url('/membres/' . rawurlencode($member['pseudo'] ?? '')) ?>">
                             <img
                                 src="<?= asset('assets/img/uploads/' . ($member['avatar'] ?? '')) ?>"
                                 alt="<?= htmlspecialchars($member['display_name'] ?? '', ENT_QUOTES, 'UTF-8') ?>"

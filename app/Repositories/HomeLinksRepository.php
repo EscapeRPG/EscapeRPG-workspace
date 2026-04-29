@@ -23,7 +23,7 @@ class HomeLinksRepository
     public function getMembers(): array
     {
         $statement = $this->db->prepare(
-            "SELECT id, avatar FROM `0membres` WHERE id != :excluded ORDER BY id ASC"
+            "SELECT pseudo, avatar FROM `membres` WHERE pseudo != :excluded ORDER BY pseudo ASC"
         );
         $statement->execute([
             'excluded' => 'le narrateur',
@@ -31,9 +31,9 @@ class HomeLinksRepository
 
         return array_map(
             static fn (array $member): array => [
-                'id' => $member['id'],
+                'pseudo' => $member['pseudo'],
                 'avatar' => $member['avatar'],
-                'display_name' => ucwords($member['id'], " -_<>()[]'\".,!?;/Â§$+=*|{}&"),
+                'display_name' => ucwords($member['pseudo'], " -_<>()[]'\".,!?;/Â§$+=*|{}&"),
             ],
             $statement->fetchAll()
         );

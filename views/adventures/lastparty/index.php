@@ -17,7 +17,7 @@ $hintData = $sceneData['hintData'] ?? null;
             <br>
             <input type="text" name="save_code" placeholder="Code" required>
             <br>
-            <button type="submit" name="action" value="submit_load_game">Charger.</button>
+            <button type="submit" class="action" name="action" value="submit_load_game">Charger.</button>
         </form>
     <?php endif; ?>
 
@@ -29,7 +29,7 @@ $hintData = $sceneData['hintData'] ?? null;
             <br>
             <input type="text" name="save_code" placeholder="Code" required>
             <br>
-            <button type="submit" name="action" value="submit_save_game">Sauvegarder.</button>
+            <button type="submit" class="action" name="action" value="submit_save_game">Sauvegarder.</button>
         </form>
     <?php endif; ?>
 <?php else: ?>

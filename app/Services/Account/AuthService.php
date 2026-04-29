@@ -6,13 +6,14 @@ use App\Core\Database;
 use App\Core\Session;
 use App\Repositories\MemberRepository;
 use App\Repositories\UserSessionRepository;
+use Random\RandomException;
 
 /**
  * Gère l'authentification applicative et le "remember me".
  */
 class AuthService
 {
-    private const SESSION_KEY = 'auth.user_id';
+    private const SESSION_KEY = 'auth.user_pseudo';
     private const REMEMBER_COOKIE = 'session_token';
 
     /**
@@ -30,14 +31,14 @@ class AuthService
         }
 
         $sessions = new UserSessionRepository(Database::get());
-        $userId = $sessions->findValidUserIdByToken($token);
-        if (!$userId) {
+        $userPseudo = $sessions->findValidUserPseudoByToken($token);
+        if (!$userPseudo) {
             self::forgetRememberCookie();
             return;
         }
 
         $members = new MemberRepository(Database::get());
-        $member = $members->findByUsername($userId);
+        $member = $members->findByUsername($userPseudo);
         if (!$member) {
             self::forgetRememberCookie();
             return;
@@ -57,7 +58,7 @@ class AuthService
     /**
      * Retourne l'identifiant logique du membre connecté.
      */
-    public static function id(): ?string
+    public static function pseudo(): ?string
     {
         return self::session()->get(self::SESSION_KEY);
     }
@@ -67,14 +68,14 @@ class AuthService
      */
     public static function user(): ?array
     {
-        $id = self::id();
-        if ($id === null) {
+        $pseudo = self::pseudo();
+        if ($pseudo === null) {
             return null;
         }
 
         $members = new MemberRepository(Database::get());
 
-        return $members->findByUsername($id);
+        return $members->findByUsername($pseudo);
     }
 
     /**
@@ -88,7 +89,7 @@ class AuthService
             return false;
         }
 
-        $passwordFromDb = $member['pass'] ?? '';
+        $passwordFromDb = $member['password'] ?? '';
         $valid = password_verify($password, $passwordFromDb) || md5($password) === $passwordFromDb;
         if (!$valid) {
             return false;
@@ -96,14 +97,14 @@ class AuthService
 
         if (md5($password) === $passwordFromDb) {
             $newHash = password_hash($password, PASSWORD_DEFAULT);
-            $members->updateProfile($member['id'], $member['email'], $newHash);
-            $member['pass'] = $newHash;
+            $members->updateProfile($member['pseudo'], $member['email'], $newHash);
+            $member['password'] = $newHash;
         }
 
         self::storeUser($member);
 
         if ($remember) {
-            self::remember($member['id']);
+            self::remember($member['pseudo']);
         }
 
         return true;
@@ -117,7 +118,7 @@ class AuthService
         self::storeUser($member);
 
         if ($remember) {
-            self::remember($member['id']);
+            self::remember($member['pseudo']);
         }
     }
 
@@ -151,20 +152,21 @@ class AuthService
     {
         $session = self::session();
         $session->regenerate();
-        $session->put(self::SESSION_KEY, $member['id']);
+        $session->put(self::SESSION_KEY, $member['pseudo']);
         $session->put('auth.avatar', $member['avatar'] ?? 'narrateur.png');
     }
 
     /**
      * Crée un jeton persistant de reconnexion automatique.
+     * @throws RandomException
      */
-    private static function remember(string $userId): void
+    private static function remember(string $userPseudo): void
     {
         $token = bin2hex(random_bytes(32));
         $expiresAt = date('Y-m-d H:i:s', time() + 365 * 86400);
 
         $sessions = new UserSessionRepository(Database::get());
-        $sessions->create($userId, $token, $expiresAt);
+        $sessions->create($userPseudo, $token, $expiresAt);
 
         setcookie(
             self::REMEMBER_COOKIE,

@@ -19,12 +19,12 @@ class MemberController extends Controller
      */
     public function search(): void
     {
-        $id = trim((string) $this->request->query('id', ''));
-        if ($id === '') {
+        $pseudo = trim((string) $this->request->query('pseudo', ''));
+        if ($pseudo === '') {
             $this->response->redirect('/');
         }
 
-        $this->response->redirect('/membres/' . rawurlencode($id));
+        $this->response->redirect('/membres/' . rawurlencode($pseudo));
     }
 
     /**
@@ -43,16 +43,16 @@ class MemberController extends Controller
     /**
      * Affiche le profil public d'un membre.
      */
-    public function show(string $id): void
+    public function show(string $pseudo): void
     {
         $members = new MemberRepository($this->db);
-        $member = $members->findByUsername($id);
+        $member = $members->findByUsername($pseudo);
         if (!$member) {
             http_response_code(404);
             exit('404');
         }
 
-        $this->renderMemberProfile($member, AuthService::id() === $member['id']);
+        $this->renderMemberProfile($member, AuthService::pseudo() === $member['pseudo']);
     }
 
     /**
@@ -115,7 +115,7 @@ class MemberController extends Controller
                 $this->response->redirect('/profil/edit');
             }
 
-            $currentHash = $member['pass'] ?? '';
+            $currentHash = $member['password'] ?? '';
             $valid = password_verify($currentPassword, $currentHash) || md5($currentPassword) === $currentHash;
             if (!$valid) {
                 $this->session->flash('error', 'Le mot de passe actuel est incorrect.');
@@ -126,9 +126,9 @@ class MemberController extends Controller
         }
 
         $avatar = $this->handleAvatarUpload($member['avatar'] ?? null);
-        $members->updateProfile($member['id'], $email, $passwordHash, $avatar);
+        $members->updateProfile($member['pseudo'], $email, $passwordHash, $avatar);
 
-        $updated = $members->findByUsername($member['id']);
+        $updated = $members->findByUsername($member['pseudo']);
         if ($updated) {
             AuthService::login($updated);
         }
@@ -140,11 +140,19 @@ class MemberController extends Controller
     /**
      * Ajoute un membre à la liste d'amis du membre connecté.
      */
-    public function addFriend(string $id): void
+    public function addFriend(string $pseudo): void
     {
+        $members = new MemberRepository($this->db);
+        $target = $members->findByUsername($pseudo);
+
+        if (!$target) {
+            http_response_code(404);
+            exit('404');
+        }
+
         if (!verify_csrf($this->request->post('_token'))) {
             $this->session->flash('error', 'Session invalide, veuillez réessayer.');
-            $this->response->redirect('/membres/' . rawurlencode($id));
+            $this->response->redirect('/membres/' . rawurlencode($target['pseudo']));
         }
 
         $current = AuthService::user();
@@ -152,32 +160,25 @@ class MemberController extends Controller
             $this->response->redirect('/login');
         }
 
-        $members = new MemberRepository($this->db);
-        $target = $members->findByUsername($id);
-        if (!$target) {
-            http_response_code(404);
-            exit('404');
-        }
-
-        if (($target['id'] ?? '') === 'le narrateur') {
+        if (($target['pseudo'] ?? '') === 'le narrateur') {
             $this->session->flash('error', 'Le Narrateur ne peut pas être ajouté comme partenaire d\'aventure.');
-            $this->response->redirect('/membres/' . rawurlencode($id));
+            $this->response->redirect('/membres/' . rawurlencode($pseudo));
         }
 
-        if (($current['pk'] ?? null) === ($target['pk'] ?? null)) {
+        if (($current['pseudo'] ?? null) === ($target['pseudo'] ?? null)) {
             $this->session->flash('error', 'Vous ne pouvez pas vous ajouter vous-même.');
-            $this->response->redirect('/membres/' . rawurlencode($id));
+            $this->response->redirect('/membres/' . rawurlencode($pseudo));
         }
 
         $friends = new FriendRepository($this->db);
-        if (!$friends->exists($current['pk'], $target['pk'])) {
-            $friends->add($current['pk'], $target['pk']);
+        if (!$friends->exists($current['id'], $target['id'])) {
+            $friends->add($current['id'], $target['id']);
             $achievementService = new AchievementService();
             $achievementService->grant('general', 'amis', $current);
             $this->session->flash('success', 'Partenaire d\'aventure ajouté.');
         }
 
-        $this->response->redirect('/membres/' . rawurlencode($id));
+        $this->response->redirect('/membres/' . rawurlencode($pseudo));
     }
 
     /**
@@ -187,7 +188,7 @@ class MemberController extends Controller
     {
         $friends = new FriendRepository($this->db);
         $achievements = new AchievementRepository($this->db);
-        $friendList = isset($member['pk']) ? $friends->getFriendsForMember($member['pk']) : [];
+        $friendList = isset($member['pseudo']) ? $friends->getFriendsForMember($member['id']) : [];
 
         $scenarioTotals = [
             'general' => 14,
@@ -231,7 +232,7 @@ class MemberController extends Controller
             ],
         ];
 
-        $progress = isset($member['pk']) ? $achievements->getScenarioProgress($member['pk'], $scenarioTotals) : [];
+        $progress = isset($member['pseudo']) ? $achievements->getScenarioProgress($member['id'], $scenarioTotals) : [];
         $globalPercent = $progress === []
             ? 0
             : round(array_sum(array_column($progress, 'percent')) / count($progress));
@@ -239,7 +240,7 @@ class MemberController extends Controller
         $achievementSections = [];
         foreach ($scenarioCards as $scenario => $meta) {
             $all = $achievements->getAllByScenario($scenario);
-            $earned = isset($member['pk']) ? $achievements->getEarnedByScenario($member['pk'], $scenario) : [];
+            $earned = isset($member['pseudo']) ? $achievements->getEarnedByScenario($member['id'], $scenario) : [];
             $earnedIds = array_column($earned, 'id');
             $hiddenTotal = count(array_filter($all, static fn (array $item): bool => (int) ($item['cache'] ?? 0) === 1));
             $hiddenEarned = count(array_filter($earned, static fn (array $item): bool => (int) ($item['cache'] ?? 0) === 1));
@@ -258,18 +259,18 @@ class MemberController extends Controller
 
         $canAddFriend = false;
         $current = AuthService::user();
-        if ($current && !$isOwner && isset($current['pk'], $member['pk'])) {
-            $canAddFriend = ($member['id'] ?? '') !== 'le narrateur'
-                && !$friends->exists($current['pk'], $member['pk']);
+        if ($current && !$isOwner && isset($current['pseudo'], $member['pseudo'])) {
+            $canAddFriend = $member['pseudo'] !== 'le narrateur'
+                && !$friends->exists($current['id'], $member['id']);
         }
 
-        if (($member['id'] ?? '') === 'le narrateur' && $current && isset($current['pk'])) {
+        if (($member['pseudo'] ?? '') === 'le narrateur' && $current && isset($current['pseudo'])) {
             $achievementService = new AchievementService();
             $achievementService->grant('general', 'narrateur', $current);
         }
 
         $this->view('members/show', [
-            'title' => 'EscapeRPG - ' . ($isOwner ? 'Mon compte' : $member['id']),
+            'title' => 'EscapeRPG - ' . ($isOwner ? 'Mon compte' : $member['pseudo']),
             'member' => $member,
             'isOwner' => $isOwner,
             'friends' => $friendList,

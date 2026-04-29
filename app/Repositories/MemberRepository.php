@@ -22,9 +22,9 @@ class MemberRepository
      */
     public function findByUsername(string $username): ?array
     {
-        $statement = $this->db->prepare("SELECT * FROM `0membres` WHERE id = :id LIMIT 1");
+        $statement = $this->db->prepare("SELECT * FROM `membres` WHERE pseudo = :pseudo LIMIT 1");
         $statement->execute([
-            'id' => mb_strtolower(trim($username)),
+            'pseudo' => mb_strtolower(trim($username)),
         ]);
 
         return $statement->fetch() ?: null;
@@ -35,7 +35,7 @@ class MemberRepository
      */
     public function findByEmail(string $email): ?array
     {
-        $statement = $this->db->prepare("SELECT * FROM `0membres` WHERE email = :email LIMIT 1");
+        $statement = $this->db->prepare("SELECT * FROM `membres` WHERE email = :email LIMIT 1");
         $statement->execute([
             'email' => trim($email),
         ]);
@@ -49,13 +49,14 @@ class MemberRepository
     public function create(string $username, string $email, string $passwordHash, string $avatar): void
     {
         $statement = $this->db->prepare(
-            "INSERT INTO `0membres` (id, email, pass, avatar) VALUES (:id, :email, :pass, :avatar)"
+            "INSERT INTO `membres` (pseudo, email, password, avatar, date_inscription) VALUES (:pseudo, :email, :password, :avatar, :date_inscription)"
         );
         $statement->execute([
-            'id' => mb_strtolower(trim($username)),
+            'pseudo' => mb_strtolower(trim($username)),
             'email' => trim($email),
-            'pass' => $passwordHash,
+            'password' => $passwordHash,
             'avatar' => $avatar,
+            'date_inscription' => date('Y-m-d H:i:s'),
         ]);
     }
 
@@ -66,13 +67,13 @@ class MemberRepository
     {
         $fields = ['email = :email'];
         $params = [
-            'id' => mb_strtolower(trim($username)),
+            'pseudo' => mb_strtolower(trim($username)),
             'email' => trim($email),
         ];
 
         if ($passwordHash !== null) {
-            $fields[] = 'pass = :pass';
-            $params['pass'] = $passwordHash;
+            $fields[] = 'password = :password';
+            $params['password'] = $passwordHash;
         }
 
         if ($avatar !== null) {
@@ -81,7 +82,7 @@ class MemberRepository
         }
 
         $statement = $this->db->prepare(
-            'UPDATE `0membres` SET ' . implode(', ', $fields) . ' WHERE id = :id'
+            'UPDATE `membres` SET ' . implode(', ', $fields) . ' WHERE pseudo = :pseudo'
         );
         $statement->execute($params);
     }

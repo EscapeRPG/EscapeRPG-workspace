@@ -27,7 +27,7 @@
 <?= View::get('nav') ?>
 
 <?php require __DIR__ . '/_account.php'; ?>
-<?php require __DIR__ . '/_achievement_popup.php'; ?>
+<?php require __DIR__ . '/_toasts.php'; ?>
 
 <main>
     <?= View::get('content') ?>

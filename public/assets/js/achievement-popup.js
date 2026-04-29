@@ -1,30 +1,16 @@
-const achievementPopup = document.getElementById("succespopup");
+const toasts = document.querySelectorAll(".app-toast");
 
-if (achievementPopup) {
-  const achievementCount = achievementPopup.querySelectorAll(".succesapercu").length;
-  const isLoggedIn = achievementPopup.dataset.loggedIn === "1";
+toasts.forEach((toast, index) => {
+  window.setTimeout(() => {
+    toast.classList.add("is-visible");
+  }, 150 + index * 250);
 
-  if (isLoggedIn) {
-    achievementPopup.innerHTML += achievementCount > 1
-      ? "<p>Nouveaux succès débloqués !</p>"
-      : "<p>Nouveau succès débloqué !</p>";
-  } else {
-    achievementPopup.innerHTML += achievementCount > 1
-      ? "<p>Nouveaux succès débloqués !<br>Cliquez <a href='/login'>ici</a> pour vous connecter ou créer votre compte, puis rafraîchissez cette page afin de les ajouter à votre collection !</p>"
-      : "<p>Nouveau succès débloqué !<br>Cliquez <a href='/login'>ici</a> pour vous connecter ou créer votre compte, puis rafraîchissez cette page afin de l'ajouter à votre collection !</p>";
-  }
+  window.setTimeout(() => {
+    toast.classList.remove("is-visible");
+    toast.classList.add("is-leaving");
+  }, 5200 + index * 250);
 
-  setTimeout(() => {
-    achievementPopup.setAttribute(
-      "style",
-      "transform: translateX(-230px); transition: transform 500ms ease-in-out"
-    );
-  }, 500);
-
-  setTimeout(() => {
-    achievementPopup.setAttribute(
-      "style",
-      "transform: translateX(230px); transition: transform 1500ms ease-in-out"
-    );
-  }, 7000);
-}
+  window.setTimeout(() => {
+    toast.remove();
+  }, 6000 + index * 250);
+});

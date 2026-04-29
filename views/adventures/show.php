@@ -14,16 +14,6 @@ if (empty(View::get('footer')) && !empty($adventure['footer_view'])) {
 
 <?php View::start('content'); ?>
 <section class="adventure-shell">
-    <?php if ($message = flash('success')): ?>
-        <p><?= e($message) ?></p>
-    <?php endif; ?>
-    <?php if ($message = flash('error')): ?>
-        <p><?= e($message) ?></p>
-    <?php endif; ?>
-    <?php if ($message = flash('info')): ?>
-        <p><?= e($message) ?></p>
-    <?php endif; ?>
-
     <?php
     $sceneViewPath = null;
     if (!empty($sceneView)) {
