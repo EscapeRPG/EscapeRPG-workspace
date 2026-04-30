@@ -6,6 +6,7 @@ use App\Core\Controller;
 use App\Repositories\MemberRepository;
 use App\Services\Account\AchievementService;
 use App\Services\Account\AuthService;
+use App\Services\Notifications\AdminNotificationMailer;
 
 /**
  * Gère les écrans et actions d'authentification.
@@ -94,6 +95,7 @@ class AuthController extends Controller
 
         $avatar = $this->handleAvatarUpload();
         $members->create($username, $email, password_hash($password, PASSWORD_DEFAULT), $avatar);
+        (new AdminNotificationMailer())->notifyNewMember($username);
 
         $member = $members->findByUsername($username);
         if ($member) {
@@ -158,7 +160,7 @@ class AuthController extends Controller
     {
         $file = $this->request->file('avatar');
         if (!is_array($file) || ($file['error'] ?? UPLOAD_ERR_NO_FILE) === UPLOAD_ERR_NO_FILE) {
-            return 'narrateur.png';
+            return 'default.png';
         }
 
         if (($file['error'] ?? UPLOAD_ERR_OK) !== UPLOAD_ERR_OK) {

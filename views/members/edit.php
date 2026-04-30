@@ -3,7 +3,7 @@
 <?php View::start('content'); ?>
 <div id="formconnexion">
     <div class="portraitavatarcompte">
-        <img src="<?= asset('assets/img/uploads/' . ($member['avatar'] ?? 'narrateur.png')) ?>" alt="<?= e($member['pseudo'] ?? '') ?>">
+        <img src="<?= asset('assets/img/uploads/' . ($member['avatar'] ?? 'default.png')) ?>" alt="<?= e($member['pseudo'] ?? '') ?>">
     </div>
 
     <h1><?= e($member['pseudo'] ?? '') ?></h1>

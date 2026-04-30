@@ -277,7 +277,7 @@ class MemberController extends Controller
             'canAddFriend' => $canAddFriend,
             'globalProgress' => $globalPercent,
             'achievementSections' => $achievementSections,
-        ]);
+        ], 'adventure');
     }
 
     /**
@@ -319,7 +319,7 @@ class MemberController extends Controller
             $this->response->redirect('/profil/edit');
         }
 
-        if ($currentAvatar && $currentAvatar !== 'narrateur.png') {
+        if ($currentAvatar && $currentAvatar !== 'default.png') {
             $oldPath = $uploadDir . '/' . $currentAvatar;
             if (is_file($oldPath)) {
                 unlink($oldPath);

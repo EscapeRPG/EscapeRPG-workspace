@@ -153,7 +153,7 @@ class AuthService
         $session = self::session();
         $session->regenerate();
         $session->put(self::SESSION_KEY, $member['pseudo']);
-        $session->put('auth.avatar', $member['avatar'] ?? 'narrateur.png');
+        $session->put('auth.avatar', $member['avatar'] ?? 'default.png');
     }
 
     /**

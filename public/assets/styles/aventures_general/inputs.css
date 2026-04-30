@@ -20,6 +20,7 @@ input[type="password"] {
 }
 
 input[type=submit],
+input[type="search"],
 button.action {
     width: 100%;
     max-width: 300px;
@@ -27,12 +28,14 @@ button.action {
     background-color: white;
     border: 2px solid black;
     border-radius: 10px;
-    cursor: pointer;
     text-transform: uppercase;
+    box-sizing: border-box;
+}
 
-    &:hover {
-        background-color: rgb(220, 120, 0);
-    }
+input[type=submit]:hover,
+button.action:hover {
+    background-color: rgb(220, 120, 0);
+    cursor: pointer;
 }
 
 .current input[type=submit] {
@@ -40,5 +43,72 @@ button.action {
 
     &:hover {
         background-color: rgb(220, 120, 0);
+    }
+}
+
+.formCommentaire fieldset {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+
+    .commentaireRow {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 10px;
+        width: 80%;
+        margin: auto;
+
+        input,
+        textarea {
+            flex: 1;
+            max-width: unset;
+        }
+    }
+
+    .commentaireRatingRow {
+        justify-content: flex-start;
+    }
+}
+
+.commentaireRating {
+    display: inline-flex;
+    flex-direction: row-reverse;
+    gap: 4px;
+}
+
+.commentaireRating input {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.commentaireRating label {
+    width: 28px;
+    height: 28px;
+    background: url("/assets/img/etoilevide.png") center / contain no-repeat;
+    cursor: pointer;
+}
+
+.commentaireRating label span {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+}
+
+.commentaireRating label:hover,
+.commentaireRating label:hover ~ label,
+.commentaireRating input:checked ~ label {
+    background-image: url("/assets/img/etoile.png");
+}
+
+fieldset {
+    border-radius: 10px;
+
+    legend {
+        padding: 0 10px;
     }
 }

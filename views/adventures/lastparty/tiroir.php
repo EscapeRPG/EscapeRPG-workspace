@@ -12,7 +12,7 @@ $carnetAcquired = (bool) ($sceneData['carnetAcquired'] ?? false);
 
 <?php if (!$carnetAcquired): ?>
     <div class="enigme">
-        <a href="<?= asset('assets/img/lastparty/carnet.png') ?>" rel="lightbox[invent]">
+        <a href="<?= asset('assets/img/lastparty/carnet.png') ?>" rel="lightbox[inventaire]">
             <img src="<?= asset('assets/img/lastparty/carnet.png') ?>" alt="carnet">
         </a>
     </div>

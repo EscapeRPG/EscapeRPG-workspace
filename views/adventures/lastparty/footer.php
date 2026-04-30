@@ -3,12 +3,12 @@
 <?php
 $inventaire = [
     'carnet' => '
-        <a href="' . asset('assets/img/lastparty/carnet.png') . '" rel="lightbox[invent]">
-            <img src="' . asset('assets/img/lastparty/carnet.png') . '" title="Un carnet où vous avez noté tous vos mots de passe.">
+        <a href="' . asset('assets/img/lastparty/carnet.png') . '" rel="lightbox[inventaire]">
+            <img src="' . asset('assets/img/lastparty/carnet.png') . '" alt="Un carnet où vous avez noté tous vos mots de passe." title="Un carnet où vous avez noté tous vos mots de passe.">
         </a>',
     'cartevisite' => '
-        <a href="' . asset('assets/img/lastparty/cartedevisite.png') . '" rel="lightbox[invent]">
-            <img src="' . asset('assets/img/lastparty/cartedevisite.png') . '" title="Une carte de visite d\'un certain Darren Braun.">
+        <a href="' . asset('assets/img/lastparty/cartedevisite.png') . '" rel="lightbox[inventaire]">
+            <img src="' . asset('assets/img/lastparty/cartedevisite.png') . '" alt="Une carte de visite d\'un certain Darren Braun." title="Une carte de visite d\'un certain Darren Braun.">
         </a>',
 ];
 

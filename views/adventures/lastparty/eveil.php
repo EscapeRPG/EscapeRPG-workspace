@@ -1,9 +1,6 @@
 <?php
 
 $content = $sceneData['content'] ?? [];
-$blocks = $content['blocks'] ?? [];
-$actions = $content['actions'] ?? [];
-$hintData = $sceneData['hintData'] ?? null;
 ?>
 
 <?php if (!empty($content['audio'])): ?>
@@ -11,9 +8,7 @@ $hintData = $sceneData['hintData'] ?? null;
 <?php endif; ?>
 
 <?php if (($sceneData['step'] ?? 0) < 1): ?>
-    <?php require __DIR__ . '/../partials/_scene_blocks.php'; ?>
-    <?php require __DIR__ . '/../partials/_scene_actions.php'; ?>
-    <?php require __DIR__ . '/../partials/_scene_hint.php'; ?>
+    <?php require __DIR__ . '/../partials/_standard_scene.php'; ?>
 <?php else: ?>
     <div class="enigmelieu">
         <img src="<?= asset('assets/img/lastparty/appartement.png') ?>" alt="appartement">
@@ -24,6 +19,6 @@ $hintData = $sceneData['hintData'] ?? null;
         </form>
     </div>
 
-    <?php require __DIR__ . '/../partials/_scene_blocks.php'; ?>
-    <?php require __DIR__ . '/../partials/_scene_hint.php'; ?>
+    <?php $renderSceneActions = false; ?>
+    <?php require __DIR__ . '/../partials/_standard_scene.php'; ?>
 <?php endif; ?>

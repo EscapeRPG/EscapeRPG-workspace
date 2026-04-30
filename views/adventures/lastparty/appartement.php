@@ -1,8 +1,6 @@
 <?php
 
 $content = $sceneData['content'] ?? [];
-$blocks = $content['blocks'] ?? [];
-$hintData = $sceneData['hintData'] ?? null;
 $photosUnlocked = (bool) ($sceneData['photosUnlocked'] ?? false);
 $carnetAcquired = (bool) ($sceneData['carnetAcquired'] ?? false);
 ?>
@@ -31,5 +29,5 @@ $carnetAcquired = (bool) ($sceneData['carnetAcquired'] ?? false);
     <?php endif; ?>
 </div>
 
-<?php require __DIR__ . '/../partials/_scene_blocks.php'; ?>
-<?php require __DIR__ . '/../partials/_scene_hint.php'; ?>
+<?php $renderSceneActions = false; ?>
+<?php require __DIR__ . '/../partials/_standard_scene.php'; ?>

@@ -26,7 +26,6 @@
 
 <?= View::get('nav') ?>
 
-<?php require __DIR__ . '/_account.php'; ?>
 <?php require __DIR__ . '/_toasts.php'; ?>
 
 <main>

@@ -3,7 +3,6 @@
 namespace App\Services\Adventures\Scenarios\LastParty\Scenes;
 
 use App\Core\Request;
-use App\Services\Account\AuthService;
 use App\Services\Adventures\Engine\AdventureActionResult;
 use App\Services\Adventures\Engine\AdventureSceneHandler;
 use App\Services\Adventures\Engine\AdventureState;
@@ -24,8 +23,6 @@ class IndexSceneHandler implements AdventureSceneHandler
     {
         return [
             'step' => $isLandingPage ? 0 : (int) $state->get('index_step', 0),
-            'mode' => (string) $request->query('mode', ''),
-            'isLoggedIn' => AuthService::check(),
         ];
     }
 
@@ -40,7 +37,6 @@ class IndexSceneHandler implements AdventureSceneHandler
                 stateChanges: [
                     'started' => true,
                     'index_step' => 1,
-                    'eveil_step' => 0,
                 ],
                 achievements: [
                     ['scenario' => 'general', 'name' => 'debut'],

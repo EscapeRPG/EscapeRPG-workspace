@@ -30,7 +30,7 @@ body {
 nav {
   text-align: left;
   position: fixed;
-  top: 200px;
+  top: 50px;
   left: 0;
   width: 170px;
 }
@@ -59,14 +59,15 @@ nav {
     transition: color 1s ease;
   }
 
-  svg {
+  svg,
+  img {
     height: 30px;
     width: 30px;
+  }
 
-    g {
-      fill: white;
-      transition: fill 1s ease;
-    }
+  g {
+    fill: white;
+    transition: fill 1s ease;
   }
 
   &:hover {

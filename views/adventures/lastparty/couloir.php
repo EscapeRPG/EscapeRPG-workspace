@@ -1,5 +1,4 @@
 <?php
-
 $content = $sceneData['content'] ?? [];
 $blocks = $content['blocks'] ?? [];
 $hintData = $sceneData['hintData'] ?? null;
@@ -8,7 +7,7 @@ $businessCardAcquired = (bool) ($sceneData['businessCardAcquired'] ?? false);
 
 <?php if (!$businessCardAcquired): ?>
     <div class="enigme">
-        <a href="<?= asset('assets/img/lastparty/cartedevisite.png') ?>" rel="lightbox[invent]">
+        <a href="<?= asset('assets/img/lastparty/cartedevisite.png') ?>" rel="lightbox[inventaire]">
             <img src="<?= asset('assets/img/lastparty/cartedevisite.png') ?>" alt="carte de visite">
         </a>
     </div>

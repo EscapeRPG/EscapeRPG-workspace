@@ -77,11 +77,11 @@ class LastPartyAdventureFlow extends SceneBasedAdventureFlow
             return $this->handleLoadGame($config);
         }
 
-        if ($scene === 'index' && $action === 'submit_load_game') {
+        if ($action === 'submit_load_game') {
             return $this->handleLoadSubmission($config, $request);
         }
 
-        if ($scene === 'index' && $action === 'submit_save_game') {
+        if ($action === 'submit_save_game') {
             return $this->handleSaveSubmission($config, $state, $request);
         }
 
@@ -118,7 +118,7 @@ class LastPartyAdventureFlow extends SceneBasedAdventureFlow
             );
         }
 
-        return new AdventureActionResult(redirectTo: '/aventures/' . $slug . '?mode=save');
+        return new AdventureActionResult(redirectTo: '/aventures/' . $slug . '/sauvegarde');
     }
 
     /**
@@ -150,7 +150,7 @@ class LastPartyAdventureFlow extends SceneBasedAdventureFlow
             );
         }
 
-        return new AdventureActionResult(redirectTo: '/aventures/' . $slug . '?mode=load');
+        return new AdventureActionResult(redirectTo: '/aventures/' . $slug . '/chargement');
     }
 
     /**
@@ -164,7 +164,7 @@ class LastPartyAdventureFlow extends SceneBasedAdventureFlow
 
         if ($saveName === '' || $saveCode === '') {
             return new AdventureActionResult(
-                redirectTo: '/aventures/' . $slug . '?mode=load',
+                redirectTo: '/aventures/' . $slug . '/chargement',
                 flashMessage: 'Veuillez renseigner le nom et le code de la sauvegarde.',
                 flashType: 'error',
             );
@@ -173,7 +173,7 @@ class LastPartyAdventureFlow extends SceneBasedAdventureFlow
         $save = $this->saveService->loadForGuest($slug, $saveName, $saveCode);
         if ($save === null) {
             return new AdventureActionResult(
-                redirectTo: '/aventures/' . $slug . '?mode=load',
+                redirectTo: '/aventures/' . $slug . '/chargement',
                 flashMessage: 'Aucune sauvegarde ne correspond à ces informations.',
                 flashType: 'error',
             );
@@ -201,7 +201,7 @@ class LastPartyAdventureFlow extends SceneBasedAdventureFlow
 
         if ($saveName === '' || $saveCode === '') {
             return new AdventureActionResult(
-                redirectTo: '/aventures/' . $slug . '?mode=save',
+                redirectTo: '/aventures/' . $slug . '/sauvegarde',
                 flashMessage: 'Veuillez renseigner le nom et le code de la sauvegarde.',
                 flashType: 'error',
             );

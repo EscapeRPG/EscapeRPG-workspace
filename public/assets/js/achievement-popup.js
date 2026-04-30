@@ -6,11 +6,10 @@ toasts.forEach((toast, index) => {
   }, 150 + index * 250);
 
   window.setTimeout(() => {
-    toast.classList.remove("is-visible");
     toast.classList.add("is-leaving");
-  }, 5200 + index * 250);
+  }, 5200 + index * 1500);
 
   window.setTimeout(() => {
     toast.remove();
-  }, 6000 + index * 250);
+  }, 5450 + index * 1500);
 });

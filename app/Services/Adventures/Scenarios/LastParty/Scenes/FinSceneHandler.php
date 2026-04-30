@@ -9,14 +9,15 @@ use App\Services\Account\AuthService;
 use App\Services\Adventures\Engine\AdventureActionResult;
 use App\Services\Adventures\Engine\AdventureSceneHandler;
 use App\Services\Adventures\Engine\AdventureState;
+use App\Services\Notifications\AdminNotificationMailer;
 
 /**
- * Gere l'epilogue et les commentaires de fin.
+ * Gere l'épilogue et les commentaires de fin.
  */
 class FinSceneHandler implements AdventureSceneHandler
 {
-    private const SCENARIO = 'lastparty';
-    private const SCENE = 'ebaubi';
+    private const string SCENARIO = 'Last Party';
+    private const string SCENE = 'ebaubi';
 
     public function variant(AdventureState $state, Request $request, bool $isLandingPage = false): string
     {
@@ -73,17 +74,19 @@ class FinSceneHandler implements AdventureSceneHandler
         $currentUser = AuthService::user();
         $pseudo = $currentUser['pseudo'] ?? (string) $request->post('nom', '');
         $message = (string) $request->post('message', '');
+        $note = (int) $request->post('note', 0);
 
-        if (trim($pseudo) === '' || trim($message) === '') {
+        if (trim($pseudo) === '' || trim($message) === '' || $note < 1 || $note > 5) {
             return new AdventureActionResult(
                 nextScene: self::SCENE,
-                flashMessage: 'Veuillez renseigner un nom et un message.',
+                flashMessage: 'Veuillez renseigner un nom, une note et un message.',
                 flashType: 'error',
             );
         }
 
         $comments = new ScenarioCommentRepository(Database::get());
-        $comments->add(self::SCENARIO, $pseudo, $message);
+        $comments->add(self::SCENARIO, $pseudo, $message, $note);
+        (new AdminNotificationMailer())->notifyNewComment($pseudo, self::SCENARIO, $message);
 
         return new AdventureActionResult(
             nextScene: self::SCENE,
@@ -91,7 +94,7 @@ class FinSceneHandler implements AdventureSceneHandler
             achievements: [
                 ['scenario' => 'general', 'name' => 'commentaire'],
             ],
-            flashMessage: "Merci d'avoir enregistre votre commentaire, " . mb_substr(trim($pseudo), 0, 20) . " !",
+            flashMessage: "Merci d'avoir enregistré votre commentaire, " . mb_substr(trim($pseudo), 0, 20) . " !",
             flashType: 'success',
         );
     }
