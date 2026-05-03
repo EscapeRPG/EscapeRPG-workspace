@@ -49,6 +49,11 @@ class AdventureContent
             return null;
         }
 
-        return dirname(__DIR__, 3) . '/Content/' . trim($basePath, '/') . '/' . $scene . '.php';
+        $contentFile = $config['content_files'][$scene] ?? $scene;
+        if (!is_string($contentFile) || $contentFile === '') {
+            $contentFile = $scene;
+        }
+
+        return dirname(__DIR__, 3) . '/Content/' . trim($basePath, '/') . '/' . trim($contentFile, '/') . '.php';
     }
 }

@@ -5,6 +5,7 @@ return [
         'card' => [
             'audio' => null,
             'blocks' => [
+                ['type' => 'linked_image', 'src' => 'assets/img/lastparty/cartedevisite.png', 'alt' => 'carte de visite', 'class' => 'enigme'],
                 [
                     'type' => 'paragraphs',
                     'paragraphs' => [
@@ -12,7 +13,9 @@ return [
                     ],
                 ],
             ],
-            'actions' => [],
+            'actions' => [
+                ['label' => 'Prendre.', 'name' => 'action', 'value' => 'take_card', 'class' => 'action'],
+            ],
         ],
         'contact' => [
             'audio' => null,

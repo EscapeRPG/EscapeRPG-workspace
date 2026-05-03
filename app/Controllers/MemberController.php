@@ -213,7 +213,7 @@ class MemberController extends Controller
             'secretsfamiliaux' => [
                 'title' => 'Secrets Familiaux',
                 'image' => 'assets/img/secretscard.png',
-                'slug' => 'secrets',
+                'slug' => 'secretsfamiliaux',
             ],
             'avent' => [
                 'title' => "Le Grenier d'Arthur",

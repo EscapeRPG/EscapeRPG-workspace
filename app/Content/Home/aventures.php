@@ -29,7 +29,7 @@ return [
                 ],
                 [
                     'title' => 'SECRETS FAMILIAUX',
-                    'href' => '/aventures/secrets/index',
+                    'href' => '/aventures/secretsfamiliaux',
                     'image' => 'assets/img/secretscard.png',
                     'alt' => 'secrets familiaux',
                     'paragraphs' => [
@@ -46,7 +46,7 @@ return [
                 ],
                 [
                     'title' => "LE GRENIER D'ARTHUR",
-                    'href' => '/aventures/avent/index',
+                    'href' => '/aventures/avent',
                     'image' => 'assets/img/aventcard.png',
                     'alt' => "le grenier d'arthur",
                     'paragraphs' => [
@@ -63,7 +63,7 @@ return [
                 ],
                 [
                     'title' => "LE TRÉSOR D'AMBRIA",
-                    'href' => '/aventures/ambria/index',
+                    'href' => '/aventures/ambria',
                     'image' => 'assets/img/tresorambriacard.png',
                     'alt' => "le trésor d'ambria",
                     'paragraphs' => [

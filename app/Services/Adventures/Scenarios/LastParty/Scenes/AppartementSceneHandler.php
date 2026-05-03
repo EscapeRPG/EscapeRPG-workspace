@@ -8,7 +8,7 @@ use App\Services\Adventures\Engine\AdventureSceneHandler;
 use App\Services\Adventures\Engine\AdventureState;
 
 /**
- * Gere la scene de navigation dans l'appartement.
+ * Gère la scène de navigation dans l'appartement.
  */
 class AppartementSceneHandler implements AdventureSceneHandler
 {
@@ -34,20 +34,10 @@ class AppartementSceneHandler implements AdventureSceneHandler
         $action = (string) $request->post('action', '');
 
         if ($action === 'open_computer') {
-            $notes = $state->get('notes', []);
-            if (!is_array($notes)) {
-                $notes = [];
-            }
-
-            if (!in_array('jonathan-lt', $notes, true)) {
-                $notes[] = 'jonathan-lt';
-            }
-
             return new AdventureActionResult(
                 nextScene: 'ordinateur',
                 stateChanges: [
                     'drawer_unlocked' => true,
-                    'notes' => $notes,
                 ],
             );
         }

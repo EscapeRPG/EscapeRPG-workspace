@@ -5,6 +5,7 @@ return [
         'found' => [
             'audio' => 'assets/sounds/lastparty/tiroir.mp3',
             'blocks' => [
+                ['type' => 'linked_image', 'src' => 'assets/img/lastparty/carnet.png', 'alt' => 'carnet', 'class' => 'enigme'],
                 [
                     'type' => 'paragraphs',
                     'paragraphs' => [
@@ -12,7 +13,9 @@ return [
                     ],
                 ],
             ],
-            'actions' => [],
+            'actions' => [
+                ['label' => 'Prendre.', 'name' => 'action', 'value' => 'take_notebook', 'class' => 'action'],
+            ],
         ],
         'acquired' => [
             'audio' => null,
@@ -24,7 +27,9 @@ return [
                     ],
                 ],
             ],
-            'actions' => [],
+            'actions' => [
+                ['label' => 'Retour.', 'name' => 'action', 'value' => 'back_to_room', 'class' => 'action'],
+            ],
         ],
     ],
 ];

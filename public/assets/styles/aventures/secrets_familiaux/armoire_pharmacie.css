@@ -1,0 +1,48 @@
+#armoireapharmacie {
+  width: 60%;
+  position: relative;
+  margin: auto auto 39px;
+
+  img {
+    width: 100%;
+  }
+
+  form {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+
+    input {
+      width: 80%;
+      margin: auto auto 6%;
+    }
+
+    button {
+      position: absolute;
+      bottom: -40px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  }
+}
+
+#armoire {
+  position: absolute;
+  top: 25.5%;
+  right: 10%;
+  width: 10.7%;
+  height: 24.5%;
+}
+
+#armoireopened {
+  position: absolute;
+  top: 25%;
+  right: 10%;
+  width: 19%;
+  height: 24.5%;
+}

@@ -1,0 +1,23 @@
+.secrets-porte {
+  display: grid;
+  gap: 16px;
+  justify-items: center;
+}
+
+.secrets-cles {
+  display: flex;
+  justify-content: center;
+}
+
+.secrets-cles button {
+  background: transparent;
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+}
+
+.secrets-cles img {
+  width: 80px;
+  max-width: 18vw;
+  height: auto;
+}

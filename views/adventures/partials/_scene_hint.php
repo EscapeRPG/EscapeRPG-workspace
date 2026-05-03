@@ -2,7 +2,7 @@
     <?php if (!empty($hintData['answer_revealed'])): ?>
         <div class="reponse">
             <?php foreach (($hintData['answer']['paragraphs'] ?? []) as $paragraph): ?>
-                <p><?= $paragraph ?></p>
+                <?= $paragraph ?>
             <?php endforeach; ?>
         </div>
     <?php else: ?>
@@ -21,7 +21,8 @@
             <?php endforeach; ?>
         </div>
 
-        <form action="<?= url('/aventures/' . ($adventure['slug'] ?? '') . '/' . $scene) ?>" method="post">
+        <?php $sceneUrl = (string) (($adventure['scene_urls'][$scene] ?? null) ?: $scene); ?>
+        <form action="<?= url('/aventures/' . ($adventure['slug'] ?? '') . '/' . ltrim($sceneUrl, '/')) ?>" method="post">
             <?php if (!empty($hintData['can_reveal_answer'])): ?>
                 <button type="submit" name="action" value="show_answer" class="boutonreponse"></button>
             <?php elseif (!empty($hintData['has_next_hint'])): ?>

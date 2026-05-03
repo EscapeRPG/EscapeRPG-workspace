@@ -1,18 +1,5 @@
-html {
-	scroll-behavior: smooth;
-	height: 100%;
-}
-
 body {
 	background: #2A5689 url("/assets/img/bg.png") repeat;
-}
-
-#banniere {
-	width: 100%;
-
-	img {
-		width: 100%;
-	}
 }
 
 h1 {

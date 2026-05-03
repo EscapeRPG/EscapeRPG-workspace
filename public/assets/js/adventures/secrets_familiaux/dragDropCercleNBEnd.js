@@ -1,0 +1,3 @@
+window.EscapeRPGRitualCircle?.init({
+  action: "finish_neutral_bad",
+});

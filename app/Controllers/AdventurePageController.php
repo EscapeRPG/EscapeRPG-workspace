@@ -25,6 +25,7 @@ class AdventurePageController extends AdventureController
         $resolvedScene = $scene ?? ($config['entry_scene'] ?? 'index');
 
         if ($scene !== null) {
+            $this->restoreAutosaveIfSessionMissing($slug, $state, '');
             $state->setScene($resolvedScene);
         }
 
@@ -43,12 +44,29 @@ class AdventurePageController extends AdventureController
         $flow = (new AdventureFlowFactory())->make($config);
 
         $scene ??= $config['entry_scene'] ?? 'index';
+        $this->restoreAutosaveIfSessionMissing($slug, $state, $this->submittedAction());
 
         $this->applyAdventureResult(
             $slug,
             $state,
             $flow->handle($config, $state, $this->request, $scene),
         );
+    }
+
+    /**
+     * Affiche une scène d'aventure dont l'URL publique contient plusieurs segments.
+     */
+    public function showPath(string $slug): void
+    {
+        $this->show($slug, $this->nestedSceneFromRequest($slug));
+    }
+
+    /**
+     * Traite une action pour une scène d'aventure dont l'URL publique contient plusieurs segments.
+     */
+    public function updatePath(string $slug): void
+    {
+        $this->update($slug, $this->nestedSceneFromRequest($slug));
     }
 
     /**
@@ -104,11 +122,31 @@ class AdventurePageController extends AdventureController
         $config = $this->adventureConfig($slug);
         $state = $this->adventureState($slug);
         $flow = (new AdventureFlowFactory())->make($config);
+        $this->restoreAutosaveIfSessionMissing($slug, $state, $this->submittedAction());
 
         $this->applyAdventureResult(
             $slug,
             $state,
             $flow->handle($config, $state, $this->request, $toolScene),
         );
+    }
+
+    private function nestedSceneFromRequest(string $slug): string
+    {
+        $prefix = '/aventures/' . trim($slug, '/') . '/';
+        $path = trim($this->request->path(), '/');
+        $scenePath = trim(substr($path, strlen(trim($prefix, '/'))), '/');
+        $config = $this->adventureConfig($slug);
+
+        return (string) (($config['scene_aliases'][$scenePath] ?? null) ?: $scenePath);
+    }
+
+    private function submittedAction(): string
+    {
+        if ($this->request->has('restart')) {
+            return 'restart';
+        }
+
+        return (string) $this->request->post('action', '');
     }
 }

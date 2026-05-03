@@ -30,7 +30,7 @@ class GenericAdventureFlow implements AdventureFlow
                 'adventure' => $config,
                 'scene' => $scene,
                 'sceneConfig' => $sceneConfig,
-                'sceneView' => $sceneConfig['view'] ?? null,
+                'sceneView' => $this->sceneView($config, $scene, $sceneConfig),
                 'state' => $state->all(),
             ],
             layout: $config['layout'] ?? 'main',
@@ -64,8 +64,25 @@ class GenericAdventureFlow implements AdventureFlow
      */
     protected function sceneConfig(array $config, string $scene): array
     {
-        return $config['scenes'][$scene] ?? [
+        $sceneConfig = $config['scenes'][$scene] ?? null;
+
+        if (is_string($sceneConfig)) {
+            return ['label' => $sceneConfig];
+        }
+
+        if (is_array($sceneConfig)) {
+            return $sceneConfig;
+        }
+
+        return [
             'label' => ucfirst($scene),
         ];
+    }
+
+    protected function sceneView(array $config, string $scene, array $sceneConfig): ?string
+    {
+        $view = $sceneConfig['view'] ?? $config['scene_views'][$scene] ?? null;
+
+        return is_string($view) && $view !== '' ? $view : null;
     }
 }

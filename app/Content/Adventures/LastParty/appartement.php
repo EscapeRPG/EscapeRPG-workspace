@@ -6,6 +6,16 @@ return [
             'audio' => null,
             'blocks' => [
                 [
+                    'type' => 'interactive_image',
+                    'src' => 'assets/img/lastparty/appartement.png',
+                    'alt' => 'appartement',
+                    'class' => 'enigmelieu',
+                    'hotspots' => [
+                        ['id' => 'ordi', 'value' => 'open_computer'],
+                        ['id' => 'tiroir', 'value' => 'open_drawer', 'visible_if' => ['state' => 'carnet_acquired', 'falsy' => true]],
+                    ],
+                ],
+                [
                     'type' => 'paragraphs',
                     'paragraphs' => [
                         "Comment pourriez-vous vous connecter à votre compte Faceeebook ?",
@@ -42,6 +52,16 @@ return [
             'audio' => null,
             'blocks' => [
                 [
+                    'type' => 'interactive_image',
+                    'src' => 'assets/img/lastparty/appartement.png',
+                    'alt' => 'appartement',
+                    'class' => 'enigmelieu',
+                    'hotspots' => [
+                        ['id' => 'ordi', 'value' => 'open_computer'],
+                        ['id' => 'tiroir', 'value' => 'open_drawer', 'visible_if' => ['state' => 'carnet_acquired', 'falsy' => true]],
+                    ],
+                ],
+                [
                     'type' => 'paragraphs',
                     'paragraphs' => [
                         "Votre carnet doit être quelque part dans l'appartement.",
@@ -77,6 +97,15 @@ return [
         'photos' => [
             'audio' => null,
             'blocks' => [
+                [
+                    'type' => 'interactive_image',
+                    'src' => 'assets/img/lastparty/appartement.png',
+                    'alt' => 'appartement',
+                    'class' => 'enigmelieu',
+                    'hotspots' => [
+                        ['id' => 'appareil', 'value' => 'open_camera'],
+                    ],
+                ],
                 [
                     'type' => 'paragraphs',
                     'paragraphs' => [

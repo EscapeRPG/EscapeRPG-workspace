@@ -14,7 +14,9 @@ return [
                     ],
                 ],
             ],
-            'actions' => [],
+            'actions' => [
+                ['label' => 'Suivant.', 'name' => 'action', 'value' => 'inspect_gallery', 'class' => 'action'],
+            ],
         ],
         'photo_clue' => [
             'audio' => null,

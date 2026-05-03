@@ -33,7 +33,7 @@ class HomeLinksRepository
             static fn (array $member): array => [
                 'pseudo' => $member['pseudo'],
                 'avatar' => $member['avatar'],
-                'display_name' => ucwords($member['pseudo'], " -_<>()[]'\".,!?;/Â§$+=*|{}&"),
+                'display_name' => ucwords($member['pseudo'], " -_<>()[]'\".,!?;/§$+=*|{}&"),
             ],
             $statement->fetchAll()
         );

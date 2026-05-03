@@ -24,6 +24,6 @@ if (empty(View::get('footer')) && !empty($adventure['footer_view'])) {
     }
     ?>
 
-    <?php require $sceneViewPath; ?>
+    <?php require $sceneViewPath ?? __DIR__ . '/generic.php'; ?>
 </section>
 <?php View::end(); ?>

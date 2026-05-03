@@ -16,11 +16,14 @@ return [
                     ],
                 ],
             ],
-            'actions' => [],
+            'actions' => [
+                ['label' => 'ÉBAUBI', 'name' => 'action', 'value' => 'finish_story', 'class' => 'action'],
+            ],
         ],
         'completed' => [
             'audio' => null,
             'blocks' => [
+                ['type' => 'image', 'src' => 'assets/img/etoilefinpleine.png', 'alt' => 'étoile fin', 'class' => 'enigme'],
                 [
                     'type' => 'paragraphs',
                     'paragraphs' => [
@@ -31,6 +34,7 @@ return [
                         "Vous pouvez également laisser un commentaire directement ci-dessous pour faire savoir que vous avez terminé ce scénario !",
                     ],
                 ],
+                ['type' => 'comments'],
             ],
             'actions' => [],
         ],

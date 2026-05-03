@@ -18,42 +18,19 @@ return [
     'footer_view' => 'adventures/lastparty/footer',
     'entry_scene' => 'index',
     'scenes' => [
-        'index' => [
-            'label' => 'Introduction',
-            'view' => 'adventures/lastparty/index',
-        ],
-        'eveil' => [
-            'label' => 'Eveil',
-            'view' => 'adventures/lastparty/eveil',
-        ],
-        'telephone' => [
-            'label' => 'Messages',
-            'view' => 'adventures/lastparty/telephone',
-        ],
-        'appartement' => [
-            'label' => 'Appartement',
-            'view' => 'adventures/lastparty/appartement',
-        ],
-        'tiroir' => [
-            'label' => 'Tiroir',
-            'view' => 'adventures/lastparty/tiroir',
-        ],
-        'ordinateur' => [
-            'label' => 'Faceeebook',
-            'view' => 'adventures/lastparty/ordinateur',
-        ],
-        'appareilphoto' => [
-            'label' => 'Photos',
-            'view' => 'adventures/lastparty/appareilphoto',
-        ],
-        'couloir' => [
-            'label' => "Couloir d'entrée",
-            'view' => 'adventures/lastparty/couloir',
-        ],
-        'ebaubi' => [
-            'label' => "La fin de l'histoire",
-            'view' => 'adventures/lastparty/ebaubi',
-        ],
+        'index' => 'Introduction',
+        'eveil' => 'Éveil',
+        'telephone' => 'Messages',
+        'appartement' => 'Appartement',
+        'tiroir' => 'Tiroir',
+        'ordinateur' => 'Faceeebook',
+        'appareilphoto' => 'Photos',
+        'couloir' => "Couloir d'entrée",
+        'ebaubi' => "La fin de l'histoire",
+    ],
+    'scene_views' => [
+        'telephone' => 'adventures/lastparty/telephone',
+        'ordinateur' => 'adventures/lastparty/ordinateur',
     ],
     'state' => [
         'defaults' => [
@@ -79,5 +56,15 @@ return [
     ],
     'assets' => [
         'banner' => 'assets/img/lastparty/lpmini.png',
+    ],
+    'inventory_items' => [
+        'carnet' => [
+            'image' => 'assets/img/lastparty/carnet.png',
+            'alt' => 'Un carnet où vous avez noté tous vos mots de passe.',
+        ],
+        'cartevisite' => [
+            'image' => 'assets/img/lastparty/cartedevisite.png',
+            'alt' => 'Une carte de visite d\'un certain Darren Braun.',
+        ],
     ],
 ];

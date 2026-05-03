@@ -1,0 +1,128 @@
+body {
+    background: rgb(40, 40, 40) url("/assets/img/bg.png") repeat;
+    margin-bottom: 100px;
+}
+
+h1 {
+    color: orange;
+    text-transform: uppercase;
+    font-size: small;
+}
+
+a {
+    color: red;
+    font-weight: bold;
+    text-decoration: none;
+
+    &:hover {
+        color: orange;
+    }
+}
+
+.enigme img {
+    max-width: 20%;
+}
+
+.enigmelieu {
+    max-width: 70%;
+    position: relative;
+    margin: auto;
+
+    img {
+        width: 100%;
+    }
+}
+
+.secrets-navigation {
+    padding: 0 20px;
+    text-align: center;
+
+    h2 {
+        color: orange;
+        text-align: left;
+        font-size: 1em;
+        margin-bottom: 0;
+    }
+
+    img {
+        max-width: 100%;
+        height: auto;
+    }
+
+    ul {
+        list-style: none;
+        margin: 0;
+    }
+
+    span {
+        color: rgba(255, 255, 255, 0.55);
+        font-weight: bold;
+    }
+}
+
+.enigmepensees {
+    text-align: center;
+}
+
+#vest {
+    position: absolute;
+    top: 30.5%;
+    left: 18.8%;
+    width: 9.2%;
+    height: 33%;
+}
+
+#coffret {
+    width: 80%;
+    position: relative;
+    margin: auto;
+
+    img {
+        display: inline-block;
+        vertical-align: middle;
+        width: 100%;
+    }
+}
+
+#fenetre {
+    position: absolute;
+    left: 7.5%;
+    top: 2.75%;
+    width: 40.2%;
+    height: 40.5%;
+}
+
+#piano {
+    position: absolute;
+    left: 37.2%;
+    bottom: 37.75%;
+    width: 23.8%;
+    height: 7.5%;
+}
+
+#grenierpiece {
+    position: absolute;
+    right: 42%;
+    bottom: 44%;
+    width: 1.2%;
+    height: 1%;
+}
+
+.safe-form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin: 1rem auto;
+
+    input[type="text"] {
+        max-width: 50px;
+        text-align: center;
+    }
+
+    button.action {
+        width: 50px;
+        padding-right: 0;
+        padding-left: 0;
+    }
+}

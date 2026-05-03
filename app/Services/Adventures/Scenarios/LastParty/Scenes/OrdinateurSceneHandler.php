@@ -6,12 +6,15 @@ use App\Core\Request;
 use App\Services\Adventures\Engine\AdventureActionResult;
 use App\Services\Adventures\Engine\AdventureSceneHandler;
 use App\Services\Adventures\Engine\AdventureState;
+use App\Services\Adventures\Support\UserInputNormalizer;
 
 /**
  * Gere la connexion Faceeebook et la recherche du profil de Juliette.
  */
 class OrdinateurSceneHandler implements AdventureSceneHandler
 {
+    use UserInputNormalizer;
+
     public function variant(AdventureState $state, Request $request, bool $isLandingPage = false): string
     {
         if ((bool) $state->get('juliette_found', false)) {
@@ -68,13 +71,13 @@ class OrdinateurSceneHandler implements AdventureSceneHandler
 
     private function submitLogin(AdventureState $state, Request $request): AdventureActionResult
     {
-        $username = $this->normalize((string) $request->post('identifiant', ''));
-        $password = $this->normalize((string) $request->post('mdpasse', ''));
+        $username = $this->normalizeInput((string) $request->post('identifiant', ''));
+        $password = $this->normalizeInput((string) $request->post('mdpasse', ''));
 
         if ($username !== 'jonathanlt' || $password !== 'party4ever') {
             return new AdventureActionResult(
                 nextScene: 'ordinateur',
-                stateChanges: ['ordinateur_error' => "Ca ne semble pas etre ca, avez-vous bien tape vos identifiants ?"],
+                stateChanges: ['ordinateur_error' => "Ça ne semble pas être ca, avez-vous bien tapé vos identifiants ?"],
             );
         }
 
@@ -84,14 +87,6 @@ class OrdinateurSceneHandler implements AdventureSceneHandler
         }
 
         $inventory = array_values(array_filter($inventory, static fn ($item): bool => $item !== 'carnet'));
-        $notes = $state->get('notes', []);
-        if (!is_array($notes)) {
-            $notes = [];
-        }
-
-        if (!in_array('juliette', $notes, true)) {
-            $notes[] = 'juliette';
-        }
 
         return new AdventureActionResult(
             nextScene: 'ordinateur',
@@ -99,7 +94,6 @@ class OrdinateurSceneHandler implements AdventureSceneHandler
                 'computer_connected' => true,
                 'ordinateur_error' => null,
                 'inventory' => $inventory,
-                'notes' => $notes,
             ],
             achievements: [
                 ['scenario' => 'lastparty', 'name' => 'connexion'],
@@ -109,7 +103,7 @@ class OrdinateurSceneHandler implements AdventureSceneHandler
 
     private function searchProfile(Request $request): AdventureActionResult
     {
-        $search = $this->normalize((string) $request->post('rechercher', ''));
+        $search = $this->normalizeInput((string) $request->post('rechercher', ''));
 
         if ($search !== 'juliette') {
             return new AdventureActionResult(
@@ -129,12 +123,5 @@ class OrdinateurSceneHandler implements AdventureSceneHandler
                 ['scenario' => 'lastparty', 'name' => 'juliette'],
             ],
         );
-    }
-
-    private function normalize(string $value): string
-    {
-        $value = mb_strtolower(trim($value));
-
-        return preg_replace('/[^a-z0-9]/', '', $value) ?? '';
     }
 }

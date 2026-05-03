@@ -17,6 +17,7 @@
     <link rel="stylesheet" href="<?= asset('assets/styles/membres/compte_btn.css') ?>">
     <link rel="stylesheet" href="<?= asset('assets/styles/aventures_general/footer.css') ?>">
     <link rel="stylesheet" href="<?= asset('assets/styles/aventures_general/image_modal.css') ?>">
+    <link rel="stylesheet" href="<?= asset('assets/styles/aventures_general/context_modal.css') ?>">
     <link rel="stylesheet" href="<?= asset('assets/styles/succes/succes.css') ?>">
     <link rel="stylesheet" href="<?= asset('assets/styles/loader.css') ?>">
     <?php foreach (($adventure['styles'] ?? []) as $stylesheet): ?>
@@ -47,10 +48,11 @@
 
 <?= View::get('footer') ?>
 
-<?= View::get('scripts') ?>
 <script src="<?= asset('assets/js/header.js') ?>"></script>
 <script src="<?= asset('assets/js/achievement-popup.js') ?>"></script>
 <script src="<?= asset('assets/js/image-modal.js') ?>"></script>
+<script src="<?= asset('assets/js/context-modal.js') ?>"></script>
+<?= View::get('scripts') ?>
 <script src="<?= asset('assets/js/aventures-chargement.js') ?>"></script>
 </body>
 </html>

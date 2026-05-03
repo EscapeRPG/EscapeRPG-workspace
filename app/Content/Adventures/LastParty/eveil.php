@@ -29,6 +29,20 @@ return [
             'audio' => 'assets/sounds/lastparty/message.mp3',
             'blocks' => [
                 [
+                    'type' => 'interactive_image',
+                    'src' => 'assets/img/lastparty/appartement.png',
+                    'alt' => 'appartement',
+                    'class' => 'enigmelieu',
+                    'hotspots' => [
+                        [
+                            'id' => 'phone',
+                            'src' => 'assets/img/lastparty/telephonemini.png',
+                            'alt' => 'téléphone',
+                            'value' => 'open_phone',
+                        ],
+                    ],
+                ],
+                [
                     'type' => 'paragraphs',
                     'paragraphs' => [
                         "Vous avez encore du mal à vous réveiller complètement.",

@@ -8,7 +8,7 @@ use App\Services\Adventures\Engine\AdventureSceneHandler;
 use App\Services\Adventures\Engine\AdventureState;
 
 /**
- * Gere la scene des messages sur le telephone.
+ * Gère la scène des messages sur le téléphone.
  */
 class TelephoneSceneHandler implements AdventureSceneHandler
 {
