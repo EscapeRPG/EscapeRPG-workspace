@@ -11,7 +11,7 @@ return [
         ], 'actions' => []],
         'step_0' => ['audio' => null, 'blocks' => [
             ['type' => 'interactive_image', 'src' => 'assets/img/secrets/vuegrenier.png', 'alt' => 'grenier', 'class' => 'enigmelieu', 'hotspots' => [
-                ['id' => 'piano', 'src' => 'assets/img/secrets/pianoclosed.png', 'alt' => 'un vieux piano', 'value' => 'piano'],
+                ['class' => 'piano', 'src' => 'assets/img/secrets/pianoclosed.png', 'alt' => 'un vieux piano', 'value' => 'piano'],
             ]],
             ['type' => 'paragraphs', 'paragraphs' => [
                 "Le grenier occupe tout le dernier étage de l'aile Est et est rempli de tout un tas d'affaires.<br>
@@ -20,7 +20,7 @@ return [
         ], 'actions' => []],
         'piano' => ['audio' => null, 'blocks' => [
             ['type' => 'interactive_image', 'src' => 'assets/img/secrets/vuegrenier.png', 'alt' => 'grenier', 'class' => 'enigmelieu', 'hotspots' => [
-                ['id' => 'grenierpiece', 'src' => 'assets/img/secrets/grenierpiece.png', 'alt' => 'une pièce sur le clavier', 'value' => 'piece'],
+                ['class' => 'grenierpiece', 'src' => 'assets/img/secrets/grenierpiece.png', 'alt' => 'une pièce sur le clavier', 'value' => 'piece'],
             ]],
             ['type' => 'paragraphs', 'paragraphs' => [
                 "Vous ouvrez le clavier du piano.

@@ -8,9 +8,9 @@ $labImage = static fn(array $controls = []): array => [
     'controls' => $controls,
 ];
 
-$hiddenTrap = ['id' => 'trappehidden', 'src' => 'assets/img/secrets/buttontapis.png', 'alt' => 'le tapis traîne au milieu de la pièce', 'value' => 'reveal_trappe'];
-$closedTrap = ['id' => 'trappeclosed', 'src' => 'assets/img/secrets/buttontrappe.png', 'alt' => 'une trappe verrouillée', 'value' => 'inspect_trappe'];
-$openedTrap = ['id' => 'trappeopened', 'src' => 'assets/img/secrets/buttontrappeopened.png', 'alt' => "trappe ouverte sur l'obscurité", 'value' => 'open_trappe'];
+$hiddenTrap = ['class' => 'trappehidden', 'src' => 'assets/img/secrets/buttontapis.png', 'alt' => 'le tapis traîne au milieu de la pièce', 'value' => 'reveal_trappe'];
+$closedTrap = ['class' => 'trappeclosed', 'src' => 'assets/img/secrets/buttontrappe.png', 'alt' => 'une trappe verrouillée', 'value' => 'inspect_trappe'];
+$openedTrap = ['class' => 'trappeopened', 'src' => 'assets/img/secrets/buttontrappeopened.png', 'alt' => "trappe ouverte sur l'obscurité", 'value' => 'open_trappe'];
 
 $leverActions = [
     ['label' => 'Tirer sur le levier.', 'name' => 'action', 'value' => 'pull_lever', 'class' => 'action', 'visible_if' => ['state' => 'bureauprive2_refus', 'falsy' => true]],

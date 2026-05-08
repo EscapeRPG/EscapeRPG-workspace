@@ -1,4 +1,4 @@
-#couverture {
+.couverture {
     width: 100%;
     text-align: center;
     font-size: x-large;
@@ -19,8 +19,8 @@
     }
 }
 
-#faceeebookconnexion {
-    background-color: #c1d4e5;
+.faceeebookconnexion {
+    background: #c1d4e5;
     position: relative;
     width: 80%;
     margin: auto;
@@ -43,9 +43,9 @@
     }
 }
 
-#connexion {
+.connexion {
     width: 60%;
-    background-color: white;
+    background: white;
     box-shadow: 0 1px 5px rgba(0, 0, 0, 0.5);
     border-radius: 20px;
     margin: auto;
@@ -66,17 +66,17 @@
         cursor: pointer;
         text-transform: uppercase;
         background-image: none;
-        background-color: rgb(23, 103, 196);
+        background: rgb(23, 103, 196);
         color: white;
 
         &:hover {
-            background-color: rgb(220, 120, 0);
+            background: rgb(220, 120, 0);
         }
     }
 }
 
-#faceeebookheader {
-    background-color: #edf2f7;
+.faceeebookheader {
+    background: #edf2f7;
     margin-top: 0;
     box-shadow: 0 1px 5px rgba(0, 0, 0, 0.5);
     width: 100%;
@@ -106,8 +106,8 @@
     padding: 10px 0;
 }
 
-#faceeebook {
-    background-color: #c1d4e5;
+.faceeebook {
+    background: #c1d4e5;
     width: 80%;
     margin: auto;
     margin-bottom: 20px;
@@ -127,7 +127,7 @@
 input[type=search] {
     border-radius: 20px;
     border: none;
-    background-color: #c1d4e5;
+    background: #c1d4e5;
     padding: 5px;
     text-transform: capitalize;
 }
@@ -154,7 +154,7 @@ input[type=search] {
 
 .actus {
     width: 60%;
-    background-color: white;
+    background: white;
     box-shadow: 0 1px 5px rgba(0, 0, 0, 0.5);
     border-radius: 20px;
     margin: auto;
@@ -196,7 +196,7 @@ input[type=search] {
 
 .quoineuf {
     width: 70%;
-    background-color: #c1d4e5;
+    background: #c1d4e5;
     border-radius: 20px;
     border: none;
     display: inline-block;
@@ -234,7 +234,7 @@ input[type=search] {
 
 .commentaire {
     width: 80%;
-    background-color: #c1d4e5;
+    background: #c1d4e5;
     border-radius: 20px;
     border: none;
     display: inline-block;
@@ -252,9 +252,9 @@ input[type=search] {
     }
 }
 
-#chgt {
+.chgt {
     width: 10%;
-    background-color: rgba(0, 0, 0, 0.2);
+    background: rgba(0, 0, 0, 0.2);
     box-shadow: 0 1px 5px rgba(0, 0, 0, 0.5);
     border-radius: 40px;
     margin: auto;
@@ -270,10 +270,10 @@ input[type=search] {
     }
 }
 
-#discussions {
+.discussions {
     float: right;
     margin: -30px 20px 20px auto;
-    background-color: rgba(0, 0, 0, 0.2);
+    background: rgba(0, 0, 0, 0.2);
     box-shadow: 0 1px 5px rgba(0, 0, 0, 0.5);
     border-radius: 20px;
     border: none;

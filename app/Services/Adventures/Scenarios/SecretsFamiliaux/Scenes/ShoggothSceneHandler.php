@@ -48,18 +48,83 @@ class ShoggothSceneHandler extends SimpleSceneHandler
             ]),
             'finish_bad' => new AdventureActionResult(nextScene: 'shoggoth', stateChanges: [
                 'shoggoth_ending' => 'bad_end',
+                'story_finished' => true,
+                'story_ending' => 'fin1',
             ]),
             'finish_neutral' => new AdventureActionResult(nextScene: 'shoggoth', stateChanges: [
                 'shoggoth_ending' => 'neutral_end',
+                'story_finished' => true,
+                'story_ending' => 'fin3',
             ]),
             'finish_neutral_bad' => new AdventureActionResult(nextScene: 'shoggoth', stateChanges: [
                 'shoggoth_ending' => 'neutral_bad_end',
+                'story_finished' => true,
+                'story_ending' => 'fin2',
             ]),
             'finish_good' => new AdventureActionResult(nextScene: 'shoggoth', stateChanges: [
                 'shoggoth_ending' => 'good_end',
+                'story_finished' => true,
+                'story_ending' => 'fin4',
             ]),
+            'open_final' => $this->openFinalResult($state),
             default => new AdventureActionResult(nextScene: 'shoggoth'),
         };
+    }
+
+    private function openFinalResult(AdventureState $state): AdventureActionResult
+    {
+        if (!(bool) $state->get('story_finished', false)) {
+            return new AdventureActionResult(
+                nextScene: 'shoggoth',
+                flashMessage: "Cette page se débloque en terminant l'aventure.",
+                flashType: 'error',
+            );
+        }
+
+        $ending = (string) $state->get('story_ending', '');
+        $achievements = [
+            ['scenario' => 'general', 'name' => 'fin'],
+            ['scenario' => 'secretsfamiliaux', 'name' => 'fin'],
+        ];
+
+        foreach ($this->endingAchievements($ending) as $achievement) {
+            $achievements[] = $achievement;
+        }
+
+        return new AdventureActionResult(
+            nextScene: 'fin',
+            achievements: $achievements,
+        );
+    }
+
+    /**
+     * @return array<int, array<string, string>>
+     */
+    private function endingAchievements(string $ending): array
+    {
+        $achievements = [];
+
+        $maxEnding = match ($ending) {
+            'fin1' => 1,
+            'fin2' => 2,
+            'fin3' => 3,
+            'fin4' => 4,
+            default => 0,
+        };
+
+        for ($i = 1; $i <= $maxEnding; $i++) {
+            $achievements[] = ['scenario' => 'secretsfamiliaux', 'name' => 'fin' . $i];
+        }
+
+        if (in_array($ending, ['fin2', 'fin4'], true)) {
+            $achievements[] = ['scenario' => 'secretsfamiliaux', 'name' => 'shoggoth'];
+        }
+
+        if ($ending === 'fin4') {
+            $achievements[] = ['scenario' => 'general', 'name' => 'meilleurefin'];
+        }
+
+        return $achievements;
     }
 
     private function endingSetupVariant(AdventureState $state): string

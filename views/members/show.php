@@ -30,7 +30,7 @@
     <fieldset>
         <legend>Partenaires d'aventure</legend>
 
-        <div id="containeramis">
+        <div class="containeramis">
             <?php if (!empty($friends)): ?>
                 <?php foreach ($friends as $friend): ?>
                     <a href="<?= url('/membres/' . rawurlencode($friend['pseudo'] ?? '')) ?>">

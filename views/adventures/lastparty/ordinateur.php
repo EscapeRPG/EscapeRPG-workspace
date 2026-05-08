@@ -16,10 +16,10 @@ $variant = $sceneData['variant'] ?? null;
 <?php endif; ?>
 
 <?php if ($variant === 'login'): ?>
-    <div id="faceeebookconnexion">
+    <div class="faceeebookconnexion">
         <img src="<?= asset('assets/img/lastparty/logofaceeebook.png') ?>" alt="faceeebook logo">
         <h1>Faceeebook</h1>
-        <div id="connexion">
+        <div class="connexion">
             <form action="<?= url('/aventures/lastparty/ordinateur') ?>" method="post">
                 <label for="identifiant">Identifiant</label> :<br>
                 <input list="notesListe" name="identifiant" id="identifiant">

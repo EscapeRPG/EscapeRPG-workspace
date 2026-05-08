@@ -64,7 +64,7 @@ a {
     text-align: center;
 }
 
-#vest {
+.vest {
     position: absolute;
     top: 30.5%;
     left: 18.8%;
@@ -72,7 +72,7 @@ a {
     height: 33%;
 }
 
-#coffret {
+.coffret {
     width: 80%;
     position: relative;
     margin: auto;
@@ -84,7 +84,7 @@ a {
     }
 }
 
-#fenetre {
+.fenetre {
     position: absolute;
     left: 7.5%;
     top: 2.75%;
@@ -92,7 +92,7 @@ a {
     height: 40.5%;
 }
 
-#piano {
+.piano {
     position: absolute;
     left: 37.2%;
     bottom: 37.75%;
@@ -100,7 +100,7 @@ a {
     height: 7.5%;
 }
 
-#grenierpiece {
+.grenierpiece {
     position: absolute;
     right: 42%;
     bottom: 44%;

@@ -33,7 +33,11 @@ class ChambreSceneHandler extends SimpleSceneHandler
         }
 
         if ((bool)$state->get('chambre_coffre_seen', false)) {
-            return 'coffre';
+            return (bool)$state->get('pellington_visit', false) ? 'coffre_pellington' : 'coffre';
+        }
+
+        if ((bool)$state->get('pellington_visit', false)) {
+            return 'step_0_pellington';
         }
 
         return parent::variant($state, $request, $isLandingPage);

@@ -1,7 +1,7 @@
 <?php use App\Core\View; ?>
 
 <?php View::start('content'); ?>
-<div id="formconnexion">
+<div class="formconnexion">
     <h1>Connexion à l'espace membres</h1>
     <form action="<?= url('/login') ?>" method="post">
         <?= csrf_field() ?>

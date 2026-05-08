@@ -26,6 +26,10 @@ class AdventurePageController extends AdventureController
 
         if ($scene !== null) {
             $this->restoreAutosaveIfSessionMissing($slug, $state, '');
+            $previousScene = $state->scene();
+            if (is_string($previousScene) && $previousScene !== '' && $previousScene !== $resolvedScene) {
+                $state->put('_previous_scene', $previousScene);
+            }
             $state->setScene($resolvedScene);
         }
 

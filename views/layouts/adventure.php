@@ -31,7 +31,7 @@
 <?php endif; ?>
 
 <?php if (!empty($adventure['assets']['banner'])): ?>
-    <div id="banniere">
+    <div class="banniere">
         <img src="<?= asset($adventure['assets']['banner']) ?>" alt="<?= e(($adventure['title'] ?? 'Aventure') . ' bannière') ?>">
     </div>
 <?php endif; ?>

@@ -3,8 +3,8 @@ body {
     background-size: 100% 100%;
 }
 
-#containerscenario,
-#containeramis {
+.containerscenario,
+.containeramis {
     display: flex;
     width: 90%;
     flex-wrap: wrap;
@@ -14,7 +14,7 @@ body {
     justify-content: center;
 }
 
-#containerscenario {
+.containerscenario {
     &::before {
         content: "";
         position: absolute;
@@ -78,7 +78,7 @@ body {
     font-size: 0.7rem;
 }
 
-.member-profile-aside #containeramis {
+.member-profile-aside .containeramis {
     width: 100%;
     margin: 10px auto 20px;
     padding: 0;
@@ -103,7 +103,7 @@ body {
     font-size: 22px;
 }
 
-#containeramis {
+.containeramis {
     p {
         text-align: center;
         color: white;
@@ -126,7 +126,7 @@ body {
     height: 20px;
     outline: 1px solid orange;
     border-radius: 10px;
-    background-color: rgba(0, 0, 0, 0.2);
+    background: rgba(0, 0, 0, 0.2);
     margin: 10px auto 0;
     overflow: hidden;
     display: flex;
@@ -144,7 +144,7 @@ body {
     position: absolute;
     height: 100%;
     left: 0;
-    background-color: orange;
+    background: orange;
 }
 
 .portraitavatarcompte {
@@ -158,5 +158,13 @@ body {
         width: 200px;
         height: 200px;
         object-fit: cover;
+    }
+}
+
+.connecting {
+    background: orange !important;
+
+    &:hover {
+        background: rgb(220, 120, 0) !important;
     }
 }

@@ -22,12 +22,12 @@ $pieceImage = [
     ],
 ];
 $chambreHotspots = [
-    $tableauImage + ['id' => 'tabchbr', 'alt' => 'un grand tableau au-dessus du lit', 'value' => 'tableau'],
-    $pieceImage + ['id' => 'piechbr', 'alt' => 'une pièce sous le lit', 'value' => 'piece', 'visible_if' => ['inventory' => 'piecead', 'contains' => false]],
+    $tableauImage + ['class' => 'tabchbr', 'alt' => 'un grand tableau au-dessus du lit', 'value' => 'tableau'],
+    $pieceImage + ['class' => 'piechbr', 'alt' => 'une pièce sous le lit', 'value' => 'piece', 'visible_if' => ['inventory' => 'piecead', 'contains' => false]],
 ];
 $chambreCoffreHotspots = [
-    ['id' => 'cofchbr', 'src' => 'assets/img/secrets/cof.png', 'alt' => 'coffre-fort', 'value' => 'coffre'],
-    $pieceImage + ['id' => 'piechbr', 'alt' => 'une pièce sous le lit', 'value' => 'piece', 'visible_if' => ['inventory' => 'piecead', 'contains' => false]],
+    ['class' => 'cofchbr', 'src' => 'assets/img/secrets/cof.png', 'alt' => 'coffre-fort', 'value' => 'coffre'],
+    $pieceImage + ['class' => 'piechbr', 'alt' => 'une pièce sous le lit', 'value' => 'piece', 'visible_if' => ['inventory' => 'piecead', 'contains' => false]],
 ];
 $safeForm = static fn(): array => [
     'form_class' => 'safe-form',
@@ -35,6 +35,54 @@ $safeForm = static fn(): array => [
         ['label' => '←', 'name' => 'action', 'class' => 'action', 'value' => 'safe_left'],
         ['element' => 'input', 'type' => 'text', 'name' => 'combinaison_digit', 'attributes' => ['inputmode' => 'numeric', 'maxlength' => '1', 'autocomplete' => 'off']],
         ['label' => '→', 'name' => 'action', 'class' => 'action', 'value' => 'safe_right'],
+    ],
+];
+$portraitHint = [
+    'levels' => [
+        [
+            'paragraphs' => [
+                "Plusieurs portraits sont accrochés au mur.",
+            ],
+        ],
+        [
+            'paragraphs' => [
+                "Sont-ils bien tous là ?",
+            ],
+        ],
+        [
+            'paragraphs' => [
+                "On peut constater, sur le papier peint, un petit rectangle plus clair indiquant qu'un tableau était accroché mais a été retiré.",
+            ],
+        ],
+    ],
+    'answer' => [
+        'paragraphs' => [
+            "Il y avait donc 4 portraits auparavant.",
+        ],
+    ],
+];
+$safeHint = [
+    'levels' => [
+        [
+            'paragraphs' => [
+                "Avez-vous trouvé les 3 premiers chiffres du code ? Si ce n'est pas le cas, essayez de fouiller au niveau de la bibliothèque, du salon et de la chambre de William pour les trouver, grâce aux aveux de Pellington.<br>Faites bien attention également à entrer le code en respectant le sens gauche ou droite !<br><br>Si le problème vient de la phrase concernant les \"frères\", dites-vous que vous cherchez bien un code à 4 chiffres.",
+            ],
+        ],
+        [
+            'paragraphs' => [
+                "Qui peuvent bien être ces \"frères\" dont parle le docteur ?",
+            ],
+        ],
+        [
+            'paragraphs' => [
+                "Les \"frères\" sont les 3 premiers chiffres de la combinaison. La phrase vous permet de déterminer le 4e.",
+            ],
+        ],
+    ],
+    'answer' => [
+        'paragraphs' => [
+            "Le premier chiffre est 2, le tome du Magna Mater, à tourner vers la droite.<br>Le second est 9, le nombre total présents sur le tableau de Rembrandt brûlé par votre oncle, à tourner vers la droite également.<br>Le troisième est 4, en comptant les portraits présents et retirés sur les murs de la chambre de William, à tourner vers la gauche.<br>Le quatrième chiffre est 7, le plus fort des chiffres-frères (9) s'associe au plus faible (2). Le troisième (4) se soustrait à eux, ce qui donne 2+9-4 = 7, à tourner vers la droite.",
+        ],
     ],
 ];
 
@@ -53,6 +101,20 @@ return [
             ],
             'actions' => [],
         ],
+        'step_0_pellington' => [
+            'audio' => null,
+            'blocks' => [
+                $chambreImage + ['type' => 'interactive_image', 'alt' => "l'ancienne chambre de votre oncle", 'class' => 'enigmelieu', 'hotspots' => $chambreHotspots],
+                [
+                    'type' => 'paragraphs',
+                    'paragraphs' => [
+                        "La chambre de votre défunt oncle. Elle est propre et bien entretenue.",
+                        "Peut-être y a-t-il ici quelque chose de valeur ?",
+                    ]],
+            ],
+            'actions' => [],
+            'hint' => $portraitHint,
+        ],
         'coffre' => [
             'audio' => null,
             'blocks' => [
@@ -62,6 +124,17 @@ return [
                 ]],
             ],
             'actions' => [],
+        ],
+        'coffre_pellington' => [
+            'audio' => null,
+            'blocks' => [
+                $chambreImage + ['type' => 'interactive_image', 'alt' => "l'ancienne chambre de votre oncle", 'class' => 'enigmelieu', 'hotspots' => $chambreCoffreHotspots],
+                ['type' => 'paragraphs', 'paragraphs' => [
+                    "En retirant le tableau au-dessus du lit, vous trouvez un coffre-fort incrusté dans le mur.",
+                ]],
+            ],
+            'actions' => [],
+            'hint' => $portraitHint,
         ],
         'step_1' => [
             'audio' => null,
@@ -114,6 +187,7 @@ return [
                 $safeForm(),
                 ['label' => 'Retour.', 'name' => 'action', 'value' => 'retour', 'class' => 'action'],
             ],
+            'hint' => $safeHint,
         ],
         'safe_1' => [
             'audio' => 'assets/sounds/secrets/coffrefort1.mp3',
@@ -132,6 +206,7 @@ return [
                 $safeForm(),
                 ['label' => 'Retour.', 'name' => 'action', 'value' => 'retour', 'class' => 'action'],
             ],
+            'hint' => $safeHint,
         ],
         'safe_2' => [
             'audio' => 'assets/sounds/secrets/coffrefort2.mp3',
@@ -150,6 +225,7 @@ return [
                 $safeForm(),
                 ['label' => 'Retour.', 'name' => 'action', 'value' => 'retour', 'class' => 'action'],
             ],
+            'hint' => $safeHint,
         ],
         'safe_3' => [
             'audio' => 'assets/sounds/secrets/coffrefort3.mp3',
@@ -168,6 +244,7 @@ return [
                 $safeForm(),
                 ['label' => 'Retour.', 'name' => 'action', 'value' => 'retour', 'class' => 'action'],
             ],
+            'hint' => $safeHint,
         ],
         'safe_wrong' => [
             'audio' => 'assets/sounds/secrets/coffrefort4.mp3',
@@ -188,6 +265,7 @@ return [
                 $safeForm(),
                 ['label' => 'Retour.', 'name' => 'action', 'value' => 'retour', 'class' => 'action'],
             ],
+            'hint' => $safeHint,
         ],
         'safe_opened' => [
             'audio' => 'assets/sounds/secrets/coffrefortouverture.mp3',

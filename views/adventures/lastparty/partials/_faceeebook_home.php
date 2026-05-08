@@ -1,5 +1,5 @@
-<div id="faceeebook">
-    <div id="faceeebookheader">
+<div class="faceeebook">
+    <div class="faceeebookheader">
         <ul>
             <li class="topleft">
                 <img src="<?= asset('assets/img/lastparty/logofaceeebook.png') ?>" alt="logo faceeebook">
@@ -250,14 +250,14 @@
     </div>
 
 
-    <div id="chgt">
+    <div class="chgt">
         <p>
             ...
         </p>
     </div>
 
 
-    <div id="discussions">
+    <div class="discussions">
         <p>
             + Discussions.
         </p>

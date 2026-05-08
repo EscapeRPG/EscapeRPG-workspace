@@ -26,7 +26,7 @@ window.EscapeRPGDragDropPuzzle?.init({
     const slots = document.createElement("div");
     const fragment = document.createDocumentFragment();
 
-    coffret.id = "coffret";
+    coffret.className = "coffret";
     coffret.innerHTML = '<img src="/assets/img/secrets/coffretface.png" alt="coffret">';
 
     Object.keys(this.matches).forEach((dropId) => {

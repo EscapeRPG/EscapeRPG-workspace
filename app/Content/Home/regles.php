@@ -43,7 +43,7 @@ return [
                 "Pour progresser dans certaines aventures, il vous faudra visiter différents lieux.",
                 'Ils sont indiqués en <span class="lieu">vert</span> lorsque vous pouvez vous y rendre. La plupart seront accessibles via le volet de navigation disponible en jeu, mais vous pouvez aussi vous y diriger en rentrant leur nom directement dans la barre d\'adresse de votre navigateur !',
                 'Par exemple, si vous êtes dans un <span class="lieu">salon</span> et que vous désirez aller dans le <span class="lieu">bureau</span>, remplacez "salon.php" par "bureau.php" et validez !',
-                '<span class="important">Attention cependant, ne mettez jamais d\'accent ni d\'espace dans ces adresses !</span> <span class="lieu">Salle de cérémonie</span><span class="important"> donnerait donc "salledeceremonie.php" !</span>',
+                '<span class="important">Attention cependant, ne mettez jamais d\'accent ni d\'espace dans ces adresses !</span> <span class="lieu">Salle de cérémonie</span><span class="important"> donnerait donc "salledeceremonie" !</span>',
             ],
         ],
         [

@@ -3,6 +3,7 @@
 vendor/
 
 config/database.local.php
+CODEX_HANDOFF.md
 
 public/img/uploads/
 
@@ -11,3 +12,6 @@ Changements avant mise en ligne.php
 Morceaux de code pratiques.php
 bdd.sql
 favicon.ico
+
+Thumbs.db
+.DS_Store

@@ -1,4 +1,4 @@
-#tiroir {
+.tiroir {
     position: absolute;
     top: 45.5%;
     left: 43.33%;
@@ -6,7 +6,7 @@
     height: 8.5%;
 }
 
-#ordi {
+.ordi {
     position: absolute;
     top: 22%;
     left: 5.5%;
@@ -14,7 +14,7 @@
     height: 16%;
 }
 
-#appareil {
+.appareil {
     position: absolute;
     top: 20.75%;
     right: 13.5%;

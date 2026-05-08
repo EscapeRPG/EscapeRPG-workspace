@@ -63,9 +63,9 @@ window.EscapeRPGDragDropPuzzle?.init({
     const innerPanel = document.createElement("div");
     const draggables = document.createElement("div");
 
-    container.id = "container";
-    panel.id = "panneauelec";
-    innerPanel.id = "innerpanneau";
+    container.className = "electricite-container";
+    panel.className = "panneauelec";
+    innerPanel.className = "innerpanneau";
     draggables.className = "draggables-container";
     panelImage.src = "/assets/img/secrets/panneauelec.png";
     panelImage.alt = "panneau électrique";

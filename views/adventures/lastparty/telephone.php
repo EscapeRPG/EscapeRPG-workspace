@@ -15,7 +15,7 @@ $threads = $content['threads'] ?? [];
     <div class="enigmelieu">
         <img src="<?= asset('assets/img/lastparty/telephone.png') ?>" alt="téléphone">
         <form action="<?= url('/aventures/lastparty/telephone') ?>" method="post">
-            <button type="submit" name="action" value="open_sms" id="sms"></button>
+            <button type="submit" name="action" value="open_sms" class="sms"></button>
         </form>
     </div>
 <?php else: ?>

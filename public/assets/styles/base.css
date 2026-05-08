@@ -39,7 +39,7 @@ nav {
   width: 50px;
   height: 50px;
   overflow: hidden;
-  background-color: rgba(0, 0, 0, 0.5);
+  background: rgba(0, 0, 0, 0.5);
   border: 7px double black;
   border-left: none;
   border-radius: 0 20px 20px 0;
@@ -72,7 +72,7 @@ nav {
 
   &:hover {
     width: 100%;
-    background-color: orange;
+    background: orange;
 
     a {
       width: 100%;
@@ -108,7 +108,7 @@ main {
 #bloc3 {
   margin: 0;
   padding: 50px 170px;
-  background-color: rgba(0, 0, 0, 0.2);
+  background: rgba(0, 0, 0, 0.2);
 }
 
 #bloc2,
@@ -140,7 +140,7 @@ main {
   }
 }
 
-#bann {
+.bann {
   opacity: 0;
   animation: fadezoom 5s forwards;
   animation-delay: 1s;
@@ -266,7 +266,7 @@ h3 {
   padding: 12px 0 12px 0;
 }
 
-#lienspage {
+.lienspage {
   width: 90%;
   padding: 0;
   margin: auto;

@@ -1,4 +1,4 @@
-#trappeopened {
+.trappeopened {
   position: absolute;
   left: 22.7%;
   bottom: 17.2%;
@@ -6,7 +6,7 @@
   height: 28%;
 }
 
-#trappeclosed {
+.trappeclosed {
   position: absolute;
   left: 26.7%;
   bottom: 19.5%;
@@ -14,7 +14,7 @@
   height: 13.75%;
 }
 
-#trappehidden {
+.trappehidden {
   position: absolute;
   left: 13%;
   bottom: 9.5%;
@@ -22,7 +22,7 @@
   height: 27.5%;
 }
 
-#tiroir {
+.tiroir {
   position: absolute;
   right: 29%;
   bottom: 37.25%;
@@ -30,7 +30,7 @@
   height: 5.25%;
 }
 
-#symbureau {
+.symbureau {
   position: absolute;
   left: 44.5%;
   top: 16%;

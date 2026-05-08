@@ -1,5 +1,30 @@
 <?php
 
+$paperHint = [
+    'levels' => [
+        [
+            'paragraphs' => [
+                "Avez-vous trouvé de quoi déchiffrer ce message ?",
+            ],
+        ],
+        [
+            'paragraphs' => [
+                "Si ce n'est pas le cas, vous devriez vous intéresser d'un peu plus près à la porte du bureau de votre oncle, quelque chose pourrait attirer votre attention.",
+            ],
+        ],
+        [
+            'paragraphs' => [
+                "Il s'agit d'un message codé par la technique des templiers. Chaque tableau est séparé en 4 parties, essayez de visualiser chacune de ces parties indépendament pour décoder le message.",
+            ],
+        ],
+    ],
+    'answer' => [
+        'paragraphs' => [
+            "Le message codé donne : \"L'Éclairé ouvre le chemin\". Sans doute un mot de passe ?",
+        ],
+    ],
+];
+
 return [
     'variants' => [
         'missing' => [
@@ -39,6 +64,7 @@ return [
                 ]],
             ],
             'actions' => [],
+            'hint' => $paperHint,
         ],
     ],
 ];

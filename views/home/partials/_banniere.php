@@ -1,6 +1,6 @@
 <div class="banner">
     <div class="banniere">
-        <img src="<?= asset('assets/img/banniere.png') ?>" id="bann" alt="bannière">
+        <img src="<?= asset('assets/img/banniere.png') ?>" class="bann" alt="bannière">
         <div class="bannierep">
             <div class="type1">Prenez part à des histoires passionnantes et mystérieuses,</div>
         </div>

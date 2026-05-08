@@ -2,10 +2,9 @@
 
 $pharmacyForm = [
     'type' => 'interactive_image',
-    'id' => 'armoireapharmacie',
     'src' => 'assets/img/secrets/armoireapharmacie.png',
     'alt' => "l'armoire à pharmacie du docteur Pellington",
-    'class' => 'enigmelieu',
+    'class' => 'enigmelieu armoireapharmacie',
     'controls' => [
         ['element' => 'input', 'type' => 'number', 'name' => '1', 'class' => 'hg', 'value' => 0, 'required' => true],
         ['element' => 'input', 'type' => 'number', 'name' => '2', 'class' => 'hm', 'value' => 0, 'required' => true],
@@ -32,7 +31,7 @@ return [
                     'class' => 'enigmelieu',
                     'hotspots' => [
                         [
-                            'id' => 'armoire',
+                            'class' => 'armoire',
                             'src' => 'assets/img/secrets/armoirepharm.png',
                             'src_options' => [
                                 ['if' => ['state' => 'pellington_armoire_opened', 'truthy' => true], 'src' => 'assets/img/secrets/armoirepharmopened.png'],
@@ -62,7 +61,7 @@ return [
                     'class' => 'enigmelieu',
                     'hotspots' => [
                         [
-                            'id' => 'armoireopened',
+                            'class' => 'armoireopened',
                             'src' => 'assets/img/secrets/armoirepharmopened.png',
                             'alt' => "l'armoire à pharmacie du docteur Pellington",
                             'value' => 'open_armoire',

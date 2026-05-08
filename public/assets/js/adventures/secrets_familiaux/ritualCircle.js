@@ -29,7 +29,7 @@ window.EscapeRPGRitualCircle = {
         const ritual = document.createElement("div");
         const draggables = document.createElement("div");
 
-        ritual.id = "cerclerituel";
+        ritual.className = "cerclerituel";
         draggables.id = "draggablesContainer";
 
         for (let i = 1; i <= 14; i++) {

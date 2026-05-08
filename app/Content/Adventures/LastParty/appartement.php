@@ -11,8 +11,8 @@ return [
                     'alt' => 'appartement',
                     'class' => 'enigmelieu',
                     'hotspots' => [
-                        ['id' => 'ordi', 'value' => 'open_computer'],
-                        ['id' => 'tiroir', 'value' => 'open_drawer', 'visible_if' => ['state' => 'carnet_acquired', 'falsy' => true]],
+                        ['class' => 'ordi', 'value' => 'open_computer'],
+                        ['class' => 'tiroir', 'value' => 'open_drawer', 'visible_if' => ['state' => 'carnet_acquired', 'falsy' => true]],
                     ],
                 ],
                 [
@@ -57,8 +57,8 @@ return [
                     'alt' => 'appartement',
                     'class' => 'enigmelieu',
                     'hotspots' => [
-                        ['id' => 'ordi', 'value' => 'open_computer'],
-                        ['id' => 'tiroir', 'value' => 'open_drawer', 'visible_if' => ['state' => 'carnet_acquired', 'falsy' => true]],
+                        ['class' => 'ordi', 'value' => 'open_computer'],
+                        ['class' => 'tiroir', 'value' => 'open_drawer', 'visible_if' => ['state' => 'carnet_acquired', 'falsy' => true]],
                     ],
                 ],
                 [
@@ -103,7 +103,7 @@ return [
                     'alt' => 'appartement',
                     'class' => 'enigmelieu',
                     'hotspots' => [
-                        ['id' => 'appareil', 'value' => 'open_camera'],
+                        ['class' => 'appareil', 'value' => 'open_camera'],
                     ],
                 ],
                 [

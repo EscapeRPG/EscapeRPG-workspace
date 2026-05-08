@@ -1,6 +1,6 @@
 <div id="bloc4">
-    <div id="lienspage">
-        <div id="liste">
+    <div class="lienspage">
+        <div class="liste">
             <?php foreach (($liens['tabs'] ?? []) as $tab): ?>
                 <div id="liste<?= htmlspecialchars($tab['id'], ENT_QUOTES, 'UTF-8') ?>" class="dropbtn">
                     <?= htmlspecialchars($tab['label'], ENT_QUOTES, 'UTF-8') ?>
@@ -38,7 +38,7 @@
 
         <div id="membresaffichage" class="dropdown">
             <?php if (!empty($members)): ?>
-                <div id="containeramis">
+                <div class="containeramis">
                     <?php foreach ($members as $member): ?>
                         <a href="<?= url('/membres/' . rawurlencode($member['pseudo'] ?? '')) ?>">
                             <img

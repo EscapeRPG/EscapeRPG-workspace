@@ -39,7 +39,7 @@ class CaveSecreteSceneHandler extends SimpleSceneHandler
                 'cavesecrete_step' => 2,
                 'cavesecrete_response' => null,
             ], achievements: [
-                ['scenario' => 'secretsfamiliaux', 'name' => 'vérité'],
+                ['scenario' => 'secretsfamiliaux', 'name' => 'verite'],
             ]),
             'take_journals' => $this->takeJournals($state),
             'suivant3' => new AdventureActionResult(nextScene: 'cavesecrete', stateChanges: [

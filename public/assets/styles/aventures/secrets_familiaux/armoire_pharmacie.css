@@ -1,4 +1,4 @@
-#armoireapharmacie {
+.armoireapharmacie {
   width: 60%;
   position: relative;
   margin: auto auto 39px;
@@ -31,7 +31,7 @@
   }
 }
 
-#armoire {
+.armoire {
   position: absolute;
   top: 25.5%;
   right: 10%;
@@ -39,7 +39,7 @@
   height: 24.5%;
 }
 
-#armoireopened {
+.armoireopened {
   position: absolute;
   top: 25%;
   right: 10%;

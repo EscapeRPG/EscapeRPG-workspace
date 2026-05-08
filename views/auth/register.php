@@ -1,7 +1,7 @@
 <?php use App\Core\View; ?>
 
 <?php View::start('content'); ?>
-<div id="formconnexion">
+<div class="formconnexion">
     <h1>Création d'un nouveau compte</h1>
     <form action="<?= url('/register') ?>" method="post" enctype="multipart/form-data">
         <?= csrf_field() ?>

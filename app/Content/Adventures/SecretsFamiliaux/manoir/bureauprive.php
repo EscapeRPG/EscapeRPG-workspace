@@ -9,7 +9,7 @@ $bureauImage = static fn(array $controls = [], string $src = 'assets/img/secrets
 ];
 
 $tiroirControl = [
-    'id' => 'tiroir',
+    'class' => 'tiroir',
     'src' => 'assets/img/secrets/buttontiroir.png',
     'alt' => 'tiroir du bureau',
     'value' => 'tiroir',

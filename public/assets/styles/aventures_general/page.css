@@ -10,7 +10,7 @@ body {
     margin: 0;
 }
 
-#banniere {
+.banniere {
     width: 100%;
 
     img {
@@ -27,7 +27,7 @@ main {
 }
 
 .adventure-shell {
-    background-color: rgba(0, 0, 0, 0.6);
+    background: rgba(0, 0, 0, 0.6);
     flex: 1;
     padding: 10px;
     text-align: center;

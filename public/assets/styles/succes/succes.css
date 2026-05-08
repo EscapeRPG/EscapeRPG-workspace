@@ -115,7 +115,7 @@
         position: absolute;
         top: 40px;
         right: 0;
-        background-color: black;
+        background: black;
         color: orange;
         border-radius: 10px;
         opacity: 0;
@@ -204,7 +204,7 @@
     filter: blur(8px);
 }
 
-#bannieresucces {
+.bannieresucces {
     width: 15%;
     display: flex;
     justify-content: center;
@@ -219,7 +219,7 @@
     }
 }
 
-#containersucces {
+.containersucces {
     display: flex;
     flex: 1;
     flex-wrap: wrap;
@@ -253,7 +253,7 @@
     span {
         position: absolute;
         margin-top: 150px;
-        background-color: black;
+        background: black;
         color: orange;
         border-radius: 10px;
         opacity: 0;
@@ -369,7 +369,7 @@
     border-radius: 50%;
     position: absolute;
     z-index: -1;
-    background-color: #ffffe6;
+    background: #ffffe6;
     box-shadow: 0 0 10px #ffffe6;
     --couleur: white;
     animation: glow 1s alternate infinite;

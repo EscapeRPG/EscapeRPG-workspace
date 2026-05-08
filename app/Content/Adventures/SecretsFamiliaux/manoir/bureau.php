@@ -1,7 +1,7 @@
 <?php
 
 $bureauDoor = ['type' => 'interactive_image', 'src' => 'assets/img/secrets/portebureau.png', 'alt' => 'porte du bureau', 'class' => 'enigmelieu', 'hotspots' => [
-    ['id' => 'symbureau', 'src' => 'assets/img/secrets/symbur.png', 'alt' => 'un étrange symbole gravé sur la porte', 'value' => 'symbole'],
+    ['class' => 'symbureau', 'src' => 'assets/img/secrets/symbur.png', 'alt' => 'un étrange symbole gravé sur la porte', 'value' => 'symbole'],
 ]];
 $openBureauScript = ['assets/js/adventures/secrets_familiaux/ouverturebureau.js'];
 

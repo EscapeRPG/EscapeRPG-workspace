@@ -1,5 +1,5 @@
-<div id="containerscenario">
-    <div id="bannieresucces">
+<div class="containerscenario">
+    <div class="bannieresucces">
         <img src="<?= asset($section['image'] ?? '') ?>" alt="<?= e($section['title'] ?? '') ?>">
         <div class="containerprog">
             <div class="banniereprogression" style="width: <?= round((float) ($section['progress'] ?? 0), 1) ?>%"></div>
@@ -7,7 +7,7 @@
         </div>
     </div>
 
-    <div id="containersucces">
+    <div class="containersucces">
         <?php foreach (($section['items'] ?? []) as $achievement): ?>
             <?php
             $isEarned = in_array($achievement['id'] ?? null, $section['earned_ids'] ?? [], true);

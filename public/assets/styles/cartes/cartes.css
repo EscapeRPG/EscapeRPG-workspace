@@ -13,7 +13,7 @@
     height: 558px;
     vertical-align: top;
     border-radius: 20px;
-    background-color: black;
+    background: black;
     border: 5px solid black;
     box-shadow: 3px 3px 10px 3px rgba(0, 0, 0, 0.5);
     margin: 10px;
@@ -50,7 +50,7 @@
 
 .cardimage {
     text-align: center;
-    background-color: black;
+    background: black;
     margin: 2px 3px;
     padding: 0;
     overflow: hidden;

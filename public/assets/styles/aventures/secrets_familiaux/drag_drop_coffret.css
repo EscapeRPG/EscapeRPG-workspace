@@ -17,7 +17,7 @@
   height: 37.5%;
   display: inline-block;
   vertical-align: top;
-  background-color: rgba(40, 40, 40, 0.4);
+  background: rgba(40, 40, 40, 0.4);
   border-radius: 75px;
   transition: all 200ms linear;
 }
@@ -29,7 +29,7 @@
 .dragslot {
   width: 18%;
   aspect-ratio: 1 / 1;
-  background-color: rgba(40, 40, 40, 0.4);
+  background: rgba(40, 40, 40, 0.4);
   border-radius: 50%;
   transition: all 200ms linear;
   user-select: none;

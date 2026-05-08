@@ -1,11 +1,11 @@
-#container {
+.electricite-container {
   width: 80%;
   margin: 10px auto;
   display: flex;
   justify-content: space-between;
 }
 
-#panneauelec {
+.panneauelec {
   width: 50%;
   position: relative;
 
@@ -14,7 +14,7 @@
   }
 }
 
-#innerpanneau {
+.innerpanneau {
   width: 90.8%;
   aspect-ratio: 1 / 1;
   display: grid;

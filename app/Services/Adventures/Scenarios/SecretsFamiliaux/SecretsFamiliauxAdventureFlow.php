@@ -23,6 +23,7 @@ use App\Services\Adventures\Scenarios\SecretsFamiliaux\Scenes\CimetiereSceneHand
 use App\Services\Adventures\Scenarios\SecretsFamiliaux\Scenes\CoffretSceneHandler;
 use App\Services\Adventures\Scenarios\SecretsFamiliaux\Scenes\CourtCircuitSceneHandler;
 use App\Services\Adventures\Scenarios\SecretsFamiliaux\Scenes\CuvesSceneHandler;
+use App\Services\Adventures\Scenarios\SecretsFamiliaux\Scenes\FinSceneHandler;
 use App\Services\Adventures\Scenarios\SecretsFamiliaux\Scenes\GaspardSceneHandler;
 use App\Services\Adventures\Scenarios\SecretsFamiliaux\Scenes\GrenierSceneHandler;
 use App\Services\Adventures\Scenarios\SecretsFamiliaux\Scenes\IndexSceneHandler;
@@ -42,6 +43,7 @@ use App\Services\Adventures\Scenarios\SecretsFamiliaux\Scenes\SalleDeBainSceneHa
 use App\Services\Adventures\Scenarios\SecretsFamiliaux\Scenes\SalonSceneHandler;
 use App\Services\Adventures\Scenarios\SecretsFamiliaux\Scenes\ShoggothSceneHandler;
 use App\Services\Adventures\Scenarios\SecretsFamiliaux\Scenes\SimpleSceneHandler;
+use App\Services\Adventures\Scenarios\SecretsFamiliaux\Scenes\TableauBruleSceneHandler;
 use App\Services\Adventures\Support\AdventureSaveService;
 
 class SecretsFamiliauxAdventureFlow extends SceneBasedAdventureFlow
@@ -83,10 +85,12 @@ class SecretsFamiliauxAdventureFlow extends SceneBasedAdventureFlow
             'cavesecrete' => new CaveSecreteSceneHandler(),
             'pensees' => new PenseesSceneHandler(),
             'shoggoth' => new ShoggothSceneHandler(),
+            'fin' => new FinSceneHandler(),
             'bibliotheque' => new BibliothequeSceneHandler(),
             'chambres' => new ChambresSceneHandler(),
             'grenier' => new GrenierSceneHandler(),
             'cave' => new CaveSceneHandler(),
+            'tableaubrule' => new TableauBruleSceneHandler(),
             'jardin' => new SimpleSceneHandler(stepKey: 'jardin_step'),
             'maisongaspard' => new GaspardSceneHandler(),
             'chenil' => new ChenilSceneHandler(),

@@ -23,7 +23,7 @@ $inventaire = [
             <img src="' . asset('assets/img/secrets/templar.png') . '" alt="Un papier avec l\'explication d\'un code." title="Un papier avec l\'explication d\'un code.">
         </a>',
     'tableaubrule' => '
-        <a href="' . asset('assets/img/secrets/tableaubrule.png') . '" rel="lightbox[inventaire]">
+        <a href="' . url('aventures/secretsfamiliaux/manoir/tableaubrule') . '">
             <img src="' . asset('assets/img/secrets/tableaubrule.png') . '" alt="Les morceaux d\'un tableau brûlé." title="Les morceaux d\'un tableau brûlé.">
         </a>',
     'analeptique' => '
@@ -125,9 +125,9 @@ $notes = $state['notes'] ?? [];
         <?php if ($inventoryItems !== []): ?>
             <?php foreach ($inventoryItems as $item): ?>
                 <?php if (isset($inventaire[$item])): ?>
-                    <div id="inventaire"><?= $inventaire[$item] ?></div>
+                    <div class="inventaire-item"><?= $inventaire[$item] ?></div>
                 <?php else: ?>
-                    <div id="inventaire"><?= e((string) $item) ?></div>
+                    <div class="inventaire-item"><?= e((string) $item) ?></div>
                 <?php endif; ?>
             <?php endforeach; ?>
         <?php else: ?>

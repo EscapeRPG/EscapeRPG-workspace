@@ -35,7 +35,7 @@ return [
                     'class' => 'enigmelieu',
                     'hotspots' => [
                         [
-                            'id' => 'phone',
+                            'class' => 'phone',
                             'src' => 'assets/img/lastparty/telephonemini.png',
                             'alt' => 'téléphone',
                             'value' => 'open_phone',

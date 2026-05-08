@@ -210,22 +210,22 @@ return [
         'bad_end' => [
             'audio' => 'assets/sounds/secrets/badending.mp3',
             'blocks' => $badEndBlocks,
-            'actions' => [],
+            'actions' => [['label' => 'Fin.', 'name' => 'action', 'value' => 'open_final', 'class' => 'action']],
         ],
         'neutral_end' => [
             'audio' => 'assets/sounds/secrets/shoggothfeu.mp3',
             'blocks' => $neutralFireBlocks,
-            'actions' => [],
+            'actions' => [['label' => 'Fin.', 'name' => 'action', 'value' => 'open_final', 'class' => 'action']],
         ],
         'neutral_bad_end' => [
             'audio' => 'assets/sounds/secrets/shoggothexpulse.mp3',
             'blocks' => $neutralBadEndBlocks,
-            'actions' => [],
+            'actions' => [['label' => 'Fin.', 'name' => 'action', 'value' => 'open_final', 'class' => 'action']],
         ],
         'good_end' => [
             'audio' => 'assets/sounds/secrets/shoggothexpulse.mp3',
             'blocks' => $goodEndBlocks,
-            'actions' => [],
+            'actions' => [['label' => 'Fin.', 'name' => 'action', 'value' => 'open_final', 'class' => 'action']],
         ],
     ],
 ];

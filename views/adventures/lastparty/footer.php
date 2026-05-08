@@ -22,7 +22,7 @@ $notes = $state['notes'] ?? [];
         <?php if ($inventoryItems !== []): ?>
             <?php foreach ($inventoryItems as $item): ?>
                 <?php if (isset($inventaire[$item])): ?>
-                    <div id="inventaire"><?= $inventaire[$item] ?></div>
+                    <div class="inventaire-item"><?= $inventaire[$item] ?></div>
                 <?php endif; ?>
             <?php endforeach; ?>
         <?php else: ?>

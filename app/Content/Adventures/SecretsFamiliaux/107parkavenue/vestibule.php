@@ -7,7 +7,7 @@ $vestibuleImage = [
     'class' => 'enigmelieu',
     'controls' => [
         [
-            'id' => 'vest',
+            'class' => 'vest',
             'src' => 'assets/img/secrets/veste.png',
             'alt' => 'la veste du docteur Pellington',
             'value' => 'veste',

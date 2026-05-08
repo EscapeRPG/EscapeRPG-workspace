@@ -198,7 +198,7 @@ return [
                     'class' => 'enigmelieu',
                     'hotspots' => [
                         [
-                            'id' => 'fenetre',
+                            'class' => 'fenetre',
                             'src' => 'assets/img/secrets/buttonfenetre.png',
                             'alt' => 'la fenêtre de la salle à manger',
                             'value' => 'fenetreopened',
