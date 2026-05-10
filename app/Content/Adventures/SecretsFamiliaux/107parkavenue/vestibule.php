@@ -1,21 +1,25 @@
 <?php
 
-$vestibuleImage = [
-    'type' => 'interactive_image',
-    'src' => 'assets/img/secrets/vestibule.png',
-    'alt' => 'le vestibule du docteur Pellington',
-    'class' => 'enigmelieu',
-    'controls' => [
-        [
-            'class' => 'vest',
-            'src' => 'assets/img/secrets/veste.png',
-            'alt' => 'la veste du docteur Pellington',
-            'value' => 'veste',
-            'visible_if' => ['state' => 'pellington_veste_searched', 'falsy' => true],
+use App\Services\Adventures\Support\Content;
+
+$vestibuleImage = Content::interactiveImage(
+    'assets/img/secrets/vestibule.png',
+    'le vestibule du docteur Pellington',
+    [],
+    'enigmelieu',
+    [
+        'controls' => [
+            Content::hotspot(
+                'vest',
+                'veste',
+                'assets/img/secrets/veste.png',
+                'la veste du docteur Pellington',
+                ['visible_if' => Content::stateFalsy('pellington_veste_searched')]
+            ),
         ],
-    ],
-];
-$searchAction = ['label' => 'Fouiller.', 'name' => 'fouille', 'value' => 'fouiller', 'class' => 'ask'];
+    ]
+);
+$searchAction = Content::ask('Fouiller.', 'fouille', 'fouiller');
 
 return [
     'variants' => [
@@ -23,9 +27,7 @@ return [
             'audio' => null,
             'blocks' => [
                 $vestibuleImage,
-                ['type' => 'paragraphs', 'paragraphs' => [
-                    "L'entrée de la maison du docteur Pellington se compose d'un vestibule assez grand où l'homme et ses patients peuvent déposer leurs affaires en arrivant.",
-                ]],
+                Content::narrative('secretsfamiliaux/107parkavenue/vestibule#step_0'),
             ],
             'actions' => [
                 $searchAction,
@@ -34,23 +36,18 @@ return [
         'flacon' => [
             'audio' => null,
             'blocks' => [
-                ['type' => 'linked_image', 'src' => 'assets/img/secrets/flacon.png', 'alt' => 'un flacon de barbiturique vide', 'class' => 'enigme'],
-                ['type' => 'paragraphs', 'paragraphs' => [
-                    "La veste du docteur est accrochée sur un porte-manteau.",
-                    "Lorsque vous la fouillez, vous trouvez dans une poche un petit flacon. Sur l'étiquette, il est inscrit <span class=\"mdp\">barbiturique</span>. La bouteille est vide, ce qui indique que le docteur a dû en utiliser récemment.",
-                ]],
+                Content::linkedImage('assets/img/secrets/flacon.png', 'un flacon de barbiturique vide'),
+                Content::narrative('secretsfamiliaux/107parkavenue/vestibule#flacon'),
             ],
             'actions' => [
-                ['label' => "Ajouter à l'inventaire.", 'name' => 'action', 'value' => 'take_flacon', 'class' => 'action'],
+                Content::action("Ajouter à l'inventaire.", 'take_flacon'),
             ],
         ],
         'flacon_acquired' => [
             'audio' => null,
             'blocks' => [
                 $vestibuleImage,
-                ['type' => 'paragraphs', 'paragraphs' => [
-                    "Il semblerait que vous ayez trouvé tout ce qu'il y avait d'utile dans la veste du docteur.",
-                ]],
+                Content::narrative('secretsfamiliaux/107parkavenue/vestibule#flacon_acquired'),
             ],
             'actions' => [
                 $searchAction,
@@ -60,21 +57,17 @@ return [
             'audio' => null,
             'blocks' => [
                 $vestibuleImage,
-                ['type' => 'paragraphs', 'paragraphs' => [
-                    "En regardant de plus près la paire de chaussures rangée au pied du porte-manteau, vous constatez qu'elles sont pleines de boue et de taille 40, ce qui confirme que c'était bien le docteur qui rôdait autour de la maison depuis tout ce temps.",
-                ]],
+                Content::narrative('secretsfamiliaux/107parkavenue/vestibule#footprints'),
             ],
             'actions' => [
-                ['label' => 'Retour.', 'name' => 'action', 'value' => 'retour', 'class' => 'action'],
+                Content::action('Retour.', 'retour'),
             ],
         ],
         'unknown' => [
             'audio' => null,
             'blocks' => [
                 $vestibuleImage,
-                ['type' => 'paragraphs', 'paragraphs' => [
-                    "Vous ne semblez pas trouver quoi que ce soit d'utile en rapport avec ceci.",
-                ]],
+                Content::narrative('secretsfamiliaux/107parkavenue/vestibule#unknown'),
             ],
             'actions' => [
                 $searchAction,
@@ -83,10 +76,8 @@ return [
         'done' => [
             'audio' => null,
             'blocks' => [
-                ['type' => 'image', 'src' => 'assets/img/secrets/vestibule.png', 'alt' => 'le vestibule du docteur Pellington', 'class' => 'enigmelieu'],
-                ['type' => 'paragraphs', 'paragraphs' => [
-                    "Il semblerait que vous ayez trouvé tout ce qu'il y avait d'utile dans le vestibule.",
-                ]],
+                Content::image('assets/img/secrets/vestibule.png', 'le vestibule du docteur Pellington', 'enigmelieu'),
+                Content::narrative('secretsfamiliaux/107parkavenue/vestibule#done'),
             ],
             'actions' => [],
         ],

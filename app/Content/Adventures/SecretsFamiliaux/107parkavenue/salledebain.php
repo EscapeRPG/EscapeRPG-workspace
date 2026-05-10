@@ -1,5 +1,7 @@
 <?php
 
+use App\Services\Adventures\Support\Content;
+
 $pharmacyForm = [
     'type' => 'interactive_image',
     'src' => 'assets/img/secrets/armoireapharmacie.png',
@@ -19,125 +21,99 @@ $pharmacyForm = [
     ],
 ];
 
+$returnAction = [
+    Content::action('Retour.', 'retour'),
+];
+
 return [
     'variants' => [
         'step_0' => [
             'audio' => null,
             'blocks' => [
-                [
-                    'type' => 'interactive_image',
-                    'src' => 'assets/img/secrets/sdb.png',
-                    'alt' => 'la salle de bain du docteur Pellington',
-                    'class' => 'enigmelieu',
-                    'hotspots' => [
-                        [
-                            'class' => 'armoire',
-                            'src' => 'assets/img/secrets/armoirepharm.png',
-                            'src_options' => [
-                                ['if' => ['state' => 'pellington_armoire_opened', 'truthy' => true], 'src' => 'assets/img/secrets/armoirepharmopened.png'],
-                            ],
-                            'alt' => "l'armoire à pharmacie du docteur Pellington",
-                            'value' => 'open_armoire',
-                        ],
-                    ],
-                ],
-                [
-                    'type' => 'paragraphs',
-                    'paragraphs' => [
-                        "Une salle de bain plutôt ordinaire, vous semble-t-il.",
-                        "Pensez-vous pouvoir y trouver quoi que ce soit d'utile ?",
-                    ],
-                ],
+                Content::interactiveImage(
+                    'assets/img/secrets/sdb.png',
+                    'la salle de bain du docteur Pellington',
+                    [
+                        Content::hotspot(
+                            'armoire',
+                            'open_armoire',
+                            'assets/img/secrets/armoirepharm.png',
+                            "l'armoire à pharmacie du docteur Pellington",
+                            [
+                                'src_options' => [
+                                    [
+                                        'if' => Content::stateTruthy('pellington_armoire_opened'),
+                                        'src' => 'assets/img/secrets/armoirepharmopened.png',
+                                    ],
+                                ],
+                            ]
+                        ),
+                    ]
+                ),
+                Content::narrative('secretsfamiliaux/107parkavenue/salledebain#step_0'),
             ],
             'actions' => [],
         ],
         'opened' => [
             'audio' => null,
             'blocks' => [
-                [
-                    'type' => 'interactive_image',
-                    'src' => 'assets/img/secrets/sdbarmoireopened.png',
-                    'alt' => 'la salle de bain du docteur Pellington',
-                    'class' => 'enigmelieu',
-                    'hotspots' => [
-                        [
-                            'class' => 'armoireopened',
-                            'src' => 'assets/img/secrets/armoirepharmopened.png',
-                            'alt' => "l'armoire à pharmacie du docteur Pellington",
-                            'value' => 'open_armoire',
-                        ],
-                    ],
-                ],
-                [
-                    'type' => 'paragraphs',
-                    'paragraphs' => [
-                        "Une salle de bain plutôt ordinaire, vous semble-t-il.",
-                        "Pensez-vous pouvoir faire quelque chose avec les flacons de l'armoire à pharmacie ?",
-                    ],
-                ],
+                Content::interactiveImage(
+                    'assets/img/secrets/sdbarmoireopened.png',
+                    'la salle de bain du docteur Pellington',
+                    [
+                        Content::hotspot(
+                            'armoireopened',
+                            'open_armoire',
+                            'assets/img/secrets/armoirepharmopened.png',
+                            "l'armoire à pharmacie du docteur Pellington"
+                        ),
+                    ]
+                ),
+                Content::narrative('secretsfamiliaux/107parkavenue/salledebain#opened'),
             ],
             'actions' => [],
         ],
         'armoire' => [
             'audio' => null,
             'blocks' => [
-                [
-                    'type' => 'paragraphs',
-                    'paragraphs' => [
-                        "L'armoire à pharmacie contient de nombreux flacons de divers produits médicaux.",
-                        "Sans connaître de formule, il pourrait être dangereux de les mélanger.",
-                    ],
-                ],
+                Content::narrative('secretsfamiliaux/107parkavenue/salledebain#armoire'),
                 $pharmacyForm,
             ],
-            'actions' => [
-                ['label' => 'Retour.', 'name' => 'action', 'value' => 'retour', 'class' => 'action'],
-            ],
+            'actions' => $returnAction,
         ],
         'failed' => [
             'audio' => null,
             'blocks' => [
-                ['type' => 'paragraphs', 'paragraphs' => [
-                    "Il semblerait que cela n'ait pas fonctionné.",
-                ]],
+                Content::narrative('secretsfamiliaux/107parkavenue/salledebain#failed'),
                 $pharmacyForm,
             ],
-            'actions' => [
-                ['label' => 'Retour.', 'name' => 'action', 'value' => 'retour', 'class' => 'action'],
-            ],
+            'actions' => $returnAction,
         ],
         'success' => [
             'audio' => 'assets/sounds/secrets/melange.mp3',
             'blocks' => [
-                ['type' => 'linked_image', 'src' => 'assets/img/secrets/analeptique.png', 'alt' => 'un analeptique pour guérir les chiens empoisonnés', 'class' => 'enigme'],
-                ['type' => 'paragraphs', 'paragraphs' => [
-                    "Vous avez réussi à synthétiser correctement un antidote pour soigner les chiens !",
-                    "Il s'agit d'un <span class=\"mdp\">analeptique</span> que vous prenez avec vous.",
-                ]],
+                Content::linkedImage(
+                    'assets/img/secrets/analeptique.png',
+                    'un analeptique pour guérir les chiens empoisonnés'
+                ),
+                Content::narrative('secretsfamiliaux/107parkavenue/salledebain#success'),
             ],
             'actions' => [
-                ['label' => "Ajouter à l'inventaire.", 'name' => 'action', 'value' => 'take_analeptique', 'class' => 'action'],
+                Content::action("Ajouter à l'inventaire.", 'take_analeptique'),
             ],
         ],
         'acquired' => [
             'audio' => null,
             'blocks' => [
-                ['type' => 'paragraphs', 'paragraphs' => [
-                    "Il semblerait que vous n'ayez plus rien à trouver par ici.",
-                ]],
+                Content::narrative('secretsfamiliaux/107parkavenue/salledebain#acquired'),
             ],
-            'actions' => [
-                ['label' => 'Retour.', 'name' => 'action', 'value' => 'retour', 'class' => 'action'],
-            ],
+            'actions' => $returnAction,
         ],
         'done' => [
             'audio' => null,
             'blocks' => [
-                ['type' => 'image', 'src' => 'assets/img/secrets/sdbarmoireopened.png', 'alt' => 'la salle de bain du docteur Pellington', 'class' => 'enigmelieu'],
-                ['type' => 'paragraphs', 'paragraphs' => [
-                    "La salle de bain du docteur Pellington.",
-                    "Maintenant que vous avez synthétisé l'antidote pour les chiens, vous n'avez plus rien à faire ici.",
-                ]],
+                Content::image('assets/img/secrets/sdbarmoireopened.png', 'la salle de bain du docteur Pellington', 'enigmelieu'),
+                Content::narrative('secretsfamiliaux/107parkavenue/salledebain#done'),
             ],
             'actions' => [],
         ],

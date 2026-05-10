@@ -1,77 +1,35 @@
 <?php
 
+use App\Services\Adventures\Support\Content;
+
 return [
     'variants' => [
         'step_0' => [
             'audio' => null,
             'blocks' => [
-                [
-                    'type' => 'paragraphs',
-                    'paragraphs' => [
-                        "Le manoir Deckard est situé aux abords de la ville, dans une petite zone boisée, calme et isolée.",
-                        "Il est 20 heures lorsque vous arrivez devant les grilles.",
-                    ],
-                ],
+                Content::narrative('secretsfamiliaux/15hamiltonstreet#step_0'),
             ],
             'actions' => [
-                [
-                    'label' => 'Suivant.',
-                    'name' => 'action',
-                    'value' => 'suivant',
-                    'class' => 'action',
-                ],
+                Content::action('Suivant.', 'suivant'),
             ],
         ],
         'step_1' => [
             'audio' => 'assets/sounds/secrets/chiens.mp3',
             'blocks' => [
-                [
-                    'type' => 'paragraphs',
-                    'paragraphs' => [
-                        "L'antique demeure de vos ancêtres se dresse au fond de l'allée traversant un immense jardin.<br>
-                        Vous êtes accueilli par des aboiements de <span class=\"mdp\">chiens</span>.",
-                        "Vous ne saviez pas que votre oncle en avait.",
-                    ],
-                ],
+                Content::narrative('secretsfamiliaux/15hamiltonstreet#step_1'),
             ],
             'actions' => [
-                [
-                    'label' => 'Suivant.',
-                    'name' => 'action',
-                    'value' => 'suivant2',
-                    'class' => 'action',
-                ],
+                Content::action('Suivant.', 'suivant2'),
             ],
         ],
         'step_2' => [
             'audio' => null,
             'blocks' => [
-                [
-                    'type' => 'paragraphs',
-                    'paragraphs' => [
-                        "Gaspard s'approche de la grille.",
-                    ],
-                ],
-                [
-                    'type' => 'dialogue',
-                    'speaker' => [
-                        'name' => 'Gaspard',
-                        'portrait' => 'assets/img/secrets/gaspard.png',
-                    ],
-                    'paragraphs' => [
-                        "Désolé pour ça. Nous avons eu quelques... <span class=\"mdp\">soucis</span> ces derniers temps
-                        et votre oncle a préféré assurer sa sécurité.",
-                        "Je vous en prie, suivez-moi.",
-                    ],
-                ],
+                Content::narrative('secretsfamiliaux/15hamiltonstreet#step_2_intro'),
+                Content::dialogue('Gaspard', 'assets/img/secrets/gaspard.png', 'secretsfamiliaux/15hamiltonstreet#step_2_gaspard'),
             ],
             'actions' => [
-                [
-                    'label' => 'Le suivre.',
-                    'name' => 'action',
-                    'value' => 'suivre',
-                    'class' => 'action',
-                ],
+                Content::action('Le suivre.', 'suivre'),
             ],
         ],
         'step_3' => [
@@ -80,42 +38,22 @@ return [
                 'assets/js/adventures/secrets_familiaux/ouverturemanoir.js',
             ],
             'blocks' => [
-                [
-                    'type' => 'paragraphs',
-                    'paragraphs' => [
-                        "Il vous fait traverser l'allée et vous tend un jeu de clés.",
+                Content::narrative('secretsfamiliaux/15hamiltonstreet#step_3_intro'),
+                Content::dialogue('Gaspard', 'assets/img/secrets/gaspard.png', 'secretsfamiliaux/15hamiltonstreet#step_3_gaspard'),
+                Content::narrative('secretsfamiliaux/15hamiltonstreet#step_3_door'),
+                Content::interactiveImage(
+                    'assets/img/secrets/porteentree.png',
+                    "la porte d'entrée du manoir",
+                    [
+                        Content::hotspot('', 'cle1', 'assets/img/secrets/cle1.png', 'clé 1'),
+                        Content::hotspot('', 'cle2', 'assets/img/secrets/cle2.png', 'clé 2'),
+                        Content::hotspot('', 'cle3', 'assets/img/secrets/cle3.png', 'clé 3'),
+                        Content::hotspot('', 'cle4', 'assets/img/secrets/cle4.png', 'clé 4', ['attributes' => ['data-open-manor' => true]]),
+                        Content::hotspot('', 'cle5', 'assets/img/secrets/cle5.png', 'clé 5'),
                     ],
-                ],
-                [
-                    'type' => 'dialogue',
-                    'speaker' => [
-                        'name' => 'Gaspard',
-                        'portrait' => 'assets/img/secrets/gaspard.png',
-                    ],
-                    'paragraphs' => [
-                        "Tenez, voici les clés du manoir. Elles sont à vous maintenant. Je vous laisse entrer, je dois aller nourrir les chiens.",
-                    ],
-                ],
-                [
-                    'type' => 'paragraphs',
-                    'paragraphs' => [
-                        "Vous êtes devant la porte du manoir qui semble fermée.",
-                    ],
-                ],
-                [
-                    'type' => 'interactive_image',
-                    'src' => 'assets/img/secrets/porteentree.png',
-                    'alt' => "la porte d'entrée du manoir",
-                    'class' => 'enigmelieu secrets-porte',
-                    'form_class' => 'secrets-cles',
-                    'hotspots' => [
-                        ['src' => 'assets/img/secrets/cle1.png', 'alt' => 'clé 1', 'value' => 'cle1'],
-                        ['src' => 'assets/img/secrets/cle2.png', 'alt' => 'clé 2', 'value' => 'cle2'],
-                        ['src' => 'assets/img/secrets/cle3.png', 'alt' => 'clé 3', 'value' => 'cle3'],
-                        ['src' => 'assets/img/secrets/cle4.png', 'alt' => 'clé 4', 'value' => 'cle4', 'attributes' => ['data-open-manor' => true]],
-                        ['src' => 'assets/img/secrets/cle5.png', 'alt' => 'clé 5', 'value' => 'cle5'],
-                    ],
-                ],
+                    'enigmelieu secrets-porte',
+                    ['form_class' => 'secrets-cles'],
+                ),
             ],
             'actions' => [],
         ],

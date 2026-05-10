@@ -36,22 +36,70 @@ class NarrativeText
      */
     public static function paragraphList(string $path): array
     {
-        $file = self::resolvePath($path);
+        [$filePath, $section] = self::splitSection($path);
+        $file = self::resolvePath($filePath);
         $contents = file_get_contents($file);
 
         if ($contents === false) {
             throw new RuntimeException("Unable to read narrative file: {$file}");
         }
 
-        $contents = str_replace(["\r\n", "\r"], "\n", trim($contents));
+        $contents = str_replace(["\r\n", "\r"], "\n", trim($contents, "\xEF\xBB\xBF \t\n\r\0\x0B"));
         if ($contents === '') {
             return [];
+        }
+
+        if ($section !== null) {
+            $contents = self::extractSection($contents, $section, $filePath);
         }
 
         return array_values(array_filter(
             array_map('trim', preg_split("/\n{2,}/", $contents) ?: []),
             static fn (string $paragraph): bool => $paragraph !== ''
         ));
+    }
+
+    /**
+     * @return array{0: string, 1: ?string}
+     */
+    private static function splitSection(string $path): array
+    {
+        $parts = explode('#', $path, 2);
+
+        return [
+            $parts[0],
+            isset($parts[1]) && trim($parts[1]) !== '' ? trim($parts[1]) : null,
+        ];
+    }
+
+    private static function extractSection(string $contents, string $section, string $path): string
+    {
+        $lines = explode("\n", $contents);
+        $capturing = false;
+        $sectionLines = [];
+
+        foreach ($lines as $line) {
+            if (preg_match('/^#{2,}\s+(.+?)\s*$/', $line, $matches) === 1) {
+                $heading = trim($matches[1]);
+
+                if ($capturing) {
+                    break;
+                }
+
+                $capturing = $heading === $section;
+                continue;
+            }
+
+            if ($capturing) {
+                $sectionLines[] = $line;
+            }
+        }
+
+        if (!$capturing && $sectionLines === []) {
+            throw new RuntimeException("Missing narrative section: content/adventures/{$path}.md#{$section}");
+        }
+
+        return trim(implode("\n", $sectionLines));
     }
 
     private static function resolvePath(string $path): string

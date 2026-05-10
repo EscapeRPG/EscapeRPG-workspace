@@ -1,216 +1,99 @@
 <?php
 
+use App\Services\Adventures\Support\Content;
+
+$gaspard = 'assets/img/secrets/gaspard.png';
+
 return [
     'variants' => [
         'step_0' => [
             'audio' => 'assets/sounds/secrets/chiensdehors.mp3',
             'blocks' => [
-                [
-                    'type' => 'paragraphs',
-                    'paragraphs' => [
-                        "En plein milieu de la nuit, vous êtes réveillé par des aboiements de <span class=\"mdp\">chiens</span> au dehors.<br>
-                        En regardant par la fenêtre, vous voyez Gaspard dans le jardin, lampe torche à la main, en train de patrouiller.",
-                        "Vous vous dépêchez d'enfiler une robe de chambre et de le rejoindre.",
-                    ],
-                ],
+                Content::narrative('secretsfamiliaux/manoir/jour2#step_0'),
             ],
             'actions' => [
-                [
-                    'label' => 'Suivant.',
-                    'name' => 'action',
-                    'value' => 'suivant',
-                    'class' => 'action',
-                ],
+                Content::action('Suivant.', 'suivant'),
             ],
         ],
         'step_1' => [
             'audio' => null,
             'blocks' => [
-                [
-                    'type' => 'dialogue',
-                    'speaker' => [
-                        'name' => 'Gaspard',
-                        'portrait' => 'assets/img/secrets/gaspard.png',
-                    ],
-                    'paragraphs' => [
-                        "Les <span class=\"mdp\">chiens</span> ont repéré un rôdeur autour de la maison.
-                        Il semble avoir eu le temps de s'enfuir avant que je n'arrive, j'ai seulement eu le temps de voir une voiture s'éloigner.<br>
-                        Cela fait plusieurs fois depuis la mort de votre oncle, sans doute quelqu'un voulant en profiter pour voler des objets de valeur.",
-                    ],
-                ],
+                Content::dialogue('Gaspard', $gaspard, 'secretsfamiliaux/manoir/jour2#step_1_gaspard'),
             ],
             'actions' => [
-                [
-                    'label' => 'Interroger.',
-                    'name' => 'nuit',
-                    'value' => 'interroger',
-                    'class' => 'ask',
-                ],
-                [
-                    'label' => 'Retourner dormir.',
-                    'name' => 'action',
-                    'value' => 'dormir2',
-                    'class' => 'action',
-                ],
+                Content::ask('Interroger.', 'nuit', 'interroger'),
+                Content::action('Retourner dormir.', 'dormir2'),
             ],
         ],
         'step_6' => [
             'audio' => null,
             'blocks' => [
-                [
-                    'type' => 'dialogue',
-                    'speaker' => [
-                        'name' => 'Gaspard',
-                        'portrait' => 'assets/img/secrets/gaspard.png',
-                    ],
-                    'paragraphs' => [
-                        "Effectivement, je crois bien que c'était une voiture grise. Vous savez de qui il peut s'agir ?",
-                    ],
-                ],
+                Content::dialogue('Gaspard', $gaspard, 'secretsfamiliaux/manoir/jour2#step_6_gaspard'),
             ],
             'actions' => [
-                [
-                    'label' => 'Interroger.',
-                    'name' => 'nuit',
-                    'value' => 'interroger',
-                    'class' => 'ask',
-                ],
-                [
-                    'label' => 'Retourner dormir.',
-                    'name' => 'action',
-                    'value' => 'dormir2',
-                    'class' => 'action',
-                ],
+                Content::ask('Interroger.', 'nuit', 'interroger'),
+                Content::action('Retourner dormir.', 'dormir2'),
             ],
         ],
         'step_7' => [
             'audio' => null,
             'blocks' => [
-                [
-                    'type' => 'dialogue',
-                    'speaker' => [
-                        'name' => 'Gaspard',
-                        'portrait' => 'assets/img/secrets/gaspard.png',
-                    ],
-                    'paragraphs' => [
-                        "Allons, le médecin ?<br>
-                        Je ne vois vraiment pas ce qu'il ferait ici. Votre oncle et lui s'étaient disputés, mais ce n'est pas un mauvais bougre, je le vois mal rôder près des maisons en pleine nuit.<br>
-                        Vous devriez retourner dormir, je me charge de surveiller les environs au cas où quelqu'un reviendrait.",
-                    ],
-                ],
+                Content::dialogue('Gaspard', $gaspard, 'secretsfamiliaux/manoir/jour2#step_7_gaspard'),
             ],
             'actions' => [
-                [
-                    'label' => 'Enquêter.',
-                    'name' => 'action',
-                    'value' => 'enqueter',
-                    'class' => 'action',
-                ],
+                Content::action('Enquêter.', 'enqueter'),
             ],
         ],
         'step_8' => [
             'audio' => null,
             'blocks' => [
-                [
-                    'type' => 'dialogue',
-                    'speaker' => [
-                        'name' => 'Gaspard',
-                        'portrait' => 'assets/img/secrets/gaspard.png',
-                    ],
-                    'paragraphs' => [
-                        "Vous êtes sûr que tout va bien ? Vous semblez fatigué et je ne vois pas où vous voulez en venir avec ça.",
-                    ],
-                ],
+                Content::dialogue('Gaspard', $gaspard, 'secretsfamiliaux/manoir/jour2#step_8_gaspard'),
             ],
             'actions' => [],
         ],
         'step_2' => [
             'audio' => null,
             'blocks' => [
-                [
-                    'type' => 'paragraphs',
-                    'paragraphs' => [
-                        "En faisant le tour du jardin, vous finissez par remarquer une <span class=\"mdp\">empreinte de pas</span>.<br>
-                        Il s'agit d'une trace de chaussure de taille 40, sans doute laissée par un homme de faible corpulence.",
-                        "Vous ne trouvez rien d'autre pour le moment et décidez de remettre ça à plus tard. Gaspard veillera à ce que rien d'autre ne se passe cette nuit.",
-                    ],
-                ],
+                Content::narrative('secretsfamiliaux/manoir/jour2#step_2'),
             ],
             'actions' => [
-                [
-                    'label' => 'Retourner dormir.',
-                    'name' => 'action',
-                    'value' => 'dormir2',
-                    'class' => 'action',
-                ],
+                Content::action('Retourner dormir.', 'dormir2'),
             ],
         ],
         'step_3' => [
             'audio' => 'assets/sounds/secrets/chiensdehors.mp3',
             'blocks' => [
-                [
-                    'type' => 'paragraphs',
-                    'paragraphs' => [
-                        "Après la nuit mouvementée, vous avez eu du mal à vous lever et n'avez pas réussi à faire beaucoup de choses dans la matinée.",
-                        "Le midi venu, alors que vous êtes à table, vous entendez les <span class=\"mdp\">chiens</span> aboyer au fond du jardin.<br>
-                        Gaspard étant parti en ville faire quelques courses, les animaux sont restés dans le chenil.",
-                        "Vous décidez d'aller voir pour les calmer mais ils continuent d'aboyer comme si... quelqu'un essayait de s'introduire chez vous !",
-                    ],
-                ],
+                Content::narrative('secretsfamiliaux/manoir/jour2#step_3'),
             ],
             'actions' => [
-                [
-                    'label' => 'Suivant.',
-                    'name' => 'action',
-                    'value' => 'suivant2',
-                    'class' => 'action',
-                ],
+                Content::action('Suivant.', 'suivant2'),
             ],
         ],
         'step_4' => [
             'audio' => null,
             'blocks' => [
-                [
-                    'type' => 'paragraphs',
-                    'paragraphs' => [
-                        "Vous revenez aussi vite que possible dans la maison et commencez à fouiller partout, mais n'apercevez personne.<br>
-                        Vous vous dirigez à nouveau vers le jardin pour inspecter lorsque vous entendez au loin un bruit de moteur s'éloignant.",
-                        "Manifestement, l'intrus n'a pas réussi à entrer dans la maison grâce à votre vigilance.",
-                    ],
-                ],
+                Content::narrative('secretsfamiliaux/manoir/jour2#step_4'),
             ],
             'actions' => [
-                [
-                    'label' => 'Suivant.',
-                    'name' => 'action',
-                    'value' => 'suivant3',
-                    'class' => 'action',
-                ],
+                Content::action('Suivant.', 'suivant3'),
             ],
         ],
         'step_5' => [
             'audio' => null,
             'blocks' => [
-                [
-                    'type' => 'interactive_image',
-                    'src' => 'assets/img/secrets/salleamanger.png',
-                    'alt' => 'salle à manger',
-                    'class' => 'enigmelieu',
-                    'hotspots' => [
-                        [
-                            'class' => 'fenetre',
-                            'src' => 'assets/img/secrets/buttonfenetre.png',
-                            'alt' => 'la fenêtre de la salle à manger',
-                            'value' => 'fenetreopened',
-                        ],
-                    ],
-                ],
-                [
-                    'type' => 'paragraphs',
-                    'paragraphs' => [
-                        "Vous retournez dans la salle à manger pour finir votre repas, mais quelque chose vous dérange.",
-                    ],
-                ],
+                Content::interactiveImage(
+                    'assets/img/secrets/salleamanger.png',
+                    'salle à manger',
+                    [
+                        Content::hotspot(
+                            'fenetre',
+                            'fenetreopened',
+                            'assets/img/secrets/buttonfenetre.png',
+                            'la fenêtre de la salle à manger'
+                        ),
+                    ]
+                ),
+                Content::narrative('secretsfamiliaux/manoir/jour2#step_5'),
             ],
             'actions' => [],
         ],

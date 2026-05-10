@@ -1,24 +1,16 @@
 <?php
 
+use App\Services\Adventures\Support\Content;
+
 return [
     'variants' => [
         'step_0' => [
             'audio' => null,
             'blocks' => [
-                [
-                    'type' => 'paragraphs',
-                    'paragraphs' => [
-                        "Il semblerait que ce ne soit pas la bonne clé.",
-                    ],
-                ],
+                Content::narrative('secretsfamiliaux/manor#step_0'),
             ],
             'actions' => [
-                [
-                    'label' => 'Retour.',
-                    'name' => 'action',
-                    'value' => 'retour',
-                    'class' => 'action',
-                ],
+                Content::action('Retour.', 'retour'),
             ],
         ],
     ],

@@ -12,6 +12,24 @@ Ce document fixe les conventions a suivre pour les scenarios geres par le framew
 
 Une scene declaree doit avoir un fichier de contenu correspondant dans `app/Content/{content_path}`.
 
+Pour les scenarios volumineux, le fichier `config/adventures/{slug}.php` doit rester un index lisible et peut externaliser les tableaux dans un dossier dedie :
+
+```php
+$configPath = __DIR__ . '/secretsfamiliaux';
+
+'styles' => require $configPath . '/styles.php',
+'scene_aliases' => require $configPath . '/scene_aliases.php',
+'scene_urls' => require $configPath . '/scene_urls.php',
+'content_files' => require $configPath . '/content_files.php',
+'scenes' => require $configPath . '/scenes.php',
+'state' => require $configPath . '/state.php',
+'assets' => require $configPath . '/assets.php',
+'public_achievements' => require $configPath . '/public_achievements.php',
+'inventory_items' => require $configPath . '/inventory.php',
+```
+
+Chaque fichier retourne uniquement le tableau dont il est responsable. Cela simplifie la creation d'un nouveau scenario : dupliquer le dossier de config du scenario le plus proche, puis corriger les contenus.
+
 ## Variantes de contenu
 
 Un fichier de contenu retourne un tableau avec une cle `variants`.
@@ -39,7 +57,7 @@ content/adventures/{slug}/...
 Exemple :
 
 ```text
-content/adventures/secretsfamiliaux/manoir/tableaubrule/default.md
+content/adventures/secretsfamiliaux/manoir/tableaubrule.md
 ```
 
 Dans le fichier PHP de contenu :
@@ -47,16 +65,60 @@ Dans le fichier PHP de contenu :
 ```php
 use App\Services\Adventures\Support\Content;
 
-Content::narrative('secretsfamiliaux/manoir/tableaubrule/default');
+Content::narrative('secretsfamiliaux/manoir/tableaubrule#default');
 ```
 
 Le Markdown est volontairement minimal :
 
 - un paragraphe est separe du suivant par une ligne vide;
+- les variantes d'une meme scene peuvent etre regroupees dans un seul fichier avec des titres `## section`;
+- une section est chargee avec le suffixe `#section`;
 - le HTML deja utilise dans les scenarios reste autorise pour les spans et liens;
 - les retours explicites peuvent rester en `<br>` quand le rendu en depend.
 
 Cela permet de relire et comparer le texte narratif sans parcourir les tableaux techniques PHP.
+
+## Indices externalises
+
+Pour un scenario volumineux, centraliser les indices dans un fichier dedie :
+
+```text
+content/adventures/{slug}/hints.md
+```
+
+Convention recommandee :
+
+```md
+## cle_1
+
+Premier indice.
+
+## cle_2
+
+Deuxieme indice.
+
+## cle_3
+
+Troisieme indice.
+
+## cle_answer
+
+Reponse complete.
+```
+
+Dans le PHP :
+
+```php
+'hint' => Content::hint('secretsfamiliaux/hints#cle');
+```
+
+Si la reponse doit appeler `asset()` ou `url()`, garder seulement cette reponse dynamique dans le PHP :
+
+```php
+Content::hint('secretsfamiliaux/hints#cle', 3, [
+    '<img src="' . asset('assets/img/example.png') . '" alt="reponse">',
+]);
+```
 
 ## Helpers de contenu
 
@@ -67,10 +129,25 @@ Blocs :
 ```php
 Content::paragraph('Texte court.');
 Content::paragraphs(['Premier paragraphe.', 'Deuxieme paragraphe.']);
-Content::narrative('secretsfamiliaux/manoir/tableaubrule/default');
+Content::narrative('secretsfamiliaux/manoir/tableaubrule#default');
+Content::dialogue('Gaspard', 'assets/img/secrets/gaspard.png', 'secretsfamiliaux/cimetiere#step_1_gaspard');
 Content::image('assets/img/secrets/tableau.png', 'un tableau', 'enigmelieu');
 Content::linkedImage('assets/img/secrets/papier.png', 'un papier');
 Content::comments();
+```
+
+`Content::dialogue(...)` accepte aussi un tableau de paragraphes en troisieme argument quand le texte ne doit pas etre externalise.
+
+Exemple de fichier groupe :
+
+```md
+## missing
+
+Vous n'avez pas encore trouve cet objet.
+
+## default
+
+Le texte affiche quand l'objet est disponible.
 ```
 
 Image interactive et hotspots :
@@ -90,6 +167,7 @@ Actions :
 ```php
 Content::action('Retour.', 'retour');
 Content::ask('Fouiller.', 'fouille', 'fouiller');
+Content::hint('secretsfamiliaux/hints#coffret_code');
 ```
 
 Conditions simples :
@@ -140,7 +218,28 @@ Chaque asset reference dans une config ou un contenu doit exister.
 
 ## Inventaire
 
-Les objets d'inventaire sont declares dans la config du scenario quand ils doivent apparaitre dans les donnees communes.
+Les objets d'inventaire sont declares dans la config du scenario quand ils doivent apparaitre dans les donnees communes : toasts, footer, validation des assets.
+
+Pour les gros scenarios, preferer un fichier dedie :
+
+```php
+'inventory_items' => require __DIR__ . '/secretsfamiliaux/inventory.php',
+```
+
+Format courant :
+
+```php
+'papier' => [
+    'image' => 'assets/img/secrets/papier.png',
+    'alt' => 'Un morceau de papier avec une inscription etrange.',
+],
+
+'coffret' => [
+    'image' => 'assets/img/secrets/coffret.png',
+    'alt' => 'Un petit coffret ouvrage.',
+    'route' => 'manoir/coffret',
+],
+```
 
 Quand un objet contient des indices ou une interaction dediee, preferer une route propre :
 
@@ -150,6 +249,38 @@ Quand un objet contient des indices ou une interaction dediee, preferer une rout
 ```
 
 Le footer peut alors pointer vers la route au lieu d'ouvrir seulement une image.
+
+## Footer et sidebar
+
+Les scenarios peuvent utiliser les vues generiques :
+
+```php
+'sidebar_view' => 'adventures/partials/sidebar',
+'footer_view' => 'adventures/partials/footer',
+```
+
+Le footer generique lit `inventory_items` et les notes du state. La sidebar generique est pilotee par la cle `sidebar` :
+
+```php
+'sidebar' => [
+    'portrait' => [
+        'image' => 'assets/img/example/player.png',
+        'alt' => 'Personnage',
+    ],
+    'navigation' => [
+        [
+            'visible_on' => ['rdc', 'salon'],
+            'class' => 'example-navigation',
+            'title' => 'Lieu',
+            'items' => [
+                ['label' => 'Rez-de-chaussée', 'route' => 'manoir/rdc'],
+            ],
+        ],
+    ],
+],
+```
+
+Les liens et formulaires acceptent `route_options` et `value_options` avec les conditions simples `state/truthy/falsy/equals/not_equals`.
 
 ## Fins de scenario
 
@@ -181,7 +312,16 @@ La variante verrouillee est attendue sous la forme :
 public/assets/img/succes/{scenario}/{name}off.png
 ```
 
-Elle peut etre omise pour un succes cache, mais le validateur emettra alors un avertissement.
+Elle peut etre omise pour un succes cache. Pour eviter les faux positifs, declarer les succes visibles dans la config du scenario :
+
+```php
+'public_achievements' => [
+    'debut',
+    'fin',
+],
+```
+
+Quand cette cle est presente, le validateur ne reclame une variante `off` que pour ces succes publics.
 
 ## Validation
 

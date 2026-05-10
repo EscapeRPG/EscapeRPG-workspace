@@ -122,10 +122,11 @@ function validateAdventure(string $root, string $configFile, array $config): arr
     validateViews($root, $config, $errors);
     validatePublicAssetList($root, 'styles', $config['styles'] ?? [], $errors);
     validatePublicAsset($root, 'assets.banner', $config['assets']['banner'] ?? null, $errors);
+    validateSidebar($root, $config, $errors);
     validateInventoryAssets($root, $config, $errors);
     validateSceneMaps($config, $sceneIds, $errors, $warnings);
     validateContentFiles($root, $contentPath, $sceneIds, $config, $errors, $warnings);
-    validateAwardedAchievements($root, $slug, $errors, $warnings);
+    validateAwardedAchievements($root, $slug, $config, $errors, $warnings);
 
     return ['errors' => $errors, 'warnings' => $warnings];
 }
@@ -262,11 +263,109 @@ function validateContentIds(string $scene, mixed $node, array &$warnings, string
 
 function validateInventoryAssets(string $root, array $config, array &$errors): void
 {
+    $sceneAliases = is_array($config['scene_aliases'] ?? null) ? $config['scene_aliases'] : [];
+    $scenes = is_array($config['scenes'] ?? null) ? $config['scenes'] : [];
+
     foreach (($config['inventory_items'] ?? []) as $item => $definition) {
         if (!is_array($definition)) {
             continue;
         }
         validatePublicAsset($root, "inventory_items.{$item}.image", $definition['image'] ?? null, $errors);
+
+        $route = trim((string) ($definition['route'] ?? ''), '/');
+        if ($route === '') {
+            continue;
+        }
+
+        $targetScene = (string) (($sceneAliases[$route] ?? null) ?: $route);
+        if (!array_key_exists($targetScene, $scenes)) {
+            $errors[] = "inventory_items.{$item}.route points to unknown scene route '{$route}'.";
+        }
+    }
+}
+
+function validateSidebar(string $root, array $config, array &$errors): void
+{
+    $sidebar = $config['sidebar'] ?? null;
+    if (!is_array($sidebar)) {
+        return;
+    }
+
+    $sceneAliases = is_array($config['scene_aliases'] ?? null) ? $config['scene_aliases'] : [];
+    $scenes = is_array($config['scenes'] ?? null) ? $config['scenes'] : [];
+
+    validatePublicAsset($root, 'sidebar.portrait.image', $sidebar['portrait']['image'] ?? null, $errors);
+
+    foreach (($sidebar['navigation'] ?? []) as $index => $block) {
+        if (!is_array($block)) {
+            continue;
+        }
+
+        validatePublicAsset($root, "sidebar.navigation.{$index}.border_top", $block['border_top'] ?? null, $errors);
+        validatePublicAsset($root, "sidebar.navigation.{$index}.border_bottom", $block['border_bottom'] ?? null, $errors);
+        validateSidebarScenes($block['visible_on'] ?? null, $scenes, "sidebar.navigation.{$index}.visible_on", $errors);
+        validateSidebarRoutes($block['items'] ?? [], $sceneAliases, $scenes, "sidebar.navigation.{$index}.items", $errors);
+    }
+
+    foreach (($sidebar['forms'] ?? []) as $index => $form) {
+        if (!is_array($form)) {
+            continue;
+        }
+
+        validateSidebarScenes($form['visible_on'] ?? null, $scenes, "sidebar.forms.{$index}.visible_on", $errors);
+        validateRouteValue($form['route'] ?? null, $sceneAliases, $scenes, "sidebar.forms.{$index}.route", $errors);
+        foreach (($form['route_options'] ?? []) as $optionIndex => $option) {
+            if (is_array($option)) {
+                validateRouteValue($option['route'] ?? null, $sceneAliases, $scenes, "sidebar.forms.{$index}.route_options.{$optionIndex}.route", $errors);
+            }
+        }
+    }
+}
+
+function validateSidebarScenes(mixed $visibleOn, array $scenes, string $label, array &$errors): void
+{
+    if (!is_array($visibleOn)) {
+        return;
+    }
+
+    foreach ($visibleOn as $index => $scene) {
+        if (!is_string($scene) || !array_key_exists($scene, $scenes)) {
+            $errors[] = "{$label}.{$index} points to unknown scene '{$scene}'.";
+        }
+    }
+}
+
+function validateSidebarRoutes(mixed $items, array $sceneAliases, array $scenes, string $label, array &$errors): void
+{
+    if (!is_array($items)) {
+        return;
+    }
+
+    foreach ($items as $index => $item) {
+        if (!is_array($item)) {
+            continue;
+        }
+
+        validateRouteValue($item['route'] ?? null, $sceneAliases, $scenes, "{$label}.{$index}.route", $errors);
+        foreach (($item['route_options'] ?? []) as $optionIndex => $option) {
+            if (is_array($option)) {
+                validateRouteValue($option['route'] ?? null, $sceneAliases, $scenes, "{$label}.{$index}.route_options.{$optionIndex}.route", $errors);
+            }
+        }
+        validateSidebarRoutes($item['children'] ?? [], $sceneAliases, $scenes, "{$label}.{$index}.children", $errors);
+    }
+}
+
+function validateRouteValue(mixed $route, array $sceneAliases, array $scenes, string $label, array &$errors): void
+{
+    if (!is_string($route) || trim($route) === '') {
+        return;
+    }
+
+    $route = trim($route, '/');
+    $targetScene = (string) (($sceneAliases[$route] ?? null) ?: $route);
+    if (!array_key_exists($targetScene, $scenes)) {
+        $errors[] = "{$label} points to unknown scene route '{$route}'.";
     }
 }
 
@@ -299,7 +398,7 @@ function validatePublicAsset(string $root, string $label, mixed $asset, array &$
     }
 }
 
-function validateAwardedAchievements(string $root, string $slug, array &$errors, array &$warnings): void
+function validateAwardedAchievements(string $root, string $slug, array $config, array &$errors, array &$warnings): void
 {
     $serviceRoot = $root . '/app/Services/Adventures';
     if (!is_dir($serviceRoot)) {
@@ -308,6 +407,10 @@ function validateAwardedAchievements(string $root, string $slug, array &$errors,
 
     $iterator = new RecursiveIteratorIterator(new RecursiveDirectoryIterator($serviceRoot));
     $achievements = [];
+    $publicAchievements = $config['public_achievements'] ?? null;
+    $publicAchievementSet = is_array($publicAchievements)
+        ? array_fill_keys(array_map('strval', $publicAchievements), true)
+        : null;
 
     foreach ($iterator as $file) {
         if (!$file->isFile() || $file->getExtension() !== 'php') {
@@ -330,6 +433,10 @@ function validateAwardedAchievements(string $root, string $slug, array &$errors,
         $image = $root . '/public/assets/img/succes/' . $slug . '/' . $name . '.png';
         if (!is_file($image)) {
             $errors[] = "Achievement '{$slug}:{$name}' has no image: " . relativePath($root, $image);
+        }
+
+        if (is_array($publicAchievementSet) && !isset($publicAchievementSet[$name])) {
+            continue;
         }
 
         $offImage = $root . '/public/assets/img/succes/' . $slug . '/' . $name . 'off.png';

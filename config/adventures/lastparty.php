@@ -14,8 +14,14 @@ return [
         'assets/styles/aventures/last_party/appartement.css',
         'assets/styles/aventures/last_party/faceeebook.css',
     ],
-    'sidebar_view' => 'adventures/lastparty/sidebar',
-    'footer_view' => 'adventures/lastparty/footer',
+    'sidebar_view' => 'adventures/partials/sidebar',
+    'footer_view' => 'adventures/partials/footer',
+    'sidebar' => [
+        'portrait' => [
+            'image' => 'assets/img/lastparty/jonathan.png',
+            'alt' => 'jonathan',
+        ],
+    ],
     'entry_scene' => 'index',
     'scenes' => [
         'index' => 'Introduction',
@@ -56,6 +62,10 @@ return [
     ],
     'assets' => [
         'banner' => 'assets/img/lastparty/lpmini.png',
+    ],
+    'public_achievements' => [
+        'debut',
+        'fin',
     ],
     'inventory_items' => [
         'carnet' => [

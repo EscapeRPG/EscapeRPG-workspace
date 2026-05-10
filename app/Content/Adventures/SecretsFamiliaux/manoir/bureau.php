@@ -1,9 +1,23 @@
 <?php
 
-$bureauDoor = ['type' => 'interactive_image', 'src' => 'assets/img/secrets/portebureau.png', 'alt' => 'porte du bureau', 'class' => 'enigmelieu', 'hotspots' => [
-    ['class' => 'symbureau', 'src' => 'assets/img/secrets/symbur.png', 'alt' => 'un étrange symbole gravé sur la porte', 'value' => 'symbole'],
-]];
+use App\Services\Adventures\Support\Content;
+
+$bureauDoor = Content::interactiveImage(
+    'assets/img/secrets/portebureau.png',
+    'porte du bureau',
+    [
+        Content::hotspot(
+            'symbureau',
+            'symbole',
+            'assets/img/secrets/symbur.png',
+            'un étrange symbole gravé sur la porte'
+        ),
+    ]
+);
 $openBureauScript = ['assets/js/adventures/secrets_familiaux/ouverturebureau.js'];
+$openAction = [
+    Content::ask('Ouvrir.', 'phr', 'ouvrir'),
+];
 
 return [
     'variants' => [
@@ -12,57 +26,27 @@ return [
             'scripts' => $openBureauScript,
             'blocks' => [
                 $bureauDoor,
-                ['type' => 'paragraphs', 'paragraphs' => [
-                    "Lorsque vous essayez d'ouvrir le <span class=\"mdp\">bureau</span> de travail de votre oncle, vous vous rendez compte que la porte est fermée.<br>
-                    Vous vous apprêtez à sortir le jeu de clés donné par Gaspard lorsque vous constatez qu'il n'y a aucune serrure.",
-                    "Cette porte doit être scellée par un autre moyen.",
-                ]],
+                Content::narrative('secretsfamiliaux/manoir/bureau#step_0'),
             ],
-            'actions' => [
-                [
-                    'label' => 'Ouvrir.',
-                    'name' => 'phr',
-                    'value' => 'ouvrir',
-                    'class' => 'ask',
-                ],
-            ],
+            'actions' => $openAction,
         ],
         'step_1' => [
             'audio' => null,
             'scripts' => $openBureauScript,
             'blocks' => [
                 $bureauDoor,
-                ['type' => 'paragraphs', 'paragraphs' => [
-                    "Un <span class=\"mdp\">symbole</span> est gravé dans le bois de la porte.<br>
-                    Vous n'avez aucune idée de sa signification, mais peut-être pourriez-vous poser des questions aux domestiques ?",
-                ]],
+                Content::narrative('secretsfamiliaux/manoir/bureau#step_1'),
             ],
-            'actions' => [
-                [
-                    'label' => 'Ouvrir.',
-                    'name' => 'phr',
-                    'value' => 'ouvrir',
-                    'class' => 'ask',
-                ],
-            ],
+            'actions' => $openAction,
         ],
         'step_3' => [
             'audio' => null,
             'scripts' => $openBureauScript,
             'blocks' => [
                 $bureauDoor,
-                ['type' => 'paragraphs', 'paragraphs' => [
-                    "Rien ne se passe.",
-                ]],
+                Content::narrative('secretsfamiliaux/manoir/bureau#step_3'),
             ],
-            'actions' => [
-                [
-                    'label' => 'Ouvrir.',
-                    'name' => 'phr',
-                    'value' => 'ouvrir',
-                    'class' => 'ask',
-                ],
-            ],
+            'actions' => $openAction,
         ],
     ],
 ];

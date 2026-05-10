@@ -1,5 +1,7 @@
 <?php
 
+use App\Services\Adventures\Support\Content;
+
 $bureauImage = static fn(array $controls = [], string $src = 'assets/img/secrets/bureausecret1.png'): array => [
     'type' => 'interactive_image',
     'src' => $src,
@@ -8,22 +10,22 @@ $bureauImage = static fn(array $controls = [], string $src = 'assets/img/secrets
     'controls' => $controls,
 ];
 
-$tiroirControl = [
-    'class' => 'tiroir',
-    'src' => 'assets/img/secrets/buttontiroir.png',
-    'alt' => 'tiroir du bureau',
-    'value' => 'tiroir',
-];
+$tiroirControl = Content::hotspot(
+    'tiroir',
+    'tiroir',
+    'assets/img/secrets/buttontiroir.png',
+    'tiroir du bureau'
+);
 
-$libraryAction = [
-    'label' => 'Fouiller la bibliothèque.',
-    'name' => 'fouiller',
-    'value' => 'search_library',
-    'class' => 'ask',
-    'visible_if' => ['state' => 'chiens_sauves_fin', 'truthy' => true],
-];
+$libraryAction = Content::ask(
+    'Fouiller la bibliothèque.',
+    'fouiller',
+    'search_library',
+    ['visible_if' => Content::stateTruthy('chiens_sauves_fin')]
+);
 
-$goBack = ['label' => "Passer de l'autre côté.", 'name' => 'action', 'value' => 'go_back', 'class' => 'action'];
+$goBack = Content::action("Passer de l'autre côté.", 'go_back');
+$unlockDrawer = Content::ask('Utiliser la clé.', 'petitecle', 'unlock_tiroir');
 
 return [
     'variants' => [
@@ -31,15 +33,9 @@ return [
             'audio' => null,
             'blocks' => [
                 $bureauImage([$tiroirControl]),
-                ['type' => 'paragraphs', 'paragraphs' => [
-                    "Vous entrez enfin dans le bureau privé de votre oncle alors que la nuit commence à tomber. Une grande bibliothèque traverse la pièce, la séparant en deux.",
-                    "Au fond, derrière la bibliothèque, se trouve une petite ouverture pour accéder à la seconde partie. La petite fenêtre au fond éclaire à peine l'ensemble.",
-                    "De ce côté, vous pouvez trouver un tas de livres obscurs traitant de sujets qui vous terrifient et que vous n'osez pas parcourir plus longtemps. Un petit bureau se trouve sur la droite, contre le mur. Un tas de papiers et d'ustensiles divers jonchent le sol.",
-                    "Manifestement, le docteur Pellington a retourné la salle pour trouver les preuves qu'il désirait détruire, mais peut-être reste-t-il quelque chose ici ou là ?",
-                ]],
-                ['type' => 'paragraphs', 'paragraphs' => [
-                    "En approchant de la bibliothèque, vous sentez le talisman offert par Gaspard vibrer. Vous devriez l'observer de plus près.",
-                ], 'visible_if' => ['state' => 'chiens_sauves_fin', 'truthy' => true]],
+                Content::narrative('secretsfamiliaux/manoir/bureauprive#step_0'),
+                Content::narrative('secretsfamiliaux/manoir/bureauprive#talisman_hint')
+                    + ['visible_if' => Content::stateTruthy('chiens_sauves_fin')],
             ],
             'actions' => [$libraryAction, $goBack],
         ],
@@ -47,76 +43,71 @@ return [
             'audio' => null,
             'blocks' => [
                 $bureauImage([$tiroirControl]),
-                ['type' => 'paragraphs', 'paragraphs' => [
-                    "Le tiroir est fermé à clé, mais vous avez avec vous la petite clé trouvée dans le coffret.",
-                ]],
+                Content::narrative('secretsfamiliaux/manoir/bureauprive#step_1'),
             ],
-            'actions' => [
-                ['label' => 'Utiliser la clé.', 'name' => 'petitecle', 'value' => 'unlock_tiroir', 'class' => 'ask'],
-                $goBack,
-            ],
+            'actions' => [$unlockDrawer, $goBack],
         ],
         'step_2' => [
             'audio' => null,
             'blocks' => [
                 $bureauImage([$tiroirControl]),
-                ['type' => 'paragraphs', 'paragraphs' => [
-                    "Cela ne semble pas fonctionner. Êtes-vous sûr d'avoir fait comme il fallait ?",
-                ]],
+                Content::narrative('secretsfamiliaux/manoir/bureauprive#step_2'),
             ],
-            'actions' => [
-                ['label' => 'Utiliser la clé.', 'name' => 'petitecle', 'value' => 'unlock_tiroir', 'class' => 'ask'],
-                $goBack,
-            ],
+            'actions' => [$unlockDrawer, $goBack],
         ],
         'step_3' => [
             'audio' => 'assets/sounds/secrets/tiroir.mp3',
             'blocks' => [
                 $bureauImage([], 'assets/img/secrets/bureausecret1tiroiropened.png'),
-                ['type' => 'paragraphs', 'paragraphs' => [
-                    "Vous débloquez le tiroir et l'ouvrez.",
-                ]],
-                ['type' => 'linked_image', 'src' => 'assets/img/secrets/journal1.png', 'alt' => "la première page du journal de l'oncle William", 'class' => 'enigme'],
-                ['type' => 'linked_image', 'src' => 'assets/img/secrets/journal3.png', 'alt' => "la troisième page du journal de l'oncle William", 'class' => 'enigme'],
-                ['type' => 'linked_image', 'src' => 'assets/img/secrets/journal4.png', 'alt' => "la quatrième page du journal de l'oncle William", 'class' => 'enigme'],
-                ['type' => 'paragraphs', 'paragraphs' => [
-                    "Vous trouvez une liasse de papiers jaunis sur lesquels s'étale une fine écriture que vous reconnaissez immédiatement comme étant celle de votre oncle.",
-                    "Vous les prenez délicatement, sans toutefois pouvoir vous empêcher de trembler à l'idée de ce que vous pourriez y découvrir.",
-                ]],
+                Content::narrative('secretsfamiliaux/manoir/bureauprive#step_3_intro'),
+                Content::linkedImage(
+                    'assets/img/secrets/journal1.png',
+                    "la première page du journal de l'oncle William"
+                ),
+                Content::linkedImage(
+                    'assets/img/secrets/journal3.png',
+                    "la troisième page du journal de l'oncle William"
+                ),
+                Content::linkedImage(
+                    'assets/img/secrets/journal4.png',
+                    "la quatrième page du journal de l'oncle William"
+                ),
+                Content::narrative('secretsfamiliaux/manoir/bureauprive#step_3_after'),
             ],
-            'actions' => [['label' => "Ajouter à l'inventaire.", 'name' => 'action', 'value' => 'take_journal', 'class' => 'action']],
+            'actions' => [
+                Content::action("Ajouter à l'inventaire.", 'take_journal'),
+            ],
         ],
         'step_4' => [
             'audio' => null,
             'blocks' => [
                 $bureauImage([$tiroirControl]),
-                ['type' => 'paragraphs', 'paragraphs' => [
-                    "Vous ne trouvez pas ce que vous cherchez.",
-                ]],
+                Content::narrative('secretsfamiliaux/manoir/bureauprive#step_4'),
             ],
             'actions' => [$libraryAction, $goBack],
         ],
         'step_5' => [
             'audio' => null,
             'blocks' => [
-                ['type' => 'linked_image', 'src' => 'assets/img/secrets/pnakotiques.png', 'alt' => 'une page des manuscrits pnakotiques', 'class' => 'enigme'],
-                ['type' => 'linked_image', 'src' => 'assets/img/secrets/pnakotiquesnotes.png', 'alt' => 'une page de notes sur les manuscrits pnakotiques', 'class' => 'enigme'],
-                ['type' => 'paragraphs', 'paragraphs' => [
-                    "En fouillant parmi les livres de la bibliothèque privée, vous tombez sur un livre très ancien dont la couverture est en partie arrachée. Les pages jaunies semblent sur le point de partir en poussière et vous manipulez le tout avec précaution.",
-                    "Le livre se nomme Manuscrits Pnakotiques et décrit tout un tas de rituels magiques divers. L'une des pages représente un motif très similaire à celui présent sur le talisman de Gaspard.",
-                    "La page évoque comment réaliser des cercles magiques pour avoir des visions de dimensions inconnues et créer un portail y menant, mais la deuxième page est très abîmée. Peut-être pourriez-vous trouver comment créer le second cercle malgré tout ?",
-                    "Une feuille volante, beaucoup plus récente que le livre, était glissée entre ces pages. Vous gardez ces éléments de côté.",
-                ]],
+                Content::linkedImage(
+                    'assets/img/secrets/pnakotiques.png',
+                    'une page des manuscrits pnakotiques'
+                ),
+                Content::linkedImage(
+                    'assets/img/secrets/pnakotiquesnotes.png',
+                    'une page de notes sur les manuscrits pnakotiques'
+                ),
+                Content::narrative('secretsfamiliaux/manoir/bureauprive#step_5'),
             ],
-            'actions' => [['label' => "Ajouter à l'inventaire.", 'name' => 'action', 'value' => 'take_pnakotiques', 'class' => 'action']],
+            'actions' => [
+                Content::action("Ajouter à l'inventaire.", 'take_pnakotiques'),
+            ],
         ],
         'tiroir_opened' => [
             'audio' => null,
             'blocks' => [
                 $bureauImage([], 'assets/img/secrets/bureausecret1tiroiropened.png'),
-                ['type' => 'paragraphs', 'paragraphs' => [
-                    "Votre médaillon vibre toujours lorsque vous êtes proche de la bibliothèque.",
-                ]],
+                Content::narrative('secretsfamiliaux/manoir/bureauprive#tiroir_opened'),
             ],
             'actions' => [$libraryAction, $goBack],
         ],
@@ -124,11 +115,7 @@ return [
             'audio' => null,
             'blocks' => [
                 $bureauImage([$tiroirControl]),
-                ['type' => 'paragraphs', 'paragraphs' => [
-                    "Au fond, derrière la bibliothèque, se trouve une petite ouverture pour accéder à la seconde partie. La petite fenêtre au fond éclaire à peine l'ensemble.",
-                    "De ce côté, vous pouvez trouver un tas de livres obscurs traitant de sujets qui vous terrifient et que vous n'osez pas parcourir plus longtemps. Un petit bureau se trouve sur la droite, contre le mur. Un tas de papiers et d'ustensiles divers jonchent le sol.",
-                    "Manifestement, le docteur Pellington a retourné la salle pour trouver les preuves qu'il désirait détruire, mais peut-être reste-t-il quelque chose ici ou là ?",
-                ]],
+                Content::narrative('secretsfamiliaux/manoir/bureauprive#pnakotiques_found'),
             ],
             'actions' => [$goBack],
         ],
@@ -136,9 +123,8 @@ return [
             'audio' => null,
             'blocks' => [
                 $bureauImage([], 'assets/img/secrets/bureausecret1tiroiropened.png'),
-                ['type' => 'paragraphs', 'paragraphs' => [
-                "Il semble que vous avez trouvé tout ce qu'il restait de ce côté.",
-            ]]],
+                Content::narrative('secretsfamiliaux/manoir/bureauprive#done'),
+            ],
             'actions' => [$goBack],
         ],
     ],

@@ -31,6 +31,32 @@ class Content
     }
 
     /**
+     * @param array<int, string>|string $paragraphs
+     * @return array<string, mixed>
+     */
+    public static function dialogue(
+        string $name,
+        string $portrait,
+        array|string $paragraphs,
+        string $side = 'left',
+        array $extra = []
+    ): array {
+        if (is_string($paragraphs)) {
+            $paragraphs = NarrativeText::paragraphList($paragraphs);
+        }
+
+        return $extra + [
+            'type' => 'dialogue',
+            'speaker' => [
+                'name' => $name,
+                'portrait' => $portrait,
+                'side' => $side,
+            ],
+            'paragraphs' => $paragraphs,
+        ];
+    }
+
+    /**
      * @return array{type: string, paragraphs: array<int, string>}
      */
     public static function narrative(string $path): array
@@ -137,6 +163,31 @@ class Content
     public static function comments(): array
     {
         return ['type' => 'comments'];
+    }
+
+    /**
+     * @param array<int, string>|string|null $answer
+     * @return array<string, mixed>
+     */
+    public static function hint(string $basePath, int $levels = 3, array|string|null $answer = null): array
+    {
+        $hint = ['levels' => []];
+
+        for ($level = 1; $level <= $levels; $level++) {
+            $hint['levels'][] = [
+                'paragraphs' => NarrativeText::paragraphList("{$basePath}_{$level}"),
+            ];
+        }
+
+        if ($answer === null) {
+            $answer = NarrativeText::paragraphList("{$basePath}_answer");
+        } elseif (is_string($answer)) {
+            $answer = NarrativeText::paragraphList($answer);
+        }
+
+        $hint['answer'] = ['paragraphs' => $answer];
+
+        return $hint;
     }
 
     /**

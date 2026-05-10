@@ -1,9 +1,15 @@
 <?php
 
+use App\Services\Adventures\Support\Content;
+
 return [
     'variants' => [
-        'step_0' => ['audio' => null, 'blocks' => [['type' => 'paragraphs', 'paragraphs' => [
-            "Une serre tout à fait banale. Ce n'est pas la saison pour faire pousser quoi que ce soit ici.",
-        ]]], 'actions' => []],
+        'step_0' => [
+            'audio' => null,
+            'blocks' => [
+                Content::narrative('secretsfamiliaux/manoir/serre#step_0'),
+            ],
+            'actions' => [],
+        ],
     ],
 ];
