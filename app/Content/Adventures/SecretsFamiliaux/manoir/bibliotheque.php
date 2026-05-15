@@ -47,7 +47,11 @@ return [
             'blocks' => [
                 Content::narrative('secretsfamiliaux/manoir/bibliotheque#take_magna'),
             ],
-            'actions' => []
+            'actions' => [
+                Content::ask('Chercher.', 'bibliotheque', 'chercher', [
+                    'visible_if' => Content::stateFalsy('bibliotheque_templar'),
+                ]),
+            ],
         ],
         'take_templar' => [
             'audio' => null,

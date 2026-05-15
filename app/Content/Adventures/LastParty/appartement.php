@@ -1,117 +1,51 @@
 <?php
 
+use App\Services\Adventures\Support\Content;
+
+$roomImage = static fn(array $hotspots): array => Content::interactiveImage(
+    'assets/img/lastparty/appartement.png',
+    'appartement',
+    $hotspots
+);
+
+$computerHotspots = [
+    Content::hotspot('ordi', 'open_computer'),
+    Content::hotspot(
+        'tiroir',
+        'open_drawer',
+        null,
+        '',
+        ['visible_if' => Content::stateFalsy('carnet_acquired')]
+    ),
+];
+
 return [
     'variants' => [
         'computer' => [
             'audio' => null,
             'blocks' => [
-                [
-                    'type' => 'interactive_image',
-                    'src' => 'assets/img/lastparty/appartement.png',
-                    'alt' => 'appartement',
-                    'class' => 'enigmelieu',
-                    'hotspots' => [
-                        ['class' => 'ordi', 'value' => 'open_computer'],
-                        ['class' => 'tiroir', 'value' => 'open_drawer', 'visible_if' => ['state' => 'carnet_acquired', 'falsy' => true]],
-                    ],
-                ],
-                [
-                    'type' => 'paragraphs',
-                    'paragraphs' => [
-                        "Comment pourriez-vous vous connecter à votre compte Faceeebook ?",
-                    ],
-                ],
+                $roomImage($computerHotspots),
+                Content::narrative('lastparty/appartement#computer'),
             ],
-            'hint' => [
-                'levels' => [
-                    [
-                        'paragraphs' => [
-                            "Essayez de trouver un accès à internet.",
-                        ],
-                    ],
-                    [
-                        'paragraphs' => [
-                            "Vous ne pouvez pas aller sur Faceeebook sur votre téléphone.",
-                        ],
-                    ],
-                    [
-                        'paragraphs' => [
-                            "Outre votre téléphone, quel appareil vous permettrait de vous connecter sur internet ?",
-                        ],
-                    ],
-                ],
-                'answer' => [
-                    'paragraphs' => [
-                        "Cliquez sur l'ordinateur, sur le bureau.",
-                    ],
-                ],
-            ],
+            'hint' => Content::hint('lastparty/hints#appartement_computer'),
             'actions' => [],
         ],
         'drawer' => [
             'audio' => null,
             'blocks' => [
-                [
-                    'type' => 'interactive_image',
-                    'src' => 'assets/img/lastparty/appartement.png',
-                    'alt' => 'appartement',
-                    'class' => 'enigmelieu',
-                    'hotspots' => [
-                        ['class' => 'ordi', 'value' => 'open_computer'],
-                        ['class' => 'tiroir', 'value' => 'open_drawer', 'visible_if' => ['state' => 'carnet_acquired', 'falsy' => true]],
-                    ],
-                ],
-                [
-                    'type' => 'paragraphs',
-                    'paragraphs' => [
-                        "Votre carnet doit être quelque part dans l'appartement.",
-                    ],
-                ],
+                $roomImage($computerHotspots),
+                Content::narrative('lastparty/appartement#drawer'),
             ],
-            'hint' => [
-                'levels' => [
-                    [
-                        'paragraphs' => [
-                            "Heureusement, vous n'avez pas énormément d'affaires et vous êtes du genre à les ranger.",
-                        ],
-                    ],
-                    [
-                        'paragraphs' => [
-                            "Pour plus de simplicité, vous avez rangé votre carnet au plus proche de l'endroit où vous en auriez besoin.",
-                        ],
-                    ],
-                    [
-                        'paragraphs' => [
-                            "Votre carnet est rangé tout près de votre ordinateur.",
-                        ],
-                    ],
-                ],
-                'answer' => [
-                    'paragraphs' => [
-                        "Fouillez dans les tiroirs du bureau.",
-                    ],
-                ],
-            ],
+            'hint' => Content::hint('lastparty/hints#appartement_drawer'),
             'actions' => [],
         ],
         'photos' => [
             'audio' => null,
             'blocks' => [
-                [
-                    'type' => 'interactive_image',
-                    'src' => 'assets/img/lastparty/appartement.png',
-                    'alt' => 'appartement',
-                    'class' => 'enigmelieu',
-                    'hotspots' => [
-                        ['class' => 'appareil', 'value' => 'open_camera'],
-                    ],
-                ],
-                [
-                    'type' => 'paragraphs',
-                    'paragraphs' => [
-                        "Vous devriez inspecter votre appareil photo.",
-                    ],
-                ],
+                $roomImage([
+                    Content::hotspot('appareil', 'open_camera'),
+                ]),
+                Content::narrative('lastparty/appartement#photos'),
             ],
             'actions' => [],
         ],

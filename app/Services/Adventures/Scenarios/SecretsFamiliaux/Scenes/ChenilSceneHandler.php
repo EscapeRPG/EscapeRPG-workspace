@@ -18,11 +18,15 @@ class ChenilSceneHandler extends SimpleSceneHandler
 
     public function variant(AdventureState $state, Request $request, bool $isLandingPage = false): string
     {
+        $step = (int) $state->get('chenil_step', 0);
+        if ($step === 2 && (bool) $state->get('chiens_sauves', false)) {
+            return 'step_2';
+        }
+
         if ((bool) $state->get('chiens_sauves', false) || (bool) $state->get('chiens_sauves_fin', false)) {
             return 'saved';
         }
 
-        $step = (int) $state->get('chenil_step', 0);
         if ($step > 0) {
             return 'step_' . $step;
         }
@@ -33,6 +37,10 @@ class ChenilSceneHandler extends SimpleSceneHandler
             }
 
             return 'poisoned';
+        }
+
+        if ((bool) $state->get('chiens_malades', false)) {
+            return 'malades';
         }
 
         if ((bool) $state->get('intrusion_done', false)) {

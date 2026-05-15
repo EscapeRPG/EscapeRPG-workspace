@@ -42,13 +42,42 @@ class PellingtonCaveSceneHandler extends SimpleSceneHandler
                 'inventory' => $this->mergeNotes($inventory, ['aveux']),
                 'notes' => $this->mergeNotes($notes, ['Opus favori', 'Tableau']),
             ]),
-            'take_piece' => new AdventureActionResult(nextScene: self::SCENE, stateChanges: [
-                'pellington_cave_step' => 2,
-                'pellington_visit' => true,
-                'inventory' => $this->mergeNotes($inventory, ['piecese']),
-            ]),
-            'return_manor' => new AdventureActionResult(nextScene: 'rdc'),
+            'take_piece' => new AdventureActionResult(
+                nextScene: self::SCENE,
+                stateChanges: $this->afterPellingtonVisitState($state, [
+                    'pellington_cave_step' => 2,
+                    'pellington_visit' => true,
+                    'inventory' => $this->mergeNotes($inventory, ['piecese']),
+                ]),
+            ),
+            'return_manor' => new AdventureActionResult(
+                nextScene: 'rdc',
+                stateChanges: $this->afterPellingtonVisitState($state),
+            ),
             default => new AdventureActionResult(nextScene: self::SCENE),
         };
+    }
+
+    /**
+     * @param array<string, mixed> $stateChanges
+     * @return array<string, mixed>
+     */
+    private function afterPellingtonVisitState(AdventureState $state, array $stateChanges = []): array
+    {
+        if (
+            (bool) $state->get('intrusion_done', false)
+            && !(bool) $state->get('chiens_malades', false)
+            && !(bool) $state->get('chiens_empoisonnes', false)
+            && !(bool) $state->get('chiens_sauves', false)
+            && !(bool) $state->get('chiens_sauves_fin', false)
+        ) {
+            $stateChanges += [
+                'intrusion_done' => false,
+                'gaspard_response' => null,
+                'chiens_malades' => true,
+            ];
+        }
+
+        return $stateChanges;
     }
 }

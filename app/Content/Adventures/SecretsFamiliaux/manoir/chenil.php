@@ -39,6 +39,14 @@ return [
             ],
             'actions' => [$antidoteAction],
         ],
+        'malades' => [
+            'audio' => null,
+            'blocks' => [
+                Content::narrative('secretsfamiliaux/manoir/chenil#malades'),
+                Content::dialogue('Gaspard', $gaspard, 'secretsfamiliaux/manoir/chenil#malades_gaspard'),
+            ],
+            'actions' => [$antidoteAction],
+        ],
         'step_1' => [
             'audio' => null,
             'blocks' => [

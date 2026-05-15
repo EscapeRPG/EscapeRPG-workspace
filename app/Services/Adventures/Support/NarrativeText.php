@@ -53,10 +53,12 @@ class NarrativeText
             $contents = self::extractSection($contents, $section, $filePath);
         }
 
-        return array_values(array_filter(
+        $paragraphs = array_values(array_filter(
             array_map('trim', preg_split("/\n{2,}/", $contents) ?: []),
             static fn (string $paragraph): bool => $paragraph !== ''
         ));
+
+        return array_map([self::class, 'renderInlineMarkdown'], $paragraphs);
     }
 
     /**
@@ -115,5 +117,21 @@ class NarrativeText
         }
 
         return $file;
+    }
+
+    private static function renderInlineMarkdown(string $text): string
+    {
+        return preg_replace_callback(
+            '/\[([^\]]+)]\(([^)\s]+)\)/',
+            static function (array $matches): string {
+                $label = htmlspecialchars($matches[1], ENT_QUOTES, 'UTF-8');
+                $href = htmlspecialchars($matches[2], ENT_QUOTES, 'UTF-8');
+                $external = preg_match('/^https?:\/\//i', $matches[2]) === 1;
+                $target = $external ? ' target="_blank" rel="noreferrer"' : '';
+
+                return '<a href="' . $href . '"' . $target . '>' . $label . '</a>';
+            },
+            $text
+        ) ?? $text;
     }
 }

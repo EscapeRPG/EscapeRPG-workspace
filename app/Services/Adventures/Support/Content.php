@@ -31,6 +31,38 @@ class Content
     }
 
     /**
+     * @return array{type: string, html: string}
+     */
+    public static function html(string $html): array
+    {
+        return [
+            'type' => 'html',
+            'html' => $html,
+        ];
+    }
+
+    /**
+     * @param array<string, mixed> $data
+     * @return array<string, mixed>
+     */
+    public static function partial(string $view, array $data = []): array
+    {
+        return [
+            'type' => 'partial',
+            'view' => $view,
+            'data' => $data,
+        ];
+    }
+
+    /**
+     * @return array{type: string}
+     */
+    public static function cardDeck(): array
+    {
+        return ['type' => 'card_deck'];
+    }
+
+    /**
      * @param array<int, string>|string $paragraphs
      * @return array<string, mixed>
      */

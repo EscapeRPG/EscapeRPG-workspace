@@ -30,6 +30,10 @@ class GaspardSceneHandler extends SimpleSceneHandler
             return 'poisoned';
         }
 
+        if ((bool) $state->get('chiens_malades', false)) {
+            return 'chenil';
+        }
+
         $response = $state->get('gaspard_response');
         if ($response === 'nourriture') {
             return 'nourriture';

@@ -32,6 +32,14 @@ Gaspard est toujours en train de s'occuper des 4 chiens empoisonnés.
 
 Il ne semble toujours pas enclin à discuter avec vous.
 
+## malades
+
+Gaspard est en train de s'occuper des 4 chiens qui semblent mal en point.
+
+## malades_gaspard
+
+Les chiens n'ont pas l'air bien aujourd'hui, je ne sais pas ce qu'ils ont.
+
 ## step_1_gaspard
 
 J'ai pas le temps pour ça. Si vous avez quelque chose pour eux, je vous écoute, sinon laissez-moi tranquille.

@@ -62,6 +62,26 @@ $sceneBlockAsset = static function (array $item) use ($sceneBlockConditionMatche
         <p><?= ($block['text'] ?? '') ?></p>
     <?php endif; ?>
 
+    <?php if ($type === 'html'): ?>
+        <?= ($block['html'] ?? '') ?>
+    <?php endif; ?>
+
+    <?php if ($type === 'partial'): ?>
+        <?php
+        $partial = (string) ($block['view'] ?? '');
+        $partialPath = dirname(__DIR__, 2) . '/' . trim($partial, '/') . '.php';
+        if ($partial !== '' && is_file($partialPath)) {
+            $partialData = is_array($block['data'] ?? null) ? $block['data'] : [];
+            require $partialPath;
+        }
+        ?>
+    <?php endif; ?>
+
+    <?php if ($type === 'card_deck'): ?>
+        <?php $flippedCards = $sceneData['flippedCards'] ?? []; ?>
+        <div id="cards-container" data-flipped-cards="<?= e(json_encode(array_values($flippedCards), JSON_THROW_ON_ERROR)) ?>"></div>
+    <?php endif; ?>
+
     <?php if ($type === 'paragraphs'): ?>
         <?php foreach (($block['paragraphs'] ?? []) as $paragraph): ?>
             <p><?= $paragraph ?></p>

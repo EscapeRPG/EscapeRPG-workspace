@@ -18,6 +18,11 @@ class BureauPrive2SceneHandler extends SimpleSceneHandler
 
     public function variant(AdventureState $state, Request $request, bool $isLandingPage = false): string
     {
+        $step = (int) $state->get('bureauprive2_step', 0);
+        if ($step > 0) {
+            return 'step_' . $step;
+        }
+
         if ((bool) $state->get('electricity_restored', false) || (bool) $state->get('masse_active', false)) {
             if ((bool) $state->get('bureauprive2_trappe_opened', false)) {
                 return 'after_cuves_opened';
@@ -28,11 +33,6 @@ class BureauPrive2SceneHandler extends SimpleSceneHandler
 
         if ((bool) $state->get('cavesecrete_visited', false)) {
             return 'after_descent';
-        }
-
-        $step = (int) $state->get('bureauprive2_step', 0);
-        if ($step > 0) {
-            return 'step_' . $step;
         }
 
         if ((bool) $state->get('bureauprive2_trappe_opened', false)) {
@@ -66,6 +66,7 @@ class BureauPrive2SceneHandler extends SimpleSceneHandler
             ]),
             'pull_lever' => new AdventureActionResult(nextScene: 'courtcircuit', stateChanges: [
                 'bureauprive2_step' => 0,
+                'bureauprive2_refus' => true,
             ]),
             'refuse_lever' => $this->refuseLever($state),
             default => new AdventureActionResult(nextScene: 'bureauprive2'),

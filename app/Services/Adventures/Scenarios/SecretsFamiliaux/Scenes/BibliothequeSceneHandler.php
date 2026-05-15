@@ -18,6 +18,10 @@ class BibliothequeSceneHandler extends SimpleSceneHandler
 
     public function variant(AdventureState $state, Request $request, bool $isLandingPage = false): string
     {
+        if ($request->query('event') === 'take_magna' && (bool) $state->get('bibliotheque_magna', false)) {
+            return 'take_magna';
+        }
+
         if ((bool) $state->get('bibliotheque_magna', false) && (bool) $state->get('bibliotheque_templar', false)) {
             return 'done';
         }
@@ -32,11 +36,15 @@ class BibliothequeSceneHandler extends SimpleSceneHandler
         $action = (string) $request->post('action', '');
 
         if ($action === 'take_magna') {
-            return new AdventureActionResult(nextScene: 'bibliotheque', stateChanges: [
-                'bibliotheque_magna' => true,
-                'bibliotheque_response' => 'take_magna',
-                'inventory' => $this->mergeNotes($inventory, ['magnamater']),
-            ]);
+            return new AdventureActionResult(
+                stateChanges: [
+                    'bibliotheque_magna' => true,
+                    'bibliotheque_response' => null,
+                    'inventory' => $this->mergeNotes($inventory, ['magnamater']),
+                    'notes' => $this->mergeNotes((array) $state->get('notes', []), ['Deuxième']),
+                ],
+                redirectTo: '/aventures/' . ($config['slug'] ?? 'secretsfamiliaux') . '/manoir/bibliotheque?event=take_magna',
+            );
         }
 
         if ($action === 'take_templar') {
