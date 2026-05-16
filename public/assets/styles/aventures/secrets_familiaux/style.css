@@ -19,20 +19,6 @@ a {
     }
 }
 
-.enigme img {
-    max-width: 20%;
-}
-
-.enigmelieu {
-    max-width: 70%;
-    position: relative;
-    margin: auto;
-
-    img {
-        width: 100%;
-    }
-}
-
 .secrets-navigation {
     padding: 0 20px;
     text-align: center;

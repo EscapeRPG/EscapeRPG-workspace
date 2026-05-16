@@ -2,21 +2,14 @@
     <?php if (!empty($hintData['answer_revealed'])): ?>
         <div class="reponse">
             <?php foreach (($hintData['answer']['paragraphs'] ?? []) as $paragraph): ?>
-                <?= $paragraph ?>
+                <p><?= $paragraph ?></p>
             <?php endforeach; ?>
         </div>
     <?php else: ?>
         <div class="indice">
             <?php foreach (($hintData['levels'] ?? []) as $index => $level): ?>
-                <?php if ($index > 0): ?>
-                    <br><br>
-                <?php endif; ?>
-
-                <?php foreach (($level['paragraphs'] ?? []) as $paragraphIndex => $paragraph): ?>
-                    <?php if ($paragraphIndex > 0): ?>
-                        <br><br>
-                    <?php endif; ?>
-                    <?= $paragraph ?>
+                <?php foreach (($level['paragraphs'] ?? []) as $paragraph): ?>
+                    <p><?= $paragraph ?></p>
                 <?php endforeach; ?>
             <?php endforeach; ?>
         </div>

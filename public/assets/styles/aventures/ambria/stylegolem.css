@@ -1,0 +1,189 @@
+#golem1gemme1,
+#golem1gemme2,
+#golem1gemme3 {
+  position: absolute;
+  width: 5.38%;
+  height: 8.97%;
+}
+
+#golem1gemme1 {
+  left: 49.42%;
+  top: 28.93%;
+}
+
+#golem1gemme2 {
+  left: 45.65%;
+  top: 36.9%;
+}
+
+#golem1gemme3 {
+  left: 57.96%;
+  top: 36.4%;
+}
+
+#golem3gemme1,
+#golem3gemme2,
+#golem3gemme3,
+#golem3gemme4,
+#golem3gemme5 {
+  position: absolute;
+  width: 3.84%;
+  height: 6.4%;
+}
+
+#golem3gemme1 {
+  left: 55.7%;
+  top: 16.8%;
+}
+
+#golem3gemme2 {
+  left: 57.9%;
+  top: 17%;
+}
+
+#golem3gemme3 {
+  left: 60.4%;
+  top: 17.2%;
+}
+
+#golem3gemme4 {
+  left: 63.1%;
+  top: 17.5%;
+}
+
+#golem3gemme5 {
+  left: 65.15%;
+  top: 17.75%;
+}
+
+#panneau {
+  width: 90%;
+  background: rgba(0, 0, 0, 0.3);
+  margin: auto;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.golem-sequence__buttons {
+  display: grid;
+  grid-template-columns: repeat(6, 50px);
+  gap: 10px;
+  justify-content: center;
+  margin: 20px auto;
+}
+
+.golem-sequence__gem {
+  border: 0;
+  background-color: transparent;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  cursor: pointer;
+}
+
+.golem-sequence__panel {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: center;
+  min-height: 52px;
+}
+
+.golem-sequence__choice {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 0;
+  background-color: transparent;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.golem-sequence__empty {
+  color: transparent;
+}
+
+.golem-sequence__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: center;
+  margin: 18px auto;
+}
+
+.hidden {
+  display: none;
+}
+
+.rondbleu {
+  width: 50px;
+  height: 50px;
+  background-image: url("/assets/img/ambria/rondbleu.png") !important;
+}
+
+.rondrouge {
+  width: 50px;
+  height: 50px;
+  background-image: url("/assets/img/ambria/rondrouge.png") !important;
+}
+
+.rondvert {
+  width: 50px;
+  height: 50px;
+  background-image: url("/assets/img/ambria/rondvert.png") !important;
+}
+
+.rondjaune {
+  width: 50px;
+  height: 50px;
+  background-image: url("/assets/img/ambria/rondjaune.png") !important;
+}
+
+.carrebleu {
+  width: 50px;
+  height: 50px;
+  background-image: url("/assets/img/ambria/carrebleu.png") !important;
+}
+
+.carrerouge {
+  width: 50px;
+  height: 50px;
+  background-image: url("/assets/img/ambria/carrerouge.png") !important;
+}
+
+.carrevert {
+  width: 50px;
+  height: 50px;
+  background-image: url("/assets/img/ambria/carrevert.png") !important;
+}
+
+.carrejaune {
+  width: 50px;
+  height: 50px;
+  background-image: url("/assets/img/ambria/carrejaune.png") !important;
+}
+
+.trianglebleu {
+  width: 50px;
+  height: 50px;
+  background-image: url("/assets/img/ambria/trianglebleu.png") !important;
+}
+
+.trianglerouge {
+  width: 50px;
+  height: 50px;
+  background-image: url("/assets/img/ambria/trianglerouge.png") !important;
+}
+
+.trianglevert {
+  width: 50px;
+  height: 50px;
+  background-image: url("/assets/img/ambria/trianglevert.png") !important;
+}
+
+.trianglejaune {
+  width: 50px;
+  height: 50px;
+  background-image: url("/assets/img/ambria/trianglejaune.png") !important;
+}

@@ -1,5 +1,8 @@
 <?php
 
 return [
-    'banner' => 'assets/img/avent/aventmini.png',
+    'banner' => [
+        'entry' => 'assets/img/avent/aventgrand.png',
+        'default' => 'assets/img/avent/aventmini.png',
+    ],
 ];

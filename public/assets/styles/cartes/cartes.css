@@ -35,12 +35,39 @@
         &:last-child {
             margin-bottom: 0;
         }
+
+        .info {
+            color: orange;
+        }
+
+        .lieu {
+            color: green;
+            font-weight: bold;
+        }
+
+        .important {
+            color: red;
+            font-weight: bold;
+        }
+
+        .indice {
+            color: blue;
+        }
+
+        .categorie {
+            font-style: italic;
+            color: darkblue;
+        }
+
+        .mdp {
+            font-weight: bold;
+            text-shadow: #e05c00 1px 1px;
+        }
     }
 }
 
 .cardfond {
-    background: url("/assets/img/fondcard.png");
-    background-repeat: no-repeat;
+    background: url("/assets/img/fondcard.png") no-repeat;
     background-size: 100%;
     border-radius: 15px;
     padding: 0;
@@ -87,36 +114,8 @@
     }
 }
 
-.info {
-    color: orange;
-}
-
-.lieu {
-    color: green;
-    font-weight: bold;
-}
-
-.important {
-    color: red;
-    font-weight: bold;
-}
-
-.indice {
-    color: blue;
-}
-
-.mdp {
-    font-weight: bold;
-    text-shadow: #e05c00 1px 1px;
-}
-
-.categorie {
-    font-style: italic;
-    color: darkblue;
-}
-
 .boutonindice {
-    background: url("/escaperpg/images/indice.png");
+    background: url("/assets/img/indice.png");
     border: none;
     width: 30px;
     height: 30px;

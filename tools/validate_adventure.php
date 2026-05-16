@@ -121,7 +121,7 @@ function validateAdventure(string $root, string $configFile, array $config): arr
 
     validateViews($root, $config, $errors);
     validatePublicAssetList($root, 'styles', $config['styles'] ?? [], $errors);
-    validatePublicAsset($root, 'assets.banner', $config['assets']['banner'] ?? null, $errors);
+    validateBannerAsset($root, $config['assets']['banner'] ?? null, $errors);
     validateSidebar($root, $config, $errors);
     validateInventoryAssets($root, $config, $errors);
     validateSceneMaps($config, $sceneIds, $errors, $warnings);
@@ -378,6 +378,19 @@ function validatePublicAssetList(string $root, string $label, mixed $assets, arr
     foreach ($assets as $index => $asset) {
         validatePublicAsset($root, "{$label}.{$index}", $asset, $errors);
     }
+}
+
+function validateBannerAsset(string $root, mixed $banner, array &$errors): void
+{
+    if (is_array($banner)) {
+        foreach ($banner as $key => $asset) {
+            validatePublicAsset($root, 'assets.banner.' . (string) $key, $asset, $errors);
+        }
+
+        return;
+    }
+
+    validatePublicAsset($root, 'assets.banner', $banner, $errors);
 }
 
 function validatePublicAsset(string $root, string $label, mixed $asset, array &$errors): void

@@ -7,7 +7,6 @@ use App\Services\Account\AchievementService;
 use App\Services\Adventures\Engine\AdventureActionResult;
 use App\Services\Adventures\Engine\AdventureState;
 use App\Services\Adventures\Support\AdventureRegistry;
-use App\Services\Adventures\Support\AdventureSaveService;
 
 /**
  * Base commune aux contrôleurs d'aventures.
@@ -18,7 +17,6 @@ use App\Services\Adventures\Support\AdventureSaveService;
 abstract class AdventureController extends Controller
 {
     protected AdventureRegistry $adventures;
-    protected AdventureSaveService $saveService;
 
     /**
      * Initialise le registre des aventures disponibles.
@@ -27,7 +25,6 @@ abstract class AdventureController extends Controller
     {
         parent::__construct();
         $this->adventures = new AdventureRegistry();
-        $this->saveService = new AdventureSaveService();
     }
 
     /**
@@ -131,8 +128,6 @@ abstract class AdventureController extends Controller
             $this->session->flash($flashType, $result->flashMessage);
         }
 
-        $this->autosaveAdventure($slug, $state);
-
         if ($result->redirectTo !== null) {
             $this->response->redirect($result->redirectTo);
         }
@@ -145,41 +140,6 @@ abstract class AdventureController extends Controller
         }
 
         return $result->viewData;
-    }
-
-    protected function restoreAutosaveIfSessionMissing(string $slug, AdventureState $state, string $action): void
-    {
-        if ($this->session->has('adventures.' . $slug)) {
-            return;
-        }
-
-        if (in_array($action, ['new_game', 'restart', 'load_game', 'submit_load_game'], true)) {
-            return;
-        }
-
-        $autosave = $this->saveService->loadAutosave($slug);
-        if ($autosave === null) {
-            return;
-        }
-
-        $state->replace($autosave['state']);
-        $state->setScene((string) $autosave['scene']);
-        $this->session->flash('info', 'Progression restaurée automatiquement.');
-    }
-
-    private function autosaveAdventure(string $slug, AdventureState $state): void
-    {
-        $currentState = $state->all();
-        if (($currentState['started'] ?? false) !== true) {
-            return;
-        }
-
-        $scene = (string) ($currentState['_scene'] ?? '');
-        if ($scene === '') {
-            return;
-        }
-
-        $this->saveService->autosave($slug, $currentState, $scene);
     }
 
     /**

@@ -4,7 +4,7 @@
 }
 
 .mdp2 {
-  color: dodgerblue;
+  color: dodgerblue !important;
   font-weight: bold;
   text-shadow: skyblue 1px 1px;
 }
@@ -24,19 +24,20 @@
 }
 
 .indice {
-    color: dodgerblue;
-    text-align: center;
-    font-weight: bold;
-    margin: 10px auto;
+    color: dodgerblue !important;
 }
 
 .reponse {
     color: red;
-    text-align: center;
-    font-weight: bold;
-    margin: 10px auto;
 
     img {
         width: 60%;
     }
+}
+
+.indice p,
+.reponse p {
+    text-align: center;
+    font-weight: bold;
+    margin: 10px auto;
 }

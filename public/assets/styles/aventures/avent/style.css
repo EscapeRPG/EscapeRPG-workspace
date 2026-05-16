@@ -14,37 +14,6 @@ a {
 	}
 }
 
-.enigme {
-	text-align: center;
-	margin-bottom: 20px;
-	width: 80%;
-
-	img {
-		display: inline-block;
-		vertical-align: middle;
-		max-width: 200px;
-	}
-
-	a {
-		cursor: zoom-in;
-	}
-}
-
-.enigmelieu {
-	width: 80%;
-	position: relative;
-	margin: auto;
-	margin-bottom: 20px;
-
-	a {
-		cursor: default;
-	}
-
-	img {
-		width: 100%;
-	}
-}
-
 #machine {
 	position: absolute;
 	top: 30.5%;

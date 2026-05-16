@@ -1,5 +1,8 @@
 <?php
 
 return [
-    'banner' => 'assets/img/lastparty/lpmini.png',
+    'banner' => [
+        'entry' => 'assets/img/lastparty/lpgrand.png',
+        'default' => 'assets/img/lastparty/lpmini.png',
+    ],
 ];

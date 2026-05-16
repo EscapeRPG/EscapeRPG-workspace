@@ -28,36 +28,6 @@ a {
 	}
 }
 
-.enigmelieu {
-	width: 60%;
-	background: transparent;
-	position: relative;
-	margin: auto auto 20px;
-
-	a {
-		cursor: default;
-	}
-
-	img {
-		width: 100%;
-	}
-}
-
-.enigme {
-	text-align: center;
-	margin-bottom: 20px;
-
-	img {
-		display: inline-block;
-		vertical-align: middle;
-		max-width: 400px;
-	}
-
-	a {
-		cursor: zoom-in;
-	}
-}
-
 .phone {
 	position: absolute;
 	bottom: 18%;

@@ -1,0 +1,13 @@
+.enigme img {
+    max-width: 20%;
+}
+
+.enigmelieu {
+    max-width: 70%;
+    position: relative;
+    margin: auto;
+
+    img {
+        max-width: 100%;
+    }
+}

@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="<?= asset('assets/styles/aventures_general/aside.css') ?>">
     <link rel="stylesheet" href="<?= asset('assets/styles/aventures_general/inputs.css') ?>">
     <link rel="stylesheet" href="<?= asset('assets/styles/aventures_general/indices_btn.css') ?>">
+    <link rel="stylesheet" href="<?= asset('assets/styles/aventures_general/images.css') ?>">
     <link rel="stylesheet" href="<?= asset('assets/styles/textes/spans.css') ?>">
     <link rel="stylesheet" href="<?= asset('assets/styles/membres/compte_btn.css') ?>">
     <link rel="stylesheet" href="<?= asset('assets/styles/aventures_general/footer.css') ?>">
@@ -30,9 +31,18 @@
     <?php require __DIR__ . '/_site_header.php'; ?>
 <?php endif; ?>
 
-<?php if (!empty($adventure['assets']['banner'])): ?>
+<?php
+$banner = $adventure['assets']['banner'] ?? null;
+if (is_array($banner)) {
+    $currentVariant = (string) (($variant ?? null) ?: ($sceneData['variant'] ?? ''));
+    $banner = $currentVariant === 'landing'
+        ? ($banner['entry'] ?? $banner['default'] ?? null)
+        : ($banner['default'] ?? $banner['entry'] ?? null);
+}
+?>
+<?php if (!empty($banner)): ?>
     <div class="banniere">
-        <img src="<?= asset($adventure['assets']['banner']) ?>" alt="<?= e(($adventure['title'] ?? 'Aventure') . ' bannière') ?>">
+        <img src="<?= asset((string) $banner) ?>" alt="<?= e(($adventure['title'] ?? 'Aventure') . ' bannière') ?>">
     </div>
 <?php endif; ?>
 

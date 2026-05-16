@@ -1,5 +1,8 @@
 <?php
 
 return [
-    'banner' => 'assets/img/secrets/secretsfamiliauxmini.png',
+    'banner' => [
+        'entry' => 'assets/img/secrets/secretsfamiliaux.png',
+        'default' => 'assets/img/secrets/secretsfamiliauxmini.png',
+    ],
 ];

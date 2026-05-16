@@ -51,12 +51,14 @@ abstract class SceneBasedAdventureFlow extends GenericAdventureFlow
                 'title' => ($config['title'] ?? 'Aventure') . ' - ' . ($sceneConfig['label'] ?? ucfirst($scene)),
                 'adventure' => $config,
                 'scene' => $scene,
+                'variant' => $variant,
                 'sceneConfig' => $sceneConfig,
                 'sceneView' => $this->sceneView($config, $scene, $sceneConfig),
                 'state' => $stateData,
                 'sceneData' => array_merge(
                     $handler->viewData($config, $state, $request, $isLandingPage),
                     [
+                        'variant' => $variant,
                         'content' => $content,
                         'hintData' => $this->hintManager->viewData($content['hint'] ?? null, $stateData, $scene),
                     ]
@@ -134,7 +136,7 @@ abstract class SceneBasedAdventureFlow extends GenericAdventureFlow
     {
         if (is_string($value)) {
             preg_match_all(
-                '/<span\b[^>]*class=(["\'])(?=[^"\']*\bmdp\b)[^"\']*\1[^>]*>(.*?)<\/span>/is',
+                '/<span\b[^>]*class=(["\'])(?=[^"\']*\bmdp2?\b)[^"\']*\1[^>]*>(.*?)<\/span>/is',
                 $value,
                 $matches
             );

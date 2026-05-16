@@ -1,0 +1,283 @@
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: url("/assets/img/ambria/fond.png") no-repeat fixed;
+    background-size: 100% 100%;
+    margin-bottom: 100px;
+}
+
+#banniere {
+    width: 100%;
+
+    img {
+        width: 100%;
+    }
+}
+
+aside,
+.adventure-shell {
+    background: rgba(65, 40, 15, 0.8);
+}
+
+a {
+    color: red;
+    font-weight: bold;
+    text-decoration: none;
+
+    &:hover {
+        color: orange;
+    }
+}
+
+input[type="submit"] {
+    border: 2px solid black;
+
+    &:hover {
+        background: rgb(220, 120, 0);
+    }
+}
+
+.card-choice {
+    cursor: pointer !important;
+}
+
+button.noway {
+    background: grey;
+    color: black;
+    pointer-events: none;
+
+    &:hover {
+        background: grey;
+        color: black;
+    }
+}
+
+.current input[type="submit"] {
+    background: orange;
+
+    &:hover {
+        background: rgb(220, 120, 0);
+    }
+
+    .noway {
+        width: 100%;
+        max-width: 300px;
+        padding: 10px;
+        background: white;
+        border: 2px solid black;
+        border-radius: 10px;
+        cursor: pointer;
+        text-transform: uppercase;
+
+        &:hover {
+            background: rgb(220, 120, 0);
+        }
+    }
+}
+
+#controls button {
+    width: 50px;
+    padding: 10px;
+    background: white;
+    border: 2px solid black;
+    border-radius: 10px;
+    cursor: pointer;
+    text-transform: uppercase;
+    position: relative;
+
+    &:hover {
+        background: rgb(220, 120, 0);
+    }
+}
+
+h3 {
+    text-align: center;
+    color: black;
+    font-weight: bold;
+    font-size: 14px;
+    margin: auto;
+    padding: 12px 0 12px 0;
+}
+
+#tavlogan,
+.tavlogan {
+    position: absolute;
+    left: 13.58%;
+    top: 59.6%;
+    width: 7.9%;
+    height: 23.49%;
+}
+
+#cadranscap {
+    width: 229px;
+    height: 210px;
+    position: relative;
+    margin: auto;
+    margin-bottom: 20px;
+}
+
+.fuite-directions {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    max-width: 520px;
+    margin: 24px auto;
+
+    form {
+        margin: 0;
+    }
+
+    button {
+        width: 100%;
+        padding: 10px;
+        background: white;
+        border: 2px solid black;
+        border-radius: 10px;
+        cursor: pointer;
+        text-transform: uppercase;
+
+        &:hover {
+            background: rgb(220, 120, 0);
+        }
+    }
+
+    button.noway {
+        background: grey;
+        color: black;
+        cursor: default;
+
+        &:hover {
+            background: grey;
+            color: black;
+        }
+    }
+}
+
+.fuite-direction {
+    width: min(220px, 100%);
+}
+
+.fuite-direction-row {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    width: 100%;
+}
+
+.fuite-actions {
+    margin: 24px auto;
+    text-align: center;
+}
+
+.ambria-confidence-debug {
+    width: 80%;
+    margin: 12px auto 0;
+    padding: 8px;
+    background: rgba(0, 0, 0, 0.35);
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    color: white;
+    font-size: 12px;
+    line-height: 1.4;
+    text-align: left;
+
+    span {
+        display: block;
+    }
+}
+
+.ambria-nav {
+    width: 90%;
+    margin: 40px auto;
+    text-align: center;
+    position: relative;
+
+    &:before,
+    &:after {
+        content: "";
+        display: block;
+        position: absolute;
+        left: 0;
+        width: 100%;
+        height: 30px;
+    }
+
+    &:before {
+        bottom: 100%;
+        background: url("/assets/img/ambria/bordtop.png");
+        background-size: 100% 100%;
+    }
+
+    &:after {
+        top: 100%;
+        background: url("/assets/img/ambria/bordbottom.png");
+        background-size: 100% 100%;
+    }
+
+    img {
+        width: 100%;
+    }
+
+    h1 {
+        margin: 0;
+        padding: 5px;
+        color: black;
+        font-size: 16px;
+        font-weight: bold;
+        text-decoration: underline;
+        text-transform: uppercase;
+    }
+
+    h1,
+    h2,
+    ul {
+        background: url("/assets/img/ambria/nav.png");
+        background-size: 100% 100%;
+    }
+
+    h2 a,
+    ul a {
+        color: brown;
+        font-weight: bold;
+
+        &:hover {
+            color: black;
+        }
+    }
+
+    h2 {
+        margin: 0;
+        padding: 15px 0 2px;
+        font-size: 1em;
+    }
+
+    ul {
+        margin: 0;
+        padding: 0 10px;
+        list-style: none;
+    }
+}
+
+.noeuds-draggers {
+    text-align: center;
+}
+
+#noeuds-check {
+    display: block;
+    width: 100%;
+    max-width: 300px;
+    margin: 20px auto;
+    padding: 10px;
+    background: white;
+    border: 2px solid black;
+    border-radius: 10px;
+    cursor: pointer;
+    text-transform: uppercase;
+
+    &:hover {
+        background: rgb(220, 120, 0);
+    }
+}

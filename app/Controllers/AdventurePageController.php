@@ -25,7 +25,6 @@ class AdventurePageController extends AdventureController
         $resolvedScene = $scene ?? ($config['entry_scene'] ?? 'index');
 
         if ($scene !== null) {
-            $this->restoreAutosaveIfSessionMissing($slug, $state, '');
             $previousScene = $state->scene();
             if (is_string($previousScene) && $previousScene !== '' && $previousScene !== $resolvedScene) {
                 $state->put('_previous_scene', $previousScene);
@@ -48,7 +47,6 @@ class AdventurePageController extends AdventureController
         $flow = (new AdventureFlowFactory())->make($config);
 
         $scene ??= $config['entry_scene'] ?? 'index';
-        $this->restoreAutosaveIfSessionMissing($slug, $state, $this->submittedAction());
 
         $this->applyAdventureResult(
             $slug,
@@ -126,7 +124,6 @@ class AdventurePageController extends AdventureController
         $config = $this->adventureConfig($slug);
         $state = $this->adventureState($slug);
         $flow = (new AdventureFlowFactory())->make($config);
-        $this->restoreAutosaveIfSessionMissing($slug, $state, $this->submittedAction());
 
         $this->applyAdventureResult(
             $slug,
