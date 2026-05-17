@@ -23,12 +23,12 @@ class PyramideSceneHandler extends AmbriaSceneHandler
             'advance_to_treasure' => $this->handleTreasureAdvance($state),
             'choose_mutiny' => new AdventureActionResult(
                 nextScene: 'logan_pyramide',
-                stateChanges: ['logan_pyramide_variant' => 'mutiny_accept', 'mdp15' => true],
+                stateChanges: ['logan_pyramide_variant' => 'mutiny_accept', 'logan_mutiny_choice' => 'accept'],
                 achievements: [['scenario' => 'ambria', 'name' => 'mutinerie']],
             ),
             'refuse_mutiny' => new AdventureActionResult(
                 nextScene: 'logan_pyramide',
-                stateChanges: ['logan_pyramide_variant' => 'mutiny_refuse', 'mdp16' => true],
+                stateChanges: ['logan_pyramide_variant' => 'mutiny_refuse', 'logan_mutiny_choice' => 'refuse'],
             ),
             'start_levier' => new AdventureActionResult(
                 nextScene: 'logan_pyramide',
@@ -88,23 +88,23 @@ class PyramideSceneHandler extends AmbriaSceneHandler
 
     private function handleLevierComplete(AdventureState $state): AdventureActionResult
     {
-        if ((bool) $state->get('mdp12', false)) {
+        if ((string) $state->get('logan_pyramide_cage_path', '') === 'mixed') {
             return new AdventureActionResult(
                 nextScene: 'logan_pyramide',
-                stateChanges: ['logan_pyramide_variant' => 'cage_release_mixed', 'mdp18' => true],
+                stateChanges: ['logan_pyramide_variant' => 'cage_release_mixed', 'logan_release_path' => 'mixed'],
             );
         }
 
-        if ((bool) $state->get('mdp14', false)) {
+        if ((string) $state->get('logan_pyramide_cage_path', '') === 'trust') {
             return new AdventureActionResult(
                 nextScene: 'logan_pyramide',
-                stateChanges: ['logan_pyramide_variant' => 'cage_release_trust', 'mdp19' => true],
+                stateChanges: ['logan_pyramide_variant' => 'cage_release_trust', 'logan_release_path' => 'trust'],
             );
         }
 
         return new AdventureActionResult(
             nextScene: 'logan_pyramide',
-            stateChanges: ['logan_pyramide_variant' => 'cage_release_mutiny', 'mdp17' => true],
+            stateChanges: ['logan_pyramide_variant' => 'cage_release_mutiny', 'logan_release_path' => 'mutiny'],
         );
     }
 
@@ -116,13 +116,13 @@ class PyramideSceneHandler extends AmbriaSceneHandler
         $stateChanges = [];
 
         if ($loganConfident && $sullivanConfident) {
-            $stateChanges = ['logan_pyramide_variant' => 'cage_levier_trust', 'mdp14' => true];
+            $stateChanges = ['logan_pyramide_variant' => 'cage_levier_trust', 'logan_pyramide_cage_path' => 'trust'];
         } elseif ($loganConfident) {
-            $stateChanges = ['logan_pyramide_variant' => 'mutiny_choice', 'mdp13' => true];
+            $stateChanges = ['logan_pyramide_variant' => 'mutiny_choice', 'logan_pyramide_cage_path' => 'mutiny'];
         } elseif ($sullivanConfident) {
-            $stateChanges = ['logan_pyramide_variant' => 'cage_levier_mixed', 'mdp12' => true];
+            $stateChanges = ['logan_pyramide_variant' => 'cage_levier_mixed', 'logan_pyramide_cage_path' => 'mixed'];
         } else {
-            $stateChanges = ['logan_pyramide_variant' => 'bad_end_pending', 'mdp11' => true];
+            $stateChanges = ['logan_pyramide_variant' => 'bad_end_pending', 'logan_pyramide_cage_path' => 'bad'];
         }
 
         return new AdventureActionResult(nextScene: 'logan_pyramide', stateChanges: $stateChanges);

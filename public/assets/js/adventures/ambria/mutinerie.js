@@ -68,7 +68,7 @@
   };
 
   const render = () => {
-    root.classList.add("default");
+    root.classList.add("mutinerie-board");
     map.style.width = `${level.map[0].length * tileDim}px`;
     map.style.height = `${level.map.length * tileDim}px`;
 

@@ -37,4 +37,8 @@ return [
         'image' => 'assets/img/ambria/journalsullivan.png',
         'alt' => 'Le journal de bord de Sullivan.',
     ],
+    'tablette' => [
+        'image' => 'assets/img/ambria/porte/tablette.png',
+        'alt' => "Une tablette en or gravee d'un dialecte ambrien.",
+    ],
 ];

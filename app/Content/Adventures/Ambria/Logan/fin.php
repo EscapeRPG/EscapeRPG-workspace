@@ -86,10 +86,6 @@ return [
                 Content::comments(),
             ],
         ],
-        'mutiny' => [
-            'blocks' => [Content::narrative('ambria/logan/fin#mutiny')],
-            'actions' => [Content::action('Fin.', 'finish_ending')],
-        ],
         'completed_mutiny' => [
             'blocks' => [
                 $stars(2),

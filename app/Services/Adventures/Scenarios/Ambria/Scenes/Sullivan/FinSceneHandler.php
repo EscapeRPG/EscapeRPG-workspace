@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Services\Adventures\Scenarios\Ambria\Scenes\Logan;
+namespace App\Services\Adventures\Scenarios\Ambria\Scenes\Sullivan;
 
 use App\Core\Request;
 use App\Services\Adventures\Base\CommentableFinalSceneHandler;
@@ -10,7 +10,7 @@ use App\Services\Adventures\Scenarios\Ambria\Scenes\AmbriaSceneHandler;
 
 class FinSceneHandler extends CommentableFinalSceneHandler
 {
-    private const string SCENE = 'logan_fin';
+    private const string SCENE = 'sullivan_fin';
     private const string COMMENT_SCENARIO = "Le Trésor d'Ambria";
 
     private AmbriaSceneHandler $delegate;
@@ -62,10 +62,10 @@ class FinSceneHandler extends CommentableFinalSceneHandler
     {
         $ending = $this->normalizeEnding((string) $state->get(self::SCENE . '_variant', 'default'));
         $variant = match ($ending) {
-            'best' => 'completed_best',
-            'loyal' => 'completed_loyal',
-            'mutiny' => 'completed_mutiny',
             'bad' => 'completed_bad',
+            'abandoned' => 'completed_abandoned',
+            'loyal' => 'completed_loyal',
+            'best' => 'completed_best',
             default => 'completed_good',
         };
 
@@ -83,10 +83,10 @@ class FinSceneHandler extends CommentableFinalSceneHandler
     private function normalizeEnding(string $ending): string
     {
         return match ($ending) {
-            'best', 'completed_best' => 'best',
-            'loyal', 'loyal_ship', 'completed_loyal' => 'loyal',
-            'mutiny', 'completed_mutiny' => 'mutiny',
             'bad', 'completed_bad' => 'bad',
+            'abandoned', 'completed_abandoned' => 'abandoned',
+            'loyal', 'loyal_ship', 'completed_loyal' => 'loyal',
+            'best', 'completed_best' => 'best',
             default => 'good',
         };
     }
@@ -99,22 +99,26 @@ class FinSceneHandler extends CommentableFinalSceneHandler
         $achievements = [
             ['scenario' => 'general', 'name' => 'fin'],
             ['scenario' => 'ambria', 'name' => 'fin'],
-            ['scenario' => 'ambria', 'name' => 'fin1logan'],
-            ['scenario' => 'ambria', 'name' => 'fin2logan'],
+            ['scenario' => 'ambria', 'name' => 'fin1sullivan'],
         ];
 
-        if ($ending !== 'mutiny' && $ending !== 'bad') {
-            $achievements[] = ['scenario' => 'ambria', 'name' => 'fin3logan'];
+        if ($ending !== 'bad') {
+            $achievements[] = ['scenario' => 'ambria', 'name' => 'fin2sullivan'];
+        }
+
+        if ($ending === 'loyal' || $ending === 'good' || $ending === 'best') {
+            $achievements[] = ['scenario' => 'ambria', 'name' => 'fidele'];
+            $achievements[] = ['scenario' => 'ambria', 'name' => 'fin3sullivan'];
         }
 
         if ($ending === 'good' || $ending === 'best') {
-            $achievements[] = ['scenario' => 'ambria', 'name' => 'fin4logan'];
+            $achievements[] = ['scenario' => 'ambria', 'name' => 'fin4sullivan'];
         }
 
         if ($ending === 'best') {
             $achievements[] = ['scenario' => 'general', 'name' => 'meilleurefin'];
             $achievements[] = ['scenario' => 'general', 'name' => 'legende'];
-            $achievements[] = ['scenario' => 'ambria', 'name' => 'fin5logan'];
+            $achievements[] = ['scenario' => 'ambria', 'name' => 'fin5sullivan'];
         }
 
         return $achievements;

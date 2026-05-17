@@ -1,62 +1,80 @@
-#golem1gemme1,
-#golem1gemme2,
-#golem1gemme3 {
+.golem1gemme1,
+.golem1gemme2,
+.golem1gemme3 {
   position: absolute;
   width: 5.38%;
   height: 8.97%;
 }
 
-#golem1gemme1 {
+.golem1gemme1 {
   left: 49.42%;
   top: 28.93%;
 }
 
-#golem1gemme2 {
+.golem1gemme2 {
   left: 45.65%;
   top: 36.9%;
 }
 
-#golem1gemme3 {
+.golem1gemme3 {
   left: 57.96%;
   top: 36.4%;
 }
 
-#golem3gemme1,
-#golem3gemme2,
-#golem3gemme3,
-#golem3gemme4,
-#golem3gemme5 {
+.golem3gemme1,
+.golem3gemme2,
+.golem3gemme3,
+.golem3gemme4,
+.golem3gemme5 {
   position: absolute;
   width: 3.84%;
   height: 6.4%;
 }
 
-#golem3gemme1 {
+.golem3gemme1 {
   left: 55.7%;
   top: 16.8%;
 }
 
-#golem3gemme2 {
+.golem3gemme2 {
   left: 57.9%;
   top: 17%;
 }
 
-#golem3gemme3 {
+.golem3gemme3 {
   left: 60.4%;
   top: 17.2%;
 }
 
-#golem3gemme4 {
+.golem3gemme4 {
   left: 63.1%;
   top: 17.5%;
 }
 
-#golem3gemme5 {
+.golem3gemme5 {
   left: 65.15%;
   top: 17.75%;
 }
 
-#panneau {
+.golem1gemme1,
+.golem1gemme2,
+.golem1gemme3,
+.golem3gemme1,
+.golem3gemme2,
+.golem3gemme3,
+.golem3gemme4,
+.golem3gemme5 {
+  border: 0;
+  background: transparent;
+  padding: 0;
+  cursor: pointer;
+
+  img {
+    width: 100%;
+  }
+}
+
+.golem-sequence__panel-frame {
   width: 90%;
   background: rgba(0, 0, 0, 0.3);
   margin: auto;

@@ -120,6 +120,9 @@ return [
                 Content::partial('adventures/ambria/barre_bateau'),
             ],
             'actions' => [],
+            'scripts' => [
+                'assets/js/adventures/ambria/barreBateau.js',
+            ],
             'hint' => Content::hint('ambria/sullivan/hints#recifs'),
         ],
         'recif_1_success' => [
@@ -129,6 +132,9 @@ return [
                 Content::partial('adventures/ambria/barre_bateau'),
             ],
             'actions' => [],
+            'scripts' => [
+                'assets/js/adventures/ambria/barreBateau.js',
+            ],
             'hint' => Content::hint('ambria/sullivan/hints#recifs'),
         ],
         'recif_1_failure' => [
@@ -138,6 +144,9 @@ return [
                 Content::partial('adventures/ambria/barre_bateau'),
             ],
             'actions' => [],
+            'scripts' => [
+                'assets/js/adventures/ambria/barreBateau.js',
+            ],
             'hint' => Content::hint('ambria/sullivan/hints#recifs'),
         ],
         'recif_2_success' => [
@@ -147,6 +156,9 @@ return [
                 Content::partial('adventures/ambria/barre_bateau'),
             ],
             'actions' => [],
+            'scripts' => [
+                'assets/js/adventures/ambria/barreBateau.js',
+            ],
             'hint' => Content::hint('ambria/sullivan/hints#recifs'),
         ],
         'recif_2_failure' => [
@@ -156,6 +168,9 @@ return [
                 Content::partial('adventures/ambria/barre_bateau'),
             ],
             'actions' => [],
+            'scripts' => [
+                'assets/js/adventures/ambria/barreBateau.js',
+            ],
             'hint' => Content::hint('ambria/sullivan/hints#recifs'),
         ],
         'recif_3_success' => [
@@ -165,6 +180,9 @@ return [
                 Content::partial('adventures/ambria/barre_bateau'),
             ],
             'actions' => [],
+            'scripts' => [
+                'assets/js/adventures/ambria/barreBateau.js',
+            ],
             'hint' => Content::hint('ambria/sullivan/hints#recifs'),
         ],
         'recif_3_failure' => [
@@ -174,6 +192,9 @@ return [
                 Content::partial('adventures/ambria/barre_bateau'),
             ],
             'actions' => [],
+            'scripts' => [
+                'assets/js/adventures/ambria/barreBateau.js',
+            ],
             'hint' => Content::hint('ambria/sullivan/hints#recifs'),
         ],
         'recif_4_success' => [

@@ -1,119 +1,92 @@
 .boutonhaut {
-  background-image: url("/assets/img/ambria/cap/boutoncaphaut.png");
+  background-image: url("/assets/img/ambria/cap/boutoncaphaut.png") !important;
   width: 17px;
   height: 19px;
 }
 
 .boutonbas {
-  background-image: url("/assets/img/ambria/cap/boutoncapbas.png");
+  background-image: url("/assets/img/ambria/cap/boutoncapbas.png") !important;
   width: 17px;
   height: 19px;
 }
 
 .boutonhauton {
-  background-image: url("/assets/img/ambria/cap/boutoncaphauton.png");
+  background-image: url("/assets/img/ambria/cap/boutoncaphauton.png") !important;
   width: 17px;
   height: 19px;
 }
 
 .boutonbason {
-  background-image: url("/assets/img/ambria/cap/boutoncapbason.png");
+  background-image: url("/assets/img/ambria/cap/boutoncapbason.png") !important;
   width: 17px;
   height: 19px;
 }
 
-#bouton1haut {
+.cap-button {
   position: absolute;
+  width: 17px;
+  height: 19px;
+}
+
+.cap-button-1-haut {
   top: 33px;
   left: 19px;
-  width: 17px;
-  height: 19px;
 }
 
-#bouton2haut {
-  position: absolute;
+.cap-button-2-haut {
   top: 33px;
   left: 77px;
-  width: 17px;
-  height: 19px;
 }
 
-#bouton3haut {
-  position: absolute;
+.cap-button-3-haut {
   top: 33px;
   left: 135px;
-  width: 17px;
-  height: 19px;
 }
 
-#bouton4haut {
-  position: absolute;
+.cap-button-4-haut {
   top: 33px;
   right: 19px;
-  width: 17px;
-  height: 19px;
 }
 
-#bouton1bas {
-  position: absolute;
+.cap-button-1-bas {
   bottom: 31px;
   left: 19px;
-  width: 17px;
-  height: 19px;
 }
 
-#bouton2bas {
-  position: absolute;
+.cap-button-2-bas {
   bottom: 31px;
   left: 77px;
-  width: 17px;
-  height: 19px;
 }
 
-#bouton3bas {
-  position: absolute;
+.cap-button-3-bas {
   bottom: 31px;
   left: 135px;
-  width: 17px;
-  height: 19px;
 }
 
-#bouton4bas {
-  position: absolute;
+.cap-button-4-bas {
   bottom: 31px;
   right: 19px;
-  width: 17px;
-  height: 19px;
 }
 
-#coordonnee1 {
+.cap-coordinate {
   position: absolute;
   top: 60px;
+  width: 47px;
+  height: 89px;
+}
+
+.cap-coordinate-1 {
   left: 4px;
-  width: 47px;
-  height: 89px;
 }
 
-#coordonnee2 {
-  position: absolute;
-  top: 60px;
+.cap-coordinate-2 {
   left: 62px;
-  width: 47px;
-  height: 89px;
 }
 
-#coordonnee3 {
-  position: absolute;
-  top: 60px;
+.cap-coordinate-3 {
   left: 120px;
-  width: 47px;
-  height: 89px;
 }
 
-#coordonnee4 {
-  position: absolute;
-  top: 60px;
+.cap-coordinate-4 {
   right: 4px;
-  width: 47px;
-  height: 89px;
 }

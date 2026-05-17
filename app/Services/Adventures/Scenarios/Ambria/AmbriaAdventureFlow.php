@@ -24,12 +24,17 @@ use App\Services\Adventures\Scenarios\Ambria\Scenes\Logan\TempeteSceneHandler;
 use App\Services\Adventures\Scenarios\Ambria\Scenes\Logan\TaverneSceneHandler;
 use App\Services\Adventures\Scenarios\Ambria\Scenes\Sullivan\BibliothequeSceneHandler as SullivanBibliothequeSceneHandler;
 use App\Services\Adventures\Scenarios\Ambria\Scenes\Sullivan\BordelSceneHandler as SullivanBordelSceneHandler;
+use App\Services\Adventures\Scenarios\Ambria\Scenes\Sullivan\CiteSceneHandler as SullivanCiteSceneHandler;
 use App\Services\Adventures\Scenarios\Ambria\Scenes\Sullivan\DocksSceneHandler as SullivanDocksSceneHandler;
 use App\Services\Adventures\Scenarios\Ambria\Scenes\Sullivan\EmbarquementSceneHandler as SullivanEmbarquementSceneHandler;
 use App\Services\Adventures\Scenarios\Ambria\Scenes\Sullivan\EmbrouillesSceneHandler as SullivanEmbrouillesSceneHandler;
+use App\Services\Adventures\Scenarios\Ambria\Scenes\Sullivan\FinSceneHandler as SullivanFinSceneHandler;
+use App\Services\Adventures\Scenarios\Ambria\Scenes\Sullivan\GardienSceneHandler as SullivanGardienSceneHandler;
 use App\Services\Adventures\Scenarios\Ambria\Scenes\Sullivan\GrottesSceneHandler as SullivanGrottesSceneHandler;
 use App\Services\Adventures\Scenarios\Ambria\Scenes\Sullivan\MarcheSceneHandler as SullivanMarcheSceneHandler;
 use App\Services\Adventures\Scenarios\Ambria\Scenes\Sullivan\PlageSceneHandler as SullivanPlageSceneHandler;
+use App\Services\Adventures\Scenarios\Ambria\Scenes\Sullivan\PortesCiteSceneHandler as SullivanPortesCiteSceneHandler;
+use App\Services\Adventures\Scenarios\Ambria\Scenes\Sullivan\PyramideSceneHandler as SullivanPyramideSceneHandler;
 use App\Services\Adventures\Scenarios\Ambria\Scenes\Sullivan\ShipSceneHandler as SullivanShipSceneHandler;
 use App\Services\Adventures\Scenarios\Ambria\Scenes\Sullivan\TaverneSceneHandler as SullivanTaverneSceneHandler;
 use App\Services\Adventures\Scenarios\Ambria\Scenes\Sullivan\TempeteSceneHandler as SullivanTempeteSceneHandler;
@@ -151,6 +156,50 @@ class AmbriaAdventureFlow extends SceneBasedAdventureFlow
             if ($scene === 'sullivan_grottestorchesallumees' || $scene === 'sullivan_grottestorcheseteintes') {
                 $this->handlers[$scene] = new SullivanGrottesSceneHandler(
                     $scene,
+                    (string) ($definition['default'] ?? 'default'),
+                    (array) ($definition['actions'] ?? []),
+                );
+                continue;
+            }
+
+            if ($scene === 'sullivan_portescite') {
+                $this->handlers[$scene] = new SullivanPortesCiteSceneHandler(
+                    $scene,
+                    (string) ($definition['default'] ?? 'default'),
+                    (array) ($definition['actions'] ?? []),
+                );
+                continue;
+            }
+
+            if ($scene === 'sullivan_cite') {
+                $this->handlers[$scene] = new SullivanCiteSceneHandler(
+                    $scene,
+                    (string) ($definition['default'] ?? 'default'),
+                    (array) ($definition['actions'] ?? []),
+                );
+                continue;
+            }
+
+            if ($scene === 'sullivan_gardien') {
+                $this->handlers[$scene] = new SullivanGardienSceneHandler(
+                    $scene,
+                    (string) ($definition['default'] ?? 'default'),
+                    (array) ($definition['actions'] ?? []),
+                );
+                continue;
+            }
+
+            if ($scene === 'sullivan_pyramide') {
+                $this->handlers[$scene] = new SullivanPyramideSceneHandler(
+                    $scene,
+                    (string) ($definition['default'] ?? 'default'),
+                    (array) ($definition['actions'] ?? []),
+                );
+                continue;
+            }
+
+            if ($scene === 'sullivan_fin') {
+                $this->handlers[$scene] = new SullivanFinSceneHandler(
                     (string) ($definition['default'] ?? 'default'),
                     (array) ($definition['actions'] ?? []),
                 );

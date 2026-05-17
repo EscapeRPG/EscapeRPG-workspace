@@ -39,11 +39,11 @@ const submitKnots = (success) => {
 
 document.getElementById("noeuds-check")?.addEventListener("click", async () => {
   if (isSolved()) {
-    await showResult("Le type étudie vos noeuds et se redresse vers vous, un large sourire aux lèvres.");
+    await showResult("Le type étudie vos nœuds et se redresse vers vous, un large sourire aux lèvres.");
     submitKnots(true);
     return;
   }
 
-  await showResult("Le type étudie vos noeuds et se redresse vers vous, les sourcils froncés.");
+  await showResult("Le type étudie vos nœuds et se redresse vers vous, les sourcils froncés.");
   submitKnots(false);
 });

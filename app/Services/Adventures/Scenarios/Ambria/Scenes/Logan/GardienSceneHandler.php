@@ -59,10 +59,8 @@ class GardienSceneHandler extends AmbriaSceneHandler
             stateChanges: [
                 'logan_gardien_variant' => $success ? 'climb_success' : 'climb_failure',
                 'combat3' => true,
-                'mdp10' => true,
                 'loganconfiance' => $success ? $confidence + 20 : $confidence - 20,
                 'loganblesse' => $success ? (bool) $state->get('loganblesse', false) : true,
-                'notes' => $this->mergeNotes($state, ['MAINTENANT']),
             ],
         );
     }

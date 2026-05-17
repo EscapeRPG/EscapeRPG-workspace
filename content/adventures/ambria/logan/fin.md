@@ -6,7 +6,7 @@ La fin de cette branche sera migrée dans une prochaine passe.
 
 Un nouveau cri d'enthousiasme résonne dans la pièce et tout le monde ouvre en grand les sacs de toile que vous aviez amenés en débarquant.
 
-Fourrant les pièces, lingots et autres pierres précieuses, vous les remplissez rapidement. Il reste encore beaucoup de trésors dans la salle mais vous ne pouvez rien emporter de plus pour le moment. Peut-être reviendrez-vous par la suite pour empocher le reste.
+Fourrant les pièces, lingots et autres pierres précieuses, vous les remplissez rapidement. Il reste encore beaucoup de trésors dans la salle, mais vous ne pouvez rien emporter de plus pour le moment. Peut-être reviendrez-vous par la suite pour empocher le reste.
 
 Pour le moment, hissant les sacs sur les épaules, toute l'équipe reprend le chemin pour sortir de la pyramide, puis de la cité.
 
@@ -140,13 +140,9 @@ Vous avez réussi à vous faire une place auprès de l'équipage, cependant le c
 
 Veillez à bien communiquer vos informations avec votre partenaire pour être sûrs de ne pas faire d'erreur lors de la résolution des énigmes.
 
-## mutiny
-
-La suite de votre histoire s'écrit loin de Sullivan et de l'équipage que vous avez trahi, avec assez d'or pour acheter un nouveau départ.
-
 ## bad_intro
 
-Un sourire mauvais s'affiche sur le visage des pirates. Se jetant quelques coups d'oeil pour savoir qui prendra la parole, ils mettent quelques secondes avant que Jake ne se décide et annonce, s'approchant de la cage dans laquelle vous êtes enfermés avec le capitaine :
+Un sourire mauvais s'affiche sur le visage des pirates. Se jetant quelques coups d'œil pour savoir qui prendra la parole, ils mettent quelques secondes avant que Jake ne se décide et annonce, s'approchant de la cage dans laquelle vous êtes enfermés avec le capitaine :
 
 ## bad_jake_plan
 

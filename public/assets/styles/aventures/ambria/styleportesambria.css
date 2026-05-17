@@ -1,5 +1,4 @@
-#sullivanporte,
-#loganporte {
+.ambria-porte {
   max-width: 800px;
   background: none;
   position: relative;
@@ -34,9 +33,7 @@
   left: 68.5%;
 }
 
-#drag1,
-#drag2,
-#drag3 {
+.porte-dragger-slot {
   display: inline-block;
   vertical-align: middle;
   transition: all 200ms linear;
@@ -47,9 +44,8 @@
   margin: 0;
 }
 
-#drag1 img,
-#drag2 img,
-#drag3 img {
+.porte-dragger-slot img,
+.dropperporte img {
   width: 100%;
 }
 
@@ -58,37 +54,37 @@
   height: 16.5%;
 }
 
-#dropporte1 {
+.dropporte-1 {
   position: absolute;
   top: 33%;
   left: 20.2%;
 }
 
-#dropporte2 {
+.dropporte-2 {
   position: absolute;
   top: 10.5%;
   left: 42.2%;
 }
 
-#dropporte3 {
+.dropporte-3 {
   position: absolute;
   top: 33%;
   left: 63.9%;
 }
 
-#dropporte4 {
+.dropporte-4 {
   position: absolute;
   top: 76.4%;
   left: 20.2%;
 }
 
-#dropporte5 {
+.dropporte-5 {
   position: absolute;
   top: 54%;
   left: 42.2%;
 }
 
-#dropporte6 {
+.dropporte-6 {
   position: absolute;
   top: 76.4%;
   left: 63.9%;

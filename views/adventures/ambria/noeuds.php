@@ -1,7 +1,7 @@
-<div id="noeuds">
-    <div class="droppernoeud" id="dropnoeud1"></div>
-    <div class="droppernoeud" id="dropnoeud2"></div>
-    <div class="droppernoeud" id="dropnoeud3"></div>
+<div class="noeuds-board">
+    <div class="droppernoeud dropnoeud-1" id="dropnoeud1"></div>
+    <div class="droppernoeud dropnoeud-2" id="dropnoeud2"></div>
+    <div class="droppernoeud dropnoeud-3" id="dropnoeud3"></div>
 </div>
 
 <div class="noeuds-draggers">
@@ -22,4 +22,4 @@
     <input type="hidden" name="action" value="">
 </form>
 
-<button type="button" id="noeuds-check">Valider.</button>
+<button type="button" id="noeuds-check" class="action">Valider.</button>

@@ -25,7 +25,7 @@
         <?php endforeach; ?>
     </div>
 
-    <div id="panneau" class="golem-sequence__panel" data-golem-panel></div>
+    <div class="golem-sequence__panel golem-sequence__panel-frame" data-golem-panel></div>
 
     <form method="post" data-golem-form>
         <input type="hidden" name="action" value="submit_golem_path">

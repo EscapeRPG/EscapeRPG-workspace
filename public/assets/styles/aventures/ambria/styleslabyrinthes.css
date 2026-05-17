@@ -2,18 +2,18 @@
   margin: auto;
 }
 
-#map-and-controls {
+.game-layout {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-#controls {
+.game-controls {
   margin-left: 10px;
   text-align: center;
 }
 
-#tileshaubans div {
+.haubans-tiles div {
   border: none;
 }
 
@@ -86,13 +86,13 @@
   z-index: 2;
 }
 
-.levier #tiles div {
+.levier .tiles-layer div {
   border: none;
 }
 
 .game-map {
   position: relative;
-  background-image: url("/assets/img/ambria/bateau.png");
+  background-image: url("/assets/img/ambria/bateau.png") !important;
   background-repeat: no-repeat;
 }
 
@@ -101,11 +101,11 @@ div.layer div {
   position: absolute;
 }
 
-#tiles div {
+.tiles-layer div {
   border: none;
 }
 
-.default {
+.mutinerie-board {
   .floor {
     background: none;
   }
@@ -119,95 +119,73 @@ div.layer div {
   }
 }
 
-.player,
-.goal,
-.tresor,
-.garde1,
-.garde2 {
+.mutinerie-board .player,
+.mutinerie-board .goal,
+.mutinerie-board .tresor,
+.mutinerie-board .garde1,
+.mutinerie-board .garde2 {
   transform-origin: center;
   transform: scale(0.7);
 }
 
-.goal {
+.mutinerie-board .goal {
   background: none;
   border: none;
 }
 
-.tresor {
+.mutinerie-board .tresor {
   background: none;
   border: none;
 }
 
-.hide {
+.mutinerie-board .hide {
   opacity: 0;
 }
 
-.garde1 {
+.mutinerie-board .garde1 {
   background: none;
   border: none;
 }
 
-.garde2 {
+.mutinerie-board .garde2 {
   background: none;
   border: none;
 }
 
-.player {
-  background-image: url("/assets/img/ambria/loganhaubans.png");
+.mutinerie-board .player {
+  background-image: url("/assets/img/ambria/loganhaubans.png") !important;
   background-size: 100% 100%;
   border: 1px solid black;
   transition: left 0.5s linear, top 0.5s linear;
   z-index: 2;
 }
 
-#tresorimg {
+.mutinerie-tresor {
   position: absolute;
   bottom: 0;
   right: 80px;
 }
 
-#crack1 {
+.mutinerie-crack-1 {
   position: absolute;
   top: 40px;
   left: 480px;
 }
 
-#crack2 {
+.mutinerie-crack-2 {
   position: absolute;
   bottom: 0;
   right: 120px;
 }
 
-#crack3 {
+.mutinerie-crack-3 {
   position: absolute;
   top: 80px;
   right: 40px;
 }
 
 .cracking {
-  background-image: url("/assets/img/ambria/crack.png");
+  background-image: url("/assets/img/ambria/crack.png") !important;
   z-index: 1;
 }
 
-#leviersolo1,
-#leviersolo2,
-#leviersolo3 {
-  position: absolute;
-  width: 7.98%;
-  height: 13.3%;
-}
-
-#leviersolo1 {
-  left: 67.54%;
-  top: 51.07%;
-}
-
-#leviersolo2 {
-  left: 76.74%;
-  top: 49.73%;
-}
-
-#leviersolo3 {
-  left: 85%;
-  top: 49.23%;
-}

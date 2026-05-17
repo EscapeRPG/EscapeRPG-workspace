@@ -219,3 +219,85 @@ Logan aura peut-être accès à la seconde partie ?
 ## mousse_answer
 
 Discutez avec l'autre joueur pour constituer l'alphabet qui vous permettra de traduire le message sur les portes de la cité.
+ 
+## portescite_1
+
+Il existe forcément un endroit sur cette île où vous pourriez trouver un traducteur pour ce dialecte.
+
+## portescite_2
+
+Vous êtes certain d'avoir remarqué une partie des symboles lorsque vous avez traversé l'antichambre avec la mousse phosphorescente.
+
+## portescite_3
+
+Revenez dans les grottes et essayez de trouver le moyen d'observer correctement la mousse.
+
+## portescite_answer
+
+Une fois le traducteur obtenu, et avec l'aide de Logan, le message indique :
+
+"L'oiseau vole au plus haut. Le serpent se repose à l'ombre. Le dragon veille sur la cité."
+
+## gardien_gemme_1
+
+Avez-vous remarqué les motifs sur le corps du golem ?
+
+## gardien_gemme_2
+
+Essayez de suivre le chemin partant du motif en forme de triangle, il vous mènera jusqu'au point faible du monstre.
+
+## gardien_gemme_3
+
+Logan voit l'autre côté du colosse et vous aidera à suivre le chemin.
+
+## gardien_gemme_answer
+
+Cliquez sur la gemme bleue.
+
+## gardien_sequence_1
+
+Peut-être pouvez-vous trouver quelque chose autour de vous pour aider Logan à escalader le géant ?
+
+## gardien_sequence_2
+
+Quelles sont les particularités que Logan voit de son côté qui pourraient correspondre aux informations dont vous disposez ?
+
+## gardien_sequence_3
+
+Avez-vous remarqué la frise sur les colonnes ? Logan est en train de grimper, du bas vers le haut.
+
+## gardien_sequence_answer
+
+La bonne séquence de couleurs est rouge bleu jaune rouge jaune vert bleu vert.
+
+## gardien_final_1
+
+Il vous faut tirer sur l'une de ces gemmes, mais comment savoir laquelle ?
+
+## gardien_final_2
+
+Logan doit pouvoir vous aider.
+
+## gardien_final_3
+
+Dites-lui de bien observer son environnement, quelque chose doit faire écho à ce que vous voyez.
+
+## gardien_final_answer
+
+Tirez sur la quatrième pierre précieuse.
+
+## levier_1
+
+Vous avez moyen d'aider Logan en lui donnant les directions à prendre pour actionner son levier.
+
+## levier_2
+
+Observez bien autour de vous, quelque chose ne vous saute-t-il pas aux yeux ?
+
+## levier_3
+
+Regardez bien les motifs des fenêtres et essayez de rejoindre la case au milieu à droite en partant du bas tout en reconstituant les deux parties du labyrinthe.
+
+## levier_answer
+
+Indiquez à Logan d'aller une fois en haut, deux fois à gauche, deux fois en haut, une fois à droite, trois fois en haut, deux fois à droite, une fois en bas, deux fois à droite, deux fois en bas puis une fois à droite.

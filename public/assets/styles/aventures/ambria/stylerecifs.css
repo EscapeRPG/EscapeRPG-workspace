@@ -1,64 +1,38 @@
-#barre1 {
+.barre-zone {
   position: absolute;
+}
+
+.barre-zone-1 {
   left: 2.13%;
   top: 71.43%;
   width: 20.24%;
   height: 21.84%;
-  background: url('/assets/img/ambria/barre1.png');
-
-  &:hover {
-    background: url('/assets/img/ambria/barre1hover.png');
-  }
 }
 
-#barre2 {
-  position: absolute;
+.barre-zone-2 {
   left: 21.02%;
   top: 43.33%;
   width: 14.41%;
   height: 30.34%;
-  background: url('/assets/img/ambria/barre2.png');
-
-  &:hover {
-    background: url('/assets/img/ambria/barre2hover.png');
-  }
 }
 
-#barre3 {
-  position: absolute;
+.barre-zone-3 {
   left: 47.64%;
   top: 34.24%;
   width: 4.72%;
   height: 30.93%;
-  background: url('/assets/img/ambria/barre3.png');
-
-  &:hover {
-    background: url('/assets/img/ambria/barre3hover.png');
-  }
 }
 
-#barre4 {
-  position: absolute;
+.barre-zone-4 {
   left: 64.49%;
   top: 43.33%;
   width: 14.41%;
   height: 30.34%;
-  background: url('/assets/img/ambria/barre4.png');
-
-  &:hover {
-    background: url('/assets/img/ambria/barre4hover.png');
-  }
 }
 
-#barre5 {
-  position: absolute;
+.barre-zone-5 {
   left: 77.56%;
   top: 71.43%;
   width: 20.24%;
   height: 21.84%;
-  background: url('/assets/img/ambria/barre5.png');
-
-  &:hover {
-    background: url('/assets/img/ambria/barre5hover.png');
-  }
 }

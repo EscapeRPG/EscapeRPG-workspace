@@ -8,14 +8,6 @@ body {
     margin-bottom: 100px;
 }
 
-#banniere {
-    width: 100%;
-
-    img {
-        width: 100%;
-    }
-}
-
 aside,
 .adventure-shell {
     background: rgba(65, 40, 15, 0.8);
@@ -61,23 +53,9 @@ button.noway {
         background: rgb(220, 120, 0);
     }
 
-    .noway {
-        width: 100%;
-        max-width: 300px;
-        padding: 10px;
-        background: white;
-        border: 2px solid black;
-        border-radius: 10px;
-        cursor: pointer;
-        text-transform: uppercase;
-
-        &:hover {
-            background: rgb(220, 120, 0);
-        }
-    }
 }
 
-#controls button {
+.game-controls button {
     width: 50px;
     padding: 10px;
     background: white;
@@ -101,7 +79,6 @@ h3 {
     padding: 12px 0 12px 0;
 }
 
-#tavlogan,
 .tavlogan {
     position: absolute;
     left: 13.58%;
@@ -110,7 +87,7 @@ h3 {
     height: 23.49%;
 }
 
-#cadranscap {
+.cadrans-cap {
     width: 229px;
     height: 210px;
     position: relative;
@@ -263,21 +240,4 @@ h3 {
 
 .noeuds-draggers {
     text-align: center;
-}
-
-#noeuds-check {
-    display: block;
-    width: 100%;
-    max-width: 300px;
-    margin: 20px auto;
-    padding: 10px;
-    background: white;
-    border: 2px solid black;
-    border-radius: 10px;
-    cursor: pointer;
-    text-transform: uppercase;
-
-    &:hover {
-        background: rgb(220, 120, 0);
-    }
 }

@@ -21,7 +21,7 @@ class FuiteSceneHandler implements AdventureSceneHandler
 
     public function __construct()
     {
-        $this->map = require dirname(__DIR__, 6) . '/config/adventures/ambria/logan_fuite_map.php';
+        $this->map = require dirname(__DIR__, 7) . '/config/adventures/ambria/logan_fuite_map.php';
     }
 
     public function variant(AdventureState $state, Request $request, bool $isLandingPage = false): string

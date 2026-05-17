@@ -117,6 +117,24 @@ return [
         'default' => 'arrival',
         'actions' => [],
     ],
+    'sullivan_cite' => [
+        'default' => 'entry',
+        'actions' => [],
+    ],
+    'sullivan_gardien' => [
+        'default' => 'entry',
+        'actions' => [],
+    ],
+    'sullivan_pyramide' => [
+        'default' => 'entry',
+        'actions' => [],
+    ],
+    'sullivan_fin' => [
+        'default' => 'default',
+        'actions' => [
+            'loyal_ship' => ['variant' => 'loyal_ship'],
+        ],
+    ],
     'logan_depart' => [
         'default' => 'introduction',
         'actions' => [
@@ -253,7 +271,7 @@ return [
             'mutiny_fail_barthy' => ['variant' => 'fail_barthy'],
             'mutiny_fail_lloyd' => ['variant' => 'fail_lloyd'],
             'mutiny_fail_guard' => ['variant' => 'fail_guard'],
-            'finish_mutiny_ending' => ['next_scene' => 'logan_fin', 'variant' => 'mutiny'],
+            'finish_mutiny_ending' => ['next_scene' => 'logan_fin', 'variant' => 'completed_mutiny'],
         ],
     ],
     'logan_fin' => [

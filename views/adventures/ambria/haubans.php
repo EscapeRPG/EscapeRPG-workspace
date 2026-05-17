@@ -1,10 +1,10 @@
 <div id="game-container-1" class="haubans">
-    <div id="map-and-controls">
+    <div id="map-and-controls" class="game-layout">
         <div id="game-map-1" class="map-haubans">
-            <div id="tileshaubans" class="layer"></div>
+            <div id="tileshaubans" class="layer haubans-tiles"></div>
             <div id="sprites" class="layer"></div>
         </div>
-        <div id="controls">
+        <div id="controls" class="game-controls">
             <button id="up" type="button">↑</button><br>
             <button id="left" type="button">←</button>
             <button id="right" type="button">→</button><br>

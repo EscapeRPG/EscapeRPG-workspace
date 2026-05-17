@@ -35,8 +35,6 @@ class CiteSceneHandler extends AmbriaSceneHandler
             nextScene: 'logan_cite',
             stateChanges: [
                 'logan_cite_variant' => 'first_prime',
-                'mdp8' => true,
-                'notes' => $this->mergeNotes($state, ['Allons-y capitaine']),
             ],
         );
     }

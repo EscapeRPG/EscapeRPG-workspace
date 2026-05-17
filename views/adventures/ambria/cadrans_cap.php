@@ -1,27 +1,27 @@
-<div id="cadranscap">
+<div class="cadrans-cap">
     <img src="<?= asset('assets/img/ambria/cap/cadranscap.png') ?>" alt="Cadrans du cap">
 
     <?php for ($index = 1; $index <= 4; $index++): ?>
-        <div id="bouton<?= $index ?>haut">
+        <div class="cap-button cap-button-<?= $index ?>-haut">
             <button id="boutonhaut<?= $index ?>" class="boutonhaut" type="button"></button>
         </div>
-        <div id="bouton<?= $index ?>bas">
+        <div class="cap-button cap-button-<?= $index ?>-bas">
             <button id="boutonbas<?= $index ?>" class="boutonbas" type="button"></button>
         </div>
     <?php endfor; ?>
 
-    <div id="coordonnee1">
+    <div class="cap-coordinate cap-coordinate-1">
         <img src="<?= asset('assets/img/ambria/cap/cap0.png') ?>" id="coordonnee1img" alt="Coordonnée 1">
     </div>
-    <div id="coordonnee2">
+    <div class="cap-coordinate cap-coordinate-2">
         <img src="<?= asset('assets/img/ambria/cap/cap0.png') ?>" id="coordonnee2img" alt="Coordonnée 2">
     </div>
-    <div id="coordonnee3">
+    <div class="cap-coordinate cap-coordinate-3">
         <img src="<?= asset('assets/img/ambria/cap/captiret.png') ?>" id="coordonnee3img" alt="Coordonnée 3">
     </div>
-    <div id="coordonnee4">
+    <div class="cap-coordinate cap-coordinate-4">
         <img src="<?= asset('assets/img/ambria/cap/captiret.png') ?>" id="coordonnee4img" alt="Coordonnée 4">
     </div>
 </div>
 
-<button type="button" id="valider" class="noway">Définir le cap.</button>
+<button type="button" id="valider" class="action">Définir le cap.</button>

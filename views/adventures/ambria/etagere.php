@@ -1,6 +1,6 @@
-<div id="etagerecapitaine">
+<div class="etagere-capitaine">
     <?php for ($index = 1; $index <= 10; $index++): ?>
-        <div class="dropperetagere" id="dropetagere<?= $index ?>"></div>
+        <div class="dropperetagere dropetagere-<?= $index ?>" id="dropetagere<?= $index ?>"></div>
     <?php endfor; ?>
 </div>
 
