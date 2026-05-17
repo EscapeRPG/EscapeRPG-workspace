@@ -1,7 +1,5 @@
 ## default
 
-La fin de cette branche sera migrée dans une prochaine passe.
-
 ## bad_intro
 
 Un sourire mauvais s'affiche sur le visage des pirates. Ils se jettent quelques coups d'oeil pour savoir qui prendra la parole, jusqu'à ce que Jake s'approche enfin de la cage dans laquelle Logan et vous êtes enfermés.

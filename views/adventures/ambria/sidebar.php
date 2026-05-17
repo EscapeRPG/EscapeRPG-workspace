@@ -144,9 +144,4 @@ $currentSceneUrl = (string)(($adventure['scene_urls'][$sceneName] ?? null) ?: $s
         </div>
     <?php endforeach; ?>
 
-    <!-- Temporaire migration Ambria : retirer apres validation complete du scenario. -->
-    <div class="ambria-confidence-debug">
-        <span>Logan : <?= e((string)($stateData['loganconfiance'] ?? 0)) ?></span>
-        <span>Sullivan : <?= e((string)($stateData['sullivanconfiance'] ?? 0)) ?></span>
-    </div>
 </aside>

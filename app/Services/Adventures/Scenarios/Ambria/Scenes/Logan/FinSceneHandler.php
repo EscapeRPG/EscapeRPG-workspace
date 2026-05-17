@@ -85,7 +85,7 @@ class FinSceneHandler extends CommentableFinalSceneHandler
         return match ($ending) {
             'best', 'completed_best' => 'best',
             'loyal', 'loyal_ship', 'completed_loyal' => 'loyal',
-            'mutiny', 'completed_mutiny' => 'mutiny',
+            'mutiny', 'success_escape', 'fail_noise', 'fail_barthy', 'fail_lloyd', 'fail_guard', 'completed_mutiny' => 'mutiny',
             'bad', 'completed_bad' => 'bad',
             default => 'good',
         };

@@ -1,7 +1,5 @@
 ## default
 
-La fin de cette branche sera migrée dans une prochaine passe.
-
 ## treasure_return
 
 Un nouveau cri d'enthousiasme résonne dans la pièce et tout le monde ouvre en grand les sacs de toile que vous aviez amenés en débarquant.

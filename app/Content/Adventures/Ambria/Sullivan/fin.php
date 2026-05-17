@@ -21,7 +21,7 @@ $stars = static function (int $count): array {
 return [
     'variants' => [
         'default' => [
-            'blocks' => [Content::narrative('ambria/sullivan/fin#default')],
+            'blocks' => [],
             'actions' => [],
         ],
         'bad' => [
