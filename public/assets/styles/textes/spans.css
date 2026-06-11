@@ -4,7 +4,7 @@
 }
 
 .mdp2 {
-  color: dodgerblue !important;
+  color: dodgerblue;
   font-weight: bold;
   text-shadow: skyblue 1px 1px;
 }
@@ -24,7 +24,7 @@
 }
 
 .indice {
-    color: dodgerblue !important;
+    color: dodgerblue;
 }
 
 .reponse {

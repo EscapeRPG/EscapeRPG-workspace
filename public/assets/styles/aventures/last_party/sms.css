@@ -2,14 +2,24 @@
     width: 70%;
     margin: auto;
     text-align: justify;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+}
+
+.message-telephone {
+    display: flex;
+    flex-direction: row;
+    width: 80%;
 }
 
 .nomdialogue {
     background: rgb(15, 84, 25);
     margin: 0;
     width: 10%;
-    display: inline-block;
-    vertical-align: top;
+    height: fit-content;
+    flex: 0 0 10%;
     padding: 10px;
     text-align: center;
     color: white;
@@ -18,9 +28,7 @@
 
 .dialogue-sms {
     text-align: center;
-    width: 70%;
-    display: inline-block;
-    vertical-align: top;
+    flex: 1;
     margin: 0;
 }
 

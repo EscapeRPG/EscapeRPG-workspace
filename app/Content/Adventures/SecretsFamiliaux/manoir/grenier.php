@@ -19,7 +19,7 @@ return [
                     'assets/img/secrets/vuegrenier.png',
                     'grenier',
                     [
-                        Content::hotspot('piano', 'piano', 'assets/img/secrets/pianoclosed.png', 'un vieux piano'),
+                        Content::hotspotAt('piano', 37.2, 54.75, 23.8, 7.5, 'assets/img/secrets/pianoclosed.png', 'un vieux piano'),
                     ],
                 ),
                 Content::narrative('secretsfamiliaux/manoir/grenier#step_0'),
@@ -33,7 +33,7 @@ return [
                     'assets/img/secrets/vuegrenier.png',
                     'grenier',
                     [
-                        Content::hotspot('grenierpiece', 'piece', 'assets/img/secrets/grenierpiece.png', 'une pièce sur le clavier'),
+                        Content::hotspotAt('piece', 56.8, 55, 1.2, 1, 'assets/img/secrets/grenierpiece.png', 'une pièce sur le clavier'),
                     ],
                 ),
                 Content::narrative('secretsfamiliaux/manoir/grenier#piano'),

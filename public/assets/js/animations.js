@@ -1,4 +1,4 @@
-const enterSite = document.getElementById("enterSite");
+const enterSite = document.querySelector(".enter-site");
 
 class ImageHoverHandler {
   constructor(imageName) {
@@ -18,5 +18,5 @@ const enterSiteHandler = new ImageHoverHandler("next");
 const eventsHandlers = ["mouseover", "mouseout"];
 
 eventsHandlers.forEach((eventName) => {
-  enterSite.addEventListener(eventName, enterSiteHandler);
+  enterSite?.addEventListener(eventName, enterSiteHandler);
 });

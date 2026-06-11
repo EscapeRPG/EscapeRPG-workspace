@@ -1,4 +1,4 @@
-<div id="bloc1">
+<section id="bloc1" class="home-section home-section--muted">
     <div class="jouer">
         <div class="dialogue">
             <div class="portrait"><img src="<?= asset('assets/img/narrateur.png') ?>" alt="narrateur"></div>
@@ -14,4 +14,4 @@
             <?php require __DIR__ . '/_card.php'; ?>
         <?php endforeach; ?>
     </div>
-</div>
+</section>

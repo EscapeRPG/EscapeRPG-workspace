@@ -12,8 +12,8 @@ use App\Services\Adventures\Engine\AdventureState;
  */
 class FinSceneHandler extends CommentableFinalSceneHandler
 {
-    private const string SCENARIO = 'Last Party';
-    private const string SCENE = 'ebaubi';
+    private const SCENARIO = 'Last Party';
+    private const SCENE = 'ebaubi';
 
     public function variant(AdventureState $state, Request $request, bool $isLandingPage = false): string
     {

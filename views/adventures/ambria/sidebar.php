@@ -122,12 +122,9 @@ $currentSceneUrl = (string)(($adventure['scene_urls'][$sceneName] ?? null) ?: $s
         <img src="<?= e(asset($portrait['image'])) ?>" alt="<?= e($portrait['alt']) ?>">
     </a>
 
-    <div id="inventairefooter"><input type="submit" value="INVENTAIRE"></div>
-    <div id="motsdepasse"><input type="submit" value="NOTES"></div>
-    <form action="<?= e(url('/aventures/' . $slug . '/' . ltrim($currentSceneUrl, '/'))) ?>" method="post">
-        <input type="hidden" name="action" value="save_game">
-        <input type="submit" name="save" value="SAUVEGARDER">
-    </form>
+    <?php require dirname(__DIR__) . '/partials/_footer_controls.php'; ?>
+    <?php $saveActionUrl = url('/aventures/' . $slug . '/' . ltrim($currentSceneUrl, '/')); ?>
+    <?php require dirname(__DIR__) . '/partials/_save_control.php'; ?>
 
     <?php foreach (array_values(array_filter($sidebar['navigation'] ?? [], 'is_array')) as $navigationBlock): ?>
         <?php if (!$visibleInScene($navigationBlock) || !$conditionMatches($navigationBlock['visible_if'] ?? null)) {

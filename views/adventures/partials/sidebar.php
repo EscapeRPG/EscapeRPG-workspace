@@ -124,12 +124,9 @@ $showControls = (bool) ($sidebar['controls']['enabled'] ?? true);
     <?php endforeach; ?>
 
     <?php if ($showControls): ?>
-        <div id="inventairefooter"><input type="submit" value="INVENTAIRE"></div>
-        <div id="motsdepasse"><input type="submit" value="NOTES"></div>
+        <?php require __DIR__ . '/_footer_controls.php'; ?>
         <?php $currentSceneUrl = (string) (($adventure['scene_urls'][$sceneName] ?? null) ?: $sceneName); ?>
-        <form action="<?= e(url('/aventures/' . $slug . '/' . ltrim($currentSceneUrl, '/'))) ?>" method="post">
-            <input type="hidden" name="action" value="save_game">
-            <input type="submit" name="save" value="SAUVEGARDER">
-        </form>
+        <?php $saveActionUrl = url('/aventures/' . $slug . '/' . ltrim($currentSceneUrl, '/')); ?>
+        <?php require __DIR__ . '/_save_control.php'; ?>
     <?php endif; ?>
 </aside>

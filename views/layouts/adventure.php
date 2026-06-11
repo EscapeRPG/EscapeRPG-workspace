@@ -52,8 +52,8 @@ if (is_array($banner)) {
     <?= View::get('aside') ?>
     <?= View::get('content') ?>
 </main>
-<div id="load">
-    <div id="loader"></div>
+<div class="page-loader">
+    <div class="page-loader__spinner"></div>
 </div>
 
 <?= View::get('footer') ?>

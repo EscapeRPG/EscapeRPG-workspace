@@ -1,0 +1,472 @@
+#canvashangarsas,
+#hangarsasoverlay,
+#hangarsas,
+#lumieres,
+#canvascockpit {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0;
+}
+
+#canvashangarsas {
+	left: 0;
+	cursor: none;
+}
+
+#portehangarsasgauche,
+#portehangarsasdroite {
+	position: absolute;
+	width: 35%;
+	height: 100%;
+	top: 0;
+}
+
+#portehangarsasgauche {
+	left: 0;
+}
+
+#portehangarsasdroite {
+	right: 40%;
+}
+
+#hangarsasoverlay {
+	right: 0;
+	pointer-events: none;
+	z-index: 10;
+}
+
+#hangarsasbtn {
+	position: absolute;
+	width: 3.1%;
+	height: 4.2%;
+	top: 37.7%;
+	right: 33.4%;
+	border-radius: 50%;
+	cursor: none;
+}
+
+#hangarsas,
+#lumieres {
+	left: 0;
+}
+
+#lumieres {
+	pointer-events: none;
+}
+
+#hangarsasbras {
+	position: absolute;
+	width: 300%;
+	height: 300%;
+	top: -100%;
+	right: -100%;
+	pointer-events: none;
+}
+
+.appontage-console {
+	position: relative;
+	margin: auto;
+	width: min(100%, 1000px);
+	aspect-ratio: 4 / 3;
+	overflow: hidden;
+	background: black;
+}
+
+.appontage-console > img {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	object-fit: fill;
+}
+
+.appontage-console img {
+	display: block;
+	max-width: none;
+}
+
+.appontage-console .hidden,
+.appontage-console img.hidden {
+	display: none;
+}
+
+.appontage-console #appontagehangar {
+	position: absolute;
+	width: 100%;
+	top: 0;
+	left: 0;
+	overflow: hidden;
+}
+
+.appontage-console #appontagehangar img {
+	width: 200%;
+	height: 100%;
+	margin-left: -50%;
+	object-fit: fill;
+}
+
+.appontage-console #canvascockpit {
+	left: 0;
+	z-index: 2;
+}
+
+.appontage-console #canvascockpit img,
+.appontage-console #lumieres img,
+.appontage-console #propulseurs img,
+.appontage-console #joystick_gauche img,
+.appontage-console #joystick_droite img,
+.appontage-console #trainsatterrissage img,
+.appontage-console #collactif img,
+.appontage-console #manche img,
+.appontage-console #moteursbtn img {
+	width: 100%;
+	height: 100%;
+	object-fit: fill;
+}
+
+.eventsoff {
+	pointer-events: none;
+}
+
+.appontage-console #thrusters {
+	position: absolute;
+	width: 17%;
+	height: 12%;
+	top: 5%;
+	left: 12%;
+	z-index: 10;
+}
+
+.appontage-console #propulseurs {
+	position: absolute;
+	z-index: 10;
+	width: 4.4%;
+	height: 7.73%;
+	top: 2%;
+	right: 25%;
+}
+
+.appontage-console #assiette {
+	position: absolute;
+	z-index: 10;
+	overflow: hidden;
+	width: 16.5%;
+	height: 14.93%;
+	bottom: 15.53%;
+	left: 18.95%;
+
+}
+
+.appontage-console #assiette img {
+	width: 100%;
+	height: 100%;
+}
+
+.appontage-console #joystick_gauche {
+	position: absolute;
+	z-index: 10;
+	width: 10%;
+	height: 6.67%;
+	bottom: 22%;
+	left: 40%;
+}
+
+.appontage-console #joystick_droite {
+	position: absolute;
+	z-index: 10;
+	width: 10%;
+	height: 6.67%;
+	bottom: 22%;
+	right: 40%;
+}
+
+.appontage-console #trainsatterrissage {
+	position: absolute;
+	z-index: 10;
+	width: 4.7%;
+	height: 5.2%;
+	bottom: 9%;
+	left: 4.5%;
+}
+
+.appontage-console #trainsatterrissage img,
+.appontage-console #moteursbtn img {
+	animation: clignotte 1s infinite;
+}
+
+@keyframes clignotte {
+	from {
+		opacity: 1;
+	}
+
+	to {
+		opacity: 0;
+	}
+}
+
+.appontage-console #collactif {
+	position: absolute;
+	display: flex;
+	top: 78.2%;
+	left: 82.25%;
+	width: 5.45%;
+	height: 2.03%;
+	z-index: 10;
+}
+
+.appontage-console #canvascollision {
+	position: absolute;
+	width: 18.76%;
+	height: 15%;
+	bottom: 15.8%;
+	right: 17.5%;
+	overflow: hidden;
+	z-index: 10;
+}
+
+.appontage-console #croixgrisediv {
+	position: absolute;
+	width: 28%;
+	height: 45%;
+	top: 27.5%;
+	left: 36%;
+	z-index: 11;
+}
+
+.appontage-console #croixrougediv {
+	position: absolute;
+	width: 28%;
+	height: 45%;
+	top: 9.5%;
+	left: 19.2%;
+	z-index: 12;
+}
+
+.appontage-console #croixrouge2div {
+	position: absolute;
+	width: 28%;
+	height: 45%;
+	top: 32%;
+	left: 41.6%;
+	z-index: 12;
+}
+
+.appontage-console #croixvertediv {
+	position: absolute;
+	width: 28%;
+	height: 45%;
+	top: 27.5%;
+	left: 36%;
+	z-index: 13;
+}
+
+.appontage-console #croixgrisediv img,
+.appontage-console #croixrougediv img,
+.appontage-console #croixrouge2div img,
+.appontage-console #croixvertediv img {
+	width: 100%;
+	height: 100%;
+	object-fit: fill;
+}
+
+.appontage-console #manche {
+	position: absolute;
+	bottom: 0;
+	left: 47.45%;
+	width: 5.1%;
+	height: 26%;
+	z-index: 30;
+	transform-origin: 37% 120%;
+}
+
+.appontage-console #controlscoll,
+.appontage-console #controls2coll {
+	position: absolute;
+	width: 4.65%;
+	height: 6.53%;
+	top: 70.67%;
+	left: 83%;
+	z-index: 10;
+}
+
+.appontage-console #hautdiv,
+.appontage-console #haut2div,
+.appontage-console #gauchediv,
+.appontage-console #gauche2div,
+.appontage-console #basdiv,
+.appontage-console #bas2div,
+.appontage-console #droitediv,
+.appontage-console #droite2div {
+	position: absolute;
+	width: 38%;
+	height: 38%;
+	z-index: 10;
+}
+
+.appontage-console #hautdiv,
+.appontage-console #haut2div {
+	top: 0;
+	right: 31%;
+}
+
+.appontage-console #gauchediv,
+.appontage-console #gauche2div {
+	bottom: 31%;
+	left: 0;
+}
+
+.appontage-console #basdiv,
+.appontage-console #bas2div {
+	bottom: 0;
+	right: 31%;
+}
+
+.appontage-console #droitediv,
+.appontage-console #droite2div {
+	bottom: 31%;
+	right: 0;
+}
+
+.appontage-console #assiette img,
+.appontage-console #hautdiv img,
+.appontage-console #haut2div img,
+.appontage-console #gauchediv img,
+.appontage-console #gauche2div img,
+.appontage-console #basdiv img,
+.appontage-console #bas2div img,
+.appontage-console #droitediv img,
+.appontage-console #droite2div img {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+}
+
+.appontage-console #moteursbtn {
+	position: absolute;
+	z-index: 10;
+	width: 4.7%;
+	height: 5.2%;
+	bottom: 9%;
+	right: 4.5%;
+}
+
+.appontage-console button {
+	border: 0;
+	padding: 0;
+	background: transparent;
+	cursor: pointer;
+	line-height: 0;
+}
+
+.electricite-console {
+	position: relative;
+	margin: auto;
+	width: min(100%, 900px);
+	aspect-ratio: 1 / 1;
+	overflow: hidden;
+	background: black;
+}
+
+.electricite-console > img {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	object-fit: fill;
+}
+
+.electricite-console #electricite {
+	position: absolute;
+	width: 93.75%;
+	height: 93.75%;
+	top: 3.125%;
+	left: 3.125%;
+	display: grid;
+	grid-template-columns: repeat(6, 1fr);
+	grid-template-rows: repeat(6, 1fr);
+	gap: 0;
+}
+
+.electricite-console .elec {
+	width: 100%;
+	height: 100%;
+	aspect-ratio: 1 / 1;
+	border: 0;
+	padding: 0;
+	background: transparent;
+	line-height: 0;
+	cursor: pointer;
+}
+
+.electricite-console .elec img {
+	width: 100%;
+	height: 100%;
+	object-fit: fill;
+}
+
+.electricite-console #diode1 {
+	position: absolute;
+	width: 16.667%;
+	height: 16.667%;
+	top: 33.32%;
+	right: 16.66%;
+}
+
+.electricite-console #diode2 {
+	position: absolute;
+	width: 16.66%;
+	height: 16.66%;
+	top: 49.99%;
+	left: 16.66%;
+}
+
+.electricite-console #diode3 {
+	position: absolute;
+	width: 16.66%;
+	height: 16.66%;
+	bottom: 0;
+	right: 33.32%;
+}
+
+.electricite-console #diode1 img,
+.electricite-console #diode2 img,
+.electricite-console #diode3 img {
+	width: 100%;
+	height: 100%;
+	object-fit: fill;
+}
+
+.hangar-sas-console {
+	position: relative;
+	margin: auto;
+	width: 80%;
+	aspect-ratio: 4 / 3;
+	overflow: hidden;
+	background: black;
+}
+
+.hangar-sas-console img {
+	width: 100%;
+	height: 100%;
+}
+
+.hangar-sas-console #canvasoverlay {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	z-index: 9;
+	pointer-events: none;
+}
+
+.hangar-sas-console #hangarsasbtn {
+	border: 0;
+	padding: 0;
+	background: transparent;
+}

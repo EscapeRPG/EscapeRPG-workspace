@@ -52,7 +52,7 @@ return [
             'audio' => 'assets/sounds/ambria/taverne.mp3',
             'blocks' => [
                 Content::interactiveImage('assets/img/ambria/taverne.png', "La taverne de l'ile de la Tortue.", [
-                    Content::hotspot('tavlogan', 'approach_logan', 'assets/img/ambria/tavernelogan.png', 'Un jeune homme a l air terrifie'),
+                    Content::hotspotAt('approach_logan', 13.58, 59.6, 7.9, 23.49, 'assets/img/ambria/tavernelogan.png', 'Un jeune homme a l air terrifie'),
                 ]),
                 Content::narrative('ambria/sullivan/taverne#logan_search'),
             ],

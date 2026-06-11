@@ -1,0 +1,316 @@
+#manuel-wrap {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 60%;
+	margin: auto;
+	color: lightskyblue;
+	text-shadow:
+		0 0 1px rgba(173, 216, 230, 0.6),
+		0 0 3px rgba(173, 216, 230, 0.4),
+		0 0 5px rgba(173, 216, 230, 0.2);
+
+	button {
+		cursor: pointer;
+		color: lightskyblue;
+		margin: 10px 20px;
+		font-weight: bold;
+		text-decoration: underline;
+		text-shadow:
+			0 0 1px rgba(173, 216, 230, 0.6),
+			0 0 3px rgba(173, 216, 230, 0.4),
+			0 0 5px rgba(173, 216, 230, 0.2);
+
+		&:hover {
+			cursor: pointer;
+			color: orange;
+		}
+	}
+}
+
+#manuel-wrap.waiting,
+#manuel-wrap.waiting button {
+	cursor: wait;
+}
+
+#manuel {
+	display: flex;
+	align-items: flex-start;
+	justify-content: center;
+	width: 60%;
+	padding: 2% 5% 8% 5%;
+	font-size: 1rem;
+	margin: 10px;
+	position: relative;
+	overflow: hidden;
+	background: #333;
+	background-image:
+		linear-gradient(135deg, rgba(255, 255, 255, 0.06) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.06) 50%, rgba(255, 255, 255, 0.06) 75%, transparent 75%, transparent),
+		linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+		linear-gradient(to right, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+	background-size: 100% 2px, 2px 100%;
+	background-blend-mode: overlay;
+	clip-path: polygon(2% 0%, 98% 0%, 100% 2%, 100% 98%,
+			98% 100%, 2% 100%, 0% 98%, 0% 2%);
+	box-shadow:
+		inset 0 2px 4px rgba(240, 240, 240, 0.3),
+		inset 0 -2px 4px rgba(0, 0, 0, 0.8),
+		0 6px 12px rgba(0, 0, 0, 0.6),
+		0 0 20px rgba(240, 240, 240, 0.3);
+}
+
+.manuel-decoration {
+	position: absolute;
+	top: calc(1.5% - 2px);
+	left: calc(2.5% - 2px);
+	right: calc(2.5% - 2px);
+	bottom: calc(1.5% - 2px);
+	width: calc(95% + 4px);
+	height: calc(97% + 4px);
+	background: black;
+	clip-path: polygon(2% 0%, 98% 0%, 100% 2%, 100% 98%,
+			98% 100%, 75% 100%, 72% 97%, 28% 97%, 25% 100%,
+			2% 100%, 0% 98%, 0% 2%);
+}
+
+.manuel-decoration-inset {
+	position: absolute;
+	top: 1.5%;
+	left: 2.5%;
+	right: 2.5%;
+	bottom: 1.5%;
+	width: 95%;
+	height: 97%;
+	background:
+		url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 20 20'><rect width='1' height='1' fill='white' opacity='0.8'/></svg>"),
+		linear-gradient(145deg, #0d1419, #1b2932);
+	background-image:
+		url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 20 20'><rect width='1' height='1' fill='white' opacity='0.8'/></svg>"),
+		linear-gradient(145deg, #0d1419, #1b2932),
+		linear-gradient(135deg, rgba(255, 255, 255, 0.02) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.02) 50%, rgba(255, 255, 255, 0.02) 75%, transparent 75%, transparent);
+	background-size: 20px 20px, cover, 1px 10px;
+	background-blend-mode: overlay;
+	clip-path: polygon(2% 0%, 98% 0%, 100% 2%, 100% 98%,
+			98% 100%, calc(75% + 2px) 100%, calc(72% + 2px) calc(97% - 2px), calc(28% - 2px) calc(97% - 2px), calc(25% - 2px) 100%,
+			2% 100%, 0% 98%, 0% 2%);
+	box-shadow:
+		inset 0 -2px 4px rgba(0, 0, 0, 0.8),
+		0 6px 12px rgba(0, 0, 0, 0.6),
+		0 0 20px rgba(255, 255, 255, 0.8);
+	filter: brightness(1.1) contrast(1.1);
+}
+
+#precedent {
+	visibility: hidden;
+}
+
+#page {
+	width: 100%;
+	text-align: justify;
+	box-sizing: border-box;
+	position: relative;
+	font-size: 12px;
+	overflow: hidden;
+
+	&.waiting {
+		opacity: 0.8;
+		filter: blur(2px);
+		animation: pulse-opacity 0.4s ease-in-out infinite;
+		transition: opacity 0.2s ease, filter 0.2s ease;
+	}
+
+	img {
+		max-width: 40%;
+		max-height: 45%;
+		margin: auto;
+		display: block;
+	}
+
+	p {
+		margin: 0 0 0.8em 0;
+		line-height: 1.35;
+	}
+
+	h1,
+	h2 {
+		text-decoration: none;
+		text-align: center;
+		margin: 5px auto;
+		color: lightskyblue;
+	}
+
+	h1 {
+		font-size: 1.5em;
+	}
+
+	h2 {
+		font-size: 1em;
+	}
+
+	h3 {
+		color: grey;
+		text-align: center;
+		margin: auto;
+		padding: 0;
+		font-size: 10px;
+		text-shadow: none;
+		margin-bottom: 40px;
+	}
+
+	h4 {
+		margin-bottom: 0;
+		color: grey;
+		text-align: justify;
+		font-size: 10px;
+		text-shadow: none;
+	}
+}
+
+.manual-toc-list {
+	columns: 2;
+	column-gap: 20px;
+	list-style: none;
+	margin: 10px 0;
+	padding: 0;
+
+	li {
+		break-inside: avoid;
+		margin: 0 0 4px 0;
+	}
+
+	button {
+		display: inline;
+		margin: 0;
+		padding: 0;
+		border: 0;
+		background: none;
+		font-size: 10px;
+		text-align: left;
+	}
+}
+
+.citation {
+	text-align: center;
+	font-style: italic;
+	margin: 40px 40px 10px 40px;
+	color: white;
+}
+
+.auteur {
+	text-align: right;
+	margin-bottom: 40px;
+}
+
+.page-content {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+	box-sizing: border-box;
+}
+
+.manual-measure {
+	visibility: hidden;
+	pointer-events: none;
+	z-index: -1;
+}
+
+@keyframes pulse-opacity {
+
+	0%,
+	100% {
+		opacity: 0.8;
+	}
+
+	50% {
+		opacity: 0.6;
+	}
+}
+
+@keyframes slideInFromRight {
+	from {
+		transform: translateX(100%);
+	}
+
+	to {
+		transform: translateX(0);
+	}
+}
+
+@keyframes slideInFromLeft {
+	from {
+		transform: translateX(-100%);
+	}
+
+	to {
+		transform: translateX(0);
+	}
+}
+
+@keyframes slideOutToLeft {
+	from {
+		transform: translateX(0);
+	}
+
+	to {
+		transform: translateX(-100%);
+		opacity: 0;
+	}
+}
+
+@keyframes slideOutToRight {
+	from {
+		transform: translateX(0);
+	}
+
+	to {
+		transform: translateX(100%);
+		opacity: 0;
+	}
+}
+
+.slide-in-left {
+	animation: slideInFromRight 0.4s forwards;
+}
+
+.slide-in-right {
+	animation: slideInFromLeft 0.4s forwards;
+}
+
+.slide-out-left {
+	animation: slideOutToLeft 0.4s forwards;
+}
+
+.slide-out-right {
+	animation: slideOutToRight 0.4s forwards;
+}
+
+.centered-image {
+	display: block;
+	margin: auto;
+	position: relative;
+	top: 50%;
+	transform: translateY(-50%);
+}
+
+#manuel-wrap .back-to-toc {
+	text-align: right;
+	margin-bottom: 0.5em;
+
+	button {
+		background: none;
+		border: none;
+		color: grey;
+		font-weight: bold;
+		cursor: pointer;
+		font-size: 10px;
+		text-shadow: none;
+
+		&:hover {
+			color: orange;
+		}
+	}
+}
+

@@ -1,31 +1,26 @@
-let inventaire = document.getElementById("inventaireshow"),
-  mdp = document.getElementById("motsdepasseshow"),
-  inventairenav = document.getElementById("inventairefooter"),
-  mdpnav = document.getElementById("motsdepasse");
+const footerTriggers = document.querySelectorAll("[data-footer-trigger]");
+const footerPanels = document.querySelectorAll("[data-footer-panel]");
 
-inventairenav.addEventListener("click", inventaireshow);
-mdpnav.addEventListener("click", mdpshow);
+footerTriggers.forEach((trigger) => {
+  trigger.addEventListener("click", () => {
+    toggleFooterPanel(trigger);
+  });
+});
 
-function inventaireshow() {
-  if (inventaire.classList == "footerhidden") {
-    inventaire.className = "footeraffichage";
-    inventairenav.classList.add("current");
-    mdp.className = "footerhidden";
-    mdpnav.classList.remove("current");
-  } else {
-    inventaire.className = "footerhidden";
-    inventairenav.classList.remove("current");
+function toggleFooterPanel(activeTrigger) {
+  const target = activeTrigger.dataset.footerTrigger;
+  const activePanel = document.querySelector(`[data-footer-panel="${target}"]`);
+  if (!activePanel) {
+    return;
   }
-}
 
-function mdpshow() {
-  if (mdp.classList == "footerhidden") {
-    mdp.className = "footeraffichage";
-    mdpnav.classList.add("current");
-    inventaire.className = "footerhidden";;
-    inventairenav.classList.remove("current");
-  } else {
-    mdp.className = "footerhidden";
-    mdpnav.classList.remove("current");
+  const shouldOpen = !activePanel.classList.contains("is-open");
+
+  footerTriggers.forEach((trigger) => trigger.classList.remove("current"));
+  footerPanels.forEach((panel) => panel.classList.remove("is-open"));
+
+  if (shouldOpen) {
+    activeTrigger.classList.add("current");
+    activePanel.classList.add("is-open");
   }
 }

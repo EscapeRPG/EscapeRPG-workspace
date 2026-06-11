@@ -6,6 +6,7 @@ return [
         ['id' => 'faq', 'label' => 'FAQ'],
         ['id' => 'membres', 'label' => 'Membres'],
         ['id' => 'tipeurs', 'label' => 'Soutiens'],
+        ['id' => 'legal', 'label' => 'Légal'],
     ],
     'links' => [
         [

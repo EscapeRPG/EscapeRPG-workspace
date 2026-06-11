@@ -116,12 +116,12 @@ $sceneBlockAsset = static function (array $item) use ($sceneBlockConditionMatche
         <?php
         $src = $sceneBlockAsset($block);
         $alt = (string) ($block['alt'] ?? '');
-        $class = (string) ($block['class'] ?? 'enigmelieu');
+        $class = trim('interactive-image ' . (string) ($block['class'] ?? 'enigmelieu'));
         $blockId = (string) ($block['id'] ?? '');
         $method = strtolower((string) ($block['method'] ?? 'post'));
         $sceneUrl = (string) (($adventure['scene_urls'][$scene] ?? null) ?: $scene);
         $formAction = $block['form_action'] ?? url('/aventures/' . ($adventure['slug'] ?? '') . '/' . ltrim($sceneUrl, '/'));
-        $formClass = trim((string) ($block['form_class'] ?? ''));
+        $canvasId = (string) ($block['canvas_id'] ?? '');
         $controls = array_values(array_filter(
             $block['controls'] ?? $block['hotspots'] ?? [],
             static function ($control) use ($sceneBlockConditionMatches): bool {
@@ -137,6 +137,14 @@ $sceneBlockAsset = static function (array $item) use ($sceneBlockConditionMatche
                 return $sceneBlockConditionMatches($condition);
             }
         ));
+        $usesPositionedControls = false;
+        foreach ($controls as $control) {
+            if (is_array($control) && str_contains((string) ($control['class'] ?? ''), 'positioned-hotspot')) {
+                $usesPositionedControls = true;
+                break;
+            }
+        }
+        $formClass = trim(($usesPositionedControls ? 'interactive-image__controls ' : '') . (string) ($block['form_class'] ?? ''));
         ?>
         <div class="<?= e($class) ?>"<?php if ($blockId !== ''): ?> id="<?= e($blockId) ?>"<?php endif; ?>>
             <img src="<?= asset($src) ?>" alt="<?= e($alt) ?>">
@@ -189,6 +197,9 @@ $sceneBlockAsset = static function (array $item) use ($sceneBlockConditionMatche
                         <?php endif; ?>
                     <?php endforeach; ?>
                 </form>
+            <?php endif; ?>
+            <?php if ($canvasId !== ''): ?>
+                <canvas id="<?= e($canvasId) ?>" width="<?= e((string) ($block['canvas_width'] ?? 800)) ?>" height="<?= e((string) ($block['canvas_height'] ?? 600)) ?>" aria-hidden="true"></canvas>
             <?php endif; ?>
         </div>
     <?php endif; ?>

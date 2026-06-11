@@ -89,6 +89,28 @@ class Content
     }
 
     /**
+     * @param array<int, string>|string $paragraphs
+     * @return array<string, mixed>
+     */
+    public static function overlayDialogue(
+        string $name,
+        string $portrait,
+        string $overlayFrom,
+        array|string $paragraphs,
+        string $side = 'left',
+        array $extra = []
+    ): array {
+        return self::dialogue($name, $portrait, $paragraphs, $side, $extra + [
+            'speaker' => [
+                'name' => $name,
+                'portrait' => $portrait,
+                'portrait_overlay_from' => $overlayFrom,
+                'side' => $side,
+            ],
+        ]);
+    }
+
+    /**
      * @return array{type: string, paragraphs: array<int, string>}
      */
     public static function narrative(string $path): array
@@ -171,6 +193,36 @@ class Content
     /**
      * @return array<string, mixed>
      */
+    public static function hotspotAt(
+        string $value,
+        int|float|string $left,
+        int|float|string $top,
+        int|float|string $width,
+        int|float|string $height,
+        ?string $src = null,
+        string $alt = '',
+        string $class = 'hotspot',
+        array $extra = []
+    ): array {
+        $attributes = (array) ($extra['attributes'] ?? []);
+        $style = trim((string) ($attributes['style'] ?? ''));
+        $positionStyle = sprintf(
+            '--hotspot-left:%s;--hotspot-top:%s;--hotspot-width:%s;--hotspot-height:%s;',
+            self::cssLength($left),
+            self::cssLength($top),
+            self::cssLength($width),
+            self::cssLength($height),
+        );
+
+        $attributes['style'] = trim($style . ' ' . $positionStyle);
+        $extra['attributes'] = $attributes;
+
+        return self::hotspot(trim('positioned-hotspot ' . $class), $value, $src, $alt, $extra);
+    }
+
+    /**
+     * @return array<string, mixed>
+     */
     public static function action(string $label, string $value, string $class = 'action', string $name = 'action', array $extra = []): array
     {
         return $extra + [
@@ -203,7 +255,10 @@ class Content
      */
     public static function hint(string $basePath, int $levels = 3, array|string|null $answer = null): array
     {
-        $hint = ['levels' => []];
+        $hint = [
+            'key' => $basePath,
+            'levels' => [],
+        ];
 
         for ($level = 1; $level <= $levels; $level++) {
             $hint['levels'][] = [
@@ -268,5 +323,14 @@ class Content
     public static function inventoryMissing(string $item): array
     {
         return ['inventory' => $item, 'contains' => false];
+    }
+
+    private static function cssLength(int|float|string $value): string
+    {
+        if (is_int($value) || is_float($value)) {
+            return (string) (0 + $value) . '%';
+        }
+
+        return $value;
     }
 }

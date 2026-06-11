@@ -8,6 +8,6 @@
         <div class="bannierep">
             <div class="type2">dont <span class="vos">VOS</span> choix détermineront l'issue.</div>
         </div>
-        <a href="#bloc1"><img src="<?= asset('assets/img/next.png') ?>" id="enterSite" alt="entrer"></a>
+        <a href="#bloc1"><img src="<?= asset('assets/img/next.png') ?>" class="enter-site" alt="entrer"></a>
     </div>
 </div>

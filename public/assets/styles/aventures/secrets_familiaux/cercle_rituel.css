@@ -9,8 +9,7 @@
 .droppercercle {
   width: 23px;
   height: 23px;
-  display: inline-block;
-  vertical-align: top;
+  display: inline-flex;
   background: rgba(80, 80, 80, 0.4);
   transition: all 200ms linear;
   margin: 0;
@@ -18,8 +17,7 @@
 
 .draggablecercle-slot,
 .draggablecercle {
-  display: inline-block;
-  vertical-align: top;
+  display: inline-flex;
   transition: all 200ms linear;
   user-select: none;
   background: rgba(80, 80, 80, 0.4);

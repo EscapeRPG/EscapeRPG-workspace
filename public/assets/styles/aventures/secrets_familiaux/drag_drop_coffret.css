@@ -6,8 +6,7 @@
   justify-content: space-evenly;
 
   img {
-    display: inline-block;
-    vertical-align: middle;
+    display: block;
     width: 100%;
   }
 }
@@ -15,8 +14,7 @@
 .dropper {
   width: 15.8%;
   height: 37.5%;
-  display: inline-block;
-  vertical-align: top;
+  display: inline-flex;
   background: rgba(40, 40, 40, 0.4);
   border-radius: 75px;
   transition: all 200ms linear;

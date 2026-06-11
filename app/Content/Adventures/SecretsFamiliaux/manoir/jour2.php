@@ -85,12 +85,7 @@ return [
                     'assets/img/secrets/salleamanger.png',
                     'salle à manger',
                     [
-                        Content::hotspot(
-                            'fenetre',
-                            'fenetreopened',
-                            'assets/img/secrets/buttonfenetre.png',
-                            'la fenêtre de la salle à manger'
-                        ),
+                        Content::hotspotAt('fenetreopened', 7.5, 2.75, 40.2, 40.5, 'assets/img/secrets/buttonfenetre.png', 'la fenêtre de la salle à manger'),
                     ]
                 ),
                 Content::narrative('secretsfamiliaux/manoir/jour2#step_5'),

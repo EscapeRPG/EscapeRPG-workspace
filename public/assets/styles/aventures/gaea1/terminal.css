@@ -1,0 +1,105 @@
+.terminal-console-wrap {
+	display: flex;
+	flex-direction: column;
+	margin: auto;
+	padding: 10px;
+	width: 80%;
+	background: black;
+	overflow: hidden;
+}
+
+.terminal-wrap {
+	display: flex;
+	flex-direction: column;
+	margin: auto;
+	width: 100%;
+	background: black;
+	height: 300px;
+	overflow: hidden;
+}
+
+.console-output {
+	width: 100%;
+	overflow: auto;
+	margin: 0 0 10px 0;
+	font-size: 14px;
+	text-align: justify;
+	font-family: consolas, sans-serif;
+
+	div {
+		margin: 0 10px 14px 0;
+	}
+}
+
+.input-shadow {
+	visibility: hidden;
+	white-space: pre;
+	word-wrap: break-word;
+	font-size: 14px;
+	position: absolute;
+	top: 0;
+	left: 0;
+	background: #333;
+	color: #fff;
+	font-family: consolas, sans-serif;
+	min-height: 10px;
+}
+
+.terminal-input-line {
+	position: relative;
+	text-align: left;
+	left: 0;
+	max-height: 35px;
+}
+
+.inputTerminal {
+	display: inline-flex;
+	position: relative;
+}
+
+.terminal-wrap input.prompt {
+	position: relative;
+	width: 10px;
+	min-width: 10px;
+	background: black;
+	color: white;
+	border: none;
+	outline: none;
+	font-size: 14px;
+	padding: 0;
+	resize: none;
+	box-sizing: content-box;
+	max-width: 600px;
+	font-family: consolas, sans-serif;
+
+	&:focus {
+		outline: none;
+		border: none;
+	}
+}
+
+.blinker {
+	animation: blink 1s step-start infinite;
+	color: white;
+	font-weight: bold;
+	position: absolute;
+	right: 0;
+}
+
+@keyframes blink {
+	50% {
+		opacity: 0;
+	}
+}
+
+.blue {
+	color: dodgerblue;
+	font-weight: 1000;
+	margin-left: 10px;
+}
+
+.red {
+	color: red;
+	font-weight: 1000;
+}
+

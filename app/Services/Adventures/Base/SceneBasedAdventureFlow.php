@@ -10,6 +10,7 @@ use App\Services\Adventures\Engine\AdventurePage;
 use App\Services\Adventures\Engine\AdventureSceneHandler;
 use App\Services\Adventures\Engine\AdventureState;
 use App\Services\Adventures\Support\AdventureContent;
+use App\Services\Adventures\Support\NarrativeTemplate;
 
 /**
  * Flow générique orienté "handlers de scènes".
@@ -42,11 +43,12 @@ abstract class SceneBasedAdventureFlow extends GenericAdventureFlow
         $isLandingPage = $this->isLandingPage($config, $request);
         $variant = $handler->variant($state, $request, $isLandingPage);
         $content = $this->content->variant($config, $scene, $variant);
-        $this->applyContentNotes($content, $state);
         $stateData = $state->all();
+        $content = NarrativeTemplate::renderContent($content, $stateData);
+        $this->applyContentNotes($content, $state);
 
         return new AdventurePage(
-            view: 'adventures/show',
+            view: (string) ($content['page_view'] ?? 'adventures/show'),
             data: [
                 'title' => ($config['title'] ?? 'Aventure') . ' - ' . ($sceneConfig['label'] ?? ucfirst($scene)),
                 'adventure' => $config,
@@ -64,7 +66,7 @@ abstract class SceneBasedAdventureFlow extends GenericAdventureFlow
                     ]
                 ),
             ],
-            layout: $config['layout'] ?? 'main',
+            layout: (string) ($content['layout'] ?? $config['layout'] ?? 'main'),
         );
     }
 
@@ -250,8 +252,7 @@ abstract class SceneBasedAdventureFlow extends GenericAdventureFlow
             return $handler;
         }
 
-        http_response_code(404);
-        exit('404');
+        (new \App\Controllers\ErrorController())->show(404);
     }
 
     /**
@@ -265,8 +266,7 @@ abstract class SceneBasedAdventureFlow extends GenericAdventureFlow
             return $this->sceneConfig($config, $scene);
         }
 
-        http_response_code(404);
-        exit('404');
+        (new \App\Controllers\ErrorController())->show(404);
     }
 
     /**

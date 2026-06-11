@@ -20,26 +20,9 @@ a {
 
 .portrait {
 	width: 20%;
-	display: inline-block;
-	vertical-align: top;
 
 	img {
 		width: 100%;
 	}
 }
 
-.phone {
-	position: absolute;
-	bottom: 18%;
-	left: 7.67%;
-	width: 5.83%;
-	height: 6.25%;
-}
-
-.sms {
-	position: absolute;
-	bottom: 14.5%;
-	left: 40.5%;
-	width: 5.67%;
-	height: 8%;
-}

@@ -1,7 +1,7 @@
 <?php
 
 $config = [
-    'dsn' => 'mysql:host=localhost;dbname=escaperpg;charset=utf8mb4',
+    'dsn' => 'mysql:host=localhost;dbname=escapedrpg2534;charset=utf8mb4',
     'user' => 'root',
     'password' => '',
     'options' => [

@@ -20,14 +20,26 @@ if (!empty($sessionConfig['save_path']) && is_string($sessionConfig['save_path']
 session_start();
 require_once __DIR__ . '/../vendor/autoload.php';
 
+use App\Controllers\ErrorController;
 use App\Core\Router;
 use App\Services\Account\AuthService;
 
 define('BASE_PATH', dirname(__DIR__));
+const BASE_URL = '';
+
+require_once __DIR__ . '/../app/Helpers/helpers.php';
+
+set_exception_handler(static function (Throwable $exception): void {
+    error_log((string) $exception);
+
+    while (ob_get_level() > 0) {
+        ob_end_clean();
+    }
+
+    (new ErrorController())->show(500);
+});
 
 $router = new Router();
-require_once __DIR__ . '/../app/Helpers/helpers.php';
-const BASE_URL = '';
 AuthService::bootstrap();
 require_once __DIR__ . '/../config/routes.php';
 

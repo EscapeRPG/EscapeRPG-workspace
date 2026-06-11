@@ -39,6 +39,10 @@ class CoffretSceneHandler extends SimpleSceneHandler
             return new AdventureActionResult(nextScene: 'chambre');
         }
 
+        if ($action === 'reset_coffret') {
+            return new AdventureActionResult(nextScene: 'coffret');
+        }
+
         if ($action !== 'inspect_coffret') {
             return new AdventureActionResult(nextScene: 'coffret');
         }

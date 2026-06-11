@@ -37,7 +37,10 @@ class HomePageContent
      */
     public function liens(): array
     {
-        return $this->load('liens');
+        $liens = $this->load('liens');
+        $liens['legal'] = $this->load('legal');
+
+        return $liens;
     }
 
     /**

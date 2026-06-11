@@ -1,4 +1,4 @@
-<div id="bloc2">
+<section id="bloc2" class="home-section">
     <div class="jouer">
         <div class="dialogue">
             <div class="portrait"><img src="<?= asset('assets/img/narrateur.png') ?>" alt="narrateur"></div>
@@ -20,4 +20,4 @@
             </div>
         </section>
     <?php endforeach; ?>
-</div>
+</section>

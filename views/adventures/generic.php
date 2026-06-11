@@ -11,6 +11,6 @@ $content = $sceneData['content'] ?? [];
 <?php foreach (($content['scripts'] ?? []) as $script): ?>
     <?php \App\Core\View::start('scripts'); ?>
     <?= \App\Core\View::get('scripts') ?>
-    <script src="<?= asset((string) $script) ?>"></script>
+    <script src="<?= asset((string) $script) ?>" charset="UTF-8"></script>
     <?php \App\Core\View::end(); ?>
 <?php endforeach; ?>

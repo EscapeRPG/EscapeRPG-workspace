@@ -10,24 +10,9 @@ $labImage = static fn(array $controls = []): array => [
     'controls' => $controls,
 ];
 
-$hiddenTrap = Content::hotspot(
-    'trappehidden',
-    'reveal_trappe',
-    'assets/img/secrets/buttontapis.png',
-    'le tapis traîne au milieu de la pièce'
-);
-$closedTrap = Content::hotspot(
-    'trappeclosed',
-    'inspect_trappe',
-    'assets/img/secrets/buttontrappe.png',
-    'une trappe verrouillée'
-);
-$openedTrap = Content::hotspot(
-    'trappeopened',
-    'open_trappe',
-    'assets/img/secrets/buttontrappeopened.png',
-    "trappe ouverte sur l'obscurité"
-);
+$hiddenTrap = Content::hotspotAt('reveal_trappe', 13, 63, 38.5, 27.5, 'assets/img/secrets/buttontapis.png', 'le tapis traîne au milieu de la pièce');
+$closedTrap = Content::hotspotAt('inspect_trappe', 26.7, 66.75, 18.2, 13.75, 'assets/img/secrets/buttontrappe.png', 'une trappe verrouillée');
+$openedTrap = Content::hotspotAt('open_trappe', 22.7, 54.8, 22, 28, 'assets/img/secrets/buttontrappeopened.png', "trappe ouverte sur l'obscurité");
 
 $leverActions = [
     Content::action(

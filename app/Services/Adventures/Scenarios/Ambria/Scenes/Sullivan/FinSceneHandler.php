@@ -10,8 +10,8 @@ use App\Services\Adventures\Scenarios\Ambria\Scenes\AmbriaSceneHandler;
 
 class FinSceneHandler extends CommentableFinalSceneHandler
 {
-    private const string SCENE = 'sullivan_fin';
-    private const string COMMENT_SCENARIO = "Le Trésor d'Ambria";
+    private const SCENE = 'sullivan_fin';
+    private const COMMENT_SCENARIO = "Le Trésor d'Ambria";
 
     private AmbriaSceneHandler $delegate;
 

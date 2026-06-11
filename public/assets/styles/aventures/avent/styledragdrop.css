@@ -1,8 +1,7 @@
 .dropper {
     width: 14.33%;
     height: 21.5%;
-    display: inline-block;
-    vertical-align: top;
+    display: inline-flex;
     background: rgba(40, 40, 40, 0.4);
     border-radius: 10px;
     transition: all 200ms linear;
@@ -15,8 +14,7 @@
 
 .dragslot > .draggable {
     width: 10%;
-    display: inline-block;
-    vertical-align: top;
+    display: inline-flex;
     background: rgba(40, 40, 40, 0.4);
     border-radius: 10px;
     transition: all 200ms linear;

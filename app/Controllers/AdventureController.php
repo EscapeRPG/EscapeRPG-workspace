@@ -46,8 +46,7 @@ abstract class AdventureController extends Controller
             return;
         }
 
-        http_response_code(404);
-        exit('404');
+        $this->abort(404);
     }
 
     /**

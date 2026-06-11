@@ -1,0 +1,61 @@
+.scan-console {
+	display: flex;
+	position: relative;
+	margin: auto;
+	width: 80%;
+	aspect-ratio: 2 / 1;
+	overflow: hidden;
+	background-color: black;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+	border: 1px solid teal;
+	border-radius: 10px;
+}
+
+#canvasfond,
+#canvasoverlay {
+	position: absolute;
+	inset: 0;
+	width: 100%;
+	height: 100%;
+}
+
+#canvasfond {
+	cursor: none;
+	touch-action: none;
+	z-index: 1;
+}
+
+#canvasfond:active {
+	cursor: grabbing;
+}
+
+#canvasoverlay {
+	z-index: 2;
+	pointer-events: none;
+}
+
+#coordinates {
+	text-align: left;
+	position: absolute;
+	top: 4.17%;
+	left: 3.12%;
+	z-index: 3;
+	color: white;
+	text-transform: uppercase;
+	pointer-events: none;
+	padding: 10px;
+	border: 1px solid teal;
+	border-radius: 10px;
+	background: rgba(0, 0, 0, 0.45);
+
+	ul {
+		margin: 0;
+	}
+
+	li {
+		list-style: none;
+		font-style: italic;
+	}
+}

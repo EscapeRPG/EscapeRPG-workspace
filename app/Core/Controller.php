@@ -52,4 +52,9 @@ class Controller
 
         require __DIR__ . '/../../views/layouts/' . $layout . '.php';
     }
+
+    protected function abort(int $status = 404, ?string $message = null): never
+    {
+        (new \App\Controllers\ErrorController())->show($status, $message);
+    }
 }

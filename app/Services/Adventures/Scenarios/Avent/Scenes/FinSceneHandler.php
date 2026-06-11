@@ -9,8 +9,8 @@ use App\Services\Adventures\Engine\AdventureState;
 
 class FinSceneHandler extends CommentableFinalSceneHandler
 {
-    private const string SCENARIO = "Le Grenier d'Arthur";
-    private const string SCENE = 'fin';
+    private const SCENARIO = "Le Grenier d'Arthur";
+    private const SCENE = 'fin';
 
     private AventSceneHandler $delegate;
 

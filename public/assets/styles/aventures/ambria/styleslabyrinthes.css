@@ -77,7 +77,7 @@
 }
 
 .playerlevier {
-  background-image: url("/assets/img/ambria/levierplayer.png") !important;
+  background-image: url("/assets/img/ambria/levierplayer.png");
   background-size: 100% 100%;
   background-color: transparent;
   border: none;
@@ -92,7 +92,7 @@
 
 .game-map {
   position: relative;
-  background-image: url("/assets/img/ambria/bateau.png") !important;
+  background-image: url("/assets/img/ambria/bateau.png");
   background-repeat: no-repeat;
 }
 
@@ -153,7 +153,7 @@ div.layer div {
 }
 
 .mutinerie-board .player {
-  background-image: url("/assets/img/ambria/loganhaubans.png") !important;
+  background-image: url("/assets/img/ambria/loganhaubans.png");
   background-size: 100% 100%;
   border: 1px solid black;
   transition: left 0.5s linear, top 0.5s linear;
@@ -185,7 +185,7 @@ div.layer div {
 }
 
 .cracking {
-  background-image: url("/assets/img/ambria/crack.png") !important;
+  background-image: url("/assets/img/ambria/crack.png");
   z-index: 1;
 }
 

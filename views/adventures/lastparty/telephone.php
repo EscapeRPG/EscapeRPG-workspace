@@ -2,8 +2,8 @@
 
 $content = $sceneData['content'] ?? [];
 $hintData = $sceneData['hintData'] ?? null;
-$step = (int) ($sceneData['step'] ?? 0);
-$faceeebookSeen = (bool) ($sceneData['faceeebookSeen'] ?? false);
+$step = (int)($sceneData['step'] ?? 0);
+$faceeebookSeen = (bool)($sceneData['faceeebookSeen'] ?? false);
 $threads = $content['threads'] ?? [];
 ?>
 
@@ -12,10 +12,16 @@ $threads = $content['threads'] ?? [];
 <?php endif; ?>
 
 <?php if (!$faceeebookSeen && $step < 1): ?>
-    <div class="enigmelieu">
+    <div class="interactive-image enigmelieu">
         <img src="<?= asset('assets/img/lastparty/telephone.png') ?>" alt="téléphone">
-        <form action="<?= url('/aventures/lastparty/telephone') ?>" method="post">
-            <button type="submit" name="action" value="open_sms" class="sms"></button>
+        <form action="<?= url('/aventures/lastparty/telephone') ?>" method="post" class="interactive-image__controls">
+            <button
+                    type="submit"
+                    name="action"
+                    value="open_sms"
+                    class="positioned-hotspot"
+                    style="--hotspot-left:40.5%;--hotspot-top:77.5%;--hotspot-width:5.67%;--hotspot-height:8%;"
+            ></button>
         </form>
     </div>
 <?php else: ?>
@@ -29,7 +35,7 @@ $threads = $content['threads'] ?? [];
 
     <div class="discussion">
         <?php foreach ($threads as $thread): ?>
-            <?php if ($step < (int) ($thread['min_step'] ?? 0)) {
+            <?php if ($step < (int)($thread['min_step'] ?? 0)) {
                 continue;
             } ?>
 
@@ -40,20 +46,22 @@ $threads = $content['threads'] ?? [];
                     <?php endforeach; ?>
                 </div>
             <?php else: ?>
-                <div class="nomdialogue"><?= e((string) ($thread['speaker'] ?? '')) ?></div>
-                <div class="dialogue-sms">
-                    <?php foreach (($thread['messages'] ?? []) as $message): ?>
-                        <div class="bulle">
-                            <p><?= $message ?></p>
-                        </div>
-                    <?php endforeach; ?>
+                <div class="message-telephone">
+                    <div class="nomdialogue"><?= e((string)($thread['speaker'] ?? '')) ?></div>
+                    <div class="dialogue-sms">
+                        <?php foreach (($thread['messages'] ?? []) as $message): ?>
+                            <div class="bulle">
+                                <p><?= $message ?></p>
+                            </div>
+                        <?php endforeach; ?>
+                    </div>
                 </div>
             <?php endif; ?>
         <?php endforeach; ?>
     </div>
 
     <?php $conclusion = $content['conclusion'] ?? null; ?>
-    <?php if (is_array($conclusion) && $step >= (int) ($conclusion['min_step'] ?? 0)): ?>
+    <?php if (is_array($conclusion) && $step >= (int)($conclusion['min_step'] ?? 0)): ?>
         <?php foreach (($conclusion['paragraphs'] ?? []) as $paragraph): ?>
             <p><?= $paragraph ?></p>
         <?php endforeach; ?>

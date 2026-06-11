@@ -24,21 +24,28 @@ $pieceImage = [
     ],
 ];
 $chambreHotspots = [
-    $tableauImage + ['class' => 'tabchbr', 'alt' => 'un grand tableau au-dessus du lit', 'value' => 'tableau'],
+    $tableauImage + [
+        'class' => 'positioned-hotspot',
+        'alt' => 'un grand tableau au-dessus du lit',
+        'value' => 'tableau',
+        'attributes' => ['style' => '--hotspot-left:79.53%;--hotspot-top:26.5%;--hotspot-width:18.17%;--hotspot-height:21%;'],
+    ],
     $pieceImage + [
-        'class' => 'piechbr',
+        'class' => 'positioned-hotspot',
         'alt' => 'une pièce sous le lit',
         'value' => 'piece',
         'visible_if' => Content::inventoryMissing('piecead'),
+        'attributes' => ['style' => '--hotspot-left:88.9%;--hotspot-top:82%;--hotspot-width:1.7%;--hotspot-height:1%;'],
     ],
 ];
 $chambreCoffreHotspots = [
-    Content::hotspot('cofchbr', 'coffre', 'assets/img/secrets/cof.png', 'coffre-fort'),
+    Content::hotspotAt('coffre', 84.7, 38.25, 7, 4.5, 'assets/img/secrets/cof.png', 'coffre-fort'),
     $pieceImage + [
-        'class' => 'piechbr',
+        'class' => 'positioned-hotspot',
         'alt' => 'une pièce sous le lit',
         'value' => 'piece',
         'visible_if' => Content::inventoryMissing('piecead'),
+        'attributes' => ['style' => '--hotspot-left:88.9%;--hotspot-top:82%;--hotspot-width:1.7%;--hotspot-height:1%;'],
     ],
 ];
 $safeForm = static fn(): array => [

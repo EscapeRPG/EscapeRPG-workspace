@@ -19,7 +19,9 @@ $renderInventoryItem = static function (string $item) use ($adventure, $inventor
     $image = (string) ($definition['image'] ?? '');
     $alt = (string) ($definition['alt'] ?? $item);
     $route = trim((string) ($definition['route'] ?? ''), '/');
-    $title = e($alt);
+    $title = e((string) ($definition['title'] ?? $alt));
+    $target = (string) ($definition['target'] ?? '');
+    $rel = (string) ($definition['rel'] ?? '');
 
     if ($image === '') {
         return e($item);
@@ -29,8 +31,10 @@ $renderInventoryItem = static function (string $item) use ($adventure, $inventor
 
     if ($route !== '') {
         $slug = (string) ($adventure['slug'] ?? '');
+        $targetAttribute = $target !== '' ? ' target="' . e($target) . '"' : '';
+        $relAttribute = $rel !== '' ? ' rel="' . e($rel) . '"' : '';
 
-        return '<a href="' . e(url('/aventures/' . $slug . '/' . $route)) . '">' . $imageHtml . '</a>';
+        return '<a href="' . e(url('/aventures/' . $slug . '/' . $route)) . '"' . $targetAttribute . $relAttribute . '>' . $imageHtml . '</a>';
     }
 
     return '<a href="' . e(asset($image)) . '" rel="lightbox[inventaire]">' . $imageHtml . '</a>';
@@ -39,7 +43,7 @@ $renderInventoryItem = static function (string $item) use ($adventure, $inventor
 
 <?php View::start('footer'); ?>
 <footer>
-    <div id="inventaireshow" class="footerhidden">
+    <div class="adventure-footer__panel" data-footer-panel="inventory">
         <?php if ($inventoryItems !== []): ?>
             <?php foreach ($inventoryItems as $item): ?>
                 <div class="inventaire-item"><?= $renderInventoryItem((string) $item) ?></div>
@@ -49,7 +53,7 @@ $renderInventoryItem = static function (string $item) use ($adventure, $inventor
         <?php endif; ?>
     </div>
 
-    <div id="motsdepasseshow" class="footerhidden">
+    <div class="adventure-footer__panel" data-footer-panel="notes">
         <p>
             <?php
             $displayableNotes = array_values(array_filter($notes, static fn ($note) => !is_array($note) && $note !== null && $note !== ''));

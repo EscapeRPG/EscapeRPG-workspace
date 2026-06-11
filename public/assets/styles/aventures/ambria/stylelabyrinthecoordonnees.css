@@ -1,23 +1,23 @@
 .boutonhaut {
-  background-image: url("/assets/img/ambria/cap/boutoncaphaut.png") !important;
+  background-image: url("/assets/img/ambria/cap/boutoncaphaut.png");
   width: 17px;
   height: 19px;
 }
 
 .boutonbas {
-  background-image: url("/assets/img/ambria/cap/boutoncapbas.png") !important;
+  background-image: url("/assets/img/ambria/cap/boutoncapbas.png");
   width: 17px;
   height: 19px;
 }
 
 .boutonhauton {
-  background-image: url("/assets/img/ambria/cap/boutoncaphauton.png") !important;
+  background-image: url("/assets/img/ambria/cap/boutoncaphauton.png");
   width: 17px;
   height: 19px;
 }
 
 .boutonbason {
-  background-image: url("/assets/img/ambria/cap/boutoncapbason.png") !important;
+  background-image: url("/assets/img/ambria/cap/boutoncapbason.png");
   width: 17px;
   height: 19px;
 }

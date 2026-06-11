@@ -84,6 +84,9 @@
     color: black;
 
     ul {
+        display: flex;
+        align-items: center;
+        justify-content: center;
         margin: 0;
         padding: 0;
     }
@@ -94,14 +97,14 @@
 
     img {
         max-width: 30px;
-        display: inline-block;
-        vertical-align: middle;
+        display: block;
     }
 }
 
 .topleft {
-    display: inline-block;
-    vertical-align: bottom;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     min-width: 30%;
     padding: 10px 0;
 }
@@ -118,8 +121,8 @@
     text-align: justify;
 
     form {
-        display: inline-block;
-        vertical-align: middle;
+        display: inline-flex;
+        align-items: center;
         margin: 0;
     }
 }
@@ -133,21 +136,22 @@ input[type=search] {
 }
 
 .logoscentre {
-    display: inline-block;
-    vertical-align: bottom;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     min-width: 20%;
     margin: 10px 7% 0 7%;
 
     img {
-        display: inline-block;
-        vertical-align: middle;
+        display: block;
         margin: 0 3%;
     }
 }
 
 .topright {
-    display: inline-block;
-    vertical-align: bottom;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     min-width: 30%;
     padding: 10px 0;
 }
@@ -176,16 +180,14 @@ input[type=search] {
 
     img {
         width: 10%;
-        display: inline-block;
-        vertical-align: top;
+        display: block;
     }
 }
 
 .name {
     width: 84%;
     margin-left: 0;
-    display: inline-block;
-    vertical-align: top;
+    display: inline-flex;
     font-size: small;
     font-weight: bold;
 }
@@ -199,8 +201,7 @@ input[type=search] {
     background: #c1d4e5;
     border-radius: 20px;
     border: none;
-    display: inline-block;
-    vertical-align: top;
+    display: inline-flex;
     padding: 10px;
     color: rgba(0, 0, 0, 0.5);
 }
@@ -208,15 +209,15 @@ input[type=search] {
 .likes {
     p {
         color: #70ade3;
-        display: inline-block;
-        vertical-align: middle;
+        display: inline-flex;
+        align-items: center;
         font-size: small;
         padding: 0;
     }
 
     img {
         width: 20px;
-        display: inline-block;
+        display: inline-flex;
         vertical-align: middle;
     }
 }
@@ -227,7 +228,7 @@ input[type=search] {
 
     img {
         max-width: 30px;
-        display: inline-block;
+        display: inline-flex;
         vertical-align: middle;
     }
 }
@@ -237,15 +238,15 @@ input[type=search] {
     background: #c1d4e5;
     border-radius: 20px;
     border: none;
-    display: inline-block;
-    vertical-align: top;
+    display: inline-flex;
+    flex-direction: column;
     padding: 10px;
     color: black;
     margin-bottom: 10px;
     text-align: left;
 
     p {
-        text-align: left !important;
+        text-align: left;
         font-size: 14px;
         margin: 0;
         padding: 0 5px;
@@ -271,7 +272,7 @@ input[type=search] {
 }
 
 .discussions {
-    float: right;
+    width: fit-content;
     margin: -30px 20px 20px auto;
     background: rgba(0, 0, 0, 0.2);
     box-shadow: 0 1px 5px rgba(0, 0, 0, 0.5);

@@ -84,6 +84,18 @@ foreach ($configs as $slug => [$configFile, $config]) {
     }
 }
 
+if ($all) {
+    $globalWarnings = validateGlobalStyleReferences($root);
+    $totalWarnings += count($globalWarnings);
+
+    if ($globalWarnings !== []) {
+        echo "\n== global styles ==\n";
+        foreach ($globalWarnings as $message) {
+            echo "[WARN]  {$message}\n";
+        }
+    }
+}
+
 echo "\nSummary: {$totalErrors} error(s), {$totalWarnings} warning(s).\n";
 exit($totalErrors > 0 ? 1 : 0);
 
@@ -126,6 +138,7 @@ function validateAdventure(string $root, string $configFile, array $config): arr
     validateInventoryAssets($root, $config, $errors);
     validateSceneMaps($config, $sceneIds, $errors, $warnings);
     validateContentFiles($root, $contentPath, $sceneIds, $config, $errors, $warnings);
+    validateContentActions($root, $config, $contentPath, $sceneIds, $warnings);
     validateAwardedAchievements($root, $slug, $config, $errors, $warnings);
 
     return ['errors' => $errors, 'warnings' => $warnings];
@@ -218,12 +231,87 @@ function validateContentFiles(
 
         validateContentAssets($root, $scene, $content, $errors);
         validateContentIds($scene, $content, $warnings);
+        validateMarkdownReferences($root, $scene, $path, $warnings);
     }
+}
+
+function validateMarkdownReferences(string $root, string $scene, string $contentPath, array &$warnings): void
+{
+    $source = (string) file_get_contents($contentPath);
+
+    if (!preg_match_all("/['\"]([a-z0-9_\\/-]+#[a-zA-Z0-9_\\-]+)['\"]/", $source, $matches)) {
+        return;
+    }
+
+    foreach (array_unique($matches[1]) as $reference) {
+        [$fileReference, $section] = explode('#', $reference, 2);
+        $markdownPath = $root . '/content/adventures/' . trim($fileReference, '/') . '.md';
+
+        if (!is_file($markdownPath)) {
+            $warnings[] = "Scene '{$scene}' references missing markdown file: " . relativePath($root, $markdownPath);
+            continue;
+        }
+
+        $markdown = (string) file_get_contents($markdownPath);
+        $isHintReference = str_ends_with($fileReference, '/hints') || $fileReference === 'hints';
+        $sectionExists = markdownSectionExists($markdown, $section);
+
+        if (!$sectionExists && $isHintReference) {
+            $sectionExists = markdownSectionExistsWithPrefix($markdown, $section . '_');
+        }
+
+        if (!$sectionExists) {
+            $warnings[] = "Scene '{$scene}' references missing markdown section '{$reference}'.";
+        }
+    }
+}
+
+function markdownSectionExists(string $markdown, string $section): bool
+{
+    foreach (markdownSections($markdown) as $heading) {
+        if ($heading === $section) {
+            return true;
+        }
+    }
+
+    return false;
+}
+
+function markdownSectionExistsWithPrefix(string $markdown, string $prefix): bool
+{
+    foreach (markdownSections($markdown) as $heading) {
+        if (str_starts_with($heading, $prefix)) {
+            return true;
+        }
+    }
+
+    return false;
+}
+
+/**
+ * @return list<string>
+ */
+function markdownSections(string $markdown): array
+{
+    $sections = [];
+
+    foreach (preg_split('/\R/', $markdown) ?: [] as $line) {
+        $line = ltrim($line, "\xEF\xBB\xBF");
+        if (str_starts_with($line, '## ')) {
+            $sections[] = trim(substr($line, 3));
+        }
+    }
+
+    return $sections;
 }
 
 function validateContentAssets(string $root, string $scene, mixed $node, array &$errors, string $path = ''): void
 {
     if (!is_array($node)) {
+        return;
+    }
+
+    if (($node['allow_missing_asset'] ?? false) === true) {
         return;
     }
 
@@ -252,13 +340,296 @@ function validateContentIds(string $scene, mixed $node, array &$warnings, string
 
     foreach ($node as $key => $value) {
         $currentPath = $path === '' ? (string) $key : $path . '.' . $key;
-        if ($key === 'id' && is_string($value) && $value !== '') {
+        if ($key === 'id' && is_string($value) && $value !== '' && ($node['id_required'] ?? false) !== true) {
             $warnings[] = "Scene '{$scene}' uses id '{$value}' at {$currentPath}. Prefer class/data-* unless JS requires an id.";
         }
         if (is_array($value)) {
             validateContentIds($scene, $value, $warnings, $currentPath);
         }
     }
+}
+
+function validateContentActions(string $root, array $config, string $contentPath, array $sceneIds, array &$warnings): void
+{
+    if ($contentPath === '') {
+        return;
+    }
+
+    $base = $root . '/app/Content/' . trim($contentPath, '/');
+    if (!is_dir($base)) {
+        return;
+    }
+
+    $handledActions = handledScenarioActions($root, $config);
+    if ($handledActions === []) {
+        return;
+    }
+
+    foreach ($sceneIds as $scene) {
+        $contentFile = (string) (($config['content_files'][$scene] ?? null) ?: $scene);
+        $path = $base . '/' . trim($contentFile, '/') . '.php';
+        if (!is_file($path)) {
+            continue;
+        }
+
+        try {
+            $content = require $path;
+        } catch (Throwable) {
+            continue;
+        }
+
+        foreach (contentActionValues($content) as $action) {
+            if (
+                !isset($handledActions[$action])
+                && !handledActionPrefixExists($action, $handledActions)
+                && !scenarioSourceContains($root, $config, $action)
+            ) {
+                $warnings[] = "Scene '{$scene}' declares action '{$action}' but no matching handler action was found.";
+            }
+        }
+    }
+}
+
+function scenarioSourceContains(string $root, array $config, string $needle): bool
+{
+    $scenarioDir = scenarioServiceDirectory($root, $config);
+    if ($scenarioDir === null || !is_dir($scenarioDir)) {
+        return false;
+    }
+
+    $iterator = new RecursiveIteratorIterator(new RecursiveDirectoryIterator($scenarioDir));
+    foreach ($iterator as $file) {
+        if (!$file->isFile() || $file->getExtension() !== 'php') {
+            continue;
+        }
+
+        if (str_contains((string) file_get_contents($file->getPathname()), $needle)) {
+            return true;
+        }
+    }
+
+    return false;
+}
+
+/**
+ * @param array<string, true> $handledActions
+ */
+function handledActionPrefixExists(string $action, array $handledActions): bool
+{
+    if (!preg_match('/^(.*_)\d+$/', $action, $matches)) {
+        return false;
+    }
+
+    $prefix = $matches[1];
+    foreach (array_keys($handledActions) as $handledAction) {
+        if ($handledAction !== $action && str_starts_with($handledAction, $prefix)) {
+            return true;
+        }
+    }
+
+    return false;
+}
+
+/**
+ * @return array<string, true>
+ */
+function handledScenarioActions(string $root, array $config): array
+{
+    $actions = [
+        'request_hint' => true,
+        'show_answer' => true,
+        'save_game' => true,
+        'load_game' => true,
+        'submit_load_game' => true,
+        'submit_save_game' => true,
+    ];
+
+    foreach (scenarioFlowActions($root, $config) as $action) {
+        $actions[$action] = true;
+    }
+
+    $scenarioDir = scenarioServiceDirectory($root, $config);
+    if ($scenarioDir === null || !is_dir($scenarioDir)) {
+        return $actions;
+    }
+
+    $iterator = new RecursiveIteratorIterator(new RecursiveDirectoryIterator($scenarioDir));
+    foreach ($iterator as $file) {
+        if (!$file->isFile() || $file->getExtension() !== 'php') {
+            continue;
+        }
+
+        $source = (string) file_get_contents($file->getPathname());
+        foreach (extractHandledActionStrings($source) as $action) {
+            $actions[$action] = true;
+        }
+    }
+
+    return $actions;
+}
+
+/**
+ * @return list<string>
+ */
+function scenarioFlowActions(string $root, array $config): array
+{
+    $slug = (string) ($config['slug'] ?? '');
+    $path = $root . '/config/adventures/' . $slug . '/flow.php';
+    if ($slug === '' || !is_file($path)) {
+        return [];
+    }
+
+    $definitions = require $path;
+    if (!is_array($definitions)) {
+        return [];
+    }
+
+    $actions = [];
+    foreach ($definitions as $definition) {
+        if (!is_array($definition)) {
+            continue;
+        }
+        foreach (array_keys((array) ($definition['actions'] ?? [])) as $action) {
+            if (is_string($action) && $action !== '') {
+                $actions[] = $action;
+            }
+        }
+    }
+
+    return array_values(array_unique($actions));
+}
+
+function scenarioServiceDirectory(string $root, array $config): ?string
+{
+    $flow = (string) ($config['flow'] ?? '');
+    $prefix = 'App\\Services\\Adventures\\Scenarios\\';
+    $scenarioNamespace = '';
+
+    if ($flow !== '' && str_starts_with($flow, $prefix)) {
+        $relative = substr($flow, strlen($prefix));
+        $parts = explode('\\', $relative);
+        $scenarioNamespace = $parts[0] ?? '';
+    }
+
+    if ($scenarioNamespace === '') {
+        $contentPath = trim((string) ($config['content_path'] ?? ''), '/\\');
+        $contentParts = preg_split('/[\/\\\\]/', $contentPath) ?: [];
+        $scenarioNamespace = (string) end($contentParts);
+    }
+
+    if ($scenarioNamespace === '') {
+        return null;
+    }
+
+    return $root . '/app/Services/Adventures/Scenarios/' . $scenarioNamespace;
+}
+
+/**
+ * @return list<string>
+ */
+function extractHandledActionStrings(string $source): array
+{
+    $actions = [];
+    $patterns = [
+        '/\\$action\\s*={2,3}\\s*[\'"]([^\'"]+)[\'"]/',
+        '/\\$action\\s*!={1,2}\\s*[\'"]([^\'"]+)[\'"]/',
+        '/post\\(\\s*[\'"]action[\'"][^)]*\\)\\s*={2,3}\\s*[\'"]([^\'"]+)[\'"]/',
+        '/^\\s*[\'"]([^\'"]+)[\'"]\\s*(?:,|=>)/m',
+        '/,\\s*[\'"]([^\'"]+)[\'"]\\s*(?:,|=>)/',
+        '/[\'"]([^\'"]+)[\'"]\\s*=>/',
+        '/case\\s+[\'"]([^\'"]+)[\'"]\\s*:/',
+    ];
+
+    foreach ($patterns as $pattern) {
+        if (!preg_match_all($pattern, $source, $matches)) {
+            continue;
+        }
+        foreach ($matches[1] as $action) {
+            if (isActionLikeString($action)) {
+                $actions[] = $action;
+            }
+        }
+    }
+
+    if (preg_match_all('/[\'"]([^\'"]+)[\'"]/', $source, $matches)) {
+        foreach ($matches[1] as $action) {
+            if (isActionLikeString($action)) {
+                $actions[] = $action;
+            }
+        }
+    }
+
+    return array_values(array_unique($actions));
+}
+
+/**
+ * @return list<string>
+ */
+function contentActionValues(mixed $content): array
+{
+    $actions = [];
+
+    if (!is_array($content)) {
+        return [];
+    }
+
+    foreach ((array) ($content['variants'] ?? []) as $variant) {
+        if (!is_array($variant)) {
+            continue;
+        }
+
+        foreach ((array) ($variant['actions'] ?? []) as $action) {
+            if (is_array($action) && actionNodeUsesActionPostName($action)) {
+                $value = $action['value'] ?? null;
+                if (is_string($value) && isActionLikeString($value)) {
+                    $actions[] = $value;
+                }
+            }
+        }
+
+        collectInteractiveActionValues((array) ($variant['blocks'] ?? []), $actions);
+    }
+
+    return array_values(array_unique($actions));
+}
+
+function collectInteractiveActionValues(mixed $node, array &$actions): void
+{
+    if (!is_array($node)) {
+        return;
+    }
+
+    if (($node['type'] ?? null) === 'interactive_image') {
+        foreach (($node['controls'] ?? $node['hotspots'] ?? []) as $control) {
+            if (!is_array($control) || !actionNodeUsesActionPostName($control)) {
+                continue;
+            }
+
+            $value = $control['value'] ?? null;
+            if (is_string($value) && isActionLikeString($value)) {
+                $actions[] = $value;
+            }
+        }
+    }
+
+    foreach ($node as $value) {
+        if (is_array($value)) {
+            collectInteractiveActionValues($value, $actions);
+        }
+    }
+}
+
+function actionNodeUsesActionPostName(array $node): bool
+{
+    return !isset($node['name']) || $node['name'] === 'action';
+}
+
+function isActionLikeString(string $value): bool
+{
+    return $value !== ''
+        && preg_match('/^[a-z][a-z0-9_:-]*$/', $value) === 1
+        && !str_contains($value, '#')
+        && !str_contains($value, '/');
 }
 
 function validateInventoryAssets(string $root, array $config, array &$errors): void
@@ -457,6 +828,89 @@ function validateAwardedAchievements(string $root, string $slug, array $config, 
             $warnings[] = "Achievement '{$slug}:{$name}' has no locked image variant: " . relativePath($root, $offImage);
         }
     }
+}
+
+/**
+ * @return list<string>
+ */
+function validateGlobalStyleReferences(string $root): array
+{
+    $warnings = [];
+    $publicRoot = $root . '/public';
+    $stylesRoot = $publicRoot . '/assets/styles';
+
+    if (!is_dir($stylesRoot)) {
+        return $warnings;
+    }
+
+    $ignored = [
+        'assets/styles/polls/style.css' => true,
+    ];
+    $referencedAssets = collectReferencedPublicAssets($root);
+    $iterator = new RecursiveIteratorIterator(new RecursiveDirectoryIterator($stylesRoot));
+
+    foreach ($iterator as $file) {
+        if (!$file->isFile() || strtolower($file->getExtension()) !== 'css') {
+            continue;
+        }
+
+        $asset = normalizePublicAssetPath($publicRoot, $file->getPathname());
+        if ($asset === null || isset($ignored[$asset]) || isset($referencedAssets[$asset])) {
+            continue;
+        }
+
+        $warnings[] = "Unreferenced public stylesheet: {$asset}";
+    }
+
+    sort($warnings);
+
+    return $warnings;
+}
+
+/**
+ * @return array<string, true>
+ */
+function collectReferencedPublicAssets(string $root): array
+{
+    $references = [];
+    $sourceRoots = ['app', 'config', 'public', 'views'];
+
+    foreach ($sourceRoots as $sourceRoot) {
+        $directory = $root . '/' . $sourceRoot;
+        if (!is_dir($directory)) {
+            continue;
+        }
+
+        $iterator = new RecursiveIteratorIterator(new RecursiveDirectoryIterator($directory));
+        foreach ($iterator as $file) {
+            if (!$file->isFile() || !in_array(strtolower($file->getExtension()), ['php', 'js', 'json'], true)) {
+                continue;
+            }
+
+            $source = (string) file_get_contents($file->getPathname());
+            if (!preg_match_all('#/?assets/styles/[a-zA-Z0-9_./-]+\.css#', $source, $matches)) {
+                continue;
+            }
+
+            foreach ($matches[0] as $asset) {
+                $references[ltrim(str_replace('\\', '/', $asset), '/')] = true;
+            }
+        }
+    }
+
+    return $references;
+}
+
+function normalizePublicAssetPath(string $publicRoot, string $path): ?string
+{
+    $publicRoot = str_replace('\\', '/', rtrim($publicRoot, '/\\'));
+    $path = str_replace('\\', '/', $path);
+
+    if (!str_starts_with($path, $publicRoot . '/')) {
+        return null;
+    }
+
+    return substr($path, strlen($publicRoot) + 1);
 }
 
 function relativePath(string $root, string $path): string

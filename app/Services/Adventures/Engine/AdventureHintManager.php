@@ -23,7 +23,8 @@ class AdventureHintManager
             return null;
         }
 
-        $progress = $this->progress($state, $scene);
+        $hintKey = $this->hintKey($hintConfig, $scene);
+        $progress = $this->progress($state, $hintKey);
         $levels = $this->normalizeLevels($hintConfig['levels'] ?? []);
         $answer = $this->normalizeBlock($hintConfig['answer'] ?? null);
         $visibleLevels = array_slice($levels, 0, max(0, (int) $progress['level']));
@@ -56,10 +57,11 @@ class AdventureHintManager
         }
 
         $currentState = $state->all();
-        $progress = $this->progress($currentState, $scene);
+        $hintKey = $this->hintKey($hintConfig, $scene);
+        $progress = $this->progress($currentState, $hintKey);
         $nextLevel = min(count($levels), (int) $progress['level'] + 1);
         $hintsState = $currentState['hints'] ?? [];
-        $hintsState[$scene] = [
+        $hintsState[$hintKey] = [
             'level' => $nextLevel,
             'answer_revealed' => false,
         ];
@@ -93,14 +95,15 @@ class AdventureHintManager
 
         $levels = $this->normalizeLevels($hintConfig['levels'] ?? []);
         $currentState = $state->all();
-        $progress = $this->progress($currentState, $scene);
+        $hintKey = $this->hintKey($hintConfig, $scene);
+        $progress = $this->progress($currentState, $hintKey);
 
         if ((int) $progress['level'] < count($levels)) {
             return null;
         }
 
         $hintsState = $currentState['hints'] ?? [];
-        $hintsState[$scene] = [
+        $hintsState[$hintKey] = [
             'level' => count($levels),
             'answer_revealed' => true,
         ];
@@ -133,6 +136,16 @@ class AdventureHintManager
             'level' => (int) ($progress['level'] ?? 0),
             'answer_revealed' => (bool) ($progress['answer_revealed'] ?? false),
         ];
+    }
+
+    /**
+     * @param array<string, mixed> $hintConfig
+     */
+    private function hintKey(array $hintConfig, string $scene): string
+    {
+        $key = $hintConfig['key'] ?? null;
+
+        return is_string($key) && $key !== '' ? $key : $scene;
     }
 
     /**

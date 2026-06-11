@@ -13,8 +13,7 @@
 .dropperetagere {
   width: 150px;
   height: 200px;
-  display: inline-block;
-  vertical-align: top;
+  display: inline-flex;
   transition: all 200ms linear;
   margin: 0;
 }
@@ -24,8 +23,7 @@
 }
 
 .draggeretagere {
-  display: inline-block;
-  vertical-align: top;
+  display: inline-flex;
   transition: all 200ms linear;
   user-select: none;
   background: rgba(100, 100, 100, 0.4);

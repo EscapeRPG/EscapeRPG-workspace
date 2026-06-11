@@ -35,5 +35,7 @@ $router->get('/aventures/{slug}/logan/*', [AdventurePageController::class, 'show
 $router->post('/aventures/{slug}/logan/*', [AdventurePageController::class, 'updatePath']);
 $router->get('/aventures/{slug}/sullivan/*', [AdventurePageController::class, 'showPath']);
 $router->post('/aventures/{slug}/sullivan/*', [AdventurePageController::class, 'updatePath']);
+$router->get('/aventures/{slug}/station/*', [AdventurePageController::class, 'showPath']);
+$router->post('/aventures/{slug}/station/*', [AdventurePageController::class, 'updatePath']);
 $router->get('/aventures/{slug}/{scene}', [AdventurePageController::class, 'show']);
 $router->post('/aventures/{slug}/{scene}', [AdventurePageController::class, 'update']);

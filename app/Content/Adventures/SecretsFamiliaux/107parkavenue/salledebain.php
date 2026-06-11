@@ -34,20 +34,14 @@ return [
                     'assets/img/secrets/sdb.png',
                     'la salle de bain du docteur Pellington',
                     [
-                        Content::hotspot(
-                            'armoire',
-                            'open_armoire',
-                            'assets/img/secrets/armoirepharm.png',
-                            "l'armoire à pharmacie du docteur Pellington",
-                            [
-                                'src_options' => [
-                                    [
-                                        'if' => Content::stateTruthy('pellington_armoire_opened'),
-                                        'src' => 'assets/img/secrets/armoirepharmopened.png',
-                                    ],
+                        Content::hotspotAt('open_armoire', 79.3, 25.5, 10.7, 24.5, 'assets/img/secrets/armoirepharm.png', "l'armoire à pharmacie du docteur Pellington", extra: [
+                            'src_options' => [
+                                [
+                                    'if' => Content::stateTruthy('pellington_armoire_opened'),
+                                    'src' => 'assets/img/secrets/armoirepharmopened.png',
                                 ],
-                            ]
-                        ),
+                            ],
+                        ]),
                     ]
                 ),
                 Content::narrative('secretsfamiliaux/107parkavenue/salledebain#step_0'),
@@ -61,12 +55,7 @@ return [
                     'assets/img/secrets/sdbarmoireopened.png',
                     'la salle de bain du docteur Pellington',
                     [
-                        Content::hotspot(
-                            'armoireopened',
-                            'open_armoire',
-                            'assets/img/secrets/armoirepharmopened.png',
-                            "l'armoire à pharmacie du docteur Pellington"
-                        ),
+                        Content::hotspotAt('open_armoire', 71, 25, 19, 24.5, 'assets/img/secrets/armoirepharmopened.png', "l'armoire à pharmacie du docteur Pellington"),
                     ]
                 ),
                 Content::narrative('secretsfamiliaux/107parkavenue/salledebain#opened'),

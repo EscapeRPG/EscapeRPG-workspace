@@ -40,7 +40,7 @@
     margin: 0;
     color: #f5f5f5;
     line-height: 1.55;
-    text-align: left !important;
+    text-align: left;
 }
 
 .context-modal__actions {
@@ -51,14 +51,14 @@
 
 .context-modal__confirm,
 .context-modal__close {
-    cursor: pointer !important;
+    cursor: pointer;
 }
 
 .context-modal__confirm {
     min-width: 90px;
     padding: 10px 15px !important;
     border-radius: 4px;
-    background: black;
+    background: black !important;
     color: orange;
     font-weight: bold;
 }

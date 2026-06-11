@@ -6,12 +6,7 @@ $bureauDoor = Content::interactiveImage(
     'assets/img/secrets/portebureau.png',
     'porte du bureau',
     [
-        Content::hotspot(
-            'symbureau',
-            'symbole',
-            'assets/img/secrets/symbur.png',
-            'un étrange symbole gravé sur la porte'
-        ),
+        Content::hotspotAt('symbole', 44.5, 16, 10, 20, 'assets/img/secrets/symbur.png', 'un étrange symbole gravé sur la porte'),
     ]
 );
 $openBureauScript = ['assets/js/adventures/secrets_familiaux/ouverturebureau.js'];

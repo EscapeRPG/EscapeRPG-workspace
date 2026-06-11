@@ -32,7 +32,7 @@ input[type="submit"] {
 }
 
 .card-choice {
-    cursor: pointer !important;
+    cursor: pointer;
 }
 
 button.noway {
@@ -77,14 +77,6 @@ h3 {
     font-size: 14px;
     margin: auto;
     padding: 12px 0 12px 0;
-}
-
-.tavlogan {
-    position: absolute;
-    left: 13.58%;
-    top: 59.6%;
-    width: 7.9%;
-    height: 23.49%;
 }
 
 .cadrans-cap {

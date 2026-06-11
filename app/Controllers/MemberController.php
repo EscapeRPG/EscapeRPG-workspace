@@ -48,8 +48,7 @@ class MemberController extends Controller
         $members = new MemberRepository($this->db);
         $member = $members->findByUsername($pseudo);
         if (!$member) {
-            http_response_code(404);
-            exit('404');
+            $this->abort(404);
         }
 
         $this->renderMemberProfile($member, AuthService::pseudo() === $member['pseudo']);
@@ -146,8 +145,7 @@ class MemberController extends Controller
         $target = $members->findByUsername($pseudo);
 
         if (!$target) {
-            http_response_code(404);
-            exit('404');
+            $this->abort(404);
         }
 
         if (!verify_csrf($this->request->post('_token'))) {

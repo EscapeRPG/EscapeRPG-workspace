@@ -10,15 +10,11 @@ footer {
     background: linear-gradient(to top, rgba(0, 0, 0, 0.3) 80%, transparent);
 }
 
-.footerhidden {
-    display: none !important;
-}
-
-.footeraffichage {
+.adventure-footer__panel {
+    display: none;
     width: 80%;
     margin: auto;
     padding: 20px 0 10px;
-    display: flex;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
@@ -29,6 +25,10 @@ footer {
     }
 }
 
-.current input {
+.adventure-footer__panel.is-open {
+    display: flex;
+}
+
+.footer-trigger.current input {
     background: orange;
 }

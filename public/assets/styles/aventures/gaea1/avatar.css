@@ -1,0 +1,83 @@
+.avatar-container {
+	display: flex;
+	align-items: start;
+	justify-content: center;
+	gap: 20px;
+}
+
+.avatar-wrap {
+	display: inline-flex;
+	position: relative;
+	width: 30%;
+	margin: 1%;
+
+	img {
+		width: 100%;
+		border-radius: 10px;
+		border: 1px solid lightskyblue;
+		overflow: hidden;
+	}
+}
+
+.avatar-preview {
+	position: absolute;
+	width: 100%;
+	top: 0;
+	left: 0;
+
+	img {
+		position: absolute;
+		width: 100%;
+		top: 0;
+		left: 0;
+	}
+}
+
+.avatar-form {
+	display: inline-flex;
+	flex-direction: column;
+	width: 60%;
+	margin: 1%;
+}
+
+table {
+	width: 100%;
+	margin: 20px auto;
+	border-collapse: separate;
+	border-spacing: 0;
+}
+
+.createavatar td {
+	border-top: 1px solid lightskyblue;
+	border-bottom: 1px solid lightskyblue;
+	height: 70px;
+}
+
+.titreavatar {
+	text-align: left;
+}
+
+table button {
+	width: 20px;
+	height: 20px;
+	cursor: pointer;
+}
+
+form table {
+	text-align: left;
+	width: 80%;
+
+	input[type=text] {
+		max-width: 100%;
+	}
+}
+
+input[type=color] {
+	border: 0;
+	margin: 0;
+	padding: 0;
+	inline-size: 20px;
+	background: none;
+	cursor: pointer;
+}
+

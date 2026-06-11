@@ -9,13 +9,9 @@ $vestibuleImage = Content::interactiveImage(
     'enigmelieu',
     [
         'controls' => [
-            Content::hotspot(
-                'vest',
-                'veste',
-                'assets/img/secrets/veste.png',
-                'la veste du docteur Pellington',
-                ['visible_if' => Content::stateFalsy('pellington_veste_searched')]
-            ),
+            Content::hotspotAt('veste', 18.8, 30.5, 9.2, 33, 'assets/img/secrets/veste.png', 'la veste du docteur Pellington', extra: [
+                'visible_if' => Content::stateFalsy('pellington_veste_searched'),
+            ]),
         ],
     ]
 );

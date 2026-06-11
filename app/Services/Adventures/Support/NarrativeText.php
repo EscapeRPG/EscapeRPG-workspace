@@ -31,10 +31,7 @@ class NarrativeText
         ];
     }
 
-    /**
-     * @return array<int, string>
-     */
-    public static function paragraphList(string $path): array
+    public static function raw(string $path): string
     {
         [$filePath, $section] = self::splitSection($path);
         $file = self::resolvePath($filePath);
@@ -45,12 +42,22 @@ class NarrativeText
         }
 
         $contents = str_replace(["\r\n", "\r"], "\n", trim($contents, "\xEF\xBB\xBF \t\n\r\0\x0B"));
-        if ($contents === '') {
-            return [];
-        }
 
         if ($section !== null) {
-            $contents = self::extractSection($contents, $section, $filePath);
+            return self::extractSection($contents, $section, $filePath);
+        }
+
+        return $contents;
+    }
+
+    /**
+     * @return array<int, string>
+     */
+    public static function paragraphList(string $path): array
+    {
+        $contents = self::raw($path);
+        if ($contents === '') {
+            return [];
         }
 
         $paragraphs = array_values(array_filter(

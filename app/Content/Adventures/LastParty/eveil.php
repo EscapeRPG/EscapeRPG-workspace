@@ -20,9 +20,12 @@ return [
                     'assets/img/lastparty/appartement.png',
                     'appartement',
                     [
-                        Content::hotspot(
-                            'phone',
+                        Content::hotspotAt(
                             'open_phone',
+                            7.67,
+                            75.75,
+                            5.83,
+                            6.25,
                             'assets/img/lastparty/telephonemini.png',
                             'téléphone'
                         ),

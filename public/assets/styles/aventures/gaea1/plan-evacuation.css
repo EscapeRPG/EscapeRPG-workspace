@@ -1,0 +1,525 @@
+#plan {
+	width: 100%;
+	margin: 10px auto;
+	position: relative;
+	overflow: hidden;
+	border: 1px solid lightskyblue;
+	border-radius: 10px;
+}
+
+.station-plan-list {
+	li {
+		color: lightskyblue;
+		cursor: pointer;
+		list-style-type: none;
+		margin: 5px;
+		padding: 2px 2px 2px 8px;
+		position: relative;
+		border-bottom: 1px solid;
+		border-color: lightskyblue;
+		display: block;
+
+		&::before {
+			content: '';
+			display: block;
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			height: 60%;
+			width: 2px;
+			background: lightskyblue;
+		}
+
+		&::after {
+			content: '';
+			display: block;
+			position: absolute;
+			bottom: 0;
+			right: 0;
+			height: 30%;
+			width: 50%;
+			background: linear-gradient(135deg, transparent 20%, rgba(135, 206, 250, 0.4) 20%);
+			border-right: 10px double lightskyblue;
+		}
+	}
+
+	.lienuntested {
+		color: grey;
+		border-color: grey;
+
+		&::before {
+			background: grey;
+		}
+
+		&::after {
+			width: 30%;
+			background: linear-gradient(135deg, transparent 20%, rgba(128, 128, 128, 0.4) 20%);
+			border-color: grey;
+		}
+	}
+
+	.lienclosed {
+		color: red;
+		border-color: red;
+
+		&::before {
+			background: red;
+		}
+
+		&::after {
+			width: 10%;
+			background: linear-gradient(135deg, transparent 20%, rgba(255, 0, 0, 0.4) 20%);
+			border-color: red;
+		}
+	}
+
+	.locactuelle {
+		color: white;
+		border-color: white;
+
+		&::before {
+			background: white;
+		}
+
+		&::after {
+			width: 50%;
+			background: linear-gradient(135deg, transparent 20%, rgba(255, 255, 255, 0.4) 20%);
+			border-color: white;
+		}
+	}
+
+	.currentli {
+		color: orange;
+		border-color: orange;
+
+		&::before {
+			background: orange;
+		}
+
+		&::after {
+			width: 50%;
+			background: linear-gradient(135deg, transparent 20%, rgba(255, 165, 0, 0.4) 20%);
+			border-color: orange;
+		}
+	}
+
+	li:hover {
+		color: orange;
+		border-color: orange;
+
+		&::before {
+			background: orange;
+		}
+
+		&::after {
+			width: 50%;
+			background: linear-gradient(135deg, transparent 20%, rgba(255, 165, 0, 0.4) 20%);
+			border-color: orange;
+		}
+	}
+}
+
+
+
+
+
+
+
+
+
+
+.station-plan-shortcut {
+	width: 80%;
+	margin: 10px auto;
+	aspect-ratio: 4961 / 3508;
+	position: relative;
+	overflow: hidden;
+}
+
+.station-plan-shortcut > a {
+	display: block;
+	position: relative;
+	width: 100%;
+	height: 100%;
+}
+
+.station-plan-shortcut > a > img {
+	display: block;
+	width: 100%;
+	height: 100%;
+	object-fit: contain;
+}
+
+.station-plan-shortcut .station-plan-current {
+	inset: 0;
+	pointer-events: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+#planevac,
+#planevacoverlay,
+.station-plan-current,
+.station-plan-tiles {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+}
+
+#planevac div,
+#planevacoverlay div,
+.station-plan-current > div {
+	position: absolute;
+}
+
+.station-plan-layout {
+	display: grid;
+	grid-template-columns: minmax(180px, 260px) minmax(0, 1fr);
+	gap: 20px;
+	align-items: start;
+}
+
+.station-plan-list form {
+	margin: 0;
+}
+
+.station-plan-list button {
+	width: 100%;
+	border: 0;
+	padding: 0;
+	color: inherit;
+	background: transparent;
+	text-align: left;
+	cursor: pointer;
+}
+
+.station-plan-list span {
+	display: block;
+}
+
+.station-plan-map {
+	position: relative;
+	margin: auto;
+	width: min(100%, 900px);
+	aspect-ratio: 4961 / 3508;
+	overflow: hidden;
+}
+
+.station-plan-map > img {
+	display: block;
+	width: 100%;
+	height: auto;
+}
+
+.station-plan-current img,
+.station-plan-map .station-plan-tiles img,
+.station-plan-map #planevac img,
+.station-plan-map #planevacoverlay img {
+	width: 100%;
+	height: 100%;
+	object-fit: fill;
+}
+
+.station-plan-map .station-plan-tiles form,
+.station-plan-map #planevac form {
+	position: absolute;
+	margin: 0;
+}
+
+.station-plan-map .station-plan-tiles button,
+.station-plan-map #planevac button {
+	width: 100%;
+	height: 100%;
+	border: 0;
+	padding: 0;
+	background: transparent;
+	cursor: pointer;
+}
+
+.station-plan-map .station-plan-tiles form,
+.station-plan-map .station-plan-tiles > div,
+.station-plan-map #planevac form,
+.station-plan-map #planevacoverlay > div {
+	position: absolute;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.room-tile--token {
+	pointer-events: none;
+}
+
+.room-tile button {
+	position: relative;
+	overflow: hidden;
+}
+
+.room-tile img {
+	position: absolute;
+	inset: 0;
+	pointer-events: none;
+}
+
+.room-tile__hover.hidden {
+	display: none;
+}
+
+#planevacoverlay {
+	pointer-events: none;
+}
+
+#asallefond,
+.room-tile--a {
+	width: 22.39%;
+	height: 14.77%;
+	top: 0;
+	left: 0;
+}
+
+#bsallefond,
+.room-tile--b {
+	width: 13.10%;
+	height: 14.77%;
+	top: 0;
+	left: 21.36%;
+}
+
+#csallefond,
+.room-tile--c {
+	width: 19.69%;
+	height: 14.77%;
+	top: 0;
+	left: 33.44%;
+}
+
+#dsallefond,
+.room-tile--d {
+	width: 23.24%;
+	height: 14.77%;
+	top: 0;
+	left: 52.1%;
+}
+
+#esallefond,
+.room-tile--e {
+	width: 25.64%;
+	height: 22.43%;
+	top: 0;
+	left: 74.31%;
+}
+
+#fsallefond,
+.room-tile--f {
+	width: 22.39%;
+	height: 9.12%;
+	top: 13.34%;
+	left: 0;
+}
+
+#gsallefond,
+.room-tile--g {
+	width: 39.34%;
+	height: 9.12%;
+	top: 13.34%;
+	left: 21.36%;
+}
+
+#hsallefond,
+.room-tile--h {
+	width: 22.9%;
+	height: 50.65%;
+	top: 13.43%;
+	left: 59.67%;
+}
+
+#isallefond,
+.room-tile--i {
+	width: 18.38%;
+	height: 9.69%;
+	top: 21%;
+	left: 81.54%;
+}
+
+#jsallefond,
+.room-tile--j {
+	width: 17.15%;
+	height: 36.12%;
+	top: 21.03%;
+	left: 0;
+}
+
+#ksallefond,
+.room-tile--k {
+	width: 6.27%;
+	height: 28.79%;
+	top: 21.03%;
+	left: 16.12%;
+}
+
+#lsallefond,
+.room-tile--l {
+	width: 48.92%;
+	height: 28.79%;
+	top: 21.03%;
+	left: 21.36%;
+}
+
+#msallefond,
+.room-tile--m {
+	width: 25.64%;
+	height: 27.85%;
+	top: 29.26%;
+	left: 74.31%;
+}
+
+#nsallefond,
+.room-tile--n {
+	width: 34.47%;
+	height: 15.62%;
+	top: 48.3%;
+	left: 0;
+}
+
+#osallefond,
+.room-tile--o {
+	width: 36.85%;
+	height: 15.62%;
+	top: 48.39%;
+	left: 33.44%;
+}
+
+#psallefond,
+.room-tile--p {
+	width: 25.64%;
+	height: 21.89%;
+	top: 55.68%;
+	left: 74.31%;
+}
+
+#qsallefond,
+.room-tile--q {
+	width: 34.47%;
+	height: 37.49%;
+	bottom: 0;
+	left: 0;
+}
+
+#rsallefond,
+.room-tile--r {
+	width: 36.85%;
+	height: 37.49%;
+	bottom: 0;
+	left: 33.44%;
+}
+
+#ssallefond,
+.room-tile--s {
+	width: 6.09%;
+	height: 37.49%;
+	bottom: 0;
+	left: 69.25%;
+}
+
+#tsallefond,
+.room-tile--t {
+	width: 25.64%;
+	height: 23.92%;
+	bottom: 0;
+	left: 74.31%;
+}
+
+#asallefond,
+#bsallefond,
+#csallefond,
+#dsallefond,
+#esallefond,
+#fsallefond,
+#gsallefond,
+#hsallefond,
+#isallefond,
+#jsallefond,
+#ksallefond,
+#lsallefond,
+#msallefond,
+#nsallefond,
+#osallefond,
+#psallefond,
+#qsallefond,
+#rsallefond,
+#ssallefond,
+#tsallefond,
+.room-tile {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: absolute;
+}
+
+#tokenpj {
+	position: absolute;
+	width: 70px;
+	height: 70px;
+	margin: auto;
+	background: black;
+	border-radius: 50%;
+	border: 1px solid springgreen;
+	outline: 1px solid springgreen;
+	outline-offset: 3px;
+	box-shadow: 0 0 10px 10px rgba(0, 255, 0, 0.4);
+	animation: tokenplan 1.5s linear infinite;
+}
+
+.station-plan-map #tokenpj img {
+	position: absolute;
+	top: 0;
+	left: 0;
+	border-radius: 50%;
+	object-fit: contain;
+}
+
+#tokenobjectif {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	width: 30px;
+	height: 30px;
+	margin: auto;
+	background: rgba(255, 0, 0, 0.4);
+	border-radius: 50%;
+	border: 1px solid red;
+	outline: 1px solid red;
+	outline-offset: 3px;
+	box-shadow: 0 0 10px 10px rgba(255, 0, 0, 0.4);
+	animation: tokenplan 1.5s linear infinite;
+}
+
+@keyframes tokenplan {
+
+	0%,
+	20% {
+		transform: scale(0.7);
+	}
+
+	40%,
+	60% {
+		transform: scale(1);
+	}
+
+	80%,
+	100% {
+		transform: scale(0.7);
+	}
+}

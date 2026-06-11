@@ -8,12 +8,12 @@ use App\Services\Adventures\Engine\AdventureState;
 
 class SalleDeBainSceneHandler extends SimpleSceneHandler
 {
-    private const string SCENE = 'salledebain';
+    private const SCENE = 'salledebain';
 
     /**
      * @var array<string, string>
      */
-    private const array ANTIDOTE_RECIPE = [
+    private const ANTIDOTE_RECIPE = [
         '1' => '0',
         '2' => '0',
         '3' => '30',

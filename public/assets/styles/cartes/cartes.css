@@ -19,6 +19,14 @@
     margin: 10px;
     font-weight: normal;
 
+    a {
+        color: red;
+
+        &:hover {
+            color: darkorange;
+        }
+    }
+
     p {
         text-align: justify;
         color: #8c4000;

@@ -9,15 +9,13 @@
 .droppernoeud {
   width: 200px;
   height: 100px;
-  display: inline-block;
-  vertical-align: top;
+  display: inline-flex;
   transition: all 200ms linear;
   margin: 0;
 }
 
 .draggernoeud {
-  display: inline-block;
-  vertical-align: top;
+  display: inline-flex;
   transition: all 200ms linear;
   user-select: none;
   background: rgba(100, 100, 100, 0.3);

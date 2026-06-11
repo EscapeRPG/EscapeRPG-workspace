@@ -10,11 +10,11 @@
   }
 }
 
-.emplacementboule1,
-.emplacementboule2,
-.emplacementboule3 {
-  width: 100% !important;
-  max-width: 100px !important;
+.ambria-porte .emplacementboule1,
+.ambria-porte .emplacementboule2,
+.ambria-porte .emplacementboule3 {
+  width: 100%;
+  max-width: 100px;
   position: absolute;
 }
 
@@ -34,8 +34,7 @@
 }
 
 .porte-dragger-slot {
-  display: inline-block;
-  vertical-align: middle;
+  display: inline-flex;
   transition: all 200ms linear;
   user-select: none;
   background: rgba(100, 100, 100, 0.4);

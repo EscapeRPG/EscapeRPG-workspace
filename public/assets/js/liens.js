@@ -16,8 +16,12 @@ linksButtons.forEach((button) => {
 function dropCategory(clickedButton) {
   const buttons = document.querySelectorAll(".dropbtn");
   const categories = document.querySelectorAll(".dropdown");
-  const contentId = clickedButton.id.replace("liste", "");
-  const content = document.getElementById(`${contentId}affichage`);
+  const contentId = clickedButton.dataset.categoryTarget;
+  const content = document.querySelector(`[data-category-panel="${contentId}"]`);
+  if (!content) {
+    return;
+  }
+
   const isCurrentlyOpen = content.classList.contains("dropdown-affichage");
 
   buttons.forEach((button) => button.classList.remove("dropbtnfocus"));
@@ -31,16 +35,24 @@ function dropCategory(clickedButton) {
 
 function dropQuestion(clickedQuestion) {
   const allQuestions = document.querySelectorAll(".dropquestion");
-  const allAnswers = document.querySelectorAll(".reponse");
-  const reponseId = clickedQuestion.id.replace("quest", "");
-  const answerToShow = document.getElementById(`reponse${reponseId}`);
-  const isCurrentlyOpen = answerToShow.classList.contains("reponse-affichage");
+  const allAnswers = document.querySelectorAll(".dropanswer");
+  const answerId = clickedQuestion.dataset.answerTarget;
+  const answerToShow = document.querySelector(`[data-answer-panel="${answerId}"]`);
+  if (!answerToShow) {
+    return;
+  }
+
+  const isCurrentlyOpen = answerToShow.classList.contains("dropanswer-affichage");
 
   allQuestions.forEach((question) => question.classList.remove("dropquestionfocus"));
-  allAnswers.forEach((reponse) => reponse.classList.remove("reponse-affichage"));
+  allAnswers.forEach((reponse) => {
+    reponse.classList.remove("dropanswer-affichage");
+    reponse.style.maxHeight = null;
+  });
 
   if (!isCurrentlyOpen) {
     clickedQuestion.classList.add("dropquestionfocus");
-    answerToShow.classList.add("reponse-affichage");
+    answerToShow.classList.add("dropanswer-affichage");
+    answerToShow.style.maxHeight = `${answerToShow.scrollHeight}px`;
   }
 }

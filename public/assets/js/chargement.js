@@ -1,7 +1,10 @@
 function chargement() {
-  document.getElementById("load").style.display = "none";
-  document.getElementById("loader").style.display = "none";
-  document.querySelector("main").style.display = "block";
+  document.querySelector(".page-loader")?.remove();
+
+  const main = document.querySelector("main");
+  if (main) {
+    main.style.display = "block";
+  }
 }
 
 window.addEventListener("load", chargement);

@@ -9,13 +9,14 @@ $roomImage = static fn(array $hotspots): array => Content::interactiveImage(
 );
 
 $computerHotspots = [
-    Content::hotspot('ordi', 'open_computer'),
-    Content::hotspot(
-        'tiroir',
+    Content::hotspotAt('open_computer', 5.5, 22, 15, 16),
+    Content::hotspotAt(
         'open_drawer',
-        null,
-        '',
-        ['visible_if' => Content::stateFalsy('carnet_acquired')]
+        43.33,
+        45.5,
+        10,
+        8.5,
+        extra: ['visible_if' => Content::stateFalsy('carnet_acquired')]
     ),
 ];
 
@@ -43,7 +44,7 @@ return [
             'audio' => null,
             'blocks' => [
                 $roomImage([
-                    Content::hotspot('appareil', 'open_camera'),
+                    Content::hotspotAt('open_camera', 81.83, 20.75, 4.67, 5.75),
                 ]),
                 Content::narrative('lastparty/appartement#photos'),
             ],

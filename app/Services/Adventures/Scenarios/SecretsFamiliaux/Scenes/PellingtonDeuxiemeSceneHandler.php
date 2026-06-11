@@ -11,7 +11,7 @@ class PellingtonDeuxiemeSceneHandler extends SimpleSceneHandler
 {
     use UserInputNormalizer;
 
-    private const string SCENE = 'pellingtondeuxieme';
+    private const SCENE = 'pellingtondeuxieme';
 
     public function __construct()
     {

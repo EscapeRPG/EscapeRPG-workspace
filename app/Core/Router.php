@@ -2,6 +2,8 @@
 
 namespace App\Core;
 
+use App\Controllers\ErrorController;
+
 /**
  * Routeur HTTP minimaliste de l'application.
  *
@@ -83,9 +85,7 @@ class Router
 
                 [$controller, $methodAction] = $action;
                 if (!is_callable([new $controller, $methodAction])) {
-                    http_response_code(500);
-                    echo '500';
-                    return;
+                    (new ErrorController())->show(500);
                 }
 
                 call_user_func_array([new $controller, $methodAction], $matches);
@@ -93,8 +93,7 @@ class Router
             }
         }
 
-        http_response_code(404);
-        echo '404';
+        (new ErrorController())->show(404);
     }
 
     /**

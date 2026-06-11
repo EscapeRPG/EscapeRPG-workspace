@@ -10,12 +10,7 @@ $bureauImage = static fn(array $controls = [], string $src = 'assets/img/secrets
     'controls' => $controls,
 ];
 
-$tiroirControl = Content::hotspot(
-    'tiroir',
-    'tiroir',
-    'assets/img/secrets/buttontiroir.png',
-    'tiroir du bureau'
-);
+$tiroirControl = Content::hotspotAt('tiroir', 64.5, 57.5, 6.5, 5.25, 'assets/img/secrets/buttontiroir.png', 'tiroir du bureau');
 
 $libraryAction = Content::ask(
     'Fouiller la bibliothèque.',

@@ -3,11 +3,11 @@
 use App\Services\Adventures\Support\Content;
 
 $keys = Content::interactiveImage('assets/img/avent/jeucles.png', 'les clés de la maison', [
-    Content::hotspot('cle-maison cle1', 'try_key_1', 'assets/img/avent/cle1.png', "une des clés de la maison d'Arthur"),
-    Content::hotspot('cle-maison cle2', 'try_key_2', 'assets/img/avent/cle2.png', "une des clés de la maison d'Arthur"),
-    Content::hotspot('cle-maison cle3', 'try_key_3', 'assets/img/avent/cle3.png', "une des clés de la maison d'Arthur"),
-    Content::hotspot('cle-maison cle4', 'try_key_4', 'assets/img/avent/cle4.png', "une des clés de la maison d'Arthur"),
-    Content::hotspot('cle-maison cle5', 'try_key_5', 'assets/img/avent/cle5.png', "une des clés de la maison d'Arthur"),
+    Content::hotspotAt('try_key_1', 3.73, 38.1, 35.33, 52.6, 'assets/img/avent/cle1.png', "une des clés de la maison d'Arthur", 'cle-maison'),
+    Content::hotspotAt('try_key_2', 40.87, 38, 20.4, 61, 'assets/img/avent/cle2.png', "une des clés de la maison d'Arthur", 'cle-maison'),
+    Content::hotspotAt('try_key_3', 43.67, 32.4, 53.53, 31.4, 'assets/img/avent/cle3.png', "une des clés de la maison d'Arthur", 'cle-maison'),
+    Content::hotspotAt('try_key_4', 2.87, 2.5, 34.33, 37, 'assets/img/avent/cle4.png', "une des clés de la maison d'Arthur", 'cle-maison'),
+    Content::hotspotAt('try_key_5', 36.87, 1.1, 22.87, 35.5, 'assets/img/avent/cle5.png', "une des clés de la maison d'Arthur", 'cle-maison'),
 ]);
 
 return [

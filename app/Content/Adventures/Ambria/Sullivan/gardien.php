@@ -11,9 +11,9 @@ $golem1 = static fn(): array => Content::interactiveImage(
     'assets/img/ambria/golem1sullivan.png',
     'Le golem tourne le dos à Sullivan.',
     [
-        Content::hotspot('cibletir golem1gemme1', 'choose_golem_1', 'assets/img/ambria/golemgemme.png', 'Gemme 1'),
-        Content::hotspot('cibletir golem1gemme2', 'choose_golem_2', 'assets/img/ambria/golemgemme.png', 'Gemme 2'),
-        Content::hotspot('cibletir golem1gemme3', 'choose_golem_3', 'assets/img/ambria/golemgemme.png', 'Gemme 3'),
+        Content::hotspotAt('choose_golem_1', 49.42, 28.93, 5.38, 8.97, 'assets/img/ambria/golemgemme.png', 'Gemme 1', 'cibletir'),
+        Content::hotspotAt('choose_golem_2', 45.65, 36.9, 5.38, 8.97, 'assets/img/ambria/golemgemme.png', 'Gemme 2', 'cibletir'),
+        Content::hotspotAt('choose_golem_3', 57.96, 36.4, 5.38, 8.97, 'assets/img/ambria/golemgemme.png', 'Gemme 3', 'cibletir'),
     ],
 );
 
@@ -21,11 +21,15 @@ $golem3 = static fn(): array => Content::interactiveImage(
     'assets/img/ambria/golem3sullivan.png',
     'Le golem se redresse devant Sullivan.',
     array_map(
-        static fn(int $index): array => Content::hotspot(
-            'cibletir golem3gemme' . $index,
+        static fn(int $index): array => Content::hotspotAt(
             'choose_final_golem_' . $index,
+            [55.7, 57.9, 60.4, 63.1, 65.15][$index - 1],
+            [16.8, 17, 17.2, 17.5, 17.75][$index - 1],
+            3.84,
+            6.4,
             'assets/img/ambria/golem3gemme.png',
             'Gemme ' . $index,
+            'cibletir',
         ),
         range(1, 5),
     ),

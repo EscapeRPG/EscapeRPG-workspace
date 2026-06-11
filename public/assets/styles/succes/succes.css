@@ -38,9 +38,9 @@
     opacity: 0;
 }
 
-.app-toast p {
+.toast-container .app-toast p {
     margin: 0;
-    text-align: left !important;
+    text-align: left;
 
     .toast-generic {
         color: white;

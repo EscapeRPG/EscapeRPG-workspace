@@ -1,15 +1,15 @@
-.boutonindice,
-.boutonreponse {
+button.boutonindice,
+button.boutonreponse {
     width: 30px;
     height: 30px;
-    cursor: help !important;
+    cursor: help;
     margin: 20px;
 }
 
-.boutonindice {
-    background: url("/assets/img/indice.png") !important;
+button.boutonindice {
+    background: url("/assets/img/indice.png");
 }
 
-.boutonreponse {
-    background: url("/assets/img/reponse.png") !important;
+button.boutonreponse {
+    background: url("/assets/img/reponse.png");
 }

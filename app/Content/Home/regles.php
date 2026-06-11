@@ -92,7 +92,8 @@ return [
             'html_paragraphs' => [
                 "À tout moment, il vous est possible d'enregistrer votre progression pour reprendre où vous en étiez quand vous le désirez.",
                 'Pour ce faire, il vous suffit de cliquer sur le bouton "sauvegarder" qui se trouve sous le portrait et l\'inventaire du personnage de l\'histoire que vous incarnez !',
-                '<span class="important">Si vous n\'êtes pas inscrit·e à l\'espace membres</span>, il vous sera demandé de choisir un nom pour effectuer la sauvegarde et de taper le code unique qui vous est indiqué.<br><span class="important">Attention, le code qui vous est donné est à garder précieusement, car il vous sera demandé au moment de charger votre partie !</span>',
+                '<span class="important">Si vous n\'êtes pas inscrit·e à l\'espace membres</span>, il vous sera demandé de choisir un nom et un code pour effectuer la sauvegarde.<br>
+                <span class="important">Attention, gardez bien ces informations, car elles seront nécessaires au moment de charger votre partie !</span>',
             ],
         ],
         [

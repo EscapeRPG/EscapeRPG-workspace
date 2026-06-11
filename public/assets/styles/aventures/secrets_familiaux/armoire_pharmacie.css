@@ -31,18 +31,3 @@
   }
 }
 
-.armoire {
-  position: absolute;
-  top: 25.5%;
-  right: 10%;
-  width: 10.7%;
-  height: 24.5%;
-}
-
-.armoireopened {
-  position: absolute;
-  top: 25%;
-  right: 10%;
-  width: 19%;
-  height: 24.5%;
-}

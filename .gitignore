@@ -5,7 +5,8 @@ vendor/
 config/database.local.php
 CODEX_HANDOFF.md
 
-public/img/uploads/
+public/assets/img/uploads/
+public/assets/img/gaea1/avatar/generated/
 
 **/zz - diceroll
 Changements avant mise en ligne.php

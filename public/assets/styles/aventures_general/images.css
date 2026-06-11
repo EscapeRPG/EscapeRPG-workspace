@@ -11,3 +11,48 @@
         max-width: 100%;
     }
 }
+
+.interactive-image {
+    display: block;
+    width: fit-content;
+    max-width: 70%;
+    margin: auto;
+    position: relative;
+}
+
+.interactive-image > img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.interactive-image__controls {
+    position: absolute;
+    inset: 0;
+    margin: 0;
+    pointer-events: none;
+}
+
+.interactive-image__controls button,
+.interactive-image__controls input {
+    pointer-events: auto;
+}
+
+.interactive-image__controls .positioned-hotspot {
+    position: absolute;
+    left: var(--hotspot-left);
+    top: var(--hotspot-top);
+    width: var(--hotspot-width);
+    height: var(--hotspot-height);
+    border: 0;
+    padding: 0;
+    background: transparent;
+    cursor: pointer;
+    pointer-events: auto;
+}
+
+.interactive-image__controls .positioned-hotspot img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}

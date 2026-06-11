@@ -8,7 +8,7 @@ use App\Services\Adventures\Engine\AdventureState;
 
 class PellingtonCaveSceneHandler extends SimpleSceneHandler
 {
-    private const string SCENE = 'pellingtoncave';
+    private const SCENE = 'pellingtoncave';
 
     public function __construct()
     {

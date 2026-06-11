@@ -161,10 +161,3 @@ body {
     }
 }
 
-.connecting {
-    background: orange !important;
-
-    &:hover {
-        background: rgb(220, 120, 0) !important;
-    }
-}

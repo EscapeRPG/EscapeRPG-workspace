@@ -1,0 +1,55 @@
+.error-page {
+  box-sizing: border-box;
+  min-height: 100vh;
+  padding: 48px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 32px;
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.error-page__banner {
+  width: min(760px, 90vw);
+  max-height: 220px;
+  object-fit: contain;
+}
+
+.error-page__dialogue {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.error-page__actions {
+  margin: 0;
+}
+
+.error-page__actions button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 18px;
+  color: black;
+  background: orange;
+  border: 2px solid black;
+  border-radius: 6px;
+  font: inherit;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.error-page__actions button:hover {
+  color: black;
+  background: rgb(220, 120, 0);
+}
+
+@media (max-width: 700px) {
+  .error-page {
+    padding: 32px 12px;
+  }
+
+  .error-page__dialogue {
+    width: 100%;
+  }
+}

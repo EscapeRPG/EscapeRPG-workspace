@@ -15,12 +15,12 @@ $grottesPuzzle = [
             'assets/img/ambria/grottesentree.png',
             'Entrées des grottes.',
             [
-                Content::hotspot('grotte1', 'choose_grotte_1', 'assets/img/ambria/grotte1.png', 'première grotte'),
-                Content::hotspot('grotte2', 'choose_grotte_2', 'assets/img/ambria/grotte2.png', 'deuxième grotte'),
-                Content::hotspot('grotte3', 'choose_grotte_3', 'assets/img/ambria/grotte3.png', 'troisième grotte'),
-                Content::hotspot('grotte4', 'choose_grotte_4', 'assets/img/ambria/grotte4.png', 'quatrième grotte'),
-                Content::hotspot('grotte5', 'choose_grotte_5', 'assets/img/ambria/grotte5.png', 'cinquième grotte'),
-                Content::hotspot('grotte6', 'choose_grotte_6', 'assets/img/ambria/grotte6.png', 'sixième grotte'),
+                Content::hotspotAt('choose_grotte_1', 9.45, 21.82, 4.58, 20.82, 'assets/img/ambria/grotte1.png', 'première grotte', 'grotte1'),
+                Content::hotspotAt('choose_grotte_2', 23.99, 18.16, 4.58, 20.82, 'assets/img/ambria/grotte2.png', 'deuxième grotte', 'grotte2'),
+                Content::hotspotAt('choose_grotte_3', 37.42, 20.27, 4.58, 20.82, 'assets/img/ambria/grotte3.png', 'troisième grotte', 'grotte3'),
+                Content::hotspotAt('choose_grotte_4', 54.69, 19.38, 4.58, 20.82, 'assets/img/ambria/grotte4.png', 'quatrième grotte', 'grotte4'),
+                Content::hotspotAt('choose_grotte_5', 70.7, 23.7, 4.58, 20.82, 'assets/img/ambria/grotte5.png', 'cinquième grotte', 'grotte5'),
+                Content::hotspotAt('choose_grotte_6', 90.11, 27.35, 4.58, 20.82, 'assets/img/ambria/grotte6.png', 'sixième grotte', 'grotte6'),
             ]
         ),
         Content::narrative('ambria/sullivan/plage#grottes_puzzle'),

@@ -11,7 +11,7 @@ class PellingtonVestibuleSceneHandler extends SimpleSceneHandler
 {
     use UserInputNormalizer;
 
-    private const string SCENE = 'pellingtonvestibule';
+    private const SCENE = 'pellingtonvestibule';
 
     public function __construct()
     {
