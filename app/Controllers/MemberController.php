@@ -115,7 +115,7 @@ class MemberController extends Controller
             }
 
             $currentHash = $member['password'] ?? '';
-            $valid = password_verify($currentPassword, $currentHash) || md5($currentPassword) === $currentHash;
+            $valid = password_verify($currentPassword, $currentHash);
             if (!$valid) {
                 $this->session->flash('error', 'Le mot de passe actuel est incorrect.');
                 $this->response->redirect('/profil/edit');

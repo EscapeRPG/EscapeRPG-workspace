@@ -59,4 +59,15 @@ class UserSessionRepository
             'token' => $token,
         ]);
     }
+
+    /**
+     * Supprime toutes les sessions persistantes d'un membre.
+     */
+    public function deleteByUserPseudo(string $userPseudo): void
+    {
+        $statement = $this->db->prepare("DELETE FROM user_session WHERE user_id = :user_id");
+        $statement->execute([
+            'user_id' => $userPseudo,
+        ]);
+    }
 }

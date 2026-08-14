@@ -10,7 +10,7 @@ return [
     ],
     'links' => [
         [
-            'href' => 'http://www.syrphin.com',
+            'href' => 'https://www.syrphin.com',
             'image' => 'assets/img/liens/syrphin.png',
             'alt' => 'syrphin illustrations',
             'description' => "Le site d'Emilien FRANCOIS, alias Syrphin, où vous pourrez retrouver son travail d'illustration.",

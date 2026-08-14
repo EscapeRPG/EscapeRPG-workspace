@@ -15,6 +15,8 @@
         <input type="submit" class="connecting" value="Connexion">
     </form>
     <br>
+    <a href="<?= url('/forgot-password') ?>">Mot de passe oublié ?</a>
+    <br><br>
     <a href="<?= url('/register') ?>">Vous n'avez pas de compte ? Créez-en un maintenant !</a>
 </div>
 <?php View::end(); ?>

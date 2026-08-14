@@ -15,6 +15,8 @@ class AuthService
 {
     private const SESSION_KEY = 'auth.user_pseudo';
     private const REMEMBER_COOKIE = 'session_token';
+    private static bool $userResolved = false;
+    private static ?array $resolvedUser = null;
 
     /**
      * Restaure automatiquement une session longue si un cookie valide existe.
@@ -39,7 +41,7 @@ class AuthService
 
         $members = new MemberRepository(Database::get());
         $member = $members->findByUsername($userPseudo);
-        if (!$member) {
+        if (!$member || empty($member['email_verified_at'])) {
             self::forgetRememberCookie();
             return;
         }
@@ -52,7 +54,7 @@ class AuthService
      */
     public static function check(): bool
     {
-        return self::session()->has(self::SESSION_KEY);
+        return self::user() !== null;
     }
 
     /**
@@ -68,18 +70,31 @@ class AuthService
      */
     public static function user(): ?array
     {
+        if (self::$userResolved) {
+            return self::$resolvedUser;
+        }
+
+        self::$userResolved = true;
         $pseudo = self::pseudo();
         if ($pseudo === null) {
             return null;
         }
 
         $members = new MemberRepository(Database::get());
+        $member = $members->findByUsername($pseudo);
+        if (!$member || empty($member['email_verified_at'])) {
+            self::clearSessionUser();
+            return null;
+        }
 
-        return $members->findByUsername($pseudo);
+        self::$resolvedUser = $member;
+
+        return self::$resolvedUser;
     }
 
     /**
      * Tente d'authentifier un membre via son pseudo et son mot de passe.
+     * @throws RandomException
      */
     public static function attempt(string $username, string $password, bool $remember = false): bool
     {
@@ -90,15 +105,13 @@ class AuthService
         }
 
         $passwordFromDb = $member['password'] ?? '';
-        $valid = password_verify($password, $passwordFromDb) || md5($password) === $passwordFromDb;
+        $valid = password_verify($password, $passwordFromDb);
         if (!$valid) {
             return false;
         }
 
-        if (md5($password) === $passwordFromDb) {
-            $newHash = password_hash($password, PASSWORD_DEFAULT);
-            $members->updateProfile($member['pseudo'], $member['email'], $newHash);
-            $member['password'] = $newHash;
+        if (empty($member['email_verified_at'])) {
+            return false;
         }
 
         self::storeUser($member);
@@ -135,6 +148,8 @@ class AuthService
 
         self::forgetRememberCookie();
         self::session()->invalidate();
+        self::$userResolved = true;
+        self::$resolvedUser = null;
     }
 
     /**
@@ -154,6 +169,20 @@ class AuthService
         $session->regenerate();
         $session->put(self::SESSION_KEY, $member['pseudo']);
         $session->put('auth.avatar', $member['avatar'] ?? 'default.png');
+        self::$userResolved = true;
+        self::$resolvedUser = $member;
+    }
+
+    /**
+     * Retire uniquement l'identité authentifiée en conservant les messages flash.
+     */
+    private static function clearSessionUser(): void
+    {
+        $session = self::session();
+        $session->forget(self::SESSION_KEY);
+        $session->forget('auth.avatar');
+        self::$userResolved = true;
+        self::$resolvedUser = null;
     }
 
     /**

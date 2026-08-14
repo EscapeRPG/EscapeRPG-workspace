@@ -5,6 +5,10 @@
     <h1>Création d'un nouveau compte</h1>
     <form action="<?= url('/register') ?>" method="post" enctype="multipart/form-data">
         <?= csrf_field() ?>
+        <div class="registration-trap" aria-hidden="true">
+            <label for="website">Site web</label>
+            <input type="text" name="website" id="website" tabindex="-1" autocomplete="off">
+        </div>
         <input type="text" name="pseudocompte" placeholder="Pseudo (20 caractères max)" maxlength="20" required>
         <br>
         <input type="email" name="email" placeholder="Email" required>
@@ -19,6 +23,7 @@
         <br><br>
         <input type="submit" class="connecting" value="Valider">
     </form>
+    <p>Un lien de confirmation valable 24 heures vous sera envoyé par email.</p>
     <br>
     <a href="<?= url('/login') ?>">Vous avez déjà un compte ? Connectez-vous</a>
 </div>

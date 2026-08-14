@@ -14,6 +14,12 @@ $router->get('/login', [AuthController::class, 'showLogin'], [GuestMiddleware::c
 $router->post('/login', [AuthController::class, 'login'], [GuestMiddleware::class]);
 $router->get('/register', [AuthController::class, 'showRegister'], [GuestMiddleware::class]);
 $router->post('/register', [AuthController::class, 'register'], [GuestMiddleware::class]);
+$router->get('/activate-account/{token}', [AuthController::class, 'showActivation']);
+$router->post('/activate-account/{token}', [AuthController::class, 'activate']);
+$router->get('/forgot-password', [AuthController::class, 'showForgotPassword']);
+$router->post('/forgot-password', [AuthController::class, 'requestPasswordReset']);
+$router->get('/reset-password/{token}', [AuthController::class, 'showResetPassword']);
+$router->post('/reset-password/{token}', [AuthController::class, 'resetPassword']);
 $router->post('/logout', [AuthController::class, 'logout'], [AuthMiddleware::class]);
 $router->get('/membres', [MemberController::class, 'search']);
 $router->get('/mon-compte', [MemberController::class, 'showCurrent'], [AuthMiddleware::class]);
