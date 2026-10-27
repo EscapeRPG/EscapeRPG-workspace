@@ -1,0 +1,278 @@
+.sondage-section {
+    width: 90%;
+    margin: 100px auto;
+}
+
+#sondage-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+
+    label {
+        color: orange;
+        width: 200px;
+    }
+
+    .form-row {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 20px;
+    }
+
+    input[type="text"] {
+        max-width: unset;
+    }
+}
+
+.poll-calendar {
+    width: 100%;
+    max-width: 380px;
+    box-sizing: border-box;
+    padding: 16px;
+    border: 1px solid #777;
+    border-radius: 12px;
+    background: #202020;
+    color: #fff;
+}
+
+.poll-calendar__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    margin-bottom: 12px;
+}
+
+.poll-calendar__header h2 {
+    margin: 0;
+    font-size: 1.2rem;
+    text-transform: capitalize;
+}
+
+.poll-calendar__weekdays, .poll-calendar__days {
+    display: grid;
+    grid-template-columns: repeat(7, minmax(0, 1fr));
+    gap: 4px;
+    text-align: center;
+}
+
+.poll-calendar__weekdays {
+    margin-bottom: 8px;
+    font-size: 0.8rem;
+    color: #ccc;
+}
+
+.poll-calendar button {
+    min-width: 0;
+    min-height: 40px;
+    margin: 0;
+    padding: 4px;
+    border: 1px solid #777;
+    border-radius: 6px;
+    background: #333;
+    color: #fff;
+    font: inherit;
+    cursor: pointer;
+}
+
+.poll-calendar__header button {
+    width: 40px;
+    font-size: 1.5rem;
+}
+
+.poll-calendar button:hover {
+    background: #555;
+}
+
+.poll-calendar button[aria-current="date"] {
+    border-color: #ffd47d;
+    text-decoration: underline;
+}
+
+.poll-calendar button[aria-pressed="true"] {
+    background: #ffd47d;
+    color: #202020;
+    border-color: #ffd47d;
+    font-weight: bold;
+}
+
+.poll-calendar button:focus-visible {
+    outline: 2px solid #fff;
+    outline-offset: 2px;
+}
+
+.calendar-selection {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 1;
+    gap: 10px;
+    border: 1px solid orange;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.calendar-selection #dates-status,
+.calendar-selection .selected-dates {
+    color: orange;
+}
+
+.calendar-selection .selected-dates .selected-dates-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+
+    div {
+        width: 100px;
+        padding: 10px;
+        border: 1px solid orange;
+        border-radius: 10px;
+    }
+}
+
+.calendar-selection button {
+    border: none;
+    border-radius: 10px;
+    padding: 5px 10px;
+    background: orange;
+    color: black;
+    font-weight: bold;
+    cursor: pointer;
+
+    &:hover {
+        background: white;
+    }
+}
+
+td[data-vote-cell] {
+    padding: 0;
+    cursor: pointer;
+    text-align: center;
+}
+
+.poll-vote {
+    display: block;
+    width: 100%;
+    min-height: 44px;
+    padding: 10px;
+    border: 0;
+    background: transparent;
+    color: inherit;
+    font: inherit;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.poll-vote:focus-visible {
+    outline: 2px solid white;
+    outline-offset: -4px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+
+    tbody tr:hover:not(.input-row) {
+        background: orange;
+        filter: brightness(.9);
+    }
+
+    th {
+        font-size: .8em;
+    }
+
+    th, td {
+        border: 1px solid #777777;
+        padding: 5px 10px;
+        color: white;
+    }
+
+    time {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        text-transform: capitalize;
+
+        .day {
+            font-size: 2em;
+        }
+    }
+
+    .yes, .maybe, .no {
+        color: white;
+        font-weight: bold;
+        text-transform: uppercase;
+    }
+
+    .yes {
+        background: #76d076;
+    }
+
+    .maybe {
+        background: #e1a659;
+    }
+
+    .no {
+        background: #de6262;
+    }
+}
+
+#sondage-vote-form {
+    width: 100%;
+    min-width: 0;
+    margin-bottom: 20px;
+
+    input[type="text"] {
+        max-width: unset;
+        text-transform: unset;
+        box-sizing: border-box;
+        margin: 0;
+        border: none;
+
+        &:focus-visible {
+            outline: none;
+        }
+    }
+
+    button[type="submit"] {
+        display: block;
+        width: 100%;
+        max-width: 300px;
+        margin: 24px auto 0;
+        padding: 10px;
+        background: white;
+        border: 2px solid orange;
+        border-radius: 10px;
+        cursor: pointer;
+        text-transform: uppercase;
+
+        &:hover {
+            border: 2px solid black;
+            background: darkorange;
+            color: black;
+        }
+    }
+}
+
+.sondage-table-scroll {
+    width: 100%;
+    overflow-x: auto;
+    scrollbar-width: thin;
+    border: 1px solid #777777;
+    border-radius: 20px;
+    background: rgba(0, 0, 0, .4);
+
+    h2 {
+        margin: 0;
+        border-bottom: 1px solid #777777;
+        color: white;
+    }
+}
+
+.sondage-table-scroll table {
+    width: max-content;
+    min-width: 100%;
+}

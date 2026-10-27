@@ -5,11 +5,14 @@ use App\Controllers\AdventurePageController;
 use App\Controllers\AuthController;
 use App\Controllers\MainController;
 use App\Controllers\MemberController;
+use App\Controllers\ToolsController;
 use App\Core\Router;
 use App\Core\Middleware\AuthMiddleware;
 use App\Core\Middleware\GuestMiddleware;
 
 $router->get(['/', '/index'], [MainController::class, 'index']);
+
+// Membres
 $router->get('/login', [AuthController::class, 'showLogin'], [GuestMiddleware::class]);
 $router->post('/login', [AuthController::class, 'login'], [GuestMiddleware::class]);
 $router->get('/register', [AuthController::class, 'showRegister'], [GuestMiddleware::class]);
@@ -27,6 +30,8 @@ $router->get('/profil/edit', [MemberController::class, 'edit'], [AuthMiddleware:
 $router->post('/profil/edit', [MemberController::class, 'update'], [AuthMiddleware::class]);
 $router->get('/membres/{id}', [MemberController::class, 'show']);
 $router->post('/membres/{id}/amis', [MemberController::class, 'addFriend'], [AuthMiddleware::class]);
+
+// Aventures
 $router->get('/aventures/{slug}', [AdventurePageController::class, 'show']);
 $router->post('/aventures/{slug}', [AdventurePageController::class, 'update']);
 $router->get('/aventures/{slug}/sauvegarde', [AdventurePageController::class, 'showSave']);
@@ -45,3 +50,9 @@ $router->get('/aventures/{slug}/station/*', [AdventurePageController::class, 'sh
 $router->post('/aventures/{slug}/station/*', [AdventurePageController::class, 'updatePath']);
 $router->get('/aventures/{slug}/{scene}', [AdventurePageController::class, 'show']);
 $router->post('/aventures/{slug}/{scene}', [AdventurePageController::class, 'update']);
+
+// Sondages
+$router->get('/sondage/create', [ToolsController::class, 'new']);
+$router->post('/sondage/create', [ToolsController::class, 'create']);
+$router->get(['/sondage', '/sondage/{slug}'], [ToolsController::class, 'index']);
+$router->post('/sondage/{slug}', [ToolsController::class, 'vote']);
