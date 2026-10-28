@@ -16,6 +16,7 @@ $mois = [1 => 'janvier', 'février', 'mars', 'avril', 'mai', 'juin', 'juillet', 
 <?php View::start('content'); ?>
 <section class="sondage-section">
     <?php if ($activeSondage !== null): ?>
+        <?php $totaux = count($participations); ?>
         <?php $totauxOui = array_fill_keys($propositions, 0); ?>
         <form id="sondage-vote-form" action="<?= url('/sondage/' . $activeSondage['slug']) ?>" method="post">
             <?= csrf_field() ?>
@@ -26,7 +27,9 @@ $mois = [1 => 'janvier', 'février', 'mars', 'avril', 'mai', 'juin', 'juillet', 
                 <table>
                     <thead>
                     <tr>
-                        <th scope="col" style="min-width: 150px; border: none"></th>
+                        <th scope="col" class="pseudo-th">
+                            <?= e($totaux . ' participation' . ($totaux > 1 ? 's' : '')) ?>
+                        </th>
                         <?php foreach ($propositions as $proposition): ?>
                             <?php $date = new DateTimeImmutable($proposition); ?>
                             <th scope="col">
@@ -80,7 +83,7 @@ $mois = [1 => 'janvier', 'février', 'mars', 'avril', 'mai', 'juin', 'juillet', 
 
                     <tfoot>
                     <tr>
-                        <th scope="row">Total</th>
+                        <th scope="row"></th>
                         <?php foreach ($propositions as $proposition): ?>
                             <td><?= $totauxOui[$proposition] ?></td>
                         <?php endforeach; ?>

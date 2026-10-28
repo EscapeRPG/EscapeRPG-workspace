@@ -180,14 +180,42 @@ table {
         filter: brightness(.9);
     }
 
-    th {
-        font-size: .8em;
-    }
-
     th, td {
         border: 1px solid #777777;
         padding: 5px 10px;
         color: white;
+    }
+
+    th {
+        font-size: .8em;
+        border-top: none;
+    }
+
+    tr td:first-child,
+    tr th:first-child {
+        border-left: none;
+    }
+
+    tr td:last-child,
+    tr th:last-child {
+        border-right: none;
+    }
+
+    tfoot th {
+        border-left: none;
+        border-bottom: none;
+    }
+
+    tfoot td {
+        border-bottom: none;
+    }
+
+    .pseudo-th {
+        min-width: 150px;
+        border: none;
+        text-align: left;
+        vertical-align: bottom;
+        color: grey;
     }
 
     time {
