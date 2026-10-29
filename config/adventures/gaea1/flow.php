@@ -59,8 +59,7 @@ return [
         'actions' => [
             'explore_station' => ['variant' => 'explore'],
             'go_door' => ['variant' => 'door'],
-            // 'start_hack' => ['variant' => 'hack', 'state' => ['shunter' => true]],
-            'start_hack' => ['variant' => 'demo_end'],
+            'start_hack' => ['variant' => 'hack', 'state' => ['shunter' => true]],
             'complete_hack' => [
                 'next_scene' => 'terminal',
                 'variant' => 'entry',

@@ -3,6 +3,8 @@
 namespace App\Services\Adventures\Scenarios\Gaea1;
 
 use App\Core\Request;
+use GdImage;
+use JsonException;
 
 class Gaea1Avatar
 {
@@ -74,6 +76,7 @@ class Gaea1Avatar
 
     /**
      * @param array<string, mixed> $avatar
+     * @throws JsonException
      */
     public function image(array $avatar): string
     {
@@ -128,7 +131,7 @@ class Gaea1Avatar
     }
 
     /**
-     * @return resource|\GdImage
+     * @return resource|GdImage
      */
     private function createBaseCanvas()
     {
@@ -149,9 +152,10 @@ class Gaea1Avatar
     }
 
     /**
-     * @param resource|\GdImage $canvas
+     * @param GdImage $canvas
+     * @param string $path
      */
-    private function copyPngLayer($canvas, string $path): void
+    private function copyPngLayer(GdImage $canvas, string $path): void
     {
         if (!is_file($path)) {
             return;
