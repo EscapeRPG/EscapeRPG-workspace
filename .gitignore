@@ -16,3 +16,5 @@ favicon.ico
 
 Thumbs.db
 .DS_Store
+
+var/adventure-maps/

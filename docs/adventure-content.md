@@ -1,36 +1,58 @@
 # Conventions des contenus d’aventure
 
-Pour les étapes concrètes de création d’un nouveau scénario ou d’une nouvelle scène, voir aussi `docs/adventure-authoring.md`.
+Les conventions de blocs, textes, indices, inventaires et succès sont communes aux deux formats de scénarios. Pour la création, commencer par le [guide pratique](adventure-authoring.md). Les détails du chargeur et de la carte figurent dans [scene-modules.md](scene-modules.md).
 
-Ce document fixe les conventions à suivre pour les scénarios gérés par le framework maison.
+## Organisation des scènes
 
-## Scènes et routes
+| Format | Définition PHP | Texte Markdown | Scénarios concernés |
+| --- | --- | --- | --- |
+| Regroupé | `content/adventures/{slug}/scenes/{scene}/scene.php` | `text.md` dans le même dossier | GAEA-1 et nouveaux scénarios |
+| Historique | `app/Content/{content_path}/{scene}.php`, avec exceptions via `content_files` | `content/adventures/{slug}/...md` | Secrets Familiaux, Last Party, Ambria, Avent |
 
-- Chaque scénario déclare son `slug`, son `content_path`, son `entry_scene` et ses `scenes` dans `config/adventures/{slug}.php`.
-- `scenes` liste les identifiants internes des scènes.
-- `scene_urls` sert à produire les routes publiques quand l’URL ne correspond pas directement à l’identifiant interne.
-- `scene_aliases` sert à traduire une URL entrante vers une scène interne.
-- `content_files` sert uniquement quand le fichier de contenu ne suit pas le nom de la scène.
+Chaque scénario conserve sa config principale dans `config/adventures/{slug}.php`, avec `slug`, `title`, `entry_scene`, `flow` et les données communes. `content_path` appartient au chargement historique et n’est pas nécessaire pour un scénario entièrement regroupé.
 
-Une scène déclarée doit avoir un fichier de contenu correspondant dans `app/Content/{content_path}`.
+Au format regroupé, `SceneModules::apply()` construit `scenes`, `scene_urls`, `scene_aliases`, `scene_module_files` et `scene_definitions` depuis les modules. Ces tableaux ne sont pas à maintenir manuellement en parallèle.
 
-Pour les scénarios volumineux, le fichier `config/adventures/{slug}.php` doit rester un index lisible et peut externaliser les tableaux dans un dossier dédié :
+Au format historique :
 
-```php
-$configPath = __DIR__ . '/secretsfamiliaux';
+- `scenes` liste les identifiants internes et les métadonnées (`label`, `view`) ;
+- `scene_urls` donne les chemins publics différents des identifiants ;
+- `scene_aliases` traduit les chemins entrants en identifiants ;
+- `content_files` indique les fichiers de contenu dont le nom ne suit pas celui de la scène.
 
-'styles' => require $configPath . '/styles.php',
-'scene_aliases' => require $configPath . '/scene_aliases.php',
-'scene_urls' => require $configPath . '/scene_urls.php',
-'content_files' => require $configPath . '/content_files.php',
-'scenes' => require $configPath . '/scenes.php',
-'state' => require $configPath . '/state.php',
-'assets' => require $configPath . '/assets.php',
-'public_achievements' => require $configPath . '/public_achievements.php',
-'inventory_items' => require $configPath . '/inventory.php',
-```
+Les configurations communes volumineuses peuvent rester réparties sous `config/adventures/{slug}/` : état initial, inventaire, sidebar, styles, succès, etc. Regrouper les scènes n’impose pas de dupliquer ces données partagées.
 
-Chaque fichier retourne uniquement le tableau dont il est responsable. Cela simplifie la création d’un nouveau scénario : dupliquer le dossier de config du scénario le plus proche, puis corriger les contenus.
+## Flows et handlers
+
+`AdventureFlowFactory` instancie la classe indiquée par `flow`. Les flows à handlers étendent `SceneBasedAdventureFlow` et exposent leurs instances via `handlers()`.
+
+- Les nouveaux scénarios utilisent `ModuleAdventureFlow` et le handler commun `DeclarativeSceneHandler`.
+- GAEA-1 utilise `Gaea1AdventureFlow`, son handler commun et ses handlers spécialisés, sélectionnés par la clé `handler` de chaque module.
+- Les scénarios historiques conservent leur table d’instances ou leurs définitions dans le flow. Leur procédure est décrite dans le [guide historique](adventure-authoring-legacy.md).
+
+La clé `handler` d’un **module `scene.php`** est prise en charge par `SceneModules`. Une clé `handler` ajoutée directement à **`config['scenes'][scene]`** ne suffit pas à enregistrer une classe : le moteur lit les instances exposées par le flow.
+
+Les handlers de modules sont construits avec `(string $scene, string $defaultVariant, array $actions)` et implémentent `AdventureSceneHandler`. `variant()` choisit le contenu, `viewData()` fournit les données de vue et `handle()` retourne un `AdventureActionResult`.
+
+Sans clé `flow`, la factory utilise `GenericAdventureFlow`, un comportement minimal avec navigation par champ POST `scene` ; ce n’est pas le flow à employer pour les nouveaux scénarios regroupés.
+
+## Routes publiques
+
+`scene_urls` et `scene_aliases` ne créent pas de routes HTTP. La route `/aventures/{slug}/{scene}` couvre un seul segment de scène. Un chemin imbriqué doit être couvert en GET et POST dans `config/routes.php` via `showPath` et `updatePath`.
+
+Au format regroupé, une clé `url` dans `scene.php` définit un chemin personnalisé et son alias ; le nom du dossier reste l’identifiant interne.
+
+## Cycle de traitement d’une scène
+
+Avec `SceneBasedAdventureFlow` :
+
+1. À l’affichage, la scène est vérifiée dans `scenes`, puis `handlers()` fournit son handler.
+2. `variant()` choisit la variante. `AdventureContent` lit le module ou le contenu historique, puis prend cette variante, ou `default` si elle manque.
+3. Le moteur applique `NarrativeTemplate`, ajoute les notes du contenu à l’état et prépare `viewData()` ainsi que les données d’indices.
+4. La page utilise `adventures/show` par défaut. La variante peut définir `page_view` et `layout` ; une vue de scène se configure avec `view` dans le module, ou avec `scenes[scene]['view']` / `scene_views` au format historique.
+5. À la soumission, le moteur traite le redémarrage, les actions globales du flow puis les indices, avant `handle()` du handler. Celui-ci retourne les effets (`nextScene`, `stateChanges`, `achievements`, etc.) appliqués par le contrôleur.
+
+Le handler déclaratif et celui de GAEA-1 traduisent `flow.actions[action].variant` en une clé d’état `{scene_cible}_variant`. Un handler spécialisé doit choisir lui-même la variante à partir de son état ; le moteur n’invente pas cette logique.
 
 ## Variantes de contenu
 
@@ -44,13 +66,13 @@ Chaque variante peut contenir :
 - `hint` : indices progressifs et réponse ;
 - `scripts` : scripts publics chargés pour cette variante.
 
-La logique d’ordre narratif doit rester dans les handlers et dans les conditions `visible_if`, pas dans la vue.
+La logique d’ordre narratif appartient aux effets `flow.actions`, aux handlers et aux conditions `visible_if`, pas à la vue.
 
 ## Textes narratifs externalisés
 
-Le PHP de `app/Content` doit rester responsable de la structure : variantes, blocs, actions, assets, indices et conditions.
+Le PHP (`scene.php` ou contenu historique dans `app/Content`) définit la structure : variantes, blocs, actions, assets, indices et conditions.
 
-Le texte purement narratif peut être placé dans des fichiers Markdown séparés sous :
+Conserver le texte purement narratif dans des fichiers Markdown séparés sous :
 
 ```text
 content/adventures/{slug}/...
@@ -124,7 +146,7 @@ Content::hint('secretsfamiliaux/hints#cle', 3, [
 
 ## Helpers de contenu
 
-Les fichiers `app/Content` peuvent utiliser `App\Services\Adventures\Support\Content` pour éviter les tableaux répétitifs.
+Les modules `scene.php` et les contenus historiques peuvent utiliser `App\Services\Adventures\Support\Content` pour éviter les tableaux répétitifs.
 
 Blocs :
 
@@ -182,7 +204,7 @@ Content::inventoryHas('tableaubrule');
 Content::inventoryMissing('piecead');
 ```
 
-Tous les helpers acceptent un tableau `$extra` quand une clé plus rare doit être ajoutée, par exemple `visible_if`, `src_options`, `attributes` ou `form_action`.
+Les helpers qui exposent un paramètre `$extra` (notamment les images, dialogues, hotspots et actions) permettent d’ajouter des clés comme `visible_if`, `src_options`, `attributes` ou `form_action`. Vérifier la signature dans `app/Services/Adventures/Support/Content.php` : les helpers de paragraphes et de conditions, par exemple, n’ont pas ce paramètre.
 
 ## `id`, `class`, `value` et `data-*`
 
@@ -204,7 +226,7 @@ Pour les hotspots interactifs :
 ]
 ```
 
-Le handler ne doit pas dépendre de la classe CSS. Il reçoit uniquement `value`.
+Le handler ne doit pas dépendre de la classe CSS. La valeur du bouton est envoyée dans le champ POST `action`, lu avec `$request->post('action', '')`. Il peut également lire les autres champs du formulaire via `Request`.
 
 Pour les nouveaux hotspots simples, préférer `Content::hotspotAt(...)` quand un positionnement en pourcentage suffit :
 
@@ -318,6 +340,16 @@ Les succès accordés par les handlers doivent utiliser le slug courant du scén
 ['scenario' => 'secretsfamiliaux', 'name' => 'fin']
 ```
 
+Dans un effet déclaratif ou un `AdventureActionResult`, `achievements` est une liste de ces paires, sans indices numériques explicites :
+
+```php
+'achievements' => [
+    ['scenario' => 'gaea1', 'name' => 'atterrir'],
+],
+```
+
+Les succès communs au site peuvent utiliser le scénario `general`. Une même action peut attribuer plusieurs succès.
+
 L’image correspondante doit exister ici :
 
 ```text
@@ -351,3 +383,9 @@ php tools/validate_adventure.php --all
 ```
 
 Le validateur signale les fichiers manquants, assets manquants, vues manquantes, succès sans image, références Markdown invalides, actions de contenu sans handler identifiable, `id` présents dans les contenus d’aventure, et CSS publics non référencés lors d’un contrôle global `--all`.
+
+Pour les scènes regroupées, il vérifie aussi la variante initiale et les scènes/variantes cibles déclarées dans `flow.actions`. Les annotations `map` servent à l’exploration ; elles ne remplacent pas une transition de gameplay.
+
+Le contrôle des actions analyse les sources du scénario : il ne prouve pas que chaque scène possède le bon handler dans `handlers()`, ni que les transitions fonctionnent en jeu. Vérifier aussi la cohérence config/flow et tester les actions manuellement. Les signalements sur les actions, les références Markdown et les `id` sont des avertissements ; un code de sortie `0` signifie qu’aucune erreur bloquante n’a été détectée, même si des avertissements restent présents.
+
+L’image `public/assets/img/succes/gaea1/offiser.png` est volontairement absente à ce stade et reste signalée comme erreur par le contrôle global. Ne pas supprimer le succès ni ajouter de fichier factice pour masquer ce signalement attendu.

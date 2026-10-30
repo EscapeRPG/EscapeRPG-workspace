@@ -117,7 +117,7 @@ function validateAdventure(string $root, string $configFile, array $config): arr
     }
 
     $usesExternalContent = isset($config['flow']) || isset($config['content_files']) || ($config['layout'] ?? null) === 'adventure';
-    if ($usesExternalContent && $contentPath === '') {
+    if ($usesExternalContent && $contentPath === '' && empty($config['scene_module_files'])) {
         $errors[] = "Missing required config key 'content_path'.";
     }
 
@@ -137,6 +137,7 @@ function validateAdventure(string $root, string $configFile, array $config): arr
     validateSidebar($root, $config, $errors);
     validateInventoryAssets($root, $config, $errors);
     validateSceneMaps($config, $sceneIds, $errors, $warnings);
+    validateSceneModules($config, $errors);
     validateContentFiles($root, $contentPath, $sceneIds, $config, $errors, $warnings);
     validateContentActions($root, $config, $contentPath, $sceneIds, $warnings);
     validateAwardedAchievements($root, $slug, $config, $errors, $warnings);
@@ -195,19 +196,19 @@ function validateContentFiles(
     array &$errors,
     array &$warnings
 ): void {
-    if ($contentPath === '') {
+    if ($contentPath === '' && empty($config['scene_module_files'])) {
         return;
     }
 
     $base = $root . '/app/Content/' . trim($contentPath, '/');
-    if (!is_dir($base)) {
+    if (!is_dir($base) && array_diff($sceneIds, array_keys($config['scene_module_files'] ?? [])) !== []) {
         $errors[] = "Content path does not exist: " . relativePath($root, $base);
         return;
     }
 
     foreach ($sceneIds as $scene) {
         $contentFile = (string) (($config['content_files'][$scene] ?? null) ?: $scene);
-        $path = $base . '/' . trim($contentFile, '/') . '.php';
+        $path = $config['scene_module_files'][$scene] ?? ($base . '/' . trim($contentFile, '/') . '.php');
 
         if (!is_file($path)) {
             $errors[] = "Scene '{$scene}' has no content file: " . relativePath($root, $path);
@@ -351,23 +352,29 @@ function validateContentIds(string $scene, mixed $node, array &$warnings, string
 
 function validateContentActions(string $root, array $config, string $contentPath, array $sceneIds, array &$warnings): void
 {
-    if ($contentPath === '') {
+    if ($contentPath === '' && empty($config['scene_module_files'])) {
         return;
     }
 
     $base = $root . '/app/Content/' . trim($contentPath, '/');
-    if (!is_dir($base)) {
+    if (!is_dir($base) && empty($config['scene_module_files'])) {
         return;
     }
 
     $handledActions = handledScenarioActions($root, $config);
+    foreach ($config['scene_module_files'] ?? [] as $moduleFile) {
+        $module = require $moduleFile;
+        foreach (array_keys($module['flow']['actions'] ?? []) as $action) {
+            $handledActions[$action] = true;
+        }
+    }
     if ($handledActions === []) {
         return;
     }
 
     foreach ($sceneIds as $scene) {
         $contentFile = (string) (($config['content_files'][$scene] ?? null) ?: $scene);
-        $path = $base . '/' . trim($contentFile, '/') . '.php';
+        $path = $config['scene_module_files'][$scene] ?? ($base . '/' . trim($contentFile, '/') . '.php');
         if (!is_file($path)) {
             continue;
         }
@@ -923,4 +930,39 @@ function relativePath(string $root, string $path): string
     }
 
     return $path;
+}
+
+/** Vérifie les cibles des transitions des scènes regroupées. */
+function validateSceneModules(array $config, array &$errors): void
+{
+    $loader = new App\Services\Adventures\Support\AdventureContent();
+    foreach ($config['scene_module_files'] ?? [] as $scene => $file) {
+        $module = require $file;
+        $flow = $module['flow'];
+        $default = $flow['default'] ?? 'default';
+        if (!is_string($default) || !isset($module['variants'][$default])) {
+            $errors[] = "Scene '{$scene}' has an unknown default variant.";
+        }
+        foreach ($flow['actions'] ?? [] as $action => $definition) {
+            if (!is_array($definition)) {
+                $errors[] = "Scene '{$scene}' action '{$action}' must be an array.";
+                continue;
+            }
+            $target = $definition['next_scene'] ?? $scene;
+            if (!is_string($target) || !isset($config['scenes'][$target])) {
+                $errors[] = "Scene '{$scene}' action '{$action}' targets an unknown scene.";
+                continue;
+            }
+            if (isset($definition['variant'])) {
+                try {
+                    $content = $loader->scene($config, $target);
+                    if (!is_string($definition['variant']) || !isset($content['variants'][$definition['variant']])) {
+                        $errors[] = "Scene '{$scene}' action '{$action}' targets an unknown variant.";
+                    }
+                } catch (Throwable $exception) {
+                    $errors[] = "Scene '{$scene}' target content failed to load: " . $exception->getMessage();
+                }
+            }
+        }
+    }
 }

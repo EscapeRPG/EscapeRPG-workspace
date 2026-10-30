@@ -9,12 +9,6 @@ use App\Services\Adventures\Engine\AdventureActionResult;
 use App\Services\Adventures\Engine\AdventureSceneHandler;
 use App\Services\Adventures\Engine\AdventureState;
 use App\Services\Adventures\Scenarios\Gaea1\Scenes\Gaea1SceneHandler;
-use App\Services\Adventures\Scenarios\Gaea1\Scenes\IndexSceneHandler;
-use App\Services\Adventures\Scenarios\Gaea1\Scenes\KomunodekSceneHandler;
-use App\Services\Adventures\Scenarios\Gaea1\Scenes\LegerrumSceneHandler;
-use App\Services\Adventures\Scenarios\Gaea1\Scenes\SignalTreatmentSceneHandler;
-use App\Services\Adventures\Scenarios\Gaea1\Scenes\StationPlanSceneHandler;
-use App\Services\Adventures\Scenarios\Gaea1\Scenes\SykkerumSceneHandler;
 use App\Services\Adventures\Support\AdventureSaveService;
 
 class Gaea1AdventureFlow extends SceneBasedAdventureFlow
@@ -30,15 +24,7 @@ class Gaea1AdventureFlow extends SceneBasedAdventureFlow
         $this->saveService = new AdventureSaveService();
         $this->handlers = [];
         foreach ($this->definitions() as $scene => $definition) {
-            $handlerClass = match ($scene) {
-                'index' => IndexSceneHandler::class,
-                'signalt' => SignalTreatmentSceneHandler::class,
-                'plan' => StationPlanSceneHandler::class,
-                'sykkerum' => SykkerumSceneHandler::class,
-                'legerrum' => LegerrumSceneHandler::class,
-                'komunodek' => KomunodekSceneHandler::class,
-                default => Gaea1SceneHandler::class,
-            };
+            $handlerClass = $definition['handler'] ?? Gaea1SceneHandler::class;
             $this->handlers[$scene] = new $handlerClass(
                 $scene,
                 (string) ($definition['default'] ?? 'default'),
@@ -165,6 +151,9 @@ class Gaea1AdventureFlow extends SceneBasedAdventureFlow
      */
     private function definitions(): array
     {
-        return require dirname(__DIR__, 5) . '/config/adventures/gaea1/flow.php';
+        $root = dirname(__DIR__, 5);
+        return \App\Services\Adventures\Support\SceneModules::flows(
+            $root . '/content/adventures/gaea1/scenes',
+        );
     }
 }

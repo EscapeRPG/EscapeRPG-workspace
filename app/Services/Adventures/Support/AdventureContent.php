@@ -44,6 +44,9 @@ class AdventureContent
      */
     private function contentPath(array $config, string $scene): ?string
     {
+        if (isset($config['scene_module_files'][$scene])) {
+            return $config['scene_module_files'][$scene];
+        }
         $basePath = $config['content_path'] ?? null;
         if (!is_string($basePath) || $basePath === '') {
             return null;
